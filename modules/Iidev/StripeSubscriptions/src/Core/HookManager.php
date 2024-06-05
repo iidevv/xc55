@@ -112,7 +112,13 @@ class HookManager
         if ($status === 'Active') {
             /** @var \XLite\Model\Membership $membership */
             $membership = Database::getRepo(\XLite\Model\Membership::class)
-                ->find(11);
+                ->find(9);
+
+            if (!$membership) {
+                $this->getLogger("StripeSubscriptions")->error('Membership not found.');
+                return;
+            }
+
             $membership->getLabelId();
         }
 
