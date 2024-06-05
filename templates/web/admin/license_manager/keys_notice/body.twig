@@ -1,0 +1,58 @@
+{##
+ # License keys notice popup dialog
+ #}
+
+<div class="keys-notice-form">
+
+  {{ widget('\\XLite\\View\\Button\\Simple', label='Re-check', location=this.getRecheckURL(), style='recheck-license') }}
+
+  <div class="title">{{ t('License warning') }}</div>
+
+{#  TODO https://sellerlabs.atlassian.net/browse/ECOM-1681 #}
+{#  {% if this.hasUnallowedEnabledModules() and this.isFraudStatusConfirmed() %}#}
+{#    <div class="alert alert-warning">{{ t('Unallowed modules will be disabled automatically on the next visit any page in the administrator interface.')|raw }}</div>#}
+{#  {% endif %}#}
+
+  <div class="indent">
+    {{ t('The system has detected one or more problems with some of the modules at your store:')|raw }}
+  </div>
+
+  <ul class="indent">
+    <li>{{ t('inactive license key(s);')|raw }}</li>
+    <li>{{ t('installed module(s) not allowed by the type of X-Cart license activated at your store.')|raw }}</li>
+   </ul>
+
+  <div class="indent">{{ t('Using the modules with this type of license violation is illegal')|raw }}</div>
+
+  <ul class="modules-list">
+      <li class="module-info template hide">
+        <div class="module-name"></div>
+        <div class="module-reason"></div>
+        <div class="module-action"><a href="#" target="_blank">{{ t('Purchase') }}</a></div>
+      </li>
+  </ul>
+
+  <div class="indent buttons">
+    {% if this.isDisplayPurchaseAllButton() %}
+      {{ widget(
+        '\\XLite\\View\\Button\\SimpleLink',
+        id='purchase-license',
+        label='Purchase license',
+        location=this.getPurchaseAllURL(),
+        blank='true',
+        style='purchase regular-main-button'
+      ) }}
+    {% endif %}
+    <div class="is-trial hide">{{ widget('XLite\\View\\Button\\ActivateKey') }}</div>
+    <div class="is-edition hide">{{ widget('\\XLite\\View\\Button\\Addon\\EnterLicenseKey') }}</div>
+    <div class="text or">{{ t('or') }}</div>
+    <a href="javascript:void(0);" id="remove-unallowed-modules">{{ t('Remove unlicensed modules') }}</a>
+  </div>
+
+  <div class="indent contact-us text">
+    {{ t('Contact X-Cart if you have any questions', {'url': this.getContactUsURL()})|raw }}
+  </div>
+
+  <div class="clear"></div>
+
+</div>

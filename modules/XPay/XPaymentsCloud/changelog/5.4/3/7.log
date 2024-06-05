@@ -1,0 +1,3 @@
+Version 5.4.3.7
+
+ -  One Page Checkout: after switching payment method from X-Payments to any other checkout may freeze. Fixed.

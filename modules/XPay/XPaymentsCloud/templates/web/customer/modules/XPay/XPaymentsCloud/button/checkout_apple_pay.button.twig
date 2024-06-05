@@ -1,0 +1,10 @@
+{##
+ # Checkout/Buy With Apple Pay button
+ #
+ # @ListChild (list="xpayments.button.checkoutWithApplePay", weight="10")
+ # @ListChild (list="xpayments.button.buyWithApplePay", weight="10")
+ #}
+<button type="button" class="{{ this.getButtonClass() }}">
+  <span class="text">{{ t(this.getButtonLabel()) }}</span>
+  <span class="logo"></span>
+</button>

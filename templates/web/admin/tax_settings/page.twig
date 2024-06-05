@@ -1,0 +1,26 @@
+{#
+# Tax edit page
+#}
+
+{% form this.getFormClass() with this.getFormWidgetParams() %}
+
+  <fieldset>
+    <div class="taxes-top-block">
+      {{ widget_list('taxes.top.section') }}
+
+      {% if this.getSettingsTemplate() %}
+        {% include this.getSettingsTemplate() %}
+      {% endif %}
+    </div>
+  </fieldset>
+
+  <fieldset>
+    {% if this.getItemsTemplate() %}
+      {% include this.getItemsTemplate() %}
+    {% endif %}
+  </fieldset>
+
+  {% if this.hasStickyPanel() %}
+    {{ widget(this.getStickyPanelClass(), alwaysVisible=true) }}
+  {% endif %}
+{% endform %}

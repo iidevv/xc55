@@ -1,0 +1,17 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.8
+type: common
+authorName: Qualiteam
+moduleName: 'Color swatches'
+description: 'The module displays product options, such as color, fabric or design as clickable color swatches or small images on the product page.'
+minorRequiredCoreVersion: 0
+dependsOn: {  }
+incompatibleWith: {  }
+showSettingsForm: true
+canDisable: true

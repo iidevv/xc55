@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2023-01-27 - [Bug] Order number was displayed incorrectly on message pages in the Customer area. Fixed. #XCB-2032 #XC-VendorMessages
+

@@ -1,0 +1,13 @@
+{##
+ # Popup shipping solution general info
+ #
+ # @ListChild (list="popup.shipping.shipping-solutions.list.line", weight=200)
+ #}
+
+<div class="general-info">
+  <div class="title">{{ this.getName(this.get('method')) }}</div>
+
+  <div class="description">
+    {{ this.getDescription(this.get('method')) }}
+  </div>
+</div>

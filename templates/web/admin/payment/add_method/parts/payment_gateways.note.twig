@@ -1,0 +1,9 @@
+{##
+ # Payment gateways
+ #
+ # @ListChild (list="itemsList.onlinemethods.header", weight="10")
+ #}
+
+{% if this.hasResults() %}
+  <div class="small-head">{{ t('Requires registered merchant account')|raw }}</div>
+{% endif %}

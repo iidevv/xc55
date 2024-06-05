@@ -1,0 +1,37 @@
+{% if this.isTitleVisible() %}
+
+    <div class="form-item clearfix review-additional-field">
+        {{ this.getTitleWidget()|raw }}
+    </div>
+
+{% endif %}
+
+{% if this.isAdvantagesVisible() %}
+
+    <div class="form-item clearfix review-additional-field">
+        {{ this.getAdvantagesWidget()|raw }}
+    </div>
+
+{% endif %}
+
+{% if this.isDisadvantagesVisible() %}
+
+    <div class="form-item clearfix review-additional-field">
+        {{ this.getDisadvantagesWidget()|raw }}
+    </div>
+
+{% endif %}
+
+{% if this.isUploadsVisible() %}
+
+    <div class="form-item clearfix review-additional-field">
+        {{ this.getUploadsWidget()|raw }}
+    </div>
+
+{% endif %}
+
+
+
+
+
+

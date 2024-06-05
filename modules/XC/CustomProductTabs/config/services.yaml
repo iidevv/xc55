@@ -1,0 +1,41 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+api_platform:
+  mapping:
+    paths:
+      - '%kernel.project_dir%/var/run/classes/XC/CustomProductTabs/API/Resource'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  XC\CustomProductTabs\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-CustomProductTabs, type: install, method: onInstall }
+      - { name: xcart.lifetime-hook, moduleId: XC-CustomProductTabs, type: rebuild, method: onRebuild }
+      - { name: xcart.lifetime-hook, moduleId: XC-CustomProductTabs, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }
+
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\ResourceTransformer\InputTransformerInterface: '@XC\CustomProductTabs\API\Endpoint\CustomProductTab\ResourceTransformer\InputTransformer'
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\ResourceTransformer\InputTransformer: ~
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\ResourceTransformer\OutputTransformerInterface: '@XC\CustomProductTabs\API\Endpoint\CustomProductTab\ResourceTransformer\OutputTransformer'
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\ResourceTransformer\OutputTransformer: ~
+
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\Transformer\InputTransformerInterface: '@XC\CustomProductTabs\API\Endpoint\CustomProductTab\Transformer\InputTransformer'
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\Transformer\InputTransformer: ~
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\Transformer\OutputTransformerInterface: '@XC\CustomProductTabs\API\Endpoint\CustomProductTab\Transformer\OutputTransformer'
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\Transformer\OutputTransformer: ~
+
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\DataProvider: ~
+  XC\CustomProductTabs\API\Endpoint\CustomProductTab\DataPersister:
+    arguments:
+      - '@doctrine.orm.entity_manager'
+      - '@XC\CustomProductTabs\API\Endpoint\CustomProductTab\ResourceTransformer\InputTransformer'
+      - '@XC\CustomProductTabs\API\Endpoint\CustomProductTab\ResourceTransformer\OutputTransformer'
+
+  XC\CustomProductTabs\API\OpenApiTagsRepositoryDecorator:
+      decorates: XLite\API\OpenApiTagsRepository

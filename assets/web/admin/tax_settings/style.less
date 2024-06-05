@@ -1,0 +1,120 @@
+/**
+ * Tax settings styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+@import (reference) "../css/initialize";
+
+#common-settings .settings-table + * {
+  margin-top: @rhythmic-unit;
+}
+
+.edit-tax-settings {
+  #shipping-rates.hidden {
+    visibility: hidden;
+  }
+
+  div.buttons {
+    margin-top: (@rhythmic-unit * 2);
+  }
+
+  .tax-switch-button {
+    padding-left: (@rhythmic-unit / 2);
+
+    &.enabled button.disabled-state,
+    &.disabled button.enabled-state {
+      display: none;
+    }
+  }
+}
+
+table.data.empty-data {
+  tr.no-data-note {
+    display: table-row;
+  }
+
+  tr.head {
+    display: none;
+  }
+}
+
+.edit-tax-settings.no-memberships {
+  th.membership {
+    display: none;
+  }
+
+  td.membership {
+    display: none;
+  }
+}
+
+.edit-tax-settings:not(.subtotal-thresholds-enabled) {
+  th.minPrice,
+  th.maxPrice,
+  td.minPrice,
+  td.maxPrice {
+    display: none;
+  }
+}
+
+.edit-tax-settings.no-taxbase {
+  th.taxableBase {
+    display: none;
+  }
+
+  td.taxableBase {
+    display: none;
+  }
+}
+
+#items-list-switcher {
+  cursor: pointer;
+  display: inline-block;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  span {
+    border-bottom: dotted 1px @color-link;
+    color: @color-link;
+  }
+
+  i.fa {
+    color: @color-link;
+    margin-left: 5px;
+  }
+}
+
+#common-settings-link {
+  margin-left: (@rhythmic-unit / 2);
+
+  span {
+    border-bottom: 1px dashed;
+    color: @color-link;
+    cursor: pointer;
+    font-size: @font-size-very-small;
+    line-height: @line-height-small-text;
+  }
+}
+
+.common-tax-settings,
+.shipping-rates,
+.tax-classes,
+.main-rates {
+  &--description {
+    padding-bottom: 2 * @rhythmic-unit;
+  }
+}
+
+.tax-classes {
+  &--description {
+    margin-bottom: 0;
+  }
+}
+
+#shipping-rates {
+  .title {
+    text-transform: unset;
+  }
+}

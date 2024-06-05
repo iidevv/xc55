@@ -1,0 +1,25 @@
+{##
+ # Layout editor panel
+ #}
+
+<div id="themetweaker-panel-loader-point">
+  <xlite-themetweaker-panel inline-template initial-mode="{{ this.getThemeTweakerMode() }}">
+    <div class="themetweaker-panel-wrapper themetweaker-panel--initial {{ this.getThemeTweakerMode() ? 'state-on' : 'state-off' }}">
+      <div id="themetweaker-panel" class="themetweaker-panel">
+        <div class="themetweaker-panel--header" :class="panelClasses">
+          {{ widget_list('themetweaker-panel--header') }}
+        </div>
+        <div class="themetweaker-panel--inner" :class="panelClasses">
+          <transition name="expand">
+            <div class="themetweaker-panel--body">
+              {{ widget_list('themetweaker-panel--body') }}
+            </div>
+          </transition>
+        </div>
+      </div>
+      {{ widget_list('themetweaker-panel-extensions') }}
+    </div>
+  </xlite-themetweaker-panel>
+</div>
+
+{{ widget_list('themetweaker-tour') }}

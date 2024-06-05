@@ -1,0 +1,5 @@
+Version 5.5.0.13
+
+Fixes (1)
+2023-07-13 - [Bug] Layout issue related to displaying attribute variants on the product page on the storefront. Fixed. #XCB-2592 #XC-ProductVariants #XC-CrispWhiteSkin
+

@@ -1,0 +1,604 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Task:
+  - owner: QSL\AbandonedCartReminder\Core\Task\CartRecovery
+
+QSL\AbandonedCartReminder\Model\Reminder:
+  - name: Default e-mail reminder
+    enabled: 0
+    cronDelay: 1
+    coupon: 0
+    couponExpire: 3
+    translations:
+      - code: en
+        subject: Humble follow-up email about your last visit at [COMPANY_NAME]
+        body: "<p>You recently visited our site, and we noticed that you added some items to your shopping cart, but did not fully complete your order. We just wanted to make sure you did not encounter any problems with checkout on our site. If there is anything we can do to assist you with your online order, please do not hesitate to contact us by replying to this email.</p>\n\n<p>Your shopping cart currently contains the following items:</p>[CART_ITEMS]\n\n<p>You can go to your shopping cart directly by clicking <a href=\"[RECOVERY_LINK]\">this link</a>.</p>"
+        couponSubject: Special offer for your visit at [COMPANY_NAME]
+        couponBody: "<p>You recently visited our site, and we noticed that you still have a few items in your shopping cart. We would like to offer you a special discount to towards your next purchase! Simply enter the coupon code [COUPON_CODE] at checkout and you will save [COUPON_AMOUNT] on your pending order. The coupon code expires on [COUPON_EXPIRES].</p>\n\n<p>If you have any questions or require special assistance, please contact us by replying to this e-mail. We would be happy to help you.</p>\n\n<p>Your shopping cart currently contains the following items:</p>[CART_ITEMS]\n\n<p>You can go to your shopping cart directly by clicking <a href=\"[RECOVERY_LINK]\">this link</a>.</p>"
+      - code: ru
+        subject: "Ваше посещение сайта [COMPANY_NAME]"
+        body: "<p>Мы обнаружили, что во время последнего посещения нашего сайта Вы отложили несколько товаров в корзину, но не оформили заказ.</p><p>Если Вы столкнулись с какими то проблемами в процессе оформления заказа, пожалуйста, сообщите нам в ответе на это письмо, и мы обязательно поможем Вам.</p>\n\n<p>Товары в Вашей корзине:</p>[CART_ITEMS]\n\n<p>Вы можете перейти на страницу корзины по <a href=\"[RECOVERY_LINK]\">этой ссылке</a>.</p>"
+        couponSubject: "Купон на скидку от сайта [COMPANY_NAME]"
+        couponBody: "<p>Мы заметили, что Вы недавно посещали наш сайт и отложили несколько товаров в корзину. Мы будем очень рады, если Вы станете нашим клиентом, и хотим сделать Вам подарок: введите [COUPON_CODE] в качестве номера купона при оформлении следующего заказа и получите скидку [COUPON_AMOUNT]. Данный купон действует до [COUPON_EXPIRES].</p>\n\n<p>Если у Вас возникли какие-либо сложности в процессе оформления заказы, пожалуйста свяжитесь с нами ответом на это письмо, и мы обязательно поможем Вам.</p>\n\n<p>Товары в Вашей корзине:</p>[CART_ITEMS]\n\n<p>Вы можете перейти на страницу корзины по <a href=\"[RECOVERY_LINK]\">этой ссылке</a>.</p>"
+
+XLite\Model\Config:
+  - name: abandonment_time
+    category: QSL\AbandonedCartReminder
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 0 }
+    orderby: 100
+    value: 60
+    translations:
+      - code: en
+        option_name: Abandoned cart cut-off time
+        option_comment: The time period (in minutes) after which a customer's cart should be considered abandoned.
+      - code: ru
+        option_name: Через какое время корзина будет считаться заброшенной
+        option_comment: Сколько минут должно пройти после последнего открытия покупателем страницы магазина, прежде чем его корзина будет считаться заброшенной.
+  - name: abcr_one_coupon_per_user
+    category: QSL\AbandonedCartReminder
+    type: checkbox
+    orderby: 200
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Limit the number of coupons per user'
+        option_comment: 'When enabled, the module generates a discount coupon for every registered customer only once. The setting does not apply to customers having no store account.'
+      - code: ru
+        option_name: 'Ограничить количество купонов на пользователя'
+        option_comment: 'Когда включено, модуль будет генерировать только один купон на регистрированного пользователя. Настройка не затрагивает покупателей без учётной записи.'
+  - name: abcr_show_unsubscribe
+    category: QSL\AbandonedCartReminder
+    type: checkbox
+    orderby: 300
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Unsubscribe link in e-mails'
+        option_comment: 'This option adds the Unsubscribe link to abandoned cart e-mails.'
+      - code: ru
+        option_name: 'Возможность отписаться от e-mail'
+        option_comment: 'При включении, добавляет в e-mail уведомления о брошенных корзинах ссылку, которая позволяет покупателям отписаться от получения таких уведомлений в дальнейшем.'
+
+XLite\Model\LanguageLabel:
+  - name: "Abandonment e-mails have been sent to X customer(s)."
+    translations:
+      - code: en
+        label: "Abandonment e-mails have been sent to {{count}} customer(s)."
+      - code: ru
+        label: "E-mail напоминание о незавершеннном заказе было отправлено следующему количеству покупателей: {{count}}."
+  - name: "No abandoned e-mails were sent."
+    translations:
+      - code: en
+        label: "No abandoned e-mails were sent."
+      - code: ru
+        label: "Не было отправлено ни одно напоминания о незавершенном заказе."
+  - name: "Selected carts (X) have been emptied and removed from the list."
+    translations:
+      - code: en
+        label: "Selected carts ({{count}}) have been emptied and removed from the list."
+      - code: ru
+        label: "Выбранные корзины покупателей ({{count}}) были очищены."
+  - name: "No abandoned carts were selected."
+    translations:
+      - code: en
+        label: "No abandoned carts were selected."
+      - code: ru
+        label: "Не было выбрано ни одной коризины, заброшенной покупателем."
+  - name: "&quot;X&quot; cart reminder"
+    translations:
+      - code: en
+        label: "&quot;{{name}}&quot; cart reminder"
+      - code: ru
+        label: "Напоминание &quot;{{name}}&quot;"
+  - name: "New cart reminder"
+    translations:
+      - code: en
+        label: "New cart reminder"
+      - code: ru
+        label: "Новое напоминание"
+  - name: "New reminder"
+    translations:
+      - code: en
+        label: "New reminder"
+      - code: ru
+        label: "Новое напоминание"
+  - name: "The link is expired."
+    translations:
+      - code: en
+        label: "The link is expired."
+      - code: ru
+        label: "Время действия ссылки истекло."
+  - name: "Generated for an abandoned cart"
+    translations:
+      - code: en
+        label: "Generated for an abandoned cart"
+      - code: ru
+        label: "Был создан для корзины, брошенной покупателем"
+  - name: "Remind selected customers"
+    translations:
+      - code: en
+        label: "Remind selected customers"
+      - code: ru
+        label: "Напомнить покупателям"
+  - name: "Enter fixed or percent discount."
+    translations:
+      - code: en
+        label: "Enter fixed or percent discount."
+      - code: ru
+        label: "Введите размер скидки (процент или фиксированное число)"
+  - name: "January"
+    translations:
+      - code: en
+        label: "January"
+      - code: ru
+        label: "январь"
+  - name: "February"
+    translations:
+      - code: en
+        label: "February"
+      - code: ru
+        label: "Февраль"
+  - name: "March"
+    translations:
+      - code: en
+        label: "March"
+      - code: ru
+        label: "март"
+  - name: "April"
+    translations:
+      - code: en
+        label: "April"
+      - code: ru
+        label: "апрель"
+  - name: "May"
+    translations:
+      - code: en
+        label: "May"
+      - code: ru
+        label: "май"
+  - name: "June"
+    translations:
+      - code: en
+        label: "June"
+      - code: ru
+        label: "июнь"
+  - name: "July"
+    translations:
+      - code: en
+        label: "July"
+      - code: ru
+        label: "июль"
+  - name: "August"
+    translations:
+      - code: en
+        label: "August"
+      - code: ru
+        label: "август"
+  - name: "September"
+    translations:
+      - code: en
+        label: "September"
+      - code: ru
+        label: "сентябрь"
+  - name: "October"
+    translations:
+      - code: en
+        label: "October"
+      - code: ru
+        label: "октябрь"
+  - name: "November"
+    translations:
+      - code: en
+        label: "November"
+      - code: ru
+        label: "ноябрь"
+  - name: "December"
+    translations:
+      - code: en
+        label: "December"
+      - code: ru
+        label: "декабрь"
+  - name: "Reminder sent"
+    translations:
+      - code: en
+        label: "Notified"
+      - code: ru
+        label: "Отправлено"
+  - name: "This coupon is expired"
+    translations:
+      - code: en
+        label: "This coupon is expired"
+      - code: ru
+        label: "Истёк срок действия"
+  - name: "Click to edit the coupon"
+    translations:
+      - code: en
+        label: "Click to edit the coupon"
+      - code: ru
+        label: "Изменить купон"
+  - name: "n/a"
+    translations:
+      - code: en
+        label: "n/a"
+      - code: ru
+        label: "не известно"
+  - name: "Month total"
+    translations:
+      - code: en
+        label: "Month total"
+      - code: ru
+        label: "За месяц"
+  - name: "Empty abandoned cart"
+    translations:
+      - code: en
+        label: "Empty"
+      - code: ru
+        label: "Пусто"
+  - name: "time(s)"
+    translations:
+      - code: en
+        label: "time(s)"
+      - code: ru
+        label: "раз(а)"
+  - name: "last reminder"
+    translations:
+      - code: en
+        label: "last"
+      - code: ru
+        label: "последний"
+  - name: "Total revenue recovered for the period"
+    translations:
+      - code: en
+        label: "Total revenue recovered for the period"
+      - code: ru
+        label: "Общие продажи за период"
+  - name: "Number of orders"
+    translations:
+      - code: en
+        label: "Number of orders"
+      - code: ru
+        label: "Количество заказов"
+  - name: "You have no reminder templates defined yet."
+    translations:
+      - code: en
+        label: "You have no reminder templates defined yet."
+      - code: ru
+        label: "Не заданы шаблоны напоминаний о незавершенных заказах."
+  - name: "Add reminders"
+    translations:
+      - code: en
+        label: "Add reminders"
+      - code: ru
+        label: "Настроить напоминания"
+  - name: "Abandoned carts"
+    translations:
+      - code: en
+        label: "Abandoned carts"
+      - code: ru
+        label: "Брошенные корзины"
+  - name: "Abandoned cart reminders"
+    translations:
+      - code: en
+        label: "Abandoned cart reminders"
+      - code: ru
+        label: "Напоминания о заброшенных корзинах"
+  - name: "Abandoned cart reminder"
+    translations:
+      - code: en
+        label: "Abandoned cart reminder"
+  - name: "Email reminders"
+    translations:
+      - code: en
+        label: "Email reminders"
+  - name: "Cart reminders"
+    translations:
+      - code: en
+        label: "Cart reminders"
+      - code: ru
+        label: "Шаблоны напоминаний о корзинах"
+  - name: "Choose reminder"
+    translations:
+      - code: en
+        label: "Choose reminder"
+      - code: ru
+        label: "Выберите шаблон напоминания"
+  - name: "Carts matching the criteria"
+    translations:
+      - code: en
+        label: "Carts matching the criteria"
+      - code: ru
+        label: "Корзины, подходящие под условия"
+  - name: "Delay (hours)"
+    translations:
+      - code: en
+        label: "Delay (hours)"
+      - code: ru
+        label: "Задержка (часы)"
+  - name: "Expire (days)"
+    translations:
+      - code: en
+        label: "Expire (days)"
+      - code: ru
+        label: "Срок (дни)"
+  - name: "Send automatically"
+    translations:
+      - code: en
+        label: "Send automatically"
+      - code: ru
+        label: "Отправлять автоматически"
+  - name: "Reminder name"
+    translations:
+      - code: en
+        label: "Name"
+      - code: ru
+        label: "Название шаблона"
+  - name: "Send automatically in (hours)"
+    translations:
+      - code: en
+        label: "Send automatically in (hours)"
+      - code: ru
+        label: "Пауза перед автоматической отправкой (в часах)"
+  - name: "New coupon amount"
+    translations:
+      - code: en
+        label: "New coupon amount"
+      - code: ru
+        label: "Размер скидки по купону"
+  - name: "E-mail subject (no coupon)"
+    translations:
+      - code: en
+        label: "E-mail subject (no coupon)"
+      - code: ru
+        label: "Заголовок e-mail письма (без купона)"
+  - name: "E-mail body (no coupon)"
+    translations:
+      - code: en
+        label: "E-mail body (no coupon)"
+      - code: ru
+        label: "Текст e-mail напоминания (без купона)"
+  - name: "E-mail subject (with coupon)"
+    translations:
+      - code: en
+        label: "E-mail subject (with coupon)"
+      - code: ru
+        label: "Заголовок e-mail письма (с купоном)"
+  - name: "E-mail body (with coupon)"
+    translations:
+      - code: en
+        label: "E-mail body (with coupon)"
+      - code: ru
+        label: "Текст e-mail напоминания (с купоном)"
+  - name: "Coupon expires in (days)"
+    translations:
+      - code: en
+        label: "Coupon expires in (days)"
+      - code: ru
+        label: "Срок действия купона (в днях)"
+  - name: "Clear selected cars"
+    translations:
+      - code: en
+        label: "Clear selected cars"
+      - code: ru
+        label: "Очистить отмеченные корзины"
+  - name: "No - reminedr was never sent"
+    translations:
+      - code: en
+        label: "No"
+      - code: ru
+        label: "Нет"
+  - name: "Reminder"
+    translations:
+      - code: en
+        label: "Reminder"
+      - code: ru
+        label: "Шаблон"
+  - name: "Send reminder"
+    translations:
+      - code: en
+        label: "Send reminder"
+      - code: ru
+        label: "Отправить напоминание"
+  - name: "Abandoned cart e-mails"
+    translations:
+      - code: en
+        label: "Abandoned cart e-mails"
+      - code: ru
+        label: "Напоминания о корзинах"
+  - name: "Abandoned cart recovery"
+    translations:
+      - code: en
+        label: "Abandoned cart recovery"
+      - code: ru
+        label: "Возобновлённые заказы"
+  - name: "Abandoned cart e-mail statistics"
+    translations:
+      - code: en
+        label: "Abandoned cart e-mail statistics"
+      - code: ru
+        label: "E-mail напоминания о брошенных корзинах"
+  - name: "Abandoned cart recovery statistics"
+    translations:
+      - code: en
+        label: "Abandoned cart recovery statistics"
+      - code: ru
+        label: "Статистика по возобновлённым заказам"
+  - name: "Abandoned cart statistics for the period"
+    translations:
+      - code: en
+        label: "Statistics for the period"
+      - code: ru
+        label: "Данные за выбранный период"
+  - name: "Sent (abandoned cart e-mails)"
+    translations:
+      - code: en
+        label: "Sent"
+      - code: ru
+        label: "Отправлено"
+  - name: "Clicked (abandoned cart e-mails)"
+    translations:
+      - code: en
+        label: "Clicked"
+      - code: ru
+        label: "Возобновлено"
+  - name: "Ordered (abandoned cart e-mails)"
+    translations:
+      - code: en
+        label: "Ordered"
+      - code: ru
+        label: "Заказано"
+  - name: "Paid (abandoned cart e-mails)"
+    translations:
+      - code: en
+        label: "Paid"
+      - code: ru
+        label: "Оплачено"
+  - name: "E-mails (abandoned cart e-mails)"
+    translations:
+      - code: en
+        label: "E-mails"
+      - code: ru
+        label: "E-mail"
+  - name: "Carts (abandoned cart e-mails)"
+    translations:
+      - code: en
+        label: "Carts"
+      - code: ru
+        label: "Корзины"
+  - name: "Users (abandoned cart e-mails)"
+    translations:
+      - code: en
+        label: "Customers"
+      - code: ru
+        label: "Покупатели"
+  - name: "Clear statistics on abandoned cart e-mails sent before"
+    translations:
+      - code: en
+        label: "Clear statistics on e-mails sent before"
+      - code: ru
+        label: "Удалить данные по письмам, отправленным ранее"
+  - name: "Are you sure that you want to clear statistics on abandoned cart e-mails sent before %date%?"
+    translations:
+      - code: en
+        label: "This operation cannot be undone. Are you sure that you want to clear statistics on abandoned cart e-mails sent before %date%?"
+      - code: ru
+        label: "Эту операцию нельзя отменить. Вы точно хотите удалить из статистики напоминания о брошенных корзинах, отправленные ранее %date%?"
+  - name: "Clear cart e-mail statistics"
+    translations:
+      - code: en
+        label: "Clear"
+      - code: ru
+        label: "Удалить"
+  - name: "Statistics on past abandoned cart e-mails have been cleared"
+    translations:
+      - code: en
+        label: "Statistics have been cleared"
+      - code: ru
+        label: "Данные удалены"
+  - name: "Delete expired coupons"
+    translations:
+      - code: en
+        label: "Delete expired coupons"
+      - code: ru
+        label: "Удалить просроченные купоны"
+  - name: "Number of expired coupons that have been deleted: X"
+    translations:
+      - code: en
+        label: "Number of expired coupons that have been deleted: {{count}}"
+      - code: ru
+        label: "Количество удалённых купонов, срок действия которых истёк: {{count}}"
+  - name: "We will not remind the email address X about abandoned carts anymore."
+    translations:
+      - code: en
+        label: "We will not remind the email address {{email}} about abandoned carts anymore."
+      - code: ru
+        label: "Напоминания о товарах в корзине больше не будут отправляться на адрес {{email}}."
+  - name: "If you want to stop receiving emails like this one, please unsubscribe."
+    translations:
+      - code: en
+        label: 'If you want to stop receiving emails like this one, please <a href="{{url}}">unsubscribe</a>.'
+      - code: ru
+        label: 'Если Вы не хотите больше получать подобные письма, то от них можно <a href="{{url}}">отписаться</a>.'
+  - name: "X customer(s) having abandoned cart were not notified."
+    translations:
+      - code: en
+        label: 'One or more customers with abandoned carts have not been notified. They might have unsubscribed from abandoned cart reminders earlier.'
+      - code: ru
+        label: 'Нескольким покупателям напоминание отправлено не было. Возможно, эти покупатели отписались от получения таких уведомлений ранее.'
+  - name: "Please use PAGE in order to configure Cart Reminders."
+    translations:
+      - code: en
+        label: 'Please use <a href="{{url}}">{{text}}</a> page in order to configure Cart Reminders.'
+      - code: ru
+        label: 'Для настройки напоминаний о корзинах, пожалуйста перейдите во вкладку <a href="{{url}}">{{text}}</a>.'
+  - name: Attention
+    translations:
+      - code: en
+        label: Attention
+      - code: ru
+        label: Внимание
+  - name: "On this page you can edit e-mail notifications which are sent to customers who abandoned their carts."
+    translations:
+      - code: en
+        label: "On this page you can edit e-mail notifications which are sent to customers who abandoned their carts."
+      - code: ru
+        label: "На этой странице вы можете настраивать e-mail сообщения, отправляемые покупателям с брошенными корзинами."
+  - name: "Send automatically: STATUS"
+    translations:
+      - code: en
+        label: "Send automatically: STATUS"
+      - code: ru
+        label: "Отправлять автоматически: STATUS"
+  - name: "See our Knowledge Base for more information about customizing reminders."
+    translations:
+      - code: en
+        label: 'See our <a href="https://support.x-cart.com/en/articles/4610838-creating-abandoned-cart-reminders#creating-reminders" target="_blank">Knowledge Base</a> for more information about customizing reminders.'
+      - code: ru
+        label: 'См. <a href="https://support.x-cart.com/en/articles/4610838-creating-abandoned-cart-reminders#creating-reminders" target="_blank">базу знаний</a> для получения дополнительной информации по настройке напоминаний.'
+  - name: "Order item attributes are out-of-date"
+    translations:
+      - code: en
+        label: "Order item attributes are out-of-date"
+      - code: ru
+        label: "Опции товара в заказе не актуальны"
+  - name: "Reminder e-mails"
+    translations:
+      - code: en
+        label: "Reminder e-mails"
+  - name: "Cart recovery"
+    translations:
+      - code: en
+        label: "Cart recovery"
+  - name: "ACR Email Statistics"
+    translations:
+      - code: en
+        label: "ACR Email Statistics"
+  - name: "Cart recovery statistics"
+    translations:
+      - code: en
+        label: "Cart recovery statistics"
+
+
+XLite\Model\Notification:
+  - templatesDirectory: modules/QSL/AbandonedCartReminder/abandonment_email
+    availableForAdmin: false
+    availableForCustomer: false
+    enabledForAdmin: false
+    enabledForCustomer: true
+    module: QSL\AbandonedCartReminder
+    translations:
+      - code: en
+        name: "Abandoned cart reminder (Abandoned Cart Reminder module)"
+        description: "This notification is sent to customers who abandoned their carts."
+        customerSubject: 'This setting is ignored'
+        customerText: 'The changes on this page are not applied anywhere.<br>Please use <a href="?target=cart_reminders">"Cart reminders" tab</a> for managing email templates.'
+      - code: ru
+        name: "Напоминание о брошенной корзине (модуль Abandoned Cart Reminder)"
+        description: "Данное напоминание отправляется покупателям, давно не посещавшим сайт магазина."
+        customerSubject: 'Эта настройка не используется'
+        customerText: 'Настройки на этой странице не применимы к напоминаниям о брошенных корзинах. <br\>Для изменения текста и заголовка таких напоминаний перейдите на <a href="?target=cart_reminders">закладку "Шаблоны напоминаний о корзинах"</a>.'

@@ -1,0 +1,5 @@
+Version 5.4.0.9
+
+Fixes (2)
+- Add GraphQL API Request logging
+- Fix handling of billing address changes

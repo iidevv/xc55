@@ -1,0 +1,108 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: brandsBlockSeparator
+    category: QSL\ShopByBrand
+    orderby: 210
+
+  - name: shop_by_brand_block
+    category: QSL\ShopByBrand
+    orderby: 220
+    translations:
+      - code: en
+        option_name: 'Show block on Category pages'
+      - code: ru
+        option_name: 'Показывать блок на странице категорий'
+
+  - name: shop_by_brand_block_home
+    category: QSL\ShopByBrand
+    orderby: 215
+    translations:
+      - code: en
+        option_name: 'Show block on Front page'
+      - code: ru
+        option_name: 'Показывать блок на домашней странице'
+
+  - name: shop_by_brand_block_order
+    category: QSL\ShopByBrand
+    orderby: 230
+
+  - name: shop_by_brand_block_limit
+    category: QSL\ShopByBrand
+    orderby: 235
+
+  - name: shop_by_brand_dialog
+    category: QSL\ShopByBrand
+    translations:
+      - code: en
+        option_name: 'Show block on Category pages'
+      - code: ru
+        option_name: 'Показывать блок на странице категорий'
+
+  - name: shop_by_brand_dialog_home
+    category: QSL\ShopByBrand
+    orderby: 305
+    translations:
+      - code: en
+        option_name: 'Show block on Front page'
+      - code: ru
+        option_name: 'Показывать блок на домашней странице'
+
+  - name: shop_by_brand_dialog_order
+    category: QSL\ShopByBrand
+    orderby: 320
+
+  - name: shop_by_brand_dialog_limit
+    category: QSL\ShopByBrand
+    orderby: 325
+
+  - name: brandsPageSeparator
+    category: QSL\ShopByBrand
+    orderby: 180
+
+  - name: shop_by_brand_page_order
+    category: QSL\ShopByBrand
+    orderby: 185
+
+  - name: shop_by_brand_pager
+    category: QSL\ShopByBrand
+    orderby: 190
+
+  - name: shop_by_brand_per_page
+    category: QSL\ShopByBrand
+    orderby: 195
+
+  - name: show_filter_by_first_letter
+    category: QSL\ShopByBrand
+    orderby: 200
+
+  - name: show_filter_by_substring
+    category: QSL\ShopByBrand
+    orderby: 205
+
+  - name: shop_by_brand_block_lfp
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 225
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Show block on Make/Model/Year pages'
+      - code: ru
+        option_name: 'Показывать блок на странице выбранного авто'
+
+  - name: shop_by_brand_dialog_lfp
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 315
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Show block on Make/Model/Year pages'
+      - code: ru
+        option_name: 'Показывать блок на странице выбранного авто'

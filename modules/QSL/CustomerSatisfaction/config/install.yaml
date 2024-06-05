@@ -1,0 +1,290 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Task:
+  - owner: QSL\CustomerSatisfaction\Core\Task\SendSurvey
+
+XLite\Model\Config:
+  - name: cs_sep_1
+    category: QSL\CustomerSatisfaction
+    type: separator
+    orderby: 1
+    translations:
+      - code: en
+        option_name: 'General options'
+      - code: ru
+        option_name: 'Общие настройки'
+  - name: cs_send_email_by
+    category: QSL\CustomerSatisfaction
+    type: 'QSL\CustomerSatisfaction\View\FormField\Select\SendEmailBy'
+    orderby: 5
+    value: S
+    translations:
+      - code: en
+        option_name: 'Action to send email'
+      - code: ru
+        option_name: 'Действие для отправки письма'
+  - name: cs_delay_in_days
+    category: QSL\CustomerSatisfaction
+    type: 'XLite\View\FormField\Input\Text\Integer'
+    orderby: 6
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Delay in days'
+      - code: ru
+        option_name: 'Задержка в днях'
+  - name: cs_payment_status
+    category: QSL\CustomerSatisfaction
+    type: 'XLite\View\FormField\Select\OrderStatus\Payment'
+    orderby:   10
+    value: 4
+    translations:
+      - code: en
+        option_name: 'Choose payment status triggering feedback request'
+      - code: ru
+        option_name: 'Статус оплаты, после которого отправляется запрос на отзыв'
+  - name: cs_shipping_status
+    category: QSL\CustomerSatisfaction
+    type: 'QSL\CustomerSatisfaction\View\FormField\Select\OrderStatus\Shipping'
+    orderby:   20
+    value: 4
+    translations:
+      - code: en
+        option_name: 'Choose shipping status triggering feedback request'
+      - code: ru
+        option_name: 'Статус доставки, после которого отправляется запрос на отзыв'
+  - name: cs_raiting_for_share
+    category: QSL\CustomerSatisfaction
+    type: 'XLite\View\FormField\Input\Text\Integer'
+    widgetParameters: { min: 1, max: 5 }
+    orderby: 50
+    value: 5
+    translations:
+      - code: en
+        option_name: 'Excellent/no-questions-asked rating'
+      - code: ru
+        option_name: 'Рейтинг отлично/нет вопросов'
+  - name: cs_facebook_funpage
+    category: QSL\CustomerSatisfaction
+    type: 'XLite\View\FormField\Input\Text\URL'
+    orderby: 60
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Facebook fanpage URL'
+      - code: ru
+        option_name: 'Адрес страницы сообщества в Facebook'
+  - name: cs_sep_3
+    category: QSL\CustomerSatisfaction
+    type: separator
+    orderby: 70
+    translations:
+      - code: en
+        option_name: 'Feedback survey top text'
+      - code: ru
+        option_name: 'Заголовок опросника'
+  - name: cs_text_rating_1
+    category: QSL\CustomerSatisfaction
+    type: 'XLite\View\FormField\Textarea\Simple'
+    orderby: 80
+    value: 'We are very sorry to see you dissatified. Please help us improve our services by filling the short survey.'
+    translations:
+      - code: en
+        option_name: '"Awful" rating landing page text'
+      - code: ru
+        option_name: 'Текст для рейтинга "Очень плохо"'
+  - name: cs_text_rating_2
+    category: QSL\CustomerSatisfaction
+    type: 'XLite\View\FormField\Textarea\Simple'
+    orderby: 90
+    value: 'We are very sorry to see you dissatified. Please help us improve our services by filling the short survey.'
+    translations:
+      - code: en
+        option_name: '"Bad" rating landing page text'
+      - code: ru
+        option_name: 'Текст для рейтинга "Плохо"'
+  - name: cs_text_rating_3
+    category: QSL\CustomerSatisfaction
+    type: 'XLite\View\FormField\Textarea\Simple'
+    orderby: 100
+    value: 'What would you recommend to change so you can give us 5 stars? Please help us improve our services by filling the short survey.'
+    translations:
+      - code: en
+        option_name: '"Fair" rating landing page text'
+      - code: ru
+        option_name: 'Текст для рейтинга "Удовлетворительно"'
+  - name: cs_text_rating_4
+    category: QSL\CustomerSatisfaction
+    type: 'XLite\View\FormField\Textarea\Simple'
+    orderby: 110
+    value: 'What would you recommend to change so you can give us 5 stars? Please help us improve our services by filling the short survey.'
+    translations:
+      - code: en
+        option_name: '"Good" rating landing page text'
+      - code: ru
+        option_name: 'Текст для рейтинга "Хорошо"'
+  - name: cs_text_rating_5
+    category: QSL\CustomerSatisfaction
+    type: 'XLite\View\FormField\Textarea\Simple'
+    orderby: 120
+    value: 'Thank you for your feedback! We are glad you enjoyed shopping with us. Please share your experience with the world.'
+    translations:
+      - code: en
+        option_name: '"Excelent" rating landing page text'
+      - code: ru
+        option_name: 'Текст для рейтинга "Отлично"'
+
+QSL\CustomerSatisfaction\Model\Question:
+  - question: 'How fast was the order delivered?'
+    orderby: 10
+    enabled: true
+    translations:
+      - code: en
+        question: 'How fast was the order delivered?'
+      - code: ru
+        question: 'Насколько быстро был доставлен заказ?'
+  - question: 'How accurate is the product description at our website?'
+    orderby: 20
+    enabled: true
+    translations:
+      - code: en
+        question: 'How accurate is the product description at our website?'
+      - code: ru
+        question: 'Насколько точным является описание товара в интернет магазине?'
+  - question: 'Have the product met your expectations?'
+    orderby: 30
+    enabled: true
+    translations:
+      - code: en
+        question: 'Have the product met your expectations?'
+      - code: ru
+        question: 'Удовлетворяет ли товар вашим ожиданиям?'
+  - question: 'Would you order again at our store?'
+    orderby: 40
+    enabled: true
+    translations:
+      - code: en
+        question: 'Would you order again at our store?'
+      - code: ru
+        question: 'Планируете ли вы совершать покупки в нашем магазине в будущем?'
+
+XLite\Model\Notification:
+  - templatesDirectory: modules/QSL/CustomerSatisfaction/customer_notification
+    position: 500
+    availableForAdmin: false
+    availableForCustomer: true
+    enabledForAdmin: false
+    enabledForCustomer: true
+    adminHeaderEnabled: true
+    adminGreetingEnabled: false
+    adminSignatureEnabled: true
+    customerHeaderEnabled: true
+    customerGreetingEnabled: true
+    customerSignatureEnabled: true
+    editable: true
+    module: QSL\CustomerSatisfaction
+    translations:
+      - code: en
+        name: 'Order feedback request (Customer Satisfaction module)'
+        description: 'This notification is sent to the customer after the customer places an order'
+        customerSubject: 'Please leave your feedback on order #%order_number%'
+        customerText: 'Thank you for shopping with %company_name%<br/>Please rate your experience for order #%order_number%'
+      - code: ru
+        name: Запрос обратной связи по заказу (модуль Customer Satisfaction)
+        description: "Данное сообщение используется для запроса обратной связи по заказу покупателя."
+        customerSubject: 'Пожалуйста, оцените заказ №%order_number%'
+        customerText: ""
+  - templatesDirectory: modules/QSL/CustomerSatisfaction/feedback
+    position: 500
+    availableForAdmin: true
+    availableForCustomer: false
+    enabledForAdmin: true
+    enabledForCustomer: false
+    adminHeaderEnabled: true
+    adminGreetingEnabled: false
+    adminSignatureEnabled: true
+    customerHeaderEnabled: false
+    customerGreetingEnabled: false
+    customerSignatureEnabled: false
+    editable: true
+    module: QSL\CustomerSatisfaction
+    translations:
+      - code: en
+        name: 'Feedback posted (Customer Satisfaction module)'
+        description: 'This notification is sent to the admin when a somebody left feedback on an order.'
+        adminSubject: 'Customer left feedback on order #%order_number%'
+        adminText: 'Hey boss, a customer has left feedback order %order_number%'
+      - code: ru
+        name: Получена обратная связь по заказу (модуль Customer Satisfaction)
+        description: "Данное сообщение используется для оповещения администратора о поступившей обратной связи."
+        adminSubject: 'Новый отзыв по заказу №%order_number%'
+        adminText: ""
+
+XLite\Model\LanguageLabel:
+  - { name: "We are very sorry to see you dissatified. Please help us improve our services by filling the short survey.", translations: [{ code: en, label: "We are very sorry to see you dissatified. Please help us improve our services by filling the short survey." }, { code: ru, label: "Мы сожалеем, что вы разочарованы. Помогите нам улучшить качество нашего сервиса, заполнив этот короткий опрос."}] }
+  - { name: "What would you recommend to change so you can give us 5 stars? Please help us improve our services by filling the short survey.", translations: [{ code: en, label: "What would you recommend to change so you can give us 5 stars? Please help us improve our services by filling the short survey." }, { code: ru, label: "Чего бы вы порекомендовали нам изменить, чтобы вы дали нам 5 звезд? Помогите нам улучшить качество нашего сервиса, заполнив этот короткий опрос."}] }
+  - { name: "Thank you for your feedback! We are glad you enjoyed shopping with us. Please share your experience with the world.", translations: [{ code: en, label: "Thank you for your feedback! We are glad you enjoyed shopping with us. Please share your experience with the world." }, { code: ru, label: "Спасибо за ваш отзыв! Мы рады что вам понравилось. Поделитесь вашим опытом с другими."}] }
+  - { name: "How fast was the order delivered?'", translations: [{ code: en, label: "How fast was the order delivered?'" }, { code: ru, label: "Как быстро был доставлен заказ?"}] }
+  - { name: "How accurate is the product description at our website?", translations: [{ code: en, label: "How accurate is the product description at our website?" }, { code: ru, label: "Точное ли описание продукта на нашем сайте?"}] }
+  - { name: "Have the product met your expectations?", translations: [{ code: en, label: "Have the product met your expectations?" }, { code: ru, label: "Оправдал ли продукт ваши ожидания?"}] }
+  - { name: "Would you order again in our store?", translations: [{ code: en, label: "Would you order again at our store?" }, { code: ru, label: "Сделали бы вы заказ в нашем магазине еще раз?"}] }
+  - { name: "Please leave your comments:", translations: [{ code: en, label: "Please leave your comments:" }, { code: ru, label: "Пожалуйста, оставьте ваши комментарии."}] }
+  - { name: "Definitely no", translations: [{ code: en, label: "Definitely no" }, { code: ru, label: "Определенно нет"}] }
+  - { name: "Definitely yes", translations: [{ code: en, label: "Definitely yes" }, { code: ru, label: "Определенно да"}] }
+  - { name: "Thank you for shopping with X", translations: [{ code: en, label: "Thank you for shopping with {{company}}" }, { code: ru, label: "Спасибо за шоппинг с {{company}}"}] }
+  - { name: "Hello X", translations: [{ code: en, label: "Hello {{name}}" }, { code: ru, label: "Здравствуйте, {{name}}"}] }
+  - { name: "Please rate your experience for order X:", translations: [{ code: en, label: "Please rate your experience for order #{{orderId}}:" }, { code: ru, label: "Пожалуйста, оцените заказ #{{orderId}}:"}] }
+  - { name: "Like us", translations: [{ code: en, label: "Like us" }, { code: ru, label: "'Лайкните' нас"}] }
+  - { name: "or share your thoughts about us", translations: [{ code: en, label: "or share your thoughts about us" }, { code: ru, label: "или поделитесь своими мыслями о нас"}] }
+  - { name: "Share your thoughts about us", translations: [{ code: en, label: "Share your thoughts about us" }, { code: ru, label: "Расскажите о нас"}] }
+  - { name: "Not rated", translations: [{ code: en, label: "Not rated" }, { code: ru, label: "Нет оценок"}] }
+  - { name: "Customer rating:", translations: [{ code: en, label: "Customer rating:" }, { code: ru, label: "Пользовательский рейтинг"}] }
+  - { name: "Feedback is not processed yet", translations: [{ code: en, label: "Feedback is not processed yet" }, { code: ru, label: "Отзыв еще не обработан."}] }
+  - { name: "Feedback is not added yet", translations: [{ code: en, label: "Feedback is not added yet" }, { code: ru, label: "Отзыв еще не добавлен."}] }
+  - { name: "Last date when feedback was processed:", translations: [{ code: en, label: "Last date when feedback was processed:" }, { code: ru, label: "Последний раз, когда отзыв был обработан:"}] }
+  - { name: "Last date when feedback was added:", translations: [{ code: en, label: "Last date when feedback was added:" }, { code: ru, label: "Последний, раз когда отзыв был отправлен:"}] }
+  - { name: "Last date when email was sent:", translations: [{ code: en, label: "Last date when email was sent:" }, { code: ru, label: "Последний раз, когда письмо было отправлено:"}] }
+  - { name: "General survey information", translations: [{ code: en, label: "General survey information" }, { code: ru, label: "Общая информация об опросе"}] }
+  - { name: "Staff section", translations: [{ code: en, label: "Staff section" }, { code: ru, label: "Секция для персонала"}] }
+  - { name: "Order X:", translations: [{ code: en, label: "Order #:" }, { code: ru, label: "Заказ #:"}] }
+  - { name: "Order total:", translations: [{ code: en, label: "Order total:" }, { code: ru, label: "Сумма заказа:"}] }
+  - { name: "Survey details", translations: [{ code: en, label: "Survey details" }, { code: ru, label: "Детали опроса"}] }
+  - { name: "Customer comment:", translations: [{ code: en, label: "Customer comment:" }, { code: ru, label: "Комментарий покупателя:"}] }
+  - { name: "Status:", translations: [{ code: en, label: "Status:" }, { code: ru, label: "Статус:"}] }
+  - { name: "I will process this feedback", translations: [{ code: en, label: "I will process this feedback" }, { code: ru, label: "Я обработаю этот отзыв"}] }
+  - { name: "Issue is solved/closed", translations: [{ code: en, label: "Issue is solved/closed" }, { code: ru, label: "Проблема решена/закрыта"}] }
+  - { name: "Staff comments:", translations: [{ code: en, label: "Staff comments:" }, { code: ru, label: "Комментарии персонала:"}] }
+  - { name: "Tags:", translations: [{ code: en, label: "Tags:" }, { code: ru, label: "Тэги:"}] }
+  - { name: "Enter one or more tags separated with the comma", translations: [{ code: en, label: "Enter one or more tags separated with the comma" }, { code: ru, label: "Введите один или несколько тэгов, разделенных запятой"}] }
+  - { name: "Survey Tags", translations: [{ code: en, label: "Survey Tags" }, { code: ru, label: "Тэги опроса"}] }
+  - { name: "Feedback has been added", translations: [{ code: en, label: "Feedback has been added" }, { code: ru, label: "Отзыв был добавлен"}] }
+  - { name: "Thank you for your feedback!", translations: [{ code: en, label: "Thank you for your feedback!" }, { code: ru, label: "Спасибо за ваш отзыв!"}] }
+  - { name: "All", translations: [{ code: en, label: "All" }, { code: ru, label: "Все"}] }
+  - { name: "All Unclosed", translations: [{ code: en, label: "All Unclosed" }, { code: ru, label: "Все незакрытые"}] }
+  - { name: "New", translations: [{ code: en, label: "New" }, { code: ru, label: "Новый"}] }
+  - { name: "In Progress", translations: [{ code: en, label: "In Progress" }, { code: ru, label: "В процессе"}] }
+  - { name: "Closed", translations: [{ code: en, label: "Closed" }, { code: ru, label: "Закрыт"}] }
+  - { name: "Customer has left feedback order X", translations: [{ code: en, label: "Customer has left feedback order {{orderId}}" }, { code: ru, label: "Покупатель оставил отзыв о заказе {{orderId}}"}] }
+  - { name: "The Feedback was already sent.", translations: [{ code: en, label: "The Feedback was already sent. If you have any additional comments please contact us using Contact Us form." }, { code: ru, label: "Отзыв уже отправлен. Если у вас есть дополнительные комментарии, воспользуйтесь страницей 'Связаться с нами'"}] }
+  - { name: "Enjoyed shopping with X", translations: [{ code: en, label: "Enjoyed shopping with {{company}}" }, { code: ru, label: "Понравился шоппинг с {{company}}"}] }
+  - { name: "Feedback request X", translations: [{ code: en, label: "Feedback request: order #{{orderId}}" }, { code: ru, label: "Запрос на отзыв для заказа #{{orderId}}"}] }
+  - { name: "Thanks for the highest rating given to us", translations: [{ code: en, label: "Thanks for the highest rating given to us" }, { code: ru, label: "Спасибо за высокую оценка нашей работы."}] }
+  - { name: "Manage Customer Feedback", translations: [{ code: en, label: "Manage Customer Feedback" }, { code: ru, label: "Отзывы покупателей"}] }
+  - { name: "Earn up to X for rating of purchased products:", translations: [{ code: en, label: "Earn up to {{points_num}} points for rating of purchased products:" }, { code: ru, label: "Получите до {{points_num}} бонусных баллов за оценку купленных товаров:"}] }
+  - { name: "by payment status", translations: [{ code: en, label: "by payment status" }, { code: ru, label: "по статусу оплаты"}] }
+  - { name: "in X days after purchase", translations: [{ code: en, label: "in X days after purchase" }, { code: ru, label: "через Х дней после покупки"}] }
+  - { name: "Feedback questions", translations: [{ code: en, label: "Feedback questions" }, { code: ru, label: "Вопросы обратной связи"}] }
+  - { name: "Customer feedback", translations: [{ code: en, label: "Customer feedback" }, { code: ru, label: "Обратная связь"}] }
+  - { name: "All Statuses", translations: [{ code: en, label: "All Statuses" }, { code: ru, label: "Любой статус"}] }
+  - { name: "Order Number:", translations: [{ code: en, label: "Order Number:" }, { code: ru, label: "Номер заказа"}] }
+  - { name: "Share your experience with us", translations: [{ code: en, label: "Share your experience with us" }] }
+  - { name: "Awful", translations: [{ code: en, label: "Awful" }, { code: ru, label: "Очень плохо"}] }
+  - { name: "Bad", translations: [{ code: en, label: "Bad" }, { code: ru, label: "Плохо"}] }
+  - { name: "Fair", translations: [{ code: en, label: "Fair" }, { code: ru, label: "Удовлетворительно"}] }
+  - { name: "Good", translations: [{ code: en, label: "Good" }, { code: ru, label: "Хорошо"}] }
+  - { name: "Excellent", translations: [{ code: en, label: "Excellent" }, { code: ru, label: "Отлично"}] }

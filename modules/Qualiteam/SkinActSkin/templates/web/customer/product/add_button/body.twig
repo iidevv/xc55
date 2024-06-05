@@ -1,0 +1,12 @@
+{# #
+ # Add to bag buttons
+#}
+{% apply spaceless %}
+  <div class="add-button-wrapper {{ this.getFingerprint() }}">
+    {% if not this.isAllStockInCart() and this.isProductAvailableForSale() %}
+      {{ widget('\\XLite\\View\\Button\\Submit', label=t(this.getAddButtonLabel()), style='regular-main-button add2cart btn-lg') }}
+    {% elseif this.isAllStockInCart() and this.isProductAvailableForSale() %}
+      {{ widget('\\XLite\\View\\Button\\Link', label=t('View cart'), location=xurl('cart') , style='regular-main-button btn-lg') }}
+    {% endif %}
+  </div>
+{% endapply %}

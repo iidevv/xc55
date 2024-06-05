@@ -1,0 +1,5 @@
+Version 5.5.0.8
+
+Fixes (1)
+2023-06-07 - [Bug] It was not possible to select one of the variants under certain conditions. Fixed. #XCB-2448 #XC-ProductVariants
+

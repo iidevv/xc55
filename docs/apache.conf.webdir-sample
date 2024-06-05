@@ -1,0 +1,63 @@
+## X-Cart 5 apache 2.4 sample configuration
+#
+# Replace placeholders:
+# {{web-dir}} - web dir value
+# {{root-full-path}} - real full path of host handler app
+# {{public-full-path}} - real full path of public dir (must not be a subdir of root-full-path)
+#
+# Example
+#
+# Host handler app path: /var/www/http
+# Xcart installation path: /var/www/xcart
+# Expected URL: https://localhost/some/dir
+#
+# web-dir: some/dir
+# root-full-path: /var/www/http
+# public-full-path: /var/www/xcart/public
+#
+
+LoadModule proxy_module lib/httpd/modules/mod_proxy.so
+LoadModule proxy_fcgi_module lib/httpd/modules/mod_proxy_fcgi.so
+LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
+
+DocumentRoot {{root-full-path}}
+
+ServerName xcart.test
+
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+
+    Alias /{{web-dir}} {{public-full-path}}
+
+    <Directory {{public-full-path}}>
+        DirectoryIndex index.php
+
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+        FallbackResource /index.php
+
+        <IfModule mod_rewrite.c>
+            Options -MultiViews
+
+            RewriteEngine On
+
+            RewriteRule ^sitemap.xml(\?.+)?$ /?target=sitemap [NC,L,QSA]
+
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^ index.php [QSA,L]
+        </IfModule>
+
+    </Directory>
+
+    <Directory {{root-full-path}}>
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    <FilesMatch ".php$">
+        SetHandler "proxy:fcgi://127.0.0.1:9000"
+    </FilesMatch>
+
+</VirtualHost>

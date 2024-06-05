@@ -1,0 +1,147 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Task:
+  - owner: Qualiteam\SkinActAftership\Core\Task\CheckTrackNumbersToSyncAftership
+
+XLite\Model\Config:
+  - name: account_settings
+    type: separator
+    category: Qualiteam\SkinActAftership
+    module: Qualiteam\SkinActAftership
+    orderby: 1000
+    translations:
+      - code: en
+        option_name: SkinActAftership account setting
+
+  - name: api_key
+    type: text
+    value: ''
+    category: Qualiteam\SkinActAftership
+    module: Qualiteam\SkinActAftership
+    orderby: 1100
+    translations:
+      - code: en
+        option_name: SkinActAftership api key
+
+  - name: customs_methods
+    type: separator
+    category: Qualiteam\SkinActAftership
+    module: Qualiteam\SkinActAftership
+    orderby: 2000
+    translations:
+      - code: en
+        option_name: SkinActAftership custom shippings method trackit links
+
+  - name: cm_customco
+    type: text
+    category: Qualiteam\SkinActAftership
+    module: Qualiteam\SkinActAftership
+    value: 'https://api.customco.com/scripts/cgiip.exe/facts.htm?startpage=protrace&pronum='
+    orderby: 2100
+    translations:
+      - code: en
+        option_name: SkinActAftership customco
+
+  - name: cm_roadrunnerfreight
+    type: text
+    category: Qualiteam\SkinActAftership
+    module: Qualiteam\SkinActAftership
+    value: 'https://freight.rrts.com/Tools/Tracking/Pages/MultipleResults.aspx?PROS='
+    orderby: 2200
+    translations:
+      - code: en
+        option_name: SkinActAftership roadrunnerfreight
+
+  - name: smsv_settings
+    type: separator
+    category: General
+    orderby: 200000
+    translations:
+      - code: en
+        option_name: SkinActAftership shipping method section video
+
+  - name: smsv_youtube_link
+    type: Qualiteam\SkinActAftership\View\FormField\Input\Text
+    value: '<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ACyrLvTw0cE" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>'
+    category: General
+    orderby: 210000
+    translations:
+      - code: en
+        option_name: SkinActAftership youtube link
+        option_comment: SkinActAftership youtube link helper
+
+  - name: smsv_display_mandatory_checkbox
+    type: checkbox
+    value: Y
+    category: General
+    orderby: 220000
+    translations:
+      - code: en
+        option_name: SkinActAftership display mandatory checkbox
+
+  - name: smsv_text_checkbox
+    type: text
+    value: 'I have watched the video and I understand how shipping for large size items works.'
+    category: General
+    orderby: 230000
+    translations:
+      - code: en
+        option_name: SkinActAftership text for the checkbox
+
+Qualiteam\SkinActAftership\Model\ShipstationCodeMapping:
+  - { shipstation_slug: rl, aftership_slug: rl-carriers }
+  - { shipstation_slug: rr, aftership_slug: roadrunner-freight }
+  - { shipstation_slug: xp, aftership_slug: xpo-logistics }
+  - { shipstation_slug: dl, aftership_slug: dylt }
+  - { shipstation_slug: pf, aftership_slug: pilot-freight }
+  - { shipstation_slug: custom, aftership_slug: customco-api }
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActAftership account setting", translations: [{ code: en, label: "Account setting" }] }
+  - { name: "SkinActAftership api key", translations: [{ code: en, label: "API key" }] }
+  - { name: "SkinActAftership couriers import setting", translations: [{ code: en, label: "Couriers import setting" }] }
+  - { name: "SkinActAftership get a list of all couriers", translations: [{ code: en, label: "Get a list of all couriers" }] }
+  - { name: "SkinActAftership last update on x. x couriers imported", translations: [{ code: en, label: "Last update on {{date}}. {{couriers_count}} couriers imported" }] }
+  - { name: "SkinActAftership received list of couriers is empty", translations: [{ code: en, label: "Received list of couriers is empty" }] }
+  - { name: "SkinActAftership list of couriers successfully created", translations: [{ code: en, label: "List of couriers successfully created" }] }
+  - { name: "SkinActAftership updated successful verify couriers slug code on the shipping methods page", translations: [{ code: en, label: 'Updated successful! Verify couriers slug code on the shipping methods <a href="{{page}}" target="_blank">page</a>.' }] }
+  - { name: "SkinActAftership couriers", translations: [{ code: en, label: "Aftership couriers" }] }
+  - { name: "SkinActAftership please enter 3 or more characters", translations: [{ code: en, label: "Please enter 3 or more characters" }] }
+  - { name: "SkinActAftership none", translations: [{ code: en, label: "None" }] }
+  - { name: "SkinActAftership tracking number x is set a aftership courier x", translations: [{ code: en, label: "Tracking number \"{{number}}\" is set a aftership courier \"{{courier_name}}\"" }] }
+  - { name: "SkinActAftership tracking number x is changed aftership courier from x to x", translations: [{ code: en, label: "Tracking number \"{{number}}\" is changed aftership courier from \"{{courier_name_old}}\" to \"{{courier_name_new}}\"" }] }
+  - { name: "SkinActAftership track it button", translations: [{ code: en, label: "Track It!" }] }
+  - { name: "SkinActAftership warning message", translations: [{ code: en, label: "If you change a shipping method, carrier will be dropped" }] }
+  - { name: "SkinActAftership signed by", translations: [{ code: en, label: "Signed By:" }] }
+  - { name: "SkinActAftership estimated delivery", translations: [{ code: en, label: "Estimated Delivery:" }] }
+  - { name: "SkinActAftership shipping method section video", translations: [{ code: en, label: "Shipping method section video" }] }
+  - { name: "SkinActAftership youtube link", translations: [{ code: en, label: "Youtube link" }] }
+  - { name: "SkinActAftership display mandatory checkbox", translations: [{ code: en, label: "Display mandatory checkbox" }] }
+  - { name: "SkinActAftership text for the checkbox", translations: [{ code: en, label: "Text for the checkbox" }] }
+  - { name: "SkinActAftership youtube link helper", translations: [{ code: en, label: "If youtube embed video link is set, then on checkout an embedded video will be displayed." }] }
+  - { name: "SkinActAftership you have to accept how shipping for large size items works", translations: [{ code: en, label: "You have to accept how shipping for large size items works" }] }
+  - { name: "SkinActAftership order tracking", translations: [{ code: en, label: "Order tracking" }] }
+  - { name: "SkinActAftership custom shippings method trackit links", translations: [{ code: en, label: "Custom shipping's method \"TrackIt!\" links" }] }
+  - { name: "SkinActAftership customco", translations: [{ code: en, label: "CustomCo" }] }
+  - { name: "SkinActAftership roadrunnerfreight", translations: [{ code: en, label: "Road Runner Freight" }] }
+  - { name: "SkinActAftership courier slug x not found", translations: [{ code: en, label: 'Courier slug "{{slug}}" not found. Please update couriers code list on <a href="{{url}}" target="_blank">module settings page</a>' }] }
+  - { name: "SkinActAftership carrier was not found for this tracking", translations: [{ code: en, label: "Carrier was not found for this tracking. Check the order history" }] }
+  - { name: "SkinActAftership code mapping", translations: [{ code: en, label: "Code mapping" }] }
+  - { name: "SkinActAftership create a custom carrier slug combination to connect service shipstation and aftership", translations: [{ code: en, label: "Create a custom carrier slug combination to connect service Shipstation and Aftership" }] }
+  - { name: "SkinActAftership x items has been removed", translations: [ { code: en, label: "{{count}} entities removed" } ] }
+  - { name: "SkinActAftership x items has been created", translations: [ { code: en, label: "{{count}} entities created" } ] }
+  - { name: "SkinActAftership aftership slug", translations: [ { code: en, label: "Aftership slug" } ] }
+  - { name: "SkinActAftership shipstation slug", translations: [ { code: en, label: "Shipstation slug" } ] }
+  - { name: "SkinActAftership add condition", translations: [{ code: en, label: "Add condition" }] }
+  - { name: "SkinActAftership table is empty", translations: [{ code: en, label: "Table is empty." }] }
+  - { name: "SkinActAftership the pair x is already exist", translations: [{ code: en, label: "The pair \"{{pair}}\" is already exist" }] }
+  - { name: "SkinActAftership the shipstation courier slug x is already exist", translations: [{ code: en, label: "The shipstation courier slug \"{{slug}}\" is already exist" }] }
+  - { name: "SkinActAftership please select or create and select customco shipping method for checking a tracking number", translations: [{ code: en, label: "Please select or create and select \"CustomCo\" shipping method for checking a tracking number" }] }
+  - { name: "SkinActAftership please select or create and select roadrunner shipping method for checking a tracking number", translations: [{ code: en, label: "Please select or create and select \"Road Runner Freight\" shipping method for checking a tracking number" }] }
+  - { name: "SkinActAftership couriers help", translations: [{ code: en, label: "The selection of carriers is a prerequisite for the proper operation of the Aftership module. To ensure accurate tracking functionality, kindly choose the relevant couriers from the available options." }] }
+  - { name: "SkinActAftership list of couriers based on tracking number is empty", translations: [{ code: en, label: "List of couriers based on tracking number is empty" }] }

@@ -1,0 +1,67 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+
+/**
+ * Simple blocks styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.has-tips {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tip-block {
+  position: relative;
+  display: table;
+  padding: 0;
+  margin: 0;
+
+  .settings-a-p-i-settings & {
+    display: none;
+  }
+}
+
+.tip-block .info {
+  position: absolute;
+  top: 0;
+  left: -(0.5 * @rhythmic-unit);
+  margin: 0 (0.5 * @rhythmic-unit) (0.5 * @rhythmic-unit) 0;
+  object-fit: contain;
+  background-color: @color-white;
+  width: @rhythmic-unit;
+  height: @line-height-base;
+
+  svg {
+    width: @rhythmic-unit;
+    height: @rhythmic-unit;
+  }
+}
+
+.tip-block .tip-head {
+  padding-left: @rhythmic-unit;
+  margin-bottom: 0.5 * @rhythmic-unit;
+}
+
+.tip-block .tip-content-rows {
+  padding-left: @rhythmic-unit;
+  border-left: solid @border-base @color-border;
+  border-style: dashed;
+}
+
+.tip-block .tip-content-rows li {
+  margin: 0 0 (0.5 * @rhythmic-unit) 0;
+}
+
+
+.tip-block .tip-content {
+  width: 245px;
+  padding-right: @rhythmic-unit;
+}
+
+@media all and (max-width: @screen-md-max) {
+  .tip-block {
+    display: none;
+  }
+}

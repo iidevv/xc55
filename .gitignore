@@ -1,0 +1,18 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE and editor directories
+.phar/
+.vscode/
+
+cronlog.log
+
+vendor/
+var/
+public/
+service-tool/
+
+# config
+.env
+.env.*

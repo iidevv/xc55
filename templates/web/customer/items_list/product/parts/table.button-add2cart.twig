@@ -1,0 +1,11 @@
+{##
+ # Item buttons
+ #
+ # @ListChild (list="itemsList.product.table.customer.columns", weight="50")
+ #}
+
+<div class="add-to-cart-container">
+  {{ widget(template='items_list/product/parts/common.button-add2cart.twig') }}
+  {{ this.getChangeQtyBlockWidget().display()|raw }}
+  {{ widget_list('itemsList.product.table.customer.add2cart') }}
+</div>

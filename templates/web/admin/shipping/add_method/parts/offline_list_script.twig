@@ -1,0 +1,46 @@
+{##
+ # JS script for offline methods list
+ #}
+
+<script>
+  function PopupButtonNewOrEditShippingMethod()
+  {
+    PopupButtonNewOrEditShippingMethod.superclass.constructor.apply(this, arguments);
+  }
+
+  extend(PopupButtonNewOrEditShippingMethod, PopupButton);
+
+  PopupButtonNewOrEditShippingMethod.prototype.pattern = '.shipping-methods-popup .edit-shipping-method-button';
+
+  decorate(
+          'PopupButtonNewOrEditShippingMethod',
+          'eachClick',
+          function (elem)
+          {
+            if (jQuery('.ajax-container-loadable.widget-shipping-editmethod').length) {
+              jQuery('.ajax-container-loadable.widget-shipping-editmethod').closest('.ui-widget-content').remove();
+            }
+
+            jQuery(elem).toggleClass('always-reload', elem.linkedDialog && jQuery(elem.linkedDialog).length === 0);
+
+            arguments.callee.previousMethod.apply(this, arguments);
+          }
+  );
+
+  decorate(
+          'PopupButtonNewOrEditShippingMethod',
+          'callback',
+          function ()
+          {
+            xcart.microhandlers.add(
+                    'ItemsListMarkups',
+                    '.offline-shipping-create',
+                    function () {
+                      xcart.autoload(TableItemsListQueue);
+                    }
+            )
+          }
+  );
+
+  xcart.autoload(PopupButtonNewOrEditShippingMethod);
+</script>

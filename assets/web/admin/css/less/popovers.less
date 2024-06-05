@@ -1,0 +1,81 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+
+/**
+ * Popovers styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.popover {
+  padding: 0;
+  border: 0;
+  border-radius: @popover-border-radius;
+  max-width: @popover-max-width;
+  min-width: max-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  box-shadow: @popover-shadow;
+
+  .popover-content {
+    padding: 0.5 * @rhythmic-unit;
+    font-size: @font-size-very-small;
+    line-height: @line-height-small-text;
+    color: @popover-color;
+    max-width: @popover-max-width;
+
+    * {
+      font-size: @font-size-very-small;
+    }
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.custom-disc li:before {
+      width: 4px;
+      height: 4px;
+      top: 10px;
+      left: 10px;
+    }
+  }
+
+  &.top {
+    margin-top: -16px;
+  }
+
+  &.right {
+    margin-left: 16px;
+  }
+
+  &.bottom {
+    margin-top: 16px;
+  }
+
+  &.left {
+    margin-left: -16px;
+  }
+
+  &.bottom,
+  &.left,
+  &.right,
+  &.top {
+    > .arrow {
+      border-color: transparent;
+    }
+  }
+
+  &--left-column {
+    ~ .popover {
+      left: -@rhythmic-unit / 2 !important;
+      > .arrow {
+        margin-left: @iconfont-width;
+        left: 0 !important;
+      }
+    }
+  }
+}

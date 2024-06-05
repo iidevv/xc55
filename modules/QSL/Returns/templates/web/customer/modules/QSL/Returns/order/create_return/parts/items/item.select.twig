@@ -1,0 +1,9 @@
+{##
+ # Name item cell
+ #
+ # @ListChild (list="create_return.item", weight="10")
+ #}
+
+<td class="select">
+  {{ widget('QSL\\Returns\\View\\FormField\\Input\\Checkbox\\SimpleInline', fieldId='select_' ~ this.item.getItemId(), fieldName='select[' ~ this.item.getItemId() ~ ']', fieldOnly='true') }}
+</td>

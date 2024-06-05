@@ -1,0 +1,5 @@
+Version 5.5.0.9
+
+Fixes (1)
+2023-06-15 - [Bug] A product variant with QTY=0 could not be backordered. Fixed. #XCB-2432 #QSL-BackInStock #QSL-Backorder
+

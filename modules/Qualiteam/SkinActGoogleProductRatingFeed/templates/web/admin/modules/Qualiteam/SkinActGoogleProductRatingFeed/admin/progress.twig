@@ -1,0 +1,16 @@
+{##
+ # Google feed generation progress section
+#}
+
+<div class="generation-progress event-task-progress-page">
+
+  <div class="content">
+    {% form 'Qualiteam\\SkinActGoogleProductRatingFeed\\View\\Form\\FeedGeneration' with {formAction: 'feedRatingGenerationCancel'} %}
+      <div class="subcontent clearfix">
+        {{ widget('XLite\\View\\EventTaskProgress', event=this.getEventName(), message=this.getProgressMessage(), showCancel=false ) }}
+      </div>
+      {{ widget('XLite\\View\\StickyPanel\\EventProgress') }}
+    {% endform %}
+  </div>
+
+</div>

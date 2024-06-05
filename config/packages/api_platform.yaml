@@ -1,0 +1,44 @@
+api_platform:
+    title: 'X-Cart API'
+    description: "X-Cart API
+
+        # Authentication
+
+        All REST API queries require a valid X-Cart access token.<br /><br />
+        You can find access tokens (one for read only requests and one for read/write requests) in the API section of your store's Admin area (Settings -> API).<br /><br />
+        Be sure to include your token as an **X-AUTH-TOKEN** header on all API queries.
+
+        # Localization
+
+        X-Cart REST API supports multiple languages, but all the requests are made in the same language. The language is set using the **Accept-Language** request HTTP header
+        [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language)<br /><br />
+        If the header has not been sent, the default language as specified in the store settings is used."
+    version: '1.0.0'
+    enable_swagger_ui: false
+    enable_re_doc: true
+    resource_class_directories:
+        - '%kernel.project_dir%/var/run/classes/XLite/Model'
+    mapping:
+        paths:
+#            - '%kernel.project_dir%/var/run/classes/XLite/Model'
+#            - '%kernel.project_dir%/var/run/classes/XLite/Module/*/*/Model'
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [2,3]
+        api_keys:
+            Token: { name: 'X-Auth-Token', type: 'header' }
+    messenger:
+        enabled: true
+    formats:
+        json:
+            mime_types: [ 'application/json' ]
+        jsonld:
+            mime_types: [ 'application/ld+json' ]
+        html:
+            mime_types: [ 'text/html' ]
+    collection:
+        pagination:
+            client_items_per_page: true
+            items_per_page_parameter_name: itemsPerPage
+            maximum_items_per_page: 100

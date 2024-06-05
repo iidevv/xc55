@@ -1,0 +1,39 @@
+{##
+ # Klarna configuration page
+#}
+
+<ul class="table model-properties settings-table klarna">
+  <li>
+    {{ widget('XLite\\View\\FormField\\Select\\TestLiveMode',
+      fieldId='settings_mode',
+      fieldName='settings[mode]',
+      value=this.paymentMethod.getSetting('mode'),
+      label=t('SkinActKlarna test/Live mode'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text',
+      fieldName='settings[username]',
+      fieldId='settings_username',
+      value=this.paymentMethod.getSetting('username'),
+      label=t('SkinActKlarna username'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text',
+      fieldName='settings[password]',
+      fieldId='settings_password',
+      value=this.paymentMethod.getSetting('password'),
+      label=t('SkinActKlarna password'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Select\\Currency',
+      fieldId='settings_currency',
+      fieldName='settings[currency]',
+      useCodeAsKey='true',
+      label=t('SkinActKlarna currency'),
+      value=this.paymentMethod.getSetting('currency')
+    ) }}
+  </li>
+</ul>

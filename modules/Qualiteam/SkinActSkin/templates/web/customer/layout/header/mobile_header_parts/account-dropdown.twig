@@ -1,0 +1,20 @@
+{##
+ # Account menu (mobile view)
+ #
+ # @ListChild (list="layout.header.mobile.menu.right", weight="200")
+ #}
+
+<div class="dropdown dropdown--account">
+  <div class="dropdown-menu">
+    <div class="dropdown-content--narrow">
+      <h2 class="dropdown__title account-links__title">{{ t('My account') }}</h2>
+        {% if this.isLogged()%}
+          {{ widget_list('layout.header.bar.links.account.logged') }}
+        {% else %}
+        <ul class="account-links__list">
+          {{ widget_list('layout.header.bar.links.account') }}
+        </ul>
+        {% endif %}
+    </div>
+  </div>
+</div>

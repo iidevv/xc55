@@ -1,0 +1,45 @@
+{{ widget('Qualiteam\\SkinActSkuVault\\View\\Model\\Settings') }}
+
+<div class="skuvault-manual-sync">Manual Sync</div>
+<div class="skuvault-buttons">
+  <div class="buttons-row">
+    <div class="skuvault-button-block">
+    {{ widget('XLite\\View\\Button\\Link', location=xurl('skuvault_commands', 'create_products'), label=t('Create products/Add inventory')) }}
+    {{ widget(
+      '\\XLite\\View\\Tooltip',
+      id='skuvault_create_products_tooltip',
+      text=t('[SkuVault] create_products_tooltip_text'),
+      className='help-small-icon skuvault-tooltip-products'
+    ) }}
+    </div>
+    <div class="skuvault-button-block">
+      {{ widget('XLite\\View\\Button\\Link', location=xurl('skuvault_commands', 'sync_inventory'), label=t('Sync inventory')) }}
+      {{ widget(
+        '\\XLite\\View\\Tooltip',
+        id='skuvault_sync_inventory_tooltip',
+        text=t('[SkuVault] sync_inventory_tooltip_text'),
+        className='help-small-icon skuvault-tooltip-products'
+      ) }}
+    </div>
+  </div>
+  <div class="buttons-row">
+    <div class="skuvault-button-block">
+      {{ widget('XLite\\View\\Button\\Link', location=xurl('skuvault_commands', 'update_products'), label=t('Update products')) }}
+      {{ widget(
+        '\\XLite\\View\\Tooltip',
+        id='skuvault_update_products_tooltip',
+        text=t('[SkuVault] update_products_tooltip_text'),
+        className='help-small-icon skuvault-tooltip-products'
+      ) }}
+    </div>
+    <div class="skuvault-button-block">
+      {{ widget('XLite\\View\\Button\\Link', location=xurl('skuvault_commands', 'check_inventory'), label=t('Check inventory')) }}
+      {{ widget(
+        '\\XLite\\View\\Tooltip',
+        id='skuvault_check_inventory_tooltip',
+        text=t('[SkuVault] check_inventory_tooltip_text'),
+        className='help-small-icon skuvault-tooltip-products'
+      ) }}
+    </div>
+  </div>
+</div>

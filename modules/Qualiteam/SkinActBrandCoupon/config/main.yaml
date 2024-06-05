@@ -1,0 +1,14 @@
+version: 5.5.0.0
+type: common
+authorName: Qualiteam
+moduleName: '[SkinAct] Brand coupon'
+description: 'Allow the admin to specify the Brand of the products the coupon code applies to while creating a coupon'
+minorRequiredCoreVersion: 0
+dependsOn:
+  - CDev-Coupons
+  - QSL-ShopByBrand
+  - Qualiteam-SkinActMain
+incompatibleWith: {  }
+skins: {  }
+showSettingsForm: false
+canDisable: true

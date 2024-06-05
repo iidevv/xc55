@@ -1,0 +1,12 @@
+{##
+ # Search by brand
+ #
+ # @listChild (list="products.search.conditions.advanced", weight="210")
+ #}
+
+{% if this.isBrandFieldVisible() %}
+  <tr>
+    <td class="option-name title-category title-brand">{{ t('Brand') }}:</td>
+    <td>{{ widget('\\QSL\\ShopByBrand\\View\\FormField\\Select\\Brand', value=this.getCondition('brandId'), fieldName='brandId', fieldOnly='true') }}</td>
+  </tr>
+{% endif %}

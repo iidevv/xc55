@@ -1,0 +1,57 @@
+/**
+ * Layout settings style
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+.layout-settings.settings {
+  .flex-display();
+
+  .preview {
+    margin-right: @rhythmic-unit;
+    .align-self(flex-end);
+    .flex-shrink(0);
+
+    img {
+      height: 300px;
+    }
+  }
+
+  .settings-list {
+    margin-left: 2 * @rhythmic-unit;
+  }
+
+
+  .current-template {
+    display: flex;
+    align-items: baseline;
+
+    & > span {
+      &.template-name {
+        margin-left: 0.25 * @rhythmic-unit;
+        color: @color-success;
+      }
+    }
+
+    .settings-form {
+      margin-left: @rhythmic-unit;
+    }
+  }
+
+  .layout-type-selector {
+    margin-bottom: @rhythmic-unit;
+  }
+
+  .settings-list > [class*='-switch'] {
+    margin-bottom: @rhythmic-unit;
+
+    & > * {
+      padding: 0;
+    }
+
+    .onoffswitch, .first-last-switch {
+      padding: 0;
+      height: auto;
+    }
+  }
+}

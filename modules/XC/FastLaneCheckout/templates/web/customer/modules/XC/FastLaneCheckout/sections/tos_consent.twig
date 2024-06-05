@@ -1,0 +1,12 @@
+{# #
+ # Terms & Conditions policy
+#}
+
+<tos-consent-checkbox inline-template>
+  <div class="ToS-consent-checkbox"
+       v-data='{"checked": false}'>
+    <div class="ToS-checkbox">
+      {{ widget("XLite\\View\\FormField\\Input\\ToSConsentCheckbox", forceShow=true, fieldName="ToSConsent", attributes={'v-model': "checked"}, label="I accept Terms and Conditions") }}
+    </div>
+  </div>
+</tos-consent-checkbox>

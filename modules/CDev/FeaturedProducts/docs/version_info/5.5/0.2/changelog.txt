@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-09-02 - [Bug] Featured products. An incorrect URL was opened if clicking on the Featured products block. Fixed. #XCB-1668 #CDev-FeaturedProducts
+

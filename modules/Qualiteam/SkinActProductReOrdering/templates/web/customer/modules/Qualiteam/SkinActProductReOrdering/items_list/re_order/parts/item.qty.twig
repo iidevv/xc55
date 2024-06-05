@@ -1,0 +1,9 @@
+{#
+ # @ListChild (list="reorder.item", weight="50")
+#}
+
+<td class="item-qty">
+    {% form '\\Qualiteam\\SkinActProductReOrdering\\View\\Form\\ReOrder\\Quantity' with {product: this.getProduct(), className: 'reorderproduct-quantity', validationEngine: '1'} %}
+    {{ widget('\\Qualiteam\\SkinActProductReOrdering\\View\\Product\\QuantityBox', fieldValue=this.getQuantity(), product=this.getProduct()) }}
+   {% endform %}
+</td>

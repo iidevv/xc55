@@ -1,0 +1,9 @@
+{##
+ # Entity switcher
+ #}
+
+{% if this.entity.getTooltipText() %}
+  {{ widget('XLite\\View\\Tooltip', text=t(this.entity.getTooltipText()), isImageTag='true', className='help-icon popover--left-column') }}
+{% elseif this.isAllowEntitySwitch(this.entity) %}
+  {{ widget(this.switcherField.class, idx=this.get('idx'), entity=this.entity, column=this.column, itemsList=this.getSelf(), fieldName=this.switcherField.name, fieldParams=this.switcherField.params) }}
+{% endif %}

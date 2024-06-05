@@ -1,0 +1,12 @@
+{##
+ # Product market price
+ #
+ #
+ # @ListChild (list="cart.item.info.xpayments_subscription", weight="100")
+ #}
+
+{% if not this.orderItem.hasTrialPeriod() %}
+  <div class="text">
+    <span>{{ t('Setup fee') }}:</span> {{ this.formatPrice(this.orderItem.getDisplayPrice() - this.orderItem.getXpaymentsDisplayFeePrice(), null, 1) }}
+  </div>
+{% endif %}

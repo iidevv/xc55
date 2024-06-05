@@ -1,0 +1,11 @@
+{##
+ # @ListChild (list="qsl.productquestions.list.item.parts.question", weight="100")
+ #}
+
+<span class="avatar fa fa-user"></span>
+<div class="author">{{ this.question.getName() }}</div>
+<div class="date">{{ this.formatTime(this.question.getDate()) }}</div>
+{% if not this.question.isReplied() %}
+  <div class="status">{{ t('Under moderation') }}</div>
+{% endif %}
+<h4 class="text">{{ this.question.getQuestion()|nl2br }}</h4>

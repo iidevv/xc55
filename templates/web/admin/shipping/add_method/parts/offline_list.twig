@@ -1,0 +1,21 @@
+{##
+ # Offline methods list
+ #}
+
+{% include this.getOfflineMethodsJSTemplate() %}
+
+<div class="shipping-methods-popup">
+  {% include this.getOfflineMethodsHelpTemplate() %}
+
+  <div class="buttons-container">
+    {{ widget(
+      'XLite\\View\\Button\\Shipping\\EditMethod',
+      {
+        label: 'Create new',
+        style: 'btn regular-button'
+      }
+    ) }}
+  </div>
+
+  {{ widget('XLite\\View\\ItemsList\\Model\\Shipping\\Popup\\Offline') }}
+</div>

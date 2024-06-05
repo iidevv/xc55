@@ -1,0 +1,32 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActFrequentlyBoughtTogether frequently bought together", translations: [ { code: en, label: "Frequently bought together" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether exclude from frequently bought together", translations: [ { code: en, label: "Exclude from Frequently bought together" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether category and tags and hide flags", translations: [ { code: en, label: "Category and tags and hide flags" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether category and hide flags", translations: [ { code: en, label: "Category and hide flags" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether wrong exclude frequently bought together column format", translations: [ { code: en, label: "Wrong exclude frequently bought together column format" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether total price", translations: [ { code: en, label: "Total price" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether add selected items to cart", translations: [ { code: en, label: "Add selected ({{itemsCount}}) to cart" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether login to add wishlist", translations: [ { code: en, label: "Login to add wishlist" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether add selected items to wishlist", translations: [ { code: en, label: "Add selected ({{itemsCount}}) to wishlist" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether selected products are added to your cart", translations: [ { code: en, label: "Selected product(s) are added to your cart" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether selected products are added to your wishlist", translations: [ { code: en, label: "Selected product(s) are added to your wishlist" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether the product you are trying to add to cart is unavailable", translations: [ { code: en, label: "The {{product}} you are trying to add to cart is unavailable" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether the products was not added to your wishlist. Try again", translations: [ { code: en, label: "The product(s) was not added to your wishlist. Try again" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether select all", translations: [ { code: en, label: "Select all" } ] }
+  - { name: "SkinActFrequentlyBoughtTogether unselect all", translations: [ { code: en, label: "Unselect all" } ] }
+
+XLite\Model\Config:
+  - name: sep_product_advisor_cbb
+    category: CDev\ProductAdvisor
+    type: XLite\View\FormField\Separator\Regular
+    orderby: 3000
+    translations:
+      - code: en
+        option_name: '"Frequently bought together" block settings'

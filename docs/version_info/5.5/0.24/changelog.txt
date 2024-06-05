@@ -1,0 +1,5 @@
+Version 5.5.0.24
+
+Fixes (1)
+2023-09-16 - [Bug] Webp format added for custom images. #XCB-2725 #CDev-Core
+

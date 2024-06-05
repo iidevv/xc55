@@ -1,0 +1,9 @@
+Version 5.5.0.4
+
+Improvements (1)
+2022-10-19 - [Task] Hooks refactoring #ECOM-2371 #CDev-Core #CDev-Sale #CDev-SimpleCMS #CDev-SalesTax #CDev-SocialLogin #CDev-VAT #CDev-Coupons #CDev-ContactUs #CDev-Paypal #CDev-Egoods #CDev-VolumeDiscounts #CDev-ProductAdvisor #CDev-XMLSitemap #QSL-BackInStock #QSL-FlyoutCategoriesMenu #QSL-MyWishlist #QSL-ProductStickers #QSL-VerifiedUsers #QSL-ColorSwatches #QSL-AbandonedCartReminder #QSL-TaxExempt #QSL-ShopByBrand #QSL-CustomerSatisfaction #QSL-ProductFeeds #QSL-AdvancedContactUs #QSL-Returns #QSL-Banner #XC-UPS #XC-GoogleFeed #XC-VendorPartners #XC-ThemeTweaker #XC-TaxJar #XC-ProductVariants #XC-ShopperApproved #XC-MailChimp #XC-CrispWhiteSkin #XC-News #XC-VendorMessages #XC-BlueSnap #XC-FreeShipping #XC-TrustedVendors #XC-Upselling #XC-UpdateInventory #XC-MultiVendor #XC-CanadaPost #XC-Reviews #QSL-ProductQuestions #QSL-HorizontalCategoriesMenu #QSL-reCAPTCHA
+
+Fixes (2)
+2022-11-16 - [Bug] Fatal error if attempting to create a variant for a product that did not exist. Fixed. #XCB-1856 #XC-ProductVariants
+2022-11-03 - [Bug] Corrected the field name in the product variant API requests ("external_url" corrected and replaced with "ExternalUrl"). #XCB-1847 #XC-ProductVariants
+

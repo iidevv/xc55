@@ -1,0 +1,13 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Product\GlobalTab:
+  - { service_name: 'Documents', position: 100 }
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActDocumentsTab documents blank", translations: [{ code: en, label: "Documents list is empty." }] }
+  - { name: "SkinActDocumentsTab tab displaying documents list. Added by the addon Documents Tab", translations: [{ code: en, label: "Tab displaying documents list. Added by the addon <a href='{{url}}'>SkinAct. Documents Tab</a>" }] }

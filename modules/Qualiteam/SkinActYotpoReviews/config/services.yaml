@@ -1,0 +1,384 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+parameters:
+
+  #API Urls
+  yotpo.reviews.api: 'https://api.yotpo.com'
+
+  yotpo.reviews.api.core: 'core/v3/stores'
+  yotpo.reviews.api.ugc.reviews: 'v1/widget/reviews'
+  yotpo.reviews.api.ugc.apps: 'v1/apps'
+  yotpo.reviews.api.oauth.token: 'oauth/token'
+
+  yotpo.reviews.api.token: 'access_tokens'
+  yotpo.reviews.api.products: 'products'
+  yotpo.reviews.api.products.bottomline: 'bottomline'
+  yotpo.reviews.api.products.variants: 'variants'
+  yotpo.reviews.api.orders: 'orders'
+  yotpo.reviews.api.ugc.reviews.collectall: 'reviews'
+
+  #Api methods
+  yotpo.reviews.api.auth.generate.method: 'POST'
+  yotpo.reviews.api.oauth.generate.method: 'POST'
+  yotpo.reviews.api.products.bottomline.method: 'GET'
+  yotpo.reviews.api.products.create.method: 'POST'
+  yotpo.reviews.api.products.update.method: 'PATCH'
+  yotpo.reviews.api.product.variant.create.method: 'POST'
+  yotpo.reviews.api.product.variant.update.method: 'PATCH'
+  yotpo.reviews.api.orders.create.method: 'POST'
+  yotpo.reviews.api.reviews.create.method: 'POST'
+  yotpo.reviews.api.reviews.collectall.method: 'GET'
+
+services:
+  Qualiteam\SkinActYotpoReviews\Core\EventListener:
+    arguments:
+      $moduleManagerDomain: '@XCart\Domain\ModuleManagerDomain'
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }
+
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  yotpo.logger:
+    class: XLite\Logger
+    factory: [ 'Qualiteam\SkinActYotpoReviews\Core\Factory\LoggerFactory', 'logger' ]
+
+  yotpo.reviews.configuration:
+    class: Qualiteam\SkinActYotpoReviews\Core\Configuration\Configuration
+    factory: [ 'Qualiteam\SkinActYotpoReviews\Core\Factory\ConfigurationFactory', 'createConfiguration' ]
+
+  yotpo.reviews.http.client:
+    class: GuzzleHttp\Client
+    arguments:
+      $url: '%yotpo.reviews.api%'
+    factory: [ 'Qualiteam\SkinActYotpoReviews\Core\Factory\HttpClientFactory', 'createHttpClient' ]
+
+  yotpo.reviews.service.api.guzzle:
+    class: Qualiteam\SkinActYotpoReviews\Core\Api\GuzzleService
+    arguments:
+      $httpClient: '@yotpo.reviews.http.client'
+
+  Qualiteam\SkinActYotpoReviews\Messenger\Handler\ExportHandler:
+    tags:
+      - name: messenger.message_handler
+        handles: Qualiteam\SkinActYotpoReviews\Messenger\Message\ExportMessage
+
+  yotpo.reviews.service.api.review.collectall.builder:
+    class: Qualiteam\SkinActYotpoReviews\Core\Api\Reviews\CollectAllBuilder
+
+  #Commands
+  Qualiteam\SkinActYotpoReviews\Core\Factory\Commands\CreateProductCommandFactory:
+    arguments:
+      $container: '@yotpo.reviews.service.api.products.create'
+
+  Qualiteam\SkinActYotpoReviews\Core\Factory\Commands\UpdateProductCommandFactory:
+    arguments:
+      $container: '@yotpo.reviews.service.api.products.update'
+
+  Qualiteam\SkinActYotpoReviews\Core\Factory\Commands\CreateProductVariantCommandFactory:
+    arguments:
+      $container: '@yotpo.reviews.service.api.product.variant.create'
+
+  Qualiteam\SkinActYotpoReviews\Core\Factory\Commands\UpdateProductVariantCommandFactory:
+    arguments:
+      $container: '@yotpo.reviews.service.api.product.variant.update'
+
+  Qualiteam\SkinActYotpoReviews\Core\Factory\Commands\CreateOrderCommandFactory:
+    arguments:
+      $container: '@yotpo.reviews.service.api.order.create'
+
+  Qualiteam\SkinActYotpoReviews\Core\Factory\Commands\UpdateAverageRatingAndVotesCountFactory:
+    arguments:
+      $container: '@yotpo.reviews.service.api.products.average'
+
+  Qualiteam\SkinActYotpoReviews\Core\Factory\Commands\UpdateYotpoReviewsCommandFactory:
+    arguments:
+      $container: '@yotpo.reviews.service.api.review.collectall'
+      $collectAllBuilder: '@yotpo.reviews.service.api.review.collectall.builder'
+
+  #Endpoints
+  yotpo.reviews.service.api.endpoint:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Endpoint
+    arguments:
+      $apiService: '@yotpo.reviews.service.api.guzzle'
+      $configuration: '@yotpo.reviews.configuration'
+      $method: 'POST'
+
+  yotpo.reviews.service.api.products.average:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Get\Request
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+      $requestAssembler: '@yotpo.reviews.service.api.products.average.assembler'
+      $dynamicUrl: '@yotpo.reviews.service.api.products.average.dynamic.urls'
+
+  yotpo.reviews.service.api.auth.generate:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Auth\Generate
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+      $generateAssembler: '@yotpo.reviews.service.api.auth.generate.assembler'
+      $dynamicUrl: '@yotpo.reviews.service.api.auth.generate.dynamic.urls'
+
+  yotpo.reviews.service.api.oauth.generate:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\OAuth\Generate
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+      $generateAssembler: '@yotpo.reviews.service.api.oauth.generate.assembler'
+      $dynamicUrl: '@yotpo.reviews.service.api.oauth.generate.dynamic.urls'
+
+  yotpo.reviews.service.api.products.create:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Post\Create
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+      $createAssembler: '@yotpo.reviews.service.api.products.create.assembler'
+      $dynamicUrl: '@yotpo.reviews.service.api.products.post.dynamic.url'
+
+  yotpo.reviews.service.api.products.update:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Patch\Update
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+      $updateAssembler: '@yotpo.reviews.service.api.products.update.assembler'
+      $dynamicUrl: '@yotpo.reviews.service.api.products.patch.dynamic.urls'
+
+  yotpo.reviews.service.api.product.variant.create:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\ProductVariant\Post\Create
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+      $createAssembler: '@yotpo.reviews.service.api.product.variant.create.assembler'
+      $dynamicUrl: '@yotpo.reviews.service.api.product.variant.post.dynamic.urls'
+
+  yotpo.reviews.service.api.product.variant.update:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\ProductVariant\Patch\Update
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+      $createAssembler: '@yotpo.reviews.service.api.product.variant.update.assembler'
+      $dynamicUrl: '@yotpo.reviews.service.api.product.variant.patch.dynamic.urls'
+
+  yotpo.reviews.service.api.order.create:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Orders\Post\Create
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+      $createAssembler: '@yotpo.reviews.service.api.order.create.assembler'
+      $dynamicUrl: '@yotpo.reviews.service.api.order.post.dynamic.urls'
+
+  yotpo.reviews.service.api.review.create:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Reviews\Post\Create
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+
+  yotpo.reviews.service.api.review.collectall:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Reviews\Get\CollectAll
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+      $dynamicUrl: '@yotpo.reviews.service.api.reviews.collectall.dynamic.urls'
+
+  #Helpers
+  yotpo.reviews.helpers.product:
+    class: Qualiteam\SkinActYotpoReviews\Helpers\Product
+
+  yotpo.reviews.helpers.product.variant:
+    class: Qualiteam\SkinActYotpoReviews\Helpers\ProductVariant
+
+  yotpo.reviews.helpers.order:
+    class: Qualiteam\SkinActYotpoReviews\Helpers\Order
+
+  #Constructors
+  yotpo.reviews.service.api.params.constructor:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Constructor
+
+  yotpo.reviews.service.api.auth.generate.constructor:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Auth\GenerateConstructor
+    arguments:
+      $constructor: '@yotpo.reviews.service.api.params.constructor'
+      $configuration: '@yotpo.reviews.configuration'
+
+  yotpo.reviews.service.api.oauth.generate.constructor:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\OAuth\GenerateConstructor
+    arguments:
+      $constructor: '@yotpo.reviews.service.api.params.constructor'
+      $configuration: '@yotpo.reviews.configuration'
+
+  yotpo.reviews.service.api.products.average.constructor:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Get\RequestConstructor
+
+  yotpo.reviews.service.api.products.create.constructor:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Post\CreateConstructor
+    arguments:
+      $constructor: '@yotpo.reviews.service.api.params.constructor'
+      $productHelper: '@yotpo.reviews.helpers.product'
+
+  yotpo.reviews.service.api.products.update.construcor:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Patch\UpdateConstructor
+    arguments:
+      $constructor: '@yotpo.reviews.service.api.params.constructor'
+      $productHelper: '@yotpo.reviews.helpers.product'
+
+  yotpo.reviews.service.api.product.variant.create.constructor:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\ProductVariant\Post\CreateConstructor
+    arguments:
+      $constructor: '@yotpo.reviews.service.api.params.constructor'
+      $productVariantHelper: '@yotpo.reviews.helpers.product.variant'
+
+  yotpo.reviews.service.api.product.variant.update.constructor:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\ProductVariant\Patch\UpdateConstructor
+    arguments:
+      $constructor: '@yotpo.reviews.service.api.params.constructor'
+      $productVariantHelper: '@yotpo.reviews.helpers.product.variant'
+
+  yotpo.reviews.service.api.order.create.constructor:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Orders\Post\CreateConstructor
+    arguments:
+      $constructor: '@yotpo.reviews.service.api.params.constructor'
+      $orderHelper: '@yotpo.reviews.helpers.order'
+
+  # Assemblers
+  yotpo.reviews.service.api.assembler:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Assembler
+    arguments:
+      $endpoint: '@yotpo.reviews.service.api.endpoint'
+
+  yotpo.reviews.service.api.auth.generate.assembler:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Auth\GenerateAssembler
+    arguments:
+      $generateConstructor: '@yotpo.reviews.service.api.auth.generate.constructor'
+      $assembler: '@yotpo.reviews.service.api.assembler'
+
+  yotpo.reviews.service.api.oauth.generate.assembler:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\OAuth\GenerateAssembler
+    arguments:
+      $generateConstructor: '@yotpo.reviews.service.api.oauth.generate.constructor'
+      $assembler: '@yotpo.reviews.service.api.assembler'
+
+  yotpo.reviews.service.api.products.average.assembler:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Get\RequestAssembler
+    arguments:
+      $assembler: '@yotpo.reviews.service.api.assembler'
+      $requestConstructor: '@yotpo.reviews.service.api.products.average.constructor'
+
+  yotpo.reviews.service.api.products.create.assembler:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Post\CreateAssembler
+    arguments:
+      $constructorCreate: '@yotpo.reviews.service.api.products.create.constructor'
+      $assembler: '@yotpo.reviews.service.api.assembler'
+
+  yotpo.reviews.service.api.products.update.assembler:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Patch\UpdateAssembler
+    arguments:
+      $updateConstructor: '@yotpo.reviews.service.api.products.update.construcor'
+      $assembler: '@yotpo.reviews.service.api.assembler'
+
+  yotpo.reviews.service.api.product.variant.create.assembler:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\ProductVariant\Post\CreateAssembler
+    arguments:
+      $createConstructor: '@yotpo.reviews.service.api.product.variant.create.constructor'
+      $assembler: '@yotpo.reviews.service.api.assembler'
+
+  yotpo.reviews.service.api.product.variant.update.assembler:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\ProductVariant\Patch\UpdateAssembler
+    arguments:
+      $createConstructor: '@yotpo.reviews.service.api.product.variant.update.constructor'
+      $assembler: '@yotpo.reviews.service.api.assembler'
+
+  yotpo.reviews.service.api.order.create.assembler:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Orders\Post\CreateAssembler
+    arguments:
+      $constructorCreate: '@yotpo.reviews.service.api.order.create.constructor'
+      $assembler: '@yotpo.reviews.service.api.assembler'
+
+  #Dynamic urls
+  yotpo.reviews.service.api.dynamic.urls:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\DynamicUrl
+    arguments:
+      $configuration: '@yotpo.reviews.configuration'
+
+  yotpo.reviews.service.api.auth.generate.dynamic.urls:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Auth\DynamicUrl
+    arguments:
+      $dynamicUrl: '@yotpo.reviews.service.api.dynamic.urls'
+
+  yotpo.reviews.service.api.oauth.generate.dynamic.urls:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\OAuth\DynamicUrl
+    arguments:
+      $dynamicUrl: '@yotpo.reviews.service.api.dynamic.urls'
+
+  yotpo.reviews.service.api.products.average.dynamic.urls:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Get\DynamicUrl
+    arguments:
+      $dynamicUrl: '@yotpo.reviews.service.api.dynamic.urls'
+
+  yotpo.reviews.service.api.reviews.collectall.dynamic.urls:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Reviews\Get\DynamicUrl
+    arguments:
+      $dynamicUrl: '@yotpo.reviews.service.api.dynamic.urls'
+
+  yotpo.reviews.service.api.products.post.dynamic.url:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Post\DynamicUrl
+    arguments:
+      $dynamicUrl: '@yotpo.reviews.service.api.dynamic.urls'
+
+  yotpo.reviews.service.api.products.patch.dynamic.urls:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Products\Patch\DynamicUrl
+    arguments:
+      $dynamicUrl: '@yotpo.reviews.service.api.dynamic.urls'
+
+  yotpo.reviews.service.api.product.variant.post.dynamic.urls:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\ProductVariant\Post\DynamicUrl
+    arguments:
+      $dynamicUrl: '@yotpo.reviews.service.api.dynamic.urls'
+
+  yotpo.reviews.service.api.product.variant.patch.dynamic.urls:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\ProductVariant\Patch\DynamicUrl
+    arguments:
+      $dynamicUrl: '@yotpo.reviews.service.api.dynamic.urls'
+
+  yotpo.reviews.service.api.order.post.dynamic.urls:
+    class: Qualiteam\SkinActYotpoReviews\Core\Endpoints\Orders\Post\DynamicUrl
+    arguments:
+      $dynamicUrl: '@yotpo.reviews.service.api.dynamic.urls'
+
+  #Presenters
+  yotpo.reviews.presenter.js:
+    class: Qualiteam\SkinActYotpoReviews\Presenter\JSYotpoReviews
+
+  yotpo.reviews.presenter.js.conversion.tracking:
+    class: Qualiteam\SkinActYotpoReviews\Presenter\JSYotpoConversionTracking
+
+  yotpo.reviews.presenter.reviews:
+    class: Qualiteam\SkinActYotpoReviews\Presenter\YotpoReviews
+
+  yotpo.reviews.presenter.config:
+    class: Qualiteam\SkinActYotpoReviews\Presenter\Config
+
+  Qualiteam\SkinActYotpoReviews\Core\Task\UpdateYotpoReviews:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  Qualiteam\SkinActYotpoReviews\Core\Task\UpdateAverageRatingAndVotesCount:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  Qualiteam\SkinActYotpoReviews\Core\Dispatcher\CreateProductVariantDispatcher: ~
+  Qualiteam\SkinActYotpoReviews\Core\Dispatcher\UpdateProductVariantDispatcher: ~
+  Qualiteam\SkinActYotpoReviews\Core\Dispatcher\UpdateAverageRatingAndVotesCountDispatcher: ~
+
+  Qualiteam\SkinActYotpoReviews\Command\ManualUpdateAverageRatingAndVotesCount:
+    tags:
+      - { name: 'console.command', command: 'SkinActYotpoReview:ManualUpdateAverageRatingAndVotesCount' }
+
+  Qualiteam\SkinActYotpoReviews\Command\CreateProductVariant:
+    tags:
+      - { name: 'console.command', command: 'SkinActYotpoReview:CreateProductVariant' }
+
+  Qualiteam\SkinActYotpoReviews\Command\UpdateProductVariant:
+    tags:
+      - { name: 'console.command', command: 'SkinActYotpoReview:UpdateProductVariant' }
+
+  Qualiteam\SkinActYotpoReviews\Command\CollectReviews:
+    tags:
+      - { name: 'console.command', command: 'SkinActYotpoReview:CollectReviews' }

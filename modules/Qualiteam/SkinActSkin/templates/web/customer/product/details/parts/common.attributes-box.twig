@@ -1,0 +1,11 @@
+{##
+ # Rating value in product info
+ #
+ # @ListChild (list="product.details.page.info", weight="18")
+ #}
+
+<div class="attributes-box">
+  <ul>
+  {{ widget('XLite\\View\\Product\\Details\\Customer\\CommonAttributes', product=this.getProduct() ) }}
+  </ul>
+</div>

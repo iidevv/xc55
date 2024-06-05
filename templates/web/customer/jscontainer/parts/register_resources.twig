@@ -1,0 +1,27 @@
+{##
+ # Cached JS part
+ #
+ # @ListChild (list="jscontainer.js", weight="50")
+ #}
+<script>
+  (function () {
+    var resources = {{ this.getResourceRegistry()|raw }};
+    var cacheTimestamp = {{ this.getLatestCacheTimestamp() }}
+
+    if (window.CoreAMD !== undefined) {
+      require('js/xcart', function (xcart) {
+        xcart.resourcesCacheTimestamp = cacheTimestamp;
+        xcart.registerResources(resources);
+        xcart.htmlResourcesLoadDeferred.resolve();
+      });
+    } else {
+      document.addEventListener('amd-ready', function (event) {
+        require('js/xcart', function (xcart) {
+          xcart.resourcesCacheTimestamp = cacheTimestamp;
+          xcart.registerResources(resources);
+          xcart.htmlResourcesLoadDeferred.resolve();
+        });
+      });
+    }
+  })();
+</script>

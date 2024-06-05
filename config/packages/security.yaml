@@ -1,0 +1,37 @@
+security:
+    # https://symfony.com/doc/current/security/experimental_authenticators.html
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        db:
+            id: XCart\Security\UserProvider
+    password_hashers:
+        xcart:
+            id: XCart\Security\Hasher\PasswordHasher
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        login:
+            provider: db
+            pattern: ^/api-login
+            stateless: true
+            json_login:
+                check_path: /api-login/check
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        api:
+            provider: db
+            pattern: ^/api/
+            stateless: true
+            jwt: ~
+            custom_authenticators:
+                - XCart\Security\Http\Authenticator\TokenAuthenticator
+        main:
+            lazy: true
+
+    access_control:
+        - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/api-login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/, roles: [ROLE_USER, ROLE_ADMIN], methods: [GET] }
+        - { path: ^/api/, roles: ROLE_ADMIN }

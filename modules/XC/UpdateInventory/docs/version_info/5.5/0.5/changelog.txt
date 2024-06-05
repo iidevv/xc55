@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2022-12-14 - [Bug] Added the previously removed import, export and update inventory permissions back to the "Manage vendor's catalog" permission set. #XCB-1942 #CDev-Core #XC-UpdateInventory #XC-MultiVendor
+

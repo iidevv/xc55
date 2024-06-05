@@ -1,0 +1,502 @@
+/**
+ * Order items list styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.items-list-table .list-footer,
+.items-bottom
+{
+  width: 844px;
+}
+
+.order-info.not-editable .items-list-table.order-items table.list
+{
+  width: 844px;
+}
+
+.items-list-table.order-items {
+  &.itemslist-model-orderitem {
+    table.list {
+      width: ~"calc(100% + 32px)";
+    }
+  }
+
+  table.list {
+    border: none;
+    width: 100%;
+
+    .actions.right {
+      width: 32px;
+      padding: 0;
+      position: relative;
+
+      .cell {
+        position: absolute;
+        left: 15px;
+        height: 18px;
+        top: ~"calc(50% - 9px)";
+      }
+    }
+
+    thead,
+    tbody {
+      th:not(.total),
+      td:not(.total) {
+        border-left: none;
+        border-right: none;
+      }
+
+      th.actions.right,
+      td.actions.right,
+      &.lines tr.line.last td.cell.actions.right,
+      &.lines tr.line.even td.cell.actions.right,
+      &.lines tr.line.zero-total td.cell.actions.right {
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        background-color: transparent;
+        padding-right: 0;
+      }
+    }
+
+    thead {
+      background: transparent none;
+
+      th {
+        background: @items-list-head-bg;
+
+        &.price,
+        &.amount {
+          text-align: right;
+        }
+      }
+    }
+
+    tbody {
+      &.lines tr {
+        &.zero-total {
+          td {
+            &.cell {
+              background-color: #f5fcf4;
+            }
+          }
+        }
+      }
+
+      td {
+        &.actions.right {
+          .separator {
+            display: none;
+          }
+
+          > * {
+            visibility: hidden;
+          }
+        }
+
+        &.price .table-value input {
+          width: 86px;
+        }
+
+        &.amount {
+          &.cell {
+            width: 94px;
+            text-align: right;
+            padding-left: 12px;
+          }
+
+          .table-value input {
+            width: 43px;
+          }
+
+          .inline-field.editable {
+            max-width: 65%;
+          }
+        }
+
+        &.cell.price {
+          width: 152px;
+          text-align: right;
+          position: relative;
+
+          .input-group-addon {
+            width: 30px;
+          }
+
+          .restore-orig-price {
+            background-image: url(../../../../../admin/images/reset-2.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 16px;
+            position: absolute;
+            right: -@rhythmic-unit;
+            top: calc(50% - 8px);
+            width: 16px;
+            cursor: pointer;
+
+            span {
+              float: left;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        &.cell.total {
+          width: 108px;
+          text-align: right;
+
+          * {
+            font-size: 14px;
+          }
+        }
+
+        &.cell.amount,
+        &.cell.price {
+          .cell {
+            margin-right: 12px;
+          }
+        }
+
+        &.cell.name {
+          .item-name {
+            font-weight: @font-bold;
+
+            a {
+              text-decoration: none;
+              color: black;
+              white-space: normal;
+              word-wrap: break-word;
+              display: inline-block;
+            }
+          }
+
+          ul.subitem {
+            span.name {
+              font-weight: @font-bold;
+            }
+
+            li {
+              display: inline;
+              vertical-align: top;
+            }
+          }
+
+          div.cell {
+            .flex-display();
+            .align-items(center);
+          }
+
+          .edit-options-link {
+            a {
+              text-decoration: none;
+              border-bottom: 1px dotted;
+            }
+
+            .popover .close {
+              position: absolute;
+              top: 3px;
+              right: 6px;
+              color: #9d9d9d;
+              opacity: 1;
+              text-decoration: none;
+              font-size: 22px;
+              border-bottom: 0px none;
+            }
+          }
+
+          .backordered-info {
+            color: @color-warning;
+          }
+        }
+
+        &.price .view {
+          width: auto;
+        }
+      }
+
+      tr {
+        &.edit-mark td.actions.right > *,
+        &.edit-open-mark td.actions.right > *,
+        &.remove-mark td.actions.right > * {
+          visibility: visible;
+        }
+
+        &.edit-open-mark,
+        &.create-line {
+          td.cell.price .cell,
+          td.cell.amount .cell {
+            margin-right: 0px;
+          }
+        }
+
+        &.edit-mark,
+        &.edit-open-mark,
+        &.create-line {
+          td.cell.name .edit-options-link {
+            display: block;
+          }
+        }
+      }
+
+      .edit-open-mark td.cell.price .cell .inline-field {
+        margin-left: 0;
+      }
+
+      &.create {
+        tr {
+          &.line td:not(.actions) {
+            background: rgba(252, 235, 176, 0.3);
+          }
+
+          td {
+            &.cell.name {
+              .edit-options-link {
+                top: 7px;
+              }
+            }
+          }
+
+          .model-definition {
+            &.model-is-defined {        
+              .item-attribute-values-list-item,
+              .item-attribute-values-list-item .attribute-box {
+                vertical-align: baseline;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    tr.line td.cell.main {
+      width: 489px;
+      max-width: 489px;
+
+      div.cell {
+        .align-items(center);
+        .flex-direction(row);
+
+        .item-image-container {
+          .flex-display();
+          .align-items(center);
+          .justify-content(center);
+          min-width: 60px;
+          min-height: 60px;
+          border: @border-base solid @table-border-color;
+          border-radius: @border-radius-base;
+          margin-right: @rhythmic-unit;
+          background: #fff;
+          overflow: hidden;
+
+          img {
+            max-width: 58px;
+            max-height: 58px;
+          }
+        }
+      }
+    }
+
+    .field .subfield {
+      position: static;
+    }
+  }
+
+  table.list tbody td.cell.name ul.subitem .text,
+  .model-definition.model-is-defined span.text {
+    max-width: 400px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    padding-right: @rhythmic-unit;
+    text-overflow: ellipsis;
+    line-height: 19px;
+    white-space: nowrap;
+    vertical-align: text-top;
+
+    & + .tooltip .tooltip-inner {
+      white-space: pre-wrap;
+      max-width: 360px;
+      text-align: left;
+    }
+
+    span {
+      vertical-align: top;
+    }
+  }
+
+  .create-line .restore-orig-price,
+  .ctrl-auto .restore-orig-price {
+    display: none;
+  }
+
+  .item-attributes-box,
+  .attribute-box,
+  table.list tbody td.cell.name ul.subitem {
+    white-space: normal;
+  }
+
+  .item-attributes-box {
+    li {
+      display: inline;
+    }
+  }
+
+  .model-is-defined .item-attributes-box {
+    .name {
+      font-weight: @font-bold;
+    }
+  }
+
+  li.item-attribute-values-list-item-text,
+  table.list tbody td.cell.name ul.subitem li.item-attribute-values-list-item-text,
+  li.item-attribute-values-list-item-yes-no,
+  table.list tbody td.cell.name ul.subitem li.item-attribute-values-list-item-yes-no {
+    display: block;
+  }
+
+  li.item-attribute-values-list-item-text {
+    div + div {
+      margin-top: 4px;
+    }
+
+    div span.name {
+      display: block;
+    }
+  }
+
+  .item-attribute-values-list-item {
+    white-space: normal;
+
+    .attribute-box:last-child span.separator {
+      display: none;
+    }
+
+    .attribute-box {
+      vertical-align: top;
+    }
+  }
+
+  .popover {
+    max-width: initial;
+    min-width: 400px;
+    left: -2px !important;
+
+    .popover-content {
+      position: relative;
+
+      .attribute-values {
+        margin: 0;
+        padding: 0;
+        background: none;
+        width: auto;
+      }
+    }
+  }
+
+  .model-definition {
+    &.model-is-defined {
+      font-style: normal;
+      color: @color-text-dark;
+
+      span {
+        font-size: 14px;
+        line-height: 19px;
+      }
+
+      .item-attribute-values-list-item {
+        vertical-align: top;
+      }
+    }
+  }
+
+  ul.attribute-values {
+    label div {
+      border: 0px none;
+      padding-left: 0px;
+
+      input[type="checkbox"] {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+.order-info {
+  .restore-orig-price .fa {
+    color: #318477;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  &.not-editable .items-list-table.order-items .restore-orig-price {
+    display: none;
+  }
+}
+
+.items-list-table.order-items .popover .popover-content,
+.ui-dialog {
+  & > * {
+    .flex-display();
+    align-items: center;
+  }
+
+  & > select {
+    width: 245px;
+  }
+
+  & > span.title {
+    width: 100%;
+    display: block;
+  }
+
+  .attribute-values {
+    display: block;
+
+    & > li {
+      display: block;
+      margin: 0 0 (.5 * @rhythmic-unit) 0;
+
+      .form-control {
+        width: 100%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.ui-dialog .ui-dialog-content ul.attribute-values {
+  padding-bottom: .5 * @rhythmic-unit;
+}
+
+.ajax-container-loadable {
+  &.widget-changeattributevalues.ui-dialog-content {
+    align-items: normal;
+    flex-direction: column;
+  }
+
+  ul.attribute-values {
+    margin-bottom: 1.5 * @rhythmic-unit;
+
+    li {
+      margin-bottom: 18px;
+    }
+
+    span.title {
+      font-size: @font-size-small;
+    }
+
+    .form-control {
+      margin-top: 4px;
+    }
+
+    label div.checbox-box {
+      border: none;
+    }
+  }
+}

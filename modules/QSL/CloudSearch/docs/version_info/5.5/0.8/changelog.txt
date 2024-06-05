@@ -1,0 +1,4 @@
+Version 5.5.0.8
+
+Fixes (1)
+2023-11-06 - Fixed webhooks sending.

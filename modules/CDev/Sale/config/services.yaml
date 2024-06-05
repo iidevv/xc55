@@ -1,0 +1,97 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+x_cart:
+  clean_urls:
+    formats:
+      # Sale discount page Clean URL’s format
+      # possible values:
+      #  domain/goaldiscount
+      #  domain/goaldiscount.html
+      #
+      # Changing this setting will not affect existing url's
+      # and requires to re-deploy your store
+      sale_discount: 'domain/goaldiscount'
+    aliases:
+      sale_products: 'sale-products'
+
+api_platform:
+    resource_class_directories:
+        - '%kernel.project_dir%/var/run/classes/CDev/Sale/Model'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # API
+
+    # /sale_discounts
+    CDev\Sale\API\Endpoint\SaleDiscount\Transformer\OutputTransformerInterface: '@CDev\Sale\API\Endpoint\SaleDiscount\Transformer\OutputTransformer'
+    CDev\Sale\API\Endpoint\SaleDiscount\Transformer\OutputTransformer:
+        arguments:
+            $productClassIdCollectionOutputTransformer: '@xcart.entities.sub_entity_transformer.output.id_collection.product_class'
+            $membershipIdCollectionOutputTransformer: '@xcart.entities.sub_entity_transformer.output.id_collection.membership'
+            $categoryIdCollectionOutputTransformer: '@xcart.entities.sub_entity_transformer.output.id_collection.category'
+
+    CDev\Sale\API\Endpoint\SaleDiscount\Transformer\InputTransformerInterface: '@CDev\Sale\API\Endpoint\SaleDiscount\Transformer\InputTransformer'
+    CDev\Sale\API\Endpoint\SaleDiscount\Transformer\InputTransformer:
+        arguments:
+            $productClassesUpdater: '@xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.sale.product_classes'
+            $membershipsUpdater: '@xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.sale.memberships'
+            $productsUpdater: '@xcart.entities.sub_entity_transformer.input.id_collection.sale_discount_products_by_productid'
+            $categoriesUpdater: '@xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.sale.categories'
+            $productClassIdCollectionOutputTransformer: '@xcart.entities.sub_entity_transformer.output.id_collection.product_class'
+            $membershipIdCollectionOutputTransformer: '@xcart.entities.sub_entity_transformer.output.id_collection.membership'
+            $categoryIdCollectionOutputTransformer: '@xcart.entities.sub_entity_transformer.output.id_collection.category'
+
+    xcart.entities.sub_entity_transformer.input.id_collection.sale_discount_products_by_productid:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.cdev.sale.discount_product'
+            $name: 'product'
+
+    xcart.entities.id_getter.cdev.sale.discount_product:
+        class: XLite\API\Helper\IdGetter
+        arguments:
+            $methodName: 'getProductId'
+
+    xcart.repository.cdev.sale.discount_product:
+        class: CDev\Sale\Model\Repo\SaleDiscountProduct
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - CDev\Sale\Model\SaleDiscountProduct
+
+    CDev\Sale\API\OpenApiTagsRepositoryDecorator:
+        decorates: XLite\API\OpenApiTagsRepository
+
+    xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.sale.categories:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdBidirectionalCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.category'
+            $name: 'category'
+            $idGetter: '@xcart.entities.id_getter.category'
+            $revertedGetterName: 'getSaleDiscounts'
+
+    xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.sale.memberships:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdBidirectionalCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.membership'
+            $name: 'membership'
+            $idGetter: '@xcart.entities.id_getter.membership'
+            $revertedGetterName: 'getSaleDiscounts'
+
+    xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.sale.product_classes:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdBidirectionalCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.product_class'
+            $name: 'product class'
+            $revertedGetterName: 'getSaleDiscounts'
+
+    CDev\Sale\LifetimeHook\Hook:
+      tags:
+          - { name: xcart.lifetime-hook, moduleId: CDev-Sale, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }
+          - { name: xcart.lifetime-hook, moduleId: CDev-Sale, type: upgrade, method: onUpgradeTo5502, version: '5.5.0.2' }

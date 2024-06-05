@@ -1,0 +1,7 @@
+<div class="sa-cr-uploads">
+    {% for file in this.getFiles() %}
+        <div class="sa-cr-uploads-box">
+            {{ this.getFileView(file)|raw }}
+        </div>
+    {% endfor %}
+</div>

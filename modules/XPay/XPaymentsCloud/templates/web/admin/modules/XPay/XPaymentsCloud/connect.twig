@@ -1,0 +1,26 @@
+{##
+ # Connect widget
+ #
+ #}
+{{ widget('\\XPay\\XPaymentsCloud\\View\\Config\\HTTPSWarning') }}
+{{ widget('\\XPay\\XPaymentsCloud\\View\\Config\\RegisterInfo') }}
+
+{{ widget('\\XPay\\XPaymentsCloud\\View\\Tabs\\Settings', forPaymentMethod=true) }}
+
+<div id="xpayments-iframe-container"></div>
+
+<script>
+  var xpaymentsConnectConfig = {
+      container: '#xpayments-iframe-container',
+      topElement: '#main',
+      quickAccessKey: '{{ this.getXpaymentsPaymentMethod().getSetting('quickaccess_key') }}',
+      account: '{{ this.getXpaymentsPaymentMethod().getSetting('account') }}',
+  };
+  var xpaymentsConnectWrapperConfig = {
+      justAdded: {% if (this.getXpaymentsJustAdded()) %}1{% else %}0{% endif %},
+      xpaymentsMethodId: {{ this.getXpaymentsPaymentMethod().getMethodId() }},
+      currentMethodId: {{ this.paymentMethod.getMethodId() }},
+  };
+</script>
+
+{{ widget('\\XPay\\XPaymentsCloud\\View\\ConnectionKey') }}

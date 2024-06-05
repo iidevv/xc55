@@ -1,0 +1,9 @@
+{##
+# Description cell
+#}
+
+{% if this.entity.description|length == 0 %}
+{{ this.entity.video_url }}
+{% else %}
+{{ this.entity.description }}
+{% endif %}

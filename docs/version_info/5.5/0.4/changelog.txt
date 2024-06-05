@@ -1,0 +1,6 @@
+Version 5.5.0.4
+
+Fixes (2)
+2022-10-12 - [Bug] Checkout was not working under unknown conditions when sending emails. Fixed. #XCB-1797 #CDev-Core
+2022-10-12 - [Bug] Fatal error on the storefront after updating to version 5.5.0.3. Fixed. #XCB-1796 #CDev-Core
+

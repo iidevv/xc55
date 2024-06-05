@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autowire: true
+
+  XC\UPS\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-UPS, type: init, method: onInit }

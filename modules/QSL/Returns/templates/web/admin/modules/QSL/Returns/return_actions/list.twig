@@ -1,0 +1,28 @@
+{##
+ # Return reasons list table template
+ #}
+
+{% form 'QSL\\Returns\\View\\Form\\Admin\\ItemsList\\ReturnActions' %}
+
+  <div class="on-off-block">
+    <div>
+      {{ widget(
+        'XLite\\View\\FormField\\Input\\Checkbox\\OnOff',
+        value=this.getEnableActionsOption().getValue(),
+        fieldName=this.getEnableActionsOption().getName(),
+        label=this.getEnableActionsOption().getOptionName()
+      ) }}
+    </div>
+    <div>
+      {{ widget(
+        'XLite\\View\\FormField\\Input\\Checkbox\\OnOff',
+        value=this.getHideOtherActionOption().getValue(),
+        fieldName=this.getHideOtherActionOption().getName(),
+        label=this.getHideOtherActionOption().getOptionName()
+      ) }}
+    </div>
+  </div>
+
+  {{ widget('QSL\\Returns\\View\\ItemsList\\Model\\ReturnAction') }}
+
+{% endform %}

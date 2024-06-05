@@ -1,0 +1,43 @@
+{##
+ # Attribute value (Select) in color swatches mode
+ #}
+
+{% set isAffectingAttribute = this.isAffectingAttribute() %}
+<span class="color-swatches-wrapper">
+  <div class="blocks-selector floating-label focused">
+    {% if this.isShowSelector() %}
+      {% include this.getSelectBoxTemplate() %}
+    {% endif %}
+    <div class="blocks">
+      {% set selectedOption = null %}
+      {% set selectedOptionIsAvailable = true %}
+
+      <ul class="color-swatches{% if this.isShowSelector() %} select-shown{% endif %}">
+      {% for v in this.getAttributeValue() %}
+        {% set isSelected = this.isSelectedValue(v) %}
+        {% if isSelected %}
+          {% set selectedOption = v %}
+          {% set selectedOptionIsAvailable = this.isAttributeValueAvailable(v) %}
+        {% endif %}
+
+        {% include this.getColorSwatchesOptionTemplate() with {'option': v, 'isAffectingAttribute': isAffectingAttribute} %}
+      {% endfor %}
+    </div>
+    {% if not this.isShowSelector() %}
+      <input class="blocks-input form-control"
+        value="{{ selectedOption ? selectedOption.id : '' }}"
+        name="{{ this.getName() }}"
+        data-attribute-id="{{ this.attribute.id }}"
+        autocomplete="off"
+        aria-label="{{ selectedOption ? this.getOptionTitle(selectedOption) : t('Not selected') }}"
+        type="hidden"
+        {{ this.printTagAttributes(this.getSelectAttributes())|raw }}
+      />
+      <div class="blocks-title{{ selectedOption ? '' : ' not-selected' }}{{ not selectedOptionIsAvailable and isAffectingAttribute ? ' unavailable' : '' }}">
+        <span class="attr-name">{{ this.attribute.name }}: </span>
+        <span class="attr-value-name">{{ selectedOption ? this.getOptionTitle(selectedOption) : t('Not selected')|lower }} </span>
+        <span class="attr-value-modifiers">{{ selectedOption ? this.getModifierTitle(selectedOption)|raw : '' }}</span>
+      </div>
+    {% endif %}
+  </div>
+</span>

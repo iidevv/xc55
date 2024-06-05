@@ -1,0 +1,30 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: 'products_count'
+    category: QSL\OneClickUpsellAfterCheckout
+    type: XLite\View\FormField\Input\Text\Integer
+    orderby: 100
+    value: 9
+    widgetParameters: { min: 3, max: 50 }
+    translations:
+      - code: en
+        option_name: 'Number of products to show in reminder list'
+  - name: 'redirect_to_checkout'
+    category: QSL\OneClickUpsellAfterCheckout
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 200
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Redirect to checkout after add to cart'
+        option_comment: "If enabled, it will redirect the buyer to checkout page with all the order data pre-populated. Otherwise the product is added to cart in background, while the popup is hidden to show the invoice page with the details of previous order."
+
+XLite\Model\LanguageLabel:
+  - { name: "Anything else, maybe?", translations: [{ code: en, label: 'Anything else, maybe?' }] }
+  - { name: "If you want to change the popup title that currently reads ...", translations: [{ code: en, label: 'If you want to change the popup title that currently reads "{{current}}", edit variable "Anything else, maybe?" on page <a href="{{url}}">Edit labels</a>' }] }

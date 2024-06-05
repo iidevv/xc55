@@ -1,0 +1,13 @@
+{# #
+ # Review block
+ #
+ # @ListChild (list="reviews.review", weight="303")
+#}
+
+<div class="sa-cr-uploads-and-others">
+    {{ widget('Qualiteam\\SkinActCustomerReviews\\View\\ReviewUploads', files=this.get('review').getFiles().toArray()) }}
+    <div class="sa-cr-useful-abuse">
+        {{ widget('Qualiteam\\SkinActCustomerReviews\\View\\UsefulView', review=this.get('review')) }}
+        {{ widget('Qualiteam\\SkinActCustomerReviews\\View\\Button\\ReportAbuse', review=this.get('review')) }}
+    </div>
+</div>

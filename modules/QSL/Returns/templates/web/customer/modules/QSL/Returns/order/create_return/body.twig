@@ -1,0 +1,10 @@
+{##
+ # Create order return page
+ #
+ # @ListChild (list="center", zone="customer")
+ #}
+{% apply spaceless %}
+<div class="create-return-box">
+  {{ widget('QSL\\Returns\\View\\Page\\Customer\\CreateReturn') }}
+</div>
+{% endapply %}

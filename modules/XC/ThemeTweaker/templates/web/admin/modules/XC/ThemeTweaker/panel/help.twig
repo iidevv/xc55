@@ -1,0 +1,8 @@
+{##
+ # Webmaster panel help
+ #}
+
+<div class="panel-help">
+  <div>{{ this.getHelpText()|raw }}</div>
+  {{ widget('XLite\\View\\Button\\Link', location=this.getThemeTweakerSwitchUrl(), blank=true, label=t('Customize storefront'), style="regular-button customize-storefront") }}
+</div>

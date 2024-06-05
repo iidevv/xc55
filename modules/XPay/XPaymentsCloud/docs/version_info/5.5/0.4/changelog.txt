@@ -1,0 +1,4 @@
+Version 5.5.0.4
+- Code-style improvements
+- Improved support of the new PayPal payment method with Apple Pay
+- Fixed JS error at checkout for non PayPal payment methods

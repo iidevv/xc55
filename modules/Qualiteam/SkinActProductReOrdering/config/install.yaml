@@ -1,0 +1,8 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActProductReOrdering re-order", translations: [{ code: en, label: "Re-order" }] }
+  - { name: "SkinActProductReOrdering re-order product has been added to cart", translations: [{ code: en, label: "Product has been added to cart with attributes: <br /> {{attributes}}" }] }

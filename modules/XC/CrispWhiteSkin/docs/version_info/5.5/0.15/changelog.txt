@@ -1,0 +1,5 @@
+Version 5.5.0.15
+
+Fixes (1)
+2023-09-28 - [Bug] PayPal Checkout was working incorrectly for One Page Checkout. Fixed. #XCB-2734 #CDev-Paypal #XC-CrispWhiteSkin
+

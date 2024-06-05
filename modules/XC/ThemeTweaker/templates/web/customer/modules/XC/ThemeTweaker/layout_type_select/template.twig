@@ -1,0 +1,21 @@
+{##
+ # ____file_title____
+ #}
+<xlite-layout-type inline-template group="{{ this.getParam('group') }}" opts="{{ this.getOptions() | json_encode }}" value="{{ this.getValue() }}">
+  <div class="xlite-layout-type-widget">
+    {% if not this.getParam('fieldOnly') %}
+      {% include this.getFieldLabelTemplate() %}
+    {% endif %}
+
+    <div class="{{ this.getValueContainerClass() }}">
+      {% include this.getDir() ~ '/' ~ this.getFieldTemplate() %}
+      {% if this.getParam('comment') %}
+        <div class="form-field-comment {{ this.getFieldId() }}-comment">{{ t(this.getParam('comment')) }}</div>
+      {% endif %}
+      {% if this.getFormFieldJSData() %}{{ this.displayCommentedData(this.getFormFieldJSData()) }}{% endif %}
+      {% if this.getInlineJSCode() %}
+        <script>{{ this.getInlineJSCode() }}</script>
+      {% endif %}
+    </div>
+  </div>
+</xlite-layout-type>

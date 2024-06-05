@@ -1,0 +1,78 @@
+/**
+ * Accounting styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+@import (reference) "../css/initialize";
+
+.accounting-page-wrapper .available-block-list,
+.accounting-page-wrapper .installed-block-list {
+  .flex-display();
+  .justify-content(flex-start);
+  .align-items(center);
+  .flex-wrap(wrap);
+}
+
+.accounting-page-wrapper .available-block-list li a,
+.accounting-page-wrapper .installed-block-list .installed-module {
+  .flex-display();
+  .align-items(center);
+}
+
+.accounting-page-wrapper .installed-block .installed-block-list .installed-module {
+  .justify-content(flex-start);
+  .align-items(center);
+
+  min-width: 300px;
+  margin-right: (@line-height-base * 1.5);
+  margin-bottom: (@line-height-base * 1);
+
+  img {
+    max-width: 4.5 * @rhythmic-unit;
+  }
+
+  .settings-button {
+    margin-top: 0.5 * @rhythmic-unit;
+  }
+
+  .info {
+    margin-left: @line-height-base;
+
+    div {
+      font-size: @font-size-small;
+      line-height: @line-height-small;
+      max-width: 200px;
+    }
+  }
+
+}
+
+/*
+* Available block
+*/
+.accounting-page-wrapper .available-block-list {
+  margin-top: (@line-height-base * 1.5);
+}
+
+.accounting-page-wrapper .available-block-list li {
+  max-width: 190px;
+  margin-right: (@line-height-base * .5);
+  margin-bottom: (@line-height-base * 2);
+}
+
+.accounting-page-wrapper .available-block-list li a {
+  text-align: center;
+  display: inline-block;
+}
+
+.accounting-page-wrapper .available-block-list li img {
+  height: 5 * @rhythmic-unit;
+  display: block;
+}
+
+.accounting-page-wrapper .available-block-list li .link-wrapper {
+  margin-top: (@line-height-base * .5);
+  display: block;
+}

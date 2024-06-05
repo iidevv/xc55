@@ -1,0 +1,20 @@
+{##
+ # Left side menu
+ #}
+
+<div {{ this.printTagAttributes(this.getContainerTagAttributes())|raw }}>
+  <div class="left-menu-container">
+    <div class="left-menu-header">
+      {{ widget_list('admin.main.page.menu.header') }}
+    </div>
+    {% set items = this.getItems() %}
+    {% if items %}
+      <ul class="menu main-menu">
+        {% for item in items %}
+          {{ item.display() }}
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {{ widget('\\XLite\\View\\PoweredByAdmin') }}
+  </div>
+</div>

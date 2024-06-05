@@ -1,0 +1,95 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActCareers Careers", translations: [{ code: en, label: "Careers" }] }
+  - { name: "SkinActCareers Jobs tab", translations: [{ code: en, label: "Jobs" }] }
+  - { name: "SkinActCareers Interview Questions tab", translations: [{ code: en, label: "Interview Questions" }] }
+  - { name: "SkinActCareers Add new job", translations: [{ code: en, label: "Add new job" }] }
+  - { name: "SkinActCareers title", translations: [{ code: en, label: "Title" }] }
+  - { name: "SkinActCareers briefDescription", translations: [{ code: en, label: "Brief Description" }] }
+  - { name: "SkinActCareers pageDescription", translations: [{ code: en, label: "Page Description" }] }
+  - { name: "SkinActCareers duties", translations: [{ code: en, label: "Duties" }] }
+  - { name: "SkinActCareers requirements", translations: [{ code: en, label: "Requirements" }] }
+  - { name: "SkinActCareers compensation", translations: [{ code: en, label: "Compensation" }] }
+  - { name: "SkinActCareers employmentType", translations: [{ code: en, label: "Employment Type" }] }
+  - { name: "SkinActCareers probationTime", translations: [{ code: en, label: "Probation Time" }] }
+  - { name: "SkinActCareers publicationDate", translations: [{ code: en, label: "Publication Date" }] }
+  - { name: "SkinActCareers Delete all", translations: [{ code: en, label: "Delete all" }] }
+  - { name: "SkinActCareers Delete selected", translations: [{ code: en, label: "Delete selected" }] }
+  - { name: "SkinActCareers All entries have been deleted", translations: [{ code: en, label: "All entries have been deleted" }] }
+  - { name: "SkinActCareers Jobs", translations: [{ code: en, label: "Jobs" }] }
+  - { name: "SkinActCareers Job", translations: [{ code: en, label: "Job" }] }
+  - { name: "SkinActCareers New job", translations: [{ code: en, label: "New job" }] }
+  - { name: "SkinActCareers No careers here", translations: [{ code: en, label: "Nothing here" }] }
+  - { name: "SkinActCareers Job was posted on", translations: [{ code: en, label: "Job was posted on: " }] }
+  - { name: "SkinActCareers Read more", translations: [{ code: en, label: "Read more" }] }
+  - { name: "SkinActCareers Apply Now", translations: [{ code: en, label: "Apply Now" }] }
+  - { name: "SkinActCareers Add new question", translations: [{ code: en, label: "Add new question" }] }
+  - { name: "SkinActCareers question", translations: [{ code: en, label: "Question" }] }
+  - { name: "SkinActCareers TYPE_PLAIN", translations: [{ code: en, label: "Plain field" }] }
+  - { name: "SkinActCareers TYPE_SELECT", translations: [{ code: en, label: "Select field" }] }
+  - { name: "SkinActCareers TYPE_TEXTAREA", translations: [{ code: en, label: "Textarea" }] }
+  - { name: "SkinActCareers question type", translations: [{ code: en, label: "Question type" }] }
+  - { name: "SkinActCareers predefinedValues", translations: [{ code: en, label: "Enter values to select from" }] }
+  - { name: "SkinActCareers Interview Questions", translations: [{ code: en, label: "Interview Questions" }] }
+  - { name: "SkinActCareers New question", translations: [{ code: en, label: "New question" }] }
+  - { name: "SkinActCareers mandatory", translations: [{ code: en, label: "Mandatory" }] }
+  - { name: "SkinActCareers question type table", translations: [{ code: en, label: "Type" }] }
+  - { name: "SkinActCareers placeholder prefix", translations: [{ code: en, label: "Your " }] }
+  - { name: "SkinActCareers placeholder textarea", translations: [{ code: en, label: "Your Text..." }] }
+  - { name: "SkinActCareers Send Profile", translations: [{ code: en, label: "Send Profile" }] }
+  - { name: "SkinActCareers FileUploader", translations: [{ code: en, label: "Your files" }] }
+  - { name: "SkinActCareers FileUploader comment", translations: [{ code: en, label: "You can upload your resume, cover letter, more documents up to 20 MB at once. Allowed file formats: DOC, JPG, PNG, PDF" }] }
+  - { name: "SkinActCareers successfully sent", translations: [{ code: en, label: "Your application successfully sent" }] }
+  - { name: "SkinActCareers submission problem", translations: [{ code: en, label: "Submission problem encountered" }] }
+  - { name: "SkinActCareers Description", translations: [{ code: en, label: "Description" }] }
+  - { name: "SkinActCareers predefinedValues comment", translations: [{ code: en, label: "Values are separated by semicolon. Example: value1;value2;value3" }] }
+  - { name: "SkinActCareers serviceName", translations: [{ code: en, label: "Service name" }] }
+
+\Qualiteam\SkinActCareers\Model\InterviewQuestion:
+  - { question: "First Name", type: "P", mandatory: true }
+  - { question: "Last Name", type: "P", mandatory: true }
+  - { question: "Gender", type: "S", mandatory: false, predefinedValues: 'Male;Female' }
+  - { question: "Email", type: "P", mandatory: true }
+  - { question: "Phone", type: "P", mandatory: true }
+  - { question: "Age", type: "P", mandatory: true }
+  - { question: "What are your strengths?", type: "T", mandatory: true }
+  - { question: "What are your weaknesses?", type: "T", mandatory: true }
+  - { question: "Why do you want this job?", type: "T", mandatory: true }
+  - { question: "Where would you like to be in your career five years from now?", type: "T", mandatory: false }
+  - { question: "What's your ideal company?", type: "T", mandatory: false }
+  - { question: "What attracted you to this company?", type: "T", mandatory: false }
+  - { question: "Why should we hire you?", type: "T", mandatory: false }
+  - { question: "What did you like least about your last job?", type: "T", mandatory: false }
+  - { question: "When were you most satisfied in your job?", type: "T", mandatory: false }
+  - { question: "What can you do for us that other candidates can't?", type: "T", mandatory: false }
+  - { question: "What were the responsibilities of your last position?", type: "T", mandatory: false }
+  - { question: "Why are you leaving your present job?", type: "T", mandatory: false }
+  - { question: "What do you know about this industry?", type: "T", mandatory: false }
+  - { question: "What do you know about our company?", type: "T", mandatory: false }
+  - { question: "Give me an example of a time that you felt you went above and beyond the call of duty at work", type: "T", mandatory: false }
+  - { question: "If I were your supervisor and asked you to do something that you disagreed with, what would you do?", type: "T", mandatory: false }
+  - { question: "What salary are you seeking?", type: "T", mandatory: false }
+  - { question: "What's your salary history?", type: "T", mandatory: false }
+
+XLite\Model\Notification:
+  - templatesDirectory : modules/Qualiteam/SkinActCareers/interview_questions
+    availableForAdmin : true
+    availableForCustomer : false
+    enabledForAdmin : true
+    enabledForCustomer : false
+    editable : true
+    module: Qualiteam\SkinActCareers
+    translations:
+      - code: en
+        name: Applicant for the job
+        description: This message will be sent to admin when interview questions form will be filled
+        customerSubject: ''
+        customerText: ''
+        adminSubject: 'Applicant for the job: %title%'
+        adminText: ''

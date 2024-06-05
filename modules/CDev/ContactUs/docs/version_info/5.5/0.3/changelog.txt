@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Fixes (1)
+2023-01-05 - [Bug] Fatal error when previewing some email notifications with PHP 8.0. Fixed. #XCB-1965 #CDev-ContactUs #QSL-CallForPrice #QSL-Returns #XC-ThemeTweaker #XC-BlueSnap #XC-TrustedVendors #XC-MultiVendor #XC-Reviews
+

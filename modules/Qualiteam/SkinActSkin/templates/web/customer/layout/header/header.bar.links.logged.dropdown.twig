@@ -1,0 +1,20 @@
+{##
+ # Header bar account links
+ #
+ # #ListChild (list="layout.header.bar", weight="100")
+ #}
+
+<div class="header-icon-menu__dropdown">
+  <div class="header-icon-menu__dropdown-column">
+    <h5 class="header-icon-menu__column-title">{{ t('[SkinActSkin] Your Lists') }}</h5>
+    <ul class="header-icon-menu__list">
+      {{ widget_list('layout.header.bar.links.list') }}
+    </ul>
+  </div>
+  <div class="header-icon-menu__dropdown-column">
+    <h5 class="header-icon-menu__column-title">{{ t('[SkinActSkin] Your Account') }}</h5>
+    <ul class="header-icon-menu__list">
+      {{ widget_list('layout.header.bar.links.logged') }}
+    </ul>
+  </div>
+</div>

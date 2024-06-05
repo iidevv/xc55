@@ -1,0 +1,21 @@
+{##
+ # Message
+ #
+ # @ListChild (list="customer-survey.send.fields", weight="100")
+ #}
+
+<table class="questions">
+  {% for question in this.getSurveyQuestions() %}
+    <tr class="form-item">
+      <td class="question-value">
+        <label for="message" class="for-question">
+          {{ question.getQuestion() }}
+        </label>
+      <td>
+        <div class="resizable-textarea">
+          {{ widget('\\QSL\\CustomerSatisfaction\\View\\FormField\\Input\\Stars', barName='qa_' ~ question.getId(), max='5') }}
+        </div>
+      </td>
+    </tr>
+  {% endfor %}
+</table>

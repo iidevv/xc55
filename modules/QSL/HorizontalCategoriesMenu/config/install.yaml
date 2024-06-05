@@ -1,0 +1,139 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: sep_hfcm_single
+    category: QSL\HorizontalCategoriesMenu
+    type: separator
+    orderby: 1
+    translations:
+      - code: en
+        option_name: '"Single-column" layout settings'
+  - name: hfcm_depth
+    category: QSL\HorizontalCategoriesMenu
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 0 }
+    orderby: 2
+    value: 3
+    translations:
+      - code: en
+        option_name: Depth of the menu levels
+      - code: ru
+        option_name: Глубина меню
+  - name: sep_hfcm_multi
+    category: QSL\HorizontalCategoriesMenu
+    type: separator
+    orderby: 4
+    translations:
+      - code: en
+        option_name: '"Multicolumn" layout settings'
+  - name: hfcm_use_multicolumn
+    category: QSL\HorizontalCategoriesMenu
+    type: checkbox
+    orderby: 5
+    value: N
+    translations:
+      - code: en
+        option_name: Use multicolumn layout for subcategories
+        option_comment: Select to display only 1st level subcategories in multiple column view. Number of columns should be set on category settings page.
+      - code: ru
+        option_name: Включить многоколоночный вид выпадающего меню
+        option_comment: Включите для отображения только 1-го уровня подкатегорий в многоколоночном виде. Количество колонок должно быть задано на странице настроек категории.
+  - name: hfcm_use_second_sublevel
+    category: QSL\HorizontalCategoriesMenu
+    type: checkbox
+    orderby: 6
+    value: N
+    translations:
+      - code: en
+        option_name: Use 2 levels of subcategories in multicolumn layout
+        option_comment: Select to display 2 levels of subcategories in multiple column view.
+      - code: ru
+        option_name: Отображать 2 уровня субкатегорий для многоколончного вид выпадающего меню
+        option_comment: Включите для отображения 2-ух уровней подкатегорий в многоколоночном виде.
+  - name: hfcm_default_columns_count
+    category: QSL\HorizontalCategoriesMenu
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 0 }
+    orderby: 7
+    value: 3
+    translations:
+      - code: en
+        option_name: Number of columns in multicolumn layout
+        option_comment: Can be changed for certain category on category modify page.
+      - code: ru
+        option_name: Количество колонок для многоколоночного вида
+        option_comment: Может устанавливаться инидивидуально для каждой категории на странице настроек категории.
+  - name: hfcm_column_multi_width
+    category: QSL\HorizontalCategoriesMenu
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 180 }
+    orderby: 8
+    value: 180
+    translations:
+      - code: en
+        option_name: Width of the column in multicolumn layout
+      - code: ru
+        option_name: Ширина одной колонки для многоколоночного вида
+  - name: sep_hfcm_common
+    category: QSL\HorizontalCategoriesMenu
+    type: separator
+    orderby: 9
+    translations:
+      - code: en
+        option_name: 'General settings'
+  - name: hfcm_category_menu_type
+    category: QSL\HorizontalCategoriesMenu
+    type: 'QSL\HorizontalCategoriesMenu\View\FormField\Select\CategoryMenuType'
+    orderby: 12
+    value: 'catalog'
+    translations:
+      - code: en
+        option_name: Category menu type
+      - code: ru
+        option_name: Тип меню категорий
+  - name: hfcm_show_product_num
+    category: QSL\HorizontalCategoriesMenu
+    type: checkbox
+    orderby: 15
+    value: N
+    translations:
+      - code: en
+        option_name: Show number of products in category
+        option_comment: Select to show the number of products in a category next to the category's name
+      - code: ru
+        option_name: Отображать количество продуктов в категории
+        option_comment: Включите для отображения количесва продуктов категории в скобках рядом с названием категории.
+  - name: hfcm_word_wrap
+    category: QSL\HorizontalCategoriesMenu
+    type: checkbox
+    value: Y
+    orderby: 20
+    translations:
+      - code: en
+        option_name: Wrap long category names
+        option_comment: Enable word wrapping for long category names
+      - code: ru
+        option_name: Переносить длинные названия категорий на следующую строку
+        option_comment: Включить перенос строк в названиях
+  - name: hfcm_show_home
+    category: QSL\HorizontalCategoriesMenu
+    type: checkbox
+    value: N
+    orderby: 50
+    translations:
+      - code: en
+        option_name: Display Home link at first position on top menu
+        option_comment: Choose to show Home link (following to the homepage) at first position on top menu. To change label edit the 'home_link' language label.
+      - code: ru
+        option_name: Отображать ссылку Домой на первом месте.
+        option_comment: Включите чтобы добавить ссылку Домой (ведет на домашнюю страницу) перед всеми ссылками верхнего меню. Чтобы поменять текст редатируйте метку 'home_link'
+
+XLite\Model\LanguageLabel:
+  - { name: 'home_link', translations: [{ code: en, label: 'Home' }, { code: ru, label: 'Домой' }] }
+  - { name: 'Root categories', translations: [{ code: en, label: 'Root categories' }, { code: ru, label: 'Корневые категории' }] }
+  - { name: 'Catalog one-root menu name', translations: [ { code: en, label: 'Catalog' } ] }

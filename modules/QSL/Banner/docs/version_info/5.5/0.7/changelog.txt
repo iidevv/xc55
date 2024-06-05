@@ -1,0 +1,5 @@
+Version 5.5.0.7
+
+Improvements (1)
+2023-06-05 - [Task] Removed an unused code. #XCB-1804 #CDev-Core #QSL-Banner #XC-SystemFields
+

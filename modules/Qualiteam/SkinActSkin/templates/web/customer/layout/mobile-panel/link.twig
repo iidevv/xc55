@@ -1,0 +1,14 @@
+{##
+ # Button template (mobile bottom panel)
+#}
+
+<div class="mobile-panel__item" role="listitem">
+  <a class="{{ this.getButtonCSSClasses() }}" href="{{ this.getURL() }}">
+    <div class="mobile-panel__button-icon">
+      {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon=this.getIcon(), class='mobile-panel__button-icon-svg') }}
+    </div>
+    {% if this.getTitle() %}
+      <span class="mobile-panel__button-title">{{ this.getTitle() }}</span>
+    {% endif %}
+  </a>
+</div>

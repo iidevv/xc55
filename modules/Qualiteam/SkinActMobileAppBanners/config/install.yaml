@@ -1,0 +1,20 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActMobileAppBanners Mobile App only", translations: [{ code: en, label: "Mobile App only" }] }
+  - { name: "SkinActMobileAppBanners APP_POSITION_1", translations: [{ code: en, label: "the 1st position" }] }
+  - { name: "SkinActMobileAppBanners APP_POSITION_2", translations: [{ code: en, label: "the 2nd position" }] }
+  - { name: "SkinActMobileAppBanners APP_POSITION_3", translations: [{ code: en, label: "the 3rd position" }] }
+  - { name: "SkinActMobileAppBanners appPosition", translations: [{ code: en, label: "Banner location on Mobile App" }] }
+  - { name: "SkinActMobileAppBanners APP_POSITION undefined", translations: [{ code: en, label: "undefined" }] }
+  - { name: "SkinActMobileAppBanners appPosition help", translations: [{ code: en, label: "Banners in the 2nd position block will be shown in the mobile application with the first image only" }] }
+  - { name: "SkinActMobileAppBanners View of the banner", translations: [{ code: en, label: "View of the banner" }] }
+  - { name: "SkinActMobileAppBanners for mobile app only", translations: [{ code: en, label: "for mobile app only" }] }
+  - { name: "SkinActMobileAppBanners page description", translations: [{ code: en, label: "Please note that if you have more than one banner enabled on the same location for the mobile application, then only the first enabled banner will be displayed on the homepage of the mobile application." }] }
+  - { name: "SkinActMobileAppBanners position", translations: [{ code: en, label: "Position" }] }
+  - { name: "SkinActMobileAppBanners BannerSlidesDescription page description", translations: [{ code: en, label: "Please note that only the first enabled image will be sent to the mobile application for the 2nd banner position on homepage." }] }

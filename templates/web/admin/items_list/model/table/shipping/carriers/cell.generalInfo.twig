@@ -1,0 +1,15 @@
+{##
+ # General info column
+ #}
+
+<div class="general-info">
+  <div class="title">{{ this.entity.getName() }}</div>
+
+  <div class="description">
+    {% if this.isOffline(this.entity) %}
+      {{ this.getZonesList(this.entity) }}
+    {% else %}
+      {{ t('Carrier Accounts') }}
+    {% endif %}
+  </div>
+</div>

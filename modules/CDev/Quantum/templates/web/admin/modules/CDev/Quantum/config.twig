@@ -1,0 +1,43 @@
+{##
+ # QuantumGateway configuration page
+ #}
+
+<div class="settings-text">
+  {{ t('Use of Restriction key must be disabled in your Quantum Gateway merchant center account at all times.') }}
+  <br /><br />
+</div>
+
+<ul class="table model-properties settings-table quantum">
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text',
+      fieldName='settings[login]',
+      fieldId='settings_login',
+      value=this.paymentMethod.getSetting('login'),
+      required='true',
+      label=t('Login'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text',
+      fieldName='settings[hash]',
+      fieldId='settings_hash',
+      value=this.paymentMethod.getSetting('hash'),
+      label=t('MD5 hash value'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text\\OrderPrefix',
+      value=this.paymentMethod.getSetting('prefix'),
+      label=t('Invoice number prefix'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Select\\YesNo',
+      label=t('Include response in hash'),
+      value=this.paymentMethod.getSetting('include_response'),
+      fieldName='settings[include_response]',
+      fieldId='settings_include_response',
+      help=t('This value must be set in exactly the same way as it is set on the payment gateway end.')
+    ) }}
+  </li>
+</ul>

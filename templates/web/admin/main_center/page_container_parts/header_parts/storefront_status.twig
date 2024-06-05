@@ -1,0 +1,35 @@
+{##
+ # Storefront status
+ #}
+
+{% apply spaceless %}
+  <div {{ this.printTagAttributes(this.getContainerTagAttributes())|raw }}>
+    {% if this.isTogglerVisible() %}
+      <span>{{ this.getStorefrontLinkLabel() }}</span>
+      <a href="{{ this.getLink() }}" {{ this.printTagAttributes(this.getTogglerTagAttributes())|raw }}>
+        <div class="onoffswitch">
+          <label for="">
+            <div class="onoffswitch-inner">
+              <div class="on-caption">{{ t('Open') }}</div>
+              <div class="off-caption">{{ t('Closed') }}</div>
+            </div>
+            <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
+      </a>
+      <a href="{{ this.getOpenedShopURL() }}" class="link opened" target="_blank">{{ t('View') }}</a>
+      <a href="{{ this.getClosedShopURL() }}" class="link closed" target="_blank">{{ t('Private link') }}</a>
+      {{ widget(
+        '\\XLite\\View\\Tooltip',
+        text=t(this.getWarningMessage()),
+        isImageTag='true',
+        imageClass='fa fa-exclamation-triangle',
+        placement='bottom'
+      ) }}
+    {% else %}
+      <a href="{{ this.getShopURL() }}" target="_blank">
+        {{ this.getStorefrontLinkLabel() }}
+      </a>
+    {% endif %}
+  </div>
+{% endapply %}

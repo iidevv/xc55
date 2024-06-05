@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-08-12 - [Bug] Error if importing orders with the add-on Avatax enabled and configured. Fixed.  #XCB-1443 #XC-AvaTax
+

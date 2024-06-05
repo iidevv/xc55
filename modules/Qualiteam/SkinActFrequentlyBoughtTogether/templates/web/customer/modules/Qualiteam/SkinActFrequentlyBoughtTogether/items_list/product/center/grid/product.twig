@@ -1,0 +1,8 @@
+<div class="{{ this.getProductCellClass() }} freq-products-grid__item-box" data-productid={{ this.getProductId() }}>
+  <div class="freq-products-grid__photo-box">
+  {{ widget_list('itemsList.widget.frequentlyBought.product.grid.customer.mainBlock', product=this.product) }}
+  </div>
+  <div class="freq-products-grid__info-box">
+    {{ widget_list('itemsList.widget.frequentlyBought.product.grid.customer.info', product=this.product) }}
+  </div>
+</div>

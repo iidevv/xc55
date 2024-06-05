@@ -1,0 +1,9 @@
+{##
+ # Account top menu node
+ #}
+<div class="account-menu menu">
+  <div class="title" onclick="this.classList.toggle('opened')">
+    <div class="icon">{{ this.getSVGImage('images/account.svg')|raw }}</div>
+  </div>
+  <div class="dropdown-menu">{{ widget('XLite\\View\\Menu\\Admin\\Account\\Menu') }}</div>
+</div>

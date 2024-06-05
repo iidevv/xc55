@@ -1,0 +1,20 @@
+{#
+# Get all couriers button
+#}
+
+<div class="aftership-settings__import-couriers-button">
+  <div class="aftership-settings__label"><label></label></div>
+  <div class="aftership-settings__value">
+    <div class="aftership-settings__wrapper">
+      <div class="aftership-settings__button">
+        {{ include('button/regular.twig') }}
+      </div>
+
+      {% if this.isShowButtonHelpBlock() %}
+        <div class="aftership-settings__help help-block">
+          <span class="aftership-settings__help-info">{{ this.getHelpBlockLabel() }}</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

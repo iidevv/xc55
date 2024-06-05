@@ -1,0 +1,6 @@
+#
+# Module services
+
+services:
+  _defaults:
+    autowire: true

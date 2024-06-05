@@ -1,0 +1,99 @@
+parameters:
+    xcart.cdev.coupons.coupon_types: [ '%', '$' ]
+
+api_platform:
+    resource_class_directories:
+        - '%kernel.project_dir%/var/run/classes/CDev/Coupons/Model'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # Validator
+    xcart.cdev.coupons.validator.coupon_type:
+        class: CDev\Coupons\Validator\Constraint\CouponTypeValidator
+        public: true
+        arguments:
+            $types: '%xcart.cdev.coupons.coupon_types%'
+
+    # API
+
+    # /orders
+    CDev\Coupons\API\Endpoint\Order\Transformer\UsedCoupon\OutputTransformerInterface: '@CDev\Coupons\API\Endpoint\Order\Transformer\UsedCoupon\OutputTransformer'
+    CDev\Coupons\API\Endpoint\Order\Transformer\UsedCoupon\OutputTransformer: ~
+
+    # /coupons
+    CDev\Coupons\API\Endpoint\Coupon\Transformer\OutputTransformerInterface: '@CDev\Coupons\API\Endpoint\Coupon\Transformer\OutputTransformer'
+    CDev\Coupons\API\Endpoint\Coupon\Transformer\OutputTransformer: ~
+    CDev\Coupons\API\Endpoint\Coupon\Transformer\InputTransformerInterface: '@CDev\Coupons\API\Endpoint\Coupon\Transformer\InputTransformer'
+    CDev\Coupons\API\Endpoint\Coupon\Transformer\InputTransformer:
+        arguments:
+            $couponRepository: '@xcart.repository.cdev.coupons.coupon'
+            $productRepository: '@xcart.repository.product'
+            $productClassesUpdater: '@xcart.entities.sub_entity_transformer.input.id_collection.product_class'
+            $membershipsUpdater: '@xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.coupons.memberships'
+            $zonesUpdater: '@xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.coupons.zones'
+            $productsUpdater: '@xcart.entities.sub_entity_transformer.input.id_collection.coupon_products_by_productid'
+            $categoriesUpdater: '@xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.coupons.categories'
+
+    xcart.entities.sub_entity_transformer.input.id_collection.coupon_products_by_productid:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.cdev.coupons.coupon_product'
+            $name: 'product'
+
+    xcart.entities.id_getter.cdev.coupons.coupon_product:
+        class: XLite\API\Helper\IdGetter
+        arguments:
+            $methodName: 'getProductId'
+
+    xcart.repository.cdev.coupons.coupon:
+        class: CDev\Coupons\Model\Repo\Coupon
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - CDev\Coupons\Model\Coupon
+
+    xcart.repository.cdev.coupons.coupon_product:
+        class: CDev\Coupons\Model\Repo\CouponProduct
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - CDev\Coupons\Model\CouponProduct
+
+    CDev\Coupons\API\OpenApiTagsRepositoryDecorator:
+        decorates: XLite\API\OpenApiTagsRepository
+
+    xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.coupons.categories:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdBidirectionalCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.category'
+            $name: 'category'
+            $idGetter: '@xcart.entities.id_getter.category'
+            $revertedGetterName: 'getCoupons'
+
+    xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.coupons.memberships:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdBidirectionalCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.membership'
+            $name: 'membership'
+            $idGetter: '@xcart.entities.id_getter.membership'
+            $revertedGetterName: 'getCoupons'
+
+    xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.coupons.product_classes:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdBidirectionalCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.product_class'
+            $name: 'product class'
+            $revertedGetterName: 'getCoupons'
+
+    xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.coupons.zones:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdBidirectionalCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.zone'
+            $name: 'zone'
+            $idGetter: '@xcart.entities.id_getter.zone'
+            $revertedGetterName: 'getCoupons'
+
+    CDev\Coupons\LifetimeHook\Hook:
+      tags:
+        - { name: xcart.lifetime-hook, moduleId: CDev-Coupons, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }

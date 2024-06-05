@@ -1,0 +1,20 @@
+{{ widget('\\Qualiteam\\SkinActVideoFeature\\View\\Model\\Search') }}
+
+{% if this.isShowSubcategories() %}
+  {{ widget('\\Qualiteam\\SkinActVideoFeature\\View\\Subcategories') }}
+{% else %}
+  {% if this.isShowVideoHead() %}
+    <div class="videos__head">
+      <span class="videos__category-name">
+        {{ this.getCategoryName() }}
+      </span>
+  {% endif %}
+
+  <div class="video__back-button">
+    <a class="video__back-button-link" href="{{ xurl('educational_videos', '') }}">
+      {{ t('SkinActVideoFeature back button') }}
+    </a>
+  </div>
+
+  {{ widget('\\Qualiteam\\SkinActVideoFeature\\View\\Videos', videos=this.getPageData()) }}
+{% endif %}

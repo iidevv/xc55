@@ -1,0 +1,1 @@
+X-Cart 5.5.0.x is a Symfony based application. For the correct and safe operation of your X-Cart store, please change the root dir in your server settings according to our instructions https://developer.x-cart.com/getting_started/server_setup. Also, please be aware that your X-Cart software will not be able to run further updates until the changes noted above have been made.

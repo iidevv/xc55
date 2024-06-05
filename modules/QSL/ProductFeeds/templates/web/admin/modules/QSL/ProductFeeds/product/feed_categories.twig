@@ -1,0 +1,9 @@
+{% form 'QSL\\ProductFeeds\\View\\Form\\Product\\Modify\\FeedCategories' %}
+
+<ul class="table product-modify-feed-categories">
+  {{ widget_list('product.feedCategories.parts') }}
+</ul>
+
+{{ widget('\\XLite\\View\\StickyPanel\\ItemsListForm') }}
+
+{% endform %}

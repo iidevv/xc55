@@ -1,0 +1,7 @@
+Version 5.5.0.1
+
+Fixes (3)
+2022-10-04 - [Bug] The menu item Reports in the Admin area main menu could not be expanded. Fixed. #XCB-1775 #CDev-Core #QSL-OrderReports
+2022-09-30 - [Bug] The date picker was missing on the Order Reports pages. Fixed. #XCB-1682 #QSL-OrderReports
+2022-09-14 - [Bug] Order Reports & Multivendor. Vendor reports were based on the products of all the vendors in the store. Fixed. #XCB-1681 #XC-MultiVendor #QSL-OrderReports
+

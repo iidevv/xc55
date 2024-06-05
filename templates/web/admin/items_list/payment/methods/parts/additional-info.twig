@@ -1,0 +1,22 @@
+{##
+ # Payment methods list : line : header : title
+ #
+ # @ListChild (list="payment.predefined-methods.list.line.general-info", weight=400)
+ # @ListChild (list="payment.methods.list.line.general-info", weight=200)
+ #}
+
+{% apply spaceless %}
+  <div class="additional-info">
+    {% if this.method.getCreditCardRate() %}
+      <span class="credit-card-rate">
+        {{ t('Credit card rate') }}: {{ this.method.getCreditCardRate() }}
+      </span>
+    {% endif %}
+
+    {% if this.method.getTransactionFee() %}
+      <span class="transaction-fee">
+        {{ t('Transaction fee') }}: {{ this.method.getTransactionFee() }}
+      </span>
+    {% endif %}
+  </div>
+{% endapply %}

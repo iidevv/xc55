@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Improvements (1)
+2022-12-26 - [Story] Incorrect tags transfer during the data migration. Fixed. #ECOM-2449 #XC-FroalaEditor
+

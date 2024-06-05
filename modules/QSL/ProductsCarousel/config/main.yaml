@@ -1,0 +1,17 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.0
+type: common
+authorName: Qualiteam
+moduleName: 'Products carousel'
+description: 'Enable responsive and user-friendly product carousel for  Bestsellers, Featured Products, New Arrivals, Product Recommendations, Cooming Soon and Products on Sale.'
+minorRequiredCoreVersion: 0
+dependsOn: {  }
+incompatibleWith: {  }
+showSettingsForm: true
+canDisable: true

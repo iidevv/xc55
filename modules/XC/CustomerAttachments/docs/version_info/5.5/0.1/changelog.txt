@@ -1,0 +1,6 @@
+Version 5.5.0.1
+
+Fixes (2)
+2022-08-29 - [Bug] Multiple console errors when attempting to remove an attached file. Fixed. #XCB-1634 #XC-CustomerAttachments
+2022-08-24 - [Bug] CustomerAttachments. Clicking "Attach files" on the cart page resulted in fatal error. Fixed. #XCB-1548 #XC-CustomerAttachments
+

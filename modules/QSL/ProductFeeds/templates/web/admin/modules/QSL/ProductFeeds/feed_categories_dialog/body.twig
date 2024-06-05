@@ -1,0 +1,16 @@
+{% form '\\QSL\\ProductFeeds\\View\\Form\\FeedCategoriesDialog' %}
+
+ <div class="feed-categories-dialog">
+
+     {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\NextagCategory', fieldName=this.getNamePostedData('nextag_id'), label=t('NexTag category'), unmodifiedOption='true', value='-1') }}
+     {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\ShopzillaCategory', fieldName=this.getNamePostedData('shopzilla_id'), label=t('Shopzilla category'), unmodifiedOption='true', value='-1') }}
+     {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\PricegrabberCategory', fieldName=this.getNamePostedData('pricegrabber_id'), label=t('Pricegrabber category'), unmodifiedOption='true', value='-1') }}
+     {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\EBayCommerceCategory', fieldName=this.getNamePostedData('ebay_id'), label=t('eBay Commerce Network category'), unmodifiedOption='true', value='-1') }}
+     {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\GoogleShoppingCategory', fieldName=this.getNamePostedData('google_id'), label=t('Google Shopping category'), unmodifiedOption='true', value='-1') }}
+
+     <div class="label">{{ t('Feed categories will be changed for all selected products') }}</div>
+
+     {{ widget('\\XLite\\View\\Button\\Submit', style='action', label=t('Update feed categories')) }}
+ </div>
+
+{% endform %}

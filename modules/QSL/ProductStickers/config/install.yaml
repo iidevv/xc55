@@ -1,0 +1,88 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: 'settings_page_heading'
+    category: QSL\ProductStickers
+    type: hidden
+    orderby: 50
+    translations:
+      - code: en
+        option_name: 'Product Stickers Settings'
+
+  - name: sticker_display_mode
+    category: QSL\ProductStickers
+    type: QSL\ProductStickers\View\FormField\Select\StickerDisplayMode
+    orderby: 100
+    value: 'corner_ribbon'
+    translations:
+      - code: en
+        option_name: 'Sticker display mode'
+
+  - name: move_labels
+    category: QSL\ProductStickers
+    type: checkbox
+    orderby: 200
+    value: N
+    translations:
+      - code: en
+        option_name: Display product labels as stickers
+      - code: ru
+        option_name: 'Отображать продуктовые метки как стикеры'
+
+  - name: show_stickers_on_product_pages
+    category: QSL\ProductStickers
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 300
+    value: true
+    translations:
+      - code: en
+        option_name: 'Show stickers on product pages'
+
+  - name: vendor_stickers
+    category: QSL\ProductStickers
+    type: checkbox
+    orderby: 400
+    value: Y
+    translations:
+      - code: en
+        option_name: Allow vendors to edit stickers
+      - code: ru
+        option_name: 'Разрешить продавцам редкатировать продуктовые стикеры'
+
+XLite\Model\LanguageLabel:
+  - { name: 'New sticker', translations: [{ code: en, label: 'New sticker' }, { code: ru, label: 'Добавить стикер' }] }
+  - { name: "Product stickers", translations: [{ code: en, label: "Product stickers" }, { code: ru, label: "Продуктовые стикеры" }] }
+  - { name: "Sticker text color", translations: [{ code: en, label: "Sticker text color" }] }
+  - { name: "Sticker background color", translations: [{ code: en, label: "Sticker background color" }] }
+  - { name: "Corner ribbon", translations: [{ code: en, label: "Corner ribbon" }] }
+  - { name: "Classic label", translations: [{ code: en, label: "Classic label" }] }
+
+QSL\ProductStickers\Model\ProductSticker:
+  - translations: [{ code: en, name: 'Sale' }]
+    position: 0
+    text_color: ffffff
+    bg_color: 64a71b
+    isLabel: true
+
+  - translations: [{ code: en, name: 'Free shipping' }]
+    position: 0
+    text_color: ffffff
+    bg_color: 4a90e2
+    isLabel: true
+
+  - translations: [{ code: en, name: 'New!' }]
+    position: 0
+    text_color: ffffff
+    bg_color: f5a623
+    isLabel: true
+
+  - translations: [{ code: en, name: 'Coming soon' }]
+    position: 0
+    text_color: ffffff
+    bg_color: 9eaca9
+    isLabel: true

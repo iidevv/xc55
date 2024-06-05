@@ -1,0 +1,63 @@
+{##
+ # Migration Wizard - Detect transferable data action
+ #}
+{% form '\\XC\\MigrationWizard\\View\\Form\\Migration\\DetectTransferableData' %}
+<div class="panel">
+    <div class="panel-body">
+        <div class="demo-mode model-properties">
+            <ul class="table">
+                <li>
+                    {{ widget('\\XLite\\View\\FormField\\Input\\Checkbox\\Simple', label=t('Demo migration'), fieldName='demo_mode', value=this.isDemoMode(), help=t('Demo migration help')) }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="what-to-transfer-section">
+    <div class="wizard-section">
+        <h2>{{ t('Transferable data') }}</h2>
+    </div>
+
+    <div class="panel">
+        <div class="select-all-container">
+            <a class="select-all-link select-all" href="#">{{ t('Select all') }}</a>
+            <a class="select-all-link unselect-all" href="#">{{ t('Unselect all') }}</a>
+        </div>
+        <div class="panel-body">
+        {% for category in this.getTransferableCategories() %}
+            <div {#class="panel panel-default"#}>
+    {#            <p class="panel-heading">
+                    <input type="checkbox" name="category_id_{{ category.name }}" id="category_id_{{ category.name }}" class="category-selector" />
+                    <label for="category_id_{{ category.name }}">{{ t(category.name) }}</label>
+                </p>#}
+                {% if category.rules %}
+                    <ul class="table">
+                        {% for rule in category.rules %}
+                            {% set categoryRule = rule.getRule() %}
+                            {% if categoryRule and categoryRule.enabled and this.isFreeModuleOrHasData(categoryRule.logic) %}
+                                <li class="transfer-category-container">
+									{% set requiredPaidModule = this.getRequiredPaidModule(categoryRule.logic) %}
+									{% if not requiredPaidModule %}
+										{{ widget('\\XLite\\View\\FormField\\Input\\Checkbox\\SimpleInline', label=categoryRule.name, fieldName=categoryRule.logic, value=not this.isDemoMode() and this.isRuleSelected(categoryRule.logic)) }}
+									{% else %}
+										{{ widget('\\XLite\\View\\FormField\\Input\\Checkbox\\SimpleInline', label=categoryRule.name, fieldName=categoryRule.logic, value=false, attributes={'disabled': 'disabled'}) }}
+										<div style="flex-basis: 100%;height: 0;"></div>
+										<div class="transfer-category-paid-module-note">{{ t('module_name commercial add-on is required', {'url': requiredPaidModule.url, 'module_name': requiredPaidModule.name}) | raw }}</div>
+									{% endif %}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+{{ widget('\\XLite\\View\\Button\\Submit', label=t('Save and continue'), style='center regular-main-button') }}
+
+{% endform %}
+
+{% include this.getDir() ~ '/step_back.twig' %}

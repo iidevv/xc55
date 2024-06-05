@@ -1,0 +1,13 @@
+<div class="products">
+    {{ widget_list('itemsList.widget.frequentlyBought.product.before') }}
+    <ul class="freq-products-grid grid-list">
+      {% for product in this.getFreqBoughtTogetherProducts() %}
+        <li class="product-cell box-product freq-products-grid__item">
+            {{ this.getProductWidgetContent(product)|raw }}
+        </li>
+      {% endfor %}
+
+      {{ this.getTotalProductWidgetContent()|raw }}
+    </ul>
+    {{ widget_list('itemsList.widget.frequentlyBought.product.after') }}
+</div>

@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2022-11-28 - [Bug] The "Manage catalog" permission was working incorrectly. Fixed. #XCB-1872 #CDev-Core #CDev-FeaturedProducts #QSL-BackInStock #QSL-ColorSwatches #QSL-Backorder #XC-UpdateInventory
+

@@ -1,0 +1,9 @@
+{##
+ # @ListChild (list="qsl.productquestions.list", weight="200")
+ #}
+
+{% if this.isMoreLinkVisible() %}
+  <div class="link show-all-product-questions">
+    <a href="{{ xurl('product', '', {'product_id': this.getProductId()}) }}#product-details-tab-questions">{{ t('See all questions about the product') }}</a>
+  </div>
+{% endif %}

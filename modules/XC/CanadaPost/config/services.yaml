@@ -1,0 +1,8 @@
+services:
+  _defaults:
+    autowire: true
+
+  XC\CanadaPost\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-CanadaPost, type: init, method: onInit }
+      - { name: xcart.lifetime-hook, moduleId: XC-CanadaPost, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }

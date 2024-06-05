@@ -1,0 +1,31 @@
+{##
+ # GDPR Modules
+ #}
+<gdpr-modules inline-template>
+  <div v-if="modules.length" class="table-wrapper items-list items-list-table gdpr-modules">
+    <table class="list">
+      <thead>
+      <tr>
+        <th class="description">
+          <div class="table-header">{{ t('Gdpr Modules') }}</div>
+        </th>
+        <th class="date">
+          <div class="table-header">{{ t('Enabled date') }}</div>
+        </th>
+      </tr>
+      </thead>
+      <tbody v-for="module in modules" class="lines">
+      <tr class="line">
+        <td class="cell">
+          <div class="name" v-text="module.moduleName"></div>
+          <div class="description" v-text="module.description"></div>
+        </td>
+        <td class="cell">
+          <div class="date" v-text="getDate(module.enabledDate)"></div>
+          <div class="time" v-text="getTime(module.enabledDate)"></div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</gdpr-modules>

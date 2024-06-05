@@ -1,0 +1,10 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+services:
+  QSL\MembershipProducts\Core\Task\CheckMembershipTTL:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }

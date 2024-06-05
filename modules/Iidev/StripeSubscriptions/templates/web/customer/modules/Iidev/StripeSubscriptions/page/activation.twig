@@ -1,0 +1,86 @@
+<style>
+	.subscription {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		max-width: 430px;
+		margin: 0 auto;
+	}
+	.subscription svg {
+		margin-bottom: 30px;
+	}
+	.subscription h1 {
+		margin-bottom: 10px;
+	}
+	.subscription p {
+		margin-bottom: 30px;
+	}
+	.subscription-controls a:not(:last-child) {
+		margin-right: 15px;
+	}
+	.subscription .loading {
+		animation: 0.5s load infinite linear;
+	}
+	@keyframes load {
+		0% {
+			transform: rotate(0);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+</style>
+{% if this.isProMembership() %}
+	<div class="subscription">
+		<svg width="60" height="60" viewbox="0 0 358 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M179 0C226.474 0 272.003 18.8589 305.572 52.4279C339.141 85.9969 358 131.526 358 179C358 226.474 339.141 272.003 305.572 305.572C272.003 339.141 226.474 358 179 358C131.526 358 85.9969 339.141 52.4279 305.572C18.8589 272.003 0 226.474 0 179C0 131.526 18.8589 85.9969 52.4279 52.4279C85.9969 18.8589 131.526 0 179 0ZM156.702 214.314L116.938 174.525C115.513 173.099 113.82 171.969 111.958 171.197C110.095 170.426 108.099 170.029 106.083 170.029C104.067 170.029 102.071 170.426 100.208 171.197C98.3458 171.969 96.6535 173.099 95.228 174.525C92.3491 177.404 90.7317 181.309 90.7317 185.38C90.7317 189.452 92.3491 193.356 95.228 196.235L145.859 246.867C147.281 248.299 148.972 249.436 150.835 250.213C152.698 250.989 154.696 251.388 156.714 251.388C158.733 251.388 160.731 250.989 162.594 250.213C164.457 249.436 166.148 248.299 167.57 246.867L272.412 141.998C273.857 140.579 275.006 138.887 275.794 137.021C276.581 135.155 276.992 133.152 277.001 131.126C277.01 129.101 276.619 127.094 275.849 125.221C275.078 123.348 273.945 121.645 272.514 120.212C271.082 118.779 269.382 117.644 267.509 116.872C265.637 116.099 263.63 115.705 261.605 115.712C259.58 115.719 257.576 116.127 255.709 116.913C253.842 117.698 252.149 118.845 250.728 120.288L156.702 214.314Z" fill="#4BB543"/>
+		</svg>
+		<h1>{{t('Subscription Activated!')}}</h1>
+		<p>{{t('Your subscription is now active and ready to go.')}}</p>
+		<div class="subscription-controls">
+			{% if not this.isCartEmpty() %}
+				<a class="btn regular-button regular-main-button" href="/?target=checkout">{{t('Continue checkout')}}</a>
+			{% else %}
+				<a class="btn regular-button regular-main-button" href="/?target=subscription_page">{{t('Manage Subscription')}}</a>
+			{% endif %}
+		</div>
+	</div>
+{% else %}
+	<div class="subscription">
+		<svg class="loading" width="60" height="60" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M10 1C8.21997 1 6.47991 1.52784 4.99987 2.51677C3.51983 3.50571 2.36628 4.91131 1.68509 6.55585C1.0039 8.20038 0.82567 10.01 1.17294 11.7558C1.5202 13.5016 2.37737 15.1053 3.63604 16.364C4.89472 17.6226 6.49836 18.4798 8.24419 18.8271C9.99002 19.1743 11.7996 18.9961 13.4442 18.3149C15.0887 17.6337 16.4943 16.4802 17.4832 15.0001C18.4722 13.5201 19 11.78 19 10" stroke="#27394C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+		<h1>{{t('Please wait!')}}</h1>
+		<p>{{t('Activating your subscription...')}}</p>
+	</div>
+	<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let counter = 0;
+
+            const checkSubscriptionStatus = () => {
+                fetch('/stripe-membership-status').then(response => {
+                    if (response.status === 401) {
+                        document.querySelector('.subscription').textContent = 'Error: Unauthorized access detected. Please contact us for assistance.';
+                        clearInterval(timer);
+                    } else {
+                        return response.json();
+                    }
+                }).then(data => {
+                    if (data && data.message === false) {
+                        counter++;
+                        if (counter > 5) {
+                            document.querySelector('.subscription').textContent = 'Error: Your Subscription has not been activated! Please contact us for assistance.';
+                            clearInterval(timer);
+                        }
+                    } else if(data.message === true) {
+                        location.reload();
+                    }
+                }).catch(error => console.error('Error:', error));
+            };
+
+            const timer = setInterval(checkSubscriptionStatus, 3000);
+        });
+    </script>
+
+{% endif %}

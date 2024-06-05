@@ -1,0 +1,4 @@
+Version 5.5.0.3
+
+Fixes (1)
+2022-10-06 - [Bug] Fixed JS error "Uncaught TypeError: Cannot set properties of undefined (setting 'screen')" #XCB-1790 #XC-GoogleFeed #XC-Concierge

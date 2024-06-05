@@ -1,0 +1,8 @@
+services:
+  _defaults:
+    autowire: true
+
+  CDev\Egoods\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: CDev-Egoods, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }
+

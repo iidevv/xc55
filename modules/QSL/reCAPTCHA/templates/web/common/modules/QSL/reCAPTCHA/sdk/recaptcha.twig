@@ -1,0 +1,74 @@
+<script>
+
+var initRecaptchaV3 = function () {
+    var siteKey = '{{ this.getPublicKey() }}';
+    var action = '{{ this.getActionAttribute() }}';
+
+    // this closure remembers siteKey and action,
+    // declared before its own declaration
+    var fillRecaptchaTokenOnSubmit = function (event) {
+        var form = this;
+        var $form = jQuery(this);
+
+        var $inputField = $form.find('[name="g-recaptcha-response"]');
+
+        // check if the field was filled recently
+        var minLastUpdated = +(new Date) - 5000; // 5 seconds;
+        var lastUpdated = $form.data('last-updated');
+        if (lastUpdated && lastUpdated > minLastUpdated) {
+            // console.log('fillRecaptchaTokenOnSubmit(): submitting w/ token…', $inputField.val());
+            return true; // let it submit
+        }
+
+        // extend "action" to something like "form_target/form_action"
+        var fullAction = action;
+        if ($form.find('[name="target"]').val()) {
+            fullAction = $form.find('[name="target"]').val().replace(/[^a-zA-Z0-9]+/g, '').trim();
+        }
+        if ($form.find('[name="action"]').val()) {
+            fullAction += '/' + $form.find('[name="action"]').val().replace(/[^a-zA-Z0-9]+/g, '').trim();
+        } else {
+            fullAction += '/send';
+        }
+
+        grecaptcha.execute(siteKey, { action: fullAction })
+            .then(function (token) {
+                // console.log('fillRecaptchaTokenOnSubmit(): setting token for action…', fullAction);
+                $inputField.val(token);
+                $form.data('last-updated', +(new Date));
+                $form.off('beforeSubmit.fillRecaptchaToken');
+                $form.submit();
+            });
+
+        return false;
+    }
+
+    var rebindHandlers = function () {
+        jQuery('form').each(function (idx, form) {
+            var $form = jQuery(form);
+
+            // check the field
+            var $inputField = $form.find('[name="g-recaptcha-response"]');
+            if (! $inputField.length) {
+                // no field found, skipping this form'
+                return true;
+            }
+
+            $form.off('submit.fillRecaptchaToken');
+            $form.on('submit.fillRecaptchaToken', fillRecaptchaTokenOnSubmit);
+            $form.off('beforeSubmit.fillRecaptchaToken');
+            $form.on('beforeSubmit.fillRecaptchaToken', function (event) { event.result = false; });
+        });
+    }
+
+    // simply run grecaptcha.execute() on every page load to register an action
+    grecaptcha.execute(siteKey, { action: action });
+
+    // fillRecaptchaTokenOnSubmit is supposed to run on every form submit
+    rebindHandlers();
+    xcart.bind([ 'popup.postprocess', 'invalidForm', 'invalidElement' ], rebindHandlers);
+}
+
+</script>
+
+<script src="{{ this.getSDKUrl() }}" defer></script>

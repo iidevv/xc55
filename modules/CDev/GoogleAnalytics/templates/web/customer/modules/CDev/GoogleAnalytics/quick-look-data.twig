@@ -1,0 +1,9 @@
+{##
+ # Impression block
+ #
+ # @ListChild (list="product.details.quicklook.info", weight="20")
+ #}
+{% set gaData = this.getGAData() %}
+{% if gaData|length %}
+    <script data-ga-ec-action="{{ gaData }}"></script>
+{% endif %}

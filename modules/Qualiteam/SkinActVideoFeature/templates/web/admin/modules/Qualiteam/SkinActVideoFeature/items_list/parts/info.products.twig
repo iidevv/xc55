@@ -1,0 +1,11 @@
+{##
+ # Videos count
+ #
+ # @ListChild (list="itemsList.qualiteam.skinactvideofeature.videocategories.cell.info", weight="100")
+ #}
+
+<a href="{{ xurl('category_videos', '', {'id': this.entity.getCategoryId()}) }}"class="count-link">{{ this.entity.getVideos(null, true) }}</a>{% apply spaceless %}
+{% if this.entity.hasSubcategories() %}
+({{ this.entity.getVideos(this.getVideosCountCondition(), true) }})
+{% endif %}
+{% endapply %}

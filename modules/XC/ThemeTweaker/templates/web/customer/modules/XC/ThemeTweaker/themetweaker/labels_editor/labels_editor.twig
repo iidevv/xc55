@@ -1,0 +1,30 @@
+{##
+ # Layout editor panel
+ #}
+
+<xlite-labels-editor inline-template>
+  <div id="labels-editor-panel">
+    <div class="labels-editor-sidebar themetweaker-sidebar">
+      <div class="labels-editor-header sidebar-main-header">
+        <span class="go-to-layout-editor" @click="switchTab('layout_editor')">{{ this.displaySVGImage('modules/XC/ThemeTweaker/themetweaker_panel/icons/back.svg') }}</span>
+        <span>{{ t('Labels Editor') }}</span>
+      </div>
+      <div class="themetweaker-sidebar-content">
+        <p>
+          {{ this.t('This tool allows you to edit Labels. Read more about using Labels Editor.')|raw }}
+        </p>
+        <div>
+          <div class="themetweaker-action themetweaker-action_switcher">
+            <label>{{ this.t('Highlight Labels') }}</label>
+            {{ widget('XLite\\View\\FormField\\Input\\Checkbox\\OnOff',
+              fieldOnly=true,
+              attributes={
+                ":checked": "isHighlightModeEnabled()",
+                '@change': 'onSwitchChange',
+                'data-panel-switcher': 'data-panel-switcher'}) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</xlite-labels-editor>

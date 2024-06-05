@@ -1,0 +1,9 @@
+{##
+ # @ListChild (list="question.ask.fields", weight="450")
+ #}
+<li class="input">
+  <label for="private">
+    {{ widget('XLite\\View\\FormField\\Input\\Checkbox', value='1', isChecked='false', fieldName='private', fieldOnly='true', help=t('Tick this checkbox if you want to make your question invisible for other users.')) }}
+    <span>{{ t('It\'s a private question') }}</span>
+  </label>
+</li>

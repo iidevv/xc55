@@ -1,0 +1,10 @@
+{##
+ # Logs list page
+#}
+<div class="search-widget-container" {{ this.printTagAttributes(this.getAttributes())|raw }}>
+  {% if this.isSearchVisible() %}
+    {{ widget('Qualiteam\\SkinActSkuVault\\View\\SearchPanel\\LogsSearch') }}
+  {% endif %}
+
+  {{ widget('Qualiteam\\SkinActSkuVault\\View\\ItemsList\\Logs') }}
+</div>

@@ -1,0 +1,9 @@
+{% if this.isFeedBeingGenerated() %}
+  <div class="feed-progress">
+    {{ widget('XLite\\View\\EventTaskProgress', showCancel=false, event=this.getGeneratorEvent(), title='', blockingNote=t('Product feeds are being created on the server. Now you can leave this page and open it later to check the progress.'), nonBlockingNote=t('Product feeds are being created on the server for selected comparison shopping websites. If you leave this page the process will be put on hold until you open it in your browser again.')) }}
+  </div>
+{% endif %} 
+ 
+{% if not this.isFeedBeingGenerated() %}
+  {{ widget(template='common/dialog.twig', body='modules/QSL/ProductFeeds/product_feeds/list.twig') }}
+{% endif %}

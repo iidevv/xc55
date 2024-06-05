@@ -1,0 +1,7 @@
+{##
+ # Amp components script tags
+ #}
+
+{% for component in this.getUnique(this.getAmpComponents()) %}
+    <script async custom-element="{{ component }}" src="https://cdn.ampproject.org/v0/{{ component }}-0.1.js"></script>
+{% endfor %}

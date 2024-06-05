@@ -1,0 +1,44 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: sep_product_advisor_na
+    category: CDev\ProductAdvisor
+    type: XLite\View\FormField\Separator\Regular
+    widgetParameters: { fieldId: 'new-arrivals' }
+
+  - name: sep_product_advisor_cs
+    category: CDev\ProductAdvisor
+    type: XLite\View\FormField\Separator\Regular
+    widgetParameters: { fieldId: 'coming-soon' }
+
+  - name: sep_product_advisor_rv
+    category: CDev\ProductAdvisor
+    type: XLite\View\FormField\Separator\Regular
+
+  - name: sep_product_advisor_cbb
+    category: CDev\ProductAdvisor
+    type: XLite\View\FormField\Separator\Regular
+
+  - name: sep_product_advisor_cvb
+    category: CDev\ProductAdvisor
+    type: XLite\View\FormField\Separator\Regular
+    translations:
+      - code: en
+        option_name: '"Customers who viewed this product also bought" block settings'
+
+  - name: cvb_max_count_in_block
+    category: CDev\ProductAdvisor
+    translations:
+      - code: en
+        option_name: 'Maximum number of products to display in block'
+        option_comment: 'Defines the maximum number of products that can be displayed in the "Customers who viewed this product also bought" block. Specify a non-zero value; otherwise, 3 products will be displayed by default.'
+
+
+XLite\Model\LanguageLabel:
+  - { name: "Customers who viewed this product bought", translations: [{ code: en, label: "Customers who viewed this product also bought" }] }
+  - { name: "a2cp-source-code-PAB", translations: [{ code: en, label: "Customers who bought this product also bought (Product Advisor addon)" }] }

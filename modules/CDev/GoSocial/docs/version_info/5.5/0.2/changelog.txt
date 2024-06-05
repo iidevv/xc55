@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-09-02 - [Bug] GoSocial. Open Graph meta tags were not saved on product and category pages if they were Custom. Fixed. #XCB-1547 #CDev-GoSocial
+

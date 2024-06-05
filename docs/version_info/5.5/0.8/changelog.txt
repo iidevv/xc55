@@ -1,0 +1,27 @@
+Version 5.5.0.8
+
+Improvements (7)
+2023-01-11 - [Task] No PHP 7.4 and ionCube Loader check for the 5.4.x-5.5.x update. Fixed. #XCB-2008 #CDev-Core
+2023-01-11 - [Task] An updated sample of X-Cart's Nginx configuration for web dir. #XCB-1945 #CDev-Core
+2022-12-26 - [Task] A special "NOT EDIT THIS FILE" warning added to the .env file. The values are automatically copied from .env to .env.local during the installation package creation.  #XCB-1919 #CDev-Core
+2022-12-27 - [Task] The Admin area > Settings > API page texts update. #XCB-1918 #CDev-Core
+2023-01-12 - [Story] New help and description for console operations. #ECOM-2537 #CDev-Core
+2022-12-28 - [Story] The search by customer address filter added to the orders listing page. #ECOM-2381 #CDev-Core #XC-MultiVendor
+2023-01-04 - [Story] UI/UX improvements for the Shipping page: Methods, Sorting and Ship-From Address are split into separate tabs. #ECOM-2337 #CDev-Core #XC-MultiVendor
+
+Fixes (14)
+2023-01-12 - [Bug] Software update resulted in the 401 Access denied error if sessions were stored in Redis. Fixed. #XCB-2025 #CDev-Core
+2023-01-06 - [Bug] Text labels failed to save on the SEO Settings page. Fixed. #XCB-2011 #CDev-Core
+2023-01-11 - [Bug] The admin area login failed after placing an order with the FirstData payment in X-Cart Marketplace edition.  The checkout payment methods didn't display correctly after the page update. Fixed. #XCB-2007 #CDev-Core #QSL-LoyaltyProgram #QSL-ShopByBrand #XC-FastLaneCheckout #XC-MultiVendor #QSL-Roulette
+2022-12-28 - [Bug] PEAR2 Curl adapter not closed properly on error. Too many open files. Fixed #XCB-1995 #CDev-Core
+2023-01-11 - [Bug] Titestamp for resource names was generated incorrectly. Fixed. #XCB-1990 #CDev-Core
+2023-01-05 - [Bug] Software update failed if the package contained files with numerical names. Fixed. #XCB-1981 #CDev-Core
+2022-12-23 - [Bug] Notifications on the order status update were sent with the "Order changed" notifications disabled in the Admin area. Fixed. #XCB-1971 #CDev-Core
+2023-01-09 - [Bug] The incorrect "Operate as this customer" mode functioning. Fixed. #XCB-1970 #CDev-Core
+2022-12-27 - [Bug] Replaced the url() function with xurl() in all twig templates #XCB-1966 #CDev-Core #CDev-Sale #CDev-USPS #CDev-SimpleCMS #CDev-SalesTax #CDev-FeaturedProducts #CDev-Coupons #CDev-PINCodes #CDev-Paypal #CDev-Egoods #QSL-LoyaltyProgram #QSL-Dwolla #QSL-PopupAnywhere #QSL-FlyoutCategoriesMenu #QSL-MyWishlist #QSL-VerifiedUsers #QSL-Backorder #QSL-OneClickUpsellAfterCheckout #QSL-AbandonedCartReminder #QSL-SpecialOffersBase #QSL-ShopByBrand #QSL-CustomerSatisfaction #QSL-AMP #QSL-ProductFeeds #QSL-Make #QSL-Returns #QSL-SEOCheck #QSL-Banner #XC-GoogleFeed #XC-VendorPartners #XC-Add2CartPopup #XC-FastLaneCheckout #XC-ProductVariants #XC-CustomerAttachments #XC-ShopperApproved #XC-MailChimp #XC-CrispWhiteSkin #XC-TwoFactorAuthentication #XC-News #XC-ProductComparison #XC-BitPay #XC-VendorMessages #XC-FreeShipping #XC-TrustedVendors #XC-Upselling #XC-MultiVendor #XC-CanadaPost #XC-Reviews #QSL-EBay #QSL-OAuth2Client #QSL-OrderReports #QSL-ProductQuestions #QSL-HorizontalCategoriesMenu #XC-ProductVariations #QSL-Roulette #XC-Auto #QSL-WordPress #QSL-UltimateSkin #QSL-BundleProducts
+2023-01-09 - [Bug] A redirect loop occurred if the domain name was specified in capital letters in the config. Fixed.  #XCB-1941 #CDev-Core
+2022-12-26 - [Bug] The store rebuild in the Admin area failed if session.gc_divisor = 0 in php.ini. Fixed. #XCB-1931 #CDev-Core
+2022-12-20 - [Bug] Incorrect Cyrillic symbols encoding in PDF invoices. Fixed. #XCB-1776 #CDev-Core
+2022-12-21 - [Bug] Maximum product quantity per order limit warning displayed incorrectly. Fixed. #XCB-1515 #CDev-Core
+2022-12-26 - [Bug] Updated the display of the incorrect password format warning when editing user profile. #XCB-1263 #CDev-Core
+

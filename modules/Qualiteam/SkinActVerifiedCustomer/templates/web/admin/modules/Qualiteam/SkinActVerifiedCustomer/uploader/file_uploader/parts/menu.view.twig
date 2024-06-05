@@ -1,0 +1,15 @@
+{##
+ # File uploader menu
+ #
+ # @ListChild (list="file-uploader.menu", weight="0")
+ #}
+
+
+{% if this.isDownloadable() %}
+   <li role="presentation">
+     <a role="menuitem" tabindex="-1" href="{{ this.getLink() }}" download>
+       <i class="button-icon svg">{{ svg('images/icons/pic.svg', 'common')|raw }}</i>
+       <span>{{ t('SkinActVerifiedCustomer Download') }}</span>
+     </a>
+   </li>
+{% endif %}

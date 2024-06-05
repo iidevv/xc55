@@ -1,0 +1,9 @@
+{##
+ # Wholesale prices table
+ #
+ # @ListChild (list="wholesale.price", zone="admin", weight="10")
+ #}
+
+{% if this.isWholesalePricesEnabled() %}
+<div class="wholesale-price-header">{{ t('Buy more for less') }}:</div>
+{% endif %}

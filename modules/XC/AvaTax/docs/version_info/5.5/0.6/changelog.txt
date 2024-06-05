@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Improvements (1)
+2023-01-31 - [Story] Fixed some bugs in AvaTax for the commit=true mode. #ECOM-2525 #XC-AvaTax
+

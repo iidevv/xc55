@@ -1,0 +1,14 @@
+{##
+ # Top menu
+ #}
+
+<div class="dropdown mobile-menu__categories-list">
+  <div class="dropdown-menu">
+    <span class="mobile-menu__categories-list-title">{{ t('Catalog') }}</span>
+    <ul class="mobile-menu__categories">
+      {% for category in this.getChildren() %}
+        {{ widget('Qualiteam\\SkinActSkin\\View\\Menu\\MobileCategory', category=category, level=1) }}
+      {% endfor %}
+    </ul>
+  </div>
+</div>

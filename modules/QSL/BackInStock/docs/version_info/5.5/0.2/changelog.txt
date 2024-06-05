@@ -1,0 +1,10 @@
+Version 5.5.0.2
+
+Improvements (2)
+2022-08-15 - [Story] Changes in the tabs' display. Extra tabs are hidden under the "More" tab. #ECOM-1757 #CDev-Core #CDev-FileAttachments #QSL-BackInStock #XC-GoogleFeed
+2022-09-06 - [Story] UI/UX improvement for admin pages with search feature. Using quick filters no longer involves a page refresh. #ECOM-1552 #CDev-Core #QSL-BackInStock #XC-MultiVendor
+
+Fixes (2)
+2022-09-05 - [Bug] The highlighting of the active menu item was missing on the "Price Drop" page, /admin/?target=back_in_stock_product_prices. Fixed. #XCB-1545 #QSL-BackInStock
+2022-08-17 - [Bug] Search filters in the Admin area were working incorrectly. Fixed. #XCB-1541 #CDev-Core #QSL-BackInStock
+

@@ -1,0 +1,5 @@
+Version 5.5.1.4
+
+Fixes (1)
+2023-02-21 - [Bug] The "Place order" button was not working with Google Analytics enabled. Fixed. #XCB-2115 #CDev-GoogleAnalytics
+

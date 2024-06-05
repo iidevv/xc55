@@ -1,0 +1,15 @@
+{##
+ # Customer survey
+ #}
+
+<div class="customer-survey-description">{{ this.getTopText() }}</div>
+
+<hr size="1" />
+
+{% form '\\QSL\\CustomerSatisfaction\\View\\Form\\CustomerSurvey' %}
+
+<div id="customer-survey-form">
+  {{ widget_list('customer-survey.send.fields') }}
+</div>
+
+{% endform %}

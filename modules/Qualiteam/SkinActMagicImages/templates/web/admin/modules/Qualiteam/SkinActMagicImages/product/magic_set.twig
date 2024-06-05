@@ -1,0 +1,33 @@
+{% form '\\Qualiteam\\SkinActMagicImages\\View\\Form\\Product' %}
+
+  <h3>Set details</h3>
+
+  <div class="form-group form-row text-row">
+    {{ widget('\\XLite\\View\\FormField\\Input\\Text', label='Set name', value=this.getSetName(), fieldName='magic360[name]', fieldId='magic360_name') }}
+  </div>
+
+  <div class="form-group form-row text-row">
+    {{ widget('\\Qualiteam\\SkinActMagicImages\\View\\FormField\\Select\\Swatches', label='Swatch', magicSet=this.getSet(), value=this.getAttributeValue(), fieldName='magic360[attribute_value]', fieldId='magic360_attribute_value') }}
+  </div>
+
+  <h3>Multi-row spin options</h3>
+
+  <div class="form-group form-row text-row">
+    {{ widget('\\Qualiteam\\SkinActMagicImages\\View\\FormField\\Input\\Checkbox\\MultiRows', disabled=not this.getSpinColumns(), label='Multi-row spin', value=this.isMultiRowsEnabled(), fieldName='magic360[multi_rows_enabled]', fieldId='magic360_multi_rows_enabled') }}
+  </div>
+
+  <div class="form-group form-row text-row">
+    {{ widget('\\Qualiteam\\SkinActMagicImages\\View\\FormField\\Input\\Text\\Integer', disabled=not this.isMultiRowsEnabled(), label='Number of images on X-axis', value=this.getSpinColumns(), fieldName='magic360[columns]', fieldId='magic360_columns') }}
+  </div>
+
+  <div class="form-group form-row text-row">
+    {{ widget('\\Qualiteam\\SkinActMagicImages\\View\\FormField\\Label', disabled=not this.isMultiRowsEnabled(), label='Number of images on Y-axis', value=this.getSpinRows(), fieldName='magic360[rows]', fieldId='magic360_rows') }}
+  </div>
+
+  <h3>Images</h3>
+
+  {{ widget('\\Qualiteam\\SkinActMagicImages\\View\\FormField\\MagicToolboxImageUploader', label='', value=this.getImages(), fieldName='magic360[images]', fieldId='magic360_images', multiple='true', set=this.getSet()) }}
+
+  {{ widget('\\XLite\\View\\StickyPanel\\ItemsListForm') }}
+
+{% endform %}

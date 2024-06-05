@@ -1,0 +1,60 @@
+## X-Cart 5 nginx sample configuration
+## Copy this file to your /etc/nginx directory
+## and include it to your nginx.conf
+
+#
+# Replace placeholders:
+# {{public-full-path}} - real full path of public dir
+#
+# Example
+#
+# Xcart installation path: /var/www/xcart
+# Expected URL: https://localhost
+#
+# public-full-path: /var/www/xcart/public
+#
+
+upstream fastcgi_xcart {
+   # use tcp connection
+   server  127.0.0.1:9000;
+   # or socket
+   # server   unix:/var/run/php5-fpm.sock;
+   # server   unix:/var/run/php/php7.0-fpm.sock;
+}
+
+server {
+    listen 80 default_server;
+    server_name xcart.test;
+    root {{public-full-path}};
+
+    index index.php;
+	charset UTF-8;
+
+    location ~ /service.php/ {
+        # try to serve file directly, fallback to service.php
+        try_files $uri $uri/ /service.php?$query_string;
+    }
+
+    location / {
+        # try to serve file directly, fallback to index.php
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php(/|$) {
+        fastcgi_pass            fastcgi_xcart;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
+        # Prevents URIs that include the front controller. This will 404:
+        # http://domain.tld/index.php/some-path
+        # Remove the internal directive to allow URIs like this
+        internal;
+    }
+
+    location ~ \.(jpg|jpeg|png|gif|woff|woff2|ttf)$ {
+        try_files $uri =404;
+        break;
+    }
+}

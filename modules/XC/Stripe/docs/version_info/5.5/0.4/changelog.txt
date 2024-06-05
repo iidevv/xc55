@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2022-10-12 - [Bug] Stripe and Stripe Connect. When creating a refund, the status of the order in the Admin area was not changed. Fixed. #XCB-1635 #XC-Stripe
+

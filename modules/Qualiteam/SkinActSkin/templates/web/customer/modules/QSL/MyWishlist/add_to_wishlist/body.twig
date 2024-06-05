@@ -1,0 +1,9 @@
+{##
+ #
+ #}
+<button {{ this.printTagAttributes(this.getAttributes()) | raw }}>
+  {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon="i-heart", class='add-to-wishlist__icon') }}
+  <span class="wishlist-link-label">
+      {{ t(this.getButtonLabel()) }}
+  </span>
+</button>

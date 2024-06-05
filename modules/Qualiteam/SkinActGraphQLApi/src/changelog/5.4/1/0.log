@@ -1,0 +1,6 @@
+Version 5.4.1.0
+
+Fixes (3)
+- Added external auth support via OAuth2Client addon
+- Fixed issue with categories and collection queries
+- Added tags information for products

@@ -1,0 +1,11 @@
+{##
+ # GDPR
+ #
+ # @ListChild(list="itemsList.xc.gdpr.modules.cell.description", zone="admin", weight="100")
+ #}
+
+{% if this.getModuleGdprActivityDescription(this.entity) %}
+  <div class="description">
+    {{ this.getModuleGdprActivityDescription(this.entity) }}
+  </div>
+{% endif %}

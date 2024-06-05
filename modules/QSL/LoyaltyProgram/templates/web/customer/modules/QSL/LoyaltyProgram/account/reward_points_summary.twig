@@ -1,0 +1,19 @@
+<h3>{{ t('Your rewards') }}<span class="your-rewards-points"><span> &mdash; </span>{{ this.getRewardPoints() }}</span></h3>
+
+<div class="rewards-summary">
+    {% if this.hasPositivePointsBalance() %}
+      <div class="reward-points">
+          {{ t('You have X reward points which you can redeem for the Y discount on future orders.', {'points': this.getRewardPoints(), 'discount': this.formatPrice(this.getRewardPointsSum(), this.getCurrency())}) }}
+      </div>
+    {% endif %}
+    {% if not this.hasPositivePointsBalance() %}
+      <div class="reward-points">
+          {{ t('You have no reward points which you could redeem on future orders.') }}
+      </div>
+    {% endif %}
+    {% if this.hasPositivePointsBalance() %}
+      <div class="points-rate">
+          {{ t('1 point = Y', {'rate': this.formatPriceLP(this.getRatePointsSum(), this.getCurrency())}) }}
+      </div>
+    {% endif %}
+</div>

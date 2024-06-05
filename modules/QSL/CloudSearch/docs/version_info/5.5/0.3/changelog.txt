@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Fixes (2)
+2022-12-01 - Fixed the style of filters. #XCB-1843
+2022-12-01 - Updated navigation texts in the admin menu. #ECOM-2447

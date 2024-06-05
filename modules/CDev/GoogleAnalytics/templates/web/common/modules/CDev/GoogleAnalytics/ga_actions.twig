@@ -1,0 +1,9 @@
+{##
+ # GA Actions registration (Universal Analytics)
+ #}
+
+{% for actionData in this.getActions() %}
+  {% if actionData|length %}
+    <script data-ga-ec-action="{{ actionData }}"></script>
+  {% endif %}
+{% endfor %}

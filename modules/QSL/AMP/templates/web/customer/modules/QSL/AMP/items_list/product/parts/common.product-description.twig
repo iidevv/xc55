@@ -1,0 +1,9 @@
+{##
+ # Item description
+ #
+ # @ListChild (list="amp.itemsList.product.list.customer.info", weight="30")
+ #}
+
+{% if this.get('product').getBriefDescription() %}
+  <div class="description product-description">{{ this.getAmpProductDescription()|raw }}</div>
+{% endif %}

@@ -1,0 +1,6 @@
+Version 5.5.0.7
+
+Fixes (2)
+2023-02-22 - [Bug] The import of products with variants was working incorrectly. Fixed. #XCB-2117 #XC-ProductVariants
+2023-02-20 - [Bug] Block options were working incorrectly for unavailable combinations. Fixed. #XCB-2070 #CDev-Core #QSL-ColorSwatches #QSL-Backorder #XC-ProductVariants #XC-CrispWhiteSkin
+

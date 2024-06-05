@@ -1,0 +1,9 @@
+{% if not this.isWishlistClose() %}
+    <a
+            href="{{ xurl('wishlist') }}"
+            data-return-url="{{ xurl('wishlist') }}"
+            title="{{ t('Add to wishlist') }}"
+            data-productid="{{ this.getProductId() }}"
+            class="add-to-wishlist next-previous-assigned {% if not this.isLogged() %} log-in {% endif %} fa {% if this.isProductIdInWishlist(this.getProductId()) %}fa-heart{% else %}fa-heart-o{% endif %}">
+    </a>
+{% endif %}

@@ -1,0 +1,14 @@
+{##
+ # Message
+ #
+ # @ListChild (list="customer-survey.send.old.fields", weight="100")
+ #}
+
+<div class="form-item">
+  <label for="message" class="for-message">
+    {{ t('The order was delivered on time') }}
+    </label>
+  <div class="resizable-textarea">
+    {{ widget('\\QSL\\CustomerSatisfaction\\View\\FormField\\Input\\Stars', barName='order_delivered', max='5') }}
+  </div>
+</div>

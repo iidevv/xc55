@@ -1,0 +1,11 @@
+{##
+ # Order messages tab : link
+ #}
+
+<a href="{{ tabPage.url }}">{{ t(tabPage.title) }}
+    {% if this.isOrderReturnIssued() %}
+        <span class="order-return-issued">!</span>
+    {% endif %}
+</a>
+
+

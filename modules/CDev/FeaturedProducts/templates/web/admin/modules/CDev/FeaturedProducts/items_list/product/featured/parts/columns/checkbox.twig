@@ -1,0 +1,7 @@
+{##
+ # Column with checkboxes
+ #
+ # @ListChild (list="itemsList.product.admin.featured.columns", weight="10")
+ #}
+
+<td class="checkbox-column"><input type="checkbox" class="checkbox {{ this.get('product').getProductId() }}" value="1" name="product_ids[{{ this.get('product').getProductId() }}]" /></td>

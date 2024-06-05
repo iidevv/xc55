@@ -1,0 +1,3 @@
+Version 5.5.0.0
+
+Please read https://www.x-cart.com/blog/technology-upgrade.html

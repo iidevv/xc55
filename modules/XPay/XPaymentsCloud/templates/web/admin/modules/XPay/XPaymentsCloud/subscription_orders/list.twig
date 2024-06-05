@@ -1,0 +1,10 @@
+{##
+ # Recent block
+ #
+ #}
+
+{{ widget('\\XPay\\XPaymentsCloud\\View\\SubscriptionInfo') }}
+
+{% form 'XPay\\XPaymentsCloud\\View\\Form\\ItemsList\\Order\\Main' %}
+  {{ widget('XPay\\XPaymentsCloud\\View\\ItemsList\\Model\\SubscriptionOrders') }}
+{% endform %}

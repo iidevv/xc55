@@ -1,0 +1,11 @@
+{##
+ # @ListChild (list="question.ask.fields", weight="400")
+ #}
+<li class="input input-text floating-label">
+  <div class="table-label">
+    <label for="question" class="question">
+      {{ t('Write your question') }}
+    </label>
+  </div>
+  {{ widget('XLite\\View\\FormField\\Textarea\\Simple', placeholder=t('Your question'), fieldOnly='true', fieldName='question', rows='6', cols='78', value=this.getQuestion().question) }}
+</li>

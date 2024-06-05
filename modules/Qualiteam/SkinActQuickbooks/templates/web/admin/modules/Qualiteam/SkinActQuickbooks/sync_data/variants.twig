@@ -1,0 +1,10 @@
+{##
+ # Sync variants
+ #}
+<h2>"{{ this.getProductName() }}" variants:</h2>
+
+<div class="quickbooks-back-link">
+  {{ widget('\\XLite\\View\\Button\\Link', label='Back to the products list', location=this.getBackURL()) }}
+</div>
+
+{{ widget('Qualiteam\\SkinActQuickbooks\\View\\ItemsList\\QuickbooksSyncVariants') }}

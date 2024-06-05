@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Fixes (1)
+2023-11-08 - [Bug] Place order was not working without a page refresh if a payment method was not required. Fixed. #XCB-2715 #XC-FastLaneCheckout
+

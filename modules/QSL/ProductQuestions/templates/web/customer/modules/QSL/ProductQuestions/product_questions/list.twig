@@ -1,0 +1,11 @@
+{##
+ # @ListChild (list="qsl.productquestions.list", weight="100")
+ #}
+
+<ul class="product-questions">
+    {% for k, question in this.questions %}
+      <li>
+          {{ widget_list('qsl.productquestions.list.item', question=question) }}
+      </li>
+    {% endfor %}
+</ul>

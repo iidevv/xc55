@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Fixes (1)
+2022-11-14 - [Bug] Layout issues related to the size of category elements and switcher alignment in the Attached Files table. Fixed.  #XCB-1854 #CDev-Core #CDev-FileAttachments
+

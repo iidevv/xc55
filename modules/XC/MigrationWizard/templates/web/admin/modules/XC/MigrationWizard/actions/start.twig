@@ -1,0 +1,18 @@
+{##
+ # Migration Wizard - Start action
+ #}
+{% form '\\XC\\MigrationWizard\\View\\Form\\Migration\\Start' %}
+{% if this.getIncompatibleSettings() %}
+
+	<div class="alert alert-info">{{ t('Recommendations before start:') }}</div>
+	<ul class="table">
+	{% for item in this.getIncompatibleSettings() %}
+		<li>{{ item }}</li>
+	{% endfor %}
+	</ul>
+
+{% endif %}
+
+{{ widget('\\XLite\\View\\Button\\Submit', label=t('Start migration'), style='center regular-main-button') }}
+
+{% endform %}

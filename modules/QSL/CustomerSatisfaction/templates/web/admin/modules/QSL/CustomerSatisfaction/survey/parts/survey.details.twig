@@ -1,0 +1,34 @@
+{##
+ # Survey page template
+ #
+ # @ListChild (list="survey-details-list", weight="200")
+ #}
+
+<div class="survey-section">
+  <h3>{{ t('Survey details') }}</h3>
+  {% if this.getSurvey().feedbackDate %}
+    <table>
+      {% for answer in this.getAnswers() %}
+        <tr>
+          <td>
+            <label for="message" class="for-message">
+              {{ answer.getOriginQuestion() }}
+            </label>
+          </td>
+          <td>
+            {{ widget('\\XLite\\View\\VoteBar', rate=answer.value, max='5') }}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% if this.getSurvey().customerMessage %}
+    <br />
+    <label for="message">{{ t('Customer comment:') }}</label>
+    <div class="survey-customer-comment">
+      {{ this.getSurvey().customerMessage }}
+    </div>
+    {% endif %}
+  {% else %}
+    <span class="feedback-not-processed">{{ t('The feedback is not added yet.') }}</span>
+  {% endif %}
+</div>

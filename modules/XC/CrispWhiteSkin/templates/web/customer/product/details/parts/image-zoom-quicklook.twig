@@ -1,0 +1,7 @@
+{##
+ # Product thumbnail zoom
+ #}
+<div class="product-photo">
+  {{ widget('\\XC\\CrispWhiteSkin\\View\\CommonImage', lazyLoad=true, image=this.get('product').getImage(), className='photo product-thumbnail', verticalAlign='top', id='product_image_' ~ this.get('product').product_id, maxWidth=this.getWidgetMaxWidth(), maxHeight=this.getWidgetMaxHeight(), alt=this.getAlt(this.get('product').getImage())) }}
+  {{ this.displayCommentedData(this.getJSData()) }}
+</div>

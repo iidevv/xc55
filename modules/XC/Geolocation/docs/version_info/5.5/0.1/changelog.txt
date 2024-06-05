@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Fixes (1)
+2023-05-22 - [Bug] The default shipping method was determined incorrectly if Geolocation was enabled. Fixed. #XCB-2437 #XC-Geolocation
+

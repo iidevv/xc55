@@ -1,0 +1,19 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Role\Permission:
+  - { code: manage sale discounts, section: Sale, module: CDev\Sale }
+
+XLite\Model\Config:
+  - name: sale_max_count_in_block
+    category: 'CDev\Sale'
+    type: text
+    orderby: 80
+    translations:
+      - code: en
+        option_name: 'The maximum number of products to be displayed in the "Products on sale" block'
+        option_comment: 'The maximum number of products to be displayed in the "Products on sale" block. Set zero to display all products in the block.'

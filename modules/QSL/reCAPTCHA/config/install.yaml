@@ -1,0 +1,450 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: antispam_recaptcha_account_hlp
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Caption\RecaptchaHelp
+    orderby: 100
+  - name: antispam_recaptcha_account
+    category: QSL\reCAPTCHA
+    type: separator
+    orderby: 200
+    translations:
+      - code: en
+        option_name: "Google reCAPTCHA account"
+      - code: ru
+        option_name: "Аккаунт Google reCAPTCHA"
+  - name: google_recaptcha_api
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Select\Version
+    orderby: 220
+    value: "v2.0"
+    translations:
+      - code: en
+        option_name: "API version"
+      - code: ru
+        option_name: "Используемая версия API"
+  - name: google_recaptcha_public
+    category: QSL\reCAPTCHA
+    type: text
+    orderby: 240
+    value: ''
+    translations:
+      - code: en
+        option_name: "Site key"
+        option_comment: "There are separate keys for API v2 and API v3"
+      - code: ru
+        option_name: "Ключ"
+        option_comment: "There are separate keys for API v2 and API v3"
+  - name: google_recaptcha_private
+    category: QSL\reCAPTCHA
+    type: text
+    orderby: 260
+    value: ""
+    translations:
+      - code: en
+        option_name: "Secret key"
+      - code: ru
+        option_name: "Секретный ключ"
+  - name: antispam_recaptcha_settings
+    category: QSL\reCAPTCHA
+    type: separator
+    orderby: 300
+    translations:
+      - code: en
+        option_name: "Google reCAPTCHA settings"
+      - code: ru
+        option_name: "Настройки Google reCAPTCHA"
+  - name: google_recaptcha_theme
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Select\Theme
+    orderby: 320
+    value: "light"
+    translations:
+      - code: en
+        option_name: "Theme"
+      - code: ru
+        option_name: "Цветовая схема"
+  - name: google_recaptcha_size
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Select\Size
+    orderby: 330
+    value: "normal"
+    translations:
+      - code: en
+        option_name: "Size"
+      - code: ru
+        option_name: "Размер"
+  - name: google_recaptcha_min_score
+    category: QSL\reCAPTCHA
+    type: text
+    orderby: 340
+    value: "0.5"
+    translations:
+      - code: en
+        option_name: "Minimal score required to pass verification"
+        option_comment: "Type a value between 0 (definitely bot) and 1 (definitely human)."
+      - code: ru
+        option_name: "Минимальный рейтинг для прохождения проверки"
+        option_comment: "Введите значение в интервале от 0 (точно бот) до 1 (точно человек)."
+  - name: google_recaptcha_throttling
+    category: QSL\reCAPTCHA
+    type: XLite\View\FormField\Input\Text\Integer
+    orderby: 345
+    value: 30
+    widgetParameters: { min: 1 }
+    translations:
+      - code: en
+        option_name: "Throttling period (seconds)"
+        option_comment: 'Defines "period" for "Throttle number of requests per period" challenge type'
+      - code: ru
+        option_name: "Период задержки (секунды)"
+        option_comment: 'Опция определяет "период времени", когда "Действие при неопознании" установлено в "Ограничить кол-во запросов в период времени"'
+  - name: antispam_recaptcha_forms
+    category: QSL\reCAPTCHA
+    type: separator
+    orderby: 500
+    translations:
+      - code: en
+        option_name: "Forms protected with Google reCAPTCHA"
+      - code: ru
+        option_name: "Формы под защитой Google reCAPTCHA"
+  - name: google_recaptcha_login
+    category: QSL\reCAPTCHA
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 510
+    value: 0
+    translations:
+      - code: en
+        option_name: "Sign-in form (storefront)"
+      - code: ru
+        option_name: "Форма входа на сайт (покупатели)"
+  - name: recaptcha_login_min_score
+    category: QSL\reCAPTCHA
+    type: text
+    orderby: 515
+    value: ''
+    translations:
+      - code: en
+        option_name: "Sign-in form minimal score"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+      - code: ru
+        option_name: "Минимальный рейтинг для формы входа на сайт"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+  - name: recaptcha_login_fallback
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Select\FallbackAction
+    orderby: 517
+    value: ''
+    translations:
+      - code: en
+        option_name: "Fallback action (challenge)"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+      - code: ru
+        option_name: "Действие при неопознании пользователя"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+  - name: google_recaptcha_recover
+    category: QSL\reCAPTCHA
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 520
+    value: 1
+    translations:
+      - code: en
+        option_name: "Password recovery form"
+      - code: ru
+        option_name: "Форма восстановления пароля"
+  - name: recaptcha_recover_min_score
+    category: QSL\reCAPTCHA
+    type: text
+    orderby: 525
+    value: ''
+    translations:
+      - code: en
+        option_name: "Password recovery form minimal score"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+      - code: ru
+        option_name: "Минимальный рейтинг для формы восстановления пароля"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+  - name: recaptcha_recover_fallback
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Select\FallbackAction
+    orderby: 527
+    value: ''
+    translations:
+      - code: en
+        option_name: "Fallback action (challenge)"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+      - code: ru
+        option_name: "Действие при неопознании пользователя"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+  - name: google_recaptcha_register
+    category: QSL\reCAPTCHA
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 530
+    value: 1
+    translations:
+      - code: en
+        option_name: "Customer sign-up form"
+      - code: ru
+        option_name: "Форма регистрации покупателя"
+  - name: recaptcha_register_min_score
+    category: QSL\reCAPTCHA
+    type: text
+    orderby: 535
+    value: ''
+    translations:
+      - code: en
+        option_name: "Customer sign-up form minimal score"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+      - code: ru
+        option_name: "Минимальный рейтинг для формы регистрации покупателя"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+  - name: recaptcha_register_fallback
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Select\FallbackAction
+    orderby: 537
+    value: ''
+    translations:
+      - code: en
+        option_name: "Fallback action (challenge)"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+      - code: ru
+        option_name: "Действие при неопознании пользователя"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+
+  - name: google_recaptcha_contact
+    category: QSL\reCAPTCHA
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 540
+    value: 1
+    translations:
+      - code: en
+        option_name: "Contact form"
+      - code: ru
+        option_name: "Контактная форма"
+  - name: recaptcha_contact_min_score
+    category: QSL\reCAPTCHA
+    type: text
+    orderby: 545
+    value: ''
+    translations:
+      - code: en
+        option_name: "Contact form minimal score"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+      - code: ru
+        option_name: "Минимальный рейтинг для контактной формы"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+  - name: recaptcha_contact_fallback
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Select\FallbackAction
+    orderby: 547
+    value: ''
+    translations:
+      - code: en
+        option_name: "Fallback action (challenge)"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+      - code: ru
+        option_name: "Действие при неопознании пользователя"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+
+  - name: google_recaptcha_vendor
+    category: QSL\reCAPTCHA
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 550
+    value: 1
+    translations:
+      - code: en
+        option_name: "Vendor sign-up form"
+      - code: ru
+        option_name: "Форма регистрации вендора"
+  - name: recaptcha_vendor_min_score
+    category: QSL\reCAPTCHA
+    type: text
+    orderby: 555
+    value: ''
+    translations:
+      - code: en
+        option_name: "Vendor sign-up form minimal score"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+      - code: ru
+        option_name: "Минимальный рейтинг для формы регистрации вендора"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+  - name: recaptcha_vendor_fallback
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Select\FallbackAction
+    orderby: 557
+    value: ''
+    translations:
+      - code: en
+        option_name: "Fallback action (challenge)"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+      - code: ru
+        option_name: "Действие при неопознании пользователя"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+
+  - name: google_recaptcha_newsletter
+    category: QSL\reCAPTCHA
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 560
+    value: 1
+    translations:
+      - code: en
+        option_name: "Newsletter subscription form"
+        option_comment: "Newsletter subscriptions add-on"
+      - code: ru
+        option_name: "Форма подписки на рассылки"
+        option_comment: "Модуль Newsletter subscriptions"
+  - name: recaptcha_newsletter_min_score
+    category: QSL\reCAPTCHA
+    type: text
+    orderby: 565
+    value: ''
+    translations:
+      - code: en
+        option_name: "Newsletter subscription form minimal score"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+      - code: ru
+        option_name: "Минимальный рейтинг для формы подписки на рассылки"
+        option_comment: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+  - name: recaptcha_newsletter_fallback
+    category: QSL\reCAPTCHA
+    type: QSL\reCAPTCHA\View\FormField\Select\FallbackAction
+    orderby: 567
+    value: ''
+    translations:
+      - code: en
+        option_name: "Fallback action (challenge)"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+      - code: ru
+        option_name: "Действие при неопознании пользователя"
+        option_comment: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+
+XLite\Model\Notification:
+  - templatesDirectory: modules/QSL/reCAPTCHA/message
+    availableForAdmin: false
+    availableForCustomer: true
+    enabledForAdmin: false
+    enabledForCustomer: true
+    module: QSL\reCAPTCHA
+    translations:
+      - code: en
+        name: 'Activation link E-Mail (Google reCAPTCHA module)'
+        description: 'This notification is sent when "Email confirmation link" is selected as Fallback action'
+        customerSubject: 'Registration activation link'
+        customerText: |
+          Please click here to activate your profile:
+          <p>
+            <a href="%activation_url%" target="_new">Activate profile</a>
+          </p>
+      - code: ru
+        name: 'Сообщение со ссылкой для активации профиля (Google reCAPTCHA module)'
+        description: 'Данное сообщение отправляется когда в качестве Действия по неопознанию выбрано: "Отправить ссылку для активации"'
+        customerSubject: 'Ссылка для активации профиля'
+        customerText: |
+          Чтобы активировать профиль, пожалуйста перейдите по этой сссылке:
+          <p>
+            <a href="%activation_url%" target="_new">Активировать профиль</a>
+          </p>
+
+XLite\Model\LanguageLabel:
+  - name: "To use this module you should sign up for a free Google reCAPTCHA account and specify your site key and secure key in the fields below."
+    translations:
+      - code: en
+        label: 'To use this module you should <a href="{{registerUrl}}">sign up for a free Google reCAPTCHA account</a>, copy <a href="{{keysUrl}}">your site key and secure key</a> and specify the keys in the fields below.'
+      - code: ru
+        label: 'Для использования этого модуля необходимо зарегистрировать <a href="{{registerUrl}}">беплатный аккаунт Google reCAPTCHA</a> и скопировать <a href="{{keysUrl}}">Ваши ключи доступа к нему</a> и указать их в полях ниже.'
+  - name: 'Please confirm that you are not a robot'
+    translations:
+      - code: en
+        label: 'Please confirm that you are not a robot'
+      - code: ru
+        label: 'Пожалуйста, подтвердите, что Вы не робот'
+  - name: 'Sorry, antibot verification is not passed'
+    translations:
+      - code: en
+        label: 'Sorry, antibot verification is not passed (try logging into your Google or Youtube account in a separate tab of the current browser, then submit this form again)'
+      - code: ru
+        label: 'Извините, antibot-верификация не пройдена (попробуйте войти в свой Google-аккаунт в отдельной вкладке текущего браузера и попробовать снова)'
+  - name: 'The Google reCAPTCHA secret key is missing'
+    translations:
+      - code: en
+        label: 'The Google reCAPTCHA secret key is missing'
+      - code: ru
+        label: 'Не указан секретный ключ Google reCAPTCHA'
+  - name: 'The Google reCAPTCHA secret key is invalid or malformed'
+    translations:
+      - code: en
+        label: 'The Google reCAPTCHA secret key is invalid or malformed'
+      - code: ru
+        label: 'Указан неверный секретный ключ Google reCAPTCHA'
+  - name: 'The Google reCAPTCHA response parameter is missing'
+    translations:
+      - code: en
+        label: 'The Google reCAPTCHA response parameter is missing'
+      - code: ru
+        label: 'Отсутствует значение параметра "response" сервиса Google reCAPTCHA'
+  - name: 'The Google reCAPTCHA response parameter is invalid or malformed'
+    translations:
+      - code: en
+        label: 'The Google reCAPTCHA response parameter is invalid or malformed'
+      - code: ru
+        label: 'Передано неверное значение параметра "response" сервиса Google reCAPTCHA'
+  - name: 'The JSON data from Google reCAPTCHA vertification is invalid'
+    translations:
+      - code: en
+        label: 'The JSON data from Google reCAPTCHA vertification is invalid'
+      - code: ru
+        label: 'Попытка проверки неверных JSON данных сервиса Google reCAPTCHA'
+  - name: "There are separate keys for API v2 and API v3"
+    translations:
+      - code: en
+        label: "<b>Important:</b> there are separate keys for API v2 and API v3. Please make sure you are entering the keys, generated for selected API version."
+      - code: ru
+        label: "<b>Важно:</b> каждая версия API (v2 и v3) предусматривает отдельный набор ключей. Пожалуйста, убедитесь что вы вводите ключи: сгенерированные для выбранной версии API reCAPTCHA."
+  - name: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+    translations:
+      - code: en
+        label: 'Overrides "Minimal score" option from "Google reCAPTCHA settings"'
+      - code: ru
+        label: 'Переопределяет значение опции "Минимальный рейтинг" из блока "Настройки Google reCAPTCHA"'
+  - name: 'An action that should be taken if the user is scored less than allowed in "minimal score"'
+    translations:
+      - code: en
+        label: 'An action (challenge) that should be taken if the user is scored less than allowed in "minimal score"'
+      - code: ru
+        label: 'Действие, предпринимаемое при недостаточном рейтинге'
+  - name: 'Do nothing'
+    translations:
+      - code: en
+        label: 'Do nothing'
+      - code: ru
+        label: 'Ничего не делать'
+  - name: 'Deny using the form'
+    translations:
+      - code: en
+        label: 'Deny using the form'
+      - code: ru
+        label: 'Блокировать действие'
+  - name: 'Throttle number of requests per period'
+    translations:
+      - code: en
+        label: 'Throttle number of requests per period'
+      - code: ru
+        label: 'Ограничить кол-во запросов в период времени'
+  - name: 'Email confirmation link'
+    translations:
+      - code: en
+        label: 'Email confirmation link'
+      - code: ru
+        label: 'Отправить по E-Mail ссылку для подтверждения действия'
+  - name: 'Only one attempt per X seconds is allowed! Please try again in Y seconds.'
+    translations:
+      - code: en
+        label: 'Only one attempt per {{seconds}} seconds is allowed! Please try again in {{remaining}} seconds.'
+      - code: ru
+        label: 'Допускается только одна попытка в {{seconds}} секунд! Попробуйте еще раз через {{remaining}} секунд'

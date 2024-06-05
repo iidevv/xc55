@@ -1,0 +1,6 @@
+Version 5.5.0.1
+
+Fixes (2)
+2022-09-27 - [Bug] No banners were displayed on the Google AMP page. Fixed. #XCB-1591 #QSL-AMP
+2022-09-27 - [Bug] Added the Newsletter subscriptions block for the Google AMP page. #XCB-1589 #QSL-AMP
+

@@ -1,0 +1,22 @@
+<div class="company-info-wrapper">
+  <div class="company-info-about address">
+    {{ this.getAboutUsBlockContent()|raw }}
+  </div>
+  <div class="company-info-showrooms address">
+    {{ this.getShowroomsBlockContent()|raw }}
+  </div>
+</div>
+
+<div class="showroom-google-map-wrapper first">
+  <h3>{{ t('SkinActContactUsPage Showroom 1 header') }}</h3>
+  <div class="showroom-google-map">
+    {{ this.getFirstShowroomGoogleMapCode()|raw }}
+  </div>
+</div>
+
+<div class="showroom-google-map-wrapper second">
+  <h3>{{ t('SkinActContactUsPage Showroom 2 header') }}</h3>
+  <div class="showroom-google-map">
+    {{ this.getSecondShowroomGoogleMapCode()|raw }}
+  </div>
+</div>

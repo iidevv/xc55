@@ -1,0 +1,20 @@
+{##
+ # Migration Wizard - Connect step
+ #}
+
+{% if this.isCloud() %}
+	<div class="wizard-section">
+		<h2>{{ t('1. Allow Migration Wizard to connect to your remote MySQL X-Cart4 server') }}</h2>
+	</div>
+	{{ t('Add this IP to the list of Access Hosts')| raw }}
+  <br />
+  {{ widget('XLite\\View\\Button\\CopyLink', copy=this.getCurrentServerAddr()) }}<span class="server-ip">{{ this.getCurrentServerAddr() }}</span>
+
+	<div class="wizard-section">
+		<h2>{{ t('2. Please enter database connection information') }}</h2>
+	</div>
+{% else %}
+	<div class="wizard-section">
+		<h2>{{ t('Please enter database connection information') }}</h2>
+	</div>
+{% endif %}

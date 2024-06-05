@@ -1,0 +1,9 @@
+{##
+ # Item thumbnail
+ #
+ # @ListChild (list="amp.itemsList.product.grid.customer.info", weight="30"))
+ #}
+
+<div class="prod-inf">
+  {{ widget_list('block', type='nested', product=this.product) }}
+</div>

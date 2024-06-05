@@ -1,0 +1,9 @@
+{% if not this.entity.cart_reminders_sent %}
+  <div>{{ t('No - reminedr was never sent') }}</div>
+{% endif %}
+{% if this.entity.cart_reminders_sent %}
+  <div>
+      {{ this.entity.cart_reminders_sent }} {{ t('time(s)') }}<br/>
+      ({{ t('last reminder') }}: {{ this.formatDate(this.entity.cart_reminder_date) }})
+  </div>
+{% endif %}

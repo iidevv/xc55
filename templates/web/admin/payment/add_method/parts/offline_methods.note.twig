@@ -1,0 +1,9 @@
+{##
+ # Payment gateways
+ #
+ # @ListChild (list="itemsList.offlinemethods.header", weight="10")
+ #}
+
+{% if this.hasResults() %}
+  <div class="offline-methods-note">{{ t('Offline payment methods allow users to pay separately from their online order.')|raw }}</div>
+{% endif %}

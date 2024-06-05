@@ -1,0 +1,11 @@
+Version 5.5.0.21
+
+Improvements (1)
+2023-07-25 - [Task] Changed the behavior of selecting product variants with blocks and color swatches on the product details page on the storefront.     #XCB-2600 #CDev-Core #QSL-ColorSwatches #XC-ProductVariants
+
+Fixes (4)
+2023-07-27 - [Bug] The check for removed or modified files during an update was performed incorrectly. Fixed. #XCB-2625 #CDev-Core
+2023-07-21 - [Bug] Core upgrade could fail to complete in some cases. Fixed. #XCB-2603 #CDev-Core
+2023-07-25 - [Bug] Redeployment after attempting to install an add-on from the external App Store did not take web_dir into account. Fixed. #XCB-2601 #CDev-Core
+2023-07-18 - [Bug] In some cases, the admin user could be logged out of his account during product import. Fixed. #XCB-2584 #CDev-Core
+

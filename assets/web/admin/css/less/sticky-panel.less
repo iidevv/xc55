@@ -1,0 +1,256 @@
+/**
+ * Sticky panel common styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+/* Sticky panel */
+.sticky-panel {
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  margin-top: (@rhythmic-unit * 2);
+  padding: 0;
+  overflow: visible;
+  transition: all .3s ease-in-out;
+  width: ~"calc(100% - " @left-side-menu-width ~")";
+  left: @left-side-menu-width;
+
+  .left-menu-compressed & {
+    width: ~"calc(100% - " @left-side-menu-width-compressed ~")";
+    left: @left-side-menu-width-compressed;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    height: 10px;
+    .box-shadow(0 1px 10px rgba(0, 0, 0, 0.3));
+  }
+
+  .box {
+    top: 0;
+    background-color: @body-bg;
+    position: absolute;
+    overflow: visible;
+    z-index: 100;
+    height: @rhythmic-unit * 3;
+    width: 100%;
+    padding-left: @center-padding-left;
+    max-width: unset;
+    margin-top: 0;
+
+    display: flex;
+    align-items: center;
+
+    .dropdown-menu {
+      button {
+        text-align: left;
+
+        .button-icon {
+          display: inline-block;
+          width: 18px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .panel-cell {
+    display: inline-block;
+    margin: 0 (@rhythmic-unit / 2);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.list-is-empty {
+      display: none;
+      + .panel-cell {
+        margin-left: 0;
+      }
+    }
+
+    .icon-only {
+      min-width: @rhythmic-unit * 2;
+    }
+  }
+
+  div.cancel,
+  div.additional {
+    display: table;
+  }
+
+  a {
+    &.cancel {
+      text-indent: -5000px;
+      display: block;
+      background: transparent url(../../images/icon_cancel.png) no-repeat left top;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 3px;
+      left: 5px;
+
+      &.disabled {
+        opacity: .5;
+        cursor: text;
+      }
+    }
+
+
+  }
+
+  &.has-add-buttons {
+    .additional {
+      div.or {
+        font-size: @font-size-base;
+        margin-right: @rhythmic-unit / 2;
+        color: @color-tip;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: @line-height-base;
+      }
+
+      &.additional-hidden {
+        margin: 0;
+
+        .additional-buttons {
+          & > div.or {
+            display: none;
+          }
+
+          & > .btn-group>:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .additional-buttons {
+        > .btn-group {
+          > :first-child {
+            margin-left: (@rhythmic-unit / 2);
+          }
+
+          > .table-label {
+            padding-top: 0.25 * @rhythmic-unit;
+            padding-bottom: 0.25 * @rhythmic-unit;
+          }
+        }
+
+        .module-box {
+          margin: 0 @rhythmic-unit;
+          line-height: @input-height-base;
+          white-space: nowrap;
+          display: flex;
+          align-items: center;
+          color: @text-color;
+
+          &:hover {
+            color: @color-hover;
+          }
+
+          &.clone {
+            display: none;
+          }
+        }
+
+        .modules-amount {
+          vertical-align: bottom;
+        }
+
+        .module-box {
+          .remove-action {
+            cursor: pointer;
+            margin: 0 0 0 30px;
+            position: relative;
+
+            &:after {
+              content: "+";
+              font-size: 30px;
+              font-weight: 100;
+              transform: rotate(45deg);
+              display: block;
+            }
+
+            .info {
+              display: none;
+            }
+          }
+
+          .module-name {
+            white-space: nowrap;
+            flex-grow: 1;
+            cursor: default;
+          }
+        }
+
+        .hide-selected {
+          display: none;
+        }
+
+        .fa-power-off:before {
+          font-size: 13px;
+        }
+        .fa-trash-o:before {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .fa-angle-up {
+    margin-left: (@rhythmic-unit / 2);
+  }
+
+  .button-tooltip-wrapper .tooltip-main {
+    margin-left: @rhythmic-unit / 4;
+  }
+
+  .radio input[type="radio"],
+  .radio-inline input[type="radio"],
+  .checkbox input[type="checkbox"],
+  .checkbox-inline input[type="checkbox"] {
+    margin-right: @rhythmic-unit / 4;
+  }
+}
+
+.ui-dialog {
+  .sticky-panel {
+    position: relative;
+    width: auto;
+    margin-left: 0;
+    height: (@rhythmic-unit * 2) !important;
+    left: 0;
+
+    &:before {
+      display: none;
+    }
+
+    &.sticky {
+      border: 0;
+      width: auto;
+    }
+
+    .box {
+      position: relative;
+      padding-left: 0;
+      height: (@rhythmic-unit * 2);
+    }
+  }
+}
+
+.btn-group > .more-action.first-visible {
+  border-top-left-radius: @btn-border-radius-base !important;
+  border-bottom-left-radius: @btn-border-radius-base !important;
+}
+
+.btn-group > .more-action.last-visible {
+  border-top-right-radius: @btn-border-radius-base !important;
+  border-bottom-right-radius: @btn-border-radius-base !important;
+}

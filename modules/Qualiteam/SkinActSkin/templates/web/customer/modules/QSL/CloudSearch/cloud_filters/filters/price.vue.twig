@@ -1,0 +1,28 @@
+<script type="x-template" id="cloud-filters-template-price">
+
+    <div class="cloud-filters-filter cloud-filters-filter-price">
+        <h4 class="cloud-filters-filter__title">{{ t('Price') }}</h4>
+
+        <form class="form-inline">
+
+          <span class="form-inline__label">Min price</span>
+          <price-input :price="min" :on-update="onUpdate" :placeholder="getMinPrice('{{ t('From')|striptags }}')" min="true"></price-input>
+          &mdash;
+          <span class="form-inline__label">Max price</span>
+          <price-input :price="max" :on-update="onUpdate" :placeholder="getMaxPrice('{{ t('To')|striptags }}')"></price-input>
+
+        </form>
+    </div>
+
+</script>
+
+<script type="x-template" id="cloud-filters-template-price-input">
+
+  <input :value="formattedValue"
+         :placeholder="placeholder"
+         @input="updateValue($event.target.value)"
+         @focus="onFocus"
+         @blur="onBlur"
+         class="form-control cloud-filters-filter-price__input">
+
+</script>

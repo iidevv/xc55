@@ -1,0 +1,41 @@
+{##
+ # Layout editor show hidden blocks button
+ #
+ # @ListChild (list="layout_editor.sidebar", weight="350")
+ #}
+
+<div class="layout-editor-layout-options footer-static-tile">
+    <div class="options-layout-group">
+      <div class="group-items">
+        <div class="group-item" :class="item.button_class ? item.button_class : ''"
+             v-for="item in footerGroupItems"
+             @mouseenter="itemMouseenterHandler(item, $event)"
+             @mouseleave="itemMouseleaveHandler(item, $event)"
+             @click="itemClickHandler(item, 'footerGroupItems', 0, $event)">
+          <div class="group-item-header"  data-toggle="collapse" :data-target="'#group-item-body' + item.id" :href="'#group-item-body' + item.id" :role="item.has_body ? 'button' : ''" aria-expanded="false">
+            <span v-if="item.has_body"
+                  class="themetweaker-panel-move-inactive"></span>
+            <span v-if="item.is_button"
+                  class="themetweaker-panel-add"></span>
+            <span class="main-text" v-text="item.name"></span>
+            <div class="right-actions">
+              <span v-if="item.help"
+                    data-placement="top"
+                    :title="item.help"
+                    data-html="true"
+                    class="themetweaker-panel-tooltip"></span>
+              <span v-if="item.settings_link"
+                    @click="goAdminSettingsPage(item.settings_link)"
+                    class="themetweaker-panel-settings"></span>
+              <span v-if="item.is_removable"
+                    @click="removeSwitcherHandler(item, $event)"
+                    class="themetweaker-panel-trash"></span>
+              <span v-if="item.can_hide"
+                    class="themetweaker-panel-hide-switcher-inactive"></span>
+            </div>
+          </div>
+          <component :is="'xlite-layout-banner' + item.bodyEntityId" v-if="item.has_body" :id="'group-item-body' + item.id" class="bs-accordion-body collapse"></component>
+        </div>
+      </div>
+    </div>
+</div>

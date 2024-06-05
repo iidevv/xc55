@@ -1,0 +1,6 @@
+{##
+ # Display field
+ #}
+
+{% include 'form_field/inline/field.twig' %}
+<div class="color-box"{% if this.getEntityValue() %} style="background-color: #{{ this.getEntityValue() }};"{% endif %}></div>

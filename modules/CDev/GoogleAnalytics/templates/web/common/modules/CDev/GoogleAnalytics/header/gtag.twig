@@ -1,0 +1,22 @@
+{##
+ # Header (gtag.js)
+ #}
+
+{% if this.isTrackingDisabled() %}
+  <script>
+    window['ga-disable-{{ this.measurement_id }}'] = true;
+  </script>
+{% endif %}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="{{ this.script_url }}"></script>
+<script type="text/javascript" id="ga-init-script" data-settings='{{ this.js_settings|json_encode() }}'>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ this.measurement_id }}'{% if this.tracker_config|length %}, {{ this.tracker_config|json_encode()|raw }}{% endif %});
+  {% for row in this.gtag_options %}
+  gtag({{ row|raw }});
+  {% endfor %}
+</script>

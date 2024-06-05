@@ -1,0 +1,7 @@
+{##
+ # Type
+ #}
+
+<div{% if this.get('productClass') %} data-class-id="{{ this.get('productClass').getId() }}"{% endif %} data-id="{{ this.entity.getId() }}" />
+{{ t(this.entity.getTypes(this.entity.getType())) }}
+</div>

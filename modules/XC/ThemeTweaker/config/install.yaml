@@ -1,0 +1,821 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: use_custom_css
+    category: 'XC\ThemeTweaker'
+    type: checkbox
+    orderby: 10
+    value: false
+    translations:
+      - code: en
+        option_name: 'Use custom css'
+  - name: use_custom_js
+    category: 'XC\ThemeTweaker'
+    type: checkbox
+    orderby: 20
+    value: false
+    translations:
+      - code: en
+        option_name: 'Use custom javascript'
+  - name: tour_shown
+    category: 'XC\ThemeTweaker'
+    value: false
+
+XLite\Model\LanguageLabel:
+  - name: 'Use custom css'
+    translations:
+      - code: en
+        label: 'Use custom css'
+      - code: ru
+        label: 'Использовать свой CSS'
+  - name: 'Use custom js'
+    translations:
+      - code: en
+        label: 'Use custom js'
+      - code: ru
+        label: 'Использовать свой JavaScript'
+  - name: 'The database stores different version of the custom changes.'
+    translations:
+      - code: en
+        label: 'The database stores different version of the custom changes.'
+      - code: ru
+        label: 'В базе данных хранится другая версия пользовательского кода.'
+  - name: 'Review it.'
+    translations:
+      - code: en
+        label: 'Review it.'
+      - code: ru
+        label: 'Просмотреть её.'
+  - name: 'Restore this version'
+    translations:
+      - code: en
+        label: 'Restore this version'
+      - code: ru
+        label: 'Восстановить эту версию'
+  - name: 'Your custom file is successfully saved'
+    translations:
+      - code: en
+        label: 'Your custom file has been saved successfully'
+      - code: ru
+        label: 'Файл успешно сохранен'
+  - name: 'Theme tweaker'
+    translations:
+      - code: en
+        label: 'Theme tweaker'
+      - code: ru
+        label: 'Theme tweaker'
+  - name: 'Pick template from page element'
+    translations:
+      - code: en
+        label: 'Pick template from page element'
+      - code: ru
+        label: 'Выбор шаблона на основе элемента страницы'
+  - name: 'Edited templates'
+    translations:
+      - code: en
+        label: 'Edited templates'
+      - code: ru
+        label: 'Измененные шаблоны'
+  - name: 'Webmaster mode'
+    translations:
+      - code: en
+        label: 'Webmaster mode'
+      - code: ru
+        label: 'Режим веб-мастера'
+  - name: Template
+    translations:
+      - code: en
+        label: Template
+      - code: ru
+        label: Шаблон
+  - name: 'Back to templates list'
+    translations:
+      - code: en
+        label: 'Back to templates list'
+      - code: ru
+        label: 'Вернуться к списку шаблонов'
+  - name: 'Webmaster Mode allows you to change the storefront design in click-and-edit mode'
+    translations:
+      - code: en
+        label: 'Webmaster Mode allows you to change the storefront design in click-and-edit mode.<br /><br />If the design of your store''s customer area has been messed up by a template change, try restoring the original template in the Edited Templates section. More information about design changes in X-Cart is available in <a href="https://developer.x-cart.com/design_changes/basic_guide_to_theme_creation">X-Cart''s Knowledge Base</a>.'
+      - code: ru
+        label: 'Режим веб-мастера позволяет редактировать внешний вид сайта по месту.<br /><br />Если после внесения изменений клиентская зона выглядит неправильно, попробуйте откатить изменения в секции "Измененные шаблоны". Больше информации об изменении дизайна сайта на X-Cart - в <a href="https://developer.x-cart.com/design_changes/basic_guide_to_theme_creation">Базе знаний X-Cart</a>.'
+  - name: 'Webmaster mode is enabled'
+    translations:
+      - code: en
+        label: 'Webmaster mode is enabled'
+      - code: ru
+        label: 'Режим веб-мастера включен'
+  - name: 'Webmaster mode is disabled'
+    translations:
+      - code: en
+        label: 'Webmaster mode is disabled'
+      - code: ru
+        label: 'Режим веб-мастера отключен'
+  - name: 'The template has been updated'
+    translations:
+      - code: en
+        label: 'The template has been updated'
+      - code: ru
+        label: 'Шаблон обновлён'
+  - name: 'The template has been added'
+    translations:
+      - code: en
+        label: 'The template has been added'
+      - code: ru
+        label: 'Шаблон добавлен'
+  - name: webmasterMode.Enabled
+    translations:
+      - code: en
+        label: Enabled
+      - code: ru
+        label: Вкл
+  - name: webmasterMode.Disabled
+    translations:
+      - code: en
+        label: Disabled
+      - code: ru
+        label: Выкл
+  - name: 'Path for using in custom CSS'
+    translations:
+      - code: en
+        label: 'Path for use in custom CSS'
+      - code: ru
+        label: 'Путь для использования в пользовательском CSS'
+  - name: URL
+    translations:
+      - code: en
+        label: URL
+  - name: 'The file {{file}} does not exist or is not writable.'
+    translations:
+      - code: en
+        label: 'The file {{file}} does not exist or is not writable.'
+  - name: 'The directory {{dir}} does not exist or is not writable.'
+    translations:
+      - code: en
+        label: 'The directory {{dir}} does not exist or is not writable.'
+  - name: 'Upload image'
+    translations:
+      - code: en
+        label: 'Upload image'
+      - code: ru
+        label: 'Загрузить картинку'
+  - name: 'You are now in layout editing mode'
+    translations:
+      - code: en
+        label: '<b>Drag & drop blocks</b> to rearrange them.'
+      - code: ru
+        label: 'Здесь можно <b>перетаскивать блоки</b>, меняя их порядок.'
+  - name: 'You are now in preview mode'
+    translations:
+      - code: en
+        label: 'Click on the description to <b>edit</b>.'
+      - code: ru
+        label: 'Режим предпросмотра продукта. Здесь можно <b>редактировать описание</b> продукта.'
+  - name: 'Exit product preview'
+    translations:
+      - code: en
+        label: 'Exit product preview'
+      - code: ru
+        label: Вернуться
+  - name: 'You have unsaved changes. Are you really sure to exit the preview?'
+    translations:
+      - code: en
+        label: 'You have unsaved changes. Are you really sure to exit the preview?'
+      - code: ru
+        label: 'У вас есть несохраненные изменения. Вы точно хотите выйти из режима предпросмотра?'
+  - name: 'Layout editor'
+    translations:
+      - code: en
+        label: 'Layout editor'
+      - code: ru
+        label: 'Режим разметки'
+  - name: 'Dynamic message editor'
+    translations:
+      - code: en
+        label: 'Dynamic message editor'
+      - code: ru
+        label: 'Редактор динамического сообщения уведомления'
+  - name: 'Labels editor'
+    translations:
+      - code: en
+        label: 'Labels editor'
+      - code: ru
+        label: 'Редактор меток'
+  - name: 'Discard changes'
+    translations:
+      - code: en
+        label: 'Discard changes'
+      - code: ru
+        label: Отказаться
+  - name: 'Layout editor is'
+    translations:
+      - code: en
+        label: 'Layout editor is'
+      - code: ru
+        label: 'Режим разметки'
+  - name: 'disabled blocks'
+    translations:
+      - code: en
+        label: 'disabled blocks'
+      - code: ru
+        label: 'блоков отключено'
+  - name: Some
+    translations:
+      - code: en
+        label: Some
+      - code: ru
+        label: Несколько
+  - name: 'Block is enabled'
+    translations:
+      - code: en
+        label: 'Block is enabled'
+      - code: ru
+        label: 'Блок включен'
+  - name: 'Block is disabled'
+    translations:
+      - code: en
+        label: 'Block is disabled'
+      - code: ru
+        label: 'Блок отключен'
+  - name: 'Exit editor'
+    translations:
+      - code: en
+        label: 'Exit editor'
+      - code: ru
+        label: Выйти
+  - name: 'Layout editor is enabled'
+    translations:
+      - code: en
+        label: 'Layout editor is enabled'
+      - code: ru
+        label: 'Режим разметки включен'
+  - name: 'Layout editor is disabled'
+    translations:
+      - code: en
+        label: 'Layout editor is disabled'
+      - code: ru
+        label: 'Режим разметки отключен'
+  - name: 'Layout editor allows you to change the position of the blocks in drag-n-drop fashion'
+    translations:
+      - code: en
+        label: 'Layout editor allows you to change the position of the blocks in drag-n-drop fashion'
+      - code: ru
+        label: 'Режим редактирования разметки позволяет менять положение и порядок блоков путем перетаскивания'
+  - name: 'There are some custom CSS styles in your store. These styles may affect the look of the installed template. Review the custom styles and disable them if necessary.'
+    translations:
+      - code: en
+        label: 'There are some custom CSS styles in your store. These styles may affect the look of the installed template. <a href="{{url}}">Review the custom styles</a> and disable them if necessary.'
+      - code: ru
+        label: 'Для сайта заданы пользовательские CSS стили. Эти стили могут оказывать влияние на внешний вид интерфейса покупателя. <a href="{{url}}">Просмотрите пользовательские стили</a> и выключите их в случае необходимости.'
+  - name: 'There are some custom templates in your store that may contain skin dependent code.'
+    translations:
+      - code: en
+        label: 'There are some custom templates in your store that may contain skin dependent code. This may cause your store to crash after switching to a different skin. <a href="{{templates_url}}">Review the custom templates</a> and disable them if necessary.'
+      - code: ru
+        label: 'Магазин использует модифицированные шаблоны, которые, возможно, содержат код, работа которого зависит от используемого скина. Это может привести к нарушению корректной работы магазина после переключения на другой скин. <a href="{{templates_url}}">Проверьте модифицированные шаблоны</a> и отключите их в случае необходимости. '
+  - name: 'Entity was successfully saved'
+    translations:
+      - code: en
+        label: 'Entity was successfully saved'
+  - name: 'Error on saving image'
+    translations:
+      - code: en
+        label: 'Error on saving image'
+  - name: 'Error on saving video'
+    translations:
+      - code: en
+        label: 'Error on saving video'
+  - name: 'Unable to save edited content. Errors: '
+    translations:
+      - code: en
+        label: 'Unable to save edited content. Errors: '
+  - name: 'Unknown temporary file'
+    translations:
+      - code: en
+        label: 'Unknown temporary file'
+  - name: 'Show all'
+    translations:
+      - code: en
+        label: 'Show all'
+  - name: 'Twig-template path'
+    translations:
+      - code: en
+        label: 'Twig template path'
+      - code: ru
+        label: 'Путь к Twig-шаблону'
+  - name: 'Template is converted'
+    translations:
+      - code: en
+        label: Converted
+      - code: ru
+        label: Сконвертирован
+  - name: 'Convert templates'
+    translations:
+      - code: en
+        label: Convert
+      - code: ru
+        label: Конвертировать
+  - name: 'Check directory permissions'
+    translations:
+      - code: en
+        label: 'Check directory permissions'
+      - code: ru
+        label: 'Проверьте права на директорию'
+  - name: 'Back to Webmaster mode'
+    translations:
+      - code: en
+        label: 'Back to Webmaster mode'
+      - code: ru
+        label: 'Вернуться на страницу "Режим веб-мастера"'
+  - name: 'Preview full email'
+    translations:
+      - code: en
+        label: 'Preview full email'
+      - code: ru
+        label: 'Предпросмотр email'
+  - name: 'No orders available. Please create at least one order.'
+    translations:
+      - code: en
+        label: 'No orders available. Please create at least one order.'
+      - code: ru
+        label: 'Нет ни одного заказа. Пожалуйста, создайте по крайней мере один заказ.'
+  - name: 'Back to notification settings'
+    translations:
+      - code: en
+        label: 'Back to notification settings'
+      - code: ru
+        label: 'Назад к настройкам уведомлений'
+  - name: 'Edit template based on'
+    translations:
+      - code: en
+        label: 'Edit template based on'
+      - code: ru
+        label: 'Редактировать шаблон на основе'
+  - name: 'The test email notification has been sent to X'
+    translations:
+      - code: en
+        label: 'The test email notification has been sent to {{email}}'
+      - code: ru
+        label: 'Тестовое уведомление было послано на адрес {{email}}'
+  - name: 'Failure sending test email to X'
+    translations:
+      - code: en
+        label: 'Failure sending test email to {{email}}'
+      - code: ru
+        label: 'Ошибка отправки тестового уведомления на адрес {{email}}'
+  - name: 'Enter Order number'
+    translations:
+      - code: en
+        label: 'Enter Order number'
+      - code: ru
+        label: 'Введите номер заказа'
+  - name: xlite-translation-popover.help
+    translations:
+      - code: en
+        label: 'Text parts in curly braces {} are variables and filled dynamically. Do not remove them.'
+      - code: ru
+        label: 'Текст в фигурных скобках означает переменную. Не удаляйте такой текст.'
+  - name: itemslist.admin.template.blank
+    translations:
+      - code: en
+        label: '<p>You haven''t changed any templates yet. Here you can track the templates changed with Template editor and revert any changes you''ve done. Changes to the templates can be done by opening the storefront and switching to the «Template editor» of the panel below.</p>'
+      - code: ru
+        label: '<p>Нет отредактированных шаблонов. На данной странице вы можете узнать об отредактированных шаблонах в режиме Редактор шаблонов. Также здесь вы сможете вернуть шаблоны к первоначальному состоянию. Чтобы изменить какой-либо шаблон, перейдите в клиентскую зону и выберите «Редактор шаблонов» в панели управления сайтом внизу.</p>'
+  - name: 'Pick templates from page'
+    translations:
+      - code: en
+        label: 'Pick templates from page'
+      - code: ru
+        label: 'Выбирать шаблоны на странице'
+  - name: 'Drag-n-drop blocks'
+    translations:
+      - code: en
+        label: 'Drag-n-drop blocks'
+      - code: ru
+        label: 'Перетаскивание блоков'
+  - name: 'Highlight labels'
+    translations:
+      - code: en
+        label: 'Highlight labels'
+      - code: ru
+        label: 'Выделение меток'
+  - name: 'Layout block'
+    translations:
+      - code: en
+        label: 'Layout block'
+      - code: ru
+        label: 'Блок разметки'
+  - name: 'Inline editor'
+    translations:
+      - code: en
+        label: 'Description editor'
+      - code: ru
+        label: Контент
+  - name: 'Go to different page to edit the content'
+    translations:
+      - code: en
+        label: 'Proceed to the product page to edit the description'
+      - code: ru
+        label: 'Нет редактируемого контента. Данный режим работает на странице любого продукта'
+  - name: 'Open home or category pages for more opportunities to adjust the website structure'
+    translations:
+      - code: en
+        label: 'Open home or category page for more opportunities to adjust the website structure.'
+      - code: ru
+        label: 'На главной и странице категории есть много различных блоков разметки.'
+  - name: themetweaker.shortcut.switcher
+    translations:
+      - code: en
+        label: 'Shortcut: Ctrl+/, ⌘+/'
+      - code: ru
+        label: 'Горячая клавиша: Ctrl+/, ⌘+/'
+  - name: themetweaker.shortcut.save
+    translations:
+      - code: en
+        label: 'Shortcut: Ctrl+S, ⌘+S'
+      - code: ru
+        label: 'Горячая клавиша: Ctrl+S, ⌘+S'
+  - name: 'You have unsaved changes. Are you really sure to exit?'
+    translations:
+      - code: en
+        label: 'You have unsaved changes. Are you really sure to exit?'
+      - code: ru
+        label: 'Обнаружены несохраненные изменения. Вы точно хотите отказаться от них и уйти?'
+  - name: 'Open the storefront while logged in as administrator to change the look & feel of the store.'
+    translations:
+      - code: en
+        label: '<a href="{{url}}" target="_blank">Open the storefront</a> while logged in as administrator and use the Webmaster panel <span class="cog-icon">{{cog}}</span> to change the look & feel of the store.'
+      - code: ru
+        label: '<a href="{{url}}" target="_blank">Откройте клиентскую часть магазина</a> из-под администраторского аккаунта и используйте Панель вебмастера <span class="cog-icon">{{cog}}</span> для изменения внешнего вида магазина.'
+  - name: 'Use the Google Tag Manager addon for more flexibility when adding JS code to your web pages.'
+    translations:
+      - code: en
+        label: 'Use the Google Tag Manager addon for more flexibility when adding JS code to your web pages.'
+      - code: ru
+        label: 'Используйте модуль Google Tag Manager для получения большей гибкости при добавлении JS кода на веб-страницы.'
+  - name: 'Learn more about Google Tag Manager'
+    translations:
+      - code: en
+        label: 'Learn more about Google Tag Manager'
+      - code: ru
+        label: 'Узнать больше о Диспетчере тегов Google'
+  - name: 'Tag Manager Dashboard'
+    translations:
+      - code: en
+        label: 'Tag Manager Dashboard'
+      - code: ru
+        label: 'Панель управления Диспетчера тегов'
+  - name: 'Configure Tag Manager'
+    translations:
+      - code: en
+        label: 'Configure Tag Manager'
+      - code: ru
+        label: 'Настроить Диспетчер тегов'
+  - name: 'Install Google Tag Manager'
+    translations:
+      - code: en
+        label: 'Install Google Tag Manager'
+      - code: ru
+        label: 'Установить Google Tag Manager'
+  - name: 'Layout was successfully reset'
+    translations:
+      - code: en
+        label: 'Layout was successfully reset'
+      - code: ru
+        label: 'Настройки разметки были восстановлены'
+  - name: 'Unable to reset layout'
+    translations:
+      - code: en
+        label: 'Unable to reset layout'
+      - code: ru
+        label: 'Ошибка при восстановлении настроек разметки'
+  - name: 'Changes were successfully saved'
+    translations:
+      - code: en
+        label: 'Changes were successfully saved'
+      - code: ru
+        label: 'Изменения были успешно применены'
+  - name: 'Unable to save changes'
+    translations:
+      - code: en
+        label: 'Unable to save changes'
+      - code: ru
+        label: 'Ошибка при сохранении изменений'
+  - name: 'Customize storefront'
+    translations:
+      - code: en
+        label: 'Customize storefront'
+      - code: ru
+        label: 'Настроить магазин'
+  - name: 'Storefront layout'
+    translations:
+      - code: en
+        label: 'Storefront layout'
+      - code: ru
+        label: 'Тип разметки'
+  - name: 'Reset layout'
+    translations:
+      - code: en
+        label: 'Reset layout'
+      - code: ru
+        label: 'Сбросить изменения'
+  - name: 'Home page'
+    translations:
+      - code: en
+        label: 'Home page'
+      - code: ru
+        label: Главная
+  - name: 'Other pages'
+    translations:
+      - code: en
+        label: 'Other pages'
+      - code: ru
+        label: Прочие
+  - name: 'Logo & Favicon'
+    translations:
+      - code: en
+        label: 'Logo & Favicon'
+  - name: 'Logo & Icons'
+    translations:
+      - code: en
+        label: 'Logo & Icons'
+  - name: 'logo uploader'
+    translations:
+      - code: en
+        label: logo
+      - code: ru
+        label: логотип
+  - name: 'favicon uploader'
+    translations:
+      - code: en
+        label: favicon
+      - code: ru
+        label: фавиконка
+  - name: 'app icon uploader'
+    translations:
+      - code: en
+        label: 'app icon'
+      - code: ru
+        label: закладка
+  - name: 'Delete custom file'
+    translations:
+      - code: en
+        label: 'Delete custom file'
+      - code: ru
+        label: 'Выключить шаблон'
+  - name: 'new template'
+    translations:
+      - code: en
+        label: 'new template'
+      - code: ru
+        label: 'добавить шаблон'
+  - name: 'type filename and press Enter'
+    translations:
+      - code: en
+        label: 'type filename and press Enter'
+      - code: ru
+        label: 'введите имя файла и нажмите Enter'
+  - name: 'template weight'
+    translations:
+      - code: en
+        label: weight
+      - code: ru
+        label: вес
+  - name: 'Some edited templates were selected to be disabled. You can enable them on the Edited templates page in the Admin area.'
+    translations:
+      - code: en
+        label: 'Several edited templates were selected to be restored to a default version. You can still find and enable them on the <b>Edited templates</b> page in the Admin area.'
+      - code: ru
+        label: 'Отключенные шаблоны можно включить обратно на странице <b>Отредактированные шаблоны</b> в панели администратора.'
+  - name: 'Revert to default'
+    translations:
+      - code: en
+        label: 'Restore the default file'
+      - code: ru
+        label: 'Вернуть стандартный шаблон'
+  - name: 'Enable hidden block'
+    translations:
+      - code: en
+        label: Enable
+      - code: ru
+        label: Показать
+  - name: 'Are you sure you want to reset current layout? Custom layout settings will be lost.'
+    translations:
+      - code: en
+        label: 'Are you sure you want to reset the current layout? Custom layout settings will be lost.'
+      - code: ru
+        label: 'Вы точно хотите сбросить настройки текущего вида разметки к первоначальному варианту? Измененные настройки положения и отображения блоков будут утеряны.'
+  - name: 'You can customize the look & feel of the store by configuring the layout and adding the custom CSS or HTML code.'
+    translations:
+      - code: en
+        label: '<p>You can customize the look & feel of the store by configuring the layout and adding the custom CSS or HTML code.</p><p>Just click on the button below or open the storefront while logged in as administrator.</p>'
+      - code: ru
+        label: '<p>Вы можете самостоятельно настроить вид вашего магазина и отдельных элементов, добавить CSS код и изменить код шаблонов.</p><p>Нажмите на кнопку "Настроить магазин" или откройте витрину в режиме администратора.</p>'
+  - name: 'Display all templates'
+    translations:
+      - code: en
+        label: 'Display all templates'
+      - code: ru
+        label: 'Показать все шаблоны'
+  - name: 'Hide converted templates'
+    translations:
+      - code: en
+        label: 'Hide converted templates'
+      - code: en
+        label: 'Скрыть конвертированные шаблоны'
+  - name: 'Not enough permissions to update the template file'
+    translations:
+      - code: en
+        label: 'Not enough permissions to update the template file in "<X-Cart root>/skins/theme_tweaker" directory.'
+      - code: ru
+        label: 'Произошла ошибка при сохранении файла. Проверьте права на запись в папку "<X-Cart root>/skins/theme_tweaker".'
+  - name: 'File name is too long, it should be less than 255 characters'
+    translations:
+      - code: en
+        label: 'File path is too long, it should be less than 255 characters'
+      - code: ru
+        label: 'Слишком длинный путь сохраняемого файла, сократите до 255 символов.'
+  - name: 'Category description'
+    translations:
+      - code: en
+        label: 'Category description'
+      - code: ru
+        label: 'Описание категории'
+  - name: OK
+    translations:
+      - code: en
+        label: OK
+  - name: 'Edit notification body'
+    translations:
+      - code: en
+        label: 'Edit notification body'
+      - code: ru
+        label: 'Редактировать тело нотификации'
+  - name: 'There is no special code for this notification'
+    translations:
+      - code: en
+        label: "There is no special code for this notification.\nIf you need to use specific TWIG code put it here.\nFor the plain text, we recommend using WYSIWYG editor on the edit notification page."
+      - code: ru
+        label: "Для этой нотификации нет специального кода.\nЕсли нужно использовать специфичный TWIG-код, поместите его сюда.\nЕсли нужен только текст, рекомендуем использовать WYSIWYG редактор на странице\nредактирования нотификации."
+  - name: 'The dynamic message is empty for this notification.'
+    translations:
+      - code: en
+        label: 'The dynamic message is empty for this notification. If you need to use specific TWIG code, use the template tree on the left-hand side of the screen to choose the TWIG file you require. For plain text we recommend using the WYSIWYG editor on the Edit notification page.'
+      - code: ru
+        label: 'Динамическое сообщение для этого уведомления не задано. Если необходимо использовать специальный TWIG-код, используйте дерево шаблонов слева, чтобы выбрать TWIG-файл для редактирования. Если нужен только текст, рекомендуем использовать WYSIWYG редактор на странице редактирования уведомления.'
+  - name: Add TWIG code
+    translations:
+      - code: en
+        label: Add TWIG code
+      - code: ru
+        label: Добавить TWIG-код
+  - name: 'Disable block'
+    translations:
+      - code: en
+        label: 'Disable block'
+      - code: ru
+        label: 'Отключить блок'
+  - name: 'Personalize Logos'
+    translations:
+      - code: en
+        label: 'Personalize Logos'
+  - name: 'Upload your brand logos to include in the store header and browser tab.'
+    translations:
+      - code: en
+        label: 'Upload your brand logos to include in the store header and browser tab.'
+  - name: 'Edit Text'
+    translations:
+      - code: en
+        label: 'Edit Text'
+  - name: 'Use the Description Editor toolbar below to select and edit text on your store pages.'
+    translations:
+      - code: en
+        label: 'Use the Description Editor toolbar below to select and edit text on your store pages.'
+  - name: 'Store Configuration Mode'
+    translations:
+      - code: en
+        label: 'Store Configuration Mode'
+  - name: 'Expand the toolbar below to personalize store layout and style. Click the icon below to exit Store Configuration Mode at any time.'
+    translations:
+      - code: en
+        label: 'Expand the toolbar below to personalize store layout and style. Click the icon below to exit Store Configuration Mode at any time.'
+  - name: 'Style Your Banners'
+    translations:
+      - code: en
+        label: 'Style Your Banners'
+  - name: 'Upload images and setup your banners to showcase top products or promote new sales.'
+    translations:
+      - code: en
+        label: 'Upload images and setup your banners to showcase top products or promote new sales.'
+  - name: 'Setup banners'
+    translations:
+      - code: en
+        label: 'Setup banners'
+  - name: 'This tool allows you to edit Labels. Read more about using Labels Editor.'
+    translations:
+      - code: en
+        label: 'This tool allows you to edit Labels. Read more about using <a href="https://support.x-cart.com/en/articles/4538418-labels-editor" target="_blank">Labels Editor.</a>'
+  - name: 'This tool allows you to add your Custom CSS. Read more about using Custom CSS.'
+    translations:
+      - code: en
+        label: 'This tool allows you to add your Custom CSS. Read more about using <a href="https://support.x-cart.com/en/articles/4538461-custom-css" target="_blank">Custom CSS.</a>'
+  - name: 'This tool allows you to edit Templates. Read more about using Template Editor.'
+    translations:
+      - code: en
+        label: 'This tool allows you to edit Templates. Read more about using <a href="https://support.x-cart.com/en/articles/4556418-template-editor" target="_blank">Template Editor.</a>'
+  - name: 'block(s)'
+    translations:
+      - code: en
+        label: 'block(s)'
+  - name: 'Right Column'
+    translations:
+      - code: en
+        label: 'Right Column'
+  - name: 'Central Column'
+    translations:
+      - code: en
+        label: 'Central Column'
+  - name: 'Left Column'
+    translations:
+      - code: en
+        label: 'Left Column'
+  - name: 'Template Editor'
+    translations:
+      - code: en
+        label: 'Template Editor'
+  - name: 'SEO'
+    translations:
+      - code: en
+        label: 'SEO'
+  - name: 'Custom CSS'
+    translations:
+      - code: en
+        label: 'Custom CSS'
+  - name: 'You will be able to manage this block in the next version of Storefront Builder'
+    translations:
+      - code: en
+        label: 'You will be able to manage this block in the next version of Storefront Builder'
+  - name: 'Bottom Menu'
+    translations:
+      - code: en
+        label: 'Bottom Menu'
+  - name: 'Sign up for news'
+    translations:
+      - code: en
+        label: 'Sign Up For News'
+  - name: 'Banners'
+    translations:
+      - code: en
+        label: 'Banners'
+  - name: 'Top Menu'
+    translations:
+      - code: en
+        label: 'Top Menu'
+  - name: 'Advanced settings'
+    translations:
+      - code: en
+        label: 'Advanced settings'
+  - name: 'Footer'
+    translations:
+      - code: en
+        label: 'Footer'
+  - name: 'Header'
+    translations:
+      - code: en
+        label: 'Header'
+  - name: 'Storefront Builder'
+    translations:
+      - code: en
+        label: 'Storefront Builder'
+  - name: 'The Logo & Favicon settings apply to all pages'
+    translations:
+      - code: en
+        label: 'The Logo & Favicon settings apply to all pages'
+  - name: 'Page Layout'
+    translations:
+      - code: en
+        label: 'Page Layout'
+  - name: 'The layout changes will be applied to all pages except the home page'
+    translations:
+      - code: en
+        label: 'The layout changes will be applied to all pages except the home page'
+  - name: 'List of products in this block is generated automatically. Read more about Promotional Blocks.'
+    translations:
+      - code: en
+        label: 'List of products in this block is generated automatically. Read more about <a href="https://support.x-cart.com/en/articles/4679992-promotional-blocks" target="_blank">Promotional Blocks.</a>'
+  - { name: "Actions", translations: [{ code: en, label: 'Actions' }] }
+  - { name: "Add HTML Banner", translations: [{ code: en, label: 'Add HTML Banner' }] }
+  - { name: "Add banner block", translations: [{ code: en, label: 'Add banner block' }] }
+  - { name: "Banner", translations: [{ code: en, label: 'Banner' }] }
+  - { name: "Delete Slide", translations: [{ code: en, label: 'Delete Slide' }] }
+  - { name: "File uploading", translations: [{ code: en, label: 'File uploading' }] }
+  - { name: "Link to", translations: [{ code: en, label: 'Link to' }] }
+  - { name: "More banner settings", translations: [{ code: en, label: 'More banner settings' }] }
+  - { name: "Slide", translations: [{ code: en, label: 'Slide' }] }
+  - { name: "Visit", translations: [{ code: en, label: 'Visit' }] }

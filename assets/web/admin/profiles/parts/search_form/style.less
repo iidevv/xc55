@@ -1,0 +1,82 @@
+/**
+ * Search panel
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.searchpanel-profile-admin-main,
+.searchpanel-profile-admin-customerprofiles,
+.searchpanel-profile-admin-adminprofiles {
+  .membership-condition,
+  .user_type-condition {
+    width: 28%;
+  }
+
+  .membership-condition select,
+  .user_type-condition select {
+    width: 100%;
+  }
+
+  .search-conditions-box .search-conditions-hidden .table-label {
+    width: @form-label-width-search;
+  }
+
+  .search-conditions-hidden > .country-condition,
+  .search-conditions-hidden > .address-condition,
+  .search-conditions-hidden > .state-condition,
+  .search-conditions-hidden > .customState-condition,
+  .search-conditions-hidden > .phone-condition {
+    float: none;
+  }
+
+  .search-conditions-box .search-conditions-hidden > .date_type-condition {
+    float: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 35%;
+  }
+
+  .search-conditions-box .date_type-condition .table-label {
+    width: @form-label-width-search;
+    vertical-align: top;
+  }
+
+  .search-conditions-box .date_type-condition .date-condition-value {
+    padding: 0;
+  }
+
+  .search-conditions-box .date_type-condition li,
+  .search-conditions-box .date_type-condition label {
+    vertical-align: middle;
+  }
+
+  .search-conditions-box .date_type-condition li {
+    padding: @padding-large-vertical 0 @padding-small-vertical;
+  }
+
+  .search-conditions-box .date_type-condition li input {
+    vertical-align: middle;
+  }
+
+  .search-conditions-box .date_type-condition .date-range-box {
+    padding-top: @padding-small-vertical;
+    padding-bottom: @padding-small-vertical;
+  }
+
+  .search-conditions-box div.daterange-value {
+    padding-left: 2px;
+  }
+
+  .search-conditions-box div.daterange-value input[type="text"] {
+    margin: 0;
+    width: 240px;
+  }
+
+  .date-condition-value li {
+    margin-right: @rhythmic-unit;
+    width: auto;
+    float: left;
+  }
+}

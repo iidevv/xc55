@@ -1,0 +1,31 @@
+Version 5.5.0.3
+
+Improvements (3)
+2022-09-22 - [Story] Added a watcher for resources in dev mode. Ãdded js minification via nodejs.  #ECOM-2253 #CDev-Core #XC-MultiVendor
+2022-09-19 - [Story] Unified some text labels in API. #ECOM-2103 #CDev-Core #CDev-Sale #CDev-FeaturedProducts #CDev-PINCodes #CDev-VolumeDiscounts #CDev-Wholesale #CDev-FileAttachments #QSL-ProductStickers #QSL-AbandonedCartReminder #XC-VendorPartners #XC-ProductVariants #XC-MailChimp #XC-CustomProductTabs #XC-Upselling #XC-MultiVendor #XC-ProductTags #XC-Reviews #QSL-Roulette
+2022-09-15 - [Story] Adapted the upgrade hooks added for 5.4.2.0 to be used for 5.5. #ECOM-2021 #CDev-Core #CDev-AmazonS3Images #CDev-AuthorizeNet #CDev-USPS #CDev-SimpleCMS #CDev-FedEx #CDev-SalesTax #CDev-GoSocial #CDev-SocialLogin #CDev-VAT #CDev-Coupons #CDev-PINCodes #CDev-ContactUs #CDev-Paypal #CDev-GoogleAnalytics #CDev-Egoods #CDev-VolumeDiscounts #CDev-Bestsellers #CDev-ProductAdvisor #CDev-XMLSitemap #CDev-TwoCheckout #QSL-LoyaltyProgram #QSL-BackInStock #QSL-PopupAnywhere #QSL-FlyoutCategoriesMenu #QSL-MyWishlist #QSL-ProductStickers #QSL-VerifiedUsers #QSL-ColorSwatches #QSL-Backorder #QSL-AbandonedCartReminder #QSL-PriceCountdown #QSL-CallForPrice #QSL-TaxExempt #QSL-ShopByBrand #QSL-CustomerSatisfaction #QSL-PDFInvoice #QSL-Make #QSL-AuthorizenetAcceptjs #QSL-RealexHostedPayment #QSL-AdvancedContactUs #QSL-Returns #QSL-AgeVerification #QSL-Banner #XC-MultiCurrency #XC-WorldpayHPP #XC-UPS #XC-CustomOrderStatuses #XC-SagePay #XC-ThemeTweaker #XC-Add2CartPopup #XC-AvaTax #XC-Concierge #XC-ProductVariants #XC-CustomerAttachments #XC-DelicatePinkSkin #XC-MailChimp #XC-CrispWhiteSkin #XC-PayFort #XC-FroalaEditor #XC-FacebookMarketing #XC-GDPR #XC-TwoFactorAuthentication #XC-CustomProductTabs #XC-News #XC-WebmasterKit #XC-VendorMessages #XC-DewyGreenSkin #XC-BlueSnap #XC-OgoneEcommerce #XC-DHL #XC-TrustedVendors #XC-Upselling #XC-MultiVendor #XC-SecureTrading #XC-Onboarding #XC-PayTabs #XC-CanadaPost #XC-Stripe #XC-Reviews #XC-SpaceVioletSkin #XC-VirtualMerchant #QSL-OAuth2Client #QSL-HorizontalCategoriesMenu #XC-SoftBlueSkin #XC-MarbleGreySkin #XC-ForestGreenSkin #XC-DarkSparkleSkin #QSL-AdvancedSecurity #QSL-reCAPTCHA #QSL-ExitOffers #QSL-VariantsTableView #QSL-Roulette #XC-Auto
+
+Fixes (22)
+2022-10-04 - [Bug] The menu item Reports in the Admin area main menu could not be expanded. Fixed. #XCB-1775 #CDev-Core #QSL-OrderReports
+2022-09-30 - [Bug] Adjusted the layout of the Choose another address popup according to the style guide. #XCB-1760 #CDev-Core #XC-CrispWhiteSkin
+2022-09-22 - [Bug] A message was displayed saying that some files had been modified as a result of software update, though in fact no files had been changed. Fixed. #XCB-1753 #CDev-Core
+2022-09-19 - [Bug] Access denied for a user with a valid difficult password. Fixed. #XCB-1750 #CDev-Core
+2022-09-15 - [Bug] A new product could not be created in the Admin area. Fixed. #XCB-1748 #CDev-Core
+2022-09-19 - [Bug] In all distribution packages (auto / platform / marketplace) the demo products were configured as not requiring shipping (required shipping = false). Fixed.  #XCB-1743 #CDev-Core
+2022-09-16 - [Bug] The connection ./bin/install.sh -m -k some_key was not working. Fixed. #XCB-1742 #CDev-Core
+2022-09-15 - [Bug] Install.sh error if using a password with special characters for mysql user. Fixed. #XCB-1731 #CDev-Core
+2022-09-27 - [Bug] Removed the "Access Information" block from the "My Profile" page of an administrator user with limited access. #XCB-1724 #CDev-Core
+2022-09-20 - [Bug] Error when sending an admin message to decline a vendor application. Fixed. #XCB-1713 #CDev-Core #XC-MultiVendor
+2022-09-15 - [Bug] Timestamp was not added for JS/CSS resources. Fixed. #XCB-1711 #CDev-Core
+2022-09-19 - [Bug] Field value validation did not work the first time (only started working the second time). Fixed. #XCB-1709 #CDev-Core
+2022-09-20 - [Bug] An incorrect language label was used for the Wishlist title. Fixed. #XCB-1708 #CDev-Core
+2022-09-19 - [Bug] Multi vendor. Error when exporting selected vendors in any format. Fixed. #XCB-1698 #CDev-Core
+2022-09-13 - [Bug] Mailchimp. A product or a coupon could not be updated on the Mailchimp end. Fixed. #XCB-1662 #CDev-Core #CDev-Coupons #XC-MailChimp
+2022-09-08 - [Bug] JWT_PASSPHRASE was not generated during the installation from a distribution pack. Fixed. #XCB-1633 #CDev-Core
+2022-09-30 - [Bug] The "Don't notify customer" feature was not working when editing order information in the Admin area. Fixed. #XCB-1564 #CDev-Core
+2022-09-29 - [Bug] The pages of vendor email notifications appeared as blank. Fixed. #XCB-1563 #CDev-Core #XC-ThemeTweaker #XC-MultiVendor
+2022-09-22 - [Bug] Core. Layout issues related to displaying the popup for product image upload via url. Fixed. #XCB-1558 #CDev-Core
+2022-09-19 - [Bug] No dependencies were checked during an installation of an add-on from the console. Fixed.   #XCB-1512 #CDev-Core
+2022-09-29 - [Bug] The My Apps search on the All done page was working incorrectly. Fixed. #XCB-1454 #CDev-Core
+2022-09-19 - [Bug] Upgrade access level was displayed incorrectly after changing the level and submitting the page. Fixed. #XCB-1321 #CDev-Core
+

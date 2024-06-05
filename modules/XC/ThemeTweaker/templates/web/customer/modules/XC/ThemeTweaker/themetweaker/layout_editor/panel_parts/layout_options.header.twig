@@ -1,0 +1,116 @@
+{##
+ # Layout editor show hidden blocks button
+ #
+ # @ListChild (list="layout_editor.sidebar", weight="100")
+ #}
+
+<div class="layout-editor-layout-options">
+  <div class="options-layout-group layout-type-group">
+    <div class="options-layout-type">
+      {% if this.isMainPage() %}
+        {{ widget('XC\\ThemeTweaker\\View\\FormField\\Select\\LayoutType',
+          label=t('Page Layout'),
+          group=constant('XLite\\Core\\Layout::LAYOUT_GROUP_HOME')
+        ) }}
+      {% else %}
+        {{ widget('XC\\ThemeTweaker\\View\\FormField\\Select\\LayoutType',
+          label=t('Page Layout'),
+          help=t('The layout changes will be applied to all pages except the home page'),
+          group=constant('XLite\\Core\\Layout::LAYOUT_GROUP_DEFAULT')
+        ) }}
+      {% endif %}
+    </div>
+  </div>
+
+  {% if this.shouldShowHeaderSection() %}
+    <div class="options-layout-group">
+      <div class="options-layout-header sidebar-header">
+        <span class="group-icon header-group-icon"></span>
+        <span>{{ t('Header') }}</span>
+        <span class="hidden-items-link hidden-items-link--header hidden">0 {{ t('block(s)') }}</span>
+      </div>
+      <div class="group-items">
+        {% if this.isSimpleCMSEnabled() %}
+          <div class="group-item logo-options bs-accordion">
+            <div class="group-item-header bs-accordion-header" data-toggle="collapse" data-target="#logo-options-body" href="#logo-options-body" role="button" aria-expanded="false">
+              <span class="main-text">{{ t('Logo & Favicon') }}</span>
+              <div class="right-actions">
+                <span data-placement="top"
+                      title="{{ t('The Logo & Favicon settings apply to all pages') }}"
+                      data-html="true"
+                      class="themetweaker-panel-tooltip"></span>
+              </div>
+              <div id="logo-options-body" class="bs-accordion-body collapse">
+                <div class="logo-options-wrapper">
+                  <div class="logo-options-content">
+                    <div class="company-logo-uploader">
+                      {{ widget('XLite\\View\\FileUploader',
+                        object=this.getImageObject('logo'),
+                        maxWidth=this.getImageMaxWidth(),
+                        maxHeight=this.getImageMaxHeight(),
+                        isImage=true,
+                        fieldName='logo',
+                        hasAlt=true,
+                        isViaUrlAllowed=false
+                      ) }}
+                      <span class="option-label">{{ t('logo uploader') }}</span>
+                    </div>
+                    <div class="favicon-uploader" data-extended="1">
+                      {{ widget('XLite\\View\\FileUploader',
+                        object=this.getImageObject('favicon'),
+                        maxWidth=this.getImageMaxWidth(),
+                        maxHeight=this.getImageMaxHeight(),
+                        isImage=true,
+                        fieldName='favicon',
+                        hasAlt=false,
+                        isViaUrlAllowed=false
+                      ) }}
+                      <span class="option-label">{{ t('favicon uploader') }}</span>
+                    </div>
+                    <div class="appleIcon-uploader">
+                      {{ widget('XLite\\View\\FileUploader',
+                        object=this.getImageObject('appleIcon'),
+                        maxWidth=this.getImageMaxWidth(),
+                        maxHeight=this.getImageMaxHeight(),
+                        isImage=true,
+                        fieldName='appleIcon',
+                        hasAlt=false,
+                        isViaUrlAllowed=false
+                      ) }}
+                      <span class="option-label">{{ t('app icon uploader') }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="group-item" :class="item.button_class ? item.button_class : ''"
+             v-for="item in headerGroupItems"
+             @mouseenter="itemMouseenterHandler(item, $event)"
+             @mouseleave="itemMouseleaveHandler(item, $event)"
+             @click="itemClickHandler(item, 'headerGroupItems', 0, $event)">
+          <div class="group-item-header"  data-toggle="collapse" :data-target="'#group-item-body' + item.id" :href="'#group-item-body' + item.id" :role="item.has_body ? 'button' : ''" aria-expanded="false">
+            <span v-if="item.has_body"
+                  class="themetweaker-panel-move-inactive"></span>
+            <span v-if="item.is_button"
+                  class="themetweaker-panel-add"></span>
+            <span class="main-text" v-text="item.name"></span>
+            <div class="right-actions">
+                <span v-if="item.settings_link"
+                      @click="goAdminSettingsPage(item.settings_link)"
+                      class="themetweaker-panel-settings"></span>
+                <span v-if="item.is_removable"
+                      @click="removeSwitcherHandler(item, $event)"
+                      class="themetweaker-panel-trash"></span>
+                <span v-if="item.can_hide"
+                      class="themetweaker-panel-hide-switcher-inactive"></span>
+            </div>
+          </div>
+          <component :is="'xlite-layout-banner' + item.bodyEntityId" v-if="item.has_body" :id="'group-item-body' + item.id" class="bs-accordion-body collapse"></component>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,58 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    xcart.repository.category:
+        class: XLite\Model\Repo\Category
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - XLite\Model\Category
+
+    xcart.repository.clean_url:
+        class: XLite\Model\Repo\CleanURL
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - XLite\Model\CleanURL
+
+    xcart.repository.config:
+        class: XLite\Model\Repo\Config
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - XLite\Model\Config
+
+    xcart.repository.membership:
+        class: XLite\Model\Repo\Membership
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - XLite\Model\Membership
+
+    xcart.repository.product:
+        class: XLite\Model\Repo\Product
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - XLite\Model\Product
+
+    xcart.repository.product_class:
+        class: XLite\Model\Repo\ProductClass
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - XLite\Model\ProductClass
+
+    xcart.repository.profile:
+        class: XLite\Model\Repo\Profile
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - XLite\Model\Profile
+
+    xcart.repository.role:
+        class: XLite\Model\Repo\Role
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - XLite\Model\Role
+
+    xcart.repository.zone:
+        class: XLite\Model\Repo\Zone
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - XLite\Model\Zone

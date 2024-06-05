@@ -1,0 +1,12 @@
+{##
+ # Return reason
+ #
+ # @ListChild (list="return.footer", weight="10")
+ #}
+
+<div class="section reason">
+  <div class="title">{{ t('Reason') }}:</div>
+  <div class="value">
+    {{ widget('QSL\\Returns\\View\\FormField\\Select\\ReturnReasons', fieldId='reason_id', fieldName='reason_id', fieldOnly='true', label=t('Reason'), value=this.getReasonIdValue(), rows='3') }}
+  </div>
+</div>

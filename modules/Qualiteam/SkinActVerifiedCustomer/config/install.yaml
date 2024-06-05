@@ -1,0 +1,43 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActVerifiedCustomer Verification information", translations: [{ code: en, label: "Verification information" }] }
+  - { name: "SkinActVerifiedCustomer Verification status", translations: [{ code: en, label: "Verification status" }] }
+  - { name: "SkinActVerifiedCustomer STATUS_VERIFIED", translations: [{ code: en, label: "Verified" }] }
+  - { name: "SkinActVerifiedCustomer STATUS_NOT_VERIFIED", translations: [{ code: en, label: "Not Verified" }] }
+  - { name: "SkinActVerifiedCustomer Verification attachments", translations: [{ code: en, label: "Verification attachments" }] }
+  - { name: "SkinActVerifiedCustomer Verified customer", translations: [{ code: en, label: "Verified customer" }] }
+  - { name: "SkinActVerifiedCustomer Verified", translations: [{ code: en, label: "Verified" }] }
+  - { name: "SkinActVerifiedCustomer order_verified_status_id", translations: [{ code: en, label: "'Verified' order fulfillment status" }] }
+  - { name: "SkinActVerifiedCustomer Verified order fulfillment status not selected", translations: [{ code: en, label: "Not selected" }] }
+  - { name: "SkinActVerifiedCustomer Any status", translations: [{ code: en, label: "Any status" }] }
+  - { name: "SkinActVerifiedCustomer Not verified only", translations: [{ code: en, label: "Not verified only" }] }
+  - { name: "SkinActVerifiedCustomer Verified only", translations: [{ code: en, label: "Verified only" }] }
+  - { name: "SkinActVerifiedCustomer Customer verification status", translations: [{ code: en, label: "Customer verification status" }] }
+  - { name: "SkinActVerifiedCustomer change_fulfillment", translations: [{ code: en, label: "Automatically change fulfillment order status from New to Verified for verified customers" }] }
+  - { name: "SkinActVerifiedCustomer change_fulfillment event", translations: [{ code: en, label: "Order fulfillment status automatically changed from New to Verified for verified customer" }] }
+  - { name: "SkinActVerifiedCustomer Download", translations: [{ code: en, label: "Download" }] }
+
+
+XLite\Model\Config:
+  - name: order_verified_status_id
+    category: Qualiteam\SkinActVerifiedCustomer
+    type: \Qualiteam\SkinActVerifiedCustomer\View\FormField\Select\OrderVerifiedStatusId
+    orderby: 100
+    translations:
+      - code: en
+        option_name: 'SkinActVerifiedCustomer order_verified_status_id'
+
+  - name: change_fulfillment
+    category: Qualiteam\SkinActVerifiedCustomer
+    type: \XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 200
+    value: false
+    translations:
+      - code: en
+        option_name: 'SkinActVerifiedCustomer change_fulfillment'

@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace XC\BulkEditing\Model\DTO\Product;
+
+use XLite\Model\DTO\Base\CommonCell;
+
+/**
+ * Class Categories
+ */
+abstract class AProduct extends \XLite\Model\DTO\Base\ADTO
+{
+    protected $editedFields = [];
+    protected $scenario = '';
+
+    public function setEditedFields($fields)
+    {
+        $this->editedFields = array_map(static function ($item) {
+            return preg_replace('/^[^.]+\./', '', $item);
+        }, $fields);
+    }
+
+    /**
+     * @param \XLite\Model\Product $object
+     * @param array|null           $rawData
+     *
+     * @return mixed
+     */
+    public function populateTo($object, $rawData = null)
+    {
+        $fields = \XC\BulkEditing\Logic\BulkEdit\Scenario::getScenarioFields($this->scenario);
+        foreach ($fields as $section => $sectionFields) {
+            foreach ($sectionFields as $name => $field) {
+                if ($this->isEdited($section . '.' . $name)) {
+                    call_user_func([$field['class'], 'populateData'], $name, $object, $this->{$section});
+                }
+            }
+        }
+    }
+
+    /**
+     * @param mixed|\XLite\Model\Product $object
+     */
+    protected function init($object)
+    {
+        $fields = \XC\BulkEditing\Logic\BulkEdit\Scenario::getScenarioFields($this->scenario);
+
+        foreach ($fields as $section => $sectionFields) {
+            $sectionData = [];
+            foreach ($sectionFields as $name => $field) {
+                $sectionData = array_merge($sectionData, call_user_func([$field['class'], 'getData'], $name, $object));
+            }
+            $this->{$section} = new CommonCell($sectionData);
+        }
+    }
+
+    protected function isEdited($fieldPath)
+    {
+        return in_array($fieldPath, $this->editedFields, true);
+    }
+}

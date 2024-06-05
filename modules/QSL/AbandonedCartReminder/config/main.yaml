@@ -1,0 +1,17 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.6
+type: common
+authorName: 'Qualiteam Software'
+moduleName: 'Abandoned Cart Reminder'
+description: 'This module gives unfinished orders a second chance and allows you to remind customers of their abandoned carts by sending an e-mail notification manually or automatically.'
+minorRequiredCoreVersion: 0
+dependsOn: {  }
+incompatibleWith: {  }
+showSettingsForm: true
+canDisable: true

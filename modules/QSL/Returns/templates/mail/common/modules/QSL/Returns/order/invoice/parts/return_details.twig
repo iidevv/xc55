@@ -1,0 +1,39 @@
+{##
+ # Return details (invoice page)
+ #
+ # @ListChild (list="invoice.base", weight="65")
+ #}
+
+{% if this.order.getOrderReturn() %}
+  <a name="return_details"></a>
+  <div class="order-return-details">
+    <div class="order-return-header">
+      <div class="order-return-title" style="color: #579ed2; float: left; font-size: 40px; margin-top: 11px; padding-left: 3px;">{{ t('Order return') }}</div>
+      <div class="order-return-status" style="color: #333; float: right; font-size: 22px; margin-top: 30px;">{{ t('Status') }}: <span class="status" style="color: #257d16;">{{ this.order.getOrderReturnStatus() }}</span></div>
+    </div>
+    <div style="clear: both"></div>
+    {% if this.order.getOrderReturnDate() %}
+      <div class="section date" style="padding-top: 10px;">
+        <span class="title" style="font-weight: bold;">{{ t('Date') }}: </span>
+        <span class="value">{{ this.formatTime(this.order.getOrderReturnDate()) }}</span>
+      </div>
+    {% endif %}
+    {{ widget_list('order_return.base') }}
+    <div class="section reason" style="padding-top: 10px;">
+      <span class="title" style="font-weight: bold;">{{ t('Reason') }}: </span>
+      <span class="value">{{ this.order.getOrderReturnReason() }}</span>
+    </div>
+    {% if this.isReturnActionsEnabled() %}
+    <div class="section reason" style="padding-top: 10px;">
+      <span class="title" style="font-weight: bold;">{{ t('Action') }}: </span>
+      <span class="value">{{ this.order.getOrderReturnAction() }}</span>
+    </div>
+    {% endif %}
+    {% if this.order.getOrderReturnComment() %}
+      <div class="section comment">
+      <span class="title" style="font-weight: bold;">{{ t('Comment') }}: </span>
+      <span class="value">{{ this.order.getOrderReturnComment()|nl2br }}</span>
+    </div>
+    {% endif %}
+  </div>
+{% endif %}

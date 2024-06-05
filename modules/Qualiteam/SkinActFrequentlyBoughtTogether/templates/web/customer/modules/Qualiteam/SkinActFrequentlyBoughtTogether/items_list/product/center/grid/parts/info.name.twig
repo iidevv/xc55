@@ -1,0 +1,11 @@
+{##
+ # Product info name box
+ #
+ # @ListChild (list="itemsList.widget.frequentlyBought.product.grid.customer.info", weight="5")
+#}
+
+{% apply spaceless %}
+  <h5 class="freq-products-grid__product-name">
+    <a class="fn url freq-products-grid__product-name-link" href="{{ this.getProductURL(this.categoryId) }}">{{ this.get('product').name }}</a>
+  </h5>
+{% endapply %}

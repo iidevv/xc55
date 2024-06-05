@@ -1,0 +1,20 @@
+<div class="customer-orders-wrapper">
+  <div class="customer-orders-title">{{ t('SkinActOrderMessaging Orders') }}</div>
+  {% if this.hasResults() %}
+    <ul class="customer-orders-list">
+      {% for order in this.getPageData() %}
+        <li>
+          <div class="order-number">
+            <a href="{{ xurl('order', '', {'order_number' : order.getOrderNumber()}) }}" target="_blank">
+              #{{ order.getOrderNumber() }}
+            </a>
+          </div>
+          <div class="order-status">
+            {{ order.getPaymentStatus().getName() }} / {{ order.getShippingStatus().getName() }}
+          </div>
+          <div class="order-date">{{ this.formatTime(order.getDate()) }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

@@ -1,0 +1,9 @@
+{##
+ # Category bottom description
+#}
+
+{% if this.getBottomDescription() %}
+    <div class="category-bottom-description" {{ this.printTagAttributes(this.getCategory().getFieldMetadata('bottomDescription'))|raw }}>
+        {{ this.getBottomDescription()|raw }}
+    </div>
+{% endif %}

@@ -1,0 +1,14 @@
+{##
+ # Reorder link
+ #
+ # @ListChild (list="slidebar.navbar.account", weight="19")
+#}
+
+{% if this.isLogged() %}
+  <li>
+    <a class="icon-font" href="{{ xurl('re_order', '') }}">
+      {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon="i-reorder", class='') }}
+      <span>{{ t('SkinActProductReOrdering re-order') }}</span>
+    </a>
+  </li>
+{% endif %}

@@ -1,0 +1,15 @@
+{##
+ # CSS resource
+ #}
+
+{% if this.async %}
+  <link href="{{ this.url }}"
+        rel="stylesheet"
+        onload="this.media='all'; this.onload=null;"
+        media="{{ this.media }}" />
+{% else %}
+  <link href="{{ this.url }}"
+        rel="stylesheet"
+        type="text/css"
+        media="{{ this.media }}" />
+{% endif %}

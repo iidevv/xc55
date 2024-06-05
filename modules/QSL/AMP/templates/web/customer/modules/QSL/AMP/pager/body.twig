@@ -1,0 +1,10 @@
+{##
+ # Pager
+ #}
+{% if this.isPagesListVisible() %}
+  <div class="view-more-btn">
+    <a class="btn btn-reg" href="{{ this.getAbsoluteURL(this.getUrl()) }}">{{ t('View more') }}</a>
+  </div>
+{% endif %}
+
+{{ widget_list('itemsTotal', type='inherited') }}

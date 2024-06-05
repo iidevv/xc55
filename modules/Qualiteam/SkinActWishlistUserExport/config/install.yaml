@@ -1,0 +1,18 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActWishlistUserExport login", translations: [{ code: en, label: "Login/Email" }] }
+  - { name: "SkinActWishlistUserExport name", translations: [{ code: en, label: "Name" }] }
+  - { name: "SkinActWishlistUserExport itemsCount", translations: [{ code: en, label: "Items in wishlist" }] }
+  - { name: "SkinActWishlistUserExport lastUpdated", translations: [{ code: en, label: "Last updated" }] }
+  - { name: "SkinActWishlistUserExport lastLogin", translations: [{ code: en, label: "Last login" }] }
+  - { name: "SkinActWishlistUserExport WishlistTable", translations: [{ code: en, label: "Whishlists" }] }
+  - { name: "SkinActWishlistUserExport empty list", translations: [{ code: en, label: "N/A" }] }
+  - { name: "SkinActWishlistUserExport Product, SKU or customer info", translations: [{ code: en, label: "Product, SKU or customer info" }] }
+  - { name: "SkinActWishlistUserExport Last logged in", translations: [{ code: en, label: "Last logged in" }] }
+  - { name: "SkinActWishlistUserExport Wishlists", translations: [{ code: en, label: "Wishlists" }] }

@@ -1,0 +1,7 @@
+<div class="alert alert-info" role="alert">
+    {{ t('On this page you can edit e-mail notifications which are sent to customers who abandoned their carts.') }}
+</div>
+
+{% form 'QSL\\AbandonedCartReminder\\View\\Form\\ItemsList\\Reminder\\Table' %}
+  {{ widget('QSL\\AbandonedCartReminder\\View\\ItemsList\\Model\\Reminder') }}
+{% endform %}

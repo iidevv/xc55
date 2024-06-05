@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2022-12-01 - [Bug] An incorrect value was shown in the "Maximum value is" message in the cart if the product had been added to the cart in a number that was more than the currently available quantity in stock. Fixed.  #XCB-1903 #CDev-Core #QSL-Backorder #XC-ProductVariants
+

@@ -1,0 +1,9 @@
+{##
+ # Logo column
+ #}
+
+<div class="logo">
+  {% if this.entity.getAdminIconURL() %}
+    <img src="{{ this.entity.getAdminIconURL() }}" alt=""/>
+  {% endif %}
+</div>

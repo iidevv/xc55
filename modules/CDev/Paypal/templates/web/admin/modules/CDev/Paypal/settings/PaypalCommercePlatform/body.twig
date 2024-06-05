@@ -1,0 +1,14 @@
+{##
+ # Settings template
+ #}
+
+<div class="payment-settings {{ this.getPaymentMethod().getServiceName() }}">
+
+  <div class="middle">
+
+    {{ widget('CDev\\Paypal\\View\\Model\\PaypalCommercePlatform', paymentMethod=this.getPaymentMethod()) }}
+
+  </div>
+
+</div>
+

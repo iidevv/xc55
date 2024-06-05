@@ -1,0 +1,4 @@
+Version 5.5.1.1
+
+Fixes (1)
+2022-12-05 - [Bug] "Uncaught TypeError: eCommerceCoreEvent is not a constructor". Fixed. #XCB-1932 #CDev-GoogleAnalytics

@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Improvements (1)
+2023-02-27 - [Story] Added the FedEx One Rate feature. #ECOM-2843 #CDev-FedEx
+

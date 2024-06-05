@@ -1,0 +1,7 @@
+Version 5.5.0.2
+
+Fixes (3)
+2022-09-05 - [Bug] The defineWidgetParams method signature was unified. #XCB-1700 #CDev-Core #QSL-ShopByBrand #XC-ThemeTweaker
+2022-09-02 - [Bug] Shop by brand. Fixed some layout issues related to the spacing between the brand name input field and the brands pagination block. #XCB-1659 #QSL-ShopByBrand
+2022-09-05 - [Bug] Shop by brand. On the front page of the storefront only brands with products were shown regardless of the settings. Fixed. #XCB-1657 #QSL-ShopByBrand
+

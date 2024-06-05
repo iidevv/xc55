@@ -1,0 +1,26 @@
+{##
+# Banner section QSL\Banner\View\Customer\ABannerSection
+#}
+
+{% if this.getBannerBoxes() %}
+    <div class="bannerBox {{ this.location }}-box">
+        {% for i, item in this.getBannerBoxes() %}
+            {% if this.isParallaxBanner(item) %}
+                <div class="parallax-banner-container" style="{{ this.getBannerHeight(item) }}{{ this.getBannerLineHeight(item) }}" {{ this.displayDataAttributes(item)|raw }}>
+                {{ widget('\\QSL\\Banner\\View\\Customer\\BannerParallax', banner_id=item.id) }}
+            </div>
+        {% else %}
+            <div class="banner_container {{ item.location }}{#
+                #}{% if item.getWidth() == 0 and item.getHeight() == 0 %} dimensions-not-defined{% elseif item.getWidth() > 0 and item.getHeight() > 0 %} dimensions-defined{% endif %}{#
+                #}{% if item.getHeight() > 0 %} height-defined{% else %} height-not-defined{% endif %}{#
+                #}{% if item.getWidth() > 0 %} width-defined{% else %} width-not-defined{% endif %}" style="{{ this.getBannerHeight(item) }}{{ this.getBannerWidth(item) }}{{ this.getBannerLineHeight(item) }}" {{ this.displayDataAttributes(item)|raw }}>
+                {% if this.location == 'StandardDouble' %}
+                {{ widget('\\Qualiteam\\SkinActSkin\\Modules\\QSL\\Banner\\View\\Customer\\DoubleBannerBox', banner_id=item.id) }}
+                {% else %}
+                {{ widget('\\QSL\\Banner\\View\\Customer\\BannerBox', banner_id=item.id) }}
+                {% endif %}
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

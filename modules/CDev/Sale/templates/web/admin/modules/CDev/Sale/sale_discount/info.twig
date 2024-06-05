@@ -1,0 +1,12 @@
+{##
+ # Sale discount modify
+ #}
+
+{% if this.shouldShowQuickDataWarning() %}
+  <div class="alert alert-warning">
+    {{ t('To ensure that products sorting and the addon Product Filter works correctly, after changing or adding sale offers, launch the re-calculation of quick data.', {'link': xurl('cache_management')})|raw }}
+  </div>
+{% endif %}
+
+{{ widget('CDev\\Sale\\View\\Model\\SaleDiscount', useBodyTemplate='1') }}
+

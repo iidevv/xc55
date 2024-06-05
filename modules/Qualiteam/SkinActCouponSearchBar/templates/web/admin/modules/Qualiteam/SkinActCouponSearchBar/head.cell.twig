@@ -1,0 +1,21 @@
+{# #
+ # Head cell
+#}
+
+
+
+        {% if this.column.sort %}
+            <a
+                    href="{{ xurl(this.getTarget(), '', {'page': 'coupons', 'sortBy': this.column.sort, 'sortOrder': this.getSortDirectionNext(this.column)}) }}"
+                    data-sort="{{ this.column.sort }}"
+                    data-direction="{{ this.getSortOrder() }}"
+                    class="{{ this.getSortLinkClass(this.column) }}">{{ this.column.name }}</a>
+            {% if this.isColumnSorted(this.column) %}
+                {% if 'desc' == this.getSortOrder() %}
+                    <i class="dir desc-order"></i>
+                {% endif %}
+                {% if 'asc' == this.getSortOrder() %}
+                    <i class="dir asc-order"></i>
+                {% endif %}
+            {% endif %}
+        {% endif %}

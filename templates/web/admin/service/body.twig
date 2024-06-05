@@ -1,0 +1,10 @@
+{##
+ # UI instances
+ #}
+
+<div id="ui-commented-data">
+  {{ this.displayCommentedData(this.getCommentedData()) }}
+</div>
+{% for idx, value in this.getAppJs %}
+  <script type="application/javascript" src="{{ asset(value) }}"></script>
+{% endfor %}

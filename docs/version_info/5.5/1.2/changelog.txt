@@ -1,0 +1,7 @@
+Version 5.5.1.2
+
+Fixes (3)
+2023-06-26 - [Bug] Updated layout of Color Swatches in the 'Change attributes' popup  #XCB-2472 #CDev-Core #XC-CrispWhiteSkin #QSL-Linen #TemplateMonster-KitchenSuppliesStore #TemplateMonster-SparePartsStore #QSL-Multistore
+2023-06-28 - [Bug] Improvement related to displaying the heading on the edit product page. #XCB-2212 #CDev-Core
+2023-07-05 - [Bug] AOM. Fixed layout issues in the product attributes edit form in the admin zone  #XCB-1565 #CDev-Core
+

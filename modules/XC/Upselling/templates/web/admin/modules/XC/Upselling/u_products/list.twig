@@ -1,0 +1,9 @@
+{##
+ # Product selections list table template
+ #}
+
+{% if this.isSearchVisible() %}
+    {{ widget('XC\\Upselling\\View\\ItemsList\\Model\\ProductSelection', {'searchPanelClass': this.getSearchPanelView()}) }}
+{% else %}
+    {{ widget('XC\\Upselling\\View\\ItemsList\\Model\\ProductSelection') }}
+{% endif %}

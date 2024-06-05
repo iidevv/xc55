@@ -1,0 +1,13 @@
+parameters:
+  xcart.marketplace.url: 'https://my.x-cart.com/api/'
+  xcart.marketplace.appstore_url: 'https://market.x-cart.com/'
+  xcart.marketplace.upgrade_step_time_limit: 240
+  xcart.marketplace.banner_url: 'https://my.x-cart.com/xcinfo'
+  xcart.marketplace.editions_url: 'https://my.x-cart.com/sites/default/files/editions.yaml'
+  xcart.marketplace.segment_url: 'https://mc-end-auth.qtmsoft.com'
+  xcart.marketplace.addon_images_url: 'https://my.x-cart.com/XCimageInterface/'
+  xcart.marketplace.xb_host: secure.x-cart.com
+
+  xcart.installation_lng: en
+
+  xcart.affiliate_id: '%env(string:XCART_AFFILIATE_ID)%'

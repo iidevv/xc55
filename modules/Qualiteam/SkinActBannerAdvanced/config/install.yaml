@@ -1,0 +1,12 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActBannerAdvanced web pos", translations: [{ code: en, label: "web pos" }] }
+  - { name: "SkinActBannerAdvanced web position", translations: [{ code: en, label: "Web position" }] }
+  - { name: "SkinActBannerAdvanced mobile pos", translations: [{ code: en, label: "mobile pos" }] }
+  - { name: "SkinActBannerAdvanced mobile position", translations: [{ code: en, label: "Mobile position" }] }

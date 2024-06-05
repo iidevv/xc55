@@ -1,0 +1,12 @@
+{##
+ # Checkout : order review step : items : paid
+ #
+ # @ListChild (list="checkout.review.selected.items", weight="50")
+ # @ListChild (list="checkout.review.inactive.items", weight="50")
+ #}
+{% if this.get('cart').blockPaidIsVisible() %}
+  <div class="paid clearfix">
+    {{ t('Paid') }}:
+    <span class="value">{{ widget('XLite\\View\\Surcharge', surcharge=this.get('cart').getPaidTotal(), currency=this.get('cart').getCurrency()) }}</span>
+  </div>
+{% endif %}

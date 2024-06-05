@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-09-06 - [Bug] Incorrect elements' sizes and positioning in the Opayo Form Protocol payment method settings  #XCB-1505 #CDev-Core #Amazon-PayWithAmazon #CDev-AuthorizeNet #CDev-TwoCheckout #CDev-Quantum #Qualiteam-CoinPayments #QSL-Dwolla #QSL-GlobalTransport #QSL-Pagseguro #QSL-Giropay #QSL-EGateway #QSL-SecurePay #QSL-TenPay #QSL-CCBill #QSL-AuthorizenetAcceptjs #QSL-RealexHostedPayment #QSL-Paysafecard #QSL-FirstDataPayeezyGatewayHP #XC-WorldpayHPP #XC-SofortBanking #XC-SagePay #XC-InternetSecure #XC-IdealPayments #XC-PayUIndia #XC-PayFort #XC-EBSIndia #XC-Beanstream #XC-ChronoPay #XC-ESelectHPP #XC-DatatransUPP #XC-BitPay #XC-BlueSnap #XC-EPDQ #XC-OgoneEcommerce #XC-SimplifyCommerce #XC-Heartland #XC-NetbanxHostedPayment #XC-DIBSFlexWin #XC-SecureTrading #XC-PayTabs #XC-Stripe #XC-VirtualMerchant
+

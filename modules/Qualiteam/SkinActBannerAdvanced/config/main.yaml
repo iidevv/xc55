@@ -1,0 +1,13 @@
+version: 5.5.0.0
+type: common
+authorName: Qualiteam
+moduleName: '[SkinAct] Banner Advanced'
+description: 'Added a web and mobile positions for banners. SS-22504'
+minorRequiredCoreVersion: 0
+dependsOn:
+  - Qualiteam-SkinActMain
+  - QSL-Banner
+incompatibleWith: {  }
+skins: {  }
+showSettingsForm: false
+canDisable: true

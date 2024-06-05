@@ -1,0 +1,6 @@
+{##
+ # Attribute value (Text)
+ #}
+
+<span class="title">{{ this.get('attribute').name }}</span>
+<textarea class="form-control" name="{{ this.getName() }}" data-attribute-id="{{ this.get('attribute').id }}" {{ this.printTagAttributes(this.getInputAttributes())|raw }}>{{ this.getValue() }}</textarea>

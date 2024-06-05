@@ -1,0 +1,20 @@
+{##
+ # Video tours tab
+#}
+
+<div class="video-tours-tab">
+  {% if this.hasVideoTours() %}
+    <div class="video-tours">
+      {% for i, video in this.getVideoToursTabInfo() %}
+          <div class="video-tours__item">
+            <div class="video-tours__item-video" data-id="{{ video.youtube_id }}" data-autoplay="yes"></div>
+            <div class="video-tours__item-name">
+              {{ video.description }}
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+  {% else  %}
+    {{ include('modules/Qualiteam/SkinActVideoTour/tabs/empty.twig') }}
+  {% endif %}
+</div>

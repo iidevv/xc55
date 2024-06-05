@@ -1,0 +1,49 @@
+{##
+ # Payment configuration
+ #}
+
+<div class="payment-conf">
+
+  {% if this.hasPaymentModules() %}
+    {% if this.hasGateways() %}
+      <div class="box gateways">
+        <div class="list-header">
+          <h2>{{ t('Online') }}</h2>
+          {{ widget('XLite\\View\\Button\\Payment\\AddMethod', paymentType=constant('XLite\\Model\\Payment\\Method::TYPE_ALLINONE')) }}
+        </div>
+        <div class="content">
+          {% if this.hasAddedPredefinedGateways() %}
+            {{ widget('XLite\\View\\ItemsList\\Payment\\Method\\Admin\\PredefinedGateways') }}
+          {% endif %}
+          {% if this.hasAddedNonPredefinedGateways() %}
+            {{ widget('XLite\\View\\ItemsList\\Payment\\Method\\Admin\\NonPredefinedGateways') }}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="box no-payment-modules">
+      <div class="list-header">
+        <h2>{{ t('No payment modules installed') }}</h2>
+      </div>
+      <div class="content">
+        <p>{{ t('In order to accept credit cards payments you should install the necessary payment module from our Marketplace.') }}</p>
+        {{ widget('XLite\\View\\Button\\Link', label=t('Go to Marketplace'), location=xurl('addons_list_marketplace', '', {'tag': 'Payment processing'}), style='action') }}
+      </div>
+    </div>
+  {% endif %}
+  <div class="right-panel-payment-modules">
+    {% include 'payment/configuration/banner.twig' %}
+  </div>
+
+  <div class="box offline-methods">
+    <div class="list-header">
+      <h2>{{ t('Offline') }}</h2>
+      {{ widget('XLite\\View\\Button\\Payment\\AddMethod', paymentType=constant('XLite\\Model\\Payment\\Method::TYPE_OFFLINE')) }}
+    </div>
+    <div class="content">
+      {{ widget('XLite\\View\\ItemsList\\Payment\\Method\\Admin\\Offline') }}
+    </div>
+  </div>
+
+</div>

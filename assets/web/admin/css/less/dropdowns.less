@@ -1,0 +1,74 @@
+/**
+ * Dropdown menu style
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.btn-dropdown {
+  position: relative;
+
+  > .btn {
+    display: flex;
+    align-items: center;
+
+    .caret {
+      margin: 0 0 0 (0.25 * @rhythmic-unit);
+    }
+  }
+}
+
+.dropdown-menu {
+  padding: @dropdown-padding;
+  min-width: 100%;
+  border: none;
+  border: 0;
+  margin: 0;
+  box-shadow: @dropdown-shadow;
+
+  .open > & {
+    margin-top: 0;
+  }
+
+  .dropdown-header {
+    min-height: auto;
+    line-height: @line-height-small-text;
+    padding: @dropdown-button-padding;
+    color: @color-grey-light;
+    font-weight: 600;
+    cursor: default;
+
+    &:first-child {
+      padding-top: (@rhythmic-unit / 2);
+    }
+  }
+
+  > li > a,
+  > li > button,
+  > li > .button-container > button {
+    padding: @dropdown-button-padding;
+    min-height: auto;
+    border: none;
+    border-radius: 0;
+    font-weight: @font-regular;
+    font-size: @font-size-small;
+    line-height: @line-height-small;
+
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+
+    i,
+    span {
+      + span {
+        margin-left: 0.5 * @rhythmic-unit;
+      }
+    }
+  }
+
+  .dropup &,
+  .navbar-fixed-bottom .dropdown & {
+    margin-bottom: 0;
+  }
+}

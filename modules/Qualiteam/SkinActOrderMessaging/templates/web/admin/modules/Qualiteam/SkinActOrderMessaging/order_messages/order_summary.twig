@@ -1,0 +1,64 @@
+{% set order = this.getOrder() %}
+{% set profile = order.getProfile() %}
+
+<div class="order-summary-title">{{ t('SkinActOrderMessaging Order Details') }}</div>
+<div class="order-summary-list-wrapper">
+  <ul class="order-summary-list">
+    <li class="order-summary-date">
+        <span class="order-summary-list-title">{{ t('SkinActOrderMessaging Placed on') }}:</span>
+        <span class="order-summary-list-value">{{ this.formatDate(order.getDate()) }}</span>
+    </li>
+    <li class="order-summary-customer">
+        <span class="order-summary-list-title">{{ t('SkinActOrderMessaging Customer') }}:</span>
+        <span class="order-summary-list-value">{{ profile.getName() }}</span>
+    </li>
+    <li class="order-summary-email">
+        <span class="order-summary-list-title">{{ t('SkinActOrderMessaging Email') }}:</span>
+        <span class="order-summary-list-value">{{ profile.getEmail() }}</span>
+    </li>
+    <li class="order-summary-payment-status">
+        <span class="order-summary-list-title">{{ t('SkinActOrderMessaging Order status') }}:</span>
+        <span class="order-summary-list-value">{{ order.getPaymentStatus().getName() }}/{{ order.getShippingStatus().getName() }}</span>
+    </li>
+    <li class="order-summary-payment-method">
+        <span class="order-summary-list-title">{{ t('SkinActOrderMessaging Payment method') }}:</span>
+        <span class="order-summary-list-value">{{ order.getPaymentMethodName() }}</span>
+    </li>
+    <li class="order-summary-shipping-method">
+        <span class="order-summary-list-title">{{ t('SkinActOrderMessaging Shipping method') }}:</span>
+        <span class="order-summary-list-value">{{ order.getShippingMethodName() }}</span>
+    </li>
+    <li class="order-summary-order-total">
+        <span class="order-summary-list-title">{{ t('SkinActOrderMessaging Order total') }}:</span>
+        <span class="order-summary-list-value">{{ this.formatPrice(order.getTotal(), order.getCurrency()) }}</span>
+    </li>
+    <li class="order-summary-ordered-products">
+        <span class="order-summary-list-title order-products">{{ t('SkinActOrderMessaging Ordered products') }}:</span>
+    </li>
+  </ul>
+</div>
+<div class="order-summary-products">
+  <ul class="order-summary-products-list">
+    {% for item in order.getItems() %}
+    <li class="order-summary-item">
+      <div class="image">
+        {% if item.hasImage() %}
+            <img src="{{ item.getResizedImageURL(32, 60) }}" alt="{{ item.getName() }}">
+        {% endif %}
+      </div>
+      <div class="description">
+        <div class="product-name">
+          {% if item.getProduct() %}
+            <a href="{{ xurl('product', '', {'product_id': item.getProduct().getProductId()}) }}" class="item-name" target="_blank">{{ item.getName() }}</a>
+          {% else %}
+            <span class="item-name">{{ item.getName() }}</span>
+          {% endif %}
+          </div>
+        <div class="product-price">
+            {{ item.getAmount() }} x {{ this.formatPrice(item.getDisplayPrice(), order.getCurrency()) }}
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

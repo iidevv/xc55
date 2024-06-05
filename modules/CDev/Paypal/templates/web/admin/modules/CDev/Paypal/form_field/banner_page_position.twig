@@ -1,0 +1,11 @@
+{##
+ # Form field
+ #}
+
+{% include 'form_field/input/checkbox/on_off.twig' %}
+
+{% if this.getImageUrl() %}
+<div class="banner_page_position">
+  <img src="{{ this.getImageUrl() }}" alt="{{ this.getBannerPosition() }}">
+</div>
+{% endif %}

@@ -1,0 +1,11 @@
+{# #
+ # result search preview
+#}
+
+<div class="table-label default-site-meta-fields-preview-label">
+  <label for="default-site-meta-fields-preview" title="{{ t('Search preview') }}">{{ t('Search preview') }}</label>
+</div>
+
+<div class="table-value">
+  <div class="default-site-meta-fields-preview">{{ this.getDefaultFieldsPreview() |raw }}</div>
+</div>

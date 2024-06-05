@@ -1,0 +1,55 @@
+services:
+    _defaults:
+        autowire: true
+
+    xcart.entities.sub_entity_transformer.input.id_collection.category:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.category'
+            $name: 'category'
+            $idGetter: '@xcart.entities.id_getter.category'
+
+    xcart.entities.sub_entity_transformer.input.id_collection.clean_url:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.clean_url'
+            $name: 'clean URL'
+
+    xcart.entities.sub_entity_transformer.input.id.membership:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdInputTransformer
+        arguments:
+            $repository: '@xcart.repository.membership'
+            $name: 'membership'
+
+    xcart.entities.sub_entity_transformer.input.id_collection.membership:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.membership'
+            $name: 'membership'
+            $idGetter: '@xcart.entities.id_getter.membership'
+
+    xcart.entities.sub_entity_transformer.input.id_collection.product:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.product'
+            $name: 'product'
+            $idGetter: '@xcart.entities.id_getter.product'
+
+    xcart.entities.sub_entity_transformer.input.id_collection.product_class:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.product_class'
+            $name: 'product class'
+
+    xcart.entities.sub_entity_transformer.input.id.zone:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdInputTransformer
+        arguments:
+            $repository: '@xcart.repository.zone'
+            $name: 'zone'
+
+    xcart.entities.sub_entity_transformer.input.id_collection.zone:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.zone'
+            $name: 'zone'
+            $idGetter: '@xcart.entities.id_getter.zone'

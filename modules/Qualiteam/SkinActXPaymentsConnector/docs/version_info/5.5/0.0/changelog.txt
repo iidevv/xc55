@@ -1,0 +1,3 @@
+Version 5.5.0.0
+
+Adapted to X-Cart 5.5.x

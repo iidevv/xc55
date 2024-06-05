@@ -1,0 +1,6 @@
+{##
+ # Payment methods details forms switcher
+ #}
+{% if this.get('cart').paymentMethod.formTemplate %}
+  {% include this.get('cart').paymentMethod.formTemplate %}
+{% endif %}

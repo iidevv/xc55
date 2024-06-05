@@ -1,0 +1,6 @@
+{% if this.feedHasError(this.entity) %}
+  {{ widget('\\XLite\\View\\Tooltip', caption=this.getColumnValue(this.column, this.entity), text=this.renderFeedErrors(this.entity), isImageTag='false', className='help') }}
+{% endif %}
+{% if not this.feedHasError(this.entity) %}
+  <span>{{ this.getColumnValue(this.column, this.entity) }}</span>
+{% endif %}

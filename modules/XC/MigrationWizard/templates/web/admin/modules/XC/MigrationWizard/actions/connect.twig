@@ -1,0 +1,88 @@
+{##
+ # Migration Wizard - Connect action
+ #}
+{% form '\\XC\\MigrationWizard\\View\\Form\\Migration\\Connect' %}
+
+<div class="panel">
+    <div class="form-group">
+        <ul class="table">
+            <li>
+                {{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'database'), label=t('Database name'), required='true', value=this.getDatabase() ) }}
+            </li>
+            <li>
+                {{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'username'), label=t('Database username'), required='true', value=this.getUsername() ) }}
+            </li>
+            <li>
+                {{ widget('\\XLite\\View\\FormField\\Input\\PasswordWithValue', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'password'), label=t('Database password'), required='true', value=this.getPassword() ) }}
+            </li>
+			{% if this.isCloud() %}
+				<li>
+					{{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'host'), label=t('Host name'), required='true', value=this.getHost() ) }}
+				</li>
+			{% endif %}
+        </ul>
+    </div>
+    <div class="form-group">
+        <button class="btn regular-button center" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false" aria-controls="collapse">
+            <span>{{ t('Advanced options') }}</span>
+        </button>
+    </div>
+    <div class="collapse" id="advanced-options">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ul class="table">
+					{% if not this.isCloud() %}
+						<li>
+							{{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'host'), label=t('Host name'), required='true', value=this.getHost() ) }}
+						</li>
+					{% endif %}
+                    <li>
+                        {{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'port'), label=t('Port number'), value=this.getPort() ) }}
+                    </li>
+                    <li>
+                        {{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'socket'), label=t('Socket'), value=this.getSocket() ) }}
+                    </li>
+                    <li>
+                        {{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'prefix'), label=t('Table prefix'), value=this.getPrefix() ) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="form-group">
+        <ul class="table">
+            <li>
+                {{ widget('\\XLite\\View\\FormField\\Input\\PasswordWithValue', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'secret'), label=t('Encryption key'), required='true', value=this.getSecret(), help=t('The secret key for encrypted data') ) }}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="form-group">
+        <ul class="table">
+            <li>
+                {{ widget('\\XLite\\View\\FormField\\Input\\Text\\URL', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'url'), label=t('Site URL'), required='true', value=this.getSiteUrl(), help=t('The URL of a source store') ) }}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="form-group">
+        <ul class="table">
+            <li>
+                {{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldName=(constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\Connect::FIELDS_PREFIX') ~ 'path'), label=t('Site path'), required='false', value=this.getSitePath(), help=t('The path on server (if the same as X-Cart 5) of a source store') ) }}
+            </li>
+        </ul>
+    </div>
+</div>
+
+{{ widget('\\XLite\\View\\Button\\Submit', label=t('Save and continue'), style='center regular-main-button') }}
+
+{% endform %}
+
+{% include this.getDir() ~ '/step_back.twig' %}

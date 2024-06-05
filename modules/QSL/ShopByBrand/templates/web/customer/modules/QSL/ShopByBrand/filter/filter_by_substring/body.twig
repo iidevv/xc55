@@ -1,0 +1,21 @@
+{# #
+ # Filter by substring
+#}
+
+<div class="brands-filter-by-substring">
+  <div class="substring floating-label">
+    {{ widget(
+      'XLite\\View\\FormField\\Input\\Text',
+      fieldName='substring',
+      value=this.getBrandNameSubstring(),
+      label=t('Search Brand by Name')
+    ) }}
+  </div>
+
+  {{ widget(
+    '\\XLite\\View\\Button\\Regular',
+    label='Search',
+    style='filter-by-substring-button',
+    jsCode='return false;'
+  ) }}
+</div>

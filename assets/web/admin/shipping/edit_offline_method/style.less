@@ -1,0 +1,67 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+
+/**
+ * Edit offline shipping method
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.offline-help {
+  width: 560px;
+  margin-bottom: @rhythmic-unit * 2;
+
+  .help-header {
+    ul.custom-disc {
+      margin-bottom: 0.5 * @rhythmic-unit;
+
+      li {
+        display: block;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .help-link {
+    display: inline-block;
+    cursor: pointer;
+    color: @color-link;
+    border-bottom: @border-base dotted @color-link;
+    margin-top: @rhythmic-unit;
+
+    &:hover {
+      color: #0f9dcc;
+      border-color: #0f9dcc;
+    }
+  }
+
+  .help-header {
+    .help-link {
+      margin-top: auto;
+    }
+  }
+
+  .help-content {
+    display: none;
+    margin-bottom: 0.5 * @rhythmic-unit;
+  }
+}
+
+.widget-shipping-editmethod {
+  margin-top: @rhythmic-unit - 5px;
+  .formula .plus {
+    &:before, &:after {
+      content: " ";
+    }
+  }
+  .offline-help {
+    width: 100%;
+    max-width: 790px;
+  }
+}
+
+.shipping-markups {
+  .cell-header {
+    min-height: 30px;
+  }
+}

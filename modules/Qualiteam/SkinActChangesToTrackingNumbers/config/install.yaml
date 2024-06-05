@@ -1,0 +1,15 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActChangesToTrackingNumbers Instructions", translations: [{ code: en, label: "Instructions" }] }
+  - { name: "SkinActChangesToTrackingNumbers mail instructions", translations: [{ code: en, label: "Instructions" }] }
+  - { name: "SkinActChangesToTrackingNumbers parcels", translations: [{ code: en, label: "Parcels" }] }
+  - { name: "SkinActChangesToTrackingNumbers TrackingNumbers", translations: [{ code: en, label: "Tracking number" }] }
+  - { name: "SkinActChangesToTrackingNumbers shippingMethod", translations: [{ code: en, label: "Shipping method" }] }
+  - { name: "SkinActChangesToTrackingNumbers parcel instructions", translations: [{ code: en, label: "Instructions" }] }
+  - { name: "SkinActChangesToTrackingNumbers invoice Order Tracking", translations: [{ code: en, label: "Order Tracking" }] }

@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2023-05-11 - [Bug] FLC. The address was not changed after being edited. Fixed. #XCB-1973 #XC-FastLaneCheckout
+

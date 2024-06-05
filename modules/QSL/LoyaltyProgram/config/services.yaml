@@ -1,0 +1,22 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  QSL\LoyaltyProgram\Core\EventListener:
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }
+
+  QSL\LoyaltyProgram\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: QSL-LoyaltyProgram, type: rebuild, method: onRebuild }
+
+  # /orders
+  QSL\LoyaltyProgram\API\Endpoint\Order\Transformer\RewardHistoryEvent\OutputTransformerInterface: '@QSL\LoyaltyProgram\API\Endpoint\Order\Transformer\RewardHistoryEvent\OutputTransformer'
+  QSL\LoyaltyProgram\API\Endpoint\Order\Transformer\RewardHistoryEvent\OutputTransformer: ~

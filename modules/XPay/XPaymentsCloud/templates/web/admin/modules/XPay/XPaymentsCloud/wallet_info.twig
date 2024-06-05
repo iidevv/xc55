@@ -1,0 +1,12 @@
+{##
+ # Wallet information
+ #
+ #}
+<div class="xpayments-wallet-description">
+ <div class="logo">
+  <img src="{{ asset('modules/XPay/XPaymentsCloud/method_icon.png') }}" alt="{{ t('X-Payments Cloud connector') }}" title="{{ t('X-Payments Cloud connector') }}" />
+ </div>
+ <div class="text">
+   {{ this.getPaymentMethod().getAltAdminDescription() }}
+ </div>
+</div>

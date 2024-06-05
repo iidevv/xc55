@@ -1,0 +1,17 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.0
+type: common
+authorName: Qualiteam
+moduleName: 'SkinAct Fulfillment staff'
+description: 'Creating new user roles: "Fulfillment staff" and "Fulfillment staff with ability to manage products. SS-20258'
+minorRequiredCoreVersion: 0
+dependsOn: { }
+incompatibleWith: { }
+showSettingsForm: false
+canDisable: true

@@ -1,0 +1,39 @@
+/**
+ * Alerts styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.alert {
+  min-width: 335px;
+  max-width: 1528px;
+  width: fit-content;
+  width: -moz-fit-content;
+  padding: @alert-padding-vertical @alert-padding-horizontal;
+
+  &.alert-no-margin {
+    margin: 0;
+  }
+
+  > p,
+  > ul {
+    margin-bottom: (@rhythmic-unit / 2);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  > p + p {
+    margin-top: (@rhythmic-unit / 2);
+  }
+
+  .tab-content & {
+    margin-bottom: 2 * @rhythmic-unit;
+  }
+}

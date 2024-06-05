@@ -1,0 +1,24 @@
+{##
+ # Layout editor panel
+ #}
+
+<xlite-layout-editor inline-template preset="{{ this.getCurrentLayoutPreset() }}">
+    <div id="layout-editor-panel" :class="panelClasses">
+        <div class="layout-editor-sidebar themetweaker-sidebar">
+          <div class="options-layout-header sidebar-main-header">
+            <span>{{ t('Layout Editor') }}</span>
+          </div>
+          <div class="themetweaker-sidebar-content">
+            <xlite-layout-options
+                    inline-template
+                    :preset="preset"
+                    :initial-reset-available="{{ this.isResetAvailable() ? 'true' : 'false' }}"
+                    :is-custom-css-enabled="{{ this.isCustomCssEnabled() ? 'true' : 'false' }}">
+              <div class="layout-options-wrapper">
+                {{ widget_list('layout_editor.sidebar') }}
+              </div>
+            </xlite-layout-options>
+          </div>
+        </div>
+    </div>
+</xlite-layout-editor>

@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  CDev\USPS\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: CDev-USPS, type: init, method: onInit }
+      - { name: xcart.lifetime-hook, moduleId: CDev-USPS, type: upgrade, method: onUpgradeTo5503, version: '5.5.0.3' }
+
+  # /orders
+  CDev\USPS\API\Endpoint\Order\Transformer\Shipment\OutputTransformerInterface: '@CDev\USPS\API\Endpoint\Order\Transformer\Shipment\OutputTransformer'
+  CDev\USPS\API\Endpoint\Order\Transformer\Shipment\OutputTransformer: ~

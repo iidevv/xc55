@@ -1,0 +1,12 @@
+version: 5.5.0.0
+type: common
+authorName: Qualiteam
+moduleName: '[SkinAct] Full Width Images'
+description: 'To allow the admin to upload full-width images to the product details page. SS-22681'
+minorRequiredCoreVersion: 0
+dependsOn:
+  - Qualiteam-SkinActMain
+incompatibleWith: {  }
+skins: {  }
+showSettingsForm: false
+canDisable: true

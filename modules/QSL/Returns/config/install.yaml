@@ -1,0 +1,240 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: enable_actions
+    category: 'QSL\Returns'
+    type: 'QSL\Returns\View\FormField\Input\Checkbox'
+    orderby: 100
+    value: 0
+    translations:
+      - code: en
+        option_name: "Allow customer to specify desired action"
+      - code: ru
+        option_name: "Разрешить выбор покупателем желаемого действия"
+  - name: hide_other_reason
+    category: 'QSL\Returns'
+    type: 'QSL\Returns\View\FormField\Input\Checkbox'
+    orderby: 100
+    value: 0
+    translations:
+      - code: en
+        option_name: "Hide the \"Other\" return reason for customers"
+  - name: hide_other_action
+    category: 'QSL\Returns'
+    type: 'QSL\Returns\View\FormField\Input\Checkbox'
+    orderby: 100
+    value: 0
+    translations:
+      - code: en
+        option_name: "Hide the \"Other\" return action for customers"
+
+QSL\Returns\Model\ReturnReason:
+  - position: 10
+    translations:
+      - code: en
+        reasonName: "Wrong item"
+      - code: ru
+        reasonName: "Не тот товар"
+  - position: 20
+    translations:
+      - code: en
+        reasonName: "Wrong description"
+      - code: ru
+        reasonName: "Неверное описание"
+  - position: 30
+    translations:
+      - code: en
+        reasonName: "Damaged item"
+      - code: ru
+        reasonName: "Повреждённый товар"
+
+QSL\Returns\Model\ReturnAction:
+  - position: 10
+    translations:
+      - code: en
+        actionName: "Send replacement if within the warranty"
+      - code: ru
+        actionName: "Заменить, если на гарантии"
+  - position: 20
+    translations:
+      - code: en
+        actionName: "Repair and ship back"
+      - code: ru
+        actionName: "Починить и выслать назад"
+  - position: 30
+    translations:
+      - code: en
+        actionName: "Give me credit for future purchase"
+      - code: ru
+        actionName: "Предоставить скидку на последующие заказы"
+
+XLite\Model\LanguageLabel:
+  - name: "Return for order X is created"
+    translations:
+      - code: en
+        label: "Return for order #{{id}} is created"
+      - code: ru
+        label: "Запрос возврата по заказу #{{id}} зарегистрирован"
+  - name: "Return for order X is agreed"
+    translations:
+      - code: en
+        label: "Return for order #{{id}} is agreed"
+      - code: ru
+        label: "Возврат по заказу #{{id}} согласован"
+  - name: "Return for order X is declined"
+    translations:
+      - code: en
+        label: "Return for order #{{id}} is declined"
+      - code: ru
+        label: "Возврат по заказу #{{id}} отклонён"
+  - name: "Action"
+    translations:
+      - code: en
+        label: "Action"
+      - code: ru
+        label: "Действие"
+  - name: "Actions"
+    translations:
+      - code: en
+        label: "Actions"
+      - code: ru
+        label: "Действия"
+  - name: "Return actions"
+    translations:
+      - code: en
+        label: "Return actions"
+      - code: ru
+        label: "Желаемые действия"
+  - name: "What you would like us to do"
+    translations:
+      - code: en
+        label: "What you would like us to do"
+      - code: ru
+        label: "Выберите желаемое действие"
+  - name: "Allow customer to specify desired action"
+    translations:
+      - code: en
+        label: "Allow customer to specify desired action"
+      - code: ru
+        label: "Разрешить выбор покупателем желаемого действия"
+  - name: "Partial return for order #X"
+    translations:
+      - code: en
+        label: "Partial return for order #{{orderNumber}}"
+      - code: ru
+        label: "Частичный возврат для заказа №{{orderNumber}}"
+  - name: "Order subtotal difference will be reversed for vendor: V"
+    translations:
+      - code: en
+        label: "Order subtotal difference will be reversed for vendor: {{vendorName}}"
+      - code: ru
+        label: "Разница в стоимости продуктов вычтется из транзакций продавца: {{vendorName}}"
+  - name: "Leave unchanged"
+    translations:
+      - code: en
+        label: "Leave unchanged"
+      - code: ru
+        label: "Не менять"
+  - name: "Refund the order"
+    translations:
+      - code: en
+        label: "Refund the order"
+      - code: ru
+        label: "Оформить возврат (заказ целиком)"
+  - name: "Attention: this is partial return, please choose applicable options for the authorization"
+    translations:
+      - code: en
+        label: "Attention: this is partial return, please choose applicable options for the authorization"
+      - code: ru
+        label: "Внимание: это частичный возврат, пожалуйста выберите подходящие опции"
+  - name: "Update order items"
+    translations:
+      - code: en
+        label: "Update order items"
+      - code: ru
+        label: "Обновить состав заказа"
+  - name: "If Yes, selected for the return items will be removed from the order"
+    translations:
+      - code: en
+        label: "If Yes, selected for the return items will be removed from the order"
+      - code: ru
+        label: "Если выбрать данную опцию, то возвращаемые позиции будут удалены из заказа"
+  - name: "Create negative transaction for the vendor"
+    translations:
+      - code: en
+        label: "Create negative transaction for the vendor"
+      - code: ru
+        label: "Создать отрицательную транзакцию для продавца"
+  - name: "Returns"
+    translations:
+      - code: en
+        label: "Returns"
+      - code: ru
+        label: "Returns"
+  - name: "Return reasons"
+    translations:
+      - code: en
+        label: "Return reasons"
+      - code: ru
+        label: "Return reasons"
+
+XLite\Model\Notification:
+  - templatesDirectory: modules/QSL/Returns/return/created
+    availableForAdmin: true
+    availableForCustomer: true
+    enabledForAdmin: true
+    enabledForCustomer: true
+    editable: true
+    module: QSL\Returns
+    translations:
+      - code: en
+        name: Order return created (Order returns module)
+        description: This message will be sent to admin (sales department email) and customer upon creating order return.
+        customerSubject: Return for order %order_number% is created
+        customerText: |
+          %company_link%
+          <p>Return for order %order_number% is created</p>
+          <p>Reason: %order_return_reason%</p>
+          %return_action_text%
+          <p>Your comment:
+          %order_return_comment%</p>
+        adminSubject: Return for order %order_number% is created
+        adminText: |
+          %company_link%
+          <p>Return for order %order_number% is created</p>
+          <p>Reason: %order_return_reason%</p>
+          %return_action_text%
+          <p>Customer comment:
+          %order_return_comment%</p>
+  - templatesDirectory: modules/QSL/Returns/return/completed
+    availableForCustomer: true
+    enabledForCustomer: true
+    editable: true
+    module: QSL\Returns
+    translations:
+      - code: en
+        name: Order return agreed (Order returns module)
+        description: This message will be sent to customer after return is agreed.
+        customerSubject: Return for order %order_number% is agreed
+        customerText: |
+          %company_link%
+          <p>Return for order %order_number% is agreed</p>
+  - templatesDirectory: modules/QSL/Returns/return/declined
+    availableForCustomer: true
+    enabledForCustomer: true
+    editable: true
+    module: QSL\Returns
+    translations:
+      - code: en
+        name: Order return declined (Order returns module)
+        description: This message will be sent to customer after return is declined.
+        customerSubject: Return for order %order_number% is declined
+        customerText: |
+          %company_link%
+          <p>Return for order %order_number% is declined</p>
+          <p>Our customer representatives will contact you with more details shortly.</p>

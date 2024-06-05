@@ -1,0 +1,7 @@
+{##
+ # Product info price box
+ #
+ # @ListChild (list="itemsList.widget.frequentlyBought.product.grid.customer.info", weight="15")
+#}
+
+{{ widget('\\XLite\\View\\Price', product=this.product, displayOnlyPrice='0', allowRange='1') }}

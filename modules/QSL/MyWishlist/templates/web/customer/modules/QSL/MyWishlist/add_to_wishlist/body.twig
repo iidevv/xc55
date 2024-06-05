@@ -1,0 +1,9 @@
+{##
+ #
+ #}
+<button {{ this.printTagAttributes(this.getAttributes()) | raw }}>
+  {% if this.isProductInWishlist() %}<i class="fa fa-heart"></i>{% else %}<i class="fa fa-heart-o"></i>{% endif %}
+  <span class="wishlist-link-label">
+      {{ t(this.getButtonLabel()) }}
+  </span>
+</button>

@@ -1,0 +1,6 @@
+Version 5.5.0.11
+
+Fixes (2)
+2023-03-02 - [Bug] Incorrect comparison of core versions when running update hooks. Fixed. #XCB-2155 #CDev-Core
+2023-03-02 - [Bug] Fatal error on the /api page. Fixed. #XCB-2154 #CDev-Core
+

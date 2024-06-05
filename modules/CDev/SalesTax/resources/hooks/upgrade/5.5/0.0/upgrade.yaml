@@ -1,0 +1,18 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: 'main_rates.description', translations: [{ code: en, label: 'You may want to configure zones and classes before adding tax rates. You can manage regions in <a href="{{url_1}}">Countries, States & Zones settings</a>. Also, you can assign special <a href="{{url_2}}">Tax Classes</a> to to groups of products and shipping methods if required.' }] }
+  - { name: 'common_tax_settings.description', translations: [{ code: en, label: 'Configuring taxes for various regions and classes is a vital part of an e-commerce business. If you would like to manually configure taxes, the options below will help you build tax tables.' }] }
+  - { name: 'shipping_rates.description', translations: [{ code: en, label: 'Some regions require taxes applied to shipping costs. Taxes added here will be included in the shipping price when displayed to the customer. You can manage regions in <a href="{{url_1}}">Countries, States & Zones settings</a>. Also, you can assign special <a href="{{url_2}}">Tax Classes</a> to to groups of products and shipping methods if required.' }] }
+  - { name: 'Tax Rates by Zones', translations: [{ code: en, label: 'Tax Rates by Zones' }] }
+  - { name: 'Tax Rates on Shipping Cost', translations: [{ code: en, label: 'Tax Rates on Shipping Cost' }] }
+  - { name: 'Manage Zones', translations: [{ code: en, label: 'Manage Zones' }] }
+  - { name: 'Manage Classes', translations: [{ code: en, label: 'Manage Classes' }] }
+  - { name: 'Manage Memberships', translations: [{ code: en, label: 'Manage Memberships' }] }
+  - { name: 'Calculated against taxable base.', translations: [{ code: en, label: 'Calculated against taxable base.' }] }
+  - { name: 'Add class', translations: [{ code: en, label: 'Add class' }] }

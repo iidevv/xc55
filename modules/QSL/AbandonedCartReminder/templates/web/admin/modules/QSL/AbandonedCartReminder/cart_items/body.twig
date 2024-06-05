@@ -1,0 +1,38 @@
+<table border="0">
+  {% for index, item in this.get('cart').getItems() %}
+  <tr>
+    <td valign="top">
+      {{ widget('\\XLite\\View\\Image', image=this.getProductImage(item), maxWidth=this.getIconWidth(), maxHeight=this.getIconHeight(), alt=item.getName(), verticalAlign='top', className='photo') }}
+    </td>
+    <td>&nbsp;</td>
+    <td valign="top">
+      <a href="{{ this.getProductPageUrl(item) }}"><h3>{{ item.getName() }}</h3></a>
+      <table border="0" cellspacing="5">
+        <tr>
+          <td>{{ t('Quantity') }}:</td>
+          <td>{{ item.getAmount() }}</td>
+        </tr>
+        <tr>
+          <td>{{ t('Price') }}:</td>
+          <td>{{ this.formatPrice(item.getAbandonmentReminderPrice(), this.get('cart').getCurrency()) }}</td>
+        </tr>
+        {% if item.hasAttributeValues() %}
+        <tr>
+          <td valign="top">{{ t('Selected options') }}:</td>
+          <td valign="top">
+            {% for av in item.getAttributeValues() %}
+              {{ av.getName() }}:&nbsp;{{ av.getValue() }}<br />
+            {% endfor %}
+          </td>
+        </tr>
+        {% endif %}
+      </table>
+    </td>
+  </tr>
+  {% endfor %}
+  {% for w in this.getViewList('abandoned_cart.items') %}
+    <tr>
+      {{ w.display() }}
+    </tr>
+  {% endfor %}
+</table>

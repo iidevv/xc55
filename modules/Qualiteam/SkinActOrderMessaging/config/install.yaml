@@ -1,0 +1,33 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActOrderMessaging Write a message", translations: [{ code: en, label: "Write a message" }] }
+  - { name: "SkinActOrderMessaging Select an order number to send a message", translations: [{ code: en, label: "Select an order number to send a message specific to the order or use the button \"Write a message not related to order\" to send a direct message not related to order" }] }
+  - { name: "SkinActOrderMessaging Select Order Number", translations: [{ code: en, label: "Select Order Number" }] }
+  - { name: "SkinActOrderMessaging Order Items", translations: [{ code: en, label: "Order Items" }] }
+  - { name: "SkinActOrderMessaging Order Total", translations: [{ code: en, label: "Order Total:" }] }
+  - { name: "SkinActOrderMessaging Write a message not related to orders", translations: [{ code: en, label: "Write a message not related to orders" }] }
+  - { name: "SkinActOrderMessaging Proceed", translations: [{ code: en, label: "Proceed" }] }
+  - { name: "SkinActOrderMessaging or", translations: [{ code: en, label: "or" }] }
+  - { name: "SkinActOrderMessaging Order Details", translations: [{ code: en, label: "Order Details" }] }
+  - { name: "SkinActOrderMessaging Placed on", translations: [{ code: en, label: "Placed on" }] }
+  - { name: "SkinActOrderMessaging Customer", translations: [{ code: en, label: "Customer" }] }
+  - { name: "SkinActOrderMessaging Email", translations: [{ code: en, label: "Email" }] }
+  - { name: "SkinActOrderMessaging Order status", translations: [{ code: en, label: "Order status" }] }
+  - { name: "SkinActOrderMessaging Payment method", translations: [{ code: en, label: "Payment method" }] }
+  - { name: "SkinActOrderMessaging Shipping method", translations: [{ code: en, label: "Shipping method" }] }
+  - { name: "SkinActOrderMessaging Order total", translations: [{ code: en, label: "Order total" }] }
+  - { name: "SkinActOrderMessaging Ordered products", translations: [{ code: en, label: "Ordered products" }] }
+  - { name: "SkinActOrderMessaging Conversation", translations: [{ code: en, label: "Conversation" }] }
+  - { name: "SkinActOrderMessaging X new direct message from the customer", translations: [{ code: en, label: "{{count}} new direct messages from the customer" }] }
+  - { name: "SkinActOrderMessaging New direct message from the customer", translations: [{ code: en, label: "New direct message from the customer" }] }
+  - { name: "SkinActOrderMessaging Messages for Order #xx", translations: [{ code: en, label: "Messages for Order #{{orderNumber}}" }] }
+  - { name: "SkinActOrderMessaging Orders", translations: [{ code: en, label: "Orders" }] }
+  - { name: "SkinActOrderMessaging Mark Read", translations: [{ code: en, label: "Mark Read" }] }
+  - { name: "SkinActOrderMessaging Mark Unread", translations: [{ code: en, label: "Mark Unread" }] }
+  - { name: "SkinActOrderMessaging No orders", translations: [{ code: en, label: "No orders" }] }

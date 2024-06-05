@@ -1,0 +1,14 @@
+Version 5.5.0.13
+
+Improvements (2)
+2023-03-29 - [Task] Code refactoring for the import of categories with memberships. #XCB-2209 #CDev-Core
+2023-01-19 - [Story] Added the ability to create a Mailchimp account via the API. #ECOM-673 #CDev-Core #XC-MailChimp
+
+Fixes (6)
+2023-03-30 - [Bug] An add-on with dependencies was not always installed correctly from market.x-cart.com. Fixed. #XCB-2237 #CDev-Core
+2023-03-30 - [Bug] Increased the allowed field value length for service add-on name. #XCB-2233 #CDev-Core
+2023-03-30 - [Bug] SendMail failed getResourceFullPath() must be of the type string, null given. Fixed. #XCB-2217 #CDev-Core
+2023-03-30 - [Bug] Email Notifications - Header, Greeting & Signature: Changes to field values could not be saved. Fixed.  #XCB-2184 #CDev-Core
+2023-03-29 - [Bug] Add to cart button was visible for out-of-stock products in List view. Fixed. #XCB-2178 #CDev-Core
+2023-03-27 - [Bug] Fatal error in the process of upgrading the core from 5.5.0 to 5.5.1. Fixed. #XCB-2156 #CDev-Core
+

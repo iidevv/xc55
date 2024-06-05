@@ -1,0 +1,12 @@
+<div class="compare-indicator {{ this.getIndicatorClasses() }}">
+  <a class="header-icon-menu" {% if not this.isDisabled() %}href="{{ this.getCompareURL() }}" {% endif %}
+     data-target="{{ this.getCompareURL() }}" title="{{ this.getLinkHelpMessage() }}">
+	  <span class="header-icon-menu__icon-box">
+		  {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon="i-compare", class='header-icon-menu__icon') }}
+		  <span class="header-icon-menu__counter counter">
+			  {{ this.getComparedCount() }}
+		  </span>
+	  </span>
+    <span class="header-icon-menu__label">{{ 'Compare' }}</span>
+  </a>
+</div>

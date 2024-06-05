@@ -1,0 +1,14 @@
+{##
+ # Checkout : order review step : selected state : button
+ #
+ #}
+
+<div class="xpc-box"{% if not this.checkCheckoutAction() %} style="display: none;"{% endif %}>
+  {% include 'modules/CDev/XPaymentsConnector/checkout/iframe.twig' %}
+
+  <div class="save-card-box">
+    <input type="hidden" name="save_card" value="Y" />
+    <input type="checkbox" name="save_card" value="Y" id="save-card" readonly="readonly" disabled checked />
+    <label for="save-card">{{ t('I want to use this credit card for my future orders in this shop.')|raw }}</label>
+  </div>
+</div>

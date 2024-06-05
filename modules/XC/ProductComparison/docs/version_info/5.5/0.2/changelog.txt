@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Improvements (1)
+2022-12-08 - [Story] Updated the Ultimate skin for version 5.5. #ECOM-2455 #CDev-Core #XC-ProductComparison #QSL-UltimateSkin
+

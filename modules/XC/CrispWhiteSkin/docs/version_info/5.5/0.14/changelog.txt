@@ -1,0 +1,5 @@
+Version 5.5.0.14
+
+Fixes (1)
+2023-07-31 - [Bug] The Google reCaptcha block was breaking the page layout. Fixed. #XCB-2627 #XC-CrispWhiteSkin #QSL-reCAPTCHA
+

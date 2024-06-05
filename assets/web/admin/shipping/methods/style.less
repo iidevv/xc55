@@ -1,0 +1,191 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+
+/**
+ * Shipping methods page styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.shipping-methods-page {
+  .box {
+    max-width: 960px;
+    margin-top: @rhythmic-unit;
+
+    + .box {
+      margin-top: 3 * @rhythmic-unit;
+    }
+
+    .list-header {
+      .button-container {
+        display: flex;
+        align-items: center;
+        height: 2 * @rhythmic-unit;
+      }
+    }
+
+    .content {
+      .items-list.shipping-carriers {
+        margin-top: @rhythmic-unit;
+
+        .empty-table-description {
+          padding: 0;
+        }
+
+        .table-wrapper {
+          border-radius: 0;
+
+          table {
+            tr {
+              min-height: 3 * @rhythmic-unit;
+
+              td {
+                &.logo {
+                  min-width: unset;
+                  width: auto;
+
+                  div.logo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 5 * @rhythmic-unit;
+                    height: 2.5 * @rhythmic-unit;
+
+                    img {
+                      max-width: 100%;
+                      max-height: 100%;
+                    }
+                  }
+                }
+
+                &.generalInfo {
+                  width: 31%;
+
+                  div.general-info {
+                    .title {
+                      font-weight: @font-bold;
+                    }
+
+                    .description {
+                      font-size: @font-size-very-small;
+                      line-height: @line-height-small-text;
+                      color: @color-tip;
+                    }
+                  }
+                }
+
+                &.additionalInfo {
+                  font-size: @font-size-very-small;
+                  line-height: @line-height-small-text;
+                  color: @color-tip;
+                  width: 25%;
+
+                  .slash-separator {
+                    margin: 0 (0.25 * @rhythmic-unit);
+                  }
+                }
+
+                a.fa {
+                  &:active,
+                  &:link,
+                  &:visited,
+                  &:hover {
+                    text-decoration: none;
+                  }
+                }
+
+                &.settings {
+                  a.fa-cog-2 {
+                    width: auto;
+
+                    span {
+                      font-family: @font-family-base;
+                    }
+
+                    &:before {
+                      margin-right: 4px;
+                    }
+
+                    &:hover {
+                      span {
+                        text-decoration: underline;
+                      }
+                    }
+                  }
+                }
+
+                &.testMode {
+                  padding-right: 0;
+
+                  .cell {
+                    min-width: 34px;
+
+                    .test-mode {
+                      background: @alert-warning-bg;
+                      padding: 0 15px;
+                      font-weight: @font-bold;
+                      border-radius: @border-radius-base;
+
+                      + .tooltip {
+                        .tooltip-inner {
+                          background: @alert-warning-bg;
+                          border: none;
+                          text-align: left;
+
+                          p {
+                            margin: 0;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                &.enabled {
+                  .onoffswitch {
+                    display: flex;
+                    align-items: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.shipping-solutions {
+          .table-wrapper {
+            table {
+              tr {
+                td.generalInfo {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        &.shipping-rates {
+          .table-wrapper {
+            table {
+              tr {
+                td.generalInfo {
+                  width: 40%;
+                }
+
+                td.additionalInfo {
+                  width: 32%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .dialog-content + .dialog-content {
+        .items-list.shipping-carriers {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

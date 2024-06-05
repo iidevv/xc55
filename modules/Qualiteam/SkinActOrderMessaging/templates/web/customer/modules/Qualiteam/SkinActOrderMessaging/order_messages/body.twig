@@ -1,0 +1,16 @@
+{##
+ # Order messages list
+  modules/XC/VendorMessages/templates/web/customer/modules/XC/VendorMessages/page/order_messages.twig
+#}
+
+<div class="order-messages-wrapper">
+  <div class="order-messages-block">
+    {% form 'XC\\VendorMessages\\View\\Form\\ItemsList\\Messages\\Customer\\Order' %}
+      {{ widget('XC\\VendorMessages\\View\\ItemsList\\Messages\\Customer\\Order') }}
+    {% endform %}
+  </div>
+
+  <div class="order-summary-block">
+    {{ widget('Qualiteam\\SkinActOrderMessaging\\View\\Messages\\Customer\\OrderSummary', order=this.getOrder()) }}
+  </div>
+</div>

@@ -1,0 +1,3 @@
+Version 5.5.0.1
+- Corrected appearance of the Google Pay button
+- Corrected appearance of the payment methods icons

@@ -1,0 +1,40 @@
+{##
+ # Products
+ #
+ # @ListChild (list="comparison_table.header_fixed", weight="200")
+ #}
+
+<tr class="buttons">
+  <td>
+    {% if this.getProductsCount() > 1 %}
+      <input type="checkbox" id="diff" /><label for="diff">{{ t('Differences only') }}</label>
+    {% endif %}
+  </td>
+  {% for product in this.getProducts() %}
+    <td class="{{ product.getAdditionalClass() }}" >
+      <span class="product-header">
+        <span class="product-close">
+        <a
+                href="{{ xurl('compare', 'delete', {'product_id': product.product_id}) }}"
+                class="remove"
+                title="{{ t('Remove') }}"
+                data-id="{{ product.product_id }}">
+          <img src="{{ asset('images/spacer.gif') }}" alt="{{ t('Remove') }}" />
+        </a>
+      </span>
+      <span class="product-img">
+        <a target="_blank"
+           href="{{ xurl('product', '', {'product_id': product.product_id}) }}"
+           class="product-thumbnail">
+          {{ widget('\\XLite\\View\\Image', image=product.getImage(), maxWidth='60', maxHeight='60', alt=product.name, className='photo') }}
+        </a>
+      </span>
+      <span class="product-name">
+        <a target="_blank" href="{{ xurl('product', '', {'product_id': product.product_id}) }}"><span>{{ product.name }}</span></a>
+        <img src="{{ asset('images/spacer.gif') }}" class="right-fade" alt="" />
+      </span>
+      {{ this.getProductButtonWidget(product) }}
+      </span>
+    </td>
+  {% endfor %}
+</tr>

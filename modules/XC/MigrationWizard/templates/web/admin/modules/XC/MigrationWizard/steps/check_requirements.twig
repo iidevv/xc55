@@ -1,0 +1,37 @@
+{##
+ # Migration Wizard - Check requirements step
+ #}
+<div class="wizard-section">
+    <h2>{{ t('Source database') }}</h2>
+    <div class="panel">
+        <div class="panel-body source-data-table">
+            {% if this.isSupported() %}
+                {{ widget('XC\\MigrationWizard\\View\\FormField\\RawLabel', label=t('Platform'), fieldName='platform', value=this.getPlatform() ) }}
+                {{ widget('XC\\MigrationWizard\\View\\FormField\\RawLabel', label=t('Version'), fieldName='version', value=this.getVersion() ) }}
+                {{ widget('XLite\\View\\FormField\\Label', label=t('X-Cart 4 server'), fieldName='localOrRemote', value=this.getLocalOrRemote()|raw, unescape=true ) }}
+                {% if this.isWrongSitePath() %}
+                  <div class="alert alert-warning">{{ t('The Site path setting on the previous step does not point to the actual X-Cart 4 store') | raw }}</div>
+                {% endif %}
+                <hr>
+                {% for item in this.getBriefList() %}
+                    {% if this.getBriefInfo(item.name) %}
+                        {{ widget('XC\\MigrationWizard\\View\\FormField\\RawLabel', label=item.label, fieldName=item.name, value=this.getBriefInfo(item.name) ) }}
+                        {% if item.images %}
+                            <div class="preview">
+                                {% for url in item.images %}
+                                    <img src="{{ url }}" width="50" height="50" alt="{{ t('Sample image') }}">
+                                {% endfor %}
+                                {{ widget('\\XLite\\View\\Tooltip', text=t('What to do if images are not displayed'), className='help') }}
+                            </div>
+                            <div class="clear"></div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% else%}
+                <p>
+                    {{ t('The database platform / version is not supported by migration wizard') }}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>

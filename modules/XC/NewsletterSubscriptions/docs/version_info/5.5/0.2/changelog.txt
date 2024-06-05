@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2023-03-28 - [Bug] Newsletter subscriptions form vulnerability. No validation was done on the server for submitted emails. Fixed. #XCB-2216 #XC-NewsletterSubscriptions
+

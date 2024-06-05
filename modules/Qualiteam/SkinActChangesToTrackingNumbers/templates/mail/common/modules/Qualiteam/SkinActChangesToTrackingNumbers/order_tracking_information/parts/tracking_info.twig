@@ -1,0 +1,11 @@
+{# #
+ # ____file_title____
+ #
+ # @ListChild (list="tracking.info", weight="20")
+#}
+
+{% if this.includeShippingMethodInstructions and this.shippingMethod and this.shippingMethod.getInstructions() %}
+    <p style="font-weight: bold;">{{ t('SkinActChangesToTrackingNumbers mail instructions') }}:</p>
+
+    {{ this.shippingMethod.getInstructions()|nl2br }}
+{% endif %}

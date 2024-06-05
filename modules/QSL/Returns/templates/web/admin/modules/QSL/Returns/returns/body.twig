@@ -1,0 +1,8 @@
+{##
+ # Returns
+ #}
+{% if this.isSearchVisible() %}
+  {{ widget('QSL\\Returns\\View\\SearchPanel\\OrderReturns\\Admin\\Main') }}
+{% endif %}
+
+{{ widget(template='common/dialog.twig', body='modules/QSL/Returns/returns/list.twig') }}

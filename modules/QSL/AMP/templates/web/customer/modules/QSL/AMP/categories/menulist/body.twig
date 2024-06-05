@@ -1,0 +1,17 @@
+{#
+ # AMP categories menu list
+ #}
+
+{% if this.isSubtree() %}<ul>{% endif %}
+  {% for idx, _category in this.getCategories(this.rootId) %}
+    <li {{ this.displayItemClass(idx, loop.length, _category)|raw }}>
+      <a href="{{ _category.link }}" {{ this.displayLinkClass(idx, loop.length, _category)|raw }}>{{ _category.name }}</a>
+      {% if _category.subcategoriesCount and _category.depth < 1 %}
+        {{ widget(template=this.getBody(), rootId=_category.id, is_subtree='1') }}
+      {% endif %}
+    </li>
+  {% endfor %}
+  {% for idx, w in this.getViewList('topCategories.children', {'rootId': this.getParam('rootId'), 'is_subtree': this.getParam('is_subtree')}) %}
+    <li {{ this.displayListItemClass(idx, loop.length, w)|raw }}>{{ w.display() }}</li>
+  {% endfor %}
+{% if this.isSubtree() %}</ul>{% endif %}

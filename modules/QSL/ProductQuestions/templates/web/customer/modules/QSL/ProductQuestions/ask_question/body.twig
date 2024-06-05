@@ -1,0 +1,12 @@
+<div class="ask-question-dialog">
+  {% form 'QSL\\ProductQuestions\\View\\Form\\Question\\Customer\\Question' %}
+    <div class="model-properties">
+      <div class="section default-section">
+        <ul class="table default-table">
+        {{ widget_list('question.ask.fields') }}
+        </ul>
+      </div>
+      {{ widget_list('question.ask.buttons') }}
+    </div>
+  {% endform %}
+</div>

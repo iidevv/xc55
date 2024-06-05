@@ -1,0 +1,13 @@
+{% extends 'modules/XC/BulkEditing/form_model/bulk_edit_theme.twig' %}
+
+{% block form_input_wrapper %}
+    {{ parent() }}
+    {% if is_qty %}
+        {{ widget(
+            '\\XLite\\View\\Tooltip',
+            id='bulk-edit-qty-tooltip',
+            text=t('Quantity will be updated for non-SkuVault items only'),
+            className='help-small-icon'
+        ) }}
+    {% endif %}
+{% endblock %}

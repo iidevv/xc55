@@ -1,0 +1,36 @@
+{% if this.entity.isEmpty() %}
+  <div class="empty-cart" >{{ t('Empty abandoned cart') }}</div>
+{% endif %}
+{% if not this.entity.isEmpty() %}
+  <div class="cart-items">
+      <ol class="abandoned-cart-items">
+          {% for index, item in this.entity.getItems() %}
+            <li>
+                <div>
+                    {% if item.getURL() %}
+                      <a href="{{ item.getURL() }}">{{ item.getName() }}</a>
+                    {% endif %}
+                    {% if not item.getURL() %}
+                      <span>{{ item.getName() }}</span>
+                    {% endif %}
+                    {% if not item.product.isPersistent() %}
+                      <span class="deleted-product-note">({{ t('deleted') }})</span>
+                    {% endif %}
+                    {% if this.hasMultipleUnits(item) %}
+                      <span> x {{ item.getAmount() }}</span>
+                    {% endif %}
+                </div>
+                {% if item.hasAttributeValues() %}
+                  <div>
+                      <ul class="item-attribute-values-list">
+                          {% for av in item.getAttributeValues() %}
+                            <li>{{ av.getName() }}: {{ av.getValue() }}</li>
+                          {% endfor %}
+                      </ul>
+                  </div>
+                {% endif %}
+            </li>
+          {% endfor %}
+      </ol>
+  </div>
+{% endif %}

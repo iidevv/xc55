@@ -1,0 +1,20 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+x_cart:
+  clean_urls:
+    aliases:
+      new_arrivals: 'newarrivals'
+      coming_soon: 'coming-soon'
+
+services:
+  _defaults:
+    autowire: true
+
+  CDev\ProductAdvisor\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: CDev-ProductAdvisor, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }
+      - { name: xcart.lifetime-hook, moduleId: CDev-ProductAdvisor, type: upgrade, method: onUpgradeTo5501, version: '5.5.0.1' }

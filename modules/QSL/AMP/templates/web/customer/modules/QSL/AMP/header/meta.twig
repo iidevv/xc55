@@ -1,0 +1,9 @@
+{##
+ # Head list meta tags
+ #
+ # @ListChild (list="amp.head")
+ #}
+
+{% for meta in this.getMetaResources() %}
+  {{ meta|raw }}
+{% endfor %}

@@ -1,0 +1,12 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Module fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: 'SkinActCategoryDescriptionAndFaq Category Questions', translations: [{ code: en, label: 'Category Questions' }] }
+  - { name: 'SkinActCategoryDescriptionAndFaq empty item list', translations: [{ code: en, label: 'Add new category question with "Add new" button' }] }
+  - { name: 'SkinActCategoryDescriptionAndFaq Question', translations: [{ code: en, label: 'Question' }] }
+  - { name: 'SkinActCategoryDescriptionAndFaq FAQ', translations: [{ code: en, label: 'FREQUENTLY ASKED SPA EQUIPMENT QUESTIONS' }] }

@@ -1,0 +1,100 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+parameters:
+  aftership.url: 'https://api.aftership.com/v4'
+
+  aftership.couriersAll: 'couriers/all'
+  aftership.trackings: 'trackings'
+  aftership.detect: 'couriers/detect'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Qualiteam\SkinActAftership\Core\EventListener:
+    arguments:
+      $moduleManagerDomain: '@XCart\Domain\ModuleManagerDomain'
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }
+
+  aftershipConfiguration:
+    class: Qualiteam\SkinActAftership\Core\Configuration\Configuration
+    factory: [ 'Qualiteam\SkinActAftership\Core\Factory\ConfigurationFactory', 'createConfiguration' ]
+
+  aftershipLogger:
+    class: XLite\Logger
+    factory: [ 'Qualiteam\SkinActAftership\Core\Factory\LoggerFactory', 'logger' ]
+
+  aftershipHttpClient:
+    class: GuzzleHttp\Client
+    arguments:
+      $url: '%aftership.url%'
+    factory: [ 'Qualiteam\SkinActAftership\Core\Factory\HttpClientFactory', 'createHttpClient' ]
+
+  aftershipApiService:
+    class: Qualiteam\SkinActAftership\Core\Api\GuzzleService
+    arguments:
+      $httpClient: '@aftershipHttpClient'
+      $configuration: '@aftershipConfiguration'
+
+  aftershipGetAllCouriers:
+    class: Qualiteam\SkinActAftership\Core\Endpoints\Couriers\GetAllCouriers
+    arguments:
+      $apiService: '@aftershipApiService'
+      $url: '%aftership.couriersAll%'
+      $method: 'GET'
+
+  aftershipGetTrackings:
+    class: Qualiteam\SkinActAftership\Core\Endpoints\Trackings\GetTrackings
+    arguments:
+      $apiService: '@aftershipApiService'
+      $url: '%aftership.trackings%'
+      $method: 'GET'
+
+  aftershipPostCouriersDetect:
+    class: Qualiteam\SkinActAftership\Core\Endpoints\Couriers\PostCouriersDetect
+    arguments:
+      $apiService: '@aftershipApiService'
+      $url: '%aftership.detect%'
+      $method: 'POST'
+
+  aftershipPostTrackings:
+    class: Qualiteam\SkinActAftership\Core\Endpoints\Trackings\PostTrackings
+    arguments:
+      $apiService: '@aftershipApiService'
+      $url: '%aftership.trackings%'
+      $method: 'POST'
+
+  aftership.tabs.codeMapping:
+    class:  Qualiteam\SkinActAftership\Core\Tabs\CodeMapping
+
+  Qualiteam\SkinActAftership\Command\MakeAftershipTrackingNumber:
+    tags:
+      - { name: 'console.command', command: 'SkinActAftership:MakeAftershipTrackingNumber' }
+
+  Qualiteam\SkinActAftership\Command\SetAllAftershipTrackingNumbersPosted:
+    tags:
+      - { name: 'console.command', command: 'SkinActAftership:SetAllAftershipTrackingNumberTrue' }
+
+  Qualiteam\SkinActAftership\Core\Task\CheckTrackNumbersToSyncAftership:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  Qualiteam\SkinActAftership\Core\Helper\IOrderTrackingNumberWorkerHelper:
+    factory: [ 'Qualiteam\SkinActAftership\Core\Helper\Factory\OrderTrackingNumberWorkerHelper', 'getHelper' ]
+
+  handler:
+    class: Qualiteam\SkinActAftership\Core\MessageHandler\AftershipErrorWorker
+    tags:
+      - { name: messenger.message_handler, transport: async }
+
+  Qualiteam\SkinActAftership\Core\MessageHandler\AftershipErrorWorker:
+    tags:
+      - name: messenger.message_handler
+        handles: Qualiteam\SkinActAftership\Core\Message\AftershipErrorWorkToDo

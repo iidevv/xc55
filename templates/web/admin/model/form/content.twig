@@ -1,0 +1,39 @@
+{#
+# Form content
+#}
+
+{% for section, data in this.getFormFieldsForDisplay() %}
+  <fieldset>
+    {% if this.isShowSectionHeader(section) %}
+      <legend>{{ data.sectionParamWidget.display() }}</legend>
+    {% endif %}
+
+    <div {% if this.isSectionCollapsible(section) or loop.index == 1 %}
+      class="{% if this.isSectionCollapsed(section) %}collapse{% endif %}{% if loop.index == 1 %} has-tips{% endif %}"
+      {% if this.isSectionCollapsible(section) %}
+        id="section-{{ section }}" aria-expanded="true"
+      {% endif %}
+    {% endif %}
+    >
+      {{ this.displayViewSubList(section ~ '.subheader') }}
+
+      <ul class="table {{ section }}-table">
+        {% for field in data.sectionParamFields %}
+          <li class="{{ this.getItemClass(loop.index, loop.length, field) }}">
+            {{ this.displayCommentedData(this.getFieldCommentedData(field)) }}
+            {{ field.display() }}
+            {{ this.displayViewSubList('field', {'section': section, 'field': field}) }}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if loop.index == 1 %}
+        {{ widget_list('admin.tips_container') }}
+      {% endif %}
+    </div>
+
+  </fieldset>
+{% endfor %}
+
+{# @todo: remove (see \CDev\Wholesale\View\MinimumQuantity) #}
+{{ widget_list('form.content') }}

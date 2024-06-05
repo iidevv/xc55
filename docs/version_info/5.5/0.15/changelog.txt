@@ -1,0 +1,19 @@
+Version 5.5.0.15
+
+Improvements (5)
+2023-04-25 - [Task] Error logging improvement for load fixtures. #XCB-2226 #CDev-Core
+2023-04-25 - [Task] Logging improvement for meta-decorator. #XCB-2223 #CDev-Core
+2023-04-26 - [Story] Added a register of running workers. #ECOM-3310 #CDev-Core
+2023-04-21 - [Task] Added php version verification for 550x -> 551x upgrades. Upgrades to 551x are allowed only from the latest 5.5.0 build. #ECOM-3297 #CDev-Core
+2023-04-26 - [Story] Added a step of stopping the workers to the rebuild process. #ECOM-3288 #CDev-Core
+
+Fixes (8)
+2023-04-24 - [Bug] Error when removing data. Fixed. Button renamed. #XCB-2339 #CDev-Core #QSL-Make
+2023-04-14 - [Bug] Error on the storefront after disabling the add-on Simple CMS. Fixed. #XCB-2297 #CDev-Core
+2023-04-24 - [Bug] Marketplace cache was not cleared after a rebuild. Fixed. #XCB-2296 #CDev-Core
+2023-04-26 - [Bug] Message popping up during a software update with false information regarding some files having been modified. Fixed. #XCB-2238 #CDev-Core
+2023-04-26 - [Bug] Typo in examples for the command ./bin/console xcart:service:call-module-hook. Fixed. #XCB-2161 #CDev-Core
+2023-04-26 - [Bug] Typos in examples for the command  ./bin/service help xcst:verify-config. Fixed. #XCB-2134 #CDev-Core
+2023-04-20 - [Bug] The shipping method was shown incorrectly in the Admin area. Fixed. #XCB-2091 #CDev-Core
+2023-04-27 - [Bug] The "Cancel" button was not active during a bulk export. Fixed. #XCB-2041 #CDev-Core
+

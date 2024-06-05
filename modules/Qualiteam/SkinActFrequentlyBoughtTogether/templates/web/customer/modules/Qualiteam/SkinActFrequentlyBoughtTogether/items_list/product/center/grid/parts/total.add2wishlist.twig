@@ -1,0 +1,13 @@
+{##
+ # Total block add2wishlist
+ #
+ # @ListChild (list="itemsList.widget.frequentlyBought.product.grid.customer.total", weight="25")
+#}
+
+<div class="price-box__add2wishlist-button">
+  {% if this.isCustomerLogged() %}
+    {{ widget('\\XLite\\View\\Button\\Regular', type='button', style='regular-button--color--orange freq-products-grid__button', label=this.getFreqBoughtAdd2WishlistLabel()) }}
+  {% else %}
+    {{ widget('XLite\\View\\Button\\PopupLogin', style='regular-button--color--orange freq-products-grid__button', label=this.getFreqBoughtLoginToAddWishlist()) }}
+  {% endif %}
+</div>

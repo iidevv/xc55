@@ -1,0 +1,14 @@
+{##
+ # Dialog
+#}
+
+<div class="{{ this.getBlockClasses() }}">
+  {% if this.getHead() %}
+    <h3>{{ t(this.getHead()) }}
+      {% if this.getDialogLink() %}
+        <a class="block__link" href="{{ this.getDialogLink() }}">{{ this.getDialogLinkTitle() }}</a>
+      {% endif %}
+    </h3>
+  {% endif %}
+  <div class="content">{% include this.getBody() %}</div>
+</div>

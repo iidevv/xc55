@@ -1,0 +1,14 @@
+{##
+ # Dialog
+#}
+
+<div class="ed-videos">
+  {% for video in this.getVideos() %}
+    <div class="ed-videos__item">
+      <div class="ed-videos__item-video" data-id="{{ video.youtube_video_id }}" data-autoplay="yes"></div>
+      <div class="ed-videos__item-name">
+        {{ video.description }}
+      </div>
+    </div>
+  {% endfor %}
+</div>

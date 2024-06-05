@@ -1,0 +1,88 @@
+{##
+ # Comment
+ #
+ # @ListChild (list="return.footer", weight="30")
+ #}
+
+{% if this.isPartialReturn() %}
+<div class="partial-return-actions">
+  <h3 class="" style="color: #a94461;">{{ t('Attention: this is partial return, please choose applicable options for the authorization') }}</h3>
+  <div class="section return-order-status">
+    <div class="value">
+      <div class="form-group">
+        {{ widget(
+          '\\XLite\\View\\FormField\\Select\\Regular',
+          label=t('Order status'),
+          options=this.getPartialReturnOrderStatusOptions(),
+          value='',
+          fieldName='partial_order_status',
+          fieldId='partial_order_status'
+        ) }}
+      </div>
+    </div>
+  </div>
+
+  <div class="section return-update-items">
+    <div class="value">
+      <div class="form-group">
+        {{ widget(
+            '\\XLite\\View\\FormField\\Input\\Checkbox\\YesNo',
+            value=true,
+            fieldName='partial_update_order_items',
+            fieldId='partial_update_order_items',
+            label=t('Update order items'),
+            comment=t('If Yes, selected for the return items will be removed from the order')
+        ) }}
+      </div>
+    </div>
+  </div>
+
+  {% if (this.isPersonalTransactionAvailable()) %}
+  <div class="section return-personal-transaction">
+    <div class="value">
+      <div class="form-group">
+        {{ widget(
+            '\\XLite\\View\\FormField\\Input\\Checkbox\\YesNo',
+            value=true,
+            fieldName='partial_create_negative_transaction',
+            fieldId='partial_create_negative_transaction',
+            label=t('Create negative transaction for the vendor'),
+            comment=this.getPersonalTransactionComment()
+        ) }}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<script>
+  (function () {
+
+    var orderStatusSelector = document.getElementById('partial_order_status');
+    var updateOrderCheckbox = document.getElementById('partial_update_order_items');
+    var personalTransactionCheckbox = document.getElementById('partial_create_negative_transaction');
+
+    function togglePersonalTransactionsVisibility()
+    {
+      if (orderStatusSelector.value === 'refund') {
+        updateOrderCheckbox.setAttribute('disabled', 'disabled');
+        personalTransactionCheckbox && personalTransactionCheckbox.setAttribute('disabled', 'disabled');
+      } else {
+        updateOrderCheckbox.removeAttribute('disabled');
+        personalTransactionCheckbox && personalTransactionCheckbox.removeAttribute('disabled');
+
+        if (updateOrderCheckbox.checked) {
+          personalTransactionCheckbox && personalTransactionCheckbox.removeAttribute('disabled');
+        } else {
+          personalTransactionCheckbox && personalTransactionCheckbox.setAttribute('disabled', 'disabled');
+        }
+      }
+    }
+    
+    orderStatusSelector.addEventListener('change', togglePersonalTransactionsVisibility);
+    updateOrderCheckbox.addEventListener('change', togglePersonalTransactionsVisibility);
+    togglePersonalTransactionsVisibility();
+
+  })();
+</script>
+{% endif %}

@@ -1,0 +1,18 @@
+{#
+ # Google product rating feed
+#}
+
+<div class="google-product-rating-feed-page">
+  {% if this.isFeedGenerationNotFinished() %}
+    {{ widget('Qualiteam\\SkinActGoogleProductRatingFeed\\View\\FeedGeneration\\Progress') }}
+  {% else %}
+    <div class="google-product-rating-feed settings general-settings">
+      {{ widget('XLite\\View\\Button\\Regular', label='Generate Google Feed', jsCode='self.location=\'' ~ xurl('google_product_rating_feed', 'generate') ~ '\'', style='action always-enabled generate-button') }}
+      {% if this.isFeedGenerated() %}
+        <p class="url">{{ t('SkinActGoogleProductRatingFeed google product rating feed URL: X', {'url': this.getFeedURL()})|raw }}</p>
+      {% else %}
+        <p class="url">{{ t('SkinActGoogleProductRatingFeed google product rating feed has not been generated yet') }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

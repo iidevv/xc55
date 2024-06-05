@@ -1,0 +1,60 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    # /profiles
+    XLite\API\Endpoint\Profile\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\Profile\Transformer\OutputTransformer'
+    XLite\API\Endpoint\Profile\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\Profile\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\Profile\Transformer\InputTransformer'
+    XLite\API\Endpoint\Profile\Transformer\InputTransformer: ~
+
+    XLite\API\Endpoint\Profile\DataPersister\DataPersister:
+        class: XLite\API\Endpoint\Profile\DataPersister\DataPersister
+        arguments:
+            $inner: '@api_platform.doctrine.orm.data_persister'
+
+    XLite\API\Endpoint\Profile\Builder\AdminCountQueryBuilderInterface: '@XLite\API\Endpoint\Profile\Builder\AdminCountQueryBuilder'
+    XLite\API\Endpoint\Profile\Builder\AdminCountQueryBuilder:
+        class: XLite\API\Endpoint\Profile\Builder\AdminCountQueryBuilder
+        arguments:
+            $repository: '@xcart.repository.profile'
+
+    XLite\API\Endpoint\Profile\SubExtension\SubExtension:
+      tags: [!php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG]
+
+    xcart.api.profile.controller:
+      class: XLite\Controller\API\Profile\Post
+
+    xcart.api.profile.input_rule.rule_set:
+        class: XLite\API\InputRule\RuleSet
+        decorates: XLite\API\Endpoint\Profile\Transformer\InputTransformer
+        arguments:
+            $subRules:
+                - '@xcart.api.profile.sub_rule.check_unique_login'
+
+    xcart.api.profile.sub_rule.check_unique_login:
+        class: XLite\API\Endpoint\Profile\InputRule\SubRule\CheckUniqueLogin
+        arguments:
+            $repository: '@xcart.repository.profile'
+            $entityFieldName: 'login'
+
+    # /profiles/{profile_id}/address
+    XLite\API\Endpoint\ProfileAddress\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\ProfileAddress\Transformer\OutputTransformer'
+    XLite\API\Endpoint\ProfileAddress\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\ProfileAddress\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\ProfileAddress\Transformer\InputTransformer'
+    XLite\API\Endpoint\ProfileAddress\Transformer\InputTransformer: ~
+
+    XLite\API\Endpoint\ProfileAddress\SubExtension\SubExtension:
+      tags: [!php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG]
+
+    xcart.api.profile_address.controller:
+      class: XLite\Controller\API\ProfileAddress\Post
+      arguments:
+          $repository: '@xcart.repository.profile'
+
+    XLite\API\Endpoint\ProfileAddress\SubIriConverter\SubIriConverter:
+        tags: [!php/const XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\SubIriConverter\SubIriFromItemConverterInterface::SUB_IRI_FROM_ITEM_CONVERTER_TAG]
+
+    XLite\API\Endpoint\ProfileAddress\DataProvider\ItemDataProvider: ~

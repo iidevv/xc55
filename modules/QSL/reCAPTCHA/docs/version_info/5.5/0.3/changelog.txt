@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Fixes (1)
+2022-12-26 - [Bug] Incorrect reCaptcha application during a customer account creation. Fixed. #XCB-1445 #QSL-reCAPTCHA
+

@@ -1,0 +1,6 @@
+Version 5.5.0.6
+
+Improvements (2)
+2023-03-27 - [Story] Added a "Brands" block onto Make/Model/Year pages. #ECOM-3014 #QSL-ShopByBrand #QSL-Make
+2023-03-30 - [Story] X-Cart Themes: Adjusted the ability to manage the "Select your vehicle" block on catalog pages. #ECOM-2971 #QSL-ShopByBrand #QSL-Make #XC-ThemeTweaker #XC-Auto #QSL-UltimateSkin #TemplateMonster-KitchenSuppliesStore
+

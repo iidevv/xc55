@@ -1,0 +1,5 @@
+Version 5.5.0.8
+
+Fixes (1)
+2023-02-22 - [Bug] The "Notify me" button was missing. Fixed. #XCB-2118 #QSL-BackInStock
+

@@ -1,0 +1,13 @@
+{##
+ # Brand logo
+ #
+ # @ListChild (list="customer.brand", weight="100")
+ #}
+
+<div class="brand-info">
+  {% if this.hasBrandLogo() %}
+    <div class="brand-logo" title="{{ this.getBrandName() }}">
+      {{ widget('\\XLite\\View\\Image', image=this.getLogo(), maxWidth=this.getLogoWidth(), maxHeight=this.getLogoHeight(), centerImage='0', verticalAlign='middle', alt=this.getBrandName()) }}
+    </div>
+  {% endif %}
+</div>

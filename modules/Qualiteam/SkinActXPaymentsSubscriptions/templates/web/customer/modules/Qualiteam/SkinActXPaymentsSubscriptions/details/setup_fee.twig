@@ -1,0 +1,10 @@
+{##
+ # Product market price
+ #
+ #
+ # @ListChild (list="product.plain_price.tail.subscription_info.text", weight="100")
+ #}
+
+<div class="text">
+  {{ t('Setup fee') }}: <span class="value">{{ this.formatPrice(this.getSetupFee(), null, 1) }}</span>
+</div>

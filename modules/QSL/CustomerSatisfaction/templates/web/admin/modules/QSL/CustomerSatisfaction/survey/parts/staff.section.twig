@@ -1,0 +1,26 @@
+{##
+ # Survey page template
+ #
+ # @ListChild (list="survey-details-list", weight="300")
+#}
+
+<div class="survey-section">
+  {% form '\\QSL\\CustomerSatisfaction\\View\\Form\\SurveyStaff' %}
+  {{ widget('\\QSL\\CustomerSatisfaction\\View\\FormField\\Select\\SurveyStatuses', fieldName='status', value=this.getSurvey().status, showAdditional='false', label=t('Status')) }}
+    <br />
+    <div class="staff-comments">
+      <span class="data-name-column">{{ t('Staff comments:') }}</span><br />
+      {{ widget('XLite\\View\\FormField\\Textarea\\Simple', fieldName='comments', value=this.getSurvey().comments, fieldOnly='true', required='false', rows='5', cols='70') }}
+    </div>
+    {#<div class="survey-tags">
+      <span class="data-name-column">{t(#Tags:#)}</span><br />
+      <widget class="XLite\View\FormField\Input\Text" placeholder="Your tags" fieldName="tags" value="{survey.getTagsString()}" fieldOnly="true" required="false" />
+      <span class="tags-note">{t(#Enter one or more tags separated with the comma#)}</span>
+    </div>#}
+    <div class="button-container">
+      <div class="button submit">
+        {{ widget('\\XLite\\View\\Button\\Submit', label=t('Update'), style='...') }}
+      </div>
+    </div>
+  {% endform %}
+</div>

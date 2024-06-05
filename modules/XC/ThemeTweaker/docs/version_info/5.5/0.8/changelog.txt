@@ -1,0 +1,9 @@
+Version 5.5.0.8
+
+Improvements (2)
+2023-03-30 - [Story] X-Cart Themes: Adjusted the ability to manage the "Select your vehicle" block on catalog pages. #ECOM-2971 #QSL-ShopByBrand #QSL-Make #XC-ThemeTweaker #XC-Auto #QSL-UltimateSkin #TemplateMonster-KitchenSuppliesStore
+2023-03-29 - [Story] Layout Editor | Cloud Search & Filters: Added the ability to manage the "Filters" block. #ECOM-2954 #XC-ThemeTweaker
+
+Fixes (1)
+2023-03-29 - [Bug] Custom JS did not aggregate correctly. Fixed. #XCB-2206 #XC-ThemeTweaker
+

@@ -1,0 +1,25 @@
+{##
+ # Popup shipping method additional info
+ #
+ # @ListChild (list="popup.shipping.methods.list.line", weight=300)
+ #}
+
+{% if this.isOffline(this.get('method')) %}
+  {% apply spaceless %}
+    <div class="additional-info">
+      {% if this.get('method').getDeliveryTime() %}
+        <div class="delivery-time">{{ t('Delivery') }}: {{ this.get('method').getDeliveryTime() }}</div>
+      {% endif %}
+
+      <div>
+        {% if this.isShowHandlingFee(this.get('method')) %}
+          <span class="handling-fee">{{ t('Handling fee') }}: {{ this.getHandlingFee(this.get('method')) }}</span>
+        {% endif %}
+        {% if this.isShowTaxClass(this.get('method')) %}
+          <span class="slash-separator">/</span>
+          <span class="tax-class">{{ t('Tax class') }}: {{ this.getTaxClassName(this.get('method')) }}</span>
+        {% endif %}
+      </div>
+    </div>
+  {% endapply %}
+{% endif %}

@@ -1,0 +1,31 @@
+{##
+# Banner parallax QSL\Banner\View\Customer\BannerParallax
+#}
+
+{% if this.getParallaxBanner() %}
+    {% set parallaxBanner = this.getParallaxBanner() %}
+
+    {% if parallaxBanner.link %}<a class="parallaxLink" href="{{ parallaxBanner.link }}" title="{{ parallaxBanner.getAlt() }}"></a>{% endif %}
+
+    <div id="parallax{{ this.banner.location }}{{ this.banner.getId() }}" class="parallax-item"
+            {% if parallaxBanner.getImage() %}
+                style="background-image: xurl('{{ parallaxBanner.getImage().getURL() }}');"
+            {% endif %}>
+
+        {% if parallaxBanner.maintext != '' or parallaxBanner.addtext != '' %}
+            <span class="textContainer">
+                    {% if parallaxBanner.maintext != ''%}
+                        <span class="mainText"{% if parallaxBanner.maintext_color != '' %} style="color: #{{ parallaxBanner.maintext_color }};"{% endif %}>
+                            {{ parallaxBanner.maintext }}
+                        </span>
+                    {% endif %}
+                {% if parallaxBanner.addtext != ''%}
+                    <span class="addText"{% if parallaxBanner.addtext_color != '' %} style="color: #{{ parallaxBanner.addtext_color }};"{% endif %}>
+                            {{ parallaxBanner.addtext }}
+                        </span>
+                {% endif %}
+                </span>
+        {% endif %}
+    </div>
+{% endif %}
+

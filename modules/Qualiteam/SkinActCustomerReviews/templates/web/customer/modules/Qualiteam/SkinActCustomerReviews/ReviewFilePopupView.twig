@@ -1,0 +1,7 @@
+{% if this.isImage() %}
+    <img style="max-width: 100%;" src="{{ this.getFileUrl() }}">
+{% endif %}
+
+{% if this.isVideo() %}
+    <video controls="controls" style="width: 100%;" src="{{ this.getFileUrl() }}"></video>
+{% endif %}

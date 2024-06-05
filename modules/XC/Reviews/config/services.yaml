@@ -1,0 +1,53 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+api_platform:
+    resource_class_directories:
+        - '%kernel.project_dir%/var/run/classes/XC/Reviews/Model'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+    XC\Reviews\Core\Task\SendReviewKeys:
+        tags:
+            - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+    # /product/{product_id}/reviews
+    XC\Reviews\API\Endpoint\ProductReview\Transformer\OutputTransformerInterface: '@XC\Reviews\API\Endpoint\ProductReview\Transformer\OutputTransformer'
+    XC\Reviews\API\Endpoint\ProductReview\Transformer\OutputTransformer: ~
+    XC\Reviews\API\Endpoint\ProductReview\Transformer\InputTransformerInterface: '@XC\Reviews\API\Endpoint\ProductReview\Transformer\InputTransformer'
+    XC\Reviews\API\Endpoint\ProductReview\Transformer\InputTransformer: ~
+
+    XC\Reviews\API\Endpoint\ProductReview\SubIriConverter\SubIriConverter:
+        tags: [ !php/const XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\SubIriConverter\SubIriFromItemConverterInterface::SUB_IRI_FROM_ITEM_CONVERTER_TAG ]
+
+    XC\Reviews\API\Endpoint\ProductReview\DataProvider\CollectionDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.collection_data_provider'
+            $repository: '@xcart.repository.product'
+
+    XC\Reviews\API\Endpoint\ProductReview\DataProvider\ItemDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.item_data_provider'
+            $repository: '@xcart.repository.product'
+
+    xcart.api.xc.reviews.product_review.controller:
+        class: XC\Reviews\Controller\API\ProductReview\Post
+        arguments:
+            $repository: '@xcart.repository.product'
+
+    XC\Reviews\API\OpenApiTagsRepositoryDecorator:
+        decorates: XLite\API\OpenApiTagsRepository
+
+    xcart.api.xc.reviews.product_review.sub_extension:
+        class: XC\Reviews\API\Endpoint\ProductReview\SubExtension\SubExtension
+        tags: [ !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG ]
+
+    XC\Reviews\LifetimeHook\Hook:
+        tags:
+            - { name: xcart.lifetime-hook, moduleId: XC-Reviews, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }

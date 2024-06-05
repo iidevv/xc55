@@ -1,0 +1,32 @@
+{##
+ # Subcategories list (grid style)
+ #}
+
+{% set subCategories = this.getSubcategories() %}
+
+{% if subCategories %}
+  <ul class="subcategory-view-icons subcategory-list grid-list clearfix length-{{ subCategories | length }}">
+    {% set animationDelay="50" %}
+    {% for subcategory in subCategories %}
+    {% if subcategory.hasAvailableMembership() %}
+      <li {% if this.needAnimation() %}data-aos="fade-up" data-aos-delay="{{ animationDelay }}" {% endif %}>
+        <div class="subcategory">
+          <a href="{{ xurl('category', '', {'category_id': subcategory.category_id}) }}">
+            <span class="subcategory-icon">
+              <span class="subcategory-icon_wrapper">
+                {{ widget('XLite\\View\\Image', lazyLoad=true, image=subcategory.image, maxWidth=this.getIconWidth(), maxHeight=this.getIconHeight(), centerImage='1', alt=this.getAlt(subcategory.image)) }}
+              </span>
+            </span>
+            <span class="subcategory-name">{{ subcategory.name }}</span>
+          </a>
+        </div>
+      </li>
+      {% set animationDelay=animationDelay+50 %}
+    {% endif %}
+    {% endfor %}
+    {% for item in this.getNestedViewList('children') %}
+      <li>{{ item.display() }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{{ widget_list('subcategories.base') }}

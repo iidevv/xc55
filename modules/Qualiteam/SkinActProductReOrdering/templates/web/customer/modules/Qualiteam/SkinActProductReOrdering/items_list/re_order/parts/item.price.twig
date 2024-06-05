@@ -1,0 +1,9 @@
+{#
+# @ListChild (list="reorder.item", weight="40")
+#}
+
+<td class="item-price">
+  {{ widget('XLite\\View\\Surcharge', surcharge=this.getDisplayProductPrice(), currency=this.getCurrency()) }}
+</td>
+
+<td class="item-multi">&times;</td>

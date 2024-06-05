@@ -1,0 +1,18 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActCreateOrder Create New Order", translations: [{ code: en, label: "Create New Order" }] }
+  - { name: "SkinActCreateOrder order created", translations: [{ code: en, label: "Order was created manually" }] }
+  - { name: "SkinActCreateOrder profile email", translations: [{ code: en, label: "Profile email for manually created orders" }] }
+  - { name: "SkinActCreateOrder The customer for the order has been changed", translations: [{ code: en, label: "The customer for the order has been changed" }] }
+  - { name: "SkinActCreateOhasWholesalePricesrder Something is wrong", translations: [{ code: en, label: "SkinActCreateOrder Something is wrong. Please refresh the page and try the operation again." }] }
+  - { name: "SkinActCreateOrder New customer created from the order", translations: [{ code: en, label: "New customer created from the order" }] }
+  - { name: "SkinActCreateOrder Apply", translations: [{ code: en, label: "Apply" }] }
+  - { name: "SkinActCreateOrder In Progress", translations: [{ code: en, label: "Orders in progress" }] }
+  - { name: "SkinActCreateOrder Previously ordered products", translations: [{ code: en, label: "Previously ordered products" }] }
+  - { name: "SkinActCreateOrder Orders in progress", translations: [{ code: en, label: "Orders in progress" }] }

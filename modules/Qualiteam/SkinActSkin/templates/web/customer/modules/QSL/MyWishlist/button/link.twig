@@ -1,0 +1,13 @@
+{##
+ # Wishlist link
+ #}
+
+<a {{ this.printTagAttributes(this.getAttributes()) | raw }} title="{{ t('Wishlist') }}">
+  {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon="i-heart", class='wishlist-link__icon') }}
+  {% if this.hasLabel() %}
+       <span class="wishlist-label">{{ this.getDefaultLabel() }}</span>
+    {% endif %}
+    <span class="wishlist-product-count">
+        {{ this.getWishlistProductsCount() }}
+    </span>
+</a>

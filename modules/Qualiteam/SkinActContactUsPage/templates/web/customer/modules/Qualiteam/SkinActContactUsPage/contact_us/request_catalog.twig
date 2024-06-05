@@ -1,0 +1,19 @@
+<div class="request-catalog-wrapper">
+  <div class="request-catalog-descr">
+    <span class="request-catalog-descr-info">
+      {{ t('SkinActContactUsPage You can request a catalog or send a message to us using the form below') }}
+    </span>
+    <a href="{{ this.getRequestCatalogUrl() }}" target="_blank">
+      {{ t('SkinActContactUsPage Click here to view or download a digital version of our catalog') }}
+    </a>
+  </div>
+
+  {% if this.getRequestCatalogImageUrl() %}
+    <div class="request-catalog-img">
+      <a href="{{ this.getRequestCatalogUrl() }}" target="_blank">
+        <img src="{{ this.getRequestCatalogImageUrl() }}"
+             alt="{{ t('SkinActContactUsPage Click here to view or download a digital version of our catalog') }}">
+      </a>
+    </div>
+  {% endif %}
+</div>

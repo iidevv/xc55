@@ -1,0 +1,13 @@
+{##
+ #
+ # @ListChild (list="itemsList.product.grid.customer.info", weight="999")
+ # @ListChild (list="itemsList.product.list.customer.quicklook", weight="999")
+ # @ListChild (list="itemsList.product.table.customer.columns", weight="100")
+ #}
+{% if this.isWishlistClose() %}
+<a 
+  title="{{ t('Remove product from this wishlist') }}"
+  href="{{ xurl('wishlist','remove', {'wishlist_id': this.getWishlist().getId(), 'wishlist_link_id' : this.getProduct().getWishlistLinkId() }) }}"
+  class="wishlist-close next-previous-assigned fa fa-remove">
+</a>
+{% endif %}

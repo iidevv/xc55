@@ -1,0 +1,11 @@
+{##
+ # Klarna messaging banner
+#}
+
+<div class="klarna-message">
+  <klarna-placement
+      data-key="credit-promotion-auto-size"
+      data-locale="en-US"
+      data-purchase-amount="{{ this.getPurchaseTotal() }}"
+  ></klarna-placement>
+</div>

@@ -1,0 +1,7 @@
+Version 5.5.0.2
+
+Fixes (3)
+2022-09-02 - [Bug] Tax Jar. Product price was shown incorrectly in the shopping cart. Fixed. #XCB-1684 #QSL-SpecialOffersBase
+2022-09-05 - [Bug] Special offers. An offer was not working if the cart contained products from more than one vendors. Fixed. #XCB-1609 #QSL-SpecialOffersBuyXGetY #QSL-SpecialOffersSpendXGetY #QSL-SpecialOffersBase
+2022-08-26 - [Bug] The calendar widget was not displayed in date selection fields. Fixed. #XCB-1600 #CDev-Core #QSL-SpecialOffersBase
+

@@ -1,0 +1,15 @@
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: blowfish_key
+    category: XC\XC4Login
+    type: XLite\View\FormField\Input\PasswordWithValue
+    orderby: 10
+    value: ''
+    translations:
+      - code: en
+        option_name: X-Cart 4 Blowfish key

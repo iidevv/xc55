@@ -1,0 +1,9 @@
+Version 5.5.0.1
+
+Improvements (1)
+2022-09-06 - [Story] Added the ability to adjust the location of the email field at checkout.  #ECOM-1668 #CDev-Core #XC-FastLaneCheckout
+
+Fixes (2)
+2022-09-02 - [Bug] Amazon Pay. The Amazon Pay button was positioned incorrectly on the storefront. Fixed. #XCB-1612 #Amazon-PayWithAmazon #CDev-Paypal #XC-FastLaneCheckout #XC-CrispWhiteSkin
+2022-08-26 - [Bug] Duplicated widget loading at checkout if switching the shipping method or payment method. Fixed. #XCB-1499 #XC-FastLaneCheckout
+

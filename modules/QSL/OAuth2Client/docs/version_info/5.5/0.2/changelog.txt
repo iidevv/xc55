@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2023-03-28 - [Bug] Fatal error on the OAuth 2 Providers settings page. Fixed. #XCB-2214 #QSL-OAuth2Client
+

@@ -1,0 +1,14 @@
+{##
+ # Email
+ #
+ # Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ # See https://www.x-cart.com/license-agreement.html for license details.
+ #
+ # @ListChild (list="notifyme.rows", weight="300")
+ #}
+
+<tr class="notify-me-price">
+    <td colspan="2" class="email-field field">
+        {{ widget('XLite\\View\\FormField\\Input\\Text\\Email', value=this.getEmail(), required='true', fieldName='email', label=t('Email'), fieldOnly='false', fieldId='notify-email') }}
+    </td>
+</tr>

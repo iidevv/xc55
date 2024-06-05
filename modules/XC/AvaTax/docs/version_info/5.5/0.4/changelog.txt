@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2022-11-14 - [Bug] At the checkout, taxes were shown under the heading "Summary" instead of "Taxes" if the setting "Display taxes as a summary" on the AvaTax add-on settings page was enabled. Renamed to "Taxes". #XCB-1858 #XC-AvaTax
+

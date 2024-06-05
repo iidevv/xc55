@@ -1,0 +1,6 @@
+Version 5.5.0.12
+
+Fixes (2)
+2023-06-26 - [Bug] Updated layout of Color Swatches in the 'Change attributes' popup  #XCB-2472 #CDev-Core #XC-CrispWhiteSkin #QSL-Linen #TemplateMonster-KitchenSuppliesStore #TemplateMonster-SparePartsStore #QSL-Multistore
+2023-06-28 - [Bug] Thumbnails of additional product images were not shown on the product details page under certain conditions. Fixed.  #XCB-2466 #XC-CrispWhiteSkin
+

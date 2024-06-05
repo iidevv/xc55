@@ -1,0 +1,17 @@
+Version 5.5.0.10
+
+Improvements (2)
+2023-02-27 - [Task] "404 Not found" error in the response after requesting api/orders/by_number/{orderNumber}. Fixed. #XCB-2133 #CDev-Core
+2023-02-03 - [Story] Added XOAUTH2 authentication type for Gmail / Microsoft / Yahoo smtp servers. #ECOM-1288 #CDev-Core
+
+Fixes (9)
+2023-02-21 - [Bug] Fatal error if requesting an order without shipping via the API. Fixed. #XCB-2122 #CDev-Core
+2023-02-14 - [Bug] Fatal error if switching the language on the Cloud Search settings page in the Admin area. Fixed. #XCB-2112 #CDev-Core
+2023-02-21 - [Bug] Files beginning with "._" can no longer be added to an add-on/core pack.  #XCB-2101 #CDev-Core
+2023-02-22 - [Bug] Removed the extra slash in the .rebuildInProgress file path. #XCB-2092 #CDev-Core
+2023-02-21 - [Bug] A vendor address was shown in the common storefront footer instead of the store address. Fixed. #XCB-2085 #CDev-Core #XC-MultiVendor
+2023-02-20 - [Bug] Block options were working incorrectly for unavailable combinations. Fixed. #XCB-2070 #CDev-Core #QSL-ColorSwatches #QSL-Backorder #XC-ProductVariants #XC-CrispWhiteSkin
+2023-02-03 - [Bug] Added a check for whether there are any unassociated products or special product attributes. #XCB-2062 #CDev-Core
+2023-02-03 - [Bug] Moved the parsing of the login/password string to a separate class. #XCB-1148 #CDev-Core
+2023-02-03 - [Bug] Moved the "Refund status: In progress" template to the core. #XCB-944 #CDev-Core #CDev-Paypal
+

@@ -1,0 +1,72 @@
+{##
+ # Migration Wizard - Transfer data action
+ #}
+<div class="migration-action transfer-data">
+
+    {% if this.isImportRunning() %}
+
+        {{ widget('\\XC\\MigrationWizard\\View\\Import\\Progress') }}
+
+    {% else %}
+
+        {% if this.hasRule('XC\\MigrationWizard\\Logic\\Import\\Processor\\XCart\\Orders') %}
+            <div class="alert alert-warning">
+                {{ this.getCurrencyAlertText()|raw }}
+            </div>
+        {% endif %}
+
+        {% form '\\XC\\MigrationWizard\\View\\Form\\Migration\\TransferData' %}
+
+        <div class="panel">
+            <p>{{ t('The Migration Wizard has collected the required information') }}</p>
+            <br>
+            <h3>{{ t('The following data will be migrated') }}</h3>
+            {% if this.getSelectedRules() %}
+                <table class="collection">
+                    <tr>
+                        <th class="name">
+                            {{ t('Entity')}}
+                        </th>
+                        <th class="count">
+                            {{ t('Count') }}
+                        </th>
+                    </tr>
+                    {% for logic in this.getSelectedRules() %}
+                        <tr>
+                            <td class="name">
+                                {{ this.getRuleLogicName(logic) }}
+                            </td>
+                            <td class="count">
+                                {{ this.getRuleLogicCounts(logic) }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+            <div class="model-properties transfer-params">
+                {% if not this.isDemoModeMigration() %}
+                    <ul class="table">
+                    {% if this.hasMigrationCache() %}
+                        <li>
+                            {{ widget('\\XLite\\View\\FormField\\Input\\Checkbox\\Simple', label=t('Skip previously migrated data'), fieldName=constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\TransferData::FIELD_USE_ENTITY_CACHE'), help=t('Skip previously migrated data help'), value=this.isUseEntityCache()) }}
+                        </li>
+                    {% endif %}
+                    {% if this.hasRule('XC\\MigrationWizard\\Logic\\Import\\Processor\\XCart\\Orders') %}
+                        <li>
+                            {{ widget('\\XLite\\View\\FormField\\Input\\Text\\Date', label=t('Migrate orders from date'), fieldName=constant('\\XC\\MigrationWizard\\Logic\\Migration\\Step\\TransferData::FIELD_ORDERS_START_DATE'), value=this.getOrdersStartDate()) }}
+                        </li>
+                    {% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+
+        {{ widget('\\XC\\MigrationWizard\\View\\Button\\ProgressState', label=t('Start migration'), jsCode='this.form.submit();', style='main-button regular-main-button submit') }}
+
+        {% endform %}
+
+        {% include this.getDir() ~ '/step_back.twig' %}
+
+    {% endif %}
+
+</div>

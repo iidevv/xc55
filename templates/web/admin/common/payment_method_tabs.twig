@@ -1,0 +1,7 @@
+{##
+ # Tabber template for payment methods
+ #}
+
+{{ widget('XLite\\View\\Payment\\MethodStatus', method=this.getPaymentMethod()) }}
+
+{% include 'common/tabs.twig' %}

@@ -1,0 +1,10 @@
+{##
+ # Checkout : shipping step : selected state : avatax status
+ #
+ # @ListChild (list="checkout.shipping.selected")
+ #}
+
+{% if this.get('config').XC.AvaTax.require_taxes_for_order %}
+  <div style="display: none;" class="avatax-data" data-avaTaxErrorsFlag="{{ this.get('cart').getAvaTaxErrorsFlag() }}"></div>
+{% endif %}
+

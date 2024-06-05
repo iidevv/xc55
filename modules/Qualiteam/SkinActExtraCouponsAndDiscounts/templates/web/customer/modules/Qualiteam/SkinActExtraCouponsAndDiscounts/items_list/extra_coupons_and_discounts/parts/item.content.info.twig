@@ -1,0 +1,17 @@
+{##
+# Extra coupons and discouponts coupon info
+#
+# @ListChild (list="extraCoupons.itemsList.item.content", weight="200")
+#}
+
+<div class="extra-coupons__block-coupon-content-info">
+  <span class="extra-coupons__block-coupon-content-info-code">{{ this.getCouponCode() }}</span>
+
+  {% if this.hasDescription() %}
+    <div class="extra-coupons__block-coupon-content-info-description">{{ this.getDescription()|raw }}</div>
+  {% endif %}
+
+  {% if this.hasAdditionalContent() %}
+    <div class="extra-coupons__block-coupon-content-info-additional-content">{{ this.getAdditionalContent()|raw }}</div>
+  {% endif %}
+</div>

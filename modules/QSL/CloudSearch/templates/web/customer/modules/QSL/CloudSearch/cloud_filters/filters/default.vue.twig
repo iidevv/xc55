@@ -1,0 +1,35 @@
+<script type="x-template" id="cloud-filters-template-default">
+
+    <div :class="classes" v-if="values.length > 0">
+        <div class="cloud-filters-filter__wrapper">
+          <h4 class="cloud-filters-filter__title">{{ '{{' }} title {{ '}}' }}</h4>
+          <span class="cloud-filters-filter__sign-icon" :class="{'expanded': isFilterBlockExpanded}" @click.prevent="toggleFilterBlock"></span>
+        </div>
+
+        <ul v-if="isFilterBlockExpanded">
+            <li v-for="(valueCount, index) in listValues">
+
+                <div class="checkbox cloud-filters-filter-checkbox-container">
+                    <label class="cloud-filters-filter-label" :class="{'cloud-filters-filter-label--zero-count': valueCount.count == 0, 'cloud-filters-filter-label--toggled': isToggled(getFilterValue(valueCount.value))}">
+
+                        <input type="checkbox"
+                               :checked="isToggled(getFilterValue(valueCount.value))"
+                               @change="onToggle(id, getFilterValue(valueCount.value), $event.target.checked)">
+
+                        <component :is="getValueRenderer()" :value="valueCount.value">
+                        </component>
+
+                        <span class="cloud-filters-filter-label__count" v-if="valueCount.count > 0">
+                            ({{ '{{' }} valueCount.count {{ '}}' }})
+                        </span>
+
+                    </label>
+                </div>
+
+            </li>
+        </ul>
+
+        <a href="#" @click.prevent="updateVisibleValues" v-if="isVisibleUnfoldOrFoldButton && isFilterBlockExpanded" v-html="textUnfoldOrFoldButton" :class="classesUnfoldOrFoldButton"></a>
+    </div>
+
+</script>

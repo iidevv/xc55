@@ -1,0 +1,39 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: td_name
+    category: 'Qualiteam\SkinActTodaysDeal'
+    type: text
+    orderby: 100
+    value: "Today's deal"
+    translations:
+      - code: en
+        option_name: 'SkinActTodaysDeal module name'
+
+  - name: td_category
+    category: 'Qualiteam\SkinActTodaysDeal'
+    type: 'Qualiteam\SkinActTodaysDeal\View\FormField\Select\Category'
+    orderby: 200
+    value: "no_category"
+    translations:
+      - code: en
+        option_name: 'SkinActTodaysDeal category'
+
+  - name: td_limit
+    category: 'Qualiteam\SkinActTodaysDeal'
+    type: 'XLite\View\FormField\Input\Text\Integer'
+    orderby: 300
+    value: 10
+    translations:
+      - code: en
+        option_name: 'SkinActTodaysDeal items limit in block'
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActTodaysDeal module name", translations: [{ code: en, label: "Module name" }] }
+  - { name: "SkinActTodaysDeal category", translations: [{ code: en, label: "Category" }] }
+  - { name: "SkinActTodaysDeal items limit in block", translations: [{ code: en, label: "Items limit in block" }] }

@@ -1,0 +1,30 @@
+{# #
+ # Form content
+#}
+
+{% for section, data in this.getFormFieldsForDisplay() %}
+  <fieldset>
+    {% if this.isShowSectionHeader(section) %}
+      <legend>{{ data.sectionParamWidget.display() }}</legend>
+    {% endif %}
+
+    <div {% if this.isSectionCollapsible(section) %}class="{% if this.isSectionCollapsed(section) %}collapse{% endif %}" id="section-{{ section }}" aria-expanded="true"{% endif %}>
+      {{ this.displayViewSubList(section ~ '.subheader') }}
+
+      <ul class="table {{ section }}-table parent-xml-sitemap">
+        {% for field in data.sectionParamFields %}
+          <li class="{{ this.getItemClass(loop.index, loop.length, field) }}{% if field.name ends with '_priority' %} priority{% endif %}">
+            {{ this.displayCommentedData(this.getFieldCommentedData(field)) }}
+            {{ field.display() }}
+            {{ this.displayViewSubList('field', {'section': section, 'field': field}) }}
+          </li>
+		  {% if field.name ends with '_priority' %}<li class="separator"></li>{% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+  </fieldset>
+{% endfor %}
+
+{# @todo: remove (see \CDev\Wholesale\View\MinimumQuantity) #}
+{{ widget_list('form.content') }}

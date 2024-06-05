@@ -1,0 +1,32 @@
+{% if this.getCareers()|length > 0 %}
+    <div class="job-blocks">
+        {% for career in this.getCareers() %}
+            <div class="job-block">
+                <div class="job-title">
+                    <a href="{{ this.getCareerLocation(career) }}">{{ career.getTitle() }}</a>
+                </div>
+                <div class="job-info">
+
+                    <div class="job-description">
+                        {{ career.getBriefDescription()|raw }}
+                    </div>
+
+                    <div class="job-read-more">
+                        {{ widget('Qualiteam\\SkinActCareers\\View\\Button\\JobButton',
+                            label=t('SkinActCareers Read more'),
+                            location=this.getCareerLocation(career),
+                            style='btn-primary'
+                        ) }}
+                    </div>
+
+                    <div class="job-posted-date">
+                        {{ t('SkinActCareers Job was posted on') }} <strong>{{ this.getCareerDate(career) }}</strong>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    {{ t('SkinActCareers No careers here') }}
+{% endif %}

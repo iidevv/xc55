@@ -1,0 +1,9 @@
+{##
+ # @ListChild (list="invoice.base", weight="18")
+ #}
+
+{% if this.isRewardPointsPromoVisible() %}
+  <div class="earned-reward-points">
+    <strong>{{ this.getRewardPointsPromoText()|raw }}</strong>
+  </div>
+{% endif %}

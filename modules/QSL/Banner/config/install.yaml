@@ -1,0 +1,79 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Module fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: hide_banner_rotation_feature
+    category: QSL\Banner
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    value: false
+    orderby: 10
+    translations:
+      - code: en
+        option_name: Hide "Banner Rotation" feature
+        option_comment: This options hides the "Banner Rotation" feature on the “Front Page“ page in X-Cart admin back-end, and disables the "Banner Rotation" feature on the store front page.
+
+XLite\Model\LanguageLabel:
+  - { name: 'The banner has been successfully added', translations: [{ code: 'en', label: 'The banner has been successfully added' }, { code: 'ru', label: 'Баннер был успешно создан' }] }
+  - { name: 'The HTML code has been successfully added', translations: [{ code: 'en', label: 'The HTML code has been successfully added' }, { code: 'ru', label: 'HTML-код был успешно добавлен' }] }
+  - { name: 'The banner content has been successfully updated', translations: [{ code: 'en', label: 'The banner content has been successfully updated' }, { code: 'ru', label: 'Содержимое баннера было успешно обновлено' }] }
+  - { name: 'The image has been deleted', translations: [{ code: 'en', label: 'The image has been deleted' }, { code: 'ru', label: 'Изображение было удалено' }] }
+  - { name: 'The image has not been deleted', translations: [{ code: 'en', label: 'The image has not been deleted' }, { code: 'ru', label: 'Изображение не было удалено' }] }
+  - { name: 'The content has been deleted', translations: [{ code: 'en', label: 'The content has been deleted' }, { code: 'ru', label: 'HTML-код был удален' }] }
+  - { name: 'The content has not been deleted', translations: [{ code: 'en', label: 'The content has not been deleted' }, { code: 'ru', label: 'HTML-код не был удален' }] }
+  - { name: 'The images have been successfully updated', translations: [{ code: 'en', label: 'The images have been successfully updated' }, { code: 'ru', label: 'Изображение было успешно обновлено' }] }
+  - { name: 'The banner has been deleted', translations: [{ code: 'en', label: 'The banner has been deleted' }, { code: 'ru', label: 'Баннер был удален' }] }
+  - { name: 'The banners list has been successfully updated', translations: [{ code: 'en', label: 'The banners list has been successfully updated' }, { code: 'ru', label: 'Список баннеров был успешно обновлен' }] }
+  - { name: 'Failed to update image', translations: [{ code: 'en', label: 'Failed to update image' }, { code: 'ru', label: 'Не удалось обновить изображение' }] }
+  - { name: 'Banner system', translations: [{ code: 'en', label: 'Banner system' }, { code: 'ru', label: 'Управление баннерами' }] }
+  - { name: 'Random', translations: [{ code: 'en', label: 'Random' }, { code: 'ru', label: 'Случайный эффект' }] }
+  - { name: 'Fade', translations: [{ code: 'en', label: 'Fade' }, { code: 'ru', label: 'Угасание' }] }
+  - { name: 'Zoom', translations: [{ code: 'en', label: 'Zoom' }, { code: 'ru', label: 'Увеличение' }] }
+  - { name: 'Shuffle', translations: [{ code: 'en', label: 'Shuffle' }, { code: 'ru', label: 'Тасование' }] }
+  - { name: 'ScrollUp', translations: [{ code: 'en', label: 'ScrollUp' }, { code: 'ru', label: 'Прокрутка вверх' }] }
+  - { name: 'ScrollLeft', translations: [{ code: 'en', label: 'ScrollLeft' }, { code: 'ru', label: 'Прокрутка влево' }] }
+  - { name: 'Location', translations: [{ code: 'en', label: 'Location' }, { code: 'ru', label: 'Расположение' }] }
+  - { name: 'Left column', translations: [{ code: 'en', label: 'Left column' }, { code: 'ru', label: 'Левая колонка' }] }
+  - { name: 'Top full-width', translations: [{ code: 'en', label: 'Top full-width' }, { code: 'ru', label: 'Сверху во всю ширину сайта' }] }
+  - { name: 'Top standard', translations: [{ code: 'en', label: 'Top standard' }, { code: 'ru', label: 'Сверху над контентом' }] }
+  - { name: 'Bottom full-width', translations: [{ code: 'en', label: 'Bottom full-width' }, { code: 'ru', label: 'Внизу во всю ширину сайта' }] }
+  - { name: 'Bottom standard', translations: [{ code: 'en', label: 'Bottom standard' }, { code: 'ru', label: 'Внизу под контентом' }] }
+  - { name: 'Banners', translations: [{ code: 'en', label: 'Banners' }, { code: 'ru', label: 'Баннеры' }] }
+  - { name: 'New banner', translations: [{ code: 'en', label: 'New banner' }, { code: 'ru', label: 'Новый баннер' }] }
+  - { name: 'Show on home page', translations: [{ code: 'en', label: 'Show on home page' }, { code: 'ru', label: 'Показывать на главной странице' }] }
+  - { name: 'Show on static pages', translations: [{ code: 'en', label: 'Show on static pages' }, { code: 'ru', label: 'Показывать на статических страницах' }] }
+  - { name: "Show banner's navigation", translations: [{ code: 'en', label: "Show banner's navigation" }, { code: 'ru', label: 'Показывать навигацию баннера' }] }
+  - { name: 'Width', translations: [{ code: 'en', label: 'Width' }, { code: 'ru', label: 'Ширина' }] }
+  - { name: 'Height', translations: [{ code: 'en', label: 'Height' }, { code: 'ru', label: 'Высота' }] }
+  - { name: 'Delay (in seconds)', translations: [{ code: 'en', label: 'Delay (in seconds)' }, { code: 'ru', label: 'Задержка между слайдами (в секундах)' }] }
+  - { name: 'Animation speed (in seconds)', translations: [{ code: 'en', label: 'Animation speed (in seconds)' }, { code: 'ru', label: 'Скорость анимации между слайдами (в секундах)' }] }
+  - { name: 'Rotation effect', translations: [{ code: 'en', label: 'Rotation effect' }, { code: 'ru', label: 'Эффект смены слайдов' }] }
+  - { name: 'Html content', translations: [{ code: 'en', label: 'Html content' }, { code: 'ru', label: 'HTML-код' }] }
+  - { name: 'No HTML codes found', translations: [{ code: 'en', label: 'No HTML codes found' }, { code: 'ru', label: 'HTML-код не найден' }] }
+  - { name: 'Add new html content', translations: [{ code: 'en', label: 'Add new html content' }, { code: 'ru', label: 'Добавить новый HTML-код' }] }
+  - { name: 'Add new html banner', translations: [{ code: 'en', label: 'Add new html banner' }, { code: 'ru', label: 'Добавить новый HTML-баннер' }] }
+  - { name: 'There are no images loaded for this banner', translations: [{ code: 'en', label: 'There are no images loaded for this banner' }, { code: 'ru', label: 'Для этого баннера не найдено изображений' }] }
+  - { name: 'Add new banner', translations: [{ code: 'en', label: 'Add new banner' }, { code: 'ru', label: 'Добавить новый баннер' }] }
+  - { name: 'No banners found', translations: [{ code: 'en', label: 'No banners found' }, { code: 'ru', label: 'Не было добавлено ни одного баннера' }] }
+  - { name: 'Banner settings', translations: [{ code: 'en', label: 'Banner settings' }, { code: 'ru', label: 'Настройки баннера' }] }
+  - { name: 'Banner images', translations: [{ code: 'en', label: 'Banner images' }, { code: 'ru', label: 'Изображения для баннера' }] }
+  - { name: 'HTML banners', translations: [{ code: 'en', label: 'HTML banners' }, { code: 'ru', label: 'HTML-код для баннера' }] }
+  - { name: 'Add banner', translations: [{ code: 'en', label: 'Add banner' }, { code: 'ru', label: 'Добавить баннер' }] }
+  - { name: 'Design promo', translations: [{ code: 'en', label: 'Looking for high-quality graphics for your store? Our design experts can help you materialize just about any idea you’ve got. <a href="https://www.x-cart.com/contact-us.html">Contact us</a>' }, { code: 'ru', label: 'Ищете красивые и качественные баннеры для вашего магазина? Наши эксперты по дизайну могут помочь реализовать любую вашу идею! <a href="https://www.x-cart.com/contact-us.html">Свяжитесь с нами</a>' }] }
+  - { name: 'Position', translations: [{ code: 'en', label: 'Position' }, { code: 'ru', label: 'Порядок' }] }
+  - { name: 'Banner name', translations: [{ code: 'en', label: 'Banner name' }, { code: 'ru', label: 'Имя баннера' }] }
+  - { name: 'Display on products pages', translations: [{ code: 'en', label: 'Display on products pages' }, { code: 'ru', label: 'Показывать на странице продукта' }] }
+  - { name: 'Static pages', translations: [{ code: 'en', label: 'Static pages' }, { code: 'ru', label: 'Статические страницы' }] }
+  - { name: 'Banners can be limited to customers with these membership levels', translations: [{ code: 'en', label: 'Banners can be limited to customers with these membership levels' }, { code: 'ru', label: 'Показывать баннеры только следующим группам пользователей' }] }
+  - { name: "Show banner's pagination", translations: [{ code: 'en', label: "Show banner's pagination" }, { code: 'ru', label: 'Показывать пагинацию' }] }
+  - { name: "Display this banner as parallax block", translations: [{ code: 'en', label: "Display this banner as parallax block" }, { code: 'ru', label: 'Показывать баннер как паралакс блок' }] }
+  - { name: "Width, px", translations: [{ code: 'en', label: "Width, px" }, { code: 'ru', label: 'Ширина, пикс' }] }
+  - { name: "Height, px", translations: [{ code: 'en', label: "Height, px" }, { code: 'ru', label: 'Высота, пикс' }] }
+  - { name: "Animation speed, in seconds", translations: [{ code: 'en', label: "Animation speed, in seconds" }, { code: 'ru', label: 'Скорость анимации, сек.' }] }
+  - { name: "Delay, in seconds", translations: [{ code: 'en', label: "Delay, in seconds" }, { code: 'ru', label: 'Задержка, сек.' }] }
+  - { name: "Home page banner", translations: [{ code: 'en', label: "Home page banner" }, { code: 'ru', label: 'Показывать на главной странице' }] }
+  - { name: "Show navigation arrows", translations: [{ code: 'en', label: "Show navigation arrows" }, { code: 'ru', label: 'Показывать стрелки навигации' }] }
+  - { name: "Find out more", translations: [{ code: 'en', label: "Find out more" }] }

@@ -1,0 +1,12 @@
+{##
+ # Settings template
+#}
+
+<div class="aftership-settings">
+  {{ widget('XLite\\View\\Model\\Settings') }}
+
+  <div class="aftership-settings__import-couriers">
+    {{ widget('XLite\\View\\FormField\\Separator\\Regular', label=t('SkinActAftership couriers import setting')) }}
+    {{ widget('Qualiteam\\SkinActAftership\\View\\Button\\Couriers') }}
+  </div>
+</div>

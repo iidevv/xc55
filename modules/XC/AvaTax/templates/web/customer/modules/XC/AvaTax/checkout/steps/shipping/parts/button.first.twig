@@ -1,0 +1,15 @@
+{##
+ # First check address
+ #
+ # @ListChild (list="checkout.shipping.selected.sub.shipping", weight="110")
+ #}
+{% if this.isAvaTaxAddressVerificationEnabled() %}
+  <div class="avatax-check-box">
+    {% if this.isShippingEnabled() %}
+      {{ widget('XLite\\View\\Button\\Regular', label=t('Check address'), style='avatax-check shipping') }} 
+    {% else %}
+      {{ widget('XLite\\View\\Button\\Regular', label=t('Check address'), style='avatax-check billing') }}
+    {% endif %}
+  </div>
+{% endif %}
+

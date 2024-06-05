@@ -1,0 +1,11 @@
+<input
+  type="number"
+  min="1"
+  max="{{ this.getMaxQuantity() }}"
+  inputmode="numeric"
+  value="{{ this.getBoxValue() }}"
+  class="form-control {{ this.getClass() }}"
+  id="{{ this.getBoxId() }}"
+  name="{{ this.getBoxName() }}"
+  onclick="this.focus();"/>
+<span class="wheel-mark">&nbsp;</span>

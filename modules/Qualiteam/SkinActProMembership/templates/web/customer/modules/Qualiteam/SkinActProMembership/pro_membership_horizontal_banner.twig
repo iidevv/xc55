@@ -1,0 +1,13 @@
+{#
+ # ProMembership icon
+ #}
+
+<div class="{{ this.getClassName() }}" {{ this.getOnClick()|raw }}>
+ <div class="pro-membership-horizontal-banner__text">
+  {{ t('SkinActProMembership product banner text') }}
+ </div>
+ {% if this.priceIsVisible() %}
+ <div class="pro-membership-horizontal-banner__price">{{ this.getPriceLabel() }}</div>
+ {% endif %}
+ <div class="pro-membership-horizontal-banner__image"></div>
+</div>

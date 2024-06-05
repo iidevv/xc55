@@ -1,0 +1,6 @@
+{##
+ # @ListChild (list="question.ask.fields", weight="200")
+ #}
+<li class="input input-text floating-label label-name">
+  {{ widget('XLite\\View\\FormField\\Input\\Text', placeholder=t('Full name'), fieldName='name', label=t('Your name'), value=this.getQuestion().name) }}
+</li>

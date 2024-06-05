@@ -1,0 +1,18 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            $profileRepository: '@xcart.repository.profile'
+            $configRepository: '@xcart.repository.config'
+
+    XCart\Security\UserProvider:
+        class: XCart\Security\UserProvider
+
+    XCart\Security\Http\Authenticator\TokenRepository\TokenRepositoryInterface: '@XCart\Security\Http\Authenticator\TokenRepository\ConfigTokenRepository'
+
+    XCart\Security\Http\Authenticator\TokenRepository\ConfigTokenRepository:
+        class: XCart\Security\Http\Authenticator\TokenRepository\ConfigTokenRepository
+
+    XCart\Security\Hasher\PasswordHasher:
+        class: XCart\Security\Hasher\PasswordHasher

@@ -1,0 +1,10 @@
+{##
+ # Horizontal minicart link block
+ #
+ # @ListChild (list="minicart.horizontal.children", weight="0")
+ #}
+
+<span class="header-icon-menu__icon-box">
+ {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon="i-cart", class='header-icon-menu__icon') }}
+ <span class="header-icon-menu__counter">{{ this.get('cart').countQuantity() }}</span>
+</span>

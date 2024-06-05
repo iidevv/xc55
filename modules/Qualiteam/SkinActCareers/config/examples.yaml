@@ -1,0 +1,26 @@
+
+\Qualiteam\SkinActCareers\Model\InterviewQuestion:
+  - { question: "First Name", type: "P", mandatory: true }
+  - { question: "Last Name", type: "P", mandatory: true }
+  - { question: "Gender", type: "S", mandatory: false, predefinedValues: 'Male;Female' }
+  - { question: "Email", type: "P", mandatory: true }
+  - { question: "Phone", type: "P", mandatory: true }
+  - { question: "Age", type: "P", mandatory: true }
+  - { question: "What are your strengths?", type: "T", mandatory: true }
+  - { question: "What are your weaknesses?", type: "T", mandatory: true }
+  - { question: "Why do you want this job?", type: "T", mandatory: true }
+  - { question: "Where would you like to be in your career five years from now?", type: "T", mandatory: false }
+  - { question: "What's your ideal company?", type: "T", mandatory: false }
+  - { question: "What attracted you to this company?", type: "T", mandatory: false }
+  - { question: "Why should we hire you?", type: "T", mandatory: false }
+  - { question: "What did you like least about your last job?", type: "T", mandatory: false }
+  - { question: "When were you most satisfied in your job?", type: "T", mandatory: false }
+  - { question: "What can you do for us that other candidates can't?", type: "T", mandatory: false }
+  - { question: "What were the responsibilities of your last position?", type: "T", mandatory: false }
+  - { question: "Why are you leaving your present job?", type: "T", mandatory: false }
+  - { question: "What do you know about this industry?", type: "T", mandatory: false }
+  - { question: "What do you know about our company?", type: "T", mandatory: false }
+  - { question: "Give me an example of a time that you felt you went above and beyond the call of duty at work", type: "T", mandatory: false }
+  - { question: "If I were your supervisor and asked you to do something that you disagreed with, what would you do?", type: "T", mandatory: false }
+  - { question: "What salary are you seeking?", type: "T", mandatory: false }
+  - { question: "What's your salary history?", type: "T", mandatory: false }

@@ -1,0 +1,6 @@
+{% if this.entity.getPrivate() %}
+  <span>{{ t('Private (question)') }}</span>
+{% endif %}
+{% if not this.entity.getPrivate() %}
+  <span>{{ t('Public (question)') }}</span>
+{% endif %}

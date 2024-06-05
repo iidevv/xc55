@@ -1,0 +1,8 @@
+{##
+ # Link to official website
+ #
+ # @ListChild (list="admin.main.page.footer", weight="100")
+ #}
+{% if this.isAdminAuthorizationFlow() %}
+  &copy; 2002 - {{ 'now'|date('Y') }} {{ t('Powered by', {'xCartURL': this.getXCartURL()})|raw }}
+{% endif %}

@@ -1,0 +1,21 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: type
+    category: Export
+    value: csv
+XLite\Model\LanguageLabel:
+  - { name: 'Export file type', translations: [{ code: en, label: 'Export file type' }] }
+  - { name: 'The "{{file}}" is not CSV or Excel spreadsheet or archive', translations: [{ code: en, label: "The \"{{file}}\" is not CSV or Excel spreadsheet or archive" }] }
+  - { name: 'Import by CSV / spreadsheets', translations: [{ code: en, label: "Import from CSV / spreadsheets" }] }
+  - { name: 'Export in CSV / spreadsheets', translations: [{ code: en, label: "Export to CSV / spreadsheets" }] }
+  - { name: "CSV or Excel spreadsheet or ZIP files, total max size: {{size}}", translations: [{ code: en, label: "Select file to import (CSV, Excel, OpenDocument or ZIP; total max size: {{size}})" }] }
+  - { name: "PHP zip extension is not installed on your server. As a result, export is not possible", translations: [{ code: en, label: "PHP zip extension is not installed on your server. As a result, export to the formats Excel 5 / Excel 2007 / Open document is not possible. Install the extension or contact your hosting provider." }] }
+  - { name: "PHP zip extension is not installed on your server. As a result, import is not possible", translations: [{ code: en, label: "PHP zip extension is not installed on your server. As a result, import from the formats Excel 5 / Excel 2007 / Open document is not possible. Install the extension or contact your hosting provider." }] }
+  - { name: 'Export limitations warning', translations: [{ code: en, label: "Please use your best judgment when choosing to export massive data sets (of 10000 or more items) as this may take much time and resources." }] }
+  - { name: 'Import limitations warning', translations: [{ code: en, label: "Please use your best judgment when choosing to import massive data sets (of 10000 or more items) as this may take much time and resources." }] }

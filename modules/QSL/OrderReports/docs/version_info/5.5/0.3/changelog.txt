@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Improvements (1)
+2023-02-01 - [Story] Added an endpoint "carts" for the admin API.   #ECOM-2718 #CDev-Core #CDev-USPS #CDev-Coupons #QSL-LoyaltyProgram #QSL-CostPrice #QSL-AbandonedCartReminder #QSL-TaxExempt #QSL-CustomerSatisfaction #XC-MultiCurrency #XC-MailChimp #XC-GiftWrapping #XC-MultiVendor #QSL-EBay #QSL-OrderReports #QSL-AdvancedSecurity #QSL-MarkMobileOrders
+

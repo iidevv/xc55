@@ -1,0 +1,13 @@
+{#
+# @ListChild (list="itemsList.product.grid.customer.info", weight="3")
+#}
+
+{% if this.get('product').hasColorSwatchAttribute() %}
+  <div class="color-swatches__block">
+    {% for color_swatch in this.get('product').getColorSwatches() %}
+      {% if color_swatch.getId() %}
+      <span class="color-swatches__color" style="background-color: {{ '#' ~ color_swatch.getColor() }}" title="{{ color_swatch.getName() }}"></span>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

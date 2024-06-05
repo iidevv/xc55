@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2022-10-19 - [Bug] Incorrect redirect to the storefront via "Customize storefront" if XCART_HOST_DETAILS_WEB_DIR was not empty. Fixed. #XCB-1819 #XC-ThemeTweaker
+

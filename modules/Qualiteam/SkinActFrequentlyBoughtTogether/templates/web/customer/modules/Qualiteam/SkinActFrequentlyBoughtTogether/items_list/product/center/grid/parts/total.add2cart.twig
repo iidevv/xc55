@@ -1,0 +1,9 @@
+{##
+ # Total block add2cart
+ #
+ # @ListChild (list="itemsList.widget.frequentlyBought.product.grid.customer.total", weight="15")
+#}
+
+<div class="price-box__add2cart-button">
+  {{ widget('\\XLite\\View\\Button\\Regular', type='button', style="regular-main-button freq-products-grid__button", label=this.getFreqBoughtAdd2CartLabel()) }}
+</div>

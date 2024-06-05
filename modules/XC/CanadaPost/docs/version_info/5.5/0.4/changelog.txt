@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2022-11-23 - [Bug] Removed the Product Requests menu item for the "Manage conversations" permission. Added a permissions check for the Messages tab in АОМ. #XCB-1885 #CDev-Core #CDev-USPS #CDev-PINCodes #CDev-Egoods #QSL-BackInStock #QSL-Returns #XC-VendorMessages #XC-CanadaPost
+

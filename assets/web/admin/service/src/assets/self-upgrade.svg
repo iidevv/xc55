@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="260" height="180" viewBox="0 0 260 180">
+    <defs>
+        <rect id="a" width="40px" height="40px" rx="1"/>
+        <rect id="b" width="40px" height="40px" rx="1"/>
+        <rect id="c" width="40px" height="40px" rx="1"/>
+        <rect id="d" width="40px" height="40px" rx="1"/>
+        <rect id="e" width="40px" height="40px" rx="1"/>
+        <rect id="f" width="40px" height="40px" rx="1"/>
+        <rect id="g" width="40px" height="40px" rx="1"/>
+        <rect id="h" width="40px" height="40px" rx="1"/>
+        <path id="i" d="M0 15h50v165H5a5 5 0 0 1-5-5V15z"/>
+        <rect id="j" width="60px" height="4px" x="60px" y="43px" rx="1"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" stroke="#EBEFF6" stroke-width="1.4" d="M4 .7A3.3 3.3 0 0 0 .7 4v174c0 .7.6 1.3 1.3 1.3h256c.7 0 1.3-.6 1.3-1.3V4c0-1.8-1.5-3.3-3.3-3.3H4z"/>
+        <path stroke="#EBEFF6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M66 102.5h28M71 106.5h18"/>
+        <g transform="translate(60 57)">
+            <use fill="#FFF" xlink:href="#a"/>
+            <use fill="#EBEFF6" xlink:href="#a"/>
+        </g>
+        <path fill="#FFF" fill-rule="nonzero" d="M87.9 75.6h-1.3V72c0-.9-.8-1.7-1.7-1.7h-3.5v-1.3a2.1 2.1 0 0 0-4.3 0v1.3h-3.4c-1 0-1.7.8-1.7 1.7v3.3h1.3c1.3 0 2.3 1 2.3 2.3 0 1.3-1 2.3-2.3 2.3H72v3.3c0 1 .8 1.7 1.7 1.7H77v-1.3c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3V85h3.3c.9 0 1.7-.8 1.7-1.7v-3.4h1.3c1.2 0 2.1-1 2.1-2.2 0-1.2-1-2.1-2.1-2.1z"/>
+        <path stroke="#EBEFF6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M116 102.5h28M121 106.5h18"/>
+        <g transform="translate(110 57)">
+            <use fill="#FFF" xlink:href="#b"/>
+            <use fill="#EBEFF6" xlink:href="#b"/>
+        </g>
+        <path fill="#FFF" fill-rule="nonzero" d="M137.9 75.6h-1.3V72c0-.9-.8-1.7-1.7-1.7h-3.5v-1.3a2.1 2.1 0 0 0-4.3 0v1.3h-3.4c-1 0-1.7.8-1.7 1.7v3.3h1.3c1.3 0 2.3 1 2.3 2.3 0 1.3-1 2.3-2.3 2.3H122v3.3c0 1 .8 1.7 1.7 1.7h3.3v-1.3c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3V85h3.3c.9 0 1.7-.8 1.7-1.7v-3.4h1.3c1.2 0 2.1-1 2.1-2.2 0-1.2-1-2.1-2.1-2.1z"/>
+        <path stroke="#EBEFF6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M166 102.5h28M171 106.5h18"/>
+        <g transform="translate(160 57)">
+            <use fill="#FFF" xlink:href="#c"/>
+            <use fill="#EBEFF6" xlink:href="#c"/>
+        </g>
+        <path fill="#FFF" fill-rule="nonzero" d="M187.9 75.6h-1.3V72c0-.9-.8-1.7-1.7-1.7h-3.5v-1.3a2.1 2.1 0 0 0-4.3 0v1.3h-3.4c-1 0-1.7.8-1.7 1.7v3.3h1.3c1.3 0 2.3 1 2.3 2.3 0 1.3-1 2.3-2.3 2.3H172v3.3c0 1 .8 1.7 1.7 1.7h3.3v-1.3c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3V85h3.3c.9 0 1.7-.8 1.7-1.7v-3.4h1.3c1.2 0 2.1-1 2.1-2.2 0-1.2-1-2.1-2.1-2.1z"/>
+        <path stroke="#EBEFF6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M216 102.5h28M221 106.5h18"/>
+        <g transform="translate(210 57)">
+            <use fill="#FFF" xlink:href="#d"/>
+            <use fill="#EBEFF6" xlink:href="#d"/>
+        </g>
+        <path fill="#FFF" fill-rule="nonzero" d="M237.9 75.6h-1.3V72c0-.9-.8-1.7-1.7-1.7h-3.5v-1.3a2.1 2.1 0 0 0-4.3 0v1.3h-3.4c-1 0-1.7.8-1.7 1.7v3.3h1.3c1.3 0 2.3 1 2.3 2.3 0 1.3-1 2.3-2.3 2.3H222v3.3c0 1 .8 1.7 1.7 1.7h3.3v-1.3c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3V85h3.3c.9 0 1.7-.8 1.7-1.7v-3.4h1.3c1.2 0 2.1-1 2.1-2.2 0-1.2-1-2.1-2.1-2.1z"/>
+        <path stroke="#EBEFF6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M66 162.5h28M71 166.5h18"/>
+        <g transform="translate(60 117)">
+            <use fill="#FFF" xlink:href="#e"/>
+            <use fill="#EBEFF6" xlink:href="#e"/>
+        </g>
+        <path fill="#FFF" fill-rule="nonzero" d="M87.9 135.6h-1.3V132c0-.9-.8-1.7-1.7-1.7h-3.5v-1.3a2.1 2.1 0 0 0-4.3 0v1.3h-3.4c-1 0-1.7.8-1.7 1.7v3.3h1.3c1.3 0 2.3 1 2.3 2.3 0 1.3-1 2.3-2.3 2.3H72v3.3c0 1 .8 1.7 1.7 1.7H77v-1.3c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3v1.3h3.3c.9 0 1.7-.8 1.7-1.7v-3.4h1.3c1.2 0 2.1-1 2.1-2.2 0-1.2-1-2.1-2.1-2.1z"/>
+        <path stroke="#EBEFF6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M116 162.5h28M121 166.5h18"/>
+        <g transform="translate(110 117)">
+            <use fill="#FFF" xlink:href="#f"/>
+            <use fill="#EBEFF6" xlink:href="#f"/>
+        </g>
+        <path fill="#FFF" fill-rule="nonzero" d="M137.9 135.6h-1.3V132c0-.9-.8-1.7-1.7-1.7h-3.5v-1.3a2.1 2.1 0 0 0-4.3 0v1.3h-3.4c-1 0-1.7.8-1.7 1.7v3.3h1.3c1.3 0 2.3 1 2.3 2.3 0 1.3-1 2.3-2.3 2.3H122v3.3c0 1 .8 1.7 1.7 1.7h3.3v-1.3c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3v1.3h3.3c.9 0 1.7-.8 1.7-1.7v-3.4h1.3c1.2 0 2.1-1 2.1-2.2 0-1.2-1-2.1-2.1-2.1z"/>
+        <g>
+            <path stroke="#EBEFF6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M166 162.5h28M171 166.5h18"/>
+            <g transform="translate(160 117)">
+                <use fill="#FFF" xlink:href="#g"/>
+                <use fill="#EBEFF6" xlink:href="#g"/>
+            </g>
+            <path fill="#FFF" fill-rule="nonzero" d="M187.9 135.6h-1.3V132c0-.9-.8-1.7-1.7-1.7h-3.5v-1.3a2.1 2.1 0 0 0-4.3 0v1.3h-3.4c-1 0-1.7.8-1.7 1.7v3.3h1.3c1.3 0 2.3 1 2.3 2.3 0 1.3-1 2.3-2.3 2.3H172v3.3c0 1 .8 1.7 1.7 1.7h3.3v-1.3c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3v1.3h3.3c.9 0 1.7-.8 1.7-1.7v-3.4h1.3c1.2 0 2.1-1 2.1-2.2 0-1.2-1-2.1-2.1-2.1z"/>
+        </g>
+        <g>
+            <path stroke="#EBEFF6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M216 162.5h28M221 166.5h18"/>
+            <g transform="translate(210 117)">
+                <use fill="#FFF" xlink:href="#h"/>
+                <use fill="#EBEFF6" xlink:href="#h"/>
+            </g>
+            <path fill="#FFF" fill-rule="nonzero" d="M237.9 135.6h-1.3V132c0-.9-.8-1.7-1.7-1.7h-3.5v-1.3a2.1 2.1 0 0 0-4.3 0v1.3h-3.4c-1 0-1.7.8-1.7 1.7v3.3h1.3c1.3 0 2.3 1 2.3 2.3 0 1.3-1 2.3-2.3 2.3H222v3.3c0 1 .8 1.7 1.7 1.7h3.3v-1.3c0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1 2.3 2.3v1.3h3.3c.9 0 1.7-.8 1.7-1.7v-3.4h1.3c1.2 0 2.1-1 2.1-2.2 0-1.2-1-2.1-2.1-2.1z"/>
+        </g>
+        <path fill="#FFF" stroke="#EBEFF6" stroke-width="1.4" d="M.7 15.3h258.6V4c0-1.8-1.5-3.3-3.3-3.3H4A3.3 3.3 0 0 0 .7 4v11.3z"/>
+        <g>
+            <use fill="#FFF" xlink:href="#i"/>
+            <path fill="#EBEFF6" stroke="#EBEFF6" stroke-linejoin="square" stroke-width="1.4" d="M.7 15.7V175c0 2.4 2 4.3 4.3 4.3h44.3V15.7H.7z"/>
+        </g>
+        <path stroke="#FFF" stroke-linecap="square" stroke-width="1.4" d="M1.5 32.5h48"/>
+        <g transform="translate(50 20)">
+            <path stroke="#EBEFF6" stroke-linecap="square" stroke-width="1.4" d="M.5 12.5h208"/>
+            <rect width="26px" height="6px" x="174px" y="1px" fill="#EBEFF6" rx="3"/>
+            <rect width="8px" height="8px" x="10px" fill="#EBEFF6" rx="1"/>
+            <rect width="8px" height="8px" x="23px" fill="#EBEFF6" rx="1"/>
+        </g>
+        <g>
+            <use fill="#FFF" xlink:href="#j"/>
+            <use fill="#EBEFF6" xlink:href="#j"/>
+        </g>
+        <g transform="translate(6 20)">
+            <rect width="8px" height="8px" fill="#FFF" rx="1"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M13 2.5h12M13 6.5h18"/>
+        </g>
+        <g transform="translate(6 37)">
+            <rect width="8px" height="8px" fill="#FFF" rx="1"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 4.5h12"/>
+        </g>
+        <g transform="translate(6 50)">
+            <rect width="8px" height="8px" fill="#FFF" rx="1"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 4.5h20"/>
+        </g>
+        <g transform="translate(6 63)">
+            <rect width="8px" height="8px" fill="#FFF" rx="1"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 4.5h16"/>
+        </g>
+        <g transform="translate(6 76)">
+            <rect width="8px" height="8px" fill="#FFF" rx="1"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 4.5h9"/>
+        </g>
+        <circle cx="8.1" cy="8.1" r="1.9" fill="#EBEFF6"/>
+        <circle cx="14.4" cy="8.1" r="1.9" fill="#EBEFF6"/>
+        <circle cx="20.6" cy="8.1" r="1.9" fill="#EBEFF6"/>
+    </g>
+</svg>

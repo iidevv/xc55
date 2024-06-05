@@ -1,0 +1,9 @@
+{##
+ # @ListChild (list="orders.children.spec", weight="330")
+ #}
+
+{% if this.order.canReturnBeClaimed() %}
+<li class="create-return-link">
+    <a href="{{ xurl('create_return', '', {'order_number': this.order.order_number}) }}">Return</a>
+</li>
+{% endif %}

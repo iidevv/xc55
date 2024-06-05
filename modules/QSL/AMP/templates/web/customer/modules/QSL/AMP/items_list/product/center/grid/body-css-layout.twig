@@ -1,0 +1,22 @@
+{##
+ # Products list (grid variant)
+ #}
+
+<div class="prods">
+
+  {% if this.getPageData() %}
+    <ul class="prods-grid grid-list row row-wrp">
+      {% for product in this.getPageData() %}
+        <li class="prod-cell box-product c c-50 m-c-33 l-c-25 i-c">
+
+          {{ this.getProductWidgetContent(product)|raw }}
+
+        </li>
+      {% endfor %}
+      {% for item in this.getNestedViewList('items') %}
+        <li class="prod-cell box-product">{{ item.display() }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</div>

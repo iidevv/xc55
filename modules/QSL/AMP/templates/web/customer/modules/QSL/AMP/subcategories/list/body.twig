@@ -1,0 +1,18 @@
+{##
+ # Subcategories list (list style)
+ #}
+{% if this.getSubcategories() %}
+  <ul class="subcat-v-lst row row-wrp">
+    {% for subcategory in this.getSubcategories() %}
+    {% if subcategory.hasAvailableMembership() %}
+      <li class="c c-33 m-c-25 l-c-20 i-c">
+        <a href="{{ xurl('category', '', {'category_id': subcategory.category_id}) }}" class="subcategory-name">{{ subcategory.name }}</a>
+      </li>
+    {% endif %}
+    {% endfor %}
+    {% for item in this.getNestedViewList('children') %}
+      <li>{{ item.display() }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{{ widget_list('subcategories.base') }}

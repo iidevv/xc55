@@ -1,0 +1,4 @@
+Version 5.5.0.7
+
+Improvements (1)
+2023-10-02 - Adapted to custom CDN domain.

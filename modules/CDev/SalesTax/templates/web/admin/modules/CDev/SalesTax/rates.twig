@@ -1,0 +1,23 @@
+{##
+ # Tax edit page : Rates template
+ #}
+
+<div class="{{ this.getDialogCSSClasses() }}">
+
+  <div id="main-rates">
+    <h2 class="title">{{ t('Tax Rates by Zones') }}</h2>
+    <div class="main-rates--description">
+      {{ t('main_rates.description', {'url_1': xurl('countries'), 'url_2': xurl('tax_classes')})|raw }}
+    </div>
+    {{ widget('CDev\\SalesTax\\View\\ItemsList\\Model\\Rate') }}
+  </div>
+
+  <div id="shipping-rates" class="legend">
+    <h2 class="title">{{ t('Tax Rates on Shipping Cost') }}</h2>
+    <div class="shipping-rates--description">
+      {{ t('shipping_rates.description', {'url_1': xurl('countries'), 'url_2': xurl('tax_classes')})|raw }}
+    </div>
+    {{ widget('CDev\\SalesTax\\View\\ItemsList\\Model\\ShippingRate') }}
+  </div>
+
+</div>

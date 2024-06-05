@@ -1,0 +1,10 @@
+Version 5.5.0.12
+
+Improvements (1)
+2023-03-14 - [Task] Renamed "Communication > Customers > Membership Levels" to "Communication > Customers > Memberships". #XCB-2148 #CDev-Core
+
+Fixes (3)
+2023-03-16 - [Bug] An attempt at installing the Auto add-on from the Marketplace with the Platform license breaks the store. Fixed. #XCB-2186 #CDev-Core
+2023-03-15 - [Bug] Critical error on '?target=payment_return' for active payment method without module. Fixed. #XCB-2162 #CDev-Core
+2023-03-16 - [Bug] "Unsupported operand types: string + string" error. Fixed. #XCB-2157 #CDev-Core
+

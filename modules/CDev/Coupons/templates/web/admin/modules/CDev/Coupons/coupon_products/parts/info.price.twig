@@ -1,0 +1,7 @@
+{##
+ # Product link
+ #}
+
+<span class="price-field-value">
+  {% if this.get('xlite').currency.getPrefix() %}<span class="currency-symbol">{{ this.get('xlite').currency.getPrefix()|raw }}</span>{% endif %}<span class="price-value">{{ this.get('xlite').currency.formatValue(this.entity.getProductPrice())|raw }}</span>{% if this.get('xlite').currency.getSuffix() %}<span class="currency-symbol">{{ this.get('xlite').currency.getSuffix()|raw }}</span{% endif %}
+</span>

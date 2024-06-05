@@ -1,0 +1,20 @@
+{##
+ # Date cell
+ #
+ #}
+
+<div class="start-date">
+  <span class="date">{{ this.formatDate(this.entity.getStartDate()) }}</span>
+</div>
+
+{% if this.isNextDateVisible(this.entity) %}
+  <div class="next-date">
+    {{ t('Planned date') }}: <span class="date">{{ this.formatDate(this.entity.getPlannedDate()) }}</span>
+  </div>
+{% endif %}
+
+{% if this.isLastPaymentFailed(this.entity) %}
+  <div class="real-date">
+    {{ t('Next try date') }}: <span class="date">{{ this.formatDate(this.entity.getRealDate()) }}</span>
+  </div>
+{% endif %}

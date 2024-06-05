@@ -1,0 +1,18 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.1
+type: payment
+authorName: Qualiteam
+moduleName: 'SkinAct. Create Order feature'
+description: 'Create Order feature, SS-19576'
+minorRequiredCoreVersion: 0
+dependsOn:
+  - CDev-Wholesale
+incompatibleWith: {  }
+showSettingsForm: false
+canDisable: true

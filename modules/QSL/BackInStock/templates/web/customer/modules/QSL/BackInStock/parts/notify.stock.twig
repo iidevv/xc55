@@ -1,0 +1,34 @@
+{##
+ # Stock notify
+ #
+ # Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ # See https://www.x-cart.com/license-agreement.html for license details.
+ #
+ # @ListChild (list="notifyme.rows", weight="100")
+ #}
+
+{% if this.isStockEnabled() %}
+    <tr class="notify-me-stock">
+        <td>
+            <label>
+                {% if this.isEnabledBoth() %}
+                    <input type="checkbox" name="notify_stock" value="1" checked />
+                {% else %}
+                    <input type="hidden" name="notify_stock" value="1" />
+                {%  endif %}
+                {% if this.isStockSpecificationEnabled() %}
+                    {{ t('Notify me when the stock quantity changes to') }}
+                {% else %}
+                    {{ t('Notify me when the stock quantity changes') }}
+                {% endif %}
+            </label>
+        </td>
+        <td class="cell-stock">
+            {% if this.isStockSpecificationEnabled() %}
+                {{ widget('XLite\\View\\FormField\\Input\\Text\\Integer', value=this.getDefaultQuantity(), min=this.getMinQuantity(), required='true', fieldName='quantity', label=t('Quantity'), fieldOnly='true', fieldId='notify-stock') }}
+            {% else %}
+                &nbsp;
+            {% endif %}
+        </td>
+    </tr>
+{% endif %}

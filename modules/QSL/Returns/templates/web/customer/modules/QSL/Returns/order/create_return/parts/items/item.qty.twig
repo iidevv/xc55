@@ -1,0 +1,9 @@
+{##
+ # Quantity item cell
+ #
+ # @ListChild (list="create_return.item", weight="30")
+ #}
+
+<td class="qty">
+  {{ widget('XLite\\View\\FormField\\Input\\Text\\Integer', fieldId='items_' ~ this.item.getItemId() ~ '_amount', fieldName='items[' ~ this.item.getItemId() ~ '][amount]', fieldOnly='true', value=this.getReturnItemAmount(this.item), min='0', max=this.item.getAmount()) }}
+</td>

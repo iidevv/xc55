@@ -1,0 +1,16 @@
+{##
+ # Product variant title
+ #}
+
+<div id="product_variant_title">
+  <ul>
+    <li>
+      <a href="{{ xurl('product', null, {'product_id': this.getProductVariant().product.id, 'page': 'variants'}) }}">{{ t('Variants list') }}</a> : {{ this.get('product').name }}
+    </li>
+    {% for v in this.getProductVariant().values %}
+      <li class="arrtibute">
+        <b>{{ v.attribute.name }}:</b> {{ v.asString() }}<span>,</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

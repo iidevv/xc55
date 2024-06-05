@@ -1,0 +1,9 @@
+{##
+ # Wishlists
+ #}
+
+{% if this.getWishlist(this.entity) %}
+  <a href="{{ xurl('wishlist', '', {'profile_id': this.entity.profile_id}) }}">{{ this.getWishlistCount(this.entity) }}</a>
+{% else %}
+  {{ t('n/a') }}
+{% endif %}

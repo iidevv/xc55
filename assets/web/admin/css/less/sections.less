@@ -1,0 +1,72 @@
+/**
+ * Sections styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+legend, .legend {
+  fieldset + fieldset &,
+  fieldset &.separated,
+  .settings-Environment fieldset:first-of-type & {
+    .section-divider();
+  }
+
+  > .help-block {
+    font-size: @font-size-base;
+    margin-bottom: 0;
+  }
+
+  border-bottom: none;
+  margin-bottom: 0;
+
+  h2.collapsible {
+    > i {
+      margin-left: @rhythmic-unit / 4;
+      font-size: @font-size-base;
+      color: @btn-default-color;
+      width: @rhythmic-unit;
+      height: @rhythmic-unit;
+      background: no-repeat url("data:image/svg+xml;utf8,<svg width='8' height='14' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M.804 14a.81.81 0 0 1-.568-.226.767.767 0 0 1-.236-.552c0-.207.085-.406.236-.552L6.07 7.002.236 1.332A.767.767 0 0 1 .03.58c.074-.27.29-.48.567-.552a.818.818 0 0 1 .775.202l6.393 6.22A.767.767 0 0 1 8 7.002a.767.767 0 0 1-.236.552l-6.393 6.22A.81.81 0 0 1 .804 14Z' fill='%232274a6'/></svg>") center;
+      background-size: auto;
+      transform-origin: center;
+      transform: rotateZ(90deg) translate3d(2px, 0px, 0);
+      &:before {
+        content: none;
+      }
+    }
+
+    &.collapsed {
+      > i {
+        transform: translate3d(0, 1px, 0);
+      }
+    }
+
+    > .help-wrapper {
+      display: inline-block;
+      margin-left: (@rhythmic-unit / 2);
+
+      .popover {
+        font-size: @font-size-base;
+      }
+    }
+  }
+}
+
+fieldset > div {
+  margin-bottom: @fieldset-vertical-margin;
+
+  &.two-column {
+    .flex-display();
+
+    & > * {
+      .flex(0 0 50%);
+    }
+  }
+
+  .table {
+    .separator {
+      .section-divider();
+    }
+  }
+}

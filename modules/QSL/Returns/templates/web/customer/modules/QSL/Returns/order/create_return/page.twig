@@ -1,0 +1,17 @@
+{##
+ # Create order return page
+ #}
+
+<ul class="links">
+  {{ widget_list('create_return.links') }}
+</ul>
+
+<div class="create-order-return-wrapper">
+  {% form 'QSL\\Returns\\View\\Form\\Customer\\Order\\CreateReturn' %}
+
+    <div class="return-box">
+      {{ widget_list('create_return.base') }}
+    </div>
+
+  {% endform %}
+</div>

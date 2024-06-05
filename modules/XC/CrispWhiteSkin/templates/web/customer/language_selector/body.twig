@@ -1,0 +1,16 @@
+{##
+ # Language selector
+ #}
+
+{% form '\\XC\\CrispWhiteSkin\\View\\Form\\LanguageSelector' %}
+  <div class="input-group">
+    {{ widget('XC\\CrispWhiteSkin\\View\\FormField\\Select\\LanguageSelector\\CustomerCountry', fieldName='country_code', style='country-code-selector', fieldId=this.getUniqueId('country_code')) }}
+  </div>
+
+  <div class="input-group">
+    {{ widget('XC\\CrispWhiteSkin\\View\\FormField\\Select\\LanguageSelector\\CustomerLanguage', fieldName='language', style='language-selector', fieldId=this.getUniqueId('language')) }}
+  </div>
+
+  {{ widget('XLite\\View\\Button\\Submit', label=t('Save'), style='regular-main-button submit') }}
+
+{% endform %}

@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace CDev\Sale\View\StickyPanel;
+
+use XLite\Core\Database;
+
+/**
+ * Sale discounts list sticky panel
+ */
+class SaleDiscounts extends \XLite\View\StickyPanel\ItemsListForm
+{
+    /**
+     * Define buttons widgets
+     *
+     * @return array
+     */
+    protected function defineButtons()
+    {
+        $list = parent::defineButtons();
+        $list['recalculateQD'] = $this->getRecalculateQDWidget();
+        if (!Database::getRepo('CDev\Sale\Model\SaleDiscount')->count()) {
+            unset($list['save']);
+        }
+        return $list;
+    }
+
+    protected function getModuleSettingURL(): string
+    {
+        return parent::getModuleSettingURL() ?: $this->buildURL('module', '', ['moduleId' => 'CDev-Sale']);
+    }
+
+    /**
+     * Get "recalculateQD" widget
+     *
+     * @return \XLite\View\AView
+     */
+    protected function getRecalculateQDWidget()
+    {
+        return $this->getWidget(
+            [
+                'template' => 'modules/CDev/Sale/recalculate_qd_link/body.twig',
+                'link'     => $this->buildURL('cache_management')
+            ]
+        );
+    }
+}

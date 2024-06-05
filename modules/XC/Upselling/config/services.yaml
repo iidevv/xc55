@@ -1,0 +1,49 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+api_platform:
+    resource_class_directories:
+        - '%kernel.project_dir%/var/run/classes/XC/Upselling/Model'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    # /product/{product_id}/related_products
+    XC\Upselling\API\Endpoint\ProductUpsellingProduct\Transformer\OutputTransformerInterface: '@XC\Upselling\API\Endpoint\ProductUpsellingProduct\Transformer\OutputTransformer'
+    XC\Upselling\API\Endpoint\ProductUpsellingProduct\Transformer\OutputTransformer: ~
+    XC\Upselling\API\Endpoint\ProductUpsellingProduct\Transformer\InputTransformerInterface: '@XC\Upselling\API\Endpoint\ProductUpsellingProduct\Transformer\InputTransformer'
+    XC\Upselling\API\Endpoint\ProductUpsellingProduct\Transformer\InputTransformer: ~
+
+    XC\Upselling\API\Endpoint\ProductUpsellingProduct\SubIriConverter\SubIriConverter:
+        tags: [ !php/const XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\SubIriConverter\SubIriFromItemConverterInterface::SUB_IRI_FROM_ITEM_CONVERTER_TAG ]
+
+    XC\Upselling\API\Endpoint\ProductUpsellingProduct\DataProvider\CollectionDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.collection_data_provider'
+            $repository: '@xcart.repository.product'
+
+    XC\Upselling\API\Endpoint\ProductUpsellingProduct\DataProvider\ItemDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.item_data_provider'
+            $repository: '@xcart.repository.product'
+
+    xcart.api.xc.upselling.product_upselling_product.controller:
+        class: XC\Upselling\Controller\API\ProductUpsellingProduct\Post
+        arguments:
+            $repository: '@xcart.repository.product'
+
+    XC\Upselling\API\OpenApiTagsRepositoryDecorator:
+        decorates: XLite\API\OpenApiTagsRepository
+
+    xcart.api.xc.upselling.product_upselling_product.sub_extension:
+        class: XC\Upselling\API\Endpoint\ProductUpsellingProduct\SubExtension\SubExtension
+        tags: [ !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG ]
+    XC\Upselling\LifetimeHook\Hook:
+        tags:
+            - { name: xcart.lifetime-hook, moduleId: XC-Upselling, type: upgrade, method: onUpgradeTo5502, version: '5.5.0.2' }

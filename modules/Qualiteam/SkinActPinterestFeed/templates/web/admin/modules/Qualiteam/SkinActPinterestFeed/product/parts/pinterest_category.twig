@@ -1,0 +1,7 @@
+{# @ListChild (list="product.feedCategories.parts", weight="310") #}
+<li class="input">
+  <div class="table-label">{{ t('SkinActPinterestFeed pinterest') }}</div>
+  <div class="table-value">
+    {{ widget('\\Qualiteam\\SkinActPinterestFeed\\View\\FormField\\Select\\PinterestCategory', fieldName=this.getNamePostedData('pinterest_id'), fieldOnly='true', value=this.get('product').getPinterestCategory()) }}
+  </div>
+</li>

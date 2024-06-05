@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Fixes (1)
+2022-09-05 - [Bug] Special offers. An offer was not working if the cart contained products from more than one vendors. Fixed. #XCB-1609 #QSL-SpecialOffersBuyXGetY #QSL-SpecialOffersSpendXGetY #QSL-SpecialOffersBase
+

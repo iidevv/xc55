@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2022-12-01 - [Bug] The role with the "Manage vendor's catalog" permission was working incorrectly. Fixed. #XCB-1921 #QSL-AbandonedCartReminder #XC-MultiVendor
+

@@ -1,0 +1,7 @@
+Version 5.5.0.2
+
+Fixes (3)
+2022-09-05 - [Bug] The defineWidgetParams method signature was unified. #XCB-1700 #CDev-Core #QSL-ShopByBrand #XC-ThemeTweaker
+2022-08-29 - [Bug] Moving any block to the footer was breaking the layout. Fixed. #XCB-1651 #XC-ThemeTweaker
+2022-09-02 - [Bug] Banner & ThemeTweaker. The setting for categories was working incorrectly. Fixed. #XCB-1605 #XC-ThemeTweaker
+

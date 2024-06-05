@@ -1,0 +1,30 @@
+{
+  "name": "xcart-watcher",
+  "version": "1.0.0",
+  "description": "X-Cart assets watcher tool",
+  "author": "Dmitry Phillippov <phill@x-cart.com>",
+  "private": true,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "installAssets": "gulp install --silent",
+    "minify": "gulp minify --silent",
+    "watch": "gulp watch --silent"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify-es": "^3.0.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "dotenv": "^16.0.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-run": "^1.7.1",
+    "js-yaml": "^4.1.0"
+  }
+}

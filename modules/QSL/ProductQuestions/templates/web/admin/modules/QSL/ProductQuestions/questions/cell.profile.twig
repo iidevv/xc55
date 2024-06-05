@@ -1,0 +1,18 @@
+<div class="profile-anonymous-icon" >
+    {% if not this.entity.profile %}
+      <img src="{{ asset('images/anonymous.svg') }}" alt="{{ t('Guest visitor') }}" class="anonymous" title="{{ t('Guest visitor') }}" />
+    {% endif %}
+</div>
+
+<div class="profile-box">
+    {% if this.entity.profile %}
+      <a href="{{ xurl('profile', '', {'profile_id': this.entity.profile.getProfileId()}) }}">{{ this.entity.getName() }}</a>
+    {% endif %}
+    {% if not this.entity.profile %}
+      <span>{{ this.entity.getName() }}</span>
+    {% endif %}
+    <span class="profile-email">{% if this.entity.getEmail() %}<a href="mailto:{{ this.entity.getEmail() }}">{{ this.entity.getEmail() }}</a>{% else %}n/a{% endif %}</span>
+    {% if this.column.noWrap %}
+      <img src="{{ asset('images/spacer.gif') }}" class="right-fade" alt="" />
+    {% endif %}
+</div>

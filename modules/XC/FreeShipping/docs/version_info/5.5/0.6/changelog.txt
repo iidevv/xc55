@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Fixes (1)
+2023-04-10 - [Bug] Added an "Estimate shipping cost" calculator at checkout for guest users. [anonymous users] #XCB-2182 #XC-FreeShipping #XC-MultiVendor
+

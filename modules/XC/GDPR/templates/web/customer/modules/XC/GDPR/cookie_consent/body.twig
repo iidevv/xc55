@@ -1,0 +1,11 @@
+{##
+ # Checkbox template
+ #}
+
+<div id="cookie-consent-popup">
+  <div class="note">{{ this.getConsentNote()|raw }}</div>
+  <div class="buttons">
+    {{ widget('XLite\\View\\Button\\Regular', label=t('cookie-consent-all'), id='consent_all') }}
+    {{ widget('XLite\\View\\Button\\Regular', label=t('cookie-consent-default'), id='consent_default') }}
+  </div>
+</div>

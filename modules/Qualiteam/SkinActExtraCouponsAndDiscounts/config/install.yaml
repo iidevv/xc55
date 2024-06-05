@@ -1,0 +1,36 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActExtraCouponsAndDiscounts extra coupons and discounts", translations: [{ code: en, label: "Extra coupons and discounts" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts tab title", translations: [{ code: en, label: "Tab title" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts stamp text line 1 field", translations: [{ code: en, label: "Stamp text line 1" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts stamp text line 2 field", translations: [{ code: en, label: "Stamp text line 2" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts orange text line field", translations: [{ code: en, label: "Orange text line (code)" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts discount type field", translations: [{ code: en, label: "Discount type" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts discount amount field", translations: [{ code: en, label: "Discount amount" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts description field", translations: [{ code: en, label: "Description" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts additional content field", translations: [{ code: en, label: "Additional content" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts coupons", translations: [{ code: en, label: "Coupons" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts coupon code", translations: [{ code: en, label: "Coupon code" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts discount", translations: [{ code: en, label: "Discount" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts new discount coupon", translations: [{ code: en, label: "New discount coupon" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts coupons blank", translations: [{ code: en, label: "Coupons and discounts catalog is empty." }] }
+  - { name: "SkinActExtraCouponsAndDiscounts update coupon", translations: [{ code: en, label: "Update" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts create coupon", translations: [{ code: en, label: "Create" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts info", translations: [{ code: en, label: "Info" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts new coupon", translations: [{ code: en, label: "New coupon" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts the length of X field must be less than Y", translations: [{ code: en, label: "The length of the {{name}} field must be less than {{max}}" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts X code is already used for other coupon, please specify a different code", translations: [{ code: en, label: "The code \"{{code}}\" is already used for another coupon. Please choose a different code." }] }
+  - { name: "SkinActExtraCouponsAndDiscounts percent", translations: [{ code: en, label: "Percent" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts X off", translations: [{ code: en, label: "{{currency}} off" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts coupon has been created", translations: [{ code: en, label: "Coupon has been created" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts coupon has been updated", translations: [{ code: en, label: "Coupon has been updated" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts X length must be less then Y", translations: [{ code: en, label: "{{field}} length must be less then {{length}}" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts this coupon code already exists", translations: [{ code: en, label: "This coupon code already exists" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts this field is required", translations: [{ code: en, label: "This field is required" }] }
+  - { name: "SkinActExtraCouponsAndDiscounts sorry the coupon you entered is not valid for your membership level contact the administrator", translations: [{ code: en, label: "Sorry, the coupon you entered is not valid for your membership level. Contact the administrator" }] }

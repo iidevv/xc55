@@ -1,0 +1,14 @@
+<div class="reward-points-statistics">
+    <h2>{{ t('LOYALTY PROGRAM STATISTICS: overview') }}</h2>
+    <p>{{ t('LOYALTY PROGRAM STATISTICS: redeemed X points, given Y discount.', {'points': this.getTotalRedeemedPoints(), 'discount': this.formatPriceLP(this.getTotalRedeemDiscount(), this.getCurrency())})|raw }}</p>
+    <p>{{ t('LOYALTY PROGRAM STATISTICS: X customers have Y unused points.', {'customers': this.getNumberOfCustomers(), 'points': this.getUnusedPoints()})|raw }}</p>
+    <p></p>
+</div>
+
+<div class="reward-points-params">
+    <h2>{{ t('LOYALTY PROGRAM STATISTICS: settings') }}</h2>
+    <p>{{ t('Customers earn X reward point for every Y spent.', {'points': 1, 'spent': this.formatPrice(this.getEarnRate(), this.getCurrency())}) }}</p>
+    <p>{{ t('Customers get X discount for every redeemed reward point.', {'discount': this.formatPriceLP(this.getRedeemRate(), this.getCurrency())}) }}</p>
+    <p>{{ t('The maximum discount that a customer can get for an order by redeeming his reward points is X.', {'discount': this.getMaxAllowedDiscount()}) }}</p>
+    <p class="change-points-settings"><a href="{{ this.buildSettingsUrl() }}">{{ t('Change loyalty program settings') }}</a></p>
+</div>

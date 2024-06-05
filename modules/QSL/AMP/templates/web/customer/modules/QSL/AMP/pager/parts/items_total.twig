@@ -1,0 +1,12 @@
+{##
+ # Products list items total
+ #
+ # @ListChild (list="amp.pager.itemsTotal", weight="20")
+ #}
+
+{% if this.isItemsPerPageVisible() %}
+  <div class="pager-items-total">
+    {{ t('Items') }}:
+    {{ t('BEGIN - END of TOTAL', {'begin': this.getBeginRecordNumber(), 'end': this.getEndRecordNumber(), 'total': this.getItemsTotal()})|raw }}
+  </div>
+{% endif %}

@@ -1,0 +1,46 @@
+{##
+ # Layout editor panel
+ #}
+
+<xlite-webmaster-mode
+        inline-template
+        current-interface="{{ this.getInterface() }}"
+        current-zone="{{ this.getZone() }}"
+        tree-key="{{ this.getJstreeCacheKey() }}">
+  <div id="webmaster-mode-panel">
+    <div class="webmaster-mode-sidebar themetweaker-sidebar">
+      <div class="webmaster-mode-header sidebar-main-header">
+        <span class="go-to-layout-editor" @click="switchTab('layout_editor')">{{ this.displaySVGImage('modules/XC/ThemeTweaker/themetweaker_panel/icons/back.svg') }}</span>
+        <span>{{ t('Template Editor') }}</span>
+      </div>
+      <div class="themetweaker-sidebar-content">
+        <p>
+          {{ this.t('This tool allows you to edit Templates. Read more about using Template Editor.')|raw }}
+        </p>
+        <div>
+          <div class="themetweaker-action themetweaker-action_switcher">
+            <label>{{ this.t('Pick templates from page') }}</label>
+            {{ widget('XLite\\View\\FormField\\Input\\Checkbox\\OnOff',
+              fieldOnly=true,
+              attributes={
+                ":checked": "switcher",
+                '@change': 'onSwitchChange',
+                'data-panel-switcher': 'data-panel-switcher'}) }}
+          </div>
+        </div>
+        <div class="webmaster-mode-tree" :class="treeClasses">
+          <div id="themeTweaker_wrapper" style="display: none;" data-editor-wrapper>
+            <div class="themeTweaker-control-panel" data-editor-control-panel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="webmaster-mode-section themetweaker-section">
+      <div class="webmaster-mode-code" data-editor-code>
+        {{ widget('XC\\ThemeTweaker\\View\\ThemeTweaker\\TemplateCode') }}
+      </div>
+      {% include 'modules/XC/ThemeTweaker/themetweaker/webmaster_mode/confirm_switch_modal.twig' %}
+    </div>
+  </div>
+</xlite-webmaster-mode>

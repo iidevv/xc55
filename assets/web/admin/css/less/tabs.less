@@ -1,0 +1,278 @@
+/**
+ * Page tabs
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+div.page-tabs,
+.ui-widget-content div.page-tabs {
+  .clearfix;
+  border-bottom: @border-base solid @tab-border-color;
+  position: relative;
+
+  > ul {
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+
+    li {
+      display: inline-block;
+      position: relative;
+
+      &.nocapitalize {
+
+        a {
+          text-transform: none;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        ul.subtabs {
+          right: 0;
+          left: auto;
+        }
+      }
+
+      a {
+        display: @tab-link-display;
+        text-decoration: none;
+        color: @tab-color;
+        border-color: transparent;
+        text-transform: capitalize;
+        padding: (0.5 * @rhythmic-unit) @rhythmic-unit;
+        line-height: @line-height-small;
+        font-size: @font-size-small;
+      }
+
+      a:hover {
+        background-color: @tab-hover-bg-color;
+        border-color: transparent;
+      }
+
+      a:focus {
+        background-color: transparent;
+        border-color: transparent;
+      }
+
+      &:hover {
+        ul.subtabs {
+          display: block;
+        }
+      }
+
+      &.tab-current,
+      &.tab.active {
+        border-bottom: @tab-active-border-color solid @tab-active-border-width;
+
+        > a {
+          padding-bottom: 0.5 * @rhythmic-unit - @tab-active-border-width;
+          font-weight: @font-extra-bold;
+          color: @tab-active-color;
+          border-color: transparent;
+        }
+      }
+
+      ul.subtabs {
+        .dropdown-menu;
+        border-top: @border-base solid transparent; // make parent border visible
+
+        li.subtab {
+          display: block;
+          line-height: 16px;
+          padding: 0;
+          width: 100%;
+
+          a {
+            font-weight: normal;
+            margin: 0;
+            width: 100%;
+            border: none;
+          }
+
+          &.selected {
+            a {
+              font-weight: @font-extra-bold;
+            }
+          }
+        }
+      }
+    }
+
+    > li {
+      line-height: @line-height-base;
+      margin-bottom: -@border-base;
+
+      > a {
+        padding: (0.25 * @rhythmic-unit) @rhythmic-unit (0.25 * @rhythmic-unit - @border-base);
+        line-height: @line-height-base;
+        font-size: @font-size-base;
+      }
+
+      &.tab-current,
+      &.tab.active {
+        > a {
+          padding-bottom: 0.25 * @rhythmic-unit - @tab-active-border-width;
+        }
+
+        &.has-subtabs {
+          ul.subtabs {
+            margin-top: @tab-active-border-width;
+          }
+        }
+      }
+
+      &.has-subtabs {
+        cursor: default;
+
+        > a {
+          padding-right: 1.75 * @rhythmic-unit;
+        }
+
+        .fa.fa-angle-down {
+          position: absolute;
+          right: @rhythmic-unit;
+          top: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: (0.25 * @rhythmic-unit) 0 (0.25 * @rhythmic-unit - @border-base);
+          line-height: @line-height-base;
+        }
+      }
+    }
+  }
+}
+
+.ie11 div.tab-content {
+  max-width: 1200px;
+}
+
+.page-tabs + .tab-content {
+  margin-top: @tab-content-vertical-margin;
+}
+
+.tabbed-content-wrapper {
+  margin-top: @rhythmic-unit;
+
+  .itemslist-model-shipping-methods {
+    position: relative;
+  }
+}
+
+.tab-content {
+  h2 {
+    text-transform: capitalize;
+    margin-top: 0;
+  }
+
+  .target-sitemap &,
+  .target-seo-homepage-settings &,
+  .settings-s-e-osettings &,
+  .target-tax-classes &,
+  .target-sales-tax & {
+    h2 {
+      margin-bottom: .25 * @rhythmic-unit;
+    }
+
+    li.first + li {
+      margin-top: 2 * @rhythmic-unit;
+    }
+  }
+
+  .target-sitemap & {
+    li.first + li,
+    li.first {
+      margin-top: @rhythmic-unit;
+    }
+
+    .top-decr {
+      margin-bottom: 2 * @rhythmic-unit;
+    }
+  }
+
+  .no-attributes,
+  .attributes {
+    h2 {
+      margin-bottom: .25 * @rhythmic-unit;
+    }
+  }
+
+  .tabs2-tabs-container {
+    .tab-content {
+      margin-top: 0;
+    }
+  }
+
+  .subcontent {
+    h3 {
+      margin-top: 0;
+    }
+
+    > div {
+      + div {
+        margin-top: 3 * @rhythmic-unit;
+      }
+    }
+  }
+
+  .items-list {
+    .empty-table-description {
+      padding-top: 0;
+    }
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* Tabs: Second level KILL IT WITH FIRE */
+
+.tabs2-page-tabs {
+  margin-top: -@rhythmic-unit;
+  margin-bottom: (2 * @rhythmic-unit);
+
+  ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+
+    li {
+      display: block;
+      text-decoration: none;
+      text-transform: capitalize;
+      padding-left: @rhythmic-unit;
+
+      &.tab-current {
+        color: @tab-active-color;
+        font-weight: @font-extra-bold;
+
+        *:hover {
+          cursor: default;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        border-bottom: 1px dashed;
+      }
+    }
+  }
+}
+
+div.list-after-tabs {
+  position: absolute;
+  top: -30px;
+  right: 0px;
+  display: inline-block;
+}
+
+.settings-homepage {
+  .header-text {
+    margin-bottom: .25 * @rhythmic-unit;
+  }
+}

@@ -1,0 +1,28 @@
+{% set methods = this.getKlarnaPaymentMethods() %}
+
+<div class="klarna-session">
+  {{ this.displayCommentedData(this.getCommentedData()) }}
+</div>
+
+<div class="klarna-payment checkout-klarna-payment">
+    <div class="klarna-payment__icon">
+      <img src="{{ methods[0].asset_urls.standard }}"  />
+    </div>
+
+  {% if methods|length > 1 %}
+  {{ widget('\\Qualiteam\\SkinActKlarna\\View\\FormField\\Select\\KlarnaCategories',
+    value=methods[0].name,
+    fieldName='klarna-methods',
+    klarnaMethods=methods,
+    fieldId='klarna-methods'
+  ) }}
+  {% endif %}
+
+    <div class="klarna-payment__description">
+      {{ methods[0].name }}
+    </div>
+
+  {% for key, klarna in methods %}
+  <div class="klarna-payment__container-{{ klarna.identifier }}"></div>
+  {% endfor %}
+</div>

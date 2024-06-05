@@ -1,0 +1,57 @@
+/**
+ * Top license notice block
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+#before-header {
+  position: relative;
+  z-index: 30;
+
+  .header-trial-notice {
+    .flex-display();
+    .align-items(center);
+    .justify-content(center);
+
+    width: 100%;
+    height: 3 * @rhythmic-unit;
+    background-color: #3465a3;
+    color: @color-white;
+
+    .message {
+      margin-right: @rhythmic-unit;
+    }
+
+    .auto-display {
+      display: none;
+    }
+
+    a {
+      color: @color-white;
+      font-weight: @font-bold;
+      text-decoration: underline;
+
+      &:hover {
+        color: #6dc9ff;
+      }
+    }
+
+    button {
+      border-color: @color-white;
+      background-color: #3465a3;
+
+      span {
+        color: @color-white;
+      }
+
+      &:hover {
+        background-color: @color-white;
+
+        span {
+          color: #3465a3;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{##
+ # Ajax categories
+ #}
+
+<ul class="flyout-menu sublevel">
+  {% for idx, _category in this.getCategories(this.getCategoryId()) %}
+    <li {{ this.displayItemClass(idx, loop.length, _category)|raw }}>
+      {{ widget(template=this.getDir() ~ "parts/category.link.twig", _category=_category, isShowTriangle=this.isShowTriangle() and _category.hasSubcategories) }}
+    </li>
+  {% endfor %}
+</ul>

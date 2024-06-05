@@ -1,0 +1,12 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: 'itemslist.admin.coupon.blank', translations: [{ code: en, label: '<p>There are currently no coupons. Information on the use of coupons is available <a target="_blank" href="https://support.x-cart.com/en/articles/4909683-discount-coupons">here</a>.</p>' },{ code: ru, label: '<p>В настоящее время купонов нет. Об использовании купонов можно прочесть <a target="_blank" href="https://support.x-cart.com/en/articles/4909683-discount-coupons">здесь</a>.</p>' }] }
+
+XLite\Model\Role\Permission:
+  - { code: manage coupons, section: Coupons, module: CDev\Coupons }

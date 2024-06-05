@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2023-03-14 - [Bug] Incorrect behavior of the sticky panel Save button on the static page creation page. Fixed. #XCB-2063 #XC-FroalaEditor
+

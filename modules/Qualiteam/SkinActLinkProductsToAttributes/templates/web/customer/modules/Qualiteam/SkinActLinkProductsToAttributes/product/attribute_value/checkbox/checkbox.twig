@@ -1,0 +1,30 @@
+{# #
+ # Attribute value (Select)
+#}
+
+{% if this.hasAvailableLinkedProducts() %}
+  {% if this.getLinkedProductImage() %}
+    <div class="attribute-with-linked-products__image{% if not this.isCheckedValue() %} disabled{% endif %}">
+      {{ widget('\\XLite\\View\\Image', image=this.getLinkedProductImage(), maxWidth='56', maxHeight='65', centerImage='1') }}
+    </div>
+  {% endif %}
+
+  <label class="checkbox-label {% if this.attrValues.1.defaultValue %} checked{% endif %}">
+    <div>
+      <input type="hidden" name="{{ this.getName() }}" value="{{ this.attrValues.0.id }}"/>
+      <input type="checkbox" name="{{ this.getName() }}" data-attribute-id="{{ this.attribute.id }}"
+             value="{{ this.attrValues.1.id }}" {% if this.isCheckedValue() %} checked="checked" {% endif %}
+             data-unchecked="{{ this.attrValues.0.id }}"/>
+    </div>
+    {{ this.getTitle() }}{{ this.getModifierTitle()|raw }}
+  </label>
+
+  {% if this.getLinkedProduct() %}
+    <div class="attribute-with-linked-products__qty" data-product-id="{{ this.getProduct().getProductId() }}"
+         data-attribute-id="{{ this.attribute.id }}">
+      {{ widget('\\Qualiteam\\SkinActLinkProductsToAttributes\\View\\Product\\AttributeQuantityBox', fieldName='linked_product_amount['~ this.attribute.id ~']', fieldValue=this.getLinkedProductQty(), product=this.getLinkedProduct(), parent_product=this.getProduct() ) }}
+    </div>
+  {% endif %}
+{% else %}
+  <input type="hidden" name="{{ this.getName() }}" value="{{ this.attrValues.0.id }}"/>
+{% endif %}

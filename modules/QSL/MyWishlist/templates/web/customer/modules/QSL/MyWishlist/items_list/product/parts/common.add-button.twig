@@ -1,0 +1,7 @@
+{##
+ #
+ # The template is added to required lists via QSL\MyWishlist\Main::moveTemplatesInLists()
+ #}
+{% if this.product %}
+{{ widget('\\QSL\\MyWishlist\\View\\CommonAddButton', productId=this.get('product').getProductId()) }}
+{% endif %}

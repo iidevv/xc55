@@ -1,0 +1,4 @@
+Version 5.5.0.2
+
+Improvements (1)
+2022-11-08 - [Story] Adapted to CDN change. #CLS-25

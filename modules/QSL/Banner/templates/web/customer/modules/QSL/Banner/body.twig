@@ -1,0 +1,61 @@
+{##
+# Banner box QSL\Banner\View\Customer\BannerBox
+#}
+
+<div
+{% for k, val in this.getBannerInfo() %}
+{{ k }}="{{ val }}"
+{% endfor %}
+>
+    {% for i, item in this.getBannerData() %}
+        <div class="banner_item">
+            {% if item.getEventCell() == 'I' %}
+                {% if item.maintext or item.addtext or item.getActionButton() %}
+                    <div class="backgroundImage">
+                        {% if item.link and not item.getActionButton() %}<a href="{{ item.link }}" title="{{ item.image.alt }}">{% else %}<div class="bs-fix-div">{% endif %}
+                        {% if item.getImage() %}
+                            {{ widget('\\XLite\\View\\Image', image=item.getImage(), id='banner_image_' ~ item.id, alt=item.image.alt, centerImage='1') }}
+                        {% endif %}
+                        <div class="textContainer">
+                            {% if item.maintext != ''%}
+                                <div class="mainText"{% if item.maintext_color != '' %} style="color: #{{ item.maintext_color }};"{% endif %}>
+                                    {{ item.maintext }}
+                                </div>
+                            {% endif %}
+                            {% if item.addtext != ''%}
+                                <div class="addText"{% if item.addtext_color != '' %} style="color: #{{ item.addtext_color }};"{% endif %}>
+                                    {{ item.addtext }}
+                                </div>
+                            {% endif %}
+                            {% if item.getActionButton() %}
+                                <div class="action-button">
+                                    {{ widget('XLite\\View\\Button\\Link', location=item.getActionButtonLink(), label=item.getActionButton(), style="btn regular-button regular-main-button submit") }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        {% if item.link and not item.getActionButton() %}</a>{% else %}</div>{% endif %}
+                    </div>
+                {% else %}
+                    {% if item.link %}<a href="{{ item.link }}" title="{{ item.image.alt }}">{% else %}<span>{% endif %}
+
+                    {% if item.getImage() %}
+                        {{ widget('\\XLite\\View\\Image', image=item.getImage(), id='banner_image_' ~ item.id, alt=item.image.alt, centerImage='1') }}
+                    {% endif %}
+                    {% if item.link %}</a>{% else %}</span>{% endif %}
+                {% endif %}
+
+            {% else %}
+                <div id="content_{{ item.getContentId() }}" class="banner_content fr-view">{{ item.getContent()|raw }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% if this.isMoreThanOneBanner() %}
+    {% if this.banner.getArrows() %}
+        <a class="prev_arrow fa fa-angle-left" id="banner_prev{{ this.banner.getId() }}" href="#"></a>
+        <a class="next_arrow fa fa-angle-right" id="banner_next{{ this.banner.getId() }}" href="#"></a>
+    {% endif %}
+    {% if this.banner.getNavigation() %}
+        <div class="banner-system-navigation" id="navigation_{{ this.banner.getId() }}"></div>
+    {% endif %}
+{% endif %}

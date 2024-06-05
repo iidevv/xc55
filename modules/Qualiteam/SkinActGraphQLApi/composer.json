@@ -1,0 +1,12 @@
+{
+
+  "autoload": {
+    "psr-4": {
+      "XcartGraphqlApi\\": "lib/xcart-graphql-api/src/",
+      "GraphQL\\": "vendor/webonyx/graphql-php/src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}

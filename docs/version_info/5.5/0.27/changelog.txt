@@ -1,0 +1,5 @@
+Version 5.5.0.27
+
+Fixes (1)
+2023-11-14 - [Bug] robots.txt was missing in document root after a 5.4-5.5 update. Fixed. #XCB-2865 #CDev-Core
+

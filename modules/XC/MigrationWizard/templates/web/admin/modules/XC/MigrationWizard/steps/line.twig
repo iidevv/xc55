@@ -1,0 +1,23 @@
+{##
+ # Migration Wizard - Steps line
+ #}
+<div class="wizard-section steps clearfix length-{{ this.getSteps()|length }}">
+    {% for step in this.getSteps() %}
+        <div class="step
+             {{ step }}-step
+             {% if not this.isEnabledStep(step) %}disabled{% endif %}
+             {% if this.hasLeftArrow(step) %}left-arrow{% endif %}
+             {% if this.hasRightArrow(step) %}right-arrow{% endif %}
+             ">
+            <div class="step-title">
+                {% if this.hasLeftArrow(step) %}
+                    <img src="{{ asset('images/spacer.gif') }}" class="arrow left" alt=""/>
+                {% endif %}
+                <span class="text">{{ loop.index }}. {{ this.getLineTitle(step) }}</span>
+                {% if this.hasRightArrow(step) %}
+                    <img src="{{ asset('images/spacer.gif') }}" class="arrow right" alt=""/>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

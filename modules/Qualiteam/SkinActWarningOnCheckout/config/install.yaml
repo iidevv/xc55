@@ -1,0 +1,20 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: url_warning
+    category: Qualiteam\SkinActWarningOnCheckout
+    type: text
+    value: 'https://www.spaandequipment.com/CALIFORNIA-PROPOSITION-65.html'
+    orderby: 100
+    translations:
+      - code: en
+        option_name: 'SkinActWarningOnCheckout prop 65 warning url'
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActWarningOnCheckout prop 65 warning for california residents", translations: [ { code: en, label: "Prop. 65 Warning for California residents: This product or products can expose you to chemicals which is known to the state of California to cause cancer, birth defects, or other reproductive harm. For more information, please, <a href=\"{{URL}}\" target=\"_blank\">click here</a>" } ] }
+  - { name: "SkinActWarningOnCheckout prop 65 warning url", translations: [ { code: en, label: "URL for p.65 warning" } ] }

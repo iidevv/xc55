@@ -1,0 +1,15 @@
+<h1>
+    {{ t('Conversation') }}
+    {% if this.getConversation().getAuthor() %}
+      (<a href="{{ xurl('profile', '', {profile_id:this.getConversation().getAuthor().getProfileId()}) }}" target="_blank">{{ this.getConversation().getAuthor().getName() }}</a>)
+    {% endif %}
+</h1>
+<div class="messages-wrapper">
+    <div class="messages-block">
+        {% include 'modules/XC/VendorMessages/page/conversation.twig' %}
+    </div>
+
+    <div class="orders-list-block">
+        {{ widget('Qualiteam\\SkinActOrderMessaging\\View\\Messages\\Admin\\CustomerOrders') }}
+    </div>
+</div>

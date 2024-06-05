@@ -1,0 +1,57 @@
+api_platform:
+    resource_class_directories:
+        - '%kernel.project_dir%/var/run/classes/CDev/Wholesale/Module/XC/ProductVariants/Model'
+
+doctrine:
+    orm:
+        mappings:
+            CDev\Wholesale\Module\XC\ProductVariants:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/Wholesale/Module/XC/ProductVariants/Model'
+                prefix: CDev\Wholesale\Module\XC\ProductVariants\Model
+                alias: CDev\Wholesale\Module\XC\ProductVariants
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    # /products/{product_id}/variants/{variant_id}/wholesale_prices
+    CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\Transformer\OutputTransformerInterface: '@CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\Transformer\OutputTransformer'
+    CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\Transformer\OutputTransformer: ~
+    CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\Transformer\InputTransformerInterface: '@CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\Transformer\InputTransformer'
+    CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\Transformer\InputTransformer: ~
+
+    CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\SubIriConverter\SubIriConverter:
+        tags: [ !php/const XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\SubIriConverter\SubIriFromItemConverterInterface::SUB_IRI_FROM_ITEM_CONVERTER_TAG ]
+
+    xcart.repository.product_variant:
+        class: XC\ProductVariants\Model\Repo\ProductVariant
+        factory: [ '@doctrine.orm.default_entity_manager', getRepository ]
+        arguments:
+            - XC\ProductVariants\Model\ProductVariant
+
+    CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\DataProvider\CollectionDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.collection_data_provider'
+            $productRepository: '@xcart.repository.product'
+            $productVariantRepository: '@xcart.repository.product_variant'
+
+    CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\DataProvider\ItemDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.item_data_provider'
+            $repository: '@xcart.repository.product'
+
+    xcart.api.cdev.wholesale.product_variant_wholesale_price.controller:
+        class: CDev\Wholesale\Module\XC\ProductVariants\Controller\API\ProductVariantWholesalePrice\Post
+        arguments:
+            $repository: '@xcart.repository.product_variant'
+
+    CDev\Wholesale\Module\XC\ProductVariants\API\OpenApiTagsRepositoryDecorator:
+        decorates: XLite\API\OpenApiTagsRepository
+
+    xcart.api.cdev.wholesale.product_variant_wholesale_price.sub_extension:
+        class: CDev\Wholesale\Module\XC\ProductVariants\API\Endpoint\ProductVariantWholesalePrice\SubExtension\SubExtension
+        tags: [ !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG ]

@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Improvements (1)
+2022-08-11 - [Task] CamelCase and PascalCase line conversion code refactoring. #XCB-402 #CDev-Core #CDev-SimpleCMS #CDev-Paypal #QSL-AbandonedCartReminder #QSL-ProductFeeds #QSL-Make #XC-ProductVariants #XC-FacebookMarketing #XC-BulkEditing #XC-OrdersImport #XC-SimplifyCommerce #XC-MultiVendor #XC-Onboarding #XC-CanadaPost #XC-Stripe #QSL-EBay
+

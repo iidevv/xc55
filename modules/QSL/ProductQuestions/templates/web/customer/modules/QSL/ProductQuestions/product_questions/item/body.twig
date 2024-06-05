@@ -1,0 +1,7 @@
+{##
+ # @ListChild (list="qsl.productquestions.list.item", weight="100")
+ #}
+
+<div class="product-question {% if this.question.isReplied() %}product-question-replied{% else %}product-question-moderated{% endif %}">
+    {{ widget_list('qsl.productquestions.list.item.parts', question=this.question) }}
+</div>

@@ -1,0 +1,17 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: renewal_frequency
+    category: XC\GoogleFeed
+    translations:
+      - code: en
+        option_name: 'Frequency of Product Feed renewal'
+        option_comment: 'You should configure X-Cart to run <a href="https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks" target="_blank">scheduled cron tasks</a> to enable periodic feed updates.'
+      - code: ru
+        option_name: 'Частота обновления выгрузки товаров'
+        option_comment: 'Чтобы автоматизировать обновление списка товаров, необходимо настроить <a href="https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks" target="_blank">выполнение запланированных задач</a> на сервере.'

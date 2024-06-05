@@ -1,0 +1,8 @@
+{##
+ # Average rating value
+ #}
+{% form '\\XC\\Reviews\\View\\Form\\AverageRating' with {product_id: this.get('product').product_id, target_widget: '\\\\XLite\\\\Module\\\\XC\\\\Reviews\\\\View\\\\Customer\\\\ReviewsPage\\\\AverageRating'} %}
+<div class="product-average-rating">
+  {{ widget_list('reviews.page.rating') }}
+</div>
+{% endform %}

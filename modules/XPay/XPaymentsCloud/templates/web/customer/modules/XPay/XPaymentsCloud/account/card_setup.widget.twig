@@ -1,0 +1,41 @@
+{##
+ # Connect widget for saving card
+ #
+ #}
+<div id="xpayments-iframe-container"></div>
+<script>
+  var xpaymentsWidgetConfig = {
+    account: '{{ this.getPaymentMethod().getSetting('account') }}',
+    widgetKey: '{{ this.getPaymentMethod().getSetting('widget_key') }}',
+    container: '#xpayments-iframe-container',
+    form: 'form.card-setup',
+    showSaveCard: false,
+    enableWallets: false,
+    order: {
+      tokenizeCard: true,
+      currency: '{{ this.getCurrency().getCode() }}'
+    },
+    language: '{{ this.getCurrentLanguage().getCode() }}',
+    company: {
+      name: '{{ this.get('config').Company.company_name }}',
+      countryCode: '{{ this.get('config').Company.location_country }}',
+    },
+    paypal: {{ this.getPaymentMethod().getPayPalConfig()|json_encode(constant('JSON_PRETTY_PRINT'))|raw }},
+  }
+  var xpaymentsWidgetWrapperConfig = {
+    tokenizeCardError: '{{ t('Sorry, card setup is not available currently.') }}',
+  }
+
+  xcart.bind('popup.postprocess', function() {
+    var wrapper = window.xpaymentsWidgetInstance
+
+    if (
+      'undefined' !== typeof xpaymentsWidgetConfig
+      && !wrapper.initialized
+    ) {
+      wrapper.initialize(xpaymentsWidgetConfig, xpaymentsWidgetWrapperConfig)
+    }
+
+    wrapper.load();
+  });
+</script>

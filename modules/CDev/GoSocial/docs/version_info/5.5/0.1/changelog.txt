@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Fixes (1)
+2022-07-21 - [Bug] Fixed the "Tips" block position on the SEO Setting page  #XCB-1461 #CDev-GoSocial
+

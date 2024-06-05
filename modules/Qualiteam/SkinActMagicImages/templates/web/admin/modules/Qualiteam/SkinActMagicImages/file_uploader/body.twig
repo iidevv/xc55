@@ -1,0 +1,82 @@
+{# vim: set ts=2 sw=2 sts=2 et: #}
+
+<div class="{{ this.getDivStyle() }}" data-object-id="{{ this.getObjectId() }}">
+  <input type="checkbox" name="{{ this.getName() }}[delete]" value="1" class="input-delete" />
+  {% if this.isMultiple() %}
+    <input type="hidden" name="{{ this.getName() }}[position]" value="{{ this.getPosition() }}" class="input-position" />
+  {% endif %}
+  {% if this.isTemporary() %}
+    <input type="hidden" name="{{ this.getName() }}[temp_id]" value="{{ this.object.id }}" class="input-temp-id" />
+  {% endif %}
+  <a href="{{ this.getLink() }}" class="link" data-toggle="dropdown">
+    {{ this.getPreview()|raw }}
+    <div class="icon">
+      <i class="{{ this.getIconStyle() }}"></i>
+    </div>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+
+    {% if this.getMessage() %}
+      <li role="presentation" class="dropdown-header message">
+        <i class="fa fa-exclamation-triangle"></i> {{ this.getMessage() }}
+      </li>
+      <li role="presentation" class="divider"></li>
+    {% endif %}
+
+    {% if this.hasView() %}
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="{{ this.object.getFrontURL() }}" target="_blank">
+          <i class="button-icon fa fa-picture-o"></i>
+          <span>{{ t('View image') }}</span>
+        </a>
+      </li>
+      <li role="presentation" class="divider"></li>
+    {% endif %}
+
+    <li role="presentation" class="dropdown-header">{{ t('Upload') }}</li>
+    <li role="presentation">
+      <a role="menuitem" tabindex="-1" href="#" class="from-computer">
+        <i class="button-icon fa fa-sign-out fa-rotate-270"></i>
+        <span>{{ t('From computer') }}</span>
+      </a>
+      <input type="file" name="uploaded-file"{% if this.hasMultipleSelector() %} multiple="multiple"{% endif %} />
+    </li>
+    {% if this.isViaUrlAllowed() %}
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="#" class="via-url">
+          <i class="button-icon fa fa-link"></i>
+          <span>{{ t('Via URL') }}</span>
+        </a>
+      </li>
+    {% endif %}
+    <div class="via-url-popup" data-title="{{ t('Upload via URL') }}" data-multiple="{% if this.hasMultipleSelector() %}1{% endif %}">
+    {% if this.hasMultipleSelector() %}
+      <textarea name="url" class="form-control urls" placeholder="http://example.com/file1.jpg                                                                     http://example.com/file2.jpg" /></textarea>
+    {% else %}
+      <input type="text" name="url" class="form-control url" value="" placeholder="http://example.com/file.jpg" />
+    {% endif %}
+      <div class="checkbox">
+        <label><input type="checkbox" name="copy-to-file" value="1" class="copy-to-file" checked="cheched"/>{{ t('Copy to file system') }}</label>
+      </div>
+      <button type="button" class="btn btn-default">{{ t('Upload') }}</button>
+    </div>
+
+    {% if this.hasFile() and this.isRemovable() %}
+      <li role="presentation" class="divider"></li>
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="#" class="delete">
+          <i class="button-icon fa fa-trash-o"></i>
+          <span>{{ t('Delete') }}</span>
+        </a>
+      </li>
+      <li role="presentation" class="undelete">
+        <a role="menuitem" tabindex="-1" href="#" class="delete">
+          <div class="diagonal"></div>
+          <i class="button-icon fa fa-trash-o"></i>
+          <span>{{ t('Undelete') }}</span>
+        </a>
+      </li>
+    {% endif %}
+
+  </ul>
+</div>

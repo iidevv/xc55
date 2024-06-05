@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Improvements (1)
+2022-08-10 - [Story] Opayo (SagePay) payment VPSProtocol updated to v4.0. #ECOM-1328 #XC-SagePay
+

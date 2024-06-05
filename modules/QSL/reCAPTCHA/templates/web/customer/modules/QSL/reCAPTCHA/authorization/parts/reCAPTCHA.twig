@@ -1,0 +1,13 @@
+<tr class="login-recaptcha-row">
+  {% if this.isLabelVisible() %}
+    <td class="recaptcha-label label"><label for="login-recaptcha">{{ t('Please confirm that you are not a robot') }}:</label></td>
+  {% endif %}
+
+  {% if this.isStarColumnVisible() %}
+    <td class="recaptcha-star star"></td>
+  {% endif %}
+
+  <td class="recaptcha-field field">
+    {{ widget('QSL\\reCAPTCHA\\View\\FormField\\ReCAPTCHA', required='false', fieldName='google-recaptcha', fieldOnly='true', fieldId='google-recaptcha') }}
+  </td>
+</tr>

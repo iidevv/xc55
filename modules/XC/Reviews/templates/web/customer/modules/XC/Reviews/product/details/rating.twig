@@ -1,0 +1,32 @@
+{##
+ # Rating value in product info
+ #
+ # @ListChild (list="reviews.product.rating.average", weight="100")
+ #}
+
+{% if this.isVisibleAverageRatingOnPage() %}
+  <div class="product-average-rating">
+    <input type="hidden" name="target_widget"
+           value="\XC\Reviews\View\Customer\ProductInfo\Details\AverageRating"/>
+    <input type="hidden" name="widgetMode" value="{{ this.getWidgetMode() }}"/>
+    {{ widget_list('reviews.product.rating', product=this.getRatedProduct()) }}
+    {% if this.isVisibleReviewsCount() %}
+      <div class="reviews-count no-reviews">
+        &mdash;
+        <a href="{{ this.getRatedProductURL() }}" class="link-to-tab">
+          {{ this.getReviewsCount() }}
+        </a>
+      </div>
+    {% endif %}
+    {% if this.isVisibleAddReviewLink(this.get('product')) %}
+        <span class="separator">|</span>
+      {% if this.isReplaceAddReviewWithLogin() %}
+        {{ widget('\\XC\\Reviews\\View\\Button\\PopupLoginLink', label=this.getReviewsLinkLabel(), product=this.get('product')) }}
+      {% else %}
+        <a href="{{ this.getRatedProductURL() }}" class="link-to-tab">
+          {{ widget('\\XC\\Reviews\\View\\Button\\Customer\\AddReviewLink', label=this.getReviewsLinkLabel(), product=this.get('product')) }}
+        </a>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endif %}

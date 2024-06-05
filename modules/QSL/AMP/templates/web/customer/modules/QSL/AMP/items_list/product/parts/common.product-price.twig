@@ -1,0 +1,9 @@
+{##
+ # Item price
+ #
+ # @ListChild (list="amp.itemsList.product.grid.customer.info.block", weight="30")
+ # @ListChild (list="amp.itemsList.product.small_thumbnails.customer.details", weight="25")
+ # @ListChild (list="amp.itemsList.product.list.customer.info", weight="40")
+ # @ListChild (list="amp.itemsList.product.table.customer.columns", weight="40")
+ #}
+{{ widget('\\XLite\\View\\Price', product=this.product, displayOnlyPrice='1', allowRange='1', className='prc') }}

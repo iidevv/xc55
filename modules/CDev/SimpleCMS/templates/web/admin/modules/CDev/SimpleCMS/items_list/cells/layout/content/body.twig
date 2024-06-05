@@ -1,0 +1,7 @@
+{##
+ # Page layout cell template
+ #}
+
+{% if this.entity.getLayoutType() %}
+  <img src="{{ this.entity.getLayoutTypeImageUrl() }}" alt="{{ this.entity.getLayoutType() }}" />
+{%  endif %}

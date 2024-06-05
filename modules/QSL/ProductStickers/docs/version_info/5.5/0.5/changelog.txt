@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2023-10-27 - [Bug] JS errors on product page if the product had more than two stickers. Fixed. #XCB-2795 #QSL-ProductStickers #QSL-UltimateSkin #TemplateMonster-SparePartsStore
+

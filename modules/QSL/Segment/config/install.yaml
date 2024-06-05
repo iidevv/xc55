@@ -1,0 +1,272 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: write_key
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Text
+    orderby: 200
+    translations:
+      - code: en
+        option_name: Write key
+  - name: debug
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 300
+    translations:
+      - code: en
+        option_name: Debug mode
+  - name: segmentEventsSeparator
+    category: QSL\Segment
+    type: separator
+    orderby: 1000
+    translations:
+      - code: en
+        option_name: Events
+  - name: event_Logged_In
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1100
+    translations:
+      - code: en
+        option_name: 'Track the event "Logged In"'
+  - name: event_Log_In_Failed
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1200
+    translations:
+      - code: en
+        option_name: 'Track the event "Log In Failed"'
+  - name: event_Update_Profile
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1200
+    translations:
+      - code: en
+        option_name: 'Track the event "Update Profile"'
+  - name: event_Logged_Off
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1300
+    translations:
+      - code: en
+        option_name: 'Track the event "Logged Off"'
+  - name: event_Viewed_Product_Category
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1400
+    translations:
+      - code: en
+        option_name: 'Track the event "Viewed Product Category"'
+  - name: event_Viewed_Product
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1500
+    translations:
+      - code: en
+        option_name: 'Track the event "Viewed Product"'
+  - name: event_Added_Product
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1600
+    translations:
+      - code: en
+        option_name: 'Track the event "Added Product"'
+  - name: event_Removed_Product
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1700
+    translations:
+      - code: en
+        option_name: 'Track the event "Removed Product"'
+  - name: event_Completed_Order
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1800
+    translations:
+      - code: en
+        option_name: 'Track the event "Completed Order"'
+  - name: event_Updated_Product_Quantity
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 1900
+    translations:
+      - code: en
+        option_name: 'Track the event "Updated Product Quantity"'
+  - name: event_Change_Shipping
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2000
+    translations:
+      - code: en
+        option_name: 'Track the event "Change Shipping"'
+  - name: event_Change_Payment
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2100
+    translations:
+      - code: en
+        option_name: 'Track the event "Change Payment"'
+  - name: event_Search_Products
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2200
+    translations:
+      - code: en
+        option_name: 'Track the event "Search Products"'
+  - name: event_Change_Products_Filter
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2300
+    translations:
+      - code: en
+        option_name: 'Track the event "Change Products Filter"'
+  - name: event_Change_Language
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2400
+    translations:
+      - code: en
+        option_name: 'Track the event "Change Language"'
+  - name: event_Open_Login_Popup
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2500
+    translations:
+      - code: en
+        option_name: 'Track the event "Open Login Popup"'
+  - name: event_Open_Minicart
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2600
+    translations:
+      - code: en
+        option_name: 'Track the event "Open Minicart"'
+  - name: event_View_Product_Specification
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2700
+    translations:
+      - code: en
+        option_name: 'Track the event "View Product Specification"'
+  - name: event_View_Product_Reviews
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2800
+    translations:
+      - code: en
+        option_name: 'Track the event "View Product Reviews"'
+  - name: event_View_Product_Description
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 2900
+    translations:
+      - code: en
+        option_name: 'Track the event "View Product Description"'
+  - name: event_Switch_Product_Image
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3000
+    translations:
+      - code: en
+        option_name: 'Track the event "Switch Product Image"'
+  - name: event_Zoom_Product_Image
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3100
+    translations:
+      - code: en
+        option_name: 'Track the event "Zoom Product Image"'
+  - name: event_Also_Bought_Jump
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3200
+    translations:
+      - code: en
+        option_name: 'Track the event "Also Bought Jump"'
+  - name: event_Who_Viewed_Jump
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3300
+    translations:
+      - code: en
+        option_name: 'Track the event "Who Viewed Jump"'
+  - name: event_Bestseller_Jump
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3400
+    translations:
+      - code: en
+        option_name: 'Track the event "Bestseller Jump"'
+  - name: event_Coming_Soon_Jump
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3500
+    translations:
+      - code: en
+        option_name: 'Track the event "Coming Soon Jump"'
+  - name: event_Sale_Jump
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3600
+    translations:
+      - code: en
+        option_name: 'Track the event "Sale Jump"'
+  - name: event_Contact_Us
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3700
+    translations:
+      - code: en
+        option_name: 'Track the event "Sent Contact Us"'
+  - name: event_Rated_Product
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3800
+    translations:
+      - code: en
+        option_name: 'Track the event "Rated Product"'
+  - name: event_Reviewed_Product
+    category: QSL\Segment
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    value: 1
+    orderby: 3900
+    translations:
+      - code: en
+        option_name: 'Track the event "Reviewed Product"'
+
+XLite\Model\LanguageLabel:
+  - { name: 'Order completed', translations: [{ code: en, label: 'Order completed' }]}

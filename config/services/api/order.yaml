@@ -1,0 +1,80 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # /orders
+    XLite\API\Endpoint\Order\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\Order\Transformer\OutputTransformer'
+    XLite\API\Endpoint\Order\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\Order\Transformer\PaymentStatus\OutputTransformerInterface: '@XLite\API\Endpoint\Order\Transformer\PaymentStatus\OutputTransformer'
+    XLite\API\Endpoint\Order\Transformer\PaymentStatus\OutputTransformer: ~
+    XLite\API\Endpoint\Order\Transformer\ShippingStatus\OutputTransformerInterface: '@XLite\API\Endpoint\Order\Transformer\ShippingStatus\OutputTransformer'
+    XLite\API\Endpoint\Order\Transformer\ShippingStatus\OutputTransformer: ~
+    XLite\API\Endpoint\Order\Transformer\Surcharge\OutputTransformerInterface: '@XLite\API\Endpoint\Order\Transformer\Surcharge\OutputTransformer'
+    XLite\API\Endpoint\Order\Transformer\Surcharge\OutputTransformer: ~
+    XLite\API\Endpoint\Order\Transformer\OrderItem\OutputTransformerInterface: '@XLite\API\Endpoint\Order\Transformer\OrderItem\OutputTransformer'
+    XLite\API\Endpoint\Order\Transformer\OrderItem\OutputTransformer: ~
+    XLite\API\Endpoint\Order\Transformer\OrderItem\Surcharge\OutputTransformerInterface: '@XLite\API\Endpoint\Order\Transformer\OrderItem\Surcharge\OutputTransformer'
+    XLite\API\Endpoint\Order\Transformer\OrderItem\Surcharge\OutputTransformer: ~
+    XLite\API\Endpoint\Order\Transformer\TrackingNumber\OutputTransformerInterface: '@XLite\API\Endpoint\Order\Transformer\TrackingNumber\OutputTransformer'
+    XLite\API\Endpoint\Order\Transformer\TrackingNumber\OutputTransformer: ~
+
+    xcart.api.order.sub_identifier_extractor:
+        class: XLite\API\Endpoint\Order\SubIdentifierExtractor\SubIdentifierExtractor
+        tags: [!php/const XCart\Framework\ApiPlatform\Core\Api\SubIdentifierExtractor\SubIdentifierExtractorInterface::SUB_IDENTIFIER_EXTRACTOR_TAG]
+
+    XLite\API\Endpoint\Order\DataProvider\ItemDataProvider: ~
+
+    # /orders/{id}/payment_status
+    XLite\API\Endpoint\OrderPaymentStatus\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\OrderPaymentStatus\Transformer\OutputTransformer'
+    XLite\API\Endpoint\OrderPaymentStatus\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\OrderPaymentStatus\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\OrderPaymentStatus\Transformer\InputTransformer'
+    XLite\API\Endpoint\OrderPaymentStatus\Transformer\InputTransformer: ~
+
+    XLite\API\Endpoint\OrderPaymentStatus\DataProvider\ItemDataProvider: ~
+
+    XLite\API\Endpoint\OrderPaymentStatus\DataPersister\DataPersister:
+        tags: [ 'api_platform.data_persister' ]
+
+    # /orders/{id}/shipping_status
+    XLite\API\Endpoint\OrderShippingStatus\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\OrderShippingStatus\Transformer\OutputTransformer'
+    XLite\API\Endpoint\OrderShippingStatus\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\OrderShippingStatus\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\OrderShippingStatus\Transformer\InputTransformer'
+    XLite\API\Endpoint\OrderShippingStatus\Transformer\InputTransformer: ~
+
+    XLite\API\Endpoint\OrderShippingStatus\DataProvider\ItemDataProvider: ~
+
+    XLite\API\Endpoint\OrderShippingStatus\DataPersister\DataPersister:
+        tags: [ 'api_platform.data_persister' ]
+
+    # /orders/{id}/payment_transactions
+    XLite\API\Endpoint\OrderPaymentTransaction\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\OrderPaymentTransaction\Transformer\OutputTransformer'
+    XLite\API\Endpoint\OrderPaymentTransaction\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\OrderPaymentTransaction\Transformer\Data\OutputTransformerInterface: '@XLite\API\Endpoint\OrderPaymentTransaction\Transformer\Data\OutputTransformer'
+    XLite\API\Endpoint\OrderPaymentTransaction\Transformer\Data\OutputTransformer: ~
+    XLite\API\Endpoint\OrderPaymentTransaction\Transformer\BackendTransaction\OutputTransformerInterface: '@XLite\API\Endpoint\OrderPaymentTransaction\Transformer\BackendTransaction\OutputTransformer'
+    XLite\API\Endpoint\OrderPaymentTransaction\Transformer\BackendTransaction\OutputTransformer: ~
+    XLite\API\Endpoint\OrderPaymentTransaction\Transformer\BackendTransaction\Data\OutputTransformerInterface: '@XLite\API\Endpoint\OrderPaymentTransaction\Transformer\BackendTransaction\Data\OutputTransformer'
+    XLite\API\Endpoint\OrderPaymentTransaction\Transformer\BackendTransaction\Data\OutputTransformer: ~
+
+    xcart.api.order_payment_transaction.order_based_sub_extension:
+        class: XLite\API\Endpoint\OrderPaymentTransaction\SubExtension\OrderBasedSubExtension
+        tags: [ !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG ]
+
+    # /orders/{id}/details
+    XLite\API\Endpoint\OrderDetail\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\OrderDetail\Transformer\OutputTransformer'
+    XLite\API\Endpoint\OrderDetail\Transformer\OutputTransformer: ~
+
+    xcart.api.order_detail.order_based_sub_extension:
+        class: XLite\API\Endpoint\OrderDetail\SubExtension\OrderBasedSubExtension
+        tags: [ !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG ]
+
+    # /orders/{id}/history
+    XLite\API\Endpoint\OrderHistory\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\OrderHistory\Transformer\OutputTransformer'
+    XLite\API\Endpoint\OrderHistory\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\OrderHistory\Transformer\Detail\OutputTransformerInterface: '@XLite\API\Endpoint\OrderHistory\Transformer\Detail\OutputTransformer'
+    XLite\API\Endpoint\OrderHistory\Transformer\Detail\OutputTransformer: ~
+
+    xcart.api.order_history.order_based_sub_extension:
+        class: XLite\API\Endpoint\OrderHistory\SubExtension\OrderBasedSubExtension
+        tags: [ !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG ]

@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Fixes (1)
+2023-01-09 - [Bug] Incorrect status of a sent "Price down" notification in the Back In Stock add-on. Fixed. #XCB-1596 #QSL-BackInStock #XC-ProductVariants
+

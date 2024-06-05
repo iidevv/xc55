@@ -1,0 +1,5 @@
+Version 5.5.0.10
+
+Fixes (1)
+2023-04-20 - [Bug] Layout issues related to displaying the "Select your vehicle" block on the Home page. Fixed. #XCB-2258 #QSL-Make #XC-ThemeTweaker
+

@@ -1,0 +1,43 @@
+{#
+# Search filters template
+#}
+
+{% if this.getSavedFilterOptions()|length > 0 %}
+  <ul class="saved-filter-options">
+    {% for fid, filter in this.getSavedFilterOptions() %}
+      <li class="filter-option filter-{{ fid }}{% if fid and this.isSelectedFilter(fid) %} selected{% endif %}">
+        {% if fid %}
+          <div class="filter-option-wrapper{% if not this.isFilterRemovable(filter) %} not-removable{% endif %}">
+            {% if this.isSelectedFilter(fid) %}
+              <span class="filter-title">
+                {{ filter.getName() }}
+                {% if filter.getSuffix() %}
+                  <span class="filter-suffix">{{ filter.getSuffix() }}</span>
+                {% endif %}
+              </span>
+            {% else %}
+              <a href="{{ xurl(this.getTarget(), 'search', {'filter_id': fid}) }}" class="filter-title">
+                <span>{{ filter.getName() }}</span>
+                {% if filter.getSuffix() %}
+                  <span class="filter-suffix">{{ filter.getSuffix() }}</span>
+                {% endif %}
+              </a>
+            {% endif %}
+            {% if this.isFilterRemovable(filter) %}
+              <span class="separator"></span>
+              <a href="{{ xurl(this.getTarget(), 'delete_search_filter', {'filter_id': fid}) }}"
+                 class="delete-filter fa fa-times"
+                 title="{{ t('Delete filter option') }}">
+              </a>
+            {% endif %}
+          </div>
+        {% else %}
+          <a href="{{ xurl(this.getTarget(), 'clearSearch') }}"
+             class="filter-title first clear-filter{% if not this.getCurrentSearchFilter() %} active{% endif %}">
+            <span>{{ filter.getName() }}</span>
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

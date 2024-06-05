@@ -1,0 +1,26 @@
+Version 5.5.0.2
+
+Improvements (3)
+2022-08-15 - [Story] Changes in the tabs' display. Extra tabs are hidden under the "More" tab. #ECOM-1757 #CDev-Core #CDev-FileAttachments #QSL-BackInStock #XC-GoogleFeed
+2022-09-06 - [Story] Added the ability to adjust the location of the email field at checkout.  #ECOM-1668 #CDev-Core #XC-FastLaneCheckout
+2022-09-06 - [Story] UI/UX improvement for admin pages with search feature. Using quick filters no longer involves a page refresh. #ECOM-1552 #CDev-Core #QSL-BackInStock #XC-MultiVendor
+
+Fixes (17)
+2022-09-05 - [Bug] Product Variants. Field validation in product variants did not work. Fixed.  #XCB-1710 #CDev-Core
+2022-09-05 - [Bug] The defineWidgetParams method signature was unified. #XCB-1700 #CDev-Core #QSL-ShopByBrand #XC-ThemeTweaker
+2022-09-02 - [Bug] Core. After an attempt to set/reset a password using an invalid password value, the notification message for the user was displayed incorrectly. Fixed. #XCB-1689 #CDev-Core
+2022-09-05 - [Bug] The Submit button was missing from a few tabs of a product page in the Admin area. Fixed.  #XCB-1686 #CDev-Core #CDev-FileAttachments
+2022-09-02 - [Bug] Product variants. After selecting a product variant on the storefront some page elements became displaced. Fixed. #XCB-1679 #CDev-Core #XC-CrispWhiteSkin
+2022-09-02 - [Bug] FileAttachments. Fatal error if attempting to upload a file using the "From local server" option. Fixed. #XCB-1646 #CDev-Core
+2022-09-02 - [Bug] Multiple profiles for vendors. Adjusted the page for creating a staff member account by vendor invitation according to the style guide. #XCB-1641 #CDev-Core #XC-VendorPartners
+2022-09-05 - [Bug] Issues related to validation if entering numbers smaller than 1. Fixed. #XCB-1628 #CDev-Core
+2022-08-26 - [Bug] The calendar widget was not displayed in date selection fields. Fixed. #XCB-1600 #CDev-Core #QSL-SpecialOffersBase
+2022-08-17 - [Bug] Search filters in the Admin area were working incorrectly. Fixed. #XCB-1541 #CDev-Core #QSL-BackInStock
+2022-08-29 - [Bug] A help tip was positioned incorrectly on the "Catalog Pages" and "Content Pages" pages. Fixed. #XCB-1531 #CDev-Core #CDev-SimpleCMS
+2022-08-29 - [Bug] Renamed the "Listing info" tab to "Info" on the product management page. #XCB-1530 #CDev-Core
+2022-08-29 - [Bug] The space between the first name and the last name was not maintained when displaying a name at the checkout and in the address book. Fixed. #XCB-1529 #CDev-Core
+2022-08-26 - [Bug] In some cases the logo image was missing from the Admin area login page. Fixed. #XCB-1528 #CDev-Core
+2022-09-05 - [Bug] External app store. It was not possible to install an add-on in test wave from the market. Fixed. #XCB-1513 #CDev-Core
+2022-09-06 - [Bug] Incorrect elements' sizes and positioning in the Opayo Form Protocol payment method settings  #XCB-1505 #CDev-Core #Amazon-PayWithAmazon #CDev-AuthorizeNet #CDev-TwoCheckout #CDev-Quantum #Qualiteam-CoinPayments #QSL-Dwolla #QSL-GlobalTransport #QSL-Pagseguro #QSL-Giropay #QSL-EGateway #QSL-SecurePay #QSL-TenPay #QSL-CCBill #QSL-AuthorizenetAcceptjs #QSL-RealexHostedPayment #QSL-Paysafecard #QSL-FirstDataPayeezyGatewayHP #XC-WorldpayHPP #XC-SofortBanking #XC-SagePay #XC-InternetSecure #XC-IdealPayments #XC-PayUIndia #XC-PayFort #XC-EBSIndia #XC-Beanstream #XC-ChronoPay #XC-ESelectHPP #XC-DatatransUPP #XC-BitPay #XC-BlueSnap #XC-EPDQ #XC-OgoneEcommerce #XC-SimplifyCommerce #XC-Heartland #XC-NetbanxHostedPayment #XC-DIBSFlexWin #XC-SecureTrading #XC-PayTabs #XC-Stripe #XC-VirtualMerchant
+2022-09-05 - [Bug] Base models decorator was losing its data on add-on disable. Fixed. #XCB-1118 #CDev-Core
+

@@ -1,0 +1,15 @@
+{##
+ # OAuth 2 client login widget
+ #}
+
+<div class="{{ this.getStyleClass() }}">
+    <div class="or-line">
+        <div></div>
+        <span>{{ t('or') }}</span>
+    </div>
+    <ul>
+        {% for w in this.getProviderWidgets() %}
+            {{ w.display() }}
+        {% endfor %}
+    </ul>
+</div>

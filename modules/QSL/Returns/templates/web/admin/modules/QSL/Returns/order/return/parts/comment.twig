@@ -1,0 +1,12 @@
+{##
+ # Comment
+ #
+ # @ListChild (list="return.footer", weight="20")
+ #}
+
+<div class="section comment">
+  <div class="title">{{ t('Comment') }}:</div>
+  <div class="value">
+    {{ widget('XLite\\View\\FormField\\Textarea\\Simple', fieldId='comment', fieldName='comment', fieldOnly='true', label=t('Comment'), value=this.getCommentValue(), rows='3') }}
+  </div>
+</div>

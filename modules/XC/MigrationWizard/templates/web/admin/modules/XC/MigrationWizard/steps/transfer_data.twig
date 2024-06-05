@@ -1,0 +1,8 @@
+{##
+ # Migration Wizard - Transfer data step
+ #}
+<div class="wizard-section">
+    {% if not this.isImportRunning() %}
+    <h2>{{ t('Ready to start migration') }}</h2>
+    {% endif %}
+</div>

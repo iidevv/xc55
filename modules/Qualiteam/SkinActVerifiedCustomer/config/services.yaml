@@ -1,0 +1,11 @@
+services:
+  Qualiteam\SkinActVerifiedCustomer\Core\EventListener:
+    arguments:
+      $moduleManagerDomain: '@XCart\Domain\ModuleManagerDomain'
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }
+
+
+  Qualiteam\SkinActVerifiedCustomer\Command\MakeCustomersVerifiedCommand:
+    tags:
+      - { name: 'console.command', command: 'SkinActVerifiedCustomer:MakeCustomersVerified' }

@@ -1,0 +1,7 @@
+{##
+ # Brands
+ #}
+
+{% if not this.isBrandListEditable() %}
+  <div class="cannot-edit-brands"><p class="table-label">{{ t('To manage brands you should add a global product attribute that will store product brands and choose it in the Brands module settings.', {'settings': this.getModuleSettingsLink(), 'attributes': xurl('global_attributes')})|raw }}</p></div>
+{% endif %}

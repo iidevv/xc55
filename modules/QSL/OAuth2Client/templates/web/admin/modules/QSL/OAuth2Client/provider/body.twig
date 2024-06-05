@@ -1,0 +1,12 @@
+{##
+ # provider page template
+ #}
+
+{% if this.getProvider().getDocumentationLink() %}
+    <p><a href="{{ this.getProvider().getDocumentationLink() }}">{{ t('Documentation') }}</a></p>
+{% endif %}
+{% if this.getProvider().getApplicationCreateLink() %}
+    <p><a href="{{ this.getProvider().getApplicationCreateLink() }}">{{ t('Create application') }}</a></p>
+{% endif %}
+
+{{ widget('QSL\\OAuth2Client\\View\\Model\\Provider', useBodyTemplate='1') }}

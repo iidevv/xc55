@@ -1,0 +1,756 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+#XLite\Model\LanguageLabel:
+#  - { name: "SkinActMagicImages order payment status", translations: [{ code: en, label: "Order payment status:" }] }
+
+Qualiteam\SkinActMagicImages\Model\Config:
+  - profile: default
+    name: group-1
+    type: separator
+    orderby: 1
+    status: 2
+    translations:
+      - code: en
+        option_name: 'General'
+  - profile: default
+    name: include-headers-on-all-pages
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 3
+    value: 'No'
+    default_value: 'No'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Include headers on all pages'
+        option_comment: 'To be able to apply an effect on any page'
+  - profile: default
+    name: group-4
+    type: separator
+    orderby: 4
+    value: 0
+    default_value: 0
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Magic 360'
+  - profile: default
+    name: magnify
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 5
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Magnifier appearing effect'
+  - profile: default
+    name: magnifier-width
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 6
+    value: '80%'
+    default_value: '80%'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Magnifier size'
+        option_comment: 'Magnifier size in % of small image width or fixed size in px'
+  - profile: default
+    name: magnifier-shape
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 7
+    value: 'inner'
+    default_value: 'inner'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Shape of magnifying glass'
+  - profile: default
+    name: fullscreen
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 8
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Allow full-screen mode'
+  - profile: default
+    name: spin
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 9
+    value: 'drag'
+    default_value: 'drag'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Spin'
+        option_comment: 'Method for spinning the image'
+  - profile: default
+    name: autospin-direction
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 10
+    value: 'clockwise'
+    default_value: 'clockwise'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Direction of auto-spin'
+  - profile: default
+    name: sensitivityX
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 11
+    value: 50
+    default_value: 50
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Sensitivity on X-axis'
+        option_comment: 'Drag sensitivity on X-axis (1 = very slow, 100 = very fast)'
+  - profile: default
+    name: sensitivityY
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 12
+    value: 50
+    default_value: 50
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Sensitivity on Y-axis'
+        option_comment: 'Drag sensitivity on Y-axis (1 = very slow, 100 = very fast)'
+  - profile: default
+    name: mousewheel-step
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 13
+    value: 1
+    default_value: 1
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Mousewheel step'
+        option_comment: 'Number of frames to spin on mousewheel'
+  - profile: default
+    name: autospin-speed
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 14
+    value: 3600
+    default_value: 3600
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Speed of auto-spin'
+        option_comment: 'e.g. 1 = fast / 10000 = slow'
+  - profile: default
+    name: smoothing
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 15
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Smoothing'
+        option_comment: 'Smoothly stop the image spinning'
+  - profile: default
+    name: autospin
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 16
+    value: 'once'
+    default_value: 'once'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Duration of automatic spin'
+  - profile: default
+    name: autospin-start
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxSelect
+    orderby: 17
+    value: 'load,hover'
+    default_value: 'load,hover'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Autospin starts on'
+        option_comment: 'Start automatic spin on page load, click or hover'
+  - profile: default
+    name: autospin-stop
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 18
+    value: 'click'
+    default_value: 'click'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Autospin stops on'
+        option_comment: 'Stop automatic spin on click or hover'
+  - profile: default
+    name: initialize-on
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 19
+    value: 'load'
+    default_value: 'load'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Initialization'
+        option_comment: 'When to initialize Magic 360™ (download images).'
+  - profile: default
+    name: start-column
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 20
+    value: 1
+    default_value: 1
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Start column (left/right movement)'
+        option_comment: 'Image from which to start spin. &apos;auto&apos; means to start from the middle'
+  - profile: default
+    name: start-row
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 21
+    value: auto
+    default_value: auto
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Start row (up/down movement)'
+        option_comment: 'Position from which to start spin. &apos;auto&apos; means to start from the middle'
+  - profile: default
+    name: loop-column
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 22
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Loop column'
+        option_comment: 'Continue spin after the last image on X-axis (left/right)'
+  - profile: default
+    name: loop-row
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 23
+    value: 'No'
+    default_value: 'No'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Loop row'
+        option_comment: 'Continue spin after the last image on Y-axis (up/down)'
+  - profile: default
+    name: reverse-column
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 24
+    value: 'No'
+    default_value: 'No'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Reverse rotation on X-axis (left/right)'
+  - profile: default
+    name: reverse-row
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 25
+    value: 'No'
+    default_value: 'No'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Reverse rotation on Y-axis (up/down)'
+  - profile: default
+    name: column-increment
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 26
+    value: 1
+    default_value: 1
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Column increment (left/right)'
+        option_comment: 'Load only every second (2) or third (3) column so that spins load faster'
+  - profile: default
+    name: row-increment
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 27
+    value: 1
+    default_value: 1
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Row increment (up/down)'
+        option_comment: 'Load only every second (2) or third (3) row so that spins load faster'
+  - profile: default
+    name: group-28
+    type: separator
+    orderby: 28
+    value: 0
+    default_value: 0
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Positioning and Geometry'
+  - profile: default
+    name: thumb-max-width
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 29
+    value: 300
+    default_value: 300
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Maximum width of thumbnail for product page (in pixels)'
+  - profile: default
+    name: thumb-max-height
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 30
+    value: 300
+    default_value: 300
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Maximum height of thumbnail for product page (in pixels)'
+  - profile: default
+    name: group-31
+    type: separator
+    orderby: 31
+    value: 0
+    default_value: 0
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Miscellaneous'
+  - profile: default
+    name: show-message
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 32
+    value: 'No'
+    default_value: 'No'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Show message under image?'
+  - profile: default
+    name: message
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 33
+    value: 'Drag image to spin'
+    default_value: 'Drag image to spin'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Enter message to appear under spins'
+  - profile: default
+    name: loading-text
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 34
+    value: 'Loading...'
+    default_value: 'Loading...'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Loading text'
+        option_comment: 'Text displayed while images are loading.'
+  - profile: default
+    name: fullscreen-loading-text
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 35
+    value: 'Loading large spin...'
+    default_value: 'Loading large spin...'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Fullscreen loading text'
+        option_comment: 'Text shown while full-screen images are loading.'
+  - profile: default
+    name: hint
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 36
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Show hint message'
+  - profile: default
+    name: hint-text
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 37
+    value: 'Drag to spin'
+    default_value: 'Drag to spin'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Hint text appears on desktop'
+  - profile: default
+    name: mobile-hint-text
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 38
+    value: 'Swipe to spin'
+    default_value: 'Swipe to spin'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Hint text appears on iOS/Android devices'
+  - profile: product
+    name: group-39
+    type: separator
+    orderby: 39
+    value: 0
+    default_value: 0
+    status: 2
+    translations:
+      - code: en
+        option_name: 'General'
+  - profile: product
+    name: enable-effect
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 40
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Enable effect'
+  - profile: product
+    name: group-41
+    type: separator
+    orderby: 41
+    value: 0
+    default_value: 0
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Magic 360'
+  - profile: product
+    name: magnify
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 42
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Magnifier appearing effect'
+  - profile: product
+    name: magnifier-width
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 43
+    value: '80%'
+    default_value: '80%'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Magnifier size'
+        option_comment: 'Magnifier size in % of small image width or fixed size in px'
+  - profile: product
+    name: magnifier-shape
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 44
+    value: 'inner'
+    default_value: 'inner'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Shape of magnifying glass'
+  - profile: product
+    name: fullscreen
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 45
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Allow full-screen mode'
+  - profile: product
+    name: spin
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 46
+    value: 'drag'
+    default_value: 'drag'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Spin'
+        option_comment: 'Method for spinning the image'
+  - profile: product
+    name: autospin-direction
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 47
+    value: 'clockwise'
+    default_value: 'clockwise'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Direction of auto-spin'
+  - profile: product
+    name: sensitivityX
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 48
+    value: 50
+    default_value: 50
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Sensitivity on X-axis'
+        option_comment: 'Drag sensitivity on X-axis (1 = very slow, 100 = very fast)'
+  - profile: product
+    name: sensitivityY
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 49
+    value: 50
+    default_value: 50
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Sensitivity on Y-axis'
+        option_comment: 'Drag sensitivity on Y-axis (1 = very slow, 100 = very fast)'
+  - profile: product
+    name: mousewheel-step
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 50
+    value: 1
+    default_value: 1
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Mousewheel step'
+        option_comment: 'Number of frames to spin on mousewheel'
+  - profile: product
+    name: autospin-speed
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 51
+    value: 3600
+    default_value: 3600
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Speed of auto-spin'
+        option_comment: 'e.g. 1 = fast / 10000 = slow'
+  - profile: product
+    name: smoothing
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 52
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Smoothing'
+        option_comment: 'Smoothly stop the image spinning'
+  - profile: product
+    name: autospin
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 53
+    value: 'once'
+    default_value: 'once'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Duration of automatic spin'
+  - profile: product
+    name: autospin-start
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxSelect
+    orderby: 54
+    value: 'load,hover'
+    default_value: 'load,hover'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Autospin starts on'
+        option_comment: 'Start automatic spin on page load, click or hover'
+  - profile: product
+    name: autospin-stop
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 55
+    value: 'click'
+    default_value: 'click'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Autospin stops on'
+        option_comment: 'Stop automatic spin on click or hover'
+  - profile: product
+    name: initialize-on
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 56
+    value: 'load'
+    default_value: 'load'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Initialization'
+        option_comment: 'When to initialize Magic 360™ (download images).'
+  - profile: product
+    name: start-column
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 57
+    value: 1
+    default_value: 1
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Start column (left/right movement)'
+        option_comment: 'Image from which to start spin. &apos;auto&apos; means to start from the middle'
+  - profile: product
+    name: start-row
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 58
+    value: auto
+    default_value: auto
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Start row (up/down movement)'
+        option_comment: 'Position from which to start spin. &apos;auto&apos; means to start from the middle'
+  - profile: product
+    name: loop-column
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 59
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Loop column'
+        option_comment: 'Continue spin after the last image on X-axis (left/right)'
+  - profile: product
+    name: loop-row
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 60
+    value: 'No'
+    default_value: 'No'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Loop row'
+        option_comment: 'Continue spin after the last image on Y-axis (up/down)'
+  - profile: product
+    name: reverse-column
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 61
+    value: 'No'
+    default_value: 'No'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Reverse rotation on X-axis (left/right)'
+  - profile: product
+    name: reverse-row
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 62
+    value: 'No'
+    default_value: 'No'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Reverse rotation on Y-axis (up/down)'
+  - profile: product
+    name: column-increment
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 63
+    value: 1
+    default_value: 1
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Column increment (left/right)'
+        option_comment: 'Load only every second (2) or third (3) column so that spins load faster'
+  - profile: product
+    name: row-increment
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 64
+    value: 1
+    default_value: 1
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Row increment (up/down)'
+        option_comment: 'Load only every second (2) or third (3) row so that spins load faster'
+  - profile: product
+    name: group-65
+    type: separator
+    orderby: 65
+    value: 0
+    default_value: 0
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Positioning and Geometry'
+  - profile: product
+    name: thumb-max-width
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 66
+    value: 360
+    default_value: 360
+    status: 1
+    translations:
+      - code: en
+        option_name: 'Maximum width of thumbnail for product page (in pixels)'
+  - profile: product
+    name: thumb-max-height
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 67
+    value: 360
+    default_value: 360
+    status: 1
+    translations:
+      - code: en
+        option_name: 'Maximum height of thumbnail for product page (in pixels)'
+  - profile: product
+    name: group-68
+    type: separator
+    orderby: 68
+    value: 0
+    default_value: 0
+    status: 2
+    translations:
+      - code: en
+        option_name: 'Miscellaneous'
+  - profile: product
+    name: show-message
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 69
+    value: 'No'
+    default_value: 'No'
+    status: 1
+    translations:
+      - code: en
+        option_name: 'Show message under image?'
+  - profile: product
+    name: message
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxText
+    orderby: 70
+    value: 'Drag image to spin'
+    default_value: 'Drag image to spin'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Enter message to appear under spins'
+  - profile: product
+    name: hint
+    type: Qualiteam\SkinActMagicImages\View\FormField\MagicToolboxRadioButtonsList
+    orderby: 71
+    value: 'Yes'
+    default_value: 'Yes'
+    status: 0
+    translations:
+      - code: en
+        option_name: 'Show hint message'
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActMagicImages add new set", translations: [{ code: en, label: "Add new set" }] }
+  - { name: "SkinActMagicImages name", translations: [{ code: en, label: "Name" }] }
+  - { name: "SkinActMagicImages swatch", translations: [{ code: en, label: "Swatch" }] }
+  - { name: "SkinActMagicImages images 360", translations: [{ code: en, label: "Images 360" }] }
+  - { name: "SkinActMagicImages edit images x", translations: [{ code: en, label: "Edit images ({{count}})" }] }
+  - { name: "SkinActMagicImages add 360 images", translations: [{ code: en, label: "Add 360 images" }] }
+  - { name: "SkinActMagicImages edit 360 images x", translations: [{ code: en, label: "Edit 360 images ({{count}})" }] }
+  - { name: "SkinActMagicImages magic360 data have been successfully updated", translations: [{ code: en, label: "Magic360 data have been successfully updated" }] }
+  - { name: "SkinActMagicImages none", translations: [{ code: en, label: "None" }] }
+  - { name: "SkinActMagicImages magic 360 images", translations: [{ code: en, label: "Magic 360 images" }] }

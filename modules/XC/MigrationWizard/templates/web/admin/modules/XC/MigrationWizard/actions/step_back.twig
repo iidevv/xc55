@@ -1,0 +1,12 @@
+{##
+ # Migration Wizard - Step back action
+ #}
+{% form '\\XC\\MigrationWizard\\View\\Form\\Migration\\StepBack' %}
+
+{% if bnstyle %}
+    {% set bnstyle = ' ' ~ bnstyle %}
+{% endif %}
+
+{{ widget('\\XLite\\View\\Button\\Submit', { 'label' : t('Back'), 'style' : 'btn-link' ~ bnstyle, 'button-type' : 'btn-step-back' }) }}
+
+{% endform %}

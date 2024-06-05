@@ -1,0 +1,12 @@
+{##
+ # Cookie policy
+ #}
+
+<gdpr-consent-checkbox inline-template>
+  <div class="gdpr-consent-container"
+       v-data='{"checked": {{ this.get('auth').isUserFromGdprCountry() ? 'false' : 'true' }} }'>
+    <div class="gdpr-consent-checkbox {% if not this.get('auth').isUserFromGdprCountry() %}hidden{% endif %}">
+      {{ widget("XC\\GDPR\\View\\FormField\\Input\\GdprConsent", forceShow=true, fieldName="gdprConsent", attributes={'v-model': "checked"}, label="I consent to the collection and processing of my personal data (checkout)") }}
+    </div>
+  </div>
+</gdpr-consent-checkbox>

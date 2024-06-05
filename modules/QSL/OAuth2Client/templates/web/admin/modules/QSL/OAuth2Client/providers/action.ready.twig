@@ -1,0 +1,7 @@
+{##
+ # Providers list ready cell template
+ #}
+
+{% if not this.entity.wrapper.isConfigured() %}
+  <span class="not-configured fa fa-exclamation-circle" title="{{ t('The provider is not configured and cannot be used') }}"></span>
+{% endif %}

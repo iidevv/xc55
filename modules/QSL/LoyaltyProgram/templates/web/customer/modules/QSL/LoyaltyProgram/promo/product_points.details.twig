@@ -1,0 +1,7 @@
+<div class="product-reward-points {{ this.getFingerprint() }}">
+  {% if this.hasRewardPoints() %}
+    <div class="reward-points-promo">
+      {{ widget('QSL\\LoyaltyProgram\\View\\Product\\ItemsList\\ProductPoints', product=this.product) }}
+    </div>
+  {% endif %}
+</div>

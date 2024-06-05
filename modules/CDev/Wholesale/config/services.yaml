@@ -1,0 +1,40 @@
+api_platform:
+    resource_class_directories:
+        - '%kernel.project_dir%/var/run/classes/CDev/Wholesale/Model'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    # /product/{product_id}/wholesale_prices
+    CDev\Wholesale\API\Endpoint\ProductWholesalePrice\Transformer\OutputTransformerInterface: '@CDev\Wholesale\API\Endpoint\ProductWholesalePrice\Transformer\OutputTransformer'
+    CDev\Wholesale\API\Endpoint\ProductWholesalePrice\Transformer\OutputTransformer: ~
+    CDev\Wholesale\API\Endpoint\ProductWholesalePrice\Transformer\InputTransformerInterface: '@CDev\Wholesale\API\Endpoint\ProductWholesalePrice\Transformer\InputTransformer'
+    CDev\Wholesale\API\Endpoint\ProductWholesalePrice\Transformer\InputTransformer: ~
+
+    CDev\Wholesale\API\Endpoint\ProductWholesalePrice\SubIriConverter\SubIriConverter:
+        tags: [ !php/const XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\SubIriConverter\SubIriFromItemConverterInterface::SUB_IRI_FROM_ITEM_CONVERTER_TAG ]
+
+    CDev\Wholesale\API\Endpoint\ProductWholesalePrice\DataProvider\CollectionDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.collection_data_provider'
+            $repository: '@xcart.repository.product'
+
+    CDev\Wholesale\API\Endpoint\ProductWholesalePrice\DataProvider\ItemDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.item_data_provider'
+            $repository: '@xcart.repository.product'
+
+    xcart.api.cdev.wholesale.product_wholesale_price.controller:
+        class: CDev\Wholesale\Controller\API\ProductWholesalePrice\Post
+        arguments:
+            $repository: '@xcart.repository.product'
+
+    CDev\Wholesale\API\OpenApiTagsRepositoryDecorator:
+        decorates: XLite\API\OpenApiTagsRepository
+
+    xcart.api.cdev.wholesale.product_wholesale_price.sub_extension:
+        class: CDev\Wholesale\API\Endpoint\ProductWholesalePrice\SubExtension\SubExtension
+        tags: [ !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG ]

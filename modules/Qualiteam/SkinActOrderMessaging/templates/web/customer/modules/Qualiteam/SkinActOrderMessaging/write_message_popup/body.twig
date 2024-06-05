@@ -1,0 +1,28 @@
+<div class="write-message-dialog">
+    <div class="write-message-dialog-description">{{ t('SkinActOrderMessaging Select an order number to send a message')|raw }}</div>
+    {% form 'XLite\\View\\Form' with {formTarget: 'write_message_popup', formAction: 'write'} %}
+
+    <div class="write-message-dialog-order-select">
+        <input type="hidden" name="orderNumber" value="">
+        {{ widget('Qualiteam\\SkinActOrderMessaging\\View\\FormField\\Input\\Text\\OrderAutocomplete', fieldName = 'ordernumbertext', placeholder=t('SkinActOrderMessaging Select Order Number')) }}
+    </div>
+
+    <div class="write-message-dialog-order-summary">
+        <div class="order-items">
+            <div class="order-items-title">{{ t('SkinActOrderMessaging Order Items') }}</div>
+            <ul class="order-items-list"></ul>
+        </div>
+        <div class="order-total">
+            <span class="order-total-title">{{ t('SkinActOrderMessaging Order Total') }}</span>
+            <span class="order-total-value"></span>
+        </div>
+        <div class="proceed-button">
+          {{ widget('\\XLite\\View\\Button\\Link', style='proceed',  location=xurl('#'), label=t('SkinActOrderMessaging Proceed')) }}
+        </div>
+    </div>
+    {% endform %}
+    <div class="write-message-dialog-or"> {{ t('SkinActOrderMessaging or') }} </div>
+    <div class="write-message-dialog-button">
+        {{ widget('\\XLite\\View\\Button\\Link', style='proceed',  location=xurl('general_conversation'), label=t('SkinActOrderMessaging Write a message not related to orders')) }}
+    </div>
+</div>

@@ -1,0 +1,10 @@
+services:
+  Qualiteam\SkinActProMembership\Core\EventListener:
+    arguments:
+      $moduleManagerDomain: '@XCart\Domain\ModuleManagerDomain'
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }
+
+  Qualiteam\SkinActProMembership\Core\Task\ProMembershipExpirationReminder:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }

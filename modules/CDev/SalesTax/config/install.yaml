@@ -1,0 +1,44 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Taxes module install data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - { name: ignore_memberships, category: 'CDev\SalesTax', type: checkbox, value: 'Y', orderby: 150, translations: [{ code: en, option_name: 'Use the same tax rates for all user membership levels' }] }
+  - { name: addressType, category: 'CDev\SalesTax', type: \CDev\SalesTax\View\FormField\AddressType, value: shipping, orderby: 160, translations: [{ code: en, option_name: 'Address for sales tax calculation' }] }
+  - { name: taxableBase, category: 'CDev\SalesTax', type: \CDev\SalesTax\View\FormField\TaxableBase, value: 'DST+SH', orderby: 170, translations: [{ code: en, option_name: 'Taxable base' }] }
+
+XLite\Model\Order\Modifier:
+  - { class: 'CDev\SalesTax\Logic\Order\Modifier\Tax', weight: 1100 }
+
+XLite\Model\LanguageLabel:
+  - { name: 'Address for sales tax calculation', translations: [{ code: en, label: 'Address for sales tax calculation' }] }
+  - { name: 'Click here to specify tax rates that will apply only to shipping charges', translations: [{ code: en, label: 'Click here to specify tax rates that will apply only to shipping charges' }] }
+  - { name: 'Discounted subtotal', translations: [{ code: en, label: 'Discounted subtotal' }] }
+  - { name: 'Discounted subtotal + Shipping cost', translations: [{ code: en, label: 'Discounted subtotal + Shipping cost' }] }
+  - { name: 'General tax rates', translations: [{ code: en, label: 'General tax rates' }] }
+  - { name: 'Individual settings for every rate', translations: [{ code: en, label: 'Individual settings for every rate' }] }
+  - { name: 'New sale tax rate', translations: [{ code: en, label: 'New rate' }] }
+  - { name: 'Subtotal + Shipping cost', translations: [{ code: en, label: 'Subtotal + Shipping cost' }] }
+  - { name: 'Tax rate has been deleted successfully', translations: [{ code: en, label: 'Tax rate has been deleted successfully' }] }
+  - { name: 'Tax rate has not been deleted successfully', translations: [{ code: en, label: 'Tax rate has not been deleted' }] }
+  - { name: 'Taxable base', translations: [{ code: en, label: 'Taxable base' }] }
+  - { name: 'Tax rates for shipping charges have not yet been created.', translations: [{ code: en, label: 'Tax rates for shipping charges have not yet been created.' }] }
+  - { name: 'Tax rates have not yet been created.', translations: [{ code: en, label: 'Tax rates have not yet been created.' }] }
+  - { name: 'Tax rates on shipping cost', translations: [{ code: en, label: 'Tax rates on shipping cost' }] }
+  - { name: 'Use the same tax rates for all user membership levels', translations: [{ code: en, label: 'Use the same tax rates for all user membership levels' }] }
+  - { name: 'Sales tax', translations: [{ code: en, label: 'Sales tax' }] }
+  - { name: 'common_tax_settings.description', translations: [{ code: en, label: 'Configuring taxes for various regions and classes is a vital part of an e-commerce business. If you would like to manually configure taxes, the options below will help you build tax tables.' }] }
+  - { name: 'main_rates.description', translations: [{ code: en, label: 'You may want to configure zones and classes before adding tax rates. You can manage regions in <a href="{{url_1}}">Countries, States & Zones settings</a>. Also, you can assign special <a href="{{url_2}}">Tax Classes</a> to to groups of products and shipping methods if required.' }] }
+  - { name: 'shipping_rates.description', translations: [{ code: en, label: 'Some regions require taxes applied to shipping costs. Taxes added here will be included in the shipping price when displayed to the customer. You can manage regions in <a href="{{url_1}}">Countries, States & Zones settings</a>. Also, you can assign special <a href="{{url_2}}">Tax Classes</a> to to groups of products and shipping methods if required.' }] }
+  - { name: 'Tax Rates by Zones', translations: [{ code: en, label: 'Tax Rates by Zones' }] }
+  - { name: 'Tax Rates on Shipping Cost', translations: [{ code: en, label: 'Tax Rates on Shipping Cost' }] }
+  - { name: 'Manage Zones', translations: [{ code: en, label: 'Manage Zones' }] }
+  - { name: 'Manage Classes', translations: [{ code: en, label: 'Manage Classes' }] }
+  - { name: 'Manage Memberships', translations: [{ code: en, label: 'Manage Memberships' }] }
+  - { name: 'Calculated against taxable base.', translations: [{ code: en, label: 'Calculated against taxable base.' }] }
+  - { name: 'Add class', translations: [{ code: en, label: 'Add class' }] }
+  - { name: 'Membership Level', translations: [{ code: en, label: 'Membership Level' }] }
+  - { name: 'Tax Class', translations: [{ code: en, label: 'Tax Class' }] }

@@ -1,0 +1,14 @@
+
+{% block form_input_wrapper %}
+    {% if is_data_field %}
+        <div class="input-wrapper" :class="{{ '{' }}'hidden': !isEdited('{{ v_model }}'){{ '}' }}">
+            {{- form_widget(form) -}}
+        </div>
+        <div @click="setEdited('{{ v_model }}', $event)" :class="{{ '{' }}'hidden':isEdited('{{ v_model }}'){{ '}' }}" class="placeholder btn regular-button">{{ t('Click to specify') }}</div>
+        <div @click="setNotEdited('{{ v_model }}', $event)" :class="{{ '{' }}'hidden':!isEdited('{{ v_model }}'){{ '}' }}" class="undo">{{ t('Cancel') }}</div>
+    {% else %}
+        <div class="input-wrapper">
+            {{- form_widget(form) -}}
+        </div>
+    {% endif %}
+{% endblock %}

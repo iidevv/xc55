@@ -1,0 +1,21 @@
+{##
+ # Order items
+ #
+ # @ListChild (list="create_return.base", weight="10")
+ #}
+
+<div class="title">{{ t('Order items') }}:</div>
+
+<table cellspacing="0" class="items">
+  <thead>
+    <tr>{{ widget_list('create_return.items.head') }}</tr>
+  </thead>
+  <tbody>
+    {% for index, item in this.getOrderItems() %}
+    <tr>{{ widget_list('create_return.item', item=item) }}</tr>
+    {% endfor %}
+    {% for w in this.getViewList('invoice.items') %}
+      <tr>{{ w.display() }}</tr>
+    {% endfor %}
+  </tbody>
+</table>

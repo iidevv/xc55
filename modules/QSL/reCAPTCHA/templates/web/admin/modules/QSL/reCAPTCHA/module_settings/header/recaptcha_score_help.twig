@@ -1,0 +1,12 @@
+<div class="table-label recaptcha-options-score-help-text-value"></div>
+
+<div class="star">&nbsp;</div>
+
+<div class="table-value recaptcha-options-score-help-text-value">
+  {{ t(this.getRecaptchaScoreHelpText()) }}
+  
+  {# a little hack to have "dependency" framework working (as it requires 'input[name]' element): #}
+  <input type="text" name="{{ this.getName() }}" style="display:none;" disabled>
+</div>
+
+<div class="clear"></div>

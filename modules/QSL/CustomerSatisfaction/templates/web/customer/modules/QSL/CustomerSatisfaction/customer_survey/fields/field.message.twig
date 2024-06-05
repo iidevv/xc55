@@ -1,0 +1,15 @@
+{##
+ # Message
+ #
+ # @ListChild (list="customer-survey.send.fields", weight="500")
+ #}
+
+<div class="form-item">
+  <label for="message" class="for-message">
+    {{ t('Please leave your comments:') }}
+    </label>
+    <br>
+  <div class="resizable-textarea">
+    {{ widget('XLite\\View\\FormField\\Textarea\\Simple', placeholder='Your Message', fieldName='customerMessage', value=this.getSurvey().customerMessage, fieldOnly='true', required='true') }}
+  </div>
+</div>

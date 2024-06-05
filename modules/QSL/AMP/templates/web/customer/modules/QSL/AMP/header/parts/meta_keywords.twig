@@ -1,0 +1,9 @@
+{##
+ # Head list children
+ #
+ # @ListChild (list="amp.head", weight="700")
+ #}
+
+{% if this.getKeywords() %}
+  <meta name="keywords" content="{{ t(this.getKeywords()) }}" />
+{% endif %}

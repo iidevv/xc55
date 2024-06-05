@@ -1,0 +1,14 @@
+{##
+ # Header logo
+ #
+ # @ListChild (list="amp.layout.header", weight="100")
+ #}
+<div id="{{ this.getUniqueId('logo') }}" class="company-logo i-c">
+    <a href="{{ this.getAbsoluteURL('') }}" title="{{ this.getLogoAlt() }}">
+        <amp-img src="{{ this.getAbsoluteURL(this.getLogo()) }}" width="1" height="1" layout="responsive">
+            <noscript>
+                <img src="{{ this.getAbsoluteURL(this.getLogo()) }}" alt="{{ this.getLogoAlt() }}" />
+            </noscript>
+        </amp-img>
+    </a>
+</div>

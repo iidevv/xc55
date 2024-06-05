@@ -1,0 +1,5 @@
+Version 5.5.0.28
+
+Fixes (1)
+2023-12-22 - [Bug] Vulnerability allowing the creation of arbitrary files on the server root. Fixed. #XCB-2957 #CDev-Core
+

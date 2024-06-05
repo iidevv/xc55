@@ -1,0 +1,16 @@
+{##
+ # Manage action
+ #
+ # @ListChild (list="popup.shipping.shipping-solutions.list.line.actions.right", weight=100)
+ #}
+
+{% if this.isEnabled(this.get('method')) %}
+  <div class="manage-action">
+    {{ widget(
+      'XLite\\View\\Button\\SimpleLink',
+      label='Manage in My Apps',
+      location=this.getModuleURL(this.get('method')),
+      blank=true
+    ) }}
+  </div>
+{% endif %}

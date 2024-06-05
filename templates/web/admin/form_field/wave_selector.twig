@@ -1,0 +1,17 @@
+{##
+ # Template for Upgrade access level selector
+ #}
+
+<wave-selector inline-template>
+  <div class="wave-selector">
+    <div v-show="waves.length">
+      {% include 'form_field/select.twig' %}
+      {{ widget('\\XLite\\View\\Tooltip', text=t(this.getHelpMessage()), isImageTag='true', className='help-icon') }}
+      {{ widget('\\XLite\\View\\Button\\CheckForUpdates', label=t('Check for updates'), clear=false) }}
+    </div>
+
+    <div v-show="!waves.length" class="input-field-wrapper {{ this.getWrapperClass() }}">
+      <span{{ this.getAttributesCode()|raw }}>{{ t('Upgrade access level cannot be changed for default free license') }}</span>
+    </div>
+  </div>
+</wave-selector>

@@ -1,0 +1,70 @@
+{# #
+ # Sitemap page
+#}
+
+{% if this.isSitemapGenerationNotFinished() %}
+  {{ widget('\\CDev\\XMLSitemap\\View\\SitemapGeneration\\Progress') }}
+{% else %}
+  <div class="sitemap settings general-settings">
+
+    <h2>{{ t('Sitemap settings') }}</h2>
+
+    <div class="has-tips">
+      <div class="left">
+        <div class="input-field-wrapper top-decr">
+          <p>
+            {{ t('A sitemap is a way of organizing a website, identifying the URLs and the data under each section.') }}
+          </p>
+        </div>
+
+        {% form '\\CDev\\XMLSitemap\\View\\Form\\Sitemap' %}
+
+          <ul class="table default-table">
+            <li class="input input-checkbox first">
+              <div class="table-label">
+                <label title="">
+                  {{ t('XML sitemap URL:') }}
+                </label>
+              </div>
+              <div class="table-value engines-value">
+          <span class="input-field-wrapper input input-checkbox">
+            <ul>
+                <li><a href="{{ this.getSitemapURL() }}">{{ this.getSitemapURL() }}</a></li>
+            </ul>
+          </span>
+              </div>
+            </li>
+
+            <li class="input input-checkbox first">
+              <div class="table-label engines-label">
+                <label for="engines" title="">
+                  {{ t('Mark, the search engines you want to inform of the structure of your site using the site map') }}
+                </label>
+              </div>
+              <div class="table-value engines-value">
+          <span class="input-field-wrapper input input-checkbox">
+            <ul class="engines multiple-selector">
+              {% for key, engine in this.getEngines() %}
+                <li>
+                  <label for="engine{{ key }}">
+                    <input type="checkbox" name="engines[]" value="{{ key }}" id="engine{{ key }}"/>
+                    <span>{{ t(engine.title) }}</span>
+                  </label>
+                </li>
+              {% endfor %}
+            </ul>
+          </span>
+              </div>
+            </li>
+          </ul>
+
+          {{ widget('\\CDev\\XMLSitemap\\View\\Form\\Settings', category='CDev\\XMLSitemap') }}
+
+          {{ widget('\\CDev\\XMLSitemap\\View\\StickyPanel\\ItemForm') }}
+        {% endform %}
+      </div>
+
+      {{ widget_list('admin.tips_container') }}
+    </div>
+  </div>
+{% endif %}

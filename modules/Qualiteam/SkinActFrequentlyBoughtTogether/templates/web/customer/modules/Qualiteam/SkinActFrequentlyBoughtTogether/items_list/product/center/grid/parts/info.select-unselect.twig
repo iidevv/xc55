@@ -1,0 +1,16 @@
+{##
+ # Select all / unselect all
+ #
+ # @ListChild (list="itemsList.widget.frequentlyBought.product.before", weight="100")
+#}
+
+<div class="select-unselect">
+  <div class="select-unselect__buttons">
+    <div class="select-unselect__select-button">
+    {{ widget('\\XLite\\View\\Button\\Regular', type='button', label=t('SkinActFrequentlyBoughtTogether select all'), style="select-unselect__button") }}
+    </div>
+    <div class="select-unselect__button select-unselect__unselect-button">
+    {{ widget('\\XLite\\View\\Button\\Regular', type='button', label=t('SkinActFrequentlyBoughtTogether unselect all'), style="select-unselect__button") }}
+    </div>
+  </div>
+</div>

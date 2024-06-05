@@ -1,0 +1,12 @@
+{##
+ # Layout editor panel
+ #
+ # @ListChild(list="themetweaker-panel--header", weight="0")
+ #}
+
+<div class="themetweaker-bar-elem-wrapper">
+  <button @click="goAdminPanel" class="themetweaker-bar-elem themetweaker-goto-admin">
+    {{ this.displaySVGImage('modules/XC/ThemeTweaker/themetweaker_panel/icons/back.svg') }}
+    <span>{{ t('Admin Area') }}</span>
+  </button>
+</div>

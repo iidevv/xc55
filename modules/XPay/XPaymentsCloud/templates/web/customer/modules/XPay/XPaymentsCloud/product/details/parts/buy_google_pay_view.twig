@@ -1,0 +1,9 @@
+{##
+ # Buy with Google Pay widget container
+ #
+ # @ListChild (list="product.details.page.info.form.buttons-added.cart-buttons", zone="customer", weight="131")
+ # @ListChild (list="product.details.quicklook.info.form.buttons-added.cart-buttons", zone="customer", weight="131")
+ # @ListChild (list="product.details.page.info.form.buttons.cart-buttons", zone="customer", weight="131")
+ # @ListChild (list="product.details.quicklook.info.form.buttons.cart-buttons", zone="customer", weight="131")
+ #}
+{{ widget('\\XPay\\XPaymentsCloud\\View\\Product\\BuyWithWallet', product=this.product, walletClass='BuyWithGooglePay', walletId='googlePay') }}

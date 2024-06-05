@@ -1,0 +1,12 @@
+{##
+ # Trial period description
+ #
+ #
+ # @ListChild (list="cart.item.info.xpayments_subscription", weight="500")
+#}
+
+{% if this.orderItem.hasTrialPeriod() %}
+  <p class="text">
+    <span>{{ t('Trial period') }}:</span> {{ this.orderItem.getXpaymentsTrialDescription() }}
+  </p>
+{% endif %}

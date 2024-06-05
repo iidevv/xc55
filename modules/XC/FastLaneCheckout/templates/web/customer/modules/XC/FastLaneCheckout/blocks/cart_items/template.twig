@@ -1,0 +1,9 @@
+{##
+ # Checkout : order review step : selected state : items
+ #}
+<cart-items is='cart-items' inline-template>
+	<div class='cart-items-wrapper'>
+		<p class='cart-items-header'>{{ t('Order details') }}</p>
+	  {{ widget_list('checkout.review.selected.items') }}
+	</div>
+</cart-items>

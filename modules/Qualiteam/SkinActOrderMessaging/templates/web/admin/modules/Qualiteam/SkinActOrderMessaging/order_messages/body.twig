@@ -1,0 +1,20 @@
+{# copy from modules/XC/VendorMessages/page/order_messages.twig #}
+<input type="hidden" name="message_id" value="" />
+
+<div class="order-messages-wrapper">
+    <div class="order-messages-block">
+        <div class="order-messages-header">
+            {{ t('SkinActOrderMessaging Messages for Order #xx', {'orderNumber': this.getOrder().getOrderNumber()}) }}
+            {% if this.getOrder().getOrigProfile() %}
+                (<a href="{{ xurl('profile', '', {profile_id:this.getOrder().getOrigProfile().getProfileId()}) }}" target="_blank">{{ this.getOrder().getProfile().getName() }}</a>)
+            {% else %}
+                ({{ this.getOrder().getProfile().getName() }})
+            {% endif %}
+        </div>
+        {% include 'modules/Qualiteam/SkinActOrderMessaging/order_messages/messages.twig' %}
+    </div>
+
+    <div class="order-summary-block">
+        {% include 'modules/Qualiteam/SkinActOrderMessaging/order_messages/order_summary.twig' %}
+    </div>
+</div>

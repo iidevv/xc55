@@ -1,0 +1,11 @@
+{# #
+ # NotifyMe box
+ #
+ # Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ # See https://www.x-cart.com/license-agreement.html for license details.
+#}
+{% apply spaceless %}
+  <div class="notify-me-wrapper {{ this.getFingerprint() }}">
+    {{ widget('QSL\\BackInStock\\View\\Button\\NotifyMe', product=this.getProduct()) }}
+  </div>
+{% endapply %}

@@ -1,0 +1,4 @@
+services:
+  Qualiteam\SkinActGoogleProductRatingFeed\Core\Task\FeedUpdater:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }

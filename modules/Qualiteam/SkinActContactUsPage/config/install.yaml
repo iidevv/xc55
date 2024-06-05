@@ -1,0 +1,261 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: request_catalog_url
+    category: Qualiteam\SkinActContactUsPage
+    type: text
+    orderby: 100
+    value: 'https://www.spaandequipment.com/pdf/Spa_and_Equipment_SkinAct_2024_Catalog.pdf'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage Request Catalog URL'
+  - name: request_catalog_image
+    category: Qualiteam\SkinActContactUsPage
+    type: text
+    orderby: 200
+    value: 'https://www.spaandequipment.com/skin/common_files/images/thumb_catalog_spa_and_equipment_skinact_2024_click.jpg'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage Request Catalog image URL'
+  - name: about_us_content
+    category: Qualiteam\SkinActContactUsPage
+    type: 'XLite\View\FormField\Textarea\Advanced'
+    orderby: 300
+    value: '<h3>About Spa&amp;Equipment</h3><p>Place an Order Online 7 Days a Week 24 Hours a Day</p><p><br></p><h4>Business Hours:</h4><p>Monday to Friday</p><p>9:00 AM to 5:00 PM (Pacific Standard Time)</p><p><br></p><p class="phones"><i class="fa fa-phone"></i><a href="tel:+18004180830">1-800-418-0830 TOLL FREE</a><br><a href="tel:+18188346640">1-818-834-6640 INTERNATIONAL</a><br><a href="tel:+18186862195">1-818-686-2195 FAX</a></p>'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage About Spa&Equipment block content'
+  - name: showrooms_content
+    category: Qualiteam\SkinActContactUsPage
+    type: 'XLite\View\FormField\Textarea\Advanced'
+    orderby: 400
+    value: '<h3>Los Angeles Showroom</h3><p>Monday to Friday</p><p>9:00 AM to 5:00 PM (Pacific Standard Time)</p><h4>Address:</h4><p>9667 Canoga Ave, Chatsworth, CA 91311</p><p><br></p><h3>Miami Showroom</h3><p>Monday to Friday</p><p>9:00 AM to 5:00 PM (Eastern Standard Time)</p><h4>Address:</h4><p>7045 NW 46th street, Miami, FL 33166</p>'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage Showrooms block content'
+  - name: showroom1_title
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 710
+    value: 'Los Angeles Showroom'
+    translations:
+      - code: en
+        option_name: '1st showroom title'
+  - name: showroom1_address
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 720
+    value: '9667 Canoga Ave, Chatsworth, CA 91311'
+    translations:
+      - code: en
+        option_name: '1st showroom address'
+
+  - name: showroom1_coordinate
+    category: Qualiteam\SkinActContactUsPage
+    type: 'hidden'
+    value: ''
+
+  - name: showroom2_title
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 730
+    value: 'Miami Showroom'
+    translations:
+      - code: en
+        option_name: '2nd showroom title'
+  - name: showroom2_address
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 740
+    value: '7045 NW 46th street, Miami, FL 33166'
+    translations:
+      - code: en
+        option_name: '2nd showroom address'
+  - name: showroom2_coordinate
+    category: Qualiteam\SkinActContactUsPage
+    type: 'hidden'
+    value: ''
+
+  - name: gmap_api_key
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 750
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Google Map API key'
+
+  - name: showroom1_gmap_code
+    category: Qualiteam\SkinActContactUsPage
+    type: 'XLite\View\FormField\Textarea\Simple'
+    orderby: 401
+    value: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3298.1148700423632!2d-118.6000911!3d34.2456124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c29cbe4b77d7ad%3A0x95c8414fb1d66b00!2s9667%20Canoga%20Ave%2C%20Chatsworth%2C%20CA%2091311%2C%20USA!5e0!3m2!1sen!2sru!4v1666128648666!5m2!1sen!2sru" width="100%" height="390" frameborder="0" style="border:0" allowfullscreen></iframe>'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage Google Map code for Showroom 1'
+
+  - name: showroom2_gmap_code
+    category: Qualiteam\SkinActContactUsPage
+    type: 'XLite\View\FormField\Textarea\Simple'
+    orderby: 402
+    value: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.6219881900256!2d-80.3119991!3d25.816042199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ba28eed014f9%3A0x6f2e1d1ab3a75eea!2s7045%20NW%2046th%20St%2C%20Miami%2C%20FL%2033166%2C%20USA!5e0!3m2!1sen!2sru!4v1675743115085!5m2!1sen!2sru" width="100%" height="390" frameborder="0" style="border:0" allowfullscreen></iframe>'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage Google Map code for Showroom 2'
+
+  - name: mobileAppSeparator
+    category: Qualiteam\SkinActContactUsPage
+    type: separator
+    orderby: 700
+    translations:
+      - code: en
+        option_name: Mobile app specific content
+
+  - name: showroom1_working_hours
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 712
+    value: '9:00 AM to 5:00 PM (Pacific Standard Time)'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage 1st showroom working hours'
+
+  - name: showroom2_working_hours
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 732
+    value: '9:00 AM to 5:00 PM (Eastern Standard Time)'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage 2nd showroom working hours'
+
+  - name: showroom1_subtitle
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 711
+    value: 'Monday to Friday'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage 1st showroom subtitle'
+
+  - name: showroom2_subtitle
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 731
+    value: 'Monday to Friday'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage 2nd showroom subtitle'
+
+#  //                    About us title
+#  //About us subtitle
+#  //About us working days
+#  //About us working hours
+#  //Toll free phone
+#  //International phone
+#  //Fax
+#  - 'about_us_title' => Types::string(),
+#      'about_us_subtitle' => Types::string(),
+#      'about_us_working_days' => Types::string(),
+#      'about_us_working_hours' => Types::string(),
+#      'toll_free_phone' => Types::string(),
+#      'international_phone' => Types::string(),
+#      'fax' => Types::string(),
+
+  - name: about_us_title
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 741
+    value: 'About Spa&Equipment'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage app about_us_title'
+
+  - name: about_us_subtitle
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 742
+    value: 'Place an Order Online 7 Days a Week 24 Hours a Day'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage app about_us_subtitle'
+
+  - name: about_us_working_days
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 743
+    value: 'Monday to Friday'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage app about_us_working_days'
+
+  - name: about_us_working_hours
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 744
+    value: '9:00 AM to 5:00 PM (Pacific Standard Time)'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage app about_us_working_hours'
+
+  - name: toll_free_phone
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 745
+    value: '1-800-418-0830'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage app toll_free_phone'
+
+  - name: international_phone
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 746
+    value: '1-818-834-6640'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage app international_phone'
+
+  - name: fax
+    category: Qualiteam\SkinActContactUsPage
+    type: 'text'
+    orderby: 747
+    value: '1-818-686-2195'
+    translations:
+      - code: en
+        option_name: 'SkinActContactUsPage app fax'
+
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActContactUsPage Request a Catalog & Contact Us", translations: [{ code: en, label: "Request a Catalog & Contact Us" }] }
+  - { name: "SkinActContactUsPage Request Catalog URL", translations: [{ code: en, label: 'Request Catalog URL' }] }
+  - { name: "SkinActContactUsPage Request Catalog image URL", translations: [{ code: en, label: 'Request Catalog image URL' }] }
+  - { name: "SkinActContactUsPage About Spa&Equipment block content", translations: [{ code: en, label: '"About Spa&Equipment" block content' }] }
+  - { name: "SkinActContactUsPage Showrooms block content", translations: [{ code: en, label: 'Showrooms block content' }] }
+  - { name: "SkinActContactUsPage Google Map code for Showroom 1", translations: [{ code: en, label: 'Google Map code for the first showroom' }] }
+  - { name: "SkinActContactUsPage Showroom 1 header", translations: [{ code: en, label: 'Los Angeles Showroom' }] }
+  - { name: "SkinActContactUsPage Showroom 2 header", translations: [{ code: en, label: 'Miami Showroom' }] }
+  - { name: "SkinActContactUsPage You can request a catalog or send a message to us using the form below", translations: [{ code: en, label: 'You can request a catalog or send a message to us using the form below:' }] }
+  - { name: "SkinActContactUsPage Click here to view or download a digital version of our catalog", translations: [{ code: en, label: 'Click here to view or download a digital version of our catalog.' }] }
+  - { name: "SkinActContactUsPage Department", translations: [{ code: en, label: 'Department' }] }
+  - { name: "SkinActContactUsPage All", translations: [{ code: en, label: 'All' }] }
+  - { name: "SkinActContactUsPage Partners", translations: [{ code: en, label: 'Partners' }] }
+  - { name: "SkinActContactUsPage Marketing", translations: [{ code: en, label: 'Marketing / publicity' }] }
+  - { name: "SkinActContactUsPage Webdesign", translations: [{ code: en, label: 'Web design' }] }
+  - { name: "SkinActContactUsPage Sales", translations: [{ code: en, label: 'Sales' }] }
+  - { name: "SkinActContactUsPage 1st showroom working hours", translations: [{ code: en, label: '1st showroom working hours' }] }
+  - { name: "SkinActContactUsPage 2nd showroom working hours", translations: [{ code: en, label: '2nd showroom working hours' }] }
+  - { name: "SkinActContactUsPage 1st showroom subtitle", translations: [{ code: en, label: '1st showroom subtitle' }] }
+  - { name: "SkinActContactUsPage 2nd showroom subtitle", translations: [{ code: en, label: '2nd showroom subtitle' }] }
+  - { name: "SkinActContactUsPage app about_us_title", translations: [{ code: en, label: 'About us title' }] }
+  - { name: "SkinActContactUsPage app about_us_subtitle", translations: [{ code: en, label: 'About us subtitle' }] }
+  - { name: "SkinActContactUsPage app about_us_working_days", translations: [{ code: en, label: 'About us working days' }] }
+  - { name: "SkinActContactUsPage app about_us_working_hours", translations: [{ code: en, label: 'About us working hours' }] }
+  - { name: "SkinActContactUsPage app toll_free_phone", translations: [{ code: en, label: 'Toll free phone' }] }
+  - { name: "SkinActContactUsPage app international_phone", translations: [{ code: en, label: 'International phone' }] }
+  - { name: "SkinActContactUsPage app fax", translations: [{ code: en, label: 'Fax' }] }

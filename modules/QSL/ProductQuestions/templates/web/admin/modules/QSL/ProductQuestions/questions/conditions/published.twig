@@ -1,0 +1,7 @@
+{##
+ # @ListChild (list="qsl.productquestions.questions.list.search.conditions", weight="100")
+ #}
+
+<li class="condition published">
+  {{ widget('XLite\\View\\FormField\\Input\\Checkbox\\Simple', fieldName='published', value=this.getCondition('published'), label=t('Published (question)')) }}
+</li>

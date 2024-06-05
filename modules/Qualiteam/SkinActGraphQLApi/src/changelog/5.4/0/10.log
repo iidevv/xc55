@@ -1,0 +1,5 @@
+Version 5.4.0.10
+
+Fixes (2)
+- Add payment_selection_ready flag to cart object
+- Fix error display for CartServiceException

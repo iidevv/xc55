@@ -1,0 +1,8 @@
+{##
+ # Clean CC data widget
+ #
+ #}
+
+{% if this.isClearCCDataNotFinished() %}
+ {{ widget('\\XPay\\XPaymentsCloud\\View\\ClearCCData\\Progress') }}
+{% endif %}

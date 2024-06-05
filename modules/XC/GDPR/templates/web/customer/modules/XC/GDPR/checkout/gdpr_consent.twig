@@ -1,0 +1,9 @@
+{##
+ # Cookie policy
+ #}
+
+<div class="gdpr-consent-checkbox">
+  {% if this.get('auth').isUserFromGdprCountry() %}
+    {{ widget("XC\\GDPR\\View\\FormField\\Input\\GdprConsent", forceShow=true, fieldName="gdprConsent", label="I consent to the collection and processing of my personal data (checkout)") }}
+  {% endif %}
+</div>

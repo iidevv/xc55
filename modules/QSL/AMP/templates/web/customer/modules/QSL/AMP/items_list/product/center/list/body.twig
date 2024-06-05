@@ -1,0 +1,17 @@
+{##
+ # Products list (list variant)
+ #}
+
+<div class="products">
+
+  {% if this.getPageData() %}
+    <ul class="prod-list">
+      {% for product in this.getPageData() %}
+        <li class="prod-cell">
+          {{ this.getProductWidgetContent(product)|raw }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</div>

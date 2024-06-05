@@ -1,0 +1,6 @@
+services:
+  Qualiteam\SkinActMobileAppBanners\Core\EventListener:
+    arguments:
+      $moduleManagerDomain: '@XCart\Domain\ModuleManagerDomain'
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }

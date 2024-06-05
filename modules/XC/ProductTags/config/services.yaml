@@ -1,0 +1,23 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+api_platform:
+  mapping:
+    paths:
+      - '%kernel.project_dir%/var/run/classes/XC/ProductTags/Model'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  XC\ProductTags\API\Endpoint\Tag\Transformer\InputTransformerInterface: '@XC\ProductTags\API\Endpoint\Tag\Transformer\InputTransformer'
+  XC\ProductTags\API\Endpoint\Tag\Transformer\InputTransformer: ~
+  XC\ProductTags\API\Endpoint\Tag\Transformer\OutputTransformerInterface: '@XC\ProductTags\API\Endpoint\Tag\Transformer\OutputTransformer'
+  XC\ProductTags\API\Endpoint\Tag\Transformer\OutputTransformer: ~
+
+  XC\ProductTags\API\OpenApiTagsRepositoryDecorator:
+    decorates: XLite\API\OpenApiTagsRepository

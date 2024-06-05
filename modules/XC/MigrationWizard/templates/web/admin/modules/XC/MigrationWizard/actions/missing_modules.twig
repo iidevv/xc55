@@ -1,0 +1,47 @@
+{##
+ # Migration Wizard - Missing modules action
+ #}
+{% if this.getMissingModules() %}
+
+    {% form '\\XC\\MigrationWizard\\View\\Form\\Migration\\InstallModules' %}
+
+    <div class="panel">
+        <div class="panel-body">
+            {% for module in this.getMissingModules() %}
+                <div class="row">
+                    <div class="addon-icon">
+                        {% if module.icon %}
+                            <img src="{{ module.icon }}" class="addon-icon addon-nondefault-icon" alt="{{ module.moduleName }}" />
+                        {% else %}
+                            <img src="{{ asset('images/spacer.gif') }}" class="addon-icon addon-default-icon" alt="{{ module.moduleName }}" />
+                        {% endif %}
+                    </div>
+                    <div class="addon-actions">
+                        <h3>{{ module.moduleName }}</h3>
+                        <div>
+                            <div class="install">
+                                <label for="install-moduleId{{ module.id }}" class="install-module-button">
+                                    <input id="install-moduleId{{ module.id }}" type="hidden" name="moduleIds[]" class="install-module-action" value="{{ module.id }}">
+                                    <span>
+                                        {% if not module.installed %}
+                                            {{ t('Install') }}
+                                        {% else %}
+                                            {{ t('Enable') }}
+                                        {% endif %}
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {{ widget('\\XLite\\View\\Button\\Submit', label=this.getButtonTitle(), style='center regular-main-button') }}
+
+    {% endform %}
+
+{% endif %}
+
+{% include this.getDir() ~ '/step_back.twig' %}

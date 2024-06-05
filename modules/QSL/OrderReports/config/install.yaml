@@ -1,0 +1,32 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Role\Permission :
+  - { code : view order reports, section : Sales, translations : [ { code : en, name : View order reports }, { code : ru, name : Просмотр отчетов о заказах } ] }
+
+XLite\Model\Role :
+  - { translations : [ { code : en, name : View order reports }, { code : ru, name : Просмотр отчетов о заказах } ], permissions : [ { code : view order reports } ] }
+
+XLite\Model\LanguageLabel :
+  - { name : "(off)", translations : [ { code : en, label : "off" }, { code : ru, label : "скидка" } ] }
+  - { name : "Average order value", translations : [ { code : en, label : "Average order value" }, { code : ru, label : "Средняя сумма заказа" } ] }
+  - { name : "Average time between purchases (in days)", translations : [ { code : en, label : "Average time between purchases (in days)" }, { code : ru, label : "Среднее время до повторной покупки (в днях)" } ] }
+  - { name : "Choose date", translations : [ { code : en, label : "Choose date" }, { code : ru, label : "Выберете дату" } ] }
+  - { name : "Coupon has been deleted", translations : [ { code : en, label : "Coupon has been deleted" }, { code : ru, label : "Купон был удален" } ] }
+  - { name : "Customer lifetime value", translations : [ { code : en, label : "Customer lifetime value" }, { code : ru, label : "Значение на пользователя" } ] }
+  - { name : "Export results as CSV", translations : [ { code : en, label : "Export results as CSV" }, { code : ru, label : "Экспортировать результаты как CSV" } ] }
+  - { name : "No coupon", translations : [ { code : en, label : "No coupon" }, { code : ru, label : "Без купона" } ] }
+  - { name : "No state specified", translations : [ { code : en, label : "No state specified" }, { code : ru, label : "Область не выбрана" } ] }
+  - { name : "Order reports", translations : [ { code : en, label : "Order reports" }, { code : ru, label : "Отчеты по заказам" } ] }
+  - { name : "Products sold", translations : [ { code : en, label : "Products sold" }, { code : ru, label : "Кол-во" } ] }
+  - { name : "Repeat purchases per customer", translations : [ { code : en, label : "Repeat purchases per customer" }, { code : ru, label : "Повторные покупки на пользователя" } ] }
+  - { name : "Segment orders by", translations : [ { code : en, label : "Segment orders by" }, { code : ru, label : "Сегментировать заказы по" } ] }
+  - { name : "Select", translations : [ { code : en, label : "Select" }, { code : ru, label : "Выбрать" } ] }
+  - { name : "Shipping country", translations : [ { code : en, label : "Shipping country" }, { code : ru, label : "Страна доставки" } ] }
+  - { name : "Shipping state", translations : [ { code : en, label : "Shipping state" }, { code : ru, label : "Область доставки" } ] }
+  - { name : "Top customers", translations : [ { code : en, label : "Top customers" }, { code : ru, label : "Лучшие покупатели" } ] }
+  - { name : "Total number of repeat purchases", translations : [ { code : en, label : "Total number of repeat purchases" }, { code : ru, label : "Общее кол-во повторяющихся покупок" } ] }

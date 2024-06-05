@@ -1,0 +1,36 @@
+{##
+ # Shopping cart gift items block
+ #
+ # @ListChild (list="cart.postfix.block", weight="10")
+#}
+<table class="selected-products">
+
+    {% for group in this.getCartItemsGroups() %}
+
+        {% if group.data %}
+            <tbody class="group">
+            <tr>
+                {{ widget_list('cart.postfix.group', group=group.data) }}
+            </tr>
+            </tbody>
+        {% endif %}
+
+        <tbody class="items">
+        {% for item in group.items %}
+            <tr class="selected-product">
+                {{ widget_list('cart.postfix.item', item=item) }}
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    {% endfor %}
+
+    <tbody class="additional-items">
+    {% for w in this.getViewList('cart.postfix.items') %}
+        <tr class="selected-product additional-item">
+            {{ w.display() }}
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>

@@ -1,0 +1,17 @@
+{##
+ # Brand ico
+ #}
+{% if this.hasBrand() %}
+  <div class="product-brand">
+      <a href="{{ xurl('brand', '', {'brand_id': this.brand.getBrandId()}) }}">
+          {% if this.hasBrandLogo() %}
+            <span class="product-brand-icon">
+                {{ widget('\\XLite\\View\\Image', image=this.getLogo(), maxWidth=this.getLogoWidth(), maxHeight=this.getLogoHeight(), centerImage='0', verticalAlign='middle', alt=this.getBrandName()) }}
+            </span>
+          {% endif %}
+          {% if not this.hasBrandLogo() %}
+            <span class="product-brand-name">{{ this.getBrandName() }}</span>
+          {% endif %}
+      </a>
+  </div>
+{% endif %}

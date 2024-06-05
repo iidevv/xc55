@@ -1,0 +1,15 @@
+{##
+ # Pin codes list body
+ #
+ #}
+
+{% if this.hasResults() %}
+  <div class="account-subscriptions">
+    {% for subscription in this.getPageData() %}
+      {{ widget('Qualiteam\\SkinActXPaymentsSubscriptions\\View\\CustomerSubscription', subscription=subscription) }}
+    {% endfor %}
+  </div>
+{% endif %}
+{% if not this.hasResults() %}
+  <div>{{ t('No subscriptions are purchased yet') }}</div>
+{% endif %}

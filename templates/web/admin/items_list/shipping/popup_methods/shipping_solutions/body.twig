@@ -1,0 +1,17 @@
+{##
+ # Popup shipping solutions list
+ #}
+
+<div class="{{ this.getListCSSClasses() }}">
+  {% if this.getPageData() %}
+    <ul>
+      {% for method in this.getPageData() %}
+        <li class="cell" data-module-name="{{ method.getModuleName() }}">
+          <div class="shipping-method-line">
+            {{ widget_list('popup.shipping.shipping-solutions.list.line', method=method) }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

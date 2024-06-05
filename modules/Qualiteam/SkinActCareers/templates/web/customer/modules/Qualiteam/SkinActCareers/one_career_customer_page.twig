@@ -1,0 +1,27 @@
+<div class="job-details">
+    <div class="job-image">
+        <img src="{{ asset('modules/Qualiteam/SkinActCareers/top-photo.png') }}" alt="career">
+    </div>
+
+    <div class="job-description">
+        {% for field in this.getCareerFields() %}
+            <div class="job-description-row">
+                <div class="job-field-title {{ field.name }}">
+                    {{ field.label }}:
+                </div>
+                <div class="job-field-value {{ field.name }}">
+                    {{ field.content|raw }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<hr>
+<div class="apply-job-button">
+    {{ widget('Qualiteam\\SkinActCareers\\View\\Button\\JobButton',
+        label=t('SkinActCareers Apply Now'),
+        location=this.getApplyNowLocation(),
+        style='btn-primary'
+    ) }}
+</div>

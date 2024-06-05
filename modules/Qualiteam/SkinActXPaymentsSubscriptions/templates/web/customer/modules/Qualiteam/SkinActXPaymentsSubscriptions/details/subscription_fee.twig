@@ -1,0 +1,10 @@
+{##
+ # Product market price
+ #
+ #
+ # @ListChild (list="product.plain_price.tail.subscription_info.text", weight="200")
+ #}
+
+<div class="text">
+  {{ t('Subscription fee') }}: <span class="value">{{ this.formatPrice(this.product.getDisplayFeePrice(), null, 1) }}</span>
+</div>

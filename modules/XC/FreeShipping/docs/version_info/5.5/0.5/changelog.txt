@@ -1,0 +1,8 @@
+Version 5.5.0.5
+
+Improvements (1)
+2023-01-26 - [Story] Product dimensions are now available for entry at all times, and they no longer depend on the value of the Separate box checkbox setting. They are also shown on the product details page now. #ECOM-2699 #CDev-Core #XC-FreeShipping
+
+Fixes (1)
+2023-02-02 - [Bug] Bugs related to creating an NFO order with Zapier enabled. Fixed. #XCB-2005 #CDev-Core #XC-Zapier #XC-RoyalMail #XC-FreeShipping
+

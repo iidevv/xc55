@@ -1,0 +1,20 @@
+{##
+ # Migration Wizard - Check requirements action
+ #}
+{% if this.isSupported() %}
+
+    {% form '\\XC\\MigrationWizard\\View\\Form\\Migration\\CheckRequirements' %}
+
+    {% if not this.isWrongSitePath() %}
+      {{ widget('\\XLite\\View\\Button\\Submit', label=t('Continue'), style='center regular-main-button') }}
+    {% endif %}
+
+    {% endform %}
+
+    {% include this.getDir() ~ '/step_back.twig' %}
+
+{% else %}
+
+    {% include this.getDir() ~ '/step_back.twig' with {'bnstyle': 'btn-no-offset'} %}
+
+{% endif %}

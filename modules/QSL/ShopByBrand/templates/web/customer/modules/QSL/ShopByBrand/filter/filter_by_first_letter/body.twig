@@ -1,0 +1,17 @@
+{# #
+ # Filter by first letter
+#}
+
+<ul class="brands-filter-by-first-letter">
+  <span class="filter-item all-items{{ this.getAdditionalItemClass() }}">
+    {{ t('All') }}
+  </span>
+
+  {% for char, count in this.getFilterItems() %}
+    <li data-filter-value="{{ char }}">
+      <span class="filter-item{{ this.getAdditionalItemClass(char, count) }}">
+        {{ char }}
+      </span>
+    </li>
+  {% endfor %}
+</ul>

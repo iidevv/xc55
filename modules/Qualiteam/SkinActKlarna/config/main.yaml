@@ -1,0 +1,11 @@
+version: 5.5.0.0
+type: payment
+authorName: Qualiteam
+moduleName: 'SkinAct Klarna'
+description: 'Integrate the "Pay by Klarna" payment method. SS-22090'
+minorRequiredCoreVersion: 0
+dependsOn: {  }
+incompatibleWith: {  }
+skins: {  }
+showSettingsForm: false
+canDisable: true

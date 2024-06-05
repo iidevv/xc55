@@ -1,0 +1,32 @@
+{##
+ # @ListChild (list="admin.profile.rewards", zone="admin", weight="10")
+ #}
+
+<div class="reward-points-form">
+
+    <h2>{{ t('Reward points balance') }}</h2>
+
+    {% form '\\QSL\\LoyaltyProgram\\View\\Form\\UserRewardPoints' with {formAction: 'adjust'} %}
+
+    <table>
+
+        <tr class="reward-points-field">
+            <td class="name-attribute"><label for="reward_points">{{ t('Reward points the user has:') }}</label></td>
+            <td class="value-attribute">{{ widget('\\XLite\\View\\FormField\\Input\\Text\\Integer', fieldName='reward_points', fieldOnly='true', value=this.profile.reward_points) }}</td>
+        </tr>
+
+        <tr class="reward-points-comment">
+            <td class="name-attribute"><label for="reward_comments">{{ t('Your comment for the adjustment:') }}</label></td>
+            <td class="value-attribute">{{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldName='reward_comments', fieldOnly='true') }}</td>
+        </tr>
+
+        <tr class="reward-points-submit">
+            <td class="name-attribute"></td>
+            <td class="value-attribute">{{ widget('\\XLite\\View\\Button\\Submit', label=t('Adjust reward points')) }}</td>
+        </tr>
+
+    </table>
+
+    {% endform %}
+
+</div>

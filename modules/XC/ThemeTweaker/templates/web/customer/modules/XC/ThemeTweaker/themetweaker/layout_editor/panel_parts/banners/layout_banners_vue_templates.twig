@@ -1,0 +1,17 @@
+{# #
+ # Layout editor. Prepare hidden content for banner slides
+ #
+ # @ListChild (list="layout_editor.sidebar", weight="150")
+#}
+
+{# Prepare hidden vue-template content for banner slides #}
+{% if this.getBannerBoxesSB() %}
+    {% for i, banner in this.getBannerBoxesSB() %}
+        {# Here is defined id to get the banner content #}
+        <div id="banner_id_for_sb_{{ banner.id }}">
+            <div id="group-item-body{{ banner.id }}" class="bs-accordion-body collapse">
+                {{ widget('\\XC\\ThemeTweaker\\Module\\QSL\\Banner\\View\\Customer\\BannerBoxVueTemplate', banner_id=banner.id) }}
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,8 @@
+{##
+ # Location (breadcrumbs) for categpry page
+ # @ListChild (list="category-block.info", weight="200")
+ #}
+
+{% if this.isTitleVisible() and this.getTitle() %}
+  <h1 class="title category-block__title" >{{ this.getMainTitle() }}</h1>
+{% endif %}

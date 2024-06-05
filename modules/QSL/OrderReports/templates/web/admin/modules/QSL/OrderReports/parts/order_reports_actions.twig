@@ -1,0 +1,29 @@
+{##
+ # Order reports actions
+ #}
+
+<div class="order-reports-actions">
+  <div class="order-reports-actions__date-picker">
+    <form action="{{ xurl('order_reports') }}" method="POST">
+      <input type="hidden" name="page" value="{{ this.getPage() }}"/>
+      <input type="hidden" name="action" value="date"/>
+      <div class="order-reports-actions__date-picker__input">
+        <div class="order-reports-actions__date-picker__input--input">
+          {{ widget('XLite\\View\\FormField\\Input\\Text\\DateRange', fieldName='dateRange', fieldOnly='true', value=this.getDateRange()) }}
+        </div>
+        <div class="order-reports-actions__date-picker__input--button">
+          {{ widget('XLite\\View\\Button\\Submit', label=t('Select')) }}
+        </div>
+      </div>
+    </form>
+  </div>
+  {% if this.isExportShown() %}
+    <div class="order-reports-actions__export">
+      <form action="{{ xurl('order_reports') }}" method="POST">
+        <input type="hidden" name="page" value="{{ this.getPage() }}"/>
+        <input type="hidden" name="action" value="export"/>
+        {{ widget('XLite\\View\\Button\\Submit', style='regular-main-button', label=t('Export results as CSV')) }}
+      </form>
+    </div>
+  {% endif %}
+</div>

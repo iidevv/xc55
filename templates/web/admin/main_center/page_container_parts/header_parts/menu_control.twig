@@ -1,0 +1,10 @@
+{##
+ # Left side menu control
+ #
+ # @ListChild (list="admin.main.page.header", weight="100")
+ #}
+{% if this.get('auth').isAdmin() and not this.isAdminAuthorizationFlow() %}
+  <div class="left-menu-ctrl">
+    <span class="burger-menu-icon">{{ this.getSVGImage('images/burger-menu.svg')|raw }}</span>
+  </div>
+{% endif %}

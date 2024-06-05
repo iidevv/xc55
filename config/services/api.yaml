@@ -1,0 +1,78 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    api_platform.metadata.property.name_collection_factory.options_decorator:
+        class: XCart\Framework\ApiPlatform\Core\Metadata\Property\Factory\PropertyNameCollectionFactoryDecorator
+        decorates: api_platform.metadata.property.name_collection_factory
+        arguments:
+            - "@api_platform.metadata.property.name_collection_factory.options_decorator.inner"
+
+    api_platform.metadata.property.metadata_factory.decorator.options:
+        class: XCart\Framework\ApiPlatform\Core\Bridge\Doctrine\MongoDbOdm\Metadata\Property\PropertyMetadataFactoryDecorator
+        decorates: api_platform.metadata.property.metadata_factory
+        arguments:
+            - "@api_platform.metadata.property.metadata_factory.decorator.options.inner"
+
+    api_platform.metadata.resource.metadata_factory.decorator.tags:
+        class: XCart\Framework\ApiPlatform\Core\Metadata\Resource\Factory\TagsDecorator
+        decorates: api_platform.metadata.resource.metadata_factory.cached
+        decoration_priority: 40
+        arguments:
+            - "@api_platform.metadata.resource.metadata_factory.decorator.tags.inner"
+
+    XLite\API\Extension\ItemExtensionRouter:
+        arguments:
+            $subExtensions: !tagged_iterator xcart.doctrine.orm.query_sub_extension.item
+        tags:
+            - name: api_platform.doctrine.orm.query_extension.item
+              priority: 100
+
+    XLite\API\Extension\CollectionExtensionRouter:
+        arguments:
+            $subExtensions: !tagged_iterator xcart.doctrine.orm.query_sub_extension.collection
+        tags:
+            - name: api_platform.doctrine.orm.query_extension.collection
+              priority: 100
+
+    XLite\API\OpenApiFactory:
+        decorates: api_platform.openapi.factory
+        decoration_priority: 10
+        arguments: [ '@XLite\API\OpenApiFactory.inner' ]
+        autoconfigure: false
+
+    XLite\API\OpenApiTagsRepositoryInterface: '@XLite\API\OpenApiTagsRepository'
+    XLite\API\OpenApiTagsRepository: ~
+
+    api_platform.iri_converter.decorator.composite_path:
+        class: XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\ComplexIriConverterDecorator
+        decorates: api_platform.iri_converter
+        arguments:
+            $subIriFromItemConverters: !tagged_iterator xcart.api.sub_iri_from_item_converter
+
+    api_platform.identifiers_extractor.cached.decorator.complex:
+        class: XCart\Framework\ApiPlatform\Core\Api\ComplexIdentifiersExtractorDecorator
+        decorates: api_platform.identifiers_extractor.cached
+        arguments:
+            $subIdentifierExtractors: !tagged_iterator xcart.api.sub_identifier_extractor
+
+    XCart\Framework\ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\IntegerDateFilter: ~
+
+    api_platform.route_loader.decorator.api_loader:
+        class: XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\ApiLoader
+        decorates: api_platform.route_loader
+        arguments:
+            $operationPathResolver: '@api_platform.operation_path_resolver.custom'
+            $formats: '%api_platform.formats%'
+
+    XCart\Framework\ApiPlatform\Core\OpenApi\Factory\OpenApiFactory:
+        decorates: api_platform.openapi.factory
+        decoration_priority: 128
+        arguments:
+            $operationPathResolver: '@api_platform.operation_path_resolver.router'
+            $subresourceOperationFactory: '@api_platform.subresource_operation_factory.cached'
+            $formats: '%api_platform.formats%'
+            $filterLocator: '@api_platform.filter_locator'
+            $openApiOptions: '@api_platform.openapi.options'
+            $paginationOptions: '@api_platform.pagination_options'

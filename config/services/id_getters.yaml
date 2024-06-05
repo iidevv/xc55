@@ -1,0 +1,29 @@
+services:
+    _defaults:
+        autowire: true
+
+    XLite\API\Helper\IdGetterInterface: '@xcart.entities.id_getter.common'
+    xcart.entities.id_getter.common:
+        class: XLite\API\Helper\IdGetter
+        arguments:
+            $methodName: 'getId'
+
+    xcart.entities.id_getter.category:
+        class: XLite\API\Helper\IdGetter
+        arguments:
+            $methodName: 'getCategoryId'
+
+    xcart.entities.id_getter.membership:
+        class: XLite\API\Helper\IdGetter
+        arguments:
+            $methodName: 'getMembershipId'
+
+    xcart.entities.id_getter.product:
+        class: XLite\API\Helper\IdGetter
+        arguments:
+            $methodName: 'getProductId'
+
+    xcart.entities.id_getter.zone:
+        class: XLite\API\Helper\IdGetter
+        arguments:
+            $methodName: 'getZoneId'

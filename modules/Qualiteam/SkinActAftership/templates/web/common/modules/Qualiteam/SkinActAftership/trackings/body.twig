@@ -1,0 +1,83 @@
+{# #
+# Trackings template
+#}
+
+{% set tracking = this.getTrackings() %}
+
+{% if tracking|length %}
+  {% set carrier = this.postCouriersDetect() %}
+
+  {% if carrier|length %}
+    <div class="tracking-wrapper border-2 mb-6">
+      <div class="">
+        <div class="tracking-header p-4 text-white tag-{{ tracking.tag|lower }}">
+          <div class="tracking-info">
+            <div class="tracking-title">
+              {{ this.getTrackingNumber() }}
+            </div>
+            <div class="tracking-status">
+              <div class="tracking-status-message">
+                <span>{{ tracking.subtag_message }}</span>
+                {% if tracking.signed_by %}
+                  <div class="rectangle"></div>
+                  <span>{{ t('SkinActAftership signed by') }} {{ tracking.signed_by }}</span>
+                {% elseif tracking.expected_delivery %}
+                  <div class="rectangle"></div>
+                  <span>{{ t('SkinActAftership estimated delivery') }} {{ tracking.expected_delivery }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <span class="rectangle-horizontal"></span>
+          <div class="carrier-info">
+            <img class="w-16 h-16 mr-4" src="//assets.aftership.com/couriers/png/128x128/{{ this.getSlug() }}.png"
+                 alt="{{ carrier.name }}">
+            <div class="flex flex-col">
+              <div class="carrier-title">{{ carrier.name }}</div>
+              <div class="carrier-phones"><a href="tel:{{ carrier.phone }}">{{ carrier.phone }}</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="checkpoints">
+          <ul>
+            {% if tracking.checkpoints %}
+              {% for checkpoint in tracking.checkpoints %}
+                <li class="relative flex py-4 checkpoint svelte-16zglnl">
+                  <div class="flex-shrink-0 checkpoint__time text-right svelte-16zglnl">
+                    <div class="svelte-jc2gcs">
+                      <p class="checkpoint-date font-semibold">{{ checkpoint.checkpoint_timestamp|date("M d Y") }}</p>
+                      <p class="checkpoint-time text-gray-700">{{ checkpoint.checkpoint_timestamp|date("h:i A") }}</p>
+                      <span class="svelte-jc2gcs">{{ checkpoint.checkpoint_time }}</span>
+                    </div>
+                  </div>
+                  <div class="flex-shrink-0 checkpoint__icon svelte-16zglnl">
+                    <div class="absolute z-10">
+                      <div
+                          class="{{ checkpoint.tag|lower }} block w-8 h-8 bg-white relative border rounded-full border-gray-300 svelte-14w4sab"></div>
+                    </div>
+                  </div>
+                  <div class="checkpoint__detail flex flex-col svelte-16zglnl">
+                    <div class="block">
+                      <div class="checkpoint__message inline font-semibold">{{ checkpoint.message }}</div>
+                      <div
+                          class="checkpoint__carrier inline bg-gray-300 text-gray-500 rounded uppercase">{{ checkpoint.slug }}</div>
+                    </div>
+                    {% if checkpoint.location %}
+                      <div class="checkpoint__location text-gray-700 break-all">{{ checkpoint.location }}</div>
+                    {% endif %}
+                  </div>
+                </li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="is-empty-message">{{ t('SkinActAftership list of couriers based on tracking number is empty') }}</div>
+  {% endif %}
+{% else %}
+  <div class="error-message">
+    {{ this.getError.meta.message }}
+  </div>
+{% endif %}

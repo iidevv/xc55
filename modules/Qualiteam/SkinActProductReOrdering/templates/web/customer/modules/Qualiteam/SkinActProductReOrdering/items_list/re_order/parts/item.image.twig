@@ -1,0 +1,10 @@
+{#
+# @ListChild (list="reorder.item", weight="10")
+#}
+
+{% if this.hasImage() %}
+  <td class="item-thumbnail"><a href="{{ this.getProductURL() }}">{{ widget('\\XLite\\View\\Image', image=this.getImage(), alt=this.getName(), centerImage='0') }}</a></td>
+{% endif %}
+{% if not this.hasImage() %}
+  <td class="item-thumbnail">&nbsp;</td>
+{% endif %}

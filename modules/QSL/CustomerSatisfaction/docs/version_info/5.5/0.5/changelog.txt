@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2023-04-27 - [Bug] When using a link from the "Feedback request: order #xxxx" message, the redirect was done incorrectly if the customer had a non-default language selected. Fixed. #XCB-2291 #QSL-CustomerSatisfaction
+

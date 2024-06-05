@@ -1,0 +1,14 @@
+{##
+ # Message
+ #
+ # @ListChild (list="customer-survey.send.old.fields", weight="300")
+ #}
+
+<div class="form-item">
+  <label for="message" class="for-message">
+    {{ t('The product wotks as expected') }}
+    </label>
+  <div class="resizable-textarea">
+    {{ widget('\\QSL\\CustomerSatisfaction\\View\\FormField\\Input\\Stars', barName='product_works', max='5') }}
+  </div>
+</div>

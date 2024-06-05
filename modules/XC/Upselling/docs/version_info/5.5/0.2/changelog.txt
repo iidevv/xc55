@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-08-29 - [Bug] Replaced the word "module" with "addon" in text labels. #XCB-1587 #CDev-ProductAdvisor #XC-Upselling
+

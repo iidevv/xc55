@@ -1,0 +1,9 @@
+<div class="clear-abandoned-cart-email-statistics" data-warning="{{ t('Are you sure that you want to clear statistics on abandoned cart e-mails sent before %date%?') }}">
+  {% form 'QSL\\AbandonedCartReminder\\View\\Form\\ClearEmailStats' %}
+    <div class="table-label date-label">
+      <label for="date">{{ t('Clear statistics on abandoned cart e-mails sent before') }}</label>
+    </div>
+    {{ widget('XLite\\View\\DatePicker', required='false', fieldName='date', value=this.getDefaultClearDate()) }}
+    <div class="table-button">{{ widget('XLite\\View\\Button\\Submit', style='regular-main-button', label=t('Clear cart e-mail statistics')) }}</div>
+  {% endform %}
+</div>

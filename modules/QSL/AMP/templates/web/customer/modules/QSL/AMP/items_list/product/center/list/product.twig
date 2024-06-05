@@ -1,0 +1,16 @@
+{##
+ # Products list item (list variant)
+ #}
+
+<div class="prod row row-wrp">
+    <div class="p-p-wrp c c-40 xs-c-100">
+      <div class="prod-pht">
+        {{ widget_list('photo', type='inherited', product=this.product) }}
+      </div>
+    </div>
+    <div class="p-i-wrp c c-60 xs-c-100">
+      <div class="prod-inf">
+        {{ widget_list('info', type='inherited', product=this.product) }}
+      </div>
+    </div>
+</div>

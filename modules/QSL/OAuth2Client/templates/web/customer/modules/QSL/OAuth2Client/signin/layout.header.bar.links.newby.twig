@@ -1,0 +1,9 @@
+{##
+ # Login widget on header
+ #
+ # @ListChild (list="layout.header.bar.links.newby", zone="customer", weight="101")
+ #}
+
+{% if not this.isCrispWhiteOAuth2Client() %}
+    {{ widget('\\QSL\\OAuth2Client\\View\\LoginBox\\Header') }}
+{% endif %}

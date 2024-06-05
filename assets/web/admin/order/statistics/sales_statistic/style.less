@@ -1,0 +1,137 @@
+/**
+ * Sales statistic styles (for dashboard)
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+@statistic-revenue-color: @color-link;
+@statistic-orders-color: #66b36b;
+@statistic-circle-diameter: 10px;
+@statistic-period-selector-width: 107px;
+@statistic-yoy-neutral-color: #808080;
+@statistic-yoy-positive-color: #6bb670;
+@statistic-yoy-negative-color: #a94461;
+
+.sidebar {
+  .daily-sales-statistic,
+  .period-sales-statistic {
+    position: relative;
+    margin-top: @rhythmic-unit / 2;
+    border-radius: @border-radius-base;
+    padding: @rhythmic-unit / 2;
+    width: 245px;
+
+    &, p {
+      font-size: @font-size-small;
+      line-height: @line-height-small;
+    }
+
+    .reloading-element {
+      display: none;
+    }
+
+    &.reloading.reloading-circles .reloading-element {
+      display: block;
+
+      &::before,
+      &::after {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .daily-sales-statistic {
+    background: @brand-warning;
+
+    .daily-sales-row {
+      display: flex;
+      justify-content: space-between;
+
+      .statistic-value {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .period-sales-statistic {
+    border: @border-base solid @color-border;
+    padding: 0.5 * @rhythmic-unit - 1;
+
+    .period-sales-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.25 * @rhythmic-unit;
+
+      h4 {
+        margin-bottom: 0.25 * @rhythmic-unit;
+      }
+
+      .period-sales-legend {
+        p {
+          padding: 0;
+          margin: 0;
+        }
+
+        p span {
+          display: inline-block;
+          width: @statistic-circle-diameter;
+          height: @statistic-circle-diameter;
+          border-radius: @statistic-circle-diameter / 2;
+          margin-right: @statistic-circle-diameter / 2;
+        }
+
+        p.legend-revenue span {
+          background: @statistic-revenue-color;
+        }
+
+        p.legend-orders span {
+          background: @statistic-orders-color;
+        }
+      }
+
+      .period-sales-selector {
+        width: @statistic-period-selector-width;
+      }
+    }
+
+    .period-sales-stats {
+      .period-sales-row {
+        display: flex;
+        justify-content: space-between;
+
+        &.yoy-not-available {
+          display: none;
+        }
+        &.yoy-neutral .statistic-value {
+          color: @statistic-yoy-neutral-color;
+        }
+        &.yoy-positive .statistic-value {
+          color: @statistic-yoy-positive-color;
+
+          .fa-caret-up {
+            display: inline;
+          }
+        }
+        &.yoy-negative .statistic-value {
+          color: @statistic-yoy-negative-color;
+
+          .fa-caret-down {
+            display: inline;
+          }
+        }
+
+        .statistic-value {
+          font-weight: 600;
+
+          .stats-caret {
+            & > i {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

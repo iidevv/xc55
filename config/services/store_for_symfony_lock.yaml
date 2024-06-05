@@ -1,0 +1,45 @@
+# Configure lock type to avoid payments race condition
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+# Sub-services
+  # don't comment this fallback store1
+  XCart\Symfony\Component\Lock\Stores\FlockStoreFactory:
+    tags: [ { name: xcart.lock.store.factory, priority: -100 } ]
+    arguments:
+      $path: null
+
+  # don't comment this fallback store2
+  XCart\Symfony\Component\Lock\Stores\DoctrineDbalStoreFactory:
+    tags: [ { name: xcart.lock.store.factory, priority: -200 } ]
+
+## uncomment to use Redis, your choice number1
+#  XCart\Symfony\Component\Lock\Stores\RedisStoreFactory:
+#    tags: [ { name: xcart.lock.store.factory, priority: 500 } ]
+#    arguments:
+#      $host: '%env(REDIS_HOST)%'
+#      $port: '%env(int:REDIS_PORT)%'
+
+## uncomment to use Memcached, your choice number3
+#  XCart\Symfony\Component\Lock\Stores\MemcachedStoreFactory:
+#    tags: [ { name: xcart.lock.store.factory, priority: 200 } ]
+#    arguments:
+#      $host: '%env(MEMCACHED_HOST)%'
+#      $port: '%env(int:MEMCACHED_PORT)%'
+
+## uncomment to use https://www.php.net/manual/en/book.sem.php, your choice number2
+#  XCart\Symfony\Component\Lock\Stores\SemaphoreStoreFactory:
+#    tags: [ { name: xcart.lock.store.factory, priority: 300 } ]
+
+
+# Main service
+  XCart\Symfony\Component\Lock\MainStoreFactory:
+    arguments: [ !tagged_iterator xcart.lock.store.factory ]
+
+  Symfony\Component\Lock\PersistingStoreInterface:
+    factory: [ '@XCart\Symfony\Component\Lock\MainStoreFactory', 'create' ]
+
+  xcart.lock.store.factory: '@Symfony\Component\Lock\PersistingStoreInterface'

@@ -1,0 +1,17 @@
+{# #
+ # Link Item
+ #
+ # @ListChild (list="product.attribute.values.select.after", weight="10")
+#}
+
+{% if this.isMultiple() %}
+  <div class="linked_product">
+    {{ widget('\\Qualiteam\\SkinActLinkProductsToAttributes\\View\\FormField\\Select\\Model\\ProductSelector',
+      fieldName=this.getName('linked_product_id', this.value_id),
+      placeholder=t('Assign product'),
+      fieldOnly='true',
+      value=this.attributeValue.getLinkedProductId(),
+      attribute=this.attribute
+    ) }}
+  </div>
+{% endif %}

@@ -1,0 +1,138 @@
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+@import "../css/initialize";
+
+@input-focus-box-shadow-override: 0 0 0 1000px #fff inset;
+
+.login-box {
+  ul.table {
+    max-width: @input-group-auth-max-width;
+    margin: auto;
+
+    li {
+      &.input {
+        flex-direction: column;
+        padding-bottom: 0;
+
+        .floating-label;
+
+        input.form-control {
+          width: 100%;
+          vertical-align: middle;
+          border-color: @color-text-dark;
+          height: 2.5 * @rhythmic-unit;
+
+          &[name="password"]
+          &[name="password"] {
+            padding-right: 2 * @rhythmic-unit;
+          }
+
+          &:focus {
+            border-color: @color-link;
+            box-shadow: none;
+          }
+        }
+
+        .input-field-wrapper {
+          transition: @input-transition-property @fast-transitions-duration ease;
+          border-radius: @input-border-radius;
+        }
+
+        &.focused {
+          .input-field-wrapper {
+            .box-shadow(0 0 10px fade(@color-link, 50%));
+          }
+        }
+
+        &.has-error {
+          input {
+            &, &:focus {
+              border-color: @color-error;
+              box-shadow: @input-focus-box-shadow-override;
+            }
+          }
+
+          .input-field-wrapper {
+            .box-shadow(0 0 10px fade(@color-error, 50%));
+          }
+        }
+
+        span.input {
+          width: 100%;
+        }
+
+        .clear {
+          display: none;
+        }
+      }
+
+      &.buttons {
+        flex-direction: column;
+      }
+
+      &.has-error {
+        .login-box__error-note {
+          height: auto;
+
+          span {
+            opacity: 1;
+          }
+        }
+      }
+
+      + li {
+        margin-top: 1.5 * @rhythmic-unit;
+
+        @media (max-width: @screen-md-max) {
+          &.buttons {
+            margin-top: @rhythmic-unit;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .link-block {
+    margin-top: .5 * @rhythmic-unit;
+  }
+
+  input:-webkit-autofill {
+    &, &:hover, &:focus {
+      -webkit-box-shadow: @input-focus-box-shadow-override;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  &__error-note {
+    transition: height .2s ease;
+    height: 0;
+    color: @color-error;
+    font-size: @font-size-very-small;
+    text-align: left;
+    line-height: normal;
+
+    span {
+      transition: opacity .4s ease;
+      opacity: 0;
+    }
+  }
+
+  .input-effect-wrapper {
+    width: 100% !important;
+  }
+}
+
+.password-eye {
+  display: none;
+
+  .filled & {
+    display: block;
+  }
+}

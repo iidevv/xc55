@@ -1,0 +1,11 @@
+{##
+ # Invoice paypal transaction id
+ #
+ # @ListChild (list="invoice.bottom.method.payment", weight="30")
+ #}
+
+{% if this.order.getPayPalTransactionId() %}
+<div class="method-box pp-transaction-id">
+  {{ t('PayPal Transaction ID') }}: {{ this.order.getPayPalTransactionId() }}
+</div>
+{% endif %}

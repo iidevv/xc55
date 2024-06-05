@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace CDev\GoogleAnalytics\Core\GA\Interfaces;
+
+use CDev\GoogleAnalytics\Core\GA\Interfaces\DataMappers;
+
+interface IDataMapperRegistry
+{
+    public function getProductMapper(): DataMappers\IProduct;
+
+    public function getOrderItemMapper(): DataMappers\IOrderItem;
+
+    public function getOrderMapper(): DataMappers\IOrder;
+}

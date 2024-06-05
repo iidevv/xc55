@@ -1,0 +1,18 @@
+{##
+ # Survey page template
+ #
+ # @ListChild (list="survey-details-list", weight="100")
+ #}
+
+<div class="survey-section">
+  <div class="survey-info-label">{{ t('Customer rating:') }}</div>
+  <div class="survey-info-value rating">
+    <span class="survey-rating-{{ this.getSurvey().rating }}">{{ this.getCustomerRatingString() }}</span>
+  </div>
+  <br />
+  <div class="survey-info-label">{{ t('Order Number:') }}</div>
+  <div class="survey-info-value rating">{{ this.getSurvey().order.order_number }}</div>
+  <br />
+  <div class="survey-info-label">{{ t('Order total:') }}</div>
+  <div class="survey-info-value rating">{{ this.formatPrice(this.getSurvey().order.total) }}</div>
+</div>

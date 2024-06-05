@@ -1,0 +1,9 @@
+{##
+ # Header Login Icon
+ #}
+
+<a href="#" {{ this.printTagAttributes(this.getAttributes())|raw }}>
+  {{ this.displayCommentedData(this.getURLParams()) }}
+  {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon="i-user", class='header-icon-menu__icon') }}
+  <span class="header-icon-menu__label">{{ t(this.getButtonContent()) }}</span>
+</a>

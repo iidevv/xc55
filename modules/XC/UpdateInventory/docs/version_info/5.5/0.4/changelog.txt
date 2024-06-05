@@ -1,0 +1,6 @@
+Version 5.5.0.4
+
+Fixes (2)
+2022-11-23 - [Bug] The "Manage Import" and "Manage Export" permissions were working incorrectly. Fixed. #XCB-1879 #CDev-Core #XC-UpdateInventory
+2022-11-28 - [Bug] The "Manage catalog" permission was working incorrectly. Fixed. #XCB-1872 #CDev-Core #CDev-FeaturedProducts #QSL-BackInStock #QSL-Backorder #XC-UpdateInventory
+

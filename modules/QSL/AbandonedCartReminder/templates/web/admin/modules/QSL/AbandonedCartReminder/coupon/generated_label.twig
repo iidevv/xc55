@@ -1,0 +1,13 @@
+{##
+ # Generated coupon label
+ #
+ # @ListChild (list="itemsList.coupons.cell.code", weight="20")
+ #}
+
+{% if this.entity.isAbandonedCartCoupon() %}
+<span class="generated-label">
+  <span class="text-danger" title="{{ this.entity.abandonedCart.profile.login }}">
+    {{ t('generated') }}
+  </span>
+</span>
+{% endif %}

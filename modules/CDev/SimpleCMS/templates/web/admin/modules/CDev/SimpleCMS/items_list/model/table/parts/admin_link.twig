@@ -1,0 +1,11 @@
+{##
+ # Admin link for pages
+ #}
+
+{% if this.getEntity() %}
+  <div class="plain-value">
+    <span class="value">
+      <a href="{{ this.getUrl() }}">{{ this.getLink() }}</a>
+    </span>
+  </div>
+{% endif %}

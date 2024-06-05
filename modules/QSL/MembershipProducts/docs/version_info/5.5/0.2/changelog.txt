@@ -1,0 +1,6 @@
+Version 5.5.0.2
+
+Fixes (2)
+2023-04-17 - [Bug] Adjusted the recipient of the "Membership Assigned Notification". #XCB-2294 #QSL-MembershipProducts
+2023-04-26 - [Bug] Typo in QSL/MembershipProducts ("Membership exiration"). Fixed. #XCB-2166 #QSL-MembershipProducts
+

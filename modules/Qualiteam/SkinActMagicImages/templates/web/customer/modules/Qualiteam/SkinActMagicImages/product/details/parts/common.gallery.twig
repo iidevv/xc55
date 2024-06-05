@@ -1,0 +1,14 @@
+{% set spinImage = this.getSwatchMagicImages() %}
+
+{% if spinImage is not null %}
+  {% set image = spinImage.getImages().get(0) %}
+
+  {% if image is not null %}
+    <li class="widget-fingerprint-gallery">
+      <a class="magicSwatchImage" rel="lightbox" rev="width: {{ image.getWidth() }}, height: {{ image.getHeight() }}">
+        {{ widget('\\XLite\\View\\Image', image=image, imageSizeType='MSThumbnail') }}
+      </a>
+      {{ widget('\\XLite\\View\\Image', className='middle', style='display: none;', image=image, maxWidth=this.getWidgetMaxWidth(), maxHeight=this.getWidgetMaxHeight()) }}
+    </li>
+  {% endif %}
+{% endif %}

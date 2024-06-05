@@ -1,0 +1,21 @@
+{##
+ # Layout editor panel
+ #
+ # @ListChild(list="themetweaker-panel-extensions", weight="220")
+ #}
+
+<xlite-themetweaker-modal :show="isErrorDialogVisible" namespace="errorDialog">
+  <h3 slot="header">{{ t('Error') }}</h3>
+  <p slot="body" class="text-center" v-text="errorMessage"></p>
+  <div slot="footer">
+    <button class="themetweaker-modal-button secondary"
+            v-if="callbacks.errorDialog.cancel"
+            @click="onErrorDialogCancel">
+      <span>{{ t('Cancel') }}</span>
+    </button>
+    <button class="themetweaker-modal-button"
+            @click="onErrorDialogOk">
+      <span>{{ t('OK') }}</span>
+    </button>
+  </div>
+</xlite-themetweaker-modal>

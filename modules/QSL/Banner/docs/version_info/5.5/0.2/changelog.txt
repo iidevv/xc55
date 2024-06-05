@@ -1,0 +1,6 @@
+Version 5.5.0.2
+
+Fixes (2)
+2022-09-06 - [Bug] Banner. If the product details page had a banner, the banner was always shown at the bottom of the page, regardless of the settings. Fixed. #XCB-1695 #QSL-Banner
+2022-09-02 - [Bug] Banner. Issues related to displaying banners in the sidebars. Fixed. #XCB-1602 #QSL-Banner
+

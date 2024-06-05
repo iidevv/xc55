@@ -1,0 +1,9 @@
+{##
+ # Popup shipping method right actions
+ #
+ # @ListChild (list="popup.shipping.methods.list.line", weight=400)
+ #}
+
+<div class="right-actions">
+  {{ widget_list('popup.shipping.methods.list.line.actions.right', method=this.get('method')) }}
+</div>

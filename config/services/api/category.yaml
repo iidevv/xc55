@@ -1,0 +1,22 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    XLite\API\Endpoint\Category\Transformer\CategoryMoveInputTransformerInterface: '@XLite\API\Endpoint\Category\Transformer\CategoryMoveInputTransformer'
+    XLite\API\Endpoint\Category\Transformer\CategoryMoveInputTransformer: ~
+    XLite\API\Endpoint\Category\Transformer\CategoryProductInputTransformerInterface: '@XLite\API\Endpoint\Category\Transformer\CategoryProductInputTransformer'
+    XLite\API\Endpoint\Category\Transformer\CategoryProductInputTransformer: ~
+    XLite\API\Endpoint\Category\Transformer\CategoryStatsOutputTransformerInterface: '@XLite\API\Endpoint\Category\Transformer\CategoryStatsOutputTransformer'
+    XLite\API\Endpoint\Category\Transformer\CategoryStatsOutputTransformer: ~
+    XLite\API\Endpoint\Category\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\Category\Transformer\InputTransformer'
+    XLite\API\Endpoint\Category\Transformer\InputTransformer: ~
+    XLite\API\Endpoint\Category\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\Category\Transformer\OutputTransformer'
+    XLite\API\Endpoint\Category\Transformer\OutputTransformer: ~
+
+    XLite\API\Endpoint\Category\DataProvider:
+        arguments: [ '@doctrine.orm.entity_manager' ]
+        tags: [ { name: 'api_platform.collection_data_provider', priority: 1 } ]
+
+    XLite\Controller\API\Category\DeleteCategoryProduct:
+        tags: [ 'controller.service_arguments' ]

@@ -1,0 +1,34 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActYourAccountPage your account", translations: [{ code: en, label: "Your Account" }] }
+  - { name: "SkinActYourAccountPage your orders", translations: [{ code: en, label: "Your Orders" }] }
+  - { name: "SkinActYourAccountPage order history and tracking", translations: [{ code: en, label: "Order History & Tracking" }] }
+  - { name: "SkinActYourAccountPage order tracking", translations: [{ code: en, label: "Order Tracking" }] }
+  - { name: "SkinActYourAccountPage messages", translations: [{ code: en, label: "Messages" }] }
+  - { name: "SkinActYourAccountPage reorder", translations: [{ code: en, label: "Re-Order" }] }
+  - { name: "SkinActYourAccountPage parcels", translations: [{ code: en, label: "Parcels" }] }
+  - { name: "SkinActYourAccountPage returns repairs", translations: [{ code: en, label: "Returns/Repairs" }] }
+  - { name: "SkinActYourAccountPage your lists", translations: [{ code: en, label: "Your Lists" }] }
+  - { name: "SkinActYourAccountPage shopping cart", translations: [{ code: en, label: "Shopping Cart" }] }
+  - { name: "SkinActYourAccountPage wishlist", translations: [{ code: en, label: "Wishlist" }] }
+  - { name: "SkinActYourAccountPage gift registry", translations: [{ code: en, label: "Gift Registry" }] }
+  - { name: "SkinActYourAccountPage search for events", translations: [{ code: en, label: "Search for Events" }] }
+  - { name: "SkinActYourAccountPage login and security", translations: [{ code: en, label: "Login & Security" }] }
+  - { name: "SkinActYourAccountPage account details", translations: [{ code: en, label: "Account Details" }] }
+  - { name: "SkinActYourAccountPage your addresses", translations: [{ code: en, label: "Your Addresses" }] }
+  - { name: "SkinActYourAccountPage sign out", translations: [{ code: en, label: "Sign out" }] }
+  - { name: "SkinActYourAccountPage bonuses", translations: [{ code: en, label: "Bonuses" }] }
+  - { name: "SkinActYourAccountPage gift certificate", translations: [{ code: en, label: "Gift Certificate" }] }
+  - { name: "SkinActYourAccountPage special offers", translations: [{ code: en, label: "Special Offers" }] }
+  - { name: "SkinActYourAccountPage pro members", translations: [{ code: en, label: "PRO Members" }] }
+  - { name: "SkinActYourAccountPage educational videos", translations: [{ code: en, label: "Educational Videos" }] }
+  - { name: "SkinActYourAccountPage extra coupons and discounts", translations: [{ code: en, label: "Extra Coupons & Discounts" }] }
+  - { name: "SkinActYourAccountPage memberships and subscriptions", translations: [{ code: en, label: "Memberships & Subscriptions" }] }
+  - { name: "SkinActYourAccountPage subscriptions", translations: [{ code: en, label: "Subscriptions" }] }
+  - { name: "SkinActYourAccountPage saved credit cards", translations: [{ code: en, label: "Saved credit cards" }] }

@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2023-01-26 - [Bug] Fatal error on opening a product reviews page on the storefront in Standard skin. Fixed. #XCB-2065 #XC-Reviews
+

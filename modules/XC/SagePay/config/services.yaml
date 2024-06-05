@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autowire: true
+
+  XC\SagePay\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-SagePay, type: upgrade, method: onUpgradeTo5504, version: '5.5.0.4' }

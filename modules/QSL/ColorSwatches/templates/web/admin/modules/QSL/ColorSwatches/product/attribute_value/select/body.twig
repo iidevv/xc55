@@ -1,0 +1,24 @@
+{##
+ # Attribute value (Select)
+ #}
+
+{% if this.isColorSwatches() %}
+  <span class="title">{{ this.get('attribute').name }}</span>
+  <ul class="color-swatches">
+    {% for v in this.getAttrValue() %}
+      <li {{ this.printTagAttributes(this.getSwatchAttributes(v))|raw }}>
+        <div class="swatch-container">
+          <a {{ this.printTagAttributes(this.getSwatchLinkAttributes(v))|raw }}>
+            <input class="form-control" {{ this.printTagAttributes(this.getRadioAttributes(v))|raw }} />
+            {% if this.getSwatchImage(v) %}
+              <img src="{{ this.getSwatchImageURL(v) }}"/>
+            {% endif %}
+            {{ this.getModifierTitle(v)|raw }}
+          </a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  {% include 'product/attribute_value/select/body.twig' %}
+{% endif %}

@@ -1,0 +1,29 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: hfcm_category_menu_type
+    category: QSL\HorizontalCategoriesMenu
+    type: 'QSL\HorizontalCategoriesMenu\View\FormField\Select\CategoryMenuType'
+    orderby: 12
+    value: 'root_categories'
+    translations:
+      - code: en
+        option_name: Category menu type
+      - code: ru
+        option_name: Тип меню категорий
+  - name: hfcm_show_product_num
+    category: QSL\HorizontalCategoriesMenu
+    orderby: 15
+
+XLite\Model\LanguageLabel:
+  - name: "Root categories"
+    translations:
+      - code: en
+        label: 'Root categories'
+      - code: ru
+        label: 'Корневые категории'

@@ -1,0 +1,21 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    XLite\API\Endpoint\CategoryBanner\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\CategoryBanner\Transformer\InputTransformer'
+    XLite\API\Endpoint\CategoryBanner\Transformer\InputTransformer: ~
+    XLite\API\Endpoint\CategoryBanner\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\CategoryBanner\Transformer\OutputTransformer'
+    XLite\API\Endpoint\CategoryBanner\Transformer\OutputTransformer: ~
+
+    XLite\Controller\API\CategoryBanner\DeleteCategoryBanner:
+        tags: [ 'controller.service_arguments' ]
+
+    XLite\API\Endpoint\CategoryBanner\SubIdentifierExtractor\SubIdentifierExtractor:
+        tags: [ !php/const XCart\Framework\ApiPlatform\Core\Api\SubIdentifierExtractor\SubIdentifierExtractorInterface::SUB_IDENTIFIER_EXTRACTOR_TAG ]
+
+    XLite\API\Endpoint\CategoryBanner\SubExtension\SubExtension:
+        tags: [ !php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG ]
+
+    XLite\API\Endpoint\CategoryBanner\SubIriConverter\SubIriConverter:
+        tags: [ !php/const XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\SubIriConverter\SubIriFromItemConverterInterface::SUB_IRI_FROM_ITEM_CONVERTER_TAG ]

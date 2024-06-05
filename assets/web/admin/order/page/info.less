@@ -1,0 +1,785 @@
+/**
+ * Order info styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+@import "../../css/initialize";
+
+.order-info .inline-field.editable {
+  padding: @form-row-vertical-padding 0;
+  .view {
+    background-color: rgba(252, 235, 176, 0.3);
+    border-radius: @border-radius-base;
+    overflow: hidden;
+  }
+
+  .input-internal-wrapper>.input-field-wrapper {
+    width: 100%;
+
+    input.form-control,
+    select.form-control {
+      width: 100%;
+    }
+  }
+}
+
+.order-info .title-row,
+.order-info p.title,
+.line-1,
+.order-history,
+.line-2,
+.line-3
+{
+  width: 850px;
+}
+
+.line-1 {
+  margin-top: @rhythmic-unit / 2;
+}
+
+.title-row {
+  .flex-display();
+  .align-items(center);
+  margin-bottom: 0.5 * @rhythmic-unit;
+}
+
+/* Top text blocks */
+.order-info {
+  position: relative;
+}
+
+.order-info h1 {
+  .flex-display(inline-flex);
+}
+
+.order-info div.title {
+  width: 420px;
+  display: table-cell;
+
+  .placed-date {
+    background: transparent url(../../images/orderplacer.svg) no-repeat;
+    background-size: @rhythmic-unit;
+    padding-left: 1.5 * @rhythmic-unit;
+    background-position: left center;
+    margin-bottom: @rhythmic-unit;
+    text-transform: none;
+  }
+
+  .placed-customer {
+    width: 420px;
+  }
+}
+
+.order-info .title .placed-customer .profile-login .not-editable {
+  margin-left: 0.5 * @rhythmic-unit;
+}
+
+.order-info div.title .email {
+  color: #8f8f8f;
+}
+
+.order-info div.title a.name {
+  text-decoration: underline;
+}
+
+.order-info .totals div.title {
+  width: auto;
+}
+
+.order-info p.total {
+  margin-top: 1.5 * @rhythmic-unit;
+}
+
+/* Title box */
+.order-info .title-box {
+  .flex-display(inline-flex);
+}
+
+.order-info .title-box > div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Title box : note */
+
+.order-info .order-note.staff-note {
+  display: table-cell;
+  padding-left: @rhythmic-unit;
+}
+
+.order-info .order-note h4 {
+  display: inline-block;
+  margin-right: 0.5 * @rhythmic-unit;
+}
+.order-info .order-note.customer-note .view {
+  width: 400px;
+}
+
+/* Title box : history */
+
+.order-info .title-box .history a {
+  text-decoration: none;
+  border-bottom: dashed 1px;
+}
+
+/* Line 1 */
+
+.order-info .order-part {
+  width: 200px;
+  float: left;
+}
+
+.order-info .order-part h4 {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.order-info .order-part .box .method {
+  min-height: 4.5 * @rhythmic-unit;
+}
+
+.order-info .order-part .box .method .method-name {
+  padding-left: 0.5 * @rhythmic-unit;
+}
+
+.order-info.not-editable .order-part .box .method .transaction {
+  padding: 0;
+}
+
+.order-info:not(.not-editable) .order-part .box .method .view.not-editable {
+  padding: (0.5 * @rhythmic-unit) 0 0 0;
+}
+
+.order-info .order-part .box .method .payment-method-data .inline-field {
+  margin-bottom: 0.5 * @rhythmic-unit;
+}
+
+.order-info .order-part .box .method .payment-method-data * {
+  font-weight: normal;
+  line-height: normal;
+  word-wrap: break-word;
+}
+
+.order-info .order-part .box .method .payment-method-data .field {
+  padding: (0.25 * @rhythmic-unit) (0.5 * @rhythmic-unit);
+}
+
+.order-info .order-part .box .method .payment-method-data .inline-field.PurchaseOrder .view .param-title,
+.order-info .order-part .box .method .payment-method-data .inline-field.PurchaseOrder .field .value .param-title {
+  display: none;
+}
+
+.order-info .order-part .box .method .payment-method-data .inline-field.PurchaseOrder .view .param-title.force-display,
+.order-info .order-part .box .method .payment-method-data .inline-field.PurchaseOrder .field .value .param-title.force-display,
+.order-info .order-part .box .method .payment-method-data .inline-field.PurchaseOrder .view .po_number .param-title,
+.order-info .order-part .box .method .payment-method-data .inline-field.PurchaseOrder .field .value .po_number .param-title {
+  display: inline;
+}
+
+.order-info .order-part .box .method select {
+  width: 160px;
+}
+
+.order-info .order-part .box .address {
+  padding-top: 0.5 * @rhythmic-unit;
+}
+
+.order-info.not-editable .order-part .box .address strong {
+  padding-left: 0;
+}
+
+.order-info .order-part .box .address .view {
+  position: relative;
+}
+
+.order-info .order-part .box .address .field {
+  padding: (0.25 * @rhythmic-unit) (0.5 * @rhythmic-unit);
+  position: relative;
+}
+
+.order-info .order-part .box .address .address-section span.value {
+  width: 100%;
+}
+
+/* Payment */
+.order-info .payment h4 {
+  background-image: url(../../images/payment.svg);
+  background-size: @rhythmic-unit;
+  padding-left: 1.5 * @rhythmic-unit;
+  background-position: left center;
+}
+
+.order-info.not-editable .payment .box {
+  padding-left: 1.5 * @rhythmic-unit;
+}
+
+/* Shipping */
+.order-info .shipping h4 {
+  background-image: url(../../images/shipping.svg);
+  background-size: @rhythmic-unit;
+  padding-left: 1.5 * @rhythmic-unit;
+  background-position: left center;
+}
+
+.order-info.not-editable .shipping .box {
+  padding-left: 2 * @rhythmic-unit;
+}
+
+/* Actions box */
+div.actions {
+  float: right;
+}
+
+div.actions .statuses {
+  background-color: @items-list-head-bg;
+  padding: 0.5 * @rhythmic-unit - @border-base;
+  border: @border-base solid @table-border-color;
+  border-radius: @border-radius-base;
+  width: 410px;
+}
+
+div.actions .status {
+  .flex-display();
+  .align-items(center);
+  position: relative;
+
+  select.form-control {
+    margin: @form-row-vertical-padding 0;
+    width: 233px;
+  }
+
+  .clear {
+    display: none;
+  }
+
+  .info-status-warning {
+    position: absolute;
+    right: -1 * (@rhythmic-unit + 15);
+  }
+}
+
+div.actions .status.shipping-status {
+  margin-bottom: 0.5 * @rhythmic-unit;
+
+  > div:not(.clear),
+  > span {
+    display: block;
+  }
+
+  > .tooltip-main {
+    line-height: 38px;
+    margin-left: 3px;
+    margin-right: -3px;
+  }
+}
+
+div.actions .status div.table-label {
+  padding-right: 0;
+  width: 150px;
+  display: inline-block;
+  line-height: @input-height-base;
+  text-align: right;
+  margin-right: @rhythmic-unit;
+}
+
+div.actions .status div.table-value {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: inline-block;
+  float: right;
+}
+
+div.actions .status label,
+div.actions .status select
+{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+div.actions .status select {
+  width: 210px;
+}
+
+div.actions .payment-actions-row {
+  text-align: right;
+}
+
+div.actions ul.payment-sums {
+  display: inline-block;
+  text-align: right;
+  padding-top: 0.75 * @rhythmic-unit;
+}
+
+div.actions ul.payment-sums li .transaction-label {
+  display: block;
+}
+
+div.actions ul.payment-sums li .cost {
+  font-weight: bold;
+}
+
+div.actions .refund-status {
+  padding-top: 0.75 * @rhythmic-unit;
+  margin-bottom: (@rhythmic-unit / 2);
+  margin-left: (@rhythmic-unit / 2);
+  display: inline-block;
+
+  span {
+    display: block;
+  }
+  .status-name {
+    font-weight: bold;
+  }
+}
+
+.box .address ul.address-section li.address-field {
+  word-break: break-all;
+  white-space: normal;
+}
+
+ul.address-section li.address-field .address-title,
+  ul.address-section li.address-field .address-comma,
+  ul.address-section li.address-field .address-space
+{
+  display: none;
+}
+
+ul.address-section li.address-field.address-firstname .address-space,
+  ul.address-section li.address-field.address-phone .address-title,
+  ul.address-section li.address-field.address-type .address-title,
+  ul.address-section li.address-field.field-additional .address-title,
+  ul.address-section li.address-field.address-city .address-space,
+  ul.address-section li.address-field.address-street .address-space,
+  ul.address-section li.address-field.address-state .address-space
+{
+  display: inline;
+}
+
+ul.address-section li.address-field.address-title,
+  ul.address-section li.address-field.address-firstname
+{
+  float: left;
+}
+
+ul.address-section.payment-address-section li.address-field.address-type
+{
+  display: none;
+}
+
+
+
+/* Payment */
+div.payment {
+  float: left;
+  margin-right: @rhythmic-unit;
+}
+
+/* Shipping */
+.order-info div.shipping {
+  float: left;
+  margin-right: @rhythmic-unit;
+}
+
+/* Line 3 */
+
+div.line-3 table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+div.line-3 table
+{
+  border-collapse: collapse;
+  border: 0 none;
+  width: 100%;
+}
+
+div.line-3 .totals td,
+div.line-3 .totals th,
+div.line-3 .items td,
+div.line-3 .items th
+{
+  border-width: @border-base;
+  border-style: solid;
+}
+
+div.line-3 .totals td,
+div.line-3 .totals th {
+  border: none;
+}
+
+div.line-3 .totals .total div,
+div.line-3 .totals .total .value > span
+{
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+div.line-3 .totals .total {
+  height: 2.5 * @rhythmic-unit;
+
+  div {
+    padding-top: @rhythmic-unit;
+    padding-bottom: 0.5 * @rhythmic-unit;
+
+    &.value {
+      .flex-display();
+      .justify-content(flex-end);
+    }
+  }
+}
+
+div.line-3 .totals .total.negative div,
+div.line-3 .totals .total.negative .value > span
+{
+  color: @color-error;
+}
+
+
+div.line-3 .items
+{
+  margin-top: @rhythmic-unit;
+  margin-bottom: 0.5 * @rhythmic-unit;
+  border: 0 none;
+}
+
+div.line-3 table.totals
+{
+  width: 100%;
+}
+
+div.line-3 .totals li {
+  height: 2 * @rhythmic-unit;
+  position: relative;
+}
+
+/* Totals */
+.order-info .totals {
+  float: right;
+  margin-top: -2 * @rhythmic-unit;
+  text-align: right;
+  display: table;
+  max-width: 420px;
+}
+
+.order-info.not-editable .totals {
+  margin-top: 0.5 * @rhythmic-unit;
+}
+
+.order-info .totals > li {
+  display: table-row;
+}
+
+.order-info .totals div {
+  display: inline-block;
+}
+
+.order-info .totals div.input-group {
+  display: table;
+}
+
+.order-info .totals li > div {
+  display: table-cell;
+}
+
+.order-info .totals li.order-modifier.shipping-row > div {
+  padding-top: 0;
+}
+
+.order-info .totals .recalc {
+  padding-left: 1.5 * @rhythmic-unit;
+  position: absolute;
+  height: 2 * @rhythmic-unit;
+}
+
+.order-info.not-editable .totals .shipping-code-modifier {
+  padding-bottom: 0;
+}
+
+.order-info .totals .shipping-code-modifier {
+  .title {
+    position: absolute;
+    right: 0;
+    padding: (0.5 * @rhythmic-unit) 0;
+  }
+}
+
+.order-info.not-editable .totals .shipping-code-modifier .title {
+  padding-right: 0;
+}
+
+.order-info .totals .order-modifier .value .method {
+  line-height: normal;
+}
+
+.totals div.table-value,
+.order-info .order-part .box .method div.table-value
+{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.totals div.table-value .input-text-price input.price {
+  width: 100px;
+}
+
+.totals div.table-value .input-text-price .input-group .input-group-addon {
+  padding-bottom: 0.25 * @rhythmic-unit;
+}
+
+.totals div.table-value .input-text-price .input-group input.price {
+  width: 60px;
+}
+
+.totals .input-text-symbol .symbol.text {
+  top: 0;
+}
+
+.totals .order-subtotal .input input {
+  width: 100px;
+}
+
+.totals .inline-field .view * {
+  font-size: @font-size-base;
+}
+
+.totals li.subtotal {
+  height: 2 * @rhythmic-unit;
+}
+
+.order-info.not-editable .totals li:not(.total) > .value {
+  padding: (0.25 * @rhythmic-unit) (0.5 * @rhythmic-unit);
+}
+
+.totals li.subtotal .value {
+  padding: (0.25 * @rhythmic-unit) (0.5 * @rhythmic-unit);
+}
+
+.totals li .title {
+  font-weight: 600;
+  padding-right: (0.5 * @rhythmic-unit);
+}
+
+.totals li.order-modifier.SHIPPING-modifier div.value {
+  display: block;
+}
+
+.totals li.order-modifier.SHIPPING-modifier div.separator {
+  padding-left: 0.25 * @rhythmic-unit;
+}
+
+.order-info .totals li.order-modifier.shipping-modifier div.method .view{
+  padding-right: 0;
+}
+
+.order-info .totals li.order-modifier.shipping-modifier div.separator {
+  margin-right: 0.5 * @rhythmic-unit;
+}
+
+.order-info.not-editable .totals li.order-modifier.shipping-modifier div.separator {
+  padding-left: 0.5 * @rhythmic-unit;
+  padding-right: 0.5 * @rhythmic-unit;
+  padding-bottom: 0.25 * @rhythmic-unit;
+}
+
+/* Line 3 */
+
+div.line-3 {
+  margin-top: @rhythmic-unit;
+}
+
+div.line-3 h2 {
+  margin-bottom: @rhythmic-unit;
+}
+
+.items-bottom {
+  position: relative;
+  overflow: visible;
+}
+
+/* Customer notes */
+
+.customer-notes h4 {
+  font-weight: @font-bold;
+}
+
+.customer-notes .notes {
+  padding: (0.5 * @rhythmic-unit) 0;
+}
+
+.collapsing {
+  transition: none;
+}
+
+/* Sticky panel */
+.order-info .sticky-panel .panel-cell.save.disabled,
+.order-info .sticky-panel label.disabled
+{
+  cursor: not-allowed;
+}
+
+.order-info .sticky-panel .doNotSendNotification {
+}
+
+.order-info .sticky-panel .doNotSendNotification input,
+.order-info .sticky-panel .doNotSendNotification label,
+.order-info .sticky-panel .doNotSendNotification span
+{
+  vertical-align: middle;
+}
+
+.order-info .sticky-panel .doNotSendNotification label.disabled {
+  opacity: .25;
+}
+
+.order-info .sticky-panel .doNotSendNotification input {
+  margin-right: 0.25 * @rhythmic-unit;
+}
+
+.order-info .sticky-panel .recalculate.last {
+  position: absolute;
+  left: 722px;
+}
+
+.order-info .value .tooltip .tooltip-inner {
+  max-width: initial;
+  white-space: normal;
+}
+
+.order-items .tooltip,
+.order-items .tooltip-inner
+{
+  white-space: nowrap;
+}
+
+.order-info .totals .value .inline-field.has-view .editable.view {
+  width: 100px;
+  .flex-display();
+  .justify-content(flex-end);
+}
+
+.order-info .totals .value .inline-field.has-view .field {
+  width: 100px;
+}
+
+.order-info .totals .value .inline-field.has-view.edit-open-mark .editable.view {
+  display: none;
+}
+
+.order-info.not-editable .totals .inline-price .view {
+  padding-right: 0;
+}
+
+.order-info .totals .restore-orig-price {
+  .flex-display();
+  .align-items(center);
+  .justify-content(center);
+  width: @iconfont-width;
+  height: 100%;
+}
+
+.order-info .totals .restore-orig-price a {
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  text-decoration: none;
+  outline-style: none;
+}
+
+.order-info .totals .ctrl-auto .restore-orig-price .manual,
+.order-info .totals .ctrl-manual .restore-orig-price .auto
+{
+  display: none;
+}
+
+.order-info .totals .restore-orig-price .manual {
+  background-image: url(../../images/calculator1.svg);
+  background-size: contain;
+  background-position: center center;
+}
+
+.order-info .totals .restore-orig-price .auto {
+  background-image: url(../../images/calculator.svg);
+  background-size: contain;
+  background-position: center center;
+}
+
+.order-info.not-editable .restore-orig-price {
+  display: none;
+}
+
+.order-history .event .details ul li {
+  margin-bottom: 0.25 * @rhythmic-unit;
+}
+
+.order-history .event .details ul li .name {
+  font-weight: bold;
+  margin-right: 0.25 * @rhythmic-unit;
+}
+
+.order-history .event .details ul li div {
+  display: inline;
+}
+
+.order-history .event .details ul li ul {
+  margin-left: @rhythmic-unit;
+}
+
+.order-history .event .details ul li ul li {
+  margin-bottom: 0;
+}
+
+.order-history .event .details .value .fa {
+  margin-left: 0.5 * @rhythmic-unit;
+  margin-right: 0.5 * @rhythmic-unit;
+}
+
+.order-note.staff-note .order-note-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/**
+ * Payment method data popup
+ */
+.ui-dialog .order-payment-data-dialog {
+  text-align: center;
+}
+
+.ui-dialog .order-payment-data-dialog ul {
+  margin-bottom: @rhythmic-unit;
+}
+
+.profile-login .inline-field.has-view .view {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: @input-height-base;
+}
+
+.items-list-table .list-footer {
+  margin-top: @rhythmic-unit;
+}
+
+.payment-and-shipping {
+  float: left;
+}
+
+.totals .shipping-method-selector {
+  width: 245px;
+  margin-right: @rhythmic-unit / 2;
+}
+
+.customer-notes-title {
+  margin-top: @rhythmic-unit;
+  display: block;
+}

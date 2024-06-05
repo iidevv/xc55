@@ -1,0 +1,5 @@
+Version 5.5.0.26
+
+Fixes (1)
+2023-11-06 - [Bug] Fixed several security vulnerabilities. #XCB-2860 #CDev-Core
+

@@ -1,0 +1,19 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.1
+type: common
+authorName: 'X-Cart team'
+moduleName: 'X-Cart v4 to v5 Data Migration Wizard'
+description: 'The module guarantees trouble-free migration from X-Cart 4 (version 4.1.0 or later) to X-Cart 5. It transfers data and settings, and as a result, you get a working store on a new platform within a few minutes.'
+minorRequiredCoreVersion: 0
+dependsOn:
+    - XC-OrdersImport
+incompatibleWith: {  }
+skins: {  }
+showSettingsForm: false
+canDisable: true

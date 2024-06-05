@@ -1,0 +1,22 @@
+{##
+ # Customer note
+ #
+ # Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ # See https://www.x-cart.com/license-agreement.html for license details.
+ #}
+<div {{ this.printTagAttributes(this.getContainerTagAttributes())|raw }}>
+    {% if this.isRecordAlreadyCreated() %}
+        <i class="icon-ok-mark"></i>
+        <p class="note">
+            {% if this.countRecords() > 0 %}
+                {{ t('You and N other people are subscribed to back-in-stock and price-drop alert for this product', {'count': this.countRecords()}) }}
+            {% else %}
+                {{ t('You are subscribed to back-in-stock and price-drop alert for this product') }}
+            {% endif %}
+            <a class="remove-notification" href="{{ this.getCancelNotificationSubscriptionURL() }}">{{ t('Cancel') }}</a>
+        </p>
+    {% elseif this.countRecords() %}
+        <i class="icon-ok-mark"></i>
+        <p class="note">{{ t('N other people are subscribed to back-in-stock and price-drop alert for this product', {'count': this.countRecords()}) }}</p>
+    {% endif %}
+</div>

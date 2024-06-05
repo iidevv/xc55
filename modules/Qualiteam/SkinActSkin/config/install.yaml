@@ -1,0 +1,134 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Module fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\ImageSettings:
+  - model: XLite\Model\Image\Category\Image
+    code: Default
+    width: 184
+    height: 160
+  - model: XLite\Model\Image\Product\Image
+    code: LGThumbnailGrid
+    width: 184
+    height: 184
+  - model: XLite\Model\Image\Product\Image
+    code: LGThumbnailList
+    width: 184
+    height: 184
+  - model: XLite\Model\Image\Product\Image
+    code: Default
+    width: 550
+    height: 550
+  - model: XLite\Model\Image\Common\Logo
+    code: Default
+    width: 213
+    height: 32
+  - model: XLite\Model\Image\Common\Logo
+    code: Mobile
+    width: 160
+    height: 24
+
+XLite\Model\Config:
+  - name: fp_carousel_bg_color
+    category: QSL\ProductsCarousel
+    type: \XLite\View\FormField\Input\Text\Color
+    orderby: 110
+    value: 'E9EEF6'
+    translations:
+      - code: en
+        option_name: Background color for "Featured Products" products list
+  - name: b_carousel_bg_color
+    category: QSL\ProductsCarousel
+    type: \XLite\View\FormField\Input\Text\Color
+    orderby: 210
+    value: 'E9EEF7'
+    translations:
+      - code: en
+        option_name: Background color for "Bestsellers" products list
+  - name: bb_carousel_bg_color
+    category: QSL\ProductsCarousel
+    type: \XLite\View\FormField\Input\Text\Color
+    orderby: 310
+    value: 'E9EEF7'
+    translations:
+      - code: en
+        option_name: Background color for "Customers who bought this product also bought" products list
+  - name: vb_carousel_bg_color
+    category: QSL\ProductsCarousel
+    type: \XLite\View\FormField\Input\Text\Color
+    orderby: 410
+    value: 'E9EEF7'
+    translations:
+      - code: en
+        option_name: Background color for "Customers who viewed this product bought" products list
+  - name: na_carousel_bg_color
+    category: QSL\ProductsCarousel
+    type: \XLite\View\FormField\Input\Text\Color
+    orderby: 510
+    value: 'E9EEF7'
+    translations:
+      - code: en
+        option_name: Background color for "New arrivals" products list
+  - name: cs_carousel_bg_color
+    category: QSL\ProductsCarousel
+    type: \XLite\View\FormField\Input\Text\Color
+    orderby: 610
+    value: 'E9EEF7'
+    translations:
+      - code: en
+        option_name: Background color for "Coming soon" products list
+  - name: us_carousel_bg_color
+    category: QSL\ProductsCarousel
+    type: \XLite\View\FormField\Input\Text\Color
+    orderby: 710
+    value: 'E9EEF7'
+    translations:
+      - code: en
+        option_name: Background color for "Related Products" products list
+  - name: sale_carousel_bg_color
+    category: QSL\ProductsCarousel
+    type: \XLite\View\FormField\Input\Text\Color
+    orderby: 810
+    value: 'E9EEF6'
+    translations:
+      - code: en
+        option_name: Background color for "Sale" products list
+  - name: rv_carousel
+    category: QSL\ProductsCarousel
+    type: checkbox
+    orderby: 850
+    value: N
+    translations:
+      - code: en
+        option_name: '[SkinActSkin] Enable carousel for "Recently viewed" products list'
+  - name: rv_carousel_bg_color
+    category: QSL\ProductsCarousel
+    type: \XLite\View\FormField\Input\Text\Color
+    orderby: 860
+    value: 'F5F5F5'
+    translations:
+      - code: en
+        option_name: '[SkinAct] Background color for "Recently viewed" products list'
+
+XLite\Model\LanguageLabel:
+  - { name: '[SkinActSkin] Your Lists', translations: [{ code: en, label: 'Your lists' }] }
+  - { name: '[SkinActSkin] Your Account', translations: [{ code: en, label: 'Your Account' }] }
+  - { name: '[SkinActSkin] About Us', translations: [{ code: en, label: 'About Us' }] }
+  - { name: '[SkinActSkin] Los Angeles Showroom', translations: [{ code: en, label: 'Los Angeles Showroom' }]}
+  - { name: '[SkinActSkin] Social', translations: [{ code: en, label: 'Social' }]}
+  - { name: '[SkinActSkin] Show on home page', translations: [{ code: en, label: 'Show on home page' }]}
+  - { name: '[SkinActSkin] Middle banner', translations: [{ code: en, label: 'Middle banner' }] }
+  - { name: '[SkinActSkin] Double banner', translations: [{ code: en, label: 'Double banner' }] }
+  - { name: '[SkinActSkin] Color', translations: [{ code: en, label: 'Color' }] }
+  - { name: '[SkinActSkin] Color title in the main menu', translations: [{ code: en, label: 'Color title in the main menu' }] }
+  - { name: '[SkinActSkin] White', translations: [{ code: en, label: 'White' }] }
+  - { name: '[SkinActSkin] Yellow', translations: [{ code: en, label: 'Yellow' }] }
+  - { name: '[SkinActSkin] Background color', translations: [{ code: en, label: 'Background color' }]}
+  - { name: '[SkinActSkin] Enable carousel for "Recently viewed" products list', translations: [{ code: en, label: 'Enable carousel for "Recently viewed" products list' }] }
+  - { name: '[SkinActSkin] Background color for "Recently viewed" products list', translations: [{ code: en, label: 'Background color for "Recently viewed" products list' }]}
+  - { name: '[SkinActSkin] See all', translations: [{ code: en, label: 'See all' }] }
+  - { name: '[SkinActSkin] 404', translations: [{ code: en, label: '404' }] }
+  - { name: '[SkinActSkin] Shopping Options', translations: [{ code: en, label: 'Shopping Options' }] }

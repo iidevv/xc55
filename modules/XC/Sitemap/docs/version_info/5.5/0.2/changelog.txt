@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-12-01 - [Bug]  Incorrect information on target=map. Fixed. #XCB-1913 #CDev-Core #CDev-SimpleCMS #XC-Sitemap
+

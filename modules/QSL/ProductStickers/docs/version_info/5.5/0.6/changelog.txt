@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Fixes (1)
+2023-11-09 - [Bug] Product stickers were not shown on product details page under certain conditions. Fixed. #XCB-2579 #QSL-ProductStickers #QSL-Linen #TemplateMonster-SparePartsStore
+

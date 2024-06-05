@@ -1,0 +1,10 @@
+{% if this.hasError() %}
+  <div class="aftership-warning-container"
+       data-html="true"
+       data-toggle="tooltip"
+       data-placement="top"
+       title="{{ this.getErrorText()|raw }}">
+
+    <i class="fa fa-warning"></i>
+  </div>
+{% endif %}

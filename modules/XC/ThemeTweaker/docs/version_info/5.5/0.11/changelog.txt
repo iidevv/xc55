@@ -1,0 +1,5 @@
+Version 5.5.0.11
+
+Fixes (1)
+2023-05-23 - [Bug] Issues related to disabling a modified template in Theme tweaker. Fixed. #XCB-2445 #XC-ThemeTweaker
+

@@ -1,0 +1,12 @@
+{% if this.hasRewardPoints() and this.hasFixedPoints() %}
+  <div title="{{ t('Buy this product and earn X reward points.', {'points': this.getRewardPoints()}) }}">
+    {{ this.getRewardPoints() }}
+    <span class="reward-points-label">&nbsp;&nbsp;— {{ t('Reward points') }}</span>
+  </div>
+{% endif %}
+{% if this.hasRewardPoints() and not this.hasFixedPoints() %}
+  <div title="{{ t('Buy this product and earn up to X reward points.', {'points': this.getRewardPoints()}) }}">
+    {{ this.getRewardPoints() }}
+    <span class="reward-points-label">&nbsp;&nbsp;– {{ t('Reward points') }}</span>
+  </div>
+{% endif %}

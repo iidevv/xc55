@@ -1,0 +1,122 @@
+/**
+ * Top messages styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+@import (reference) '../css/initialize';
+
+.top-message-container {
+  position: relative;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+      list-style: none;
+      padding: @top-alert-padding;
+      border-radius: @border-radius-base;
+      box-shadow: @basic-shadow;
+    }
+
+    li + li {
+      margin-top: @top-alert-margin;
+    }
+  }
+
+  .info {
+    .alert-variant(@top-alert-info-bg, transparent, @top-alert-info-text);
+  }
+
+  .warning {
+    .alert-variant(@top-alert-warning-bg, transparent, @top-alert-warning-text);
+  }
+
+  .error {
+    .alert-variant(@top-alert-danger-bg, transparent, @top-alert-danger-text);
+  }
+
+  .upgrade-minor {
+    .alert-variant(@top-alert-minor-bg, transparent, @top-alert-minor-text);
+  }
+
+  .upgrade-major {
+    .alert-variant(@top-alert-major-bg, transparent, @top-alert-major-text);
+  }
+}
+
+.top-alerts {
+  position: fixed;
+  top: 2.5 * @rhythmic-unit;
+  right: 0.5 * @rhythmic-unit;
+  animation: .5s ease-in 0s alert;
+  z-index: 1300000;
+
+  > *:not(:last-child) {
+    margin-bottom: 0.5 * @rhythmic-unit;
+  }
+
+  .top-message-container {
+    width: @top-alert-width;
+  }
+
+  li:not(.warning) {
+    a {
+      color: @color-white;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+        color: @color-white;
+      }
+
+      &.close {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .close {
+    margin: (0.25 * @rhythmic-unit) 0 (0.25 * @rhythmic-unit) auto;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: @rhythmic-unit;
+    height: @rhythmic-unit;
+    text-decoration: none;
+    color: inherit;
+    position: absolute;
+    top: 0.25 * @rhythmic-unit;
+    right: 0.5 * @rhythmic-unit;
+
+    &,
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+
+    .fa-times {
+      display: flex;
+
+      &:before {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .unauthorized & {
+    top: -(2.5 * @rhythmic-unit);
+    z-index: 10;
+  }
+}
+
+.unauthorized > .top-alerts {
+  top: .5 * @rhythmic-unit;
+  z-index: 100;
+}

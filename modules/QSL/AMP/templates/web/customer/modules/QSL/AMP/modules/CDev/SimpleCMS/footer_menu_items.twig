@@ -1,0 +1,19 @@
+{##
+ # Renders footer menu items recursively
+ #}
+
+<ul>
+    {% for item in items %}
+        <li>
+            {% if item.url %}
+                <a href="{{ item.url }}">{{ item.label }}</a>
+            {% else %}
+                <span>{{ item.label }}</span>
+            {% endif %}
+
+            {% if item.children %}
+                {% include 'modules/QSL/AMP/modules/CDev/SimpleCMS/footer_menu_items.twig' with {items: item.children} %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

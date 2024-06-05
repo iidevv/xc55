@@ -1,0 +1,14 @@
+{##
+ # Return reason
+ #
+ # @ListChild (list="return.footer", weight="11")
+ #}
+
+{% if this.isActionsEnabled() %}
+<div class="section action">
+  <div class="title">{{ t('What you would like us to do') }}:</div>
+  <div class="value">
+    {{ widget('QSL\\Returns\\View\\FormField\\Select\\ReturnActions', fieldId='action_id', fieldName='action_id', fieldOnly='true', label=t('Action'), value=this.getActionIdValue(), rows='3') }}
+  </div>
+</div>
+{% endif %}

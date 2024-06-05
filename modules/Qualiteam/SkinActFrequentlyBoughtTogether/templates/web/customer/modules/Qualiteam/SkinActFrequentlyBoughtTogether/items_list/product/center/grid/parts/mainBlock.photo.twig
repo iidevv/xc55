@@ -1,0 +1,7 @@
+{##
+ # Product image box
+ #
+ # @ListChild (list="itemsList.widget.frequentlyBought.product.grid.customer.mainBlock", weight="15")
+#}
+
+{{ widget('\\XLite\\View\\Image', lazyLoad=true, image=this.get('product').getImage(), maxWidth=110, maxHeight=110, alt=this.getIconAlt(), className='freq-products-grid__photo') }}

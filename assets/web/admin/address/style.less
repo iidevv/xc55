@@ -1,0 +1,135 @@
+/**
+ * ____file_title____
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+/* Address modify dialog */
+
+h1#page-title{
+  text-transform:none;
+}
+
+td.address-text {
+  width: 100%;
+}
+
+ul.address-entry,
+  ul.address-text
+{
+  list-style: none;
+}
+
+ul.address-entry li {
+  clear: left;
+  font-size: @font-size-small;
+  line-height: @line-height-small;
+}
+
+ul.address-text li {
+  float: left;
+  padding: 0;
+  margin: 0;
+  clear: none;
+}
+
+ul.address-entry li span.address-text-value {
+  padding: 0;
+}
+
+ul li.address-text-title,
+ul li.address-text-firstname,
+ul li.address-text-lastname,
+ul li.address-text-city,
+ul li.address-text-state_id,
+ul li.address-text-custom_state
+{
+  float: left;
+  clear: none;
+  padding-right: 0.25 * @rhythmic-unit;
+}
+
+li.address-text-street,
+li.address-text-phone
+{
+  padding-top: 0.25 * @rhythmic-unit;
+}
+
+.address-text-comma-title,
+.address-text-comma-firstname,
+.address-text-comma-lastname,
+.address-text-comma-street,
+.address-text-comma-zipcode,
+.address-text-comma-country_code,
+.address-text-comma-phone
+{
+  display: none;
+}
+
+.address-text-label-title,
+.address-text-label-firstname,
+.address-text-label-lastname,
+.address-text-label-street,
+.address-text-label-city,
+.address-text-label-state_id,
+.address-text-label-custom_state,
+.address-text-label-zipcode,
+.address-text-label-country_code
+{
+  display: none;
+}
+
+div.address-box
+{
+  border-radius: 5px;
+  border-style: solid;
+  border-width: @border-base;
+  float: left;
+  margin-right: @rhythmic-unit;
+  margin-bottom: @rhythmic-unit;
+  padding: @rhythmic-unit - @border-base;
+  width: 300px;
+  border-color: #dfdfdf;
+}
+
+.address-center-button
+{
+  text-align: center;
+  padding-top: 2 * @rhythmic-unit;
+  height: 6 * @rhythmic-unit;
+}
+
+.address-type {
+  white-space: nowrap;
+}
+
+img.address-type-icon
+{
+  display: inline-block;
+}
+
+.address-form-label
+{
+  width: 100px;
+}
+
+.address-form-element
+{
+  padding-top: 0.25 * @rhythmic-unit;
+  padding-bottom: 0.25 * @rhythmic-unit;
+}
+
+.address-dialog form {
+  width: 450px;
+}
+
+.address-dialog form .table-label
+{
+  width: 150px;
+}
+
+.address-dialog form .table,
+.address-dialog form fieldset div {
+  margin-bottom: 0;
+}

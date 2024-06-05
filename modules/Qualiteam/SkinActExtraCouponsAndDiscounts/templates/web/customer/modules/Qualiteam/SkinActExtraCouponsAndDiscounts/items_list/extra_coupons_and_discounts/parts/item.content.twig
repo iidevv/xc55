@@ -1,0 +1,9 @@
+{##
+# Extra coupons and discounts item
+#
+# @ListChild (list="extraCoupons.itemsList.item", weight="200")
+#}
+
+<div class="extra-coupons__block-coupon-content">
+  {{ widget_list('extraCoupons.itemsList.item.content', coupon=this.getCoupon()) }}
+</div>

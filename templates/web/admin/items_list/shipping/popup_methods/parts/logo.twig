@@ -1,0 +1,13 @@
+{##
+ # Popup shipping method icon
+ #
+ # @ListChild (list="popup.shipping.methods.list.line", weight=100)
+ #}
+
+{% if not this.isOffline(this.get('method')) %}
+  <div class="logo">
+    {% if this.get('method').getAdminIconURL() %}
+      <img src="{{ this.get('method').getAdminIconURL() }}" alt=""/>
+    {% endif %}
+  </div>
+{% endif %}

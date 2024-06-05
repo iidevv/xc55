@@ -1,0 +1,8 @@
+{# vim: set ts=2 sw=2 sts=2 et: #}
+
+<div{{ this.getMtAttributesCode()|raw }} class="multiple-files">
+{% for object in this.getFiles() %}
+  {{ widget('\\Qualiteam\\SkinActMagicImages\\View\\FileUploader', object=object, maxWidth=this.getMaxWidth(), maxHeight=this.getMaxHeight(), isImage=this.isImage(), fieldName=this.getName(), multiple='true') }}
+{% endfor %}
+  {{ widget('\\Qualiteam\\SkinActMagicImages\\View\\FileUploader', maxWidth=this.getMaxWidth(), maxHeight=this.getMaxHeight(), isImage=this.isImage(), fieldName=this.getName(), multiple='true') }}
+</div>

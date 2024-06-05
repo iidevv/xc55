@@ -1,0 +1,8 @@
+{##
+ # Video category removal notice
+#}
+
+<div class="removal-notice-popup">
+  <p>{{ t('SkinActVideoFeature the selected categories have been deleted. There are videos with no assigned category') }}</p>
+  {{ widget('XLite\\View\\Button\\Link', location=this.getNoCategoryVideosLink(), label=t('SkinActVideoFeature show videos with no assigned category')) }}
+</div>

@@ -1,0 +1,1743 @@
+parameters:
+    xcart.modules:
+        XC-NewsletterSubscriptions:
+            id: XC-NewsletterSubscriptions
+            isEnabled: true
+            type: common
+            author: XC
+            name: NewsletterSubscriptions
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: 'Newsletter subscriptions'
+            description: 'The module adds a sign up form into your site footer inviting your customers to subscribe for your company newsletters. The list of subscribers is stored in the admin back-end and can also be forwarded to Mailchimp.'
+            showSettingsForm: false
+            canDisable: true
+        CDev-USPS:
+            id: CDev-USPS
+            isEnabled: true
+            type: shipping
+            author: CDev
+            name: USPS
+            version: 5.5.0.6
+            authorName: 'X-Cart team'
+            moduleName: U.S.P.S.
+            description: 'Gets shipping quotes for USPS delivery methods.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActTodaysDeal:
+            id: Qualiteam-SkinActTodaysDeal
+            isEnabled: false
+            type: common
+            author: Qualiteam
+            name: SkinActTodaysDeal
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] Today''s deal mobile app'
+            description: '[CANCELED since the feature is changed into Sale block products]. Added a block "Today''s deal" for mobile app as the specified category''s products list'
+            showSettingsForm: true
+            canDisable: true
+        QSL-Banner:
+            id: QSL-Banner
+            isEnabled: true
+            type: common
+            author: QSL
+            name: Banner
+            version: 5.5.0.7
+            authorName: Qualiteam
+            moduleName: 'Banner System'
+            description: 'It allows admin to place both images and HTML-code banners anywhere in X-Cart via the special interface in admin area. This module is useful for promoting products, events, offers, etc.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActPinterestFeed:
+            id: Qualiteam-SkinActPinterestFeed
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActPinterestFeed
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Pinterest Feed'
+            description: 'The addon generates a pinterest feed file that can be used for Pinterest. SS-20678'
+            showSettingsForm: false
+            canDisable: true
+        QSL-ProductFeeds:
+            id: QSL-ProductFeeds
+            isEnabled: true
+            type: common
+            author: QSL
+            name: ProductFeeds
+            version: 5.5.0.7
+            authorName: 'Qualiteam Software'
+            moduleName: 'Product Feeds'
+            description: 'Product Feeds module allows you to export your products into popular comparison shopping websites: Nextag, Pricegrabber, Shopzilla, eBay Commerce Network (shopping.com) and Google Shopping.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-BackInStock:
+            id: QSL-BackInStock
+            isEnabled: true
+            type: common
+            author: QSL
+            name: BackInStock
+            version: 5.5.0.9
+            authorName: Qualiteam
+            moduleName: 'Back in Stock Notifications'
+            description: 'Don''t let those customers who want to buy a product that is out of stock or think the product price is too high simply walk away. Enable them to sign up for Back in Stock and/or Price Drop email notifications for the product so they can get an automatic message when the product becomes available again, or when its price is decreased.'
+            showSettingsForm: true
+            canDisable: true
+        XC-Geolocation:
+            id: XC-Geolocation
+            isEnabled: true
+            type: common
+            author: XC
+            name: Geolocation
+            version: 5.5.0.1
+            authorName: 'X-Cart team'
+            moduleName: Geolocation
+            description: 'Use free IP geolocation database GeoLite by Maxmind to improve the user experience of non-logged in customers - "guess" their country and address for more precise pre-login shipping cost estimation'
+            showSettingsForm: true
+            canDisable: true
+        XC-ProductTags:
+            id: XC-ProductTags
+            isEnabled: true
+            type: common
+            author: XC
+            name: ProductTags
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: 'Product Tags'
+            description: 'Assign one or multiple tags to your products and improve the navigation for your customers, who can narrow the search results by tags in the Product Filters or, vice versa, see all products with the same tag.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-OAuth2Client:
+            id: QSL-OAuth2Client
+            isEnabled: true
+            type: common
+            author: QSL
+            name: OAuth2Client
+            version: 5.5.0.2
+            authorName: Qualiteam
+            moduleName: 'Single Sign-On with OAuth 2'
+            description: 'Let your visitors use their existing accounts from popular social networking services to log in and register in your store. Supports Facebook, Google, LinkedIn, Instagram, PayPal and any other identity provider working with the OAuth 2.0 protocol'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActOrderMessaging:
+            id: Qualiteam-SkinActOrderMessaging
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActOrderMessaging
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Order messaging feature'
+            description: 'Order messaging feature. SS-19578'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActFullWidthImages:
+            id: Qualiteam-SkinActFullWidthImages
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActFullWidthImages
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] Full Width Images'
+            description: 'To allow the admin to upload full-width images to the product details page. SS-22681'
+            showSettingsForm: false
+            canDisable: true
+        XC-MigrationWizard:
+            id: XC-MigrationWizard
+            isEnabled: false
+            type: common
+            author: XC
+            name: MigrationWizard
+            version: 5.5.0.1
+            authorName: 'X-Cart team'
+            moduleName: 'X-Cart v4 to v5 Data Migration Wizard'
+            description: 'The module guarantees trouble-free migration from X-Cart 4 (version 4.1.0 or later) to X-Cart 5. It transfers data and settings, and as a result, you get a working store on a new platform within a few minutes.'
+            showSettingsForm: false
+            canDisable: true
+        XC-FacebookMarketing:
+            id: XC-FacebookMarketing
+            isEnabled: true
+            type: common
+            author: XC
+            name: FacebookMarketing
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: 'Facebook Ads and Instagram Ads'
+            description: 'This add-on syncs your X-Cart and your Facebook catalogs to help you make maximum use of Facebook Marketing tools having your products promoted to the right audience in the right place at the right time.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-SpecialOffersBuyXGetY:
+            id: QSL-SpecialOffersBuyXGetY
+            isEnabled: true
+            type: common
+            author: QSL
+            name: SpecialOffersBuyXGetY
+            version: 5.5.0.1
+            authorName: 'Qualiteam Software'
+            moduleName: 'Special Offers: Buy X Get Y'
+            description: 'This module adds variations of the "Buy X Get Y" special offer type. Requires the base Special Offers module.'
+            showSettingsForm: false
+            canDisable: true
+        XC-OrdersImport:
+            id: XC-OrdersImport
+            isEnabled: true
+            type: common
+            author: XC
+            name: OrdersImport
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: 'Order import'
+            description: 'Enables import of order data from CSV'
+            showSettingsForm: false
+            canDisable: true
+        XC-Sitemap:
+            id: XC-Sitemap
+            isEnabled: true
+            type: common
+            author: XC
+            name: Sitemap
+            version: 5.5.0.2
+            authorName: 'X-Cart team'
+            moduleName: 'Site Map'
+            description: 'Enable a sitemap on your site for easier customers'' navigation.The sitemap can include categories and static pages.'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActSkin:
+            id: Qualiteam-SkinActSkin
+            isEnabled: true
+            type: skin
+            author: Qualiteam
+            name: SkinActSkin
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Skin'
+            description: 'Module provides unique design for www.spaandequipment.com'
+            showSettingsForm: false
+            canDisable: true
+            isActiveSkin: true
+        XC-Reviews:
+            id: XC-Reviews
+            isEnabled: true
+            type: common
+            author: XC
+            name: Reviews
+            version: 5.5.0.5
+            authorName: 'X-Cart team'
+            moduleName: 'Product reviews'
+            description: 'Adds an ability to add products reviews and manage them in admin area'
+            showSettingsForm: true
+            canDisable: true
+        QSL-SpecialOffersBase:
+            id: QSL-SpecialOffersBase
+            isEnabled: true
+            type: common
+            author: QSL
+            name: SpecialOffersBase
+            version: 5.5.0.7
+            authorName: 'Qualiteam Software'
+            moduleName: 'Special Offers (base)'
+            description: 'This is the base module that allows other modules to add different types of special offers.'
+            showSettingsForm: true
+            canDisable: true
+        CDev-FileAttachments:
+            id: CDev-FileAttachments
+            isEnabled: true
+            type: common
+            author: CDev
+            name: FileAttachments
+            version: 5.5.0.4
+            authorName: 'X-Cart team'
+            moduleName: 'File attachments'
+            description: 'Allows you to attach files to goods that can be downloaded from the detailed pages of this product by visitors.'
+            showSettingsForm: false
+            canDisable: true
+        XC-GDPR:
+            id: XC-GDPR
+            isEnabled: true
+            type: common
+            author: XC
+            name: GDPR
+            version: 5.5.1.0
+            authorName: 'X-Cart team'
+            moduleName: GDPR
+            description: 'The addon allows making GDPR compliance settings in your online store: informing your store visitors about using cookies, getting new registrants consent for the processing of their personal data, adding a Privacy Policy static page and popup on checkout, allowing customers to delete their profiles, etc.'
+            showSettingsForm: true
+            canDisable: true
+        XC-SagePay:
+            id: XC-SagePay
+            isEnabled: true
+            type: payment
+            author: XC
+            name: SagePay
+            version: 5.5.0.5
+            authorName: 'X-Cart team'
+            moduleName: 'Opayo gateway - Form protocol (by Elavon)'
+            description: 'Enables taking credit card payments for your online store via Elavon (formerly known as Opayo and Sage Pay) payment gateway (Form protocol method).'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActMobileAppBanners:
+            id: Qualiteam-SkinActMobileAppBanners
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActMobileAppBanners
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Mobile App only banners'
+            description: 'Mobile App only banners, SS-22809'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActNewCheckout:
+            id: Qualiteam-SkinActNewCheckout
+            isEnabled: false
+            type: common
+            author: Qualiteam
+            name: SkinActNewCheckout
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] New Checkout'
+            description: '[SkinAct] New Checkout'
+            showSettingsForm: true
+            canDisable: true
+        CDev-ContactUs:
+            id: CDev-ContactUs
+            isEnabled: true
+            type: common
+            author: CDev
+            name: ContactUs
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: 'Contact us'
+            description: 'Enables "Contact us" page'
+            showSettingsForm: true
+            canDisable: true
+        QSL-ProductsCarousel:
+            id: QSL-ProductsCarousel
+            isEnabled: true
+            type: common
+            author: QSL
+            name: ProductsCarousel
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'Products carousel'
+            description: 'Enable responsive and user-friendly product carousel for  Bestsellers, Featured Products, New Arrivals, Product Recommendations, Cooming Soon and Products on Sale.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActXPaymentsSubscriptions:
+            id: Qualiteam-SkinActXPaymentsSubscriptions
+            isEnabled: false
+            type: common
+            author: Qualiteam
+            name: SkinActXPaymentsSubscriptions
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct X-Payments subscriptions [deprecated]'
+            description: 'This module allows to create product subscriptions and process them via X-Payments module.'
+            showSettingsForm: true
+            canDisable: true
+        CDev-Quantum:
+            id: CDev-Quantum
+            isEnabled: true
+            type: payment
+            author: CDev
+            name: Quantum
+            version: 5.5.0.1
+            authorName: 'X-Cart team'
+            moduleName: QuantumGateway
+            description: 'Enables taking credit card payments for your online store via QuantumGateway (QGWdatabase Engine API).'
+            showSettingsForm: false
+            canDisable: true
+        CDev-XMLSitemap:
+            id: CDev-XMLSitemap
+            isEnabled: true
+            type: common
+            author: CDev
+            name: XMLSitemap
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: 'XML sitemap'
+            description: 'Module generates an XML file with information for search engines.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActCustomerReviews:
+            id: Qualiteam-SkinActCustomerReviews
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActCustomerReviews
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Customer reviews'
+            description: 'Customer reviews, SS-20261'
+            showSettingsForm: true
+            canDisable: true
+        QSL-XLSExportImport:
+            id: QSL-XLSExportImport
+            isEnabled: true
+            type: common
+            author: QSL
+            name: XLSExportImport
+            version: 5.5.0.1
+            authorName: Qualiteam
+            moduleName: 'Excel export / import'
+            description: 'The module adds an opportunity to export and import data in .xls (Excel 5), .xlsx (Excel 2007), .ods (OpenDocument) formats.'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActRemovePreselection:
+            id: Qualiteam-SkinActRemovePreselection
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActRemovePreselection
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Remove preselection for options'
+            description: 'Remove preselection for options. SS-20634'
+            showSettingsForm: false
+            canDisable: true
+        QSL-reCAPTCHA:
+            id: QSL-reCAPTCHA
+            isEnabled: true
+            type: common
+            author: QSL
+            name: reCAPTCHA
+            version: 5.5.0.4
+            authorName: Qualiteam
+            moduleName: 'Google reCAPTCHA'
+            description: 'Integrates with Google reCAPTCHA service that protects your site from spam and abuse. It uses advanced risk analysis techniques to tell humans and bots apart.'
+            showSettingsForm: true
+            canDisable: true
+        CDev-SimpleCMS:
+            id: CDev-SimpleCMS
+            isEnabled: true
+            type: common
+            author: CDev
+            name: SimpleCMS
+            version: 5.5.0.8
+            authorName: 'X-Cart team'
+            moduleName: 'Simple CMS'
+            description: 'Allows you to add a company logo and favicon, modify the primary website menu, edit the footer links and add custom website pages. When used with TinyMCE and Go Social modules, allows you to configure OpenGraph tags for your pages and edit their contents in the WYSIWYG mode. The module is incompatible with modules integrating your store with third-party CMS solutions.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-CustomerSatisfaction:
+            id: QSL-CustomerSatisfaction
+            isEnabled: true
+            type: common
+            author: QSL
+            name: CustomerSatisfaction
+            version: 5.5.0.5
+            authorName: Qualiteam
+            moduleName: 'Customer Satisfaction'
+            description: 'Module allows store administrator to know as soon as possible if customer is satisfied with the purchase and to prevent any negative customer reviews by resolving their issues.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActBannerAdvanced:
+            id: Qualiteam-SkinActBannerAdvanced
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActBannerAdvanced
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] Banner Advanced'
+            description: 'Added a web and mobile positions for banners. SS-22504'
+            showSettingsForm: false
+            canDisable: true
+        XC-UpdateInventory:
+            id: XC-UpdateInventory
+            isEnabled: true
+            type: common
+            author: XC
+            name: UpdateInventory
+            version: 5.5.0.5
+            authorName: 'X-Cart team'
+            moduleName: 'Update Inventory'
+            description: 'Allows to update products quantity via CSV simple file.'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActProMembership:
+            id: Qualiteam-SkinActProMembership
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActProMembership
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. PRO membership feature'
+            description: 'PRO membership feature, SS-19577'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActCareers:
+            id: Qualiteam-SkinActCareers
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActCareers
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Careers / Job feature'
+            description: 'Careers / Job feature, SS-20091'
+            showSettingsForm: false
+            canDisable: true
+        XC-News:
+            id: XC-News
+            isEnabled: true
+            type: common
+            author: XC
+            name: News
+            version: 5.5.0.4
+            authorName: 'X-Cart team'
+            moduleName: News
+            description: 'Share the company and products news and updates with your community.'
+            showSettingsForm: true
+            canDisable: true
+        CDev-MarketPrice:
+            id: CDev-MarketPrice
+            isEnabled: true
+            type: common
+            author: CDev
+            name: MarketPrice
+            version: 5.5.0.1
+            authorName: 'X-Cart team'
+            moduleName: 'Market price'
+            description: 'Adds support for the product market price.'
+            showSettingsForm: false
+            canDisable: true
+        XC-CustomerAttachments:
+            id: XC-CustomerAttachments
+            isEnabled: true
+            type: common
+            author: XC
+            name: CustomerAttachments
+            version: 5.5.0.4
+            authorName: 'X-Cart team'
+            moduleName: 'Customer Files Uploads & Product Attachments'
+            description: 'Allow your customers to attach files to a product before purchasing so that the store administrator could download those files when processing the order'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActDocumentsTab:
+            id: Qualiteam-SkinActDocumentsTab
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActDocumentsTab
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Documents Tab'
+            description: 'In the customer area, enhanced the product details page by adding a new tab for the file attachments. SS-22174'
+            showSettingsForm: false
+            canDisable: true
+        XC-ProductComparison:
+            id: XC-ProductComparison
+            isEnabled: true
+            type: common
+            author: XC
+            name: ProductComparison
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: 'Product Comparison'
+            description: 'Allows customers to compare products.'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActCreateOrder:
+            id: Qualiteam-SkinActCreateOrder
+            isEnabled: true
+            type: payment
+            author: Qualiteam
+            name: SkinActCreateOrder
+            version: 5.5.0.1
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Create Order feature'
+            description: 'Create Order feature, SS-19576'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActGoogleProductRatingFeed:
+            id: Qualiteam-SkinActGoogleProductRatingFeed
+            isEnabled: true
+            type: payment
+            author: Qualiteam
+            name: SkinActGoogleProductRatingFeed
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Google product rating feed'
+            description: 'Created a custom script that generates a full product review feed for the website according to Google documentation, SS-20907'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActFixes:
+            id: Qualiteam-SkinActFixes
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActFixes
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Fixes'
+            description: 'Profile tabs changes, SS-22217 '
+            showSettingsForm: false
+            canDisable: true
+        CDev-VolumeDiscounts:
+            id: CDev-VolumeDiscounts
+            isEnabled: true
+            type: common
+            author: CDev
+            name: VolumeDiscounts
+            version: 5.5.0.2
+            authorName: 'X-Cart team'
+            moduleName: 'Volume Discounts'
+            description: 'Enables discounts depending on the total price of ordered products and the customer membership level.'
+            showSettingsForm: false
+            canDisable: true
+        CDev-FeaturedProducts:
+            id: CDev-FeaturedProducts
+            isEnabled: true
+            type: common
+            author: CDev
+            name: FeaturedProducts
+            version: 5.5.0.6
+            authorName: 'X-Cart team'
+            moduleName: 'Featured Products'
+            description: 'Shows your best and most profitable products to customers.'
+            showSettingsForm: true
+            canDisable: true
+        XC-ProductVariants:
+            id: XC-ProductVariants
+            isEnabled: true
+            type: common
+            author: XC
+            name: ProductVariants
+            version: 5.5.0.11
+            authorName: 'X-Cart team'
+            moduleName: 'Product Variants'
+            description: 'Allows to manage products variants.'
+            showSettingsForm: true
+            canDisable: true
+        CDev-Bestsellers:
+            id: CDev-Bestsellers
+            isEnabled: true
+            type: common
+            author: CDev
+            name: Bestsellers
+            version: 5.5.0.1
+            authorName: 'X-Cart team'
+            moduleName: Bestsellers
+            description: 'Lists best-selling products at any place of the customer interface.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActQuickbooks:
+            id: Qualiteam-SkinActQuickbooks
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActQuickbooks
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] QuickBooks Connector'
+            description: 'QuickBooks Connector (SS-20917)'
+            showSettingsForm: true
+            canDisable: true
+        CDev-ProductAdvisor:
+            id: CDev-ProductAdvisor
+            isEnabled: true
+            type: common
+            author: CDev
+            name: ProductAdvisor
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: 'Product Advisor'
+            description: 'Adds specific products lists to the catalog: new arrivals, coming soon, recently viewed etc.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActGoogleFeedAdvanced:
+            id: Qualiteam-SkinActGoogleFeedAdvanced
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActGoogleFeedAdvanced
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Google Feed Advanced'
+            description: 'Added a custom settings for the Google Shopping feed. SS-21215'
+            showSettingsForm: false
+            canDisable: true
+        XC-Concierge:
+            id: XC-Concierge
+            isEnabled: true
+            type: common
+            author: XC
+            name: Concierge
+            version: 5.5.0.2
+            authorName: 'X-Cart team'
+            moduleName: Concierge
+            description: 'This module helps X-Cart team to improve merchants experience, track errors and make X-Cart better.'
+            showSettingsForm: false
+            canDisable: true
+        XC-GoogleFeed:
+            id: XC-GoogleFeed
+            isEnabled: true
+            type: common
+            author: XC
+            name: GoogleFeed
+            version: 5.5.0.5
+            authorName: 'X-Cart team'
+            moduleName: 'Google Product Feed'
+            description: 'The addon generates a google feed file that can be used for Google Shopping service and other services that accept the Google feed format. Easy way to expand your sales channels.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActFreeGifts:
+            id: Qualiteam-SkinActFreeGifts
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActFreeGifts
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Free gifts'
+            description: 'This module add ability to create gift tiers based on the checkout total. SS-22349'
+            showSettingsForm: false
+            canDisable: true
+        QSL-ProductStickers:
+            id: QSL-ProductStickers
+            isEnabled: true
+            type: common
+            author: QSL
+            name: ProductStickers
+            version: 5.5.0.6
+            authorName: Qualiteam
+            moduleName: 'Product stickers'
+            description: 'This module will allow you to add custom stickers to your products'
+            showSettingsForm: true
+            canDisable: true
+        QSL-Returns:
+            id: QSL-Returns
+            isEnabled: true
+            type: common
+            author: QSL
+            name: Returns
+            version: 5.5.0.5
+            authorName: Qualiteam
+            moduleName: 'Order Returns'
+            description: 'Enable your customers to issue returns for their orders. Return requests are put into a queue, so they can be conveniently processed.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActYourAccountPage:
+            id: Qualiteam-SkinActYourAccountPage
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActYourAccountPage
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Your Account Page'
+            description: 'Added a your account page with various available links. SS-20263'
+            showSettingsForm: false
+            canDisable: true
+        Iidev-StripeSubscriptions:
+            id: Iidev-StripeSubscriptions
+            isEnabled: true
+            type: common
+            author: Iidev
+            name: StripeSubscriptions
+            version: 5.5.0.4
+            authorName: 'Ilya I'
+            moduleName: StripeSubscriptions
+            description: 'This module enables the management of recurring payment subscriptions.'
+            showSettingsForm: true
+            canDisable: true
+        CDev-Paypal:
+            id: CDev-Paypal
+            isEnabled: true
+            type: payment
+            author: CDev
+            name: Paypal
+            version: 5.5.0.12
+            authorName: 'X-Cart team'
+            moduleName: PayPal
+            description: 'Enables taking payments for your online store via PayPal services.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActVerifiedCustomer:
+            id: Qualiteam-SkinActVerifiedCustomer
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActVerifiedCustomer
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Verified Customer feature'
+            description: 'Verified Customer feature, SS-20257'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActChangesToTrackingNumbers:
+            id: Qualiteam-SkinActChangesToTrackingNumbers
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActChangesToTrackingNumbers
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Changes to tracking numbers'
+            description: 'Changes to tracking numbers, SS-20092'
+            showSettingsForm: false
+            canDisable: true
+        XC-BulkEditing:
+            id: XC-BulkEditing
+            isEnabled: true
+            type: common
+            author: XC
+            name: BulkEditing
+            version: 5.5.0.1
+            authorName: 'X-Cart team'
+            moduleName: 'Bulk Editing'
+            description: 'The module allows to edit products in bulk. Choose products for editing and select the parameter that needs to be updated for them.'
+            showSettingsForm: false
+            canDisable: true
+        QSL-MyWishlist:
+            id: QSL-MyWishlist
+            isEnabled: true
+            type: common
+            author: QSL
+            name: MyWishlist
+            version: 5.5.0.6
+            authorName: Qualiteam
+            moduleName: 'My Wishlist'
+            description: 'My Wishlist allows your customer to collect the favorited products into one wishlist in which the customer can buy them, track them in the catalog and send the list to friends as desired shopping list'
+            showSettingsForm: false
+            canDisable: true
+        CDev-Wholesale:
+            id: CDev-Wholesale
+            isEnabled: true
+            type: common
+            author: CDev
+            name: Wholesale
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: Wholesale
+            description: 'Enables wholesale pricing depending on product quantity and customer membership level. Also the module allows you to set the minimum purchase quantity per membership level.'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActSkuVaultReadonlyQty:
+            id: Qualiteam-SkinActSkuVaultReadonlyQty
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActSkuVaultReadonlyQty
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] SkuVault: Read-only qty + generation of variant''s SKU'
+            description: '[SkinAct] SkuVault: Read-only qty + generation of variant''s SKU [SS-20595]'
+            showSettingsForm: false
+            canDisable: true
+        XC-Upselling:
+            id: XC-Upselling
+            isEnabled: true
+            type: common
+            author: XC
+            name: Upselling
+            version: 5.5.0.5
+            authorName: 'X-Cart team'
+            moduleName: 'Related Products'
+            description: 'This module gives you the ability to add a list of products which will be offered along with the product being viewed. You may use this feature to promote products, e.g. making them related or recommended.'
+            showSettingsForm: false
+            canDisable: true
+        XC-OrderStatusColors:
+            id: XC-OrderStatusColors
+            isEnabled: true
+            type: common
+            author: XC
+            name: OrderStatusColors
+            version: 5.5.0.0
+            authorName: 'X-Cart team'
+            moduleName: 'Order Status Colors'
+            description: 'This module allows you to mark the orders in admin area according to the order statuses.'
+            showSettingsForm: true
+            canDisable: true
+        XC-CrispWhiteSkin:
+            id: XC-CrispWhiteSkin
+            isEnabled: true
+            type: skin
+            author: XC
+            name: CrispWhiteSkin
+            version: 5.5.0.16
+            authorName: 'X-Cart team'
+            moduleName: 'Crisp White skin'
+            description: 'Light and clean skin developed in minimalist style and combining flat and material design will make your store look clean and modern.'
+            showSettingsForm: false
+            canDisable: true
+        QSL-OneClickUpsellAfterCheckout:
+            id: QSL-OneClickUpsellAfterCheckout
+            isEnabled: true
+            type: common
+            author: QSL
+            name: OneClickUpsellAfterCheckout
+            version: 5.5.0.1
+            authorName: Qualiteam
+            moduleName: 'Post-checkout upsell'
+            description: 'Enables a "Anything else, maybe?" type of popup on the invoice page with a list of items related to the ones the buyer has just purchased. The buyer can add a product from this list to their shopping cart with a single click, after which they will be redirected to the checkout page. The administrator can control the number of related items to be displayed in this up-sell popup and the redirect to checkout behavior.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActBrandCoupon:
+            id: Qualiteam-SkinActBrandCoupon
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActBrandCoupon
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] Brand coupon'
+            description: 'Allow the admin to specify the Brand of the products the coupon code applies to while creating a coupon'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActFrequentlyBoughtTogether:
+            id: Qualiteam-SkinActFrequentlyBoughtTogether
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActFrequentlyBoughtTogether
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Frequently bought together section'
+            description: 'The module enables the block "Frequently bought together" on the product details page. SS-20626'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActInvoiceToQuote:
+            id: Qualiteam-SkinActInvoiceToQuote
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActInvoiceToQuote
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Invoice to quote rename'
+            description: 'Instead of displaying "Invoice" as the title, buttons and labels, will show "Quote" for all invoices, SS-21573'
+            showSettingsForm: true
+            canDisable: true
+        XC-FastLaneCheckout:
+            id: XC-FastLaneCheckout
+            isEnabled: true
+            type: common
+            author: XC
+            name: FastLaneCheckout
+            version: 5.5.0.6
+            authorName: 'X-Cart team'
+            moduleName: 'Fast Lane Checkout'
+            description: 'Modern multi-step checkout asks for a separate piece of information at a separate step. As a result, it looks clean for customers and seems secure and easy to fill in.'
+            showSettingsForm: false
+            canDisable: true
+        XC-VendorMessages:
+            id: XC-VendorMessages
+            isEnabled: true
+            type: common
+            author: XC
+            name: VendorMessages
+            version: 5.5.0.5
+            authorName: 'X-Cart team'
+            moduleName: Messages
+            description: 'The module adds an opportunity for customers, administrator and sellers to start messaging about an order right from the order details page. In multi-vendor edition, this addon also allows customers to reach a seller from the seller''s page before purchasing.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActVideoTour:
+            id: Qualiteam-SkinActVideoTour
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActVideoTour
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Video tour'
+            description: 'In the customer area, enhanced the product details page by adding a picture preview for YouTube videos. SS-21573'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActLinkProductsToAttributes:
+            id: Qualiteam-SkinActLinkProductsToAttributes
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActLinkProductsToAttributes
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] Attribute linked products'
+            description: 'The feature of linking products to product attributes. The Qty widget for linked products. SS-22834'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActWishlistUserExport:
+            id: Qualiteam-SkinActWishlistUserExport
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActWishlistUserExport
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Wishlist user export'
+            description: 'Wishlist user export, SS-20089'
+            showSettingsForm: false
+            canDisable: true
+        QSL-ShopByBrand:
+            id: QSL-ShopByBrand
+            isEnabled: true
+            type: common
+            author: QSL
+            name: ShopByBrand
+            version: 5.5.0.7
+            authorName: 'Qualiteam Software'
+            moduleName: 'Shop By Brand'
+            description: 'Allows customers to navigate and search products by brands / manufacturers / vendors.'
+            showSettingsForm: true
+            canDisable: true
+        CDev-SalesTax:
+            id: CDev-SalesTax
+            isEnabled: true
+            type: common
+            author: CDev
+            name: SalesTax
+            version: 5.5.0.4
+            authorName: 'X-Cart team'
+            moduleName: 'Sales Tax'
+            description: 'Setup the rules for calculating sales tax. The rates can depend on product classes, customer''s membership levels and address. When several tax rates are applicable to one product, you can specify the priority of their application.'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActColorSwatchesFeature:
+            id: Qualiteam-SkinActColorSwatchesFeature
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActColorSwatchesFeature
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Color swatches features'
+            description: 'New field will be introduced adjacent to the color attribute, allowing administrators to enter the ship date information, SS-21573'
+            showSettingsForm: false
+            canDisable: true
+        CDev-FedEx:
+            id: CDev-FedEx
+            isEnabled: true
+            type: shipping
+            author: CDev
+            name: FedEx
+            version: 5.5.0.4
+            authorName: 'X-Cart team'
+            moduleName: FedEx
+            description: 'Gets shipping quotes for FedEx delivery methods.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActExtraCouponsAndDiscounts:
+            id: Qualiteam-SkinActExtraCouponsAndDiscounts
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActExtraCouponsAndDiscounts
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Extra coupons and discounts'
+            description: 'Added extra coupons and discounts. SS-20255, SS-20256'
+            showSettingsForm: false
+            canDisable: true
+        CDev-GoSocial:
+            id: CDev-GoSocial
+            isEnabled: true
+            type: common
+            author: CDev
+            name: GoSocial
+            version: 5.5.0.4
+            authorName: 'X-Cart team'
+            moduleName: 'Go Social'
+            description: 'Adds social media sharing functions like Facebook comments, OpenGraph meta tags and share buttons for product pages.'
+            showSettingsForm: true
+            canDisable: true
+        CDev-AuthorizeNet:
+            id: CDev-AuthorizeNet
+            isEnabled: true
+            type: payment
+            author: CDev
+            name: AuthorizeNet
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: 'Authorize.Net SIM'
+            description: 'Enables taking credit card payments for your online store via AuthorizeNet payment gateway (Server Integration Method).'
+            showSettingsForm: false
+            canDisable: true
+        QSL-LoyaltyProgram:
+            id: QSL-LoyaltyProgram
+            isEnabled: true
+            type: common
+            author: QSL
+            name: LoyaltyProgram
+            version: 5.5.0.5
+            authorName: 'Qualiteam Software'
+            moduleName: 'Loyalty Program'
+            description: 'Increase customer loyalty and turn your visitors into returning customers by giving them reward points for purchases made in your store and letting them cash the points in for discounts on future orders.'
+            showSettingsForm: true
+            canDisable: true
+        XC-CustomOrderStatuses:
+            id: XC-CustomOrderStatuses
+            isEnabled: true
+            type: common
+            author: XC
+            name: CustomOrderStatuses
+            version: 5.5.0.2
+            authorName: 'X-Cart team'
+            moduleName: 'Custom Order Statuses'
+            description: 'This module allows you to edit the existing order statuses and add new statuses.'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActSkuVault:
+            id: Qualiteam-SkinActSkuVault
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActSkuVault
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] SkuVault'
+            description: '[SkinAct] SkuVault [SS-19305]'
+            showSettingsForm: true
+            canDisable: true
+        CDev-UserPermissions:
+            id: CDev-UserPermissions
+            isEnabled: true
+            type: common
+            author: CDev
+            name: UserPermissions
+            version: 5.5.0.2
+            authorName: 'X-Cart team'
+            moduleName: 'User permissions'
+            description: 'Allows you to restrict access to backend functions to only those employees who need them. You can define administrator roles and configure which groups of back-end functions are available to users having these roles.'
+            showSettingsForm: false
+            canDisable: true
+        XC-UPS:
+            id: XC-UPS
+            isEnabled: true
+            type: shipping
+            author: XC
+            name: UPS
+            version: 5.5.0.3
+            authorName: 'X-Cart team'
+            moduleName: UPS
+            description: 'Gets shipping quotes for UPS delivery methods.'
+            showSettingsForm: true
+            canDisable: true
+        XC-CustomProductTabs:
+            id: XC-CustomProductTabs
+            isEnabled: true
+            type: common
+            author: XC
+            name: CustomProductTabs
+            version: 5.5.0.4
+            authorName: 'X-Cart team'
+            moduleName: 'Custom product tabs'
+            description: 'Add additional tabs on the product page. Custom name, custom content - html text or product videos, whatever describes your product best.'
+            showSettingsForm: false
+            canDisable: true
+        XC-FreeShipping:
+            id: XC-FreeShipping
+            isEnabled: true
+            type: common
+            author: XC
+            name: FreeShipping
+            version: 5.5.0.6
+            authorName: 'X-Cart team'
+            moduleName: 'Free Shipping and Shipping freights'
+            description: 'Attract more customers by offering Free Shipping. Mark the products that are shipped for free. Add a possibility to specify shipping freight to products.'
+            showSettingsForm: true
+            canDisable: true
+        ShipStation-Api:
+            id: ShipStation-Api
+            isEnabled: true
+            type: common
+            author: ShipStation
+            name: Api
+            version: 5.5.0.5
+            authorName: ShipStation
+            moduleName: ShipStation
+            description: 'Wherever you sell, however you ship, ShipStation helps you create shipping labels easily and efficiently.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActMagicImages:
+            id: Qualiteam-SkinActMagicImages
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActMagicImages
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Magic 360 Images'
+            description: 'Added a magic 360 images, SS-21744'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActProductReOrdering:
+            id: Qualiteam-SkinActProductReOrdering
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActProductReOrdering
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Product re-ordering'
+            description: 'SkinAct. Product re-ordering feature, SS-20088'
+            showSettingsForm: false
+            canDisable: true
+        CDev-TwoCheckout:
+            id: CDev-TwoCheckout
+            isEnabled: true
+            type: payment
+            author: CDev
+            name: TwoCheckout
+            version: 5.5.0.2
+            authorName: 'X-Cart team'
+            moduleName: 2Checkout.com
+            description: 'Enables taking credit card payments for your online store via 2Checkout.com payment gateway.'
+            showSettingsForm: false
+            canDisable: true
+        CDev-GoogleAnalytics:
+            id: CDev-GoogleAnalytics
+            isEnabled: true
+            type: common
+            author: CDev
+            name: GoogleAnalytics
+            version: 5.5.1.9
+            authorName: 'X-Cart team'
+            moduleName: 'Google Analytics'
+            description: 'Enables tracking and analyzing your website e-commerce statistics with Google Analytics.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActFulfillmentStaff:
+            id: Qualiteam-SkinActFulfillmentStaff
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActFulfillmentStaff
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Fulfillment staff'
+            description: 'Creating new user roles: "Fulfillment staff" and "Fulfillment staff with ability to manage products. SS-20258'
+            showSettingsForm: false
+            canDisable: true
+        QSL-MembershipProducts:
+            id: QSL-MembershipProducts
+            isEnabled: true
+            type: common
+            author: QSL
+            name: MembershipProducts
+            version: 5.5.0.2
+            authorName: Qualiteam
+            moduleName: 'Paid memberships'
+            description: 'Sell premium memberships in your store. The module expands the "Memberships" feature of X-Cart, enabling the ability to sell paid memberships as regular products.'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActVideoFeatureWidget:
+            id: Qualiteam-SkinActVideoFeatureWidget
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActVideoFeatureWidget
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Video Feature Widget'
+            description: 'Added an educational videos widget on homepage. SS-20840'
+            showSettingsForm: true
+            canDisable: true
+        CDev-Coupons:
+            id: CDev-Coupons
+            isEnabled: true
+            type: common
+            author: CDev
+            name: Coupons
+            version: 5.5.0.6
+            authorName: 'X-Cart team'
+            moduleName: Coupons
+            description: 'Allows to configure discounts which customers can activate in your shop with a coupon code'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActYotpoReviews:
+            id: Qualiteam-SkinActYotpoReviews
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActYotpoReviews
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] YOTPO reviews'
+            description: 'Integrating a YOTPO reviews service. SS-22375'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActShipStationAdvanced:
+            id: Qualiteam-SkinActShipStationAdvanced
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActShipStationAdvanced
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct ShipStation Advanced'
+            description: 'Allowing import orders into ShipStation, and will enable ShipStation to automatically update shipment status in X-Cart. SS-21024'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActWarningOnCheckout:
+            id: Qualiteam-SkinActWarningOnCheckout
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActWarningOnCheckout
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Warning on checkout'
+            description: 'Add warning on checkout. SS-20553'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActGraphQLApi:
+            id: Qualiteam-SkinActGraphQLApi
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActGraphQLApi
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. GraphQL API Provider'
+            description: 'SkinAct. Provides programmatic GraphQL access to the storefront'
+            showSettingsForm: false
+            canDisable: true
+        XC-Stripe:
+            id: XC-Stripe
+            isEnabled: true
+            type: payment
+            author: XC
+            name: Stripe
+            version: 5.5.0.6
+            authorName: 'X-Cart team'
+            moduleName: Stripe
+            description: 'Enables taking credit card payments for your online store via Stripe'
+            showSettingsForm: false
+            canDisable: true
+        QSL-BraintreeVZ:
+            id: QSL-BraintreeVZ
+            isEnabled: true
+            type: payment
+            author: QSL
+            name: BraintreeVZ
+            version: 5.5.0.0
+            authorName: 'X-Cart team'
+            moduleName: 'PayPal powered by Braintree'
+            description: 'Braintree is a full-stack payments platform that makes it easy to accept payments in your app or website. The service replaces the traditional model of sourcing a payment gateway and merchant account from different providers.'
+            showSettingsForm: false
+            canDisable: true
+        XC-ESelectHPP:
+            id: XC-ESelectHPP
+            isEnabled: true
+            type: payment
+            author: XC
+            name: ESelectHPP
+            version: 5.5.0.1
+            authorName: 'X-Cart team'
+            moduleName: 'Moneris (eSELECTplus- Hosted Pay Page)'
+            description: 'Accept credit and debit cards via an online transaction processing engine. USA and Canada'
+            showSettingsForm: false
+            canDisable: true
+        QSL-CloudSearch:
+            id: QSL-CloudSearch
+            isEnabled: true
+            type: common
+            author: QSL
+            name: CloudSearch
+            version: 5.5.0.8
+            authorName: 'Qualiteam Software'
+            moduleName: 'CloudSearch & CloudFilters'
+            description: 'CloudSearch is a powerful search & navigation engine for X-Cart 5. It enables smart & fast product search and efficient filtering experience. Power up your store with top-notch search & filtering for better conversion rates!'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActContactUsPage:
+            id: Qualiteam-SkinActContactUsPage
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActContactUsPage
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Contact Us page adjustments'
+            description: 'Contact Us page adjustments, SS-22220'
+            showSettingsForm: true
+            canDisable: true
+        CDev-Egoods:
+            id: CDev-Egoods
+            isEnabled: true
+            type: common
+            author: CDev
+            name: Egoods
+            version: 5.5.0.6
+            authorName: 'X-Cart team'
+            moduleName: E-goods
+            description: 'Allows to sell files that customers can download after the purchase. Requires to have the FileAttachments module priorly installed and enabled.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-Segment:
+            id: QSL-Segment
+            isEnabled: true
+            type: common
+            author: QSL
+            name: Segment
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'Segment Integration'
+            description: 'Segment is a powerful data aggregator, it tracks e-commerce events and sends this info to such apps as Mixpanel, Google Analytics, Localytics, RJ Metrics, SalesForce, HubSpot, Optimizely, Clicky and other data processing tools.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-AbandonedCartReminder:
+            id: QSL-AbandonedCartReminder
+            isEnabled: true
+            type: common
+            author: QSL
+            name: AbandonedCartReminder
+            version: 5.5.0.6
+            authorName: 'Qualiteam Software'
+            moduleName: 'Abandoned Cart Reminder'
+            description: 'This module gives unfinished orders a second chance and allows you to remind customers of their abandoned carts by sending an e-mail notification manually or automatically.'
+            showSettingsForm: true
+            canDisable: true
+        XC-FroalaEditor:
+            id: XC-FroalaEditor
+            isEnabled: true
+            type: common
+            author: XC
+            name: FroalaEditor
+            version: 5.5.0.4
+            authorName: 'X-Cart team'
+            moduleName: 'Froala WYSIWYG editor integration'
+            description: 'Enables Froala WYSIWYG editor for editing product and category descriptions.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActCategoryDescriptionAndFaq:
+            id: Qualiteam-SkinActCategoryDescriptionAndFaq
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActCategoryDescriptionAndFaq
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Category description and FAQ'
+            description: 'This module modify categories description and adds FAQ for them. SS-22349'
+            showSettingsForm: false
+            canDisable: true
+        CDev-Sale:
+            id: CDev-Sale
+            isEnabled: true
+            type: common
+            author: CDev
+            name: Sale
+            version: 5.5.0.7
+            authorName: 'X-Cart team'
+            moduleName: Sale
+            description: 'Module allows you set special sale prices for certain products.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActVideoFeature:
+            id: Qualiteam-SkinActVideoFeature
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActVideoFeature
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Video Feature'
+            description: 'Added videos and video categories pages. SS-20247, SS-20249, SS-20253, SS-20254'
+            showSettingsForm: false
+            canDisable: true
+        QSL-SpecialOffersSpendXGetY:
+            id: QSL-SpecialOffersSpendXGetY
+            isEnabled: true
+            type: common
+            author: QSL
+            name: SpecialOffersSpendXGetY
+            version: 5.5.0.2
+            authorName: 'Qualiteam Software'
+            moduleName: 'Special Offers: Spend X Get Y'
+            description: 'This module adds variations of the "Spend X Get Y" special offer type. Requires the base Special Offers module.'
+            showSettingsForm: false
+            canDisable: true
+        XC-CanadaPost:
+            id: XC-CanadaPost
+            isEnabled: true
+            type: shipping
+            author: XC
+            name: CanadaPost
+            version: 5.5.0.6
+            authorName: 'X-Cart team'
+            moduleName: 'Canada Post'
+            description: 'Gets shipping quotes for Canada Post delivery methods.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActCouponSearchBar:
+            id: Qualiteam-SkinActCouponSearchBar
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActCouponSearchBar
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Search bar in the coupon section for X-Cart 5'
+            description: 'Search bar in the coupon section for X-Cart 5, SS-21418'
+            showSettingsForm: false
+            canDisable: true
+        Iidev-CloverPayments:
+            id: Iidev-CloverPayments
+            isEnabled: true
+            type: payment
+            author: Iidev
+            name: CloverPayments
+            version: 5.5.0.4
+            authorName: 'Ilya I'
+            moduleName: CloverPayments
+            description: 'This module enables the processing of one-time payments and the management of recurring payment subscriptions.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-PDFInvoice:
+            id: QSL-PDFInvoice
+            isEnabled: true
+            type: common
+            author: QSL
+            name: PDFInvoice
+            version: 5.5.0.1
+            authorName: Qualiteam
+            moduleName: 'PDF Invoice'
+            description: 'Makes PDF invoice'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActPinterestPixel:
+            id: Qualiteam-SkinActPinterestPixel
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActPinterestPixel
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Pinterest Pixel'
+            description: 'Add Pinterest Pixel script code to the website. SS-20678'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActAftership:
+            id: Qualiteam-SkinActAftership
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActAftership
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: '[SkinAct] Aftership'
+            description: 'Aftership integration for parcels tracking purposes, SS-21352'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActImagesForColors:
+            id: Qualiteam-SkinActImagesForColors
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActImagesForColors
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Images for colors'
+            description: 'Images for colors, SS-23642'
+            showSettingsForm: false
+            canDisable: true
+        QSL-AMP:
+            id: QSL-AMP
+            isEnabled: true
+            type: common
+            author: QSL
+            name: AMP
+            version: 5.5.0.3
+            authorName: Qualiteam
+            moduleName: 'AMP - Accelerated Mobile Pages'
+            description: 'Accelerated Mobile Pages (AMP) is an online publishing format that is optimized for mobile web browsing. The module provides AMP versions of home page and category pages. For more info about AMP project, see https://ampproject.org.'
+            showSettingsForm: false
+            canDisable: true
+        XC-WebmasterKit:
+            id: XC-WebmasterKit
+            isEnabled: false
+            type: common
+            author: XC
+            name: WebmasterKit
+            version: 5.5.0.1
+            authorName: 'X-Cart team'
+            moduleName: 'Webmaster Kit'
+            description: 'This module helps web developers. It is used to find specific templates (the same as Webmaster mode functionality in X-Cart 4), SQL logging, benchmarking.'
+            showSettingsForm: true
+            canDisable: true
+        XC-XC4Login:
+            id: XC-XC4Login
+            isEnabled: true
+            type: common
+            author: XC
+            name: XC4Login
+            version: 5.5.0.0
+            authorName: 'X-Cart team'
+            moduleName: 'Migration: Restore logins of X-Cart 4 users'
+            description: 'The module enables customers from X-Cart 4 to log in using their passwords. If you have not migrated your store from X-Cart 4, this module has no value for you.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-HorizontalCategoriesMenu:
+            id: QSL-HorizontalCategoriesMenu
+            isEnabled: true
+            type: common
+            author: QSL
+            name: HorizontalCategoriesMenu
+            version: 5.5.0.6
+            authorName: Qualiteam
+            moduleName: 'Horizontal Flyout Categories Menu'
+            description: 'The module changes the default categories menu to the horizontal flyout expanding menu.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActMain:
+            id: Qualiteam-SkinActMain
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActMain
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct. Common features for other custom modules'
+            description: 'Common features for other custom modules, SS-20093'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActXPaymentsConnector:
+            id: Qualiteam-SkinActXPaymentsConnector
+            isEnabled: false
+            type: payment
+            author: Qualiteam
+            name: SkinActXPaymentsConnector
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct X-Payments v1.x-3.x connector [deprecated]'
+            description: 'PCI compliant credit card processing through major payment gateways without redirects that allows PCI compliant credit card storing for re-using and subscriptions. X-Payments integrates with over 40 payment providers including but not limited to: PayPal, BrainTree, Authorize.Net AIM/CIM, Chase Paymentech, CyberSource, Elavon, Moneris (former eSelect), First Data, Intuit Quickbooks, Ogone, Sage Pay, Realex, WorldPay and many others.'
+            showSettingsForm: true
+            canDisable: true
+        XC-NotFinishedOrders:
+            id: XC-NotFinishedOrders
+            isEnabled: true
+            type: common
+            author: XC
+            name: NotFinishedOrders
+            version: 5.5.0.0
+            authorName: 'X-Cart team'
+            moduleName: 'Not Finished Orders'
+            description: 'This addon allows you to track not finished orders and contact customers, who have failed to proceed through the payment process.'
+            showSettingsForm: true
+            canDisable: true
+        XC-ThemeTweaker:
+            id: XC-ThemeTweaker
+            isEnabled: true
+            type: common
+            author: XC
+            name: ThemeTweaker
+            version: 5.5.0.13
+            authorName: 'X-Cart team'
+            moduleName: 'Theme tweaker'
+            description: 'This extension allows you to tweak your store design by adding and editing custom CSS styles and JavaScript code directly in the store back end. Also you can upload images to link them from your CSS styles.'
+            showSettingsForm: false
+            canDisable: true
+        XC-AvaTax:
+            id: XC-AvaTax
+            isEnabled: true
+            type: common
+            author: XC
+            name: AvaTax
+            version: 5.5.0.7
+            authorName: 'X-Cart team'
+            moduleName: 'AvaTax Sales Tax Automation'
+            description: 'The fastest, easiest, most accurate and affordable way to calculate sales tax, manage tax exemptions and file returns. Avalara determines the tax rates automatically based on 100,000+ taxability rules in 11,000+ taxing jurisdictions.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-FlyoutCategoriesMenu:
+            id: QSL-FlyoutCategoriesMenu
+            isEnabled: true
+            type: common
+            author: QSL
+            name: FlyoutCategoriesMenu
+            version: 5.5.0.4
+            authorName: 'Qualiteam Software'
+            moduleName: 'Flyout Categories Menu'
+            description: 'The module changes the default categories menu in the Customer area by introducing a flyout expanding menu style'
+            showSettingsForm: true
+            canDisable: true
+        XPay-XPaymentsCloud:
+            id: XPay-XPaymentsCloud
+            isEnabled: true
+            type: payment
+            author: XPay
+            name: XPaymentsCloud
+            version: 5.5.0.4
+            authorName: 'X-Cart Payments team'
+            moduleName: 'X-Payments Cloud connector'
+            description: 'Process and store credit cards right on your website, accept recurring payments and reorders, implement subscriptions & sell in instalments. X-Payments will take the PSD2/SCA & PCI DSS burden off your shoulders.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-ProductQuestions:
+            id: QSL-ProductQuestions
+            isEnabled: true
+            type: common
+            author: QSL
+            name: ProductQuestions
+            version: 5.5.0.4
+            authorName: 'Qualiteam Software'
+            moduleName: 'Product Questions'
+            description: 'This module allows visitors to ask questions on your products and receive answers from your staff.'
+            showSettingsForm: true
+            canDisable: true
+        QSL-ColorSwatches:
+            id: QSL-ColorSwatches
+            isEnabled: true
+            type: common
+            author: QSL
+            name: ColorSwatches
+            version: 5.5.0.8
+            authorName: Qualiteam
+            moduleName: 'Color swatches'
+            description: 'The module displays product options, such as color, fabric or design as clickable color swatches or small images on the product page.'
+            showSettingsForm: true
+            canDisable: true
+        Qualiteam-SkinActCustomOrderStatuses:
+            id: Qualiteam-SkinActCustomOrderStatuses
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActCustomOrderStatuses
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Custom Order Statuses'
+            description: 'Extended a module "Custom Order Statuses"'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActAmountForFreeShipping:
+            id: Qualiteam-SkinActAmountForFreeShipping
+            isEnabled: true
+            type: common
+            author: Qualiteam
+            name: SkinActAmountForFreeShipping
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Amount for free shipping'
+            description: 'Added a new field titled "Amount for Free Shipping" in category settings, SS-21007'
+            showSettingsForm: false
+            canDisable: true
+        Qualiteam-SkinActKlarna:
+            id: Qualiteam-SkinActKlarna
+            isEnabled: true
+            type: payment
+            author: Qualiteam
+            name: SkinActKlarna
+            version: 5.5.0.0
+            authorName: Qualiteam
+            moduleName: 'SkinAct Klarna'
+            description: 'Integrate the "Pay by Klarna" payment method. SS-22090'
+            showSettingsForm: false
+            canDisable: true
+        QSL-OrderReports:
+            id: QSL-OrderReports
+            isEnabled: false
+            type: common
+            author: QSL
+            name: OrderReports
+            version: 5.5.0.3
+            authorName: Qualiteam
+            moduleName: 'Order reports'
+            description: 'Get statistics about what are your bestselling products and categories, what countries and states you get the most orders from, what marketing campaigns drive the most revenue to you. Display mobile icon for orders created with mobile devices on the Order details and Order listing pages.'
+            showSettingsForm: true
+            canDisable: true

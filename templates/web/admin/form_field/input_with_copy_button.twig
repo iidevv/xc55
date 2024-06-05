@@ -1,0 +1,9 @@
+{##
+ # Common input template
+ #}
+
+<span class="input-field-wrapper {{ this.getWrapperClass() }}">
+  {{ this.displayCommentedData(this.getCommentedData()) }}
+  <input{{ this.getAttributesCode()|raw }} />
+  {{ widget('XLite\\View\\Button\\CopyLink', id=this.getCopyBtnId(), attributes={'data-clipboard-target': this.getCopyBtnClipboardTarget()}) }}
+</span>

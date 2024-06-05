@@ -1,0 +1,25 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+services:
+  _defaults:
+    autowire: true
+
+  XC\GoogleFeed\Core\Task\FeedUpdater:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  XC\GoogleFeed\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-GoogleFeed, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }
+
+x_cart:
+  modules:
+    XC-GoogleFeed:
+      # This values will be added into google shopping group selector
+      # Example:
+      #   additional_options: ['condition','adult','tax_category','shipping_label','multipack','is_bundle']
+      additional_options: []

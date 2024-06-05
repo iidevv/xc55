@@ -1,0 +1,12 @@
+{##
+ # Total block price
+ #
+ # @ListChild (list="itemsList.widget.frequentlyBought.product.grid.customer.total", weight="5")
+#}
+
+<div class="freq-products-grid__price-box">
+  <div class="freq-products-grid__price-box-label">{{ t('SkinActFrequentlyBoughtTogether total price') }}</div>
+  <div class="freq-products-grid__price-box-value price-box__total-price-value">
+    {{ widget('XLite\\View\\Surcharge', surcharge=this.getFreqBoughtProductsTotalPrice(), currency=this.getCurrency()) }}
+  </div>
+</div>

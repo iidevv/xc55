@@ -1,0 +1,14 @@
+
+<div class="migration-wizard-page {{ this.getStepName() }}">
+    
+    {{ this.displayCommentedData(this.getTargetController()) }}
+
+    <div class="wizard-sections">
+        {{ widget_list('sections', type='inherited') }}
+    </div>
+
+    <div class="wizard-actions">
+        {{ widget_list('actions', type='inherited') }}
+    </div>
+
+</div>

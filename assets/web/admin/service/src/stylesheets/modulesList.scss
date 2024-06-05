@@ -1,0 +1,43 @@
+@import './common';
+
+.modules-list-block, .module-section {
+  @include vr($margin-bottom: 1);
+  flex: 1 0 auto;
+  position: relative;
+  transition: opacity .15s ease-in-out;
+
+
+  &.grid-list .modules-list,
+  .modules-list.tile {
+    @include vr($margin: -$modules-list-item-margin, $margin-bottom: 0);
+    margin-bottom: 0;
+
+    .iframe-view & {
+      margin: 0;
+    }
+
+    @include flex-list-fix;
+
+    .module {
+      @include vr($padding: $modules-list-item-margin);
+    }
+  }
+
+  .modules-list.row {
+    .module:not(.state-remove) {
+      border: 1px solid transparent;
+    }
+  }
+
+  @include vr(
+    $width: 100%
+  );
+
+  .search-title {
+    @include vr($margin-bottom: 1);
+
+    .search-term {
+      font-weight: $font-bold;
+    }
+  }
+}

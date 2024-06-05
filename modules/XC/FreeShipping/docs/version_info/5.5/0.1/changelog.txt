@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Improvements (1)
+2022-08-09 - [Task] No moduleID in the hook tags. Fixed. #ECOM-1893 #CDev-Core #CDev-USPS #CDev-SimpleCMS #CDev-FedEx #CDev-AustraliaPost #CDev-SalesTax #CDev-SocialLogin #CDev-VAT #CDev-Coupons #CDev-Paypal #CDev-GoogleAnalytics #CDev-Egoods #CDev-UserPermissions #QSL-LoyaltyProgram #QSL-Dwolla #QSL-AbandonedCartReminder #QSL-SpecialOffersBase #QSL-TaxExempt #QSL-ShopByBrand #QSL-ProductFeeds #QSL-AdvancedContactUs #QSL-Banner #XC-MultiCurrency #XC-UPS #XC-GoogleFeed #XC-ThemeTweaker #XC-Concierge #XC-ProductVariants #XC-Zapier #XC-ShopperApproved #XC-DelicatePinkSkin #XC-CrispWhiteSkin #XC-GDPR #XC-CustomProductTabs #XC-AuctionInc #XC-FreeShipping #XC-DHL #XC-TrustedVendors #XC-UpdateInventory #XC-MultiVendor #XC-CanadaPost #XC-SpaceVioletSkin #QSL-ProductQuestions #XC-ForestGreenSkin #QSL-HurryUp
+

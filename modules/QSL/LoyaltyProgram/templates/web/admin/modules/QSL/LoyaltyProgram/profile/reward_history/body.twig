@@ -1,0 +1,12 @@
+<div class="reward-points-history">
+
+    <h2>{{ t('Rewards transaction history') }}</h2>
+
+    <table>
+        {% for index, event in this.getRewardEvents() %}
+          <tr>
+              {{ widget_list('customer.account.rewards.history.event', index=index, event=event) }}
+          </tr>
+        {% endfor %}
+    </table>
+</div>

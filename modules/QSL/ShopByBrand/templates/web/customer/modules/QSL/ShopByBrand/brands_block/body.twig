@@ -1,0 +1,13 @@
+{##
+ # Block with the list of brands.
+ #}
+<ul class="{{ this.getListClasses() }}">
+    {% for idx, _brand in this.getBrands() %}
+    <li class="{{ this.getItemClass(_brand.0, idx) }}">
+        <a href="{{ xurl('brand', '', {'brand_id': _brand.0.brand_id}) }}" class="{{ this.getLinkClass(_brand.0, idx) }}">{{ _brand.0.getName() }}{% if this.isProductCountVisible() %}<span class="product-count"> ({{ _brand.productCount }})</span>{% endif %}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% if this.isAllBrandsLinkVisible() %}
+  <div class="all-brands-link"><a href="{{ xurl('brands') }}">{{ t('All brands') }}</a></div>
+{% endif %}

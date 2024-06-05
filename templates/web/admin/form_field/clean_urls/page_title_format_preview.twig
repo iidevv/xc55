@@ -1,0 +1,15 @@
+{# #
+ # About page title format preview
+#}
+
+<div class="input-field-wrapper">
+    {{ t('Preview') }}
+    <div id="page-title-preview" class="preview-data" data-company-name="{{ this.get('config').Company.company_name }}"
+         data-page-name="{{ t('Page name') }}"
+         data-parent-category-name="{{ t('Parent category name') }}" data-category-name="{{ t('Category name') }}"
+         data-product-name="{{ t('Product name') }}" data-delimiter="{{ t('title-delimiter') }}">
+        <div class="page"><span class="title">{{ t('Page') }}</span>: <span class="content"></span></div>
+        <div class="category"><span class="title">{{ t('Category') }}</span>: <span class="content"></span></div>
+        <div class="product"><span class="title">{{ t('Product') }}</span>: <span class="content"></span></div>
+    </div>
+</div>

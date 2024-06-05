@@ -1,0 +1,11 @@
+{# #
+ # Review block
+ #
+ # @ListChild (list="reviews.review", weight="299")
+#}
+
+{% if this.isAdditionalFieldVisible('display_review_title') and this.get('review').getTitle() %}
+    <div class="sa-cr-title">
+        {{ this.get('review').getTitle() }}
+    </div>
+{% endif %}

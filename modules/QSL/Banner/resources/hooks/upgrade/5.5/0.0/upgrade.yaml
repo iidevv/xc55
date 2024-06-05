@@ -1,0 +1,17 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: hide_banner_rotation_feature
+    category: QSL\Banner
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    value: false
+    orderby: 10
+    translations:
+      - code: en
+        option_name: Hide "Banner Rotation" feature
+        option_comment: This options hides the "Banner Rotation" feature on the “Front Page“ page in X-Cart admin back-end, and disables the "Banner Rotation" feature on the store front page.

@@ -1,0 +1,47 @@
+@startuml
+
+'left to right direction
+
+(<Yotpo Service>) as Yotpo
+(Mobile Application) as Mobile
+
+package X-Cart {
+  usecase (X-Cart \nReviews module) as Reviews
+  usecase (X-Cart \nYotpo Reviews module) as YotpoReviews
+  usecase (X-Cart \nCron) as XCCron
+  usecase (X-Cart \nMobile connector\nGraphQL calls) as XCConnector
+  note "'Yotpo reviews' module restricts \n'Reviews' module in:\n- Review creation in storefront and admin\n- Review update for admin" as NoteYotpoReview
+}
+YotpoReviews . NoteYotpoReview
+NoteYotpoReview . Reviews
+
+
+'inner X-Cart interactions
+YotpoReviews --> Reviews: "<Create last reviews>, \n(DB) "
+'XCConnector --> Reviews : "<Store Yotpo review>, \n(DB)"
+XCConnector --> Reviews : "<Get all reviews>, \n(DB)"
+
+YotpoReviews <..> XCCron : "Cron job for last reviews"
+
+YotpoReviews ..> Yotpo : "<Retrieve last reviews>, \n(API)"
+YotpoReviews ..> Yotpo : "<Create review>, \n(API)"
+YotpoReviews ..> Yotpo : "<Create/Update product>, \n(API)"
+YotpoReviews ..> Yotpo : "<Create order>, \n(API)"
+
+
+'inner Mobile App interactions
+Mobile ---> XCConnector : "<Create review>, \n(GraphQL API)"
+XCConnector <--- Mobile : "<Get all reviews>, \n(GraphQL API)"
+XCConnector ...> YotpoReviews : "<Create review>, \n(API proxy call to Yotpo)"
+
+'Storefront widgets
+package "X-Cart Storefront" {
+  usecase (Review widget on the product page) as ProductPage
+}
+
+ProductPage  <....> Yotpo : "Show 'On-Site Widget'"
+
+ProductPage  ....> Yotpo : "Create review via 'On-Site Widget'"
+
+
+@enduml

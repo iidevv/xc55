@@ -1,0 +1,11 @@
+{##
+#}
+<div class="{{ this.getFingerprint() }}">
+  <input type="hidden" name="pinterest_pixel_content_id" value="{{ this.getUniqueContentId() }}" />
+  <input type="hidden" name="pinterest_pixel_currency" value="{{ this.getCurrencyCode() }}" />
+  <input type="hidden" name="pinterest_pixel_product_id" value="{{ this.getUniqueProductId() }}" />
+  <input type="hidden" name="pinterest_pixel_product_price" value="{{ this.getProductPrice() }}" />
+  {% if this.isProductHasCategory() %}
+  <input type="hidden" name="pinterest_pixel_product_category" value="{{ this.getProductCategoryName() }}" />
+  {% endif %}
+</div>

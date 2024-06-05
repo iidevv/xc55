@@ -1,0 +1,22 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+services:
+  _defaults:
+    autowire: true
+
+  XC\CrispWhiteSkin\Core\EventListener:
+    arguments:
+      $moduleManagerDomain: '@XCart\Domain\ModuleManagerDomain'
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }
+
+  XC\CrispWhiteSkin\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-CrispWhiteSkin, type: init, method: onInit }
+      - { name: xcart.lifetime-hook, moduleId: XC-CrispWhiteSkin, type: install, method: onInstall }
+      - { name: xcart.lifetime-hook, moduleId: XC-CrispWhiteSkin, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }
+

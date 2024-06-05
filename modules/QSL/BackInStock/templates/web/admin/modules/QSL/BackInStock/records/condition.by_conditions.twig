@@ -1,0 +1,15 @@
+{##
+ # Records page template
+ #
+ # Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ # See https://www.x-cart.com/license-agreement.html for license details.
+ #}
+
+<div class="table-label">
+    <label>{{ t('Search in') }}:</label>
+</div>
+<div class="table-value">
+  <ul class="by-conditions">
+    {{ widget_list('back2stock.records.search.conditions.by-keywords') }}
+  </ul>
+</div>

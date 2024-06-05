@@ -1,0 +1,7 @@
+{##
+ # SKU item cell
+ #
+ # @ListChild (list="order_return.item.name", weight="10")
+ #}
+
+<li class="sku" style="list-style: none; line-height: 1.6em; display:inline; color: #5a5a5a;">{{ t('SKU') }} {{ this.item.getSku() }}</li>

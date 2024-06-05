@@ -1,0 +1,8 @@
+Version 5.5.1.0
+
+Improvements (1)
+2022-11-16 - [Story] Added GA4 support. #ECOM-128 #CDev-GoogleAnalytics #QSL-AMP #QSL-SEOCheck #XC-GDPR #XC-MigrationWizard
+
+Fixes (1)
+2022-10-13 - [Bug] The checkbox "I consent to the collection and processing of my personal data" at checkout was missing with the payment method "PayPal Checkout" enabled. Fixed. #XCB-1783 #CDev-Paypal #XC-GDPR
+

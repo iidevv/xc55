@@ -1,0 +1,11 @@
+<table class="reorder-products">
+{% if this.getPageData() %}
+  <tbody class="reorder-items">
+  {% for product in this.getPageData() %}
+    <tr class="reorder-item reorder-{{ product.product_id }}">
+      {{ widget_list('reorder.item', product=product) }}
+    </tr>
+  {% endfor %}
+  </tbody>
+{% endif %}
+</table>

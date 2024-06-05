@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Improvements (1)
+2023-04-13 - [Story] Made changes to the File Attachments design on the Product page. #ECOM-3170 #CDev-FileAttachments #XC-DarkSparkleSkin #QSL-UltimateSkin #TemplateMonster-KitchenSuppliesStore #TemplateMonster-SparePartsStore
+

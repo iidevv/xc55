@@ -1,0 +1,12 @@
+{##
+ # Read all reviews link
+ #
+ # @ListChild (list="product.reviews.tab", weight="500")
+ #}
+
+{% if this.isDisplayReadAllReviewsLink() %}
+  <div class="link">
+    <div class="line"></div>
+    <a href="{{ xurl('product_reviews', '', {'product_id': this.get('product').getProductId(), 'category_id': this.get('product').getCategoryId()}) }}">{{ t('Read all reviews about the product') }} ({{ this.get('product').getReviewsCount() }})</a>
+  </div>
+{% endif %}

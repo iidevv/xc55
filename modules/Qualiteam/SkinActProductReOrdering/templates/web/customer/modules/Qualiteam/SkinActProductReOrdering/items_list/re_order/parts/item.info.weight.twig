@@ -1,0 +1,9 @@
+{##
+ # @ListChild (list="reorder.item.info", weight="30")
+#}
+{% if this.getWeight() %}
+  <p class="item-weight">
+    <span>{{ t('Weight') }}:</span>
+    {{ this.formatWeight(this.getWeight())|raw }}
+  </p>
+{% endif %}

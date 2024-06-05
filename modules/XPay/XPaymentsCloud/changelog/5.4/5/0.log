@@ -1,0 +1,9 @@
+Version 5.4.5.0
+
+- Added Google Pay support, including Checkout with Google Pay and single-item purchases
+- When all wallet methods are hidden during checkout, next payment method is not being loaded properly in some cases. Fixed.
+- "Used Cards" block in invoice moved to "Payment method" section
+- Subscription management is now disabled by default for new installations
+- Added ability for searching "Is subscription" products
+- Security improvements
+- Other minor UI changes

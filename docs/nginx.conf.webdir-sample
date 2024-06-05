@@ -1,0 +1,117 @@
+## X-Cart 5 nginx sample configuration
+## Copy this file to your /etc/nginx directory
+## and include it to your nginx.conf
+##
+## This configuration is prepared for the following server setup:
+## Wordpress in the root of the domain
+## XCart in web-dir
+
+#
+# Replace placeholders:
+# {{web-dir}} - XCart web dir value
+# {{root-full-path}} - real full path of host handler app (Wordpress)
+# {{public-full-path}} - real full path of XCart public dir
+#
+# Example
+#
+# Host handler app path (Wordpress) : /var/www/http
+# XCart installation path: /var/www/xcart
+# Expected XCart URL: https://localhost/shop
+#
+# web-dir: /shop
+# root-full-path: /var/www/http
+# public-full-path: /var/www/xcart/public
+#
+
+upstream fastcgi_xcart {
+   # use tcp connection
+   server  127.0.0.1:9000;
+   # or socket
+   # server   unix:/var/run/php5-fpm.sock;
+   # server   unix:/var/run/php/php7.0-fpm.sock;
+}
+
+upstream fastcgi_other {
+   # use tcp connection
+   server  127.0.0.1:9000;
+   # or socket
+   # server   unix:/var/run/php5-fpm.sock;
+   # server   unix:/var/run/php/php7.0-fpm.sock;
+}
+
+# To use virtual web_dir with symfony routing and service-tool is is required to move web_dir from prefix to suffix
+map $request_uri $real_request_uri {
+    ~^{{web-dir}}(?:/service.php)([^?]*)(\?.*)?$ "/service.php{{web-dir}}$1";
+    ~^{{web-dir}}(?:/\w+\.php)?([^?]*)(\?.*)?$ "{{web-dir}}$1";
+    default $request_uri;
+}
+
+# Determinate real file path
+map $request_uri $real_file {
+    ~^{{web-dir}}(?:/\w+\.php)?([^?]*)(\?.*)?$ $1;
+    default $request_uri;
+}
+
+server {
+    listen 80 default_server;
+    server_name xcart.test;
+    root {{root-full-path}};
+
+    index index.php;
+    charset UTF-8;
+
+    # Static files must not be processd trough fastcgi handler
+    location ~ {{web-dir}}(/.*\.(jpg|jpeg|png|gif|woff|woff2|ttf))$ {
+        alias {{public-full-path}};
+
+        try_files $1 =404;
+        break;
+    }
+
+    # Route index.php and service.php to the fastcgi handler
+    location ~ ^{{web-dir}}/(index|service)\.php {
+        alias {{public-full-path}};
+
+        try_files $real_file @handler;
+    }
+
+    # Route cleanurls to index.php
+    location ~ ^{{web-dir}}/ {
+        alias {{public-full-path}};
+
+        rewrite ^{{web-dir}}(.*)$ {{web-dir}}/index.php$1;
+    }
+
+    # XCart 5.5 handler (web-dir)
+    location @handler {
+        fastcgi_pass            fastcgi_xcart;
+
+        fastcgi_split_path_info ^{{web-dir}}/(.+\.php)?(.*)$;
+
+        include fastcgi_params;
+
+        # Set real FS path
+        fastcgi_param SCRIPT_FILENAME {{public-full-path}}/$fastcgi_script_name;
+        fastcgi_param DOCUMENT_ROOT {{public-full-path}};
+
+        fastcgi_param REQUEST_URI {{web-dir}}/$fastcgi_script_name$fastcgi_path_info?$query_string;
+
+        # Prevents URIs that include the front controller. This will 404:
+        # http://domain.tld/index.php/some-path
+        # Remove the internal directive to allow URIs like this
+        internal;
+    }
+
+    # host handler (w/o web-dir)
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php(/|$) {
+        include fastcgi_params;
+        fastcgi_intercept_errors on;
+        fastcgi_pass fastcgi_xcart;
+        #The following parameter can be also included in fastcgi_params file
+        fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+}

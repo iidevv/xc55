@@ -1,0 +1,7 @@
+{##
+ # Attribute value (Select)
+#}
+
+{% for v in this.getColorSwatcheAttributes() %}
+  <input class="moz-hidden-color-swatches-attribute" type="radio" name="attribute_values[{{ v.getId() }}]" required="required" />
+{% endfor %}

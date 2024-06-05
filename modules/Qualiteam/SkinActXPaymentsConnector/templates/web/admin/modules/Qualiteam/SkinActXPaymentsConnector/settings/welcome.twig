@@ -1,0 +1,49 @@
+{##
+ # Welcome section. Used if connector is not configured. 
+ #
+ #}
+
+<div class="welcome-container">
+
+  <div class="alert alert-warning">
+    <strong>{{ t('This module works only with X-Payments 1.x-3.x ') }}</strong>
+    <p>
+        {{ t('If you don\'t see "Online stores" section in the X-Payments admin panel then you need to use the <a title="X-Payments Cloud connector" href="https://market.x-cart.com/addons/x-payments-cloud.html" target="_blank">X-Payments Cloud connector <i class="fa fa-external-link"></i></a> module') | raw }}.
+    </p>
+  </div>
+  <br>
+
+  {% include this.getDir() ~ '/welcome/scary_note.twig' %}
+
+  {% if this.isDisplaySteps() %}
+
+    <div class="connect-caption">
+      {{ t('Connect to X-Payments. Do 3 easy steps.') }}
+    </div>
+
+    <div class="steps">
+
+      {% include this.getDir() ~ '/welcome/steps.top.twig' %}
+
+      {% include this.getDir() ~ '/welcome/steps.middle.twig' %}
+
+      {% include this.getDir() ~ '/welcome/steps.bottom.twig' %}
+
+    </div>
+
+    {% include this.getDir() ~ '/welcome/video.twig' %}
+
+  {% else %}
+
+    <br /><br />
+
+    <div style="text-align: center"> 
+ 
+    <a href="{{ this.getAddPaymentConfLink() }}" target="_blank" class="btn regular-button regular-main-button">{{ t('Open X-Payments dashboard to configure') }}</a>
+
+    </div>
+
+  {% endif %}
+
+</div>
+

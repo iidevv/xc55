@@ -1,0 +1,11 @@
+Version 5.4.6.0
+
+- Added Trial period feature for subscriptions
+- Apple Pay wasn't working properly in some cases with Fast Lane Checkout. Fixed.
+- There was a submit error with Fast Lane Checkout in some cases. Fixed.
+- When default currency is changed after card is saved, then rebills may be in invalid currency. Fixed.
+- Apple Pay button on One Page Checkout was too thin and was showing a wrong title. Fixed.
+- Fixed appearance of the HTML entities in the shipping rates for Apple Pay and Google Pay
+- "My account" header was missing on customer account page tabs. Fixed
+- "Column reverse cannot be null" error fixed
+- Other minor UI improvements

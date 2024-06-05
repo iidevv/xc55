@@ -1,0 +1,17 @@
+{##
+ # Remove action
+ #
+ # @ListChild (list="popup.shipping.methods.list.line.actions.right", weight=400)
+ #}
+
+{% if this.isShowRemoveButton(this.get('method')) %}
+  <div class="separator"></div>
+  <div class="remove action">
+    {{ widget(
+      '\\XLite\\View\\Button\\SimpleLink',
+      label='',
+      location=xurl('shipping_methods', 'hard_remove', {'id': this.get('method').getMethodId()}),
+      style='fa fa-trash-o'
+    ) }}
+  </div>
+{% endif %}

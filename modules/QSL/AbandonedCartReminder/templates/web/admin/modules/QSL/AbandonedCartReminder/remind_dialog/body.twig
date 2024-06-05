@@ -1,0 +1,23 @@
+{% form '\\QSL\\AbandonedCartReminder\\View\\Form\\RemindSelectedDialog' with { formParams: { returnURL: this.getReturnUrl() } } %}
+
+    {% if this.hasReminders() %}
+      <div class="choose-reminder-dialog">
+          <div class="choose-reminder-widget">
+              {{ widget('\\QSL\\AbandonedCartReminder\\View\\FormField\\Reminder', fieldName='reminder', label='Reminder') }}
+          </div>
+          <div class="choose-reminder-button">
+              {{ widget('\\XLite\\View\\Button\\Submit', style='action', label='Send reminder') }}
+          </div>
+      </div>
+    {% endif %}
+
+    {% if not this.hasReminders() %}
+      <div class="choose-reminder-dialog">
+          <div class="choose-reminder-label">
+              <p>{{ t('You have no reminder templates defined yet.') }}</p>
+              <p><a href="{{ this.getAddRemindersLink() }}">{{ t('Add reminders') }}</a></p>
+          </div>
+      </div>
+    {% endif %}
+
+{% endform %}

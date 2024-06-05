@@ -1,0 +1,7 @@
+Version 5.5.0.23
+
+Fixes (3)
+2023-08-29 - [Bug] Products not requiring shipping (Requires shipping = No) were not taken into account when calculating the base for tax calculation (Subtotal). Fixed.  #XCB-2694 #CDev-Core
+2023-08-30 - [Bug] The Front page in the Admin area was not accessible for the role with the "Manage front page" permission. Fixed. #XCB-2641 #CDev-Core
+2023-08-28 - [Bug] An incorrect URL (not taking web_dir into account) was used for the "Go to dashboard" redirect after an error in the process of applying an update. Fixed. #XCB-2636 #CDev-Core
+

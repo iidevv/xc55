@@ -1,0 +1,39 @@
+{##
+ # Price notify
+ #
+ # Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ # See https://www.x-cart.com/license-agreement.html for license details.
+ #
+ # @ListChild (list="notifyme.rows", weight="200")
+ #}
+
+{% if this.isPriceEnabled() %}
+    <tr class="notify-me-price">
+        <td>
+            <label>
+                {% if this.isEnabledBoth() %}
+                    <input type="checkbox" name="notify_price" value="1" checked />
+                {% else %}
+                    <input type="hidden" name="notify_price" value="1" />
+                {%  endif %}
+                {% if this.getMaxPercent() > 0 %}
+                    {{ t('Let me know when the price drops to  or below (no less then X%)', {'percent': this.getMaxPercent()}) }}
+                {% else %}
+                    {% if this.isPriceSpecificationEnabled() %}
+                        {{ t('Let me know when the price drops to  or below') }}
+                    {% else %}
+                        {{ t('Let me know when the price drops') }}
+                    {% endif %}
+                {% endif %}
+            </label>
+        </td>
+        <td class="cell-price">
+            {% if this.isPriceSpecificationEnabled() %}
+                {{ widget('XLite\\View\\FormField\\Input\\Text\\FloatInput', value=this.getDefaultPrice(), min=this.getMinPrice(), required='true', fieldName='price', label=t('Price'), fieldOnly='true', fieldId='notify-price') }}
+            {% else %}
+                &nbsp;
+            {% endif %}
+        </td>
+    </tr>
+{% endif %}
+

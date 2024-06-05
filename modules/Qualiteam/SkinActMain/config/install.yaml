@@ -1,0 +1,29 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: 'SkinActMain header note', translations: [{ code: en, label: 'Here you specify statuses visible to a customer in a mobile app. They will show up according to the sorting order. Statuses above the current order status will be marked as complete, so the customer will see progress of their delivery.<br><strong>Maximum number of statuses that could be displayed in mobile app is 4</strong>' }] }
+  - { name: 'SkinActMain Only 4 statuses could be showed in statuses bar', translations: [{ code: en, label: 'Only 4 statuses could be showed in statuses bar' }] }
+  - { name: 'SkinActMain Company logo (invoice version)', translations: [{ code: en, label: 'Company logo (invoice mail and web version)' }] }
+  - { name: 'SkinActMain Company logo (invoice pdf version)', translations: [{ code: en, label: 'Company logo (invoice pdf version)' }] }
+
+XLite\Model\Config:
+  - name: mailLogo
+    category: 'CDev\SimpleCMS'
+    type: 'Qualiteam\SkinActMain\View\FormField\Input\MailLogo'
+    orderby: 1000
+    translations:
+      - code: en
+        option_name: 'SkinActMain Company logo (invoice version)'
+
+  - name: pdfLogo
+    category: 'CDev\SimpleCMS'
+    type: 'Qualiteam\SkinActMain\View\FormField\Input\PdfLogo'
+    orderby: 2000
+    translations:
+      - code: en
+        option_name: 'SkinActMain Company logo (invoice pdf version)'

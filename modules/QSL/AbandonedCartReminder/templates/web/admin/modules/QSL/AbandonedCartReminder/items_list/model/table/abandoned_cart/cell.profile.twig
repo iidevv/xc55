@@ -1,0 +1,13 @@
+{% if not this.entity.profile %}
+  <div class="anonymous-profile-name" >{{ t('Unknown') }}</div>
+{% endif %}
+{% if this.entity.profile %}
+  <div class="profile-email">
+      {% if this.getName(this.entity) %}
+          <div class="customer-name">{{ this.getName(this.entity) }}</div>
+          <div class="customer-email">&lt;<a href="mailto:&quot;{{ this.getName(this.entity) }}&quot; &lt;{{ this.entity.profile.getLogin() }}&gt;">{{ this.entity.profile.getLogin() }}</a>&gt;</div>
+      {% else %}
+          <span class="customer-email"><a href="mailto:{{ this.entity.profile.getLogin() }}">{{ this.entity.profile.getLogin() }}</a></span>
+      {% endif %}
+  </div>
+{% endif %}

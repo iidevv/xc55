@@ -1,0 +1,32 @@
+{##
+ # Top menu
+ #}
+
+{% if not this.isSlidebar() %}
+<div class="navbar navbar-inverse mobile-hidden" >
+  <div class="collapse navbar-collapse">
+<ul class="nav navbar-nav top-main-menu primary-menu">
+  {% for i, item in this.getItems() %}
+    {% if this.isLevelUp(item.depth) %}
+  <ul class="sublevel">
+    {% else %}
+      {% if not this.isFirstElement() %}
+    </li>
+      {% endif %}
+    {% endif %}
+
+    {{ this.closeMenuList(item.depth)|raw }}
+    <li {{ this.displayItemClass(i, item)|raw }}>
+    {% if item.url %}
+      <a href="{{ item.url }}" {% if item.active %}class="active"{% endif %}><span>{{ item.label }}</span></a>
+    {% else %}
+      <span class="primary-title">{{ item.label }}</span>
+    {% endif %}
+  {% endfor %}
+    </li>
+  {{ this.closeMenuList()|raw }}
+</ul>
+</ul>
+  </div>
+</div>
+{% endif %}

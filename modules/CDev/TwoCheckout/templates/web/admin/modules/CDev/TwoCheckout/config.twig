@@ -1,0 +1,187 @@
+{##
+ # 2Checkout.com configuration page
+ #}
+
+<ul class="table model-properties settings-table 2checkout">
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text',
+      fieldName='settings[account]',
+      fieldId='settings_account',
+      value=this.paymentMethod.getSetting('account'),
+      required='true',
+      label=t('2Checkout.com account number'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text',
+      fieldName='settings[secret]',
+      fieldId='settings_secret',
+      value=this.paymentMethod.getSetting('secret'),
+      required='true',
+      label=t('Secret word'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Select\\Regular',
+      label=t('Language'),
+      options={
+        'en': t('English'),
+        'zh': t('Chinese'),
+        'da': t('Danish'),
+        'nl': t('Dutch'),
+        'fr': t('French'),
+        'gr': t('German'),
+        'el': t('Greek'),
+        'it': t('Italian'),
+        'jp': t('Japanese'),
+        'no': t('Norwegian'),
+        'pt': t('Portuguese'),
+        'sl': t('Slovenian'),
+        'es_ib': t('European Spanish'),
+        'es_la': t('Latin Spanish'),
+        'sv': t('Swedish')
+      },
+      value=this.paymentMethod.getSetting('language'),
+      fieldName='settings[language]',
+      fieldId='settings_language',
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Select\\TestLiveModeSetting',
+      value=this.paymentMethod.getSetting('mode'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text\\OrderPrefix',
+      value=this.paymentMethod.getSetting('prefix'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Select\\Regular',
+      label=t('Pricing currency'),
+      options={
+        'AED': t('AE Dirham'),
+        'AFN': t('Afghani'),
+        'ALL': t('Lek'),
+        'ARS': t('Argentine Peso'),
+        'AUD': t('Australian Dollar'),
+        'AZN': t('Azerbaijan Manat'),
+        'BBD': t('Barbados Dollar'),
+        'BDT': t('Taka'),
+        'BGN': t('Bulgarian Lev'),
+        'BMD': t('Bermudian Dollar'),
+        'BND': t('Brunei Dollar'),
+        'BOB': t('Boliviano'),
+        'BRL': t('Brazilian Real'),
+        'BSD': t('Bahamian Dollar'),
+        'BWP': t('Pula'),
+        'BYN': t('Belarusian Ruble'),
+        'BZD': t('Belize Dollar'),
+        'CAD': t('Canadian Dollar'),
+        'CHF': t('Swiss Franc'),
+        'CLP': t('Chilean Peso'),
+        'CNY': t('uan Renminbi'),
+        'COP': t('Colombian Peso'),
+        'CRC': t('Costa Rican Colon'),
+        'CZK': t('Czech Koruna'),
+        'DKK': t('Danish Krone'),
+        'DOP': t('Dominican Peso'),
+        'DZD': t('Algerian Dinar'),
+        'EGP': t('Egyptian Pound'),
+        'EUR': t('Euro'),
+        'FJD': t('Fiji Dollar'),
+        'GBP': t('Pound Sterling'),
+        'GTQ': t('Quetzal'),
+        'HKD': t('Hong Kong Dollar'),
+        'HNL': t('Lempira'),
+        'HRK': t('Сroatian kuna'),
+        'HUF': t('Forint'),
+        'IDR': t('Rupiah'),
+        'ILS': t('New Israeli Sheqel'),
+        'INR': t('Indian Rupee'),
+        'JMD': t('Jamaican Dollar'),
+        'JOD': t('Jordanian Dinar'),
+        'JPY': t('Yen'),
+        'KES': t('Kenyan Shilling'),
+        'KRW': t('Won'),
+        'KWD': t('Kuwaiti Dina'),
+        'KZT': t('Tenge'),
+        'LAK': t('Lao Kip'),
+        'LBP': t('Lebanese Pound'),
+        'LKR': t('Sri Lanka Rupee'),
+        'LRD': t('Liberian Dollar'),
+        'MAD': t('Moroccan Dirham'),
+        'MDL': t('Moldovan Leu'),
+        'MMK': t('Kyat'),
+        'MOP': t('Pataca'),
+        'MRO': t('Moorish ugia'),
+        'MUR': t('Mauritius Rupee'),
+        'MVR': t('Rufiyaa'),
+        'MXN': t('Mexican Peso'),
+        'MYR': t('Malaysian Ringgit'),
+        'NAD': t('Namibia Dollar'),
+        'NGN': t('Naira'),
+        'NIO': t('Cordoba Or'),
+        'NOK': t('Norwegian Krone'),
+        'NPR': t('Nepalese Rupee'),
+        'NZD': t('New Zealand Dollar'),
+        'OMR': t('Rial Omani'),
+        'PEN': t('Sol'),
+        'PGK': t('Kina'),
+        'PHP': t('hilippine Peso'),
+        'PKR': t('Pakistan Rupee'),
+        'PLN': t('Zloty'),
+        'PYG': t('Guarani'),
+        'QAR': t('Qatari Rial'),
+        'RON': t('Romanian Leu'),
+        'RSD': t('Serbian Dinar'),
+        'RUB': t('Russian Ruble'),
+        'SAR': t('Saudi Riyal'),
+        'SBD': t('Solomon Islands Dollar'),
+        'SCR': t('Seychelles Rupe'),
+        'SEK': t('Swedish Krona'),
+        'SGD': t('Singapore Dollar'),
+        'SYP': t('Syrian Pound'),
+        'THB': t('Baht'),
+        'TND': t('Tunisian Dinar'),
+        'TOP': t('Pa’anga'),
+        'TRY': t('Turkish Lira'),
+        'TTD': t('Trinidad and Tobago Dollar'),
+        'TWD': t('New Taiwan Dollar'),
+        'UAH': t('Hryvnia'),
+        'USD': t('US Dollar'),
+        'UYU': t('Peso Uruguayo'),
+        'VND': t('Dong'),
+        'VUV': t('Vatu'),
+        'WST': t('Tala'),
+        'XCD': t('East Caribbean Dollar'),
+        'XOF': t('CFA Franc BCEAO'),
+        'YER': t('Yemeni Rial'),
+        'ZAR': t('Rand'),
+      },
+      value=this.paymentMethod.getSetting('currency'),
+      fieldName='settings[currency]',
+      fieldId='settings_currency',
+    ) }}
+  </li>
+  <li>
+    {% set tooltipText %}
+      <p>
+        {{ t('To set up the integration you should follow ') }}
+        <a href='https://www.2checkout.com/va/acct/detail_company_info' target='_blank'>{{ t('"Site management"') }}</a>
+        {{ t(' page and make sure that:') }}
+      </p>
+      <ul class='custom-disc'>
+        <li>{{ t('The "Pricing currency" value must be exactly the same as on it.') }}</li>
+        <li>{{ t('The "Approved URL" value must be exact as this') }}.</li>
+      </ul>
+    {% endset %}
+    {{ widget('XLite\\View\\FormField\\Input\\Text',
+      fieldId='settings_approved_url',
+      value=this.getSecureShopURL('?target=payment_return'),
+      readOnly='true',
+      label=t('Approved URL'),
+      help=tooltipText
+    ) }}
+  </li>
+</ul>

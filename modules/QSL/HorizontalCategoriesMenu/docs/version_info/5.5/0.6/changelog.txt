@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Fixes (1)
+2023-04-27 - [Bug] Horizontal menu in the Catalog mode used to use the name of the root category. Now the label Catalog is used at all times. #XCB-2305 #QSL-HorizontalCategoriesMenu
+

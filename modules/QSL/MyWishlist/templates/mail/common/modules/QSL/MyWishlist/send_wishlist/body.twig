@@ -1,0 +1,17 @@
+{##
+ # 
+ #}
+
+<p>{{ t('Customer sends to you a wishlist',{'customer': this.customer.name}) }}</p>
+
+<p>{{ t('Products from wishlist') }}:</p>
+
+<ol>
+{% for product in this.products %}
+  <li><a target="_blank" href="{{ this.buildFullURL('product','',{'product_id' : product.getProductId()}) }}">{{ product.getName() }}</a>
+  {% if product.isPublicAvailable() %}
+  - <a target="_blank" href="{{ this.buildFullURL('product','add_from_wishlist',{'product_id' : product.getProductId()}) }}">{{ t('Order product from wishlist') }}</a>
+  {% endif %}
+  </li>
+{% endfor %}
+</ol>

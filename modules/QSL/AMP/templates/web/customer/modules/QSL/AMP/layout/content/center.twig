@@ -1,0 +1,13 @@
+{##
+ # Center column
+ #}
+
+{{ widget_list('amp.center.top') }}
+
+{% if this.isTitleVisible() and this.getTitle() %}
+  <h1 class="title" id="page-title">{{ this.getMainTitle() }}</h1>
+{% endif %}
+
+{{ widget_list('amp.center') }}
+
+{{ widget_list('amp.center.bottom') }}

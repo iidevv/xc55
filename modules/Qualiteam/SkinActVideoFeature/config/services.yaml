@@ -1,0 +1,10 @@
+services:
+#  Qualiteam\SkinActVideoFeature\Core\EventListener:
+#    arguments:
+#      $moduleManagerDomain: '@XCart\Domain\ModuleManagerDomain'
+#    tags:
+#      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }
+
+  Qualiteam\SkinActVideoFeature\Command\MakeYoutubeVideoIdCommand:
+    tags:
+      - { name: 'console.command', command: 'SkinActVideoFeature:MakeYoutubeVideoId' }

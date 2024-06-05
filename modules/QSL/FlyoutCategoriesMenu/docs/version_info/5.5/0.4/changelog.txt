@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2023-02-20 - [Bug] Fatal error if accessing a category page with the add-on "Tree-like categories menu" enabled. Fixed. #XCB-2078 #QSL-FlyoutCategoriesMenu #QSL-TreeLikeCategoriesMenu
+

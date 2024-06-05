@@ -1,0 +1,66 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Task:
+  - owner: Qualiteam\SkinActShipStationAdvanced\Core\Task\CheckProductVariantToSyncShipStation
+  - owner: Qualiteam\SkinActShipStationAdvanced\Core\Task\CheckProductToSyncShipStation
+
+XLite\Model\Config:
+  - name: ssa_api_key
+    category: ShipStation\Api
+    type: text
+    value: ''
+    orderby: 100
+    translations:
+      - code: en
+        option_name: 'SkinActShipStationAdvanced api key'
+
+  - name: ssa_api_secret
+    category: ShipStation\Api
+    type: text
+    value: ''
+    orderby: 200
+    translations:
+      - code: en
+        option_name: 'SkinActShipStationAdvanced api secret'
+
+  - name: ssa_api_developer_mode
+    category: ShipStation\Api
+    type: XLite\View\FormField\Input\Checkbox\YesNo
+    value: ''
+    orderby: 300
+    translations:
+      - code: en
+        option_name: 'SkinActShipStationAdvanced api developer mode'
+
+  - name: ssa_api_developer_mode_skus
+    category: ShipStation\Api
+    type: text
+    widgetParameters:
+      dependency: { show: { ssa_api_developer_mode: [ '1' ] } }
+    value: ''
+    orderby: 400
+    translations:
+      - code: en
+        option_name: 'SkinActShipStationAdvanced api developer mode product skus'
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActShipStationAdvanced api key", translations: [{ code: en, label: "API key" }] }
+  - { name: "SkinActShipStationAdvanced api secret", translations: [{ code: en, label: "API secret" }] }
+  - { name: "SkinActShipStationAdvanced shipstation settings", translations: [{ code: en, label: "ShipStation settings" }] }
+  - { name: "SkinActShipStationAdvanced general", translations: [{ code: en, label: "General" }] }
+  - { name: "SkinActShipStationAdvanced statuses", translations: [{ code: en, label: "Statuses" }] }
+  - { name: "SkinActShipStationAdvanced table is empty", translations: [{ code: en, label: "Table is empty." }] }
+  - { name: "SkinActShipStationAdvanced add condition", translations: [{ code: en, label: "Add condition" }] }
+  - { name: "SkinActShipStationAdvanced x conditions has been removed", translations: [{ code: en, label: "{{count}} conditions has been removed" }] }
+  - { name: "SkinActShipStationAdvanced x conditions has been created", translations: [{ code: en, label: "{{count}} conditions has been created" }] }
+  - { name: "SkinActShipStationAdvanced the pair x is already exist", translations: [{ code: en, label: "The pair \"{{pair}}\" is already exist" }] }
+  - { name: "SkinActShipStationAdvanced payment status", translations: [{ code: en, label: "Payment status" }] }
+  - { name: "SkinActShipStationAdvanced shipping status", translations: [{ code: en, label: "Shipping status" }] }
+  - { name: "SkinActShipStationAdvanced api developer mode", translations: [{ code: en, label: "Developer mode" }] }
+  - { name: "SkinActShipStationAdvanced api developer mode product skus", translations: [{ code: en, label: "Product skus" }] }
+  - { name: "SkinActShipStationAdvanced add statuses combination", translations: [{ code: en, label: "The orders only with these statuses combinations will be imported to the Shipstation service" }] }

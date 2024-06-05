@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Fixes (1)
+2022-09-19 - [Bug] OrdersImport & XLSExportImport. OrdersImport did not "understand" the xslx and ods formats. Fixed. #XCB-1687 #QSL-XLSExportImport
+

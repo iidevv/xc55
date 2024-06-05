@@ -1,0 +1,14 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "X review(s)", translations : [{ code : en, label : "{{count}} review(s)" }] }
+  - { name: "Add first review", translations : [{ code : en, label : "Add first review" }] }
+  - { name: "No reviews yet", translations : [{ code : en, label : "No reviews yet" }] }
+  - { name: "Items in your cart: X", translations: [{ code: en, label: "{{count}} items in <a href=\"cart.php?target=cart\">your cart</a> " }] }
+  - { name: "Go to checkout", translations: [{ code: en, label: "Proceed to checkout" }] }
+  - { name: "Profile Details", translations: [{ code: en, label: "Profile Details" }] }

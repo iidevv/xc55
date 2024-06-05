@@ -1,0 +1,35 @@
+{##
+ # Free gifts template
+#}
+
+<div class="items-list items-list-products" {{ this.printTagAttributes(this.getWidgetTagAttributes())|raw }}>
+<div class="items-list items-list-free-gifts">
+    {{ this.displayCommentedData(this.getCommentedData()) }}
+    {% if this.hasFreeGiftTier() %}
+        {% set cartAlreadyHasGift=this.cartAlreadyHasGift() %}
+    <h1>{{ t('SkinActFreeGifts You can select a free gift from list', {'gift_tier': this.getFreeGiftTierName}) }}</h1>
+        <table class="free-gift-selected-products">
+            <tbody class="items">
+            {% for item in this.getPageData() %}
+                {% set product=item.getProduct() %}
+                <tr class="product product-cell selected-product productid-{{ product.product_id }}" data-productid="{{ product.product_id }}">
+                    {% if product.hasImage() %}
+                        <td class="product-thumbnail"><a href="{{ product.getURL() }}">{{ widget('\\XLite\\View\\Image', image=product.getImage(), alt=product.getName(), maxWidth='60', maxHeight='60', centerImage='0') }}</a></td>
+                    {% else %}
+                        <td class="product-thumbnail"><img />&nbsp;</td>
+                    {% endif %}
+                    <td class="item-title"><a href="{{ product.getURL() }}">{{ product.getName() }}</a></td>
+                    <td class="add-to-cart-button{% if this.isGotoProduct(product) %} need-choose-options{% endif %}">
+                        {% if cartAlreadyHasGift %}
+                            {{ widget('\\XLite\\View\\Button\\Submit', label=this.getAddToCartLabel(product), disabled=true, style='disabled regular-main-button add2cart productid-' ~ product.product_id) }}
+                        {% else %}
+                            {{ widget('\\XLite\\View\\Button\\Submit', label=this.getAddToCartLabel(product), style='regular-main-button add2cart productid-' ~ product.product_id) }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+</div>

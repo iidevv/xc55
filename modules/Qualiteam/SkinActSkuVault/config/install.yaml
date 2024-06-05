@@ -1,0 +1,121 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: 'Skip sync to SkuVault', translations: [{ code: en, label: 'Skip sync to SkuVault' }] }
+  - { name: '[SkuVault] create_products_tooltip_text', translations: [{ code: en, label: 'The script sends product information from the not yet synced products to the SkuVault service.' }] }
+  - { name: '[SkuVault] sync_inventory_tooltip_text', translations: [{ code: en, label: 'The script retrieves a list of SKUs and their total available quantities across all warehouses. The products/variants quantities in X-Cart are updated with this data.' }] }
+  - { name: '[SkuVault] update_products_tooltip_text', translations: [{ code: en, label: 'The script sends product information from the already synced products to the SkuVault service.' }] }
+  - { name: '[SkuVault] check_inventory_tooltip_text', translations: [{ code: en, label: 'The script detaches products that were not synced yet from the syncing queue. The remaining synced product information is retrieved from the SkuVault service and products not found in the service are detached from the syncing queue.' }] }
+  - { name: '[SkuVault] sync_orders_xc_to_skuvault_tooltip_text', translations: [{ code: en, label: 'The script sends the X-Cart orders information to the SkuVault service. The products that have a specific “skip“ flag will not be included into the order (if the order  “skipped“ products only it won’t be sent). The Checkout, Payment, and Shipping statuses and Sale state for the service will be assigned according to the mapping settings of the module configuration.' }] }
+  - { name: '[SkuVault] sync_orders_skuvault_to_xc_tooltip_text', translations: [{ code: en, label: 'The script updates the payment and shipping statuses of X-Cart orders that were previously synced with the SkuVault service.' }] }
+  - { name: '[SkuVault] skuvault_settings_left_menu_title', translations: [{ code: en, label: 'SkuVault Settings' }] }
+  - { name: '[SkuVault] Check credentials', translations: [{ code: en, label: 'Please check credentials. The script has got the "{{message}}" during the request to SkuVault' }] }
+
+
+
+XLite\Model\Task:
+  - owner: Qualiteam\SkinActSkuVault\Core\Task\CreateProducts
+  - owner: Qualiteam\SkinActSkuVault\Core\Task\UpdateProducts
+  - owner: Qualiteam\SkinActSkuVault\Core\Task\CheckInventory
+  - owner: Qualiteam\SkinActSkuVault\Core\Task\SyncInventory
+  - owner: Qualiteam\SkinActSkuVault\Core\Task\SyncOrdersXcToSkuvault
+  - owner: Qualiteam\SkinActSkuVault\Core\Task\SyncOrdersSkuvaultToXc
+
+XLite\Model\Config:
+  - name: skuvault_email
+    category: Qualiteam\SkinActSkuVault
+    type: XLite\View\FormField\Input\Text
+    orderBy: 0
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Email'
+  - name: skuvault_pass
+    category: Qualiteam\SkinActSkuVault
+    type: XLite\View\FormField\Input\PasswordWithValue
+    orderBy: 10
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Password'
+
+  - name: skuvault_classification
+    category: Qualiteam\SkinActSkuVault
+    type: Qualiteam\SkinActSkuVault\View\FormField\Select\SkuVault\Classifications
+    orderBy: 20
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Classification'
+  - name: skuvault_supplier
+    category: Qualiteam\SkinActSkuVault
+    type: Qualiteam\SkinActSkuVault\View\FormField\Select\SkuVault\Suppliers
+    orderBy: 30
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Supplier'
+  - name: skuvault_brand
+    category: Qualiteam\SkinActSkuVault
+    type: Qualiteam\SkinActSkuVault\View\FormField\Select\SkuVault\Brands
+    orderBy: 40
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Brand'
+  - name: skuvault_warehouse
+    category: Qualiteam\SkinActSkuVault
+    type: Qualiteam\SkinActSkuVault\View\FormField\Select\SkuVault\Warehouses
+    orderBy: 50
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Warehouse'
+  - name: skuvault_location
+    category: Qualiteam\SkinActSkuVault
+    type: Qualiteam\SkinActSkuVault\View\FormField\Select\SkuVault\Locations
+    orderBy: 60
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Location'
+
+  - name: skuvault_orders_enable_sync
+    category: Qualiteam\SkinActSkuVault
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderBy: 70
+    value: true
+    translations:
+      - code: en
+        option_name: "Enable order's synchronization"
+  - name: skuvault_orders_from_id
+    category: Qualiteam\SkinActSkuVault
+    type: XLite\View\FormField\Input\Text\Integer
+    orderBy: 80
+    value: 0
+    translations:
+      - code: en
+        option_name: "Start sync from order number (0 - no limit)"
+
+  - name: skuvault_items_last_sync_time
+    category: Qualiteam\SkinActSkuVault
+    type: hidden
+    orderBy: 90
+    value: 0
+    translations:
+      - code: en
+        option_name: "Skuvault items last sync time"
+
+  - name: skuvault_sales_last_sync_time
+    category: Qualiteam\SkinActSkuVault
+    type: hidden
+    orderBy: 200
+    value: 0
+    translations:
+      - code: en
+        option_name: "Last time sales sync time"

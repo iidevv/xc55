@@ -1,0 +1,30 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: fileNamePattern
+    category: QSL\PDFInvoice
+    type: text
+    value: "invoice-[orderNumber]"
+    translations:
+      - code: en
+        option_name: Invoice file name pattern. Use [orderNumber] pattern text to provide the order number position
+      - code: ru
+        option_name: Шаблон для имени PDF файла счета. Используйте шаблон [orderNumber] для номера заказа
+  - name: sendPDFAttachment
+    category: QSL\PDFInvoice
+    type: checkbox
+    value: Y
+    translations:
+      - code: en
+        option_name: Send the invoice attachment in the mail
+      - code: ru
+        option_name: Вкладывать PDF файл счета в e-mail
+
+XLite\Model\LanguageLabel:
+  - { name: "Open PDF invoice", translations: [{ code: en, label: "Open PDF invoice" }, { code: ru, label: "Открыть счет в PDF формате" }] }
+  - { name: "Open PDF invoices", translations: [{ code: en, label: "Open PDF invoices" }, { code: ru, label: "Открыть счета в PDF формате" }] }

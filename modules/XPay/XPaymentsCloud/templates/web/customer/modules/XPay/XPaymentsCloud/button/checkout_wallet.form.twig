@@ -1,0 +1,8 @@
+{##
+ # Checkout/Buy With Wallet common button
+ #
+ # @ListChild (list="xpayments.button.checkoutWithApplePay", weight="10")
+ # @ListChild (list="xpayments.button.checkoutWithGooglePay", weight="10")
+ #}
+{% form '\\XPay\\XPaymentsCloud\\View\\Form\\Checkout\\Wallet' with {className: this.getFormClass(), walletId: this.getWalletId()} %}
+{% endform %}

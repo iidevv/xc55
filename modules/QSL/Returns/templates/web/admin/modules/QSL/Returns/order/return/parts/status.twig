@@ -1,0 +1,16 @@
+{##
+ # Order items
+ #
+ # @ListChild (list="return.base", weight="10")
+ #}
+
+{% if this.order.getOrderReturnStatus() %}
+  <div class="section header">
+    <div class="status">
+      <span class="title">{{ t('Status') }}:</span>
+      <span class="value">{{ this.order.getOrderReturnStatus() }}</span>
+    </div>
+    <div class="view-all-returns"><a href="{{ xurl('order_returns') }}">{{ t('View all returns') }}</a></div>
+  </div>
+  <div style="clear: both"></div>
+{% endif %}

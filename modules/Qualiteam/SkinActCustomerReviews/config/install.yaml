@@ -1,0 +1,135 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActCustomerReviews Display Review title", translations: [{ code: en, label: "Display Review title" }] }
+  - { name: "SkinActCustomerReviews Display Advantages field", translations: [{ code: en, label: "Display Advantages field" }] }
+  - { name: "SkinActCustomerReviews Display Disadvantages field", translations: [{ code: en, label: "Display Disadvantages field" }] }
+  - { name: "SkinActCustomerReviews Allow upload photos", translations: [{ code: en, label: "Allow upload photos" }] }
+  - { name: "SkinActCustomerReviews Allow upload videos", translations: [{ code: en, label: "Allow upload videos" }] }
+  - { name: "SkinActCustomerReviews Display Was the above review useful to you", translations: [{ code: en, label: "Display Was the above review useful to you" }] }
+  - { name: "SkinActCustomerReviews Display Report abuse button", translations: [{ code: en, label: "Display Report abuse button" }] }
+  - { name: "SkinActCustomerReviews Review abuse Notifications email address", translations: [{ code: en, label: "Review abuse Notifications email address" }] }
+  - { name: "SkinActCustomerReviews Review title", translations: [{ code: en, label: "Title" }] }
+  - { name: "SkinActCustomerReviews Review advantages", translations: [{ code: en, label: "Advantages" }] }
+  - { name: "SkinActCustomerReviews Review disadvantages", translations: [{ code: en, label: "Disadvantages" }] }
+  - { name: "SkinActCustomerReviews Review title PLACEHOLDER", translations: [{ code: en, label: "Write your review title" }] }
+  - { name: "SkinActCustomerReviews Review advantages PLACEHOLDER", translations: [{ code: en, label: "Write advantages" }] }
+  - { name: "SkinActCustomerReviews Review disadvantages PLACEHOLDER", translations: [{ code: en, label: "Write disadvantages" }] }
+  - { name: "SkinActCustomerReviews useful No", translations: [{ code: en, label: "No" }] }
+  - { name: "SkinActCustomerReviews useful Yes", translations: [{ code: en, label: "Yes" }] }
+  - { name: "SkinActCustomerReviews useful title", translations: [{ code: en, label: "Was the above review useful to you?" }] }
+  - { name: "SkinActCustomerReviews report abuse", translations: [{ code: en, label: "Report abuse" }] }
+  - { name: "SkinActCustomerReviews vote success", translations: [{ code: en, label: "Thank you for your vote" }] }
+  - { name: "SkinActCustomerReviews vote fail", translations: [{ code: en, label: "An error has occurred" }] }
+  - { name: "SkinActCustomerReviews Most useful first", translations: [{ code: en, label: "Most useful first" }] }
+  - { name: "SkinActCustomerReviews Newest first", translations: [{ code: en, label: "Newest first" }] }
+  - { name: "SkinActCustomerReviews already voted", translations: [{ code: en, label: "You already vote this review" }] }
+  - { name: "SkinActCustomerReviews Report", translations: [{ code: en, label: "Report" }] }
+  - { name: "SkinActCustomerReviews successfully sent", translations: [{ code: en, label: "Successfully sent" }] }
+  - { name: "SkinActCustomerReviews submission problem", translations: [{ code: en, label: "An error has occurred" }] }
+  - { name: "SkinActCustomerReviews Report abuse", translations: [{ code: en, label: "Report abuse" }] }
+  - { name: "SkinActCustomerReviews Report abuse desc", translations: [{ code: en, label: "If you find this content inappropriate and think it should be removed from the site, let us know by clicking the button below." }] }
+  - { name: "SkinActCustomerReviews admin review title", translations: [{ code: en, label: "Review title" }] }
+  - { name: "SkinActCustomerReviews admin review advantages", translations: [{ code: en, label: "Advantages" }] }
+  - { name: "SkinActCustomerReviews admin review disadvantages", translations: [{ code: en, label: "Disadvantages" }] }
+  - { name: "SkinActCustomerReviews admin review attachments", translations: [{ code: en, label: "Attachments" }] }
+  - { name: "SkinActCustomerReviews Yes count", translations: [{ code: en, label: "Yes count" }] }
+  - { name: "SkinActCustomerReviews No count", translations: [{ code: en, label: "No count" }] }
+  - { name: "SkinActCustomerReviews uploader comment", translations: [{ code: en, label: "You can attach up to 10 photos and videos to your review. Allowed image formats: jpeg, jpg, png. Allowed videos: mp4, ogv, webm. Max file size is {{maxSize}}." }] }
+  - { name: "SkinActCustomerReviews Textarea maxLen 5000", translations: [{ code: en, label: "Maximum length is 5000 characters" }] }
+
+
+XLite\Model\Config:
+  - name: display_review_title
+    category: XC\Reviews
+    type: \XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 1000
+    value: false
+    translations:
+      - code: en
+        option_name: 'SkinActCustomerReviews Display Review title'
+
+  - name: display_advantages_field
+    category: XC\Reviews
+    type: \XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 1100
+    value: false
+    translations:
+      - code: en
+        option_name: 'SkinActCustomerReviews Display Advantages field'
+
+  - name: display_disadvantages_field
+    category: XC\Reviews
+    type: \XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 1200
+    value: false
+    translations:
+      - code: en
+        option_name: 'SkinActCustomerReviews Display Disadvantages field'
+
+  - name: allow_upload_photos
+    category: XC\Reviews
+    type: \XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 1300
+    value: false
+    translations:
+      - code: en
+        option_name: 'SkinActCustomerReviews Allow upload photos'
+
+  - name: allow_upload_videos
+    category: XC\Reviews
+    type: \XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 1400
+    value: false
+    translations:
+      - code: en
+        option_name: 'SkinActCustomerReviews Allow upload videos'
+
+  - name: display_useful_to_you
+    category: XC\Reviews
+    type: \XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 1500
+    value: false
+    translations:
+      - code: en
+        option_name: 'SkinActCustomerReviews Display Was the above review useful to you'
+
+  - name: display_report_abuse
+    category: XC\Reviews
+    type: \XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 1600
+    value: false
+    translations:
+      - code: en
+        option_name: 'SkinActCustomerReviews Display Report abuse button'
+
+  - name: abuse_email_address
+    category: XC\Reviews
+    type: \XLite\View\FormField\Input\Text
+    orderby: 1700
+    value: ''
+    translations:
+      - code: en
+        option_name: 'SkinActCustomerReviews Review abuse Notifications email address'
+
+XLite\Model\Notification:
+  - templatesDirectory : modules/Qualiteam/SkinActCustomerReviews/report_abuse
+    availableForAdmin : true
+    availableForCustomer : false
+    enabledForAdmin : true
+    enabledForCustomer : false
+    editable : true
+    module: Qualiteam\SkinActCustomerReviews
+    translations:
+      - code: en
+        name: Review abuse report
+        description: This message will be sent to admin when review abuse report will be clicked
+        customerSubject: ''
+        customerText: ''
+        adminSubject: 'Review abuse report'
+        adminText: 'Abuse report<br><br>Customer name: <a href="%customer_link%">%customer_name%</a><br>Product: <a href="%product_link%">%product_name%</a><br>Review number: <a href="%review_link%">%review_number%</a>'

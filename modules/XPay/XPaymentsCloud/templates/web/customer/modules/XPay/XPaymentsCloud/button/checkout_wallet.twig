@@ -1,0 +1,35 @@
+{##
+ # Checkout with Wallet button
+ #}
+
+<{{ this.getContainerTag() }} class="xpayments-wallet-container {{ this.getContainerClass() }}">
+
+  {{ widget_list(this.getWidgetListName()) }}
+
+  <script type="application/javascript">
+    (function(){
+      var config = {
+        account: '{{ this.getPaymentMethod().getSetting('account') }}',
+        widgetKey: '{{ this.getPaymentMethod().getSetting('widget_key') }}',
+        container: 'body',
+        order: {
+          total: '{{ this.getCart().getTotal() }}',
+          currency: '{{ this.getCart().getCurrency().getCode() }}'
+        },
+        language: '{{ this.getCurrentLanguage().getCode() }}',
+        company: {
+          name: '{{ this.get('config').Company.company_name }}',
+          countryCode: '{{ this.get('config').Company.location_country }}',
+        },
+        '{{ this.getWalletId() }}': {
+          shippingMethods: {{ this.getShippingMethodsList()|raw }},
+          requiredShippingFields: {{ this.getRequiredAddressFields('shipping')|raw }},
+          requiredBillingFields: {{ this.getRequiredAddressFields('billing')|raw }},
+        },
+        form: '.{{ this.getFormClass() }}',
+        paypal: {{ this.getPaymentMethod().getPayPalConfig()|json_encode(constant('JSON_PRETTY_PRINT'))|raw }},
+      };
+      window['config{{ this.getJSClass() }}'] = config;
+    })();
+  </script>
+</{{ this.getContainerTag() }}>

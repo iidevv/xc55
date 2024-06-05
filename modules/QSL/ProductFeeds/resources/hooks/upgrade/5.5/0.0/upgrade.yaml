@@ -1,0 +1,57 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: nextag_refresh_rate
+    category: QSL\ProductFeeds\NexTag
+    translations:
+      - code: en
+        option_name: Automatic refresh rate (in hours)
+        option_comment: "Specify the minimum number of hours that the module must wait after updating a feed before updating it automatically once again. To disable the automatic update set this setting to zero. If you enable this option, make sure that your server is configured  to run scheduled X-Cart tasks as described at https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+      - code: ru
+        option_name: "Частота автоматического обновления (в часах)"
+        option_comment: "Сколько часов должно пройти, прежде чем файл экспорта будет обновлён автоматически. Для отключения автоматического обновления укажите нулевое значение. Для работы функции автоматического обновления сервер должен быть настроен согласно https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+
+  - name: shopzilla_refresh_rate
+    category: QSL\ProductFeeds\Shopzilla
+    translations:
+      - code: en
+        option_name: Automatic refresh rate (in hours)
+        option_comment: "Specify the minimum number of hours that the module must wait after updating a feed before updating it automatically once again. To disable the automatic update set this setting to zero. If you enable this option, make sure that your server is configured  to run scheduled X-Cart tasks as described at https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+      - code: ru
+        option_name: "Частота автоматического обновления (в часах)"
+        option_comment: "Сколько часов должно пройти, прежде чем файл экспорта будет обновлён автоматически. Для отключения автоматического обновления укажите нулевое значение. Для работы функции автоматического обновления сервер должен быть настроен согласно https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+
+  - name: pricegrabber_refresh_rate
+    category: QSL\ProductFeeds\Pricegrabber
+    translations:
+      - code: en
+        option_name: Automatic refresh rate (in hours)
+        option_comment: "Specify the minimum number of hours that the module must wait after updating a feed before updating it automatically once again. To disable the automatic update set this setting to zero. If you enable this option, make sure that your server is configured  to run scheduled X-Cart tasks as described at https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+      - code: ru
+        option_name: "Частота автоматического обновления (в часах)"
+        option_comment: "Сколько часов должно пройти, прежде чем файл экспорта будет обновлён автоматически. Для отключения автоматического обновления укажите нулевое значение. Для работы функции автоматического обновления сервер должен быть настроен согласно https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+
+  - name: ebaycomnet_refresh_rate
+    category: QSL\ProductFeeds\EBayCommerce
+    translations:
+      - code: en
+        option_name: Automatic refresh rate (in hours)
+        option_comment: "Specify the minimum number of hours that the module must wait after updating a feed before updating it automatically once again. To disable the automatic update set this setting to zero. If you enable this option, make sure that your server is configured  to run scheduled X-Cart tasks as described at https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+      - code: ru
+        option_name: "Частота автоматического обновления (в часах)"
+        option_comment: "Сколько часов должно пройти, прежде чем файл экспорта будет обновлён автоматически. Для отключения автоматического обновления укажите нулевое значение. Для работы функции автоматического обновления сервер должен быть настроен согласно https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+
+  - name: googleshop_refresh_rate
+    category: QSL\ProductFeeds\GoogleShopping
+    translations:
+      - code: en
+        option_name: Automatic refresh rate (in hours)
+        option_comment: "Specify the minimum number of hours that the module must wait after updating a feed before updating it automatically once again. To disable the automatic update set this setting to zero. If you enable this option, make sure that your server is configured  to run scheduled X-Cart tasks as described at https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+      - code: ru
+        option_name: "Частота автоматического обновления (в часах)"
+        option_comment: "Сколько часов должно пройти, прежде чем файл экспорта будет обновлён автоматически. Для отключения автоматического обновления укажите нулевое значение. Для работы функции автоматического обновления сервер должен быть настроен согласно https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."

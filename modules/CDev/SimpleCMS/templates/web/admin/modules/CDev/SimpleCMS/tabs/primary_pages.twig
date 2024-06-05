@@ -1,0 +1,9 @@
+{##
+ # Pages & Menus - Primary pages tab
+ #}
+
+<div class="description">{{ t('pages.tab.primary.description', {'url': 'https://support.x-cart.com/en/articles/4556418-template-editor'}) | raw }}</div><br>
+
+{% form 'CDev\\SimpleCMS\\View\\Form\\Pages' %}
+  {{ widget('CDev\\SimpleCMS\\View\\ItemsList\\Model\\Primary') }}
+{% endform %}

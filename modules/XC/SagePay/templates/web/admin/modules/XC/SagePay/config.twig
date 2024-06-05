@@ -1,0 +1,48 @@
+{##
+ # SagePay Form protocol configuration page
+ #}
+<ul class="table model-properties settings-table opayo">
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text',
+      fieldName='settings[vendorName]',
+      fieldId='settings_vendorName',
+      value=this.paymentMethod.getSetting('vendorName'),
+      required='true',
+      label=t('Sage Pay vendor name'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Secure',
+      fieldName='settings[password]',
+      fieldId='settings-password',
+      value=this.paymentMethod.getSetting('password'),
+      required='true',
+      label=t('Sage Pay password'),
+      help=t('Please enter your encryption password (This is different from your merchant password). More info on encryption passwords is available <here>', { 'link': this.paymentMethod.getHelpPasswordLink() })
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Select\\Regular',
+      label=t('Transaction type'),
+      options={
+        'sale': t('Payment'),
+        'auth': t('Deferred')
+      },
+      value=this.paymentMethod.getSetting('type'),
+      fieldName='settings[type]',
+      fieldId='settings_type',
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Select\\IsTestMode',
+      value=this.paymentMethod.getSetting('test'),
+    ) }}
+  </li>
+  <li>
+    {{ widget('XLite\\View\\FormField\\Input\\Text\\OrderPrefix',
+      value=this.paymentMethod.getSetting('prefix'),
+      required='true',
+      label=t('Sage pay invoice number prefix'),
+    ) }}
+  </li>
+</ul>

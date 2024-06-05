@@ -1,0 +1,9 @@
+Version 5.4.7.0
+
+- Corrected link leading to the Subscription Details page from the Order Details page
+- Corrected calcuation of the next date for Monthly and Yearly subscriptions
+- Corrected Address Book behaviour for Wallet Payments
+- Added translations for several text labels
+- Corrected appearance of the "Preview" and "Send test email" buttons on the X-Payments Cloud notifications page
+- Implemented bulk Capture operation
+- Updated X-Payments Cloud SDK

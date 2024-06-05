@@ -1,0 +1,6 @@
+<div class="order-tracking">
+    <p class="ot-header"><b>{{ t('SkinActChangesToTrackingNumbers invoice Order Tracking') }}</b></p>
+    {% for trackingNumber in this.getTrackingNumbers() %}
+        <p class="ot-number">{{ trackingNumber }}</p>
+    {% endfor %}
+</div>

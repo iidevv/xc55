@@ -1,0 +1,11 @@
+{##
+ # Rating
+ #
+ # @ListChild (list="amp.reviews.product.rating.form.content", weight="100")
+ #}
+
+{% if this.isVisibleAverageRatingOnPage() %}
+  <div class="rating{% if this.isAllowedRateProduct() %} edit{% endif %}">
+    {{ widget('\\XC\\Reviews\\View\\VoteBar', rate=this.getAverageRating(), max='5') }}
+  </div>
+{% endif %}

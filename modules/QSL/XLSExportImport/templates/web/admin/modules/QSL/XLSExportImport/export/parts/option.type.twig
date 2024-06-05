@@ -1,0 +1,9 @@
+{##
+ # Export begin section : settings : type setting
+ #
+ # @ListChild (list="export.begin.options", weight="50")
+ #}
+
+<li class="type-option">
+  {{ widget('QSL\\XLSExportImport\\View\\FormField\\Select\\ExportType', fieldName='options[type]', label=t('Export file type'), value=this.get('config').Export.type, comment=t('Export limitations warning')) }}
+</li>

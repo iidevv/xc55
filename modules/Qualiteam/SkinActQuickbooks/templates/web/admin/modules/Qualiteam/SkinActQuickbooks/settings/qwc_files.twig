@@ -1,0 +1,48 @@
+{##
+ # QWC files
+ #}
+<div class="dialog-content qwc-files">
+  {% form 'XLite\\View\\Form\\SimpleForm' %}
+    <div class="model-properties">   
+      <fieldset>
+        <div class=" has-tips">
+          <ul class="table default-table">
+            <li class="input input-text first">
+              <div class="table-label">{{ t('QWC File for customers (X-Cart to QuickBooks)') }}</div>
+              <div class="table-value">
+                <div class="input-internal-wrapper">
+                  <span class="input-field-wrapper input input-text">
+                    {{ widget('XLite\\View\\Button\\Simple', id='qwc_customers_btn', label='Download', title='Download', buttonName='Download') }}
+                  </span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li class="input input-text">
+              <div class="table-label">{{ t('QWC File for products (X-Cart to QuickBooks)') }}</div>
+              <div class="table-value">
+                <div class="input-internal-wrapper">
+                  <span class="input-field-wrapper input input-text">
+                    {{ widget('XLite\\View\\Button\\Simple', id='qwc_products_btn', label='Download', title='Download', buttonName='Download') }}
+                  </span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li class="input input-text last">
+              <div class="table-label">{{ t('QWC File for orders (X-Cart to QuickBooks)') }}</div>
+              <div class="table-value">
+                <div class="input-internal-wrapper">
+                  <span class="input-field-wrapper input input-text">
+                    {{ widget('XLite\\View\\Button\\Simple', id='qwc_orders_btn', label='Download', title='Download', buttonName='Download') }}
+                  </span>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </li>
+          </ul>          
+        </div>
+      </fieldset>
+    </div>
+  {% endform %}
+</div>

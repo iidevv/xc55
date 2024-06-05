@@ -1,0 +1,23 @@
+{% if this.hasWholesalePrices() %}
+    <div class="order-item-wholesale" data-pid="{{ this.getProduct().getId() }}">
+
+        <a href="javascript: void(0);" class="open-popover-wholesale" data-placement="left">
+            {{ t('Wholesale') }}
+        </a>
+
+        <div class="popover-content-wholesale">
+            {{ widget('\\Qualiteam\\SkinActCreateOrder\\View\\ProductPrice',
+                product=this.getProduct(),
+                cart=this.getCart()
+            ) }}
+
+        </div>
+
+        {{ widget('\\XLite\\View\\Button\\Regular',
+            label=t('SkinActCreateOrder Apply'),
+            jsCode='void(0);',
+            style='regular-button apply-wholesale-prices') }}
+
+    </div>
+{% endif %}
+

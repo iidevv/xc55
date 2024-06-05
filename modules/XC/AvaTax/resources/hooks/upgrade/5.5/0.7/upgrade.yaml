@@ -1,0 +1,16 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Added an option for collecting Colorado Retail delivery Fee
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: collect_retail_delivery_fee
+    category: XC\AvaTax
+    type: checkbox
+    value: 'Y'
+    orderby: 2170
+    translations:
+      - code: en
+        option_name: 'Collect Colorado Retail Delivery Fee'

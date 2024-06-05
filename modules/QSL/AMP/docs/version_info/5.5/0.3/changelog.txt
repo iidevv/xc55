@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Fixes (1)
+2023-04-12 - [Bug] AMP add-on did not support GA4. Fixed. #XCB-2269 #QSL-AMP
+

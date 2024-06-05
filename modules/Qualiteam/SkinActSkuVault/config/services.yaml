@@ -1,0 +1,199 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+parameters:
+  skuvault.baseUrl: 'https://app.skuvault.com/api/'
+
+  skuvault.classificationsUrl: 'products/getClassifications'
+  skuvault.suppliersUrl: 'products/getSuppliers'
+  skuvault.brandsUrl: 'products/getBrands'
+  skuvault.updateProductUrl: 'products/updateProduct'
+  skuvault.warehousesUrl: 'inventory/getWarehouses'
+  skuvault.locationsUrl: 'inventory/getLocations'
+  skuvault.tokensUrl: 'gettokens'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  handler:
+    class: Qualiteam\SkinActSkuVault\Messenger\Handler\ExportHandler
+    tags:
+      - { name: messenger.message_handler, transport: async }
+
+  configuration:
+    class: Qualiteam\SkinActSkuVault\Core\Configuration\Configuration
+    factory: [ 'Qualiteam\SkinActSkuVault\Core\Factory\ConfigurationFactory', 'createConfiguration' ]
+
+  logger:
+    class: XLite\Logger
+    factory: [ 'Qualiteam\SkinActSkuVault\Core\Factory\LoggerFactory', 'logger' ]
+
+  authService:
+    class: Qualiteam\SkinActSkuVault\Core\Auth\DummyAuthService
+    arguments:
+      $configuration: '@configuration'
+
+  httpClient:
+    class: GuzzleHttp\Client
+    arguments:
+      $authService: '@authService'
+      $configuration: '@configuration'
+      $baseUrl: '%skuvault.baseUrl%'
+    factory: [ 'Qualiteam\SkinActSkuVault\Core\Factory\HttpClientFactory', 'createHttpClient' ]
+
+  apiService:
+    class: Qualiteam\SkinActSkuVault\Core\API\GuzzleApiService
+    arguments:
+      $httpClient: '@httpClient'
+
+  metadataGateway:
+    class: Qualiteam\SkinActSkuVault\Core\Metadata\DBMetadataGateway
+
+  getTokens:
+    class: Qualiteam\SkinActSkuVault\Core\Endpoint\GetTokens
+    arguments:
+      $apiService: '@apiService'
+      $url: '%skuvault.tokensUrl%'
+
+  getClassifications:
+    class: Qualiteam\SkinActSkuVault\Core\Endpoint\GetClassifications
+    arguments:
+      $apiService: '@apiService'
+      $url: '%skuvault.classificationsUrl%'
+      $getTokens: '@getTokens'
+
+  getSuppliers:
+    class: Qualiteam\SkinActSkuVault\Core\Endpoint\GetSuppliers
+    arguments:
+      $apiService: '@apiService'
+      $url: '%skuvault.suppliersUrl%'
+      $getTokens: '@getTokens'
+
+  getBrands:
+    class: Qualiteam\SkinActSkuVault\Core\Endpoint\GetBrands
+    arguments:
+      $apiService: '@apiService'
+      $url: '%skuvault.brandsUrl%'
+      $getTokens: '@getTokens'
+
+  getWarehouses:
+    class: Qualiteam\SkinActSkuVault\Core\Endpoint\GetWarehouses
+    arguments:
+      $apiService: '@apiService'
+      $url: '%skuvault.warehousesUrl%'
+      $getTokens: '@getTokens'
+
+  getLocations:
+    class: Qualiteam\SkinActSkuVault\Core\Endpoint\GetLocations
+    arguments:
+      $apiService: '@apiService'
+      $url: '%skuvault.locationsUrl%'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Core\Data\Converter\UpdateProductConverter: ~
+  Qualiteam\SkinActSkuVault\Core\Data\Converter\PushProductConverter: ~
+  Qualiteam\SkinActSkuVault\Core\Data\Converter\PushOrderConverter: ~
+  Qualiteam\SkinActSkuVault\Core\Data\Converter\PushVariantConverter: ~
+  Qualiteam\SkinActSkuVault\Core\Data\Converter\UpdateVariantConverter: ~
+
+  Qualiteam\SkinActSkuVault\Core\Factory\HydratorFactory:
+    arguments:
+      $logger: '@logger'
+
+  Qualiteam\SkinActSkuVault\Core\Factory\Commands\UpdateProductsCommandFactory:
+    arguments:
+      $api: '@apiService'
+      $updateProductConverter: '@Qualiteam\SkinActSkuVault\Core\Data\Converter\UpdateProductConverter'
+      $hydratorFactory: '@Qualiteam\SkinActSkuVault\Core\Factory\HydratorFactory'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Core\Factory\Commands\UpdateVariantsCommandFactory:
+    arguments:
+      $api: '@apiService'
+      $updateVariantConverter: '@Qualiteam\SkinActSkuVault\Core\Data\Converter\UpdateVariantConverter'
+      $hydratorFactory: '@Qualiteam\SkinActSkuVault\Core\Factory\HydratorFactory'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Core\Factory\Commands\PushProductsCommandFactory:
+    arguments:
+      $api: '@apiService'
+      $pushProductConverter: '@Qualiteam\SkinActSkuVault\Core\Data\Converter\PushProductConverter'
+      $hydratorFactory: '@Qualiteam\SkinActSkuVault\Core\Factory\HydratorFactory'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Core\Factory\Commands\PushVariantCommandFactory:
+    arguments:
+      $api: '@apiService'
+      $pushVariantConverter: '@Qualiteam\SkinActSkuVault\Core\Data\Converter\PushVariantConverter'
+      $hydratorFactory: '@Qualiteam\SkinActSkuVault\Core\Factory\HydratorFactory'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Core\Factory\Commands\PushVariantsCommandFactory:
+    arguments:
+      $api: '@apiService'
+      $pushVariantConverter: '@Qualiteam\SkinActSkuVault\Core\Data\Converter\PushVariantConverter'
+      $hydratorFactory: '@Qualiteam\SkinActSkuVault\Core\Factory\HydratorFactory'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Core\Factory\Commands\CheckInventoryCommandFactory:
+    arguments:
+      $api: '@apiService'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Core\Factory\Commands\SyncInventoryCommandFactory:
+    arguments:
+      $api: '@apiService'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Core\Factory\Commands\PushOrdersCommandFactory:
+    arguments:
+      $api: '@apiService'
+      $pushProductConverter: '@Qualiteam\SkinActSkuVault\Core\Data\Converter\PushOrderConverter'
+      $hydratorFactory: '@Qualiteam\SkinActSkuVault\Core\Factory\HydratorFactory'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Core\Factory\Commands\PullOrdersCommandFactory:
+    arguments:
+      $api: '@apiService'
+      $getTokens: '@getTokens'
+
+  Qualiteam\SkinActSkuVault\Messenger\Handler\ExportHandler:
+    tags:
+      - name: messenger.message_handler
+        handles: Qualiteam\SkinActSkuVault\Messenger\Message\ExportMessage
+
+  Qualiteam\SkinActSkuVault\Core\Task\CreateProducts:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  Qualiteam\SkinActSkuVault\Core\Task\UpdateProducts:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  Qualiteam\SkinActSkuVault\Core\Task\CheckInventory:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  Qualiteam\SkinActSkuVault\Core\Task\SyncInventory:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  Qualiteam\SkinActSkuVault\Core\Task\SyncOrdersXcToSkuvault:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  Qualiteam\SkinActSkuVault\Core\Task\SyncOrdersSkuvaultToXc:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  Qualiteam\SkinActSkuVault\Core\Dispatcher\CheckInventoryDispatcher: ~
+
+  Qualiteam\SkinActSkuVault\Command\CheckInventoryCommand:
+    tags:
+      - { name: 'console.command', command: 'SkinActSkuVault:CheckInventory' }

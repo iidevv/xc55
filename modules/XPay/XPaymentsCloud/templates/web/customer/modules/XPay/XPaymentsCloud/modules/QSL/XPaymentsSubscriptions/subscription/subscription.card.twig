@@ -1,0 +1,34 @@
+{##
+ # Change card form
+ #
+ #}
+{% form 'XLite\\View\\Form' with {formTarget: 'x_payments_subscription', formAction: 'change_card'} %}
+  <input type="hidden" name="subscription_id" value="{{ this.subscription.id }}" />
+
+  <span class="fee-label">{{ t('Card for payments') }}:</span>
+
+  <span class="current-card" id="current-card-{{ this.subscription.id }}">
+
+    {% if this.subscription.isFree() %}
+      {{ t('Not required') }}
+    {% else %}
+
+      <ul class="saved-cards">
+        <li>
+        {% set currentCard=this.subscription.getCard() %}
+        {% if currentCard %}
+          <span class="card-icon-container">
+            <span class="card {{ currentCard.card_type_css }}"></span>
+          </span>
+          <span class="number">{{ currentCard.card_number }} {% if currentCard.expire %}({{ currentCard.expire }}){% endif %}</span>
+        {% else %}
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ t('Not available') }}
+        {% endif %}
+        </li>
+      </ul>
+
+    {% endif %}
+
+  </span>
+
+{% endform %}

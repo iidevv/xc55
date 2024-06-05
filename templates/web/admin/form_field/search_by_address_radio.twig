@@ -1,0 +1,16 @@
+<span class="{{ this.getWrapperClass() }}">
+  <ul>
+    {% for key, name in this.getOptions() %}
+      <li>
+        <input type="radio" id="address_{{ key }}" value="{{ key }}" name="address"
+          {% if this.getValue() == 'both' %}
+            class="default"
+          {% endif %}
+          {% if this.getValue() == key %}
+            checked="checked"
+          {% endif %}>
+        <label for="address_{{ key }}">{{ name }}</label>
+      </li>
+    {% endfor %}
+  </ul>
+</span>

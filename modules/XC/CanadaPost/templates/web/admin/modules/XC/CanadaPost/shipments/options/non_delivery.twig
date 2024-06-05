@@ -1,0 +1,5 @@
+{##
+ # Option :: Non-delivery handling
+ #}
+
+{{ widget('\\XC\\CanadaPost\\View\\FormField\\Select\\NonDeliveryType', fieldId='opt-non-delivery-' ~ parcelIdx, fieldName='parcelsData[' ~ parcel.getId() ~ '][optNonDelivery]', fieldOnly='true', isMandatory=parcel.mandatory, allowedOptions=parcel.allowedOptions, value=parcel.getOptNonDelivery()) }}

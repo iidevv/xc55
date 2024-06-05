@@ -1,0 +1,11 @@
+{##
+ # Wholesales list
+ #}
+
+{{ widget_list('variant_wholesale_prices.info_message') }}
+
+{% form 'CDev\\Wholesale\\Module\\XC\\ProductVariants\\View\\Form\\ProductVariantWholesalePrices' %}
+
+  {{ widget('CDev\\Wholesale\\Module\\XC\\ProductVariants\\View\\ItemsList\\ProductVariantWholesalePrices') }}
+
+{% endform %}

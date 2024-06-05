@@ -1,0 +1,287 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: avatax_sep_1
+    category: XC\AvaTax
+    type: separator
+    orderby: 1000
+    translations:
+      - code: en
+        option_name: 'Account settings'
+      - code: ru
+        option_name: 'Настройки аккаунта'
+  - name: account_number
+    category: XC\AvaTax
+    type: text
+    orderby: 1100
+    translations:
+      - code: en
+        option_name: 'Account number'
+      - code: ru
+        option_name: 'Номер аккаунта'
+  - name: license_key
+    category: XC\AvaTax
+    type: text
+    orderby: 1200
+    translations:
+      - code: en
+        option_name: 'License key'
+      - code: ru
+        option_name: 'Ключ лицензии'
+  - name: companycode
+    category: XC\AvaTax
+    type: text
+    orderby: 1500
+    translations:
+      - code: en
+        option_name: 'Company code'
+        option_comment: 'The code that identifies the company in the AvaTax account in which the document should be posted. This code is declared during the company setup in the AvaTax Admin Console. If no value is passed, the document will be assigned to the default company.'
+      - code: ru
+        option_name: 'Код организации'
+        option_comment: 'Код идентифицирует организацию внутри аккаунта AvaTax и позволяет формировать документы для это организации. Если код не указан, то документы будут сформированы для организации по умолчанию.'
+  - name: avatax_sep_2
+    category: XC\AvaTax
+    type: separator
+    orderby: 2000
+    translations:
+      - code: en
+        option_name: 'Tax Calculation settings'
+      - code: ru
+        option_name: 'Настройки расчета налогов'
+  - name: taxcalculation
+    category: XC\AvaTax
+    type: checkbox
+    value: 'Y'
+    orderby: 2100
+    translations:
+      - code: en
+        option_name: 'Enable tax calculation'
+      - code: ru
+        option_name: 'Включить расчет налогов'
+  - name: display_as_summary
+    category: XC\AvaTax
+    type: checkbox
+    value: 'N'
+    orderby: 2150
+    translations:
+      - code: en
+        option_name: 'Display taxes as a summary'
+  - name: collect_retail_delivery_fee
+    category: XC\AvaTax
+    type: checkbox
+    value: 'Y'
+    orderby: 2170
+    translations:
+      - code: en
+        option_name: 'Collect Colorado Retail Delivery Fee'
+  - name: record_transactions
+    category: XC\AvaTax
+    type: checkbox
+    value: 'Y'
+    orderby: 2200
+    translations:
+      - code: en
+        option_name: 'Record transactions into AvaTax on order place'
+        option_comment: 'Automate tax form reporting and separate preliminary estimates from final sales by recording your transactions into AvaTax'
+      - code: ru
+        option_name: 'Сохранять транзакцию в системе AvaTax при размещении заказа'
+        option_comment: 'Сохраненные транзакции отражают действительную уплату налогов (в отличии от предварительных запросов) и будут доступны при составлении налоговых отчетов.'
+  - name: commit
+    category: XC\AvaTax
+    type: checkbox
+    value: 'Y'
+    orderby: 2200
+    translations:
+      - code: en
+        option_name: 'Set transaction as Commited on order place'
+      - code: ru
+        option_name: 'Помечать транзакцию как Commited при размещении заказа'
+  - name: require_taxes_for_order
+    category: XC\AvaTax
+    type: checkbox
+    value: 'Y'
+    orderby: 2300
+    translations:
+      - code: en
+        option_name: 'Do not create order in case of tax calculation error'
+      - code: ru
+        option_name: 'Не позволять создавать заказы при ошибке в расчете налогов'
+  - name: calctaxforus_type
+    category: XC\AvaTax
+    type: XC\AvaTax\View\FormField\Select\AutomaticTaxCalculateType
+    value: 'all'
+    orderby: 2500
+    translations:
+      - code: en
+        option_name: 'Automatically calculate taxes for'
+      - code: ru
+        option_name: 'Автоматический расчет налогов для'
+  - name: calctaxforus
+    category: XC\AvaTax
+    type: XC\AvaTax\View\FormField\Select\Select2\StateCodes
+    widgetParameters:
+      dependency: { show: { calctaxforus_type: [ 'specific' ]} }
+    value: ''
+    orderby: 2600
+    translations:
+      - code: en
+        option_name: 'Specify US states'
+      - code: ru
+        option_name: 'Укажите штаты США'
+  - name: avatax_sep_3
+    category: XC\AvaTax
+    type: separator
+    orderby: 3000
+    translations:
+      - code: en
+        option_name: 'Address verification settings'
+      - code: ru
+        option_name: 'Настройки проверки адреса'
+  - name: addressverif
+    category: XC\AvaTax
+    type: checkbox
+    value: 'Y'
+    orderby: 3100
+    translations:
+      - code: en
+        option_name: 'Enable address verification'
+      - code: ru
+        option_name: 'Включить проверку адреса'
+  - name: avatax_sep_4
+    category: XC\AvaTax
+    type: separator
+    orderby: 4000
+    translations:
+      - code: en
+        option_name: 'Advanced settings'
+      - code: ru
+        option_name: 'Расширенные настройки'
+  - name: developermode
+    category: XC\AvaTax
+    type: checkbox
+    orderby: 4100
+    translations:
+      - code: en
+        option_name: 'Development mode'
+      - code: ru
+        option_name: 'Режим разработчика'
+  - name: debugmode
+    category: XC\AvaTax
+    type: checkbox
+    orderby: 4200
+    translations:
+      - code: en
+        option_name: 'Debug mode'
+      - code: ru
+        option_name: 'Режим отладки'
+
+XLite\Model\Order\Modifier:
+  - { class: 'XC\AvaTax\Logic\Order\Modifier\StateTax', weight: 1000 }
+
+XLite\Model\LanguageLabel:
+  - name: 'Test connection'
+    translations:
+      - code: en
+        label: 'Test connection'
+      - code: ru
+        label: 'Проверить соединение'
+  - name: 'Connection to AvaTax server established successfully'
+    translations:
+      - code: en
+        label: 'Connection to AvaTax server established successfully'
+      - code: ru
+        label: 'Соединение с сервером AvaTax успешно установлено'
+  - name: 'Connection to AvaTax server failed'
+    translations:
+      - code: en
+        label: 'Cannot connect to AvaTax server. Make sure the Account number, License key and Company code have been entered correctly'
+      - code: ru
+        label: 'Соединение с сервером AvaTax установить не удалось. Проверьте правильность полей Username, Password и Company code'
+  - name: 'Cannot connect to AvaTax server as Username and/or Password field values are missing'
+    translations:
+      - code: en
+        label: 'Cannot connect to AvaTax server as Username and/or Password field values are missing'
+      - code: ru
+        label: 'Соединение с сервером AvaTax не может быть установлено, так как не заполнены поля Username и/или Password'
+  - name: 'Invalid company address. Please follow this link and correct the address.'
+    translations:
+      - code: en
+        label: 'Invalid company address. Please follow <a href="{{url}}">this</a> link and correct the address.'
+      - code: ru
+        label: 'Адрес компании не валиден. Перейдите по <a href="{{url}}">этой</a> ссылке и откорректируйте адрес.'
+  - name: 'Checkout cannot be completed because tax has not been calculated. Reasons: X'
+    translations:
+      - code: en
+        label: 'Checkout cannot be completed because tax has not been calculated. Reasons: {{messages}}'
+      - code: ru
+        label: 'Прохождение чекаута невозможно, так как невозможно рассчитать налоги по следующим причинам: {{messages}}'
+  - name: 'Checkout cannot be completed because tax has not been calculated due to internal problems. Please contact the site administrator.'
+    translations:
+      - code: en
+        label: 'Checkout cannot be completed because tax has not been calculated due to internal problems. Please contact the site administrator.'
+      - code: ru
+        label: 'Прохождение чекаута невозможно, так как невозможно рассчитать налоги по внутренним причинам. Пожалуста, обратитесь к администрации сайта'
+  - name: 'AvaTax settings'
+    translations:
+      - code: en
+        label: 'AvaTax settings'
+      - code: ru
+        label: 'Настройки AvaTax'
+  - name: 'Exemption number'
+    translations:
+      - code: en
+        label: 'Exemption number'
+      - code: ru
+        label: 'Налоговый номер исключения'
+  - name: 'Usage type'
+    translations:
+      - code: en
+        label: 'Usage type'
+      - code: ru
+        label: 'Тип акаунта'
+  - name: 'Check address'
+    translations:
+      - code: en
+        label: 'Check address'
+      - code: ru
+        label: 'Проверить адрес'
+  - name: 'Calculate taxes for US in designated states only'
+    translations:
+      - code: en
+        label: 'Calculate taxes for US in designated states only'
+      - code: ru
+        label: 'Рассчитывать налоги только для указанных штатов США'
+  - name: 'Tax code (AvaTax)'
+    translations:
+      - code: en
+        label: 'Tax code (AvaTax)'
+  - name: 'Automatically calculate taxes for'
+    translations:
+      - code: en
+        label: 'Automatically calculate taxes for'
+      - code: ru
+        label: 'Автоматический расчет налогов для'
+  - name: 'All US States'
+    translations:
+      - code: en
+        label: 'All US States'
+      - code: ru
+        label: 'Всех штатов США'
+  - name: 'Specific states'
+    translations:
+      - code: en
+        label: 'Specific states'
+      - code: ru
+        label: 'Отдельных штатов'
+  - name: 'Specify US states'
+    translations:
+      - code: en
+        label: 'Specify US states'
+      - code: ru
+        label: 'Укажите штаты США'
+

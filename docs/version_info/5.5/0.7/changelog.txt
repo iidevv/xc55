@@ -1,0 +1,17 @@
+Version 5.5.0.7
+
+Improvements (4)
+2022-12-05 - [Story] Performance optimization for MMY import. #ECOM-2482 #CDev-Core #QSL-Make
+2022-12-08 - [Story] Updated the Ultimate skin for version 5.5. #ECOM-2455 #CDev-Core #XC-ProductComparison #QSL-UltimateSkin
+2022-12-06 - [Story] Added a Migration Wizard for version 5.5. #ECOM-2307 #CDev-Core #XC-CustomOrderStatuses #XC-XC4Login #XC-OrdersImport #XC-MigrationWizard #XC-MultiVendor
+2022-12-06 - [Task] If an addon cannot be enabled or disabled, the reason can now be shown via the console utility. #ECOM-1758 #CDev-Core
+
+Fixes (7)
+2022-12-14 - [Bug] Database connection failed if a password contained a question mark character. Fixed.  #XCB-1961 #CDev-Core
+2022-12-14 - [Bug] "Warning: Attempt to read property "type" on array in classes/XLite/Module/AModule.php on line 82". Fixed. #XCB-1960 #CDev-Core
+2022-12-15 - [Bug] Fatal error in AOM after disabling the integration add-on of the payment gateway that was used to pay for the order. Fixed. #XCB-1958 #CDev-Core
+2022-12-14 - [Bug] Incorrect behavior of version 5.5 (a wrong page shown) after submitting a 5.4 license key. Fixed. #XCB-1954 #CDev-Core
+2022-12-14 - [Bug] Added the previously removed import, export and update inventory permissions back to the "Manage vendor's catalog" permission set. #XCB-1942 #CDev-Core #XC-MultiVendor
+2022-12-15 - [Bug] An update step did not have a warning about a missing addon license. Fixed. #XCB-1927 #CDev-Core
+2022-12-15 - [Bug] Tle License warning popup was working incorrectly. Fixed. #XCB-1892 #CDev-Core
+

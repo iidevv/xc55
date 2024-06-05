@@ -1,0 +1,21 @@
+{##
+ # Loyalty earned points template
+ #}
+{% if this.get('cart').getCalculatedRewardPoints() %}
+  <div class="order-earned-points clearfix">
+    <div>
+      {% if this.get('cart').isUserInLoyaltyProgram() %}
+        <span class="name"><span>{{ t('You will earn') }}: </span></span>
+      {% endif %}
+      {% if not this.get('cart').isUserInLoyaltyProgram() %}
+        <span class="name"><span>{{ t('You can earn') }}</span><sup>*</sup> </span>
+      {% endif %}
+      <span class="value">{{ t('X points', {'points': this.get('cart').getCalculatedRewardPoints()}) }}</span>
+    </div>
+    {% if not this.get('cart').isUserInLoyaltyProgram() %}
+      <div class="reward-points-earn-note">{{ t('To earn reward points and cash them in for discounts on future orders please enter your e-mail address in the Shipping Address section and choose to create an account.') }}</div>
+    {% else %}
+      <div class="reward-points-earn-note">{{ t('You will earn the reward points when your order is finished.') }}</div>
+    {% endif %}
+  </div>
+{% endif %}

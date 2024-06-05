@@ -1,0 +1,13 @@
+{##
+ # Account link
+ #
+ # @ListChild (list="layout.header.bar.links.logged", weight="200")
+ #}
+
+<li class="account-link-profile">
+  <a href="{{ xurl('profile', '') }}" class="profile icon-my-account-profile">
+  	<span>{{ t('Profile Details') }}</span>
+    <span class="account-email">{{ this.getProfileLogin() }}</span>
+  </a>
+</li>
+<li class="divider"></li>

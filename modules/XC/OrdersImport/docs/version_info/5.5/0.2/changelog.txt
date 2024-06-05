@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-08-25 - [Bug] OrdersImport. Orders import failed. Fixed  #XCB-1556 #XC-OrdersImport
+

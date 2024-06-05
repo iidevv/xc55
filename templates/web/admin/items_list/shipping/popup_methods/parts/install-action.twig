@@ -1,0 +1,24 @@
+{##
+ # Install action
+ #
+ # @ListChild (list="popup.shipping.methods.list.line.actions.right", weight=300)
+ #}
+
+{% if this.isShowInstallButton(this.get('method')) %}
+    {% if this.isMethodModuleInstalled(this.get('method')) %}
+        {{ widget(
+            'XLite\\View\\Button\\SimpleLink',
+            label='Install',
+            location=this.getModuleURL(this.get('method').getProcessorModule()),
+            style='btn regular-main-button',
+            blank=true
+        ) }}
+    {% else %}
+        {{ widget(
+            'XLite\\View\\Button\\SimpleLink',
+            label='Install',
+            location=this.getModuleURL(this.get('method').getProcessorModule()),
+            style='btn regular-main-button marketplace-link'
+        ) }}
+    {% endif %}
+{% endif %}

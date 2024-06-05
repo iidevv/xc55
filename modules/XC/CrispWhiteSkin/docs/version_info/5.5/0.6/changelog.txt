@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Fixes (1)
+2023-01-27 - [Bug] Error messages can now be displayed for incorrectly filled form fields in Fast Lane Checkout. #XCB-2064 #XC-CrispWhiteSkin
+

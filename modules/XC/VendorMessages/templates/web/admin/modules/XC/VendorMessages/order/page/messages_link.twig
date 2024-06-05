@@ -1,0 +1,9 @@
+{##
+ # Order messages tab : link
+ #}
+
+<a href="{{ tabPage.url }}">{{ t(tabPage.title) }}
+    {% if this.countUnreadMessages() %}
+      <span class="unread-messages-count">{% if this.countUnreadMessages() > 99 %}99+{% else %}{{ this.countUnreadMessages() }}{% endif %}</span>
+    {% endif %}
+</a>

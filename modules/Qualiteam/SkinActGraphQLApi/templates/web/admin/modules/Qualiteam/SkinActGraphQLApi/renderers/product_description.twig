@@ -1,0 +1,5 @@
+{% extends "modules/Qualiteam/SkinActGraphQLApi/renderers/abstract.twig" %}
+
+{% block body %}
+  <div class="description product-description">{{ this.product.getProcessedDescription()|raw }}</div>
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+  XC\Concierge\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-Concierge, type: init, method: onInit }

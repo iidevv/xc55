@@ -1,0 +1,11 @@
+{##
+ # @ListChild (list="itemsList.product.list.customer.info", weight="1300")
+ #}
+
+{% if this.isWishlistClose() %}
+  <a
+          title="{{ t('Remove product from this wishlist') }}"
+          href="{{ xurl('wishlist','remove', {'wishlist_id': this.getWishlist().getId(), 'wishlist_link_id' : this.getProduct().getWishlistLinkId() }) }}"
+          class="remove-from-wishlist next-previous-assigned fa-heart wishlist-close">
+  </a>
+{% endif %}

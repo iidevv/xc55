@@ -1,0 +1,8 @@
+Version 5.5.1.6
+
+Fixes (4)
+2023-03-30 - [Bug] Items field was sent incorrectly for the purchase event. Fixed.  #XCB-2239 #CDev-GoogleAnalytics
+2023-03-30 - [Bug] The affiliation parameter for the purchase event was sent incorrectly. The check for whether GA had been configured in the SEO Health add-on was done incorrectly. Fixed. #XCB-2232 #CDev-GoogleAnalytics #QSL-SEOCheck
+2023-03-17 - [Bug] Issues with the view_item_list event on lists with GA4 configured. Fixed. #XCB-2203 #CDev-GoogleAnalytics
+2023-03-17 - [Bug] Purchase event was not sent to GA4 sometimes while the setting "Register purchase only on Paid" was enabled. Fixed. #XCB-2202 #CDev-GoogleAnalytics
+

@@ -1,0 +1,48 @@
+{##
+ # Payment methods list widget for popup
+ #}
+
+<ul>
+  {% if not this.getPayment().isOffline() %}
+    <li class="payment-logo">
+      {% if this.getAdminIconURL() %}
+        <img src="{{ this.getAdminIconURL() }}" alt="{{ this.getPayment().getTitle() }}"/>
+      {% elseif this.getPayment().getIconURL() %}
+        <img src="{{ this.getPayment().getIconURL() }}" alt="{{ this.getPayment().getTitle() }}"/>
+      {% endif %}
+    </li>
+  {% endif %}
+
+  <li class="title">
+    <span class="payment-name">{{ this.getPayment().getName() }}</span>
+    {% if this.getPayment().getAdminDescription() %}
+      <span class="description">{{ this.getPayment().getAdminDescription() }}</span>
+    {% endif %}
+  </li>
+
+  <li class="actions">
+    <div class="button">
+      {% if this.getPayment().isModuleEnabled() and not this.getPayment().getAdded() %}
+        {{ widget(
+          'XLite\\View\\Button\\Link',
+          label=t('Add'),
+          location=xurl('payment_settings', 'add', {'id': this.getPayment().getMethodId()})
+        ) }}
+      {% endif %}
+      {% if this.getPayment().isModuleEnabled() and this.getPayment().getAdded() %}
+        <a href="{{ this.method.getConfigurationURL() }}"
+           class="settings"
+           title="{{ t('Settings') }}">
+          <span class="fa fa-cog-2"></span>
+          <span>{{ t('Settings') }}</span>
+        </a>
+      {% endif %}
+      {% if this.isDisplayInstallModuleLink(this.getPayment()) %}
+        <a href="{{ this.getPaymentModuleURL(this.getPayment()) }}"
+          class="regular-main-button install-link marketplace-link">
+          {{ t('Install') }}
+        </a>
+      {% endif %}
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,4 @@
+Version 5.4.4.0
+
+- This version adds Delayed Payment feature which allows your site to use checkout mode in which buyers can pre-order products or services from your site without having the order total amount collected from them before you finalize this amount
+- Other minor fixes.

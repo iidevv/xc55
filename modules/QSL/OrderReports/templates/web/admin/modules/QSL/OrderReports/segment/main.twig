@@ -1,0 +1,25 @@
+{##
+ # Order reports
+ #}
+
+{% include 'modules/QSL/OrderReports/parts/order_reports_actions.twig' %}
+
+<div class="table-wrapper main">
+  <table class="data-table">
+
+    <tr class="TableHead">
+      <th>{{ t(this.getSchemaParam('param_name')) }}</th>
+      <th class="text-right">{{ t('Sales') }} ({{ this.getCurrencySymbol() }})</th>
+      <th class="text-right">{{ t(this.getSchemaParam('quantity_name')) }}</th>
+    </tr>
+
+    {% for item in this.getData() %}
+      <tr class="dialog-box">
+        <td class="title" style="width: 100%;">{{ this.displayName(item)|raw }}</td>
+        <td class="item text-right">{{ this.formatPriceForReports(item.sales) }}</td>
+        <td class="item text-right">{{ item.amount }}</td>
+      </tr>
+    {% endfor %}
+
+  </table>
+</div>

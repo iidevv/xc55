@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Improvements (1)
+2022-07-19 - [Story] AvaTax add-on updated to include the changes of Colorado's new retail delivery fee (takes effect July 1, 2022).  #ECOM-1980 #XC-AvaTax
+

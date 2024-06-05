@@ -1,0 +1,36 @@
+{##
+ # Account menu link
+ #}
+
+<div class="line">
+  {% if this.getLink() %}
+    <a href="{{ this.getLink() }}" class="link"{% if this.getTooltip() %} title="{{ this.getTooltip() }}"{% endif %}{% if this.getBlankPage() %} target="_blank"{% endif %}>
+      <div class="title">
+        {{ this.getIcon()|raw }}
+        {% if this.getTitle() %}
+          <span>{{ this.getTitle()|raw }}</span>
+        {% endif %}
+      </div>
+      {% if this.getDescription() %}
+        <div class="description">{{ this.getDescription() }}</div>
+      {% endif %}
+    </a>
+  {% else %}
+    <div class="link"{% if this.getTooltip() %} title="{{ this.getTooltip() }}"{% endif %}>
+      <div class="title">
+        {{ this.getIcon()|raw }}
+        {% if this.getTitle() %}
+          <span>{{ this.getTitle()|raw }}</span>
+        {% endif %}
+      </div>
+      {% if this.getDescription() %}
+        <div class="description">{{ this.getDescription() }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if this.getLabel() %}
+    <a href="{{ this.getLabelLink() }}" class="label">
+      <span title="{{ this.getLabelTitle() }}">{{ this.getLabel()|raw }}</span>
+    </a>
+  {% endif %}
+</div>

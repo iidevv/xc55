@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2023-06-07 - [Bug] Under certain conditions, menu items in the Admin menu were not expanded and not highlighted. Fixed. #XCB-2381 #XC-CustomProductTabs
+

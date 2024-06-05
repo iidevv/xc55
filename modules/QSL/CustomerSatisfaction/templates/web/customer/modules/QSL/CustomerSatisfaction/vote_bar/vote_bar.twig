@@ -1,0 +1,17 @@
+{##
+ # Vote bar
+ #}
+
+<div class="vote-bar">
+  <ul>
+    {% for level, star in this.getStarsCount() %}
+      <li class="star-{{ level }}">
+        <span{% if star.full %} class="full"{% endif %}>
+          {% if star.percent %}
+            <img src="{{ asset('images/spacer.gif') }}" alt="" style="width: {{ star.percent }}%;" />
+          {% endif %}
+        </span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

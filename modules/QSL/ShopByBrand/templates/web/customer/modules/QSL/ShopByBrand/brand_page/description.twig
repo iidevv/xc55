@@ -1,0 +1,9 @@
+{##
+ # Brand description
+ #}
+
+{% if this.getBrandDescription() or this.isInInlineEditorMode() %}
+  <div class="brand-description category-description" {{ this.printTagAttributes(this.getBrand().getFieldMetadata('description'))|raw }}>
+    {{ this.getBrandDescription()|raw }}
+  </div>
+{% endif %}

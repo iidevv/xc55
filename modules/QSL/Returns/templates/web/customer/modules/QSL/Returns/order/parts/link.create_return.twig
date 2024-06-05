@@ -1,0 +1,9 @@
+{##
+ # @ListChild (list="order.links", weight="15")
+ #}
+
+{% if this.order.canReturnBeClaimed() %}
+  <li class="create-return">
+    {{ widget('XLite\\View\\Button\\SimpleLink', location=xurl('create_return', '', {'order_number': this.order.getOrderNumber()}), label=t('Claim return'), style='create-return-button btn btn-link') }}
+  </li>
+{% endif %}

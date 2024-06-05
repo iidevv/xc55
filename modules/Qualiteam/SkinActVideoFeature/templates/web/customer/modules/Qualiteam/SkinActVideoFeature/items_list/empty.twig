@@ -1,0 +1,7 @@
+{##
+ # Empty items list
+#}
+
+{% if not this.isShowSubcategories() %}
+<div class="empty-list">{{ this.getEmptyListDescription()|raw }}</div>
+{% endif %}

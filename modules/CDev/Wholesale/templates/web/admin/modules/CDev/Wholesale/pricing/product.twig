@@ -1,0 +1,15 @@
+{##
+ # Wholesales list
+ #}
+
+{{ widget_list('wholesale_prices.info_message') }}
+
+{% form 'CDev\\Wholesale\\View\\Form\\WholesalePrices' %}
+
+  {{ widget('CDev\\Wholesale\\View\\ItemsList\\WholesalePrices') }}
+
+{% endform %}
+
+{% if this.isOnAbsoluteSale() %}
+  {{ widget('XLite\\View\\StickyPanel\\PanelWithOnlyPreview') }}
+{% endif %}

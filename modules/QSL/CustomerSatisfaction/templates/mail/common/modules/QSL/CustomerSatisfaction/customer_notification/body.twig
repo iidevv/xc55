@@ -1,0 +1,23 @@
+{##
+ # Body
+ #}
+
+{##{{ t('Thank you for shopping with X', {'company': this.get('config').Company.company_name}) }}<br /><br />
+{{ t('Please rate your experience for order X:', {'orderId': this.data.order.orderNumber}) }} #}
+<p />
+<table width="40%">
+    <tr>
+        {% for item in this.ratingURLs %}
+          <td align="left" width="20%"><a href="{{ item.url }}"><img src="/assets/web/customer/modules/QSL/CustomerSatisfaction/images/empty_star.png" /><br /><span>{{ item.label }}</span></a></td>
+        {% endfor %}
+    </tr>
+</table>
+{% if this.loyaltyProgrammeModule.enabled %}
+    <br/><br/>
+    {{ t('Earn up to X for rating of purchased products:', {'points_num': this.loyaltyProgrammeModule.pointsToEarn}) }}
+    <br/>
+    {% for product in this.loyaltyProgrammeModule.products %}
+        <div><a href="{{ product.URL }}">{{ product.name }}</a></div>
+    {% endfor %}
+{%  endif %}
+

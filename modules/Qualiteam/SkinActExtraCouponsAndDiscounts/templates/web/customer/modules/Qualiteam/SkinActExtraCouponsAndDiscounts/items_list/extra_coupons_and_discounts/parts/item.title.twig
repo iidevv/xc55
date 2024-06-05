@@ -1,0 +1,11 @@
+{##
+# Extra coupon title
+#
+# @ListChild (list="extraCoupons.itemsList.item", weight="100")
+#}
+
+{% if this.hasTitle() %}
+  <div class="extra-coupons__block-coupon-title">
+    {{ this.getTitle() }}
+  </div>
+{% endif %}

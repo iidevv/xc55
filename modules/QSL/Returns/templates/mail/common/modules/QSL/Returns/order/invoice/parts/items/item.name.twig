@@ -1,0 +1,21 @@
+{##
+ # Name item cell
+ #
+ # @ListChild (list="order_return.item", weight="20")
+ #}
+
+<td class="item" style="text-align: left; vertical-align: top; border-width: 1px; border-collapse: collapse; border-spacing: 0px; border-style: solid; border-color: #c4c4c4; padding: 10px 20px;vertical-align: top;">
+  {% set orderItem = this.item.getDisplayOrderItem() %}
+  {% if orderItem.getURL() %}
+    <a href="{{ orderItem.getURL() }}" class="item-name" style="color: #000000; font-size: 18px; font-weight: bold;">{{ orderItem.getName() }}</a>
+  {% endif %}
+  {% if not orderItem.getURL() %}
+    <span class="item-name" style="color: #000000; font-size: 18px; font-weight: bold;">{{ orderItem.getName() }}</span>
+  {% endif %}
+
+  {% if this.isViewListVisible('order_return.item.name', {'item': orderItem}) %}
+    <ul class="subitem additional simple-list" style="list-style: none; padding-left: 0; margin: 0; color: #5a5a5a;">
+      {{ widget_list('order_return.item.name', item=orderItem) }}
+    </ul>
+  {% endif %}
+</td>

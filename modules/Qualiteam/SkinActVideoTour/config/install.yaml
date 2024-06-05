@@ -1,0 +1,27 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Product\GlobalTab:
+  - { service_name: 'Video tours', position: 100 }
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActVideoTour video list", translations: [{ code: en, label: "Video list" }] }
+  - { name: "SkinActVideoTour video tours", translations: [{ code: en, label: "Video tours" }] }
+  - { name: "SkinActVideoTour video tour", translations: [{ code: en, label: "Video tour" }] }
+  - { name: "SkinActVideoTour video url", translations: [{ code: en, label: "Url" }] }
+  - { name: "SkinActVideoTour video enabled", translations: [{ code: en, label: "Enabled" }] }
+  - { name: "SkinActVideoTour video description", translations: [{ code: en, label: "Description" }] }
+  - { name: "SkinActVideoTour video position", translations: [{ code: en, label: "Position" }] }
+  - { name: "SkinActVideoTour edit video tour", translations: [{ code: en, label: "Edit video tour" }] }
+  - { name: "SkinActVideoTour add video tour", translations: [{ code: en, label: "Add video tour" }] }
+  - { name: "SkinActVideoTour video has been deleted", translations: [{ code: en, label: "Video has been deleted" }] }
+  - { name: "SkinActVideoTour add video", translations: [{ code: en, label: "Add video" }] }
+  - { name: "SkinActVideoTour create", translations: [{ code: en, label: "Create" }] }
+  - { name: "SkinActVideoTour update", translations: [{ code: en, label: "Update" }] }
+  - { name: "SkinActVideoTour videos blank", translations: [{ code: en, label: "Videos list is empty." }] }
+  - { name: "SkinActVideoTour tab displaying video tours list. Added by the addon Video tour", translations: [{ code: en, label: "Tab displaying video tours list. Added by the addon <a href='{{url}}'>SkinAct. Video tour</a>" }] }
+

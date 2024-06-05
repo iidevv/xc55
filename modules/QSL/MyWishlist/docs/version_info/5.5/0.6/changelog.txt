@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Fixes (1)
+2023-08-04 - [Bug] My Wishlist: On the public page, a wishlist was shown with "'S " instead of the customer name. Fixed. #XCB-976 #QSL-MyWishlist
+

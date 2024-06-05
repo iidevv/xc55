@@ -1,0 +1,10 @@
+{##
+ # Common layout
+ #}
+<!DOCTYPE html>
+<html amp lang="{{ this.currentLanguage.getCode() }}"{% for k, v in this.getHTMLAttributes() %} {{ k }}="{{ v }}"{% endfor %}>
+  {{ widget('QSL\\AMP\\View\\Header') }}
+<body {% if this.getBodyClass() %}class="{{ this.getBodyClass() }}"{% endif %}>
+{{ widget('QSL\\AMP\\View\\Content') }}
+</body>
+</html>

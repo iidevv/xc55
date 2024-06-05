@@ -1,0 +1,51 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel :
+  - { name : 'Membership to assign to product purchaser', translations : [ { code : en, label : 'Membership to assign to product purchaser' } ] }
+  - { name : 'Membership duration', translations : [ { code : en, label : 'Membership duration' } ] }
+  - { name : 'Check membership TTL', translations : [ { code : en, label : 'Check membership TTL' } ] }
+  - { name : 'Unlimited', translations : [ { code : en, label : 'Unlimited' } ] }
+  - { name : 'The order contains one or more products that give the purchaser a certain membership', translations : [ { code : en, label : 'The order contains a product that gives the purchaser a certain membership. However at the moment of purchase this user was not logged in or not registered. Thus, the membership(s) may not be assigned.<br />ACTION REQUIRED: Create an account for this buyer by pressing the "Register User" button on their <a href="{{url}}">Account page</a>. Once the user has been registered, the purchased membership will be assigned automatically.' } ] }
+  - { name : 'Customer membership level changed', translations : [ { code : en, label : 'Customer membership level changed' } ] }
+  - { name : 'Membership assigned date', translations : [ { code : en, label : 'Membership assigned' } ] }
+  - { name : 'Membership expiration date', translations : [ { code : en, label : 'Membership expiration' } ] }
+
+XLite\Model\Task :
+  - owner : QSL\MembershipProducts\Core\Task\CheckMembershipTTL
+
+XLite\Model\Notification :
+  - templatesDirectory : modules/QSL/MembershipProducts/notification_assigned
+    availableForAdmin : false
+    availableForCustomer : true
+    enabledForAdmin : false
+    enabledForCustomer : true
+    editable : true
+    translations :
+      - code : en
+        name : Membership assigned notification (Paid memberships module)
+        description : This message will be sent to customer when a membership purchased by them is assigned
+        customerSubject : '%membership_name% membership'
+        customerText : |
+          %company_link%
+          <p>
+          Congratulations! You've got the "%membership_name%" membership level!
+  - templatesDirectory : modules/QSL/MembershipProducts/notification_reset
+    availableForAdmin : false
+    availableForCustomer : true
+    enabledForAdmin : false
+    enabledForCustomer : true
+    editable : true
+    translations :
+      - code : en
+        name : Membership expiration notification (Paid memberships module)
+        description : This message will be sent to customer when a membership purchased by them expires
+        customerSubject : '%membership_name% membership expiration'
+        customerText : |
+          %company_link%
+          <p>
+          Your "%membership_name%" membership has expired.

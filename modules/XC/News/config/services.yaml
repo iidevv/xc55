@@ -1,0 +1,25 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+x_cart:
+  clean_urls:
+    formats:
+      # News Clean URL’s format
+      # possible values:
+      #  domain/goalnews
+      #  domain/goalnews.html
+      #
+      # Changing this setting will not affect existing url's
+      # and requires to re-deploy your store
+      news: 'domain/goalnews'
+
+services:
+  _defaults:
+    autowire: true
+
+  XC\News\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-News, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }

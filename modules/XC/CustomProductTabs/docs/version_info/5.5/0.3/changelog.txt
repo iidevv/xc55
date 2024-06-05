@@ -1,0 +1,8 @@
+Version 5.5.0.3
+
+Improvements (1)
+2022-10-27 - [Task] Adjusted the positioning and order of checkboxes on the export page. #XCB-1818 #CDev-Core #QSL-BackInStock #QSL-Make #XC-CustomProductTabs #XC-NewsletterSubscriptions #XC-Reviews
+
+Fixes (1)
+2022-11-16 - [Bug] Removed unused remove-hooks. #XCB-1823 #XC-CustomProductTabs #QSL-Roulette
+

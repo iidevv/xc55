@@ -1,0 +1,26 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  QSL\CustomerSatisfaction\Core\Task\SendSurvey:
+    tags:
+      - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+  # /orders
+  QSL\CustomerSatisfaction\API\Endpoint\Order\Transformer\Survey\OutputTransformerInterface: '@QSL\CustomerSatisfaction\API\Endpoint\Order\Transformer\Survey\OutputTransformer'
+  QSL\CustomerSatisfaction\API\Endpoint\Order\Transformer\Survey\OutputTransformer: ~
+  QSL\CustomerSatisfaction\API\Endpoint\Order\Transformer\Survey\Answer\OutputTransformerInterface: '@QSL\CustomerSatisfaction\API\Endpoint\Order\Transformer\Survey\Answer\OutputTransformer'
+  QSL\CustomerSatisfaction\API\Endpoint\Order\Transformer\Survey\Answer\OutputTransformer: ~
+  QSL\CustomerSatisfaction\API\Endpoint\Order\Transformer\Survey\Tag\OutputTransformerInterface: '@QSL\CustomerSatisfaction\API\Endpoint\Order\Transformer\Survey\Tag\OutputTransformer'
+  QSL\CustomerSatisfaction\API\Endpoint\Order\Transformer\Survey\Tag\OutputTransformer: ~
+
+  QSL\CustomerSatisfaction\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: QSL-CustomerSatisfaction, type: upgrade, method: onUpgradeTo5501, version: '5.5.0.1' }

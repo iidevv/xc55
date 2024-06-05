@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Fixes (1)
+2022-10-12 - [Bug] Error related to POST /api/coupons. Fixed. #XCB-1806 #CDev-Coupons
+

@@ -1,0 +1,33 @@
+/**
+ * Notification help
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.notification-help > span {
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.notification-help table {
+  width: 100%;
+}
+
+.notification-help td {
+  vertical-align: top;
+  padding: 3px;
+}
+
+.notification-help .variable-value {
+  padding-left: 10px;
+  color: #999;
+}
+
+.notification-help tr td {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.notification-help tr:last-child td {
+  border-bottom: none;
+}

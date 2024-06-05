@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace XLite\View;
+
+use XCart\Extender\Mapping\ListChild;
+
+/**
+ * Attribute page view
+ *
+ * @ListChild (list="admin.center", zone="admin")
+ */
+class Attribute extends \XLite\View\AView
+{
+    /**
+     * Return list of allowed targets
+     *
+     * @return array
+     */
+    public static function getAllowedTargets()
+    {
+        return array_merge(parent::getAllowedTargets(), ['attribute']);
+    }
+
+    /**
+     * Return widget default template
+     *
+     * @return string
+     */
+    protected function getDefaultTemplate()
+    {
+        return 'attribute/body.twig';
+    }
+}

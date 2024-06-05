@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace XLite\View\FormField\Inline\Select;
+
+/**
+ * Shipping tax class inline selector
+ */
+class ShippingTaxClass extends \XLite\View\Taxes\Inline\ShippingTaxClass
+{
+    /**
+     * Define form field
+     *
+     * @return string
+     */
+    protected function defineFieldClass()
+    {
+        return 'XLite\View\FormField\Select\TaxClass';
+    }
+
+    /**
+     * Get container class
+     *
+     * @return string
+     */
+    protected function getContainerClass()
+    {
+        return parent::getContainerClass() . ' inline-tax-class';
+    }
+
+    /**
+     * Get view value
+     *
+     * @param array $field Field
+     *
+     * @return mixed
+     */
+    protected function getViewValue(array $field)
+    {
+        $result = static::t('Default tax class');
+
+        if ($field['widget']->getValue() &&  $this->getEntity()->getTaxClass()) {
+            $result = $this->getEntity()->getTaxClass()->getName();
+        }
+
+        return $result;
+    }
+
+    /**
+     * Check - field is editable or not
+     *
+     * @return boolean
+     */
+    protected function hasSeparateView()
+    {
+        return true;
+    }
+}

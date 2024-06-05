@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Improvements (1)
+2022-07-22 - [Story] Criss-cross icon instead of Trash for item deletion from the list. #ECOM-1846 #CDev-Core #CDev-FeaturedProducts #XC-Upselling
+

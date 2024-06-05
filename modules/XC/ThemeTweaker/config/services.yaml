@@ -1,0 +1,20 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  XC\ThemeTweaker\Core\Templating\Twig\Functions: ~
+  XC\ThemeTweaker\Core\Templating\Twig\Extension\ThemeTweakerExtension: ~
+
+  XC\ThemeTweaker\Core\Templating\Twig\Loader\ThemeTweaker:
+    tags:
+      - {name: twig.loader, priority: 100}
+
+  XC\ThemeTweaker\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-ThemeTweaker, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }
+      - { name: xcart.lifetime-hook, moduleId: XC-ThemeTweaker, type: upgrade, method: onUpgradeTo5505, version: '5.5.0.5' }
+
+  XC\ThemeTweaker\Core\EventListener:
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-lists.read.before, method: onViewListsReadBefore }

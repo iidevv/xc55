@@ -1,0 +1,233 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Product\GlobalTab:
+  - {service_name: 'Questions', position: 50}
+  
+XLite\Model\Config:
+  - name: guest_questions_allowed
+    category: QSL\ProductQuestions
+    type: checkbox
+    orderby: 200
+    value: 1
+    translations:
+      - code: en
+        option_name: "Allow guest users to ask product questions"
+  - name: product_questions_admin_fullname
+    category: QSL\ProductQuestions
+    type: checkbox
+    orderby: 300
+    value: 0
+    translations:
+      - code: en
+        option_name: "Show the administrator's full name in replies"
+  - name: product_questions_admin_email
+    category: Company
+    type: 'XLite\View\FormField\Input\Text\Email'
+    orderby: 49005
+    value: ""
+    translations:
+      - code: en
+        option_name: 'Product questions'
+
+XLite\Model\LanguageLabel:
+  - name: "Ask a question (X)"
+    translations:
+      - code: en
+        label: "Ask a question ({{count}})"
+  - name: "No questions yet. Be the first to ask a question!"
+    translations:
+      - code: en
+        label: "No questions yet. Be the first to ask a question!"
+  - name: "Please sign in to ask a question."
+    translations:
+      - code: en
+        label: "Please <a href=\"{{loginUrl}}\" class=\"sign-in log-in\">sign in</a> to ask a question."
+  - name: "Thank your for asking the question!"
+    translations:
+      - code: en
+        label: "Thank your for asking the question!"
+  - name: "Published question"
+    translations:
+      - code: en
+        label: "Published"
+  - name: "Hidden question (under moderation)"
+    translations:
+      - code: en
+        label: "Hidden (under moderation)"
+  - name: "Private question"
+    translations:
+      - code: en
+        label: "Private question"
+  - name: "Public question"
+    translations:
+      - code: en
+        label: "Public question"
+  - name: "Guest visitor"
+    translations:
+      - code: en
+        label: "Guest visitor"
+  - name: "Yes (question is answered)"
+    translations:
+      - code: en
+        label: "Yes"
+  - name: "Reply (answer the question)"
+    translations:
+      - code: en
+        label: "Reply"
+  - name: "Private (question)"
+    translations:
+      - code: en
+        label: "Private"
+  - name: "Public (question)"
+    translations:
+      - code: en
+        label: "Public"
+  - name: "A copy of the answer will be sent to this email address. You do not have to complete this field."
+    translations:
+      - code: en
+        label: "A copy of the answer will be sent to this email address. You do not have to complete this field."
+  - name: "Tick this checkbox if you want to make your question invisible for other users."
+    translations:
+      - code: en
+        label: "Tick this checkbox if you want to make your question invisible for other users."
+  - name: "It's a private question"
+    translations:
+      - code: en
+        label: "It's a private question"
+  - name: "Write your question"
+    translations:
+      - code: en
+        label: "Write your question"
+  - name: "Your question"
+    translations:
+      - code: en
+        label: "Your question"
+  - name: "Ask question"
+    translations:
+      - code: en
+        label: "Ask question"
+  - name: "No questions yet. Be the first to ask the question!"
+    translations:
+      - code: en
+        label: "No questions yet. Be the first to ask the question!"
+  - name: "See all questions about the product"
+    translations:
+      - code: en
+        label: "See all questions about the product"
+  - name: "Under moderation"
+    translations:
+      - code: en
+        label: "Under moderation"
+  - name: "Product questions"
+    translations:
+      - code: en
+        label: "Product questions"
+  - name: "Product question"
+    translations:
+      - code: en
+        label: "Product question"
+  - name: "Thank you for contacting us regarding our product: X"
+    translations:
+      - code: en
+        label: 'Thank you for contacting us regarding "{{product}}" product.'
+  - name: "Answer on your question regarding our product"
+    translations:
+      - code: en
+        label: "Answer on your question regarding our product"
+  - name: "New product question"
+    translations:
+      - code: en
+        label: "New product question"
+  - name: "A new product question!"
+    translations:
+      - code: en
+        label: "A new product question!"
+  - name: "Product: X"
+    translations:
+      - code: en
+        label: "Product: {{product}}"
+  - name: "Answer this question"
+    translations:
+      - code: en
+        label: "Answer this question"
+  - name: "Questions"
+    translations:
+      - code: en
+        label: "Questions"
+  - name: "Ask a question about the product"
+    translations:
+      - code: en
+        label: "Ask a question about the product"
+  - name: "New question"
+    translations:
+      - code: en
+        label: "New question"
+  - name: "Question"
+    translations:
+      - code: en
+        label: "Question"
+  - name: "Answer"
+    translations:
+      - code: en
+        label: "Answer"
+  - name: "Replied"
+    translations:
+      - code: en
+        label: "Replied"
+  - name: "Question type"
+    translations:
+      - code: en
+        label: "Question type"
+  - name: "You have X unanswered questions"
+    translations:
+      - code: en
+        label: 'You have {{count}} unanswered question(s).'
+  - name: "Manage product questions"
+    translations:
+      - code: en
+        label: "Questions"
+  - name: "This option is ignored as Multi-vendor module is installed. Sending all product questions to vendors email addresses."
+    translations:
+      - code: en
+        label: '<i class="fa fa-exclamation-triangle"></i> This option is ignored as <a href="{{url}}" target="_new">Multi-vendor</a> module is installed and enabled. Sending all product questions to vendors email addresses.'
+  - name: "Back to product questions"
+    translations:
+      - code: en
+        label: "Back to product questions"
+  - name: 'Tab displaying product questions. Added by the addon Product Questions'
+    translations:
+      - code: en
+        label: 'Tab displaying product questions. Added by the addon <a href="{{url}}">Product Questions</a>'
+
+XLite\Model\Notification:
+  - templatesDirectory: modules/QSL/ProductQuestions/answer
+    # whether the notification can be enabled/disabled from the back-end
+    availableForAdmin: false
+    availableForCustomer: false
+    # which user types the notification is for
+    enabledForAdmin: false
+    enabledForCustomer: true
+    module: QSL\ProductQuestions
+    translations:
+      - code: en
+        name: "Answer on a product question (Product Questions module)"
+        description: "Customers receive this notification when administrators answer their questions about products."
+        customerSubject: "Answer on your question regarding our product"
+        customerText: "Thank you for contacting us regarding our product."
+  - templatesDirectory: modules/QSL/ProductQuestions/new_question
+    availableForAdmin: true
+    availableForCustomer: false
+    enabledForAdmin: true
+    enabledForCustomer: false
+    module: QSL\ProductQuestions
+    translations:
+      - code: en
+        name: "New product question (Product Questions module)"
+        description: "Store administrator receives this notification when customers ask a new product question."
+        adminSubject: "New product question"
+        adminText: "A new product question!"

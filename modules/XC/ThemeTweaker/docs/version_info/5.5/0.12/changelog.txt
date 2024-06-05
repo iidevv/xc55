@@ -1,0 +1,5 @@
+Version 5.5.0.12
+
+Fixes (1)
+2023-06-16 - [Bug] Added the ability to change the weight and list parameters for new templates in the Admin area. #XCB-2417 #XC-ThemeTweaker
+

@@ -1,0 +1,19 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.6
+type: common
+authorName: Qualiteam
+moduleName: 'Horizontal Flyout Categories Menu'
+description: 'The module changes the default categories menu to the horizontal flyout expanding menu.'
+minorRequiredCoreVersion: 0
+dependsOn:
+    - CDev-SimpleCMS
+incompatibleWith:
+    - QSL-MultilevelMenu
+showSettingsForm: true
+canDisable: true

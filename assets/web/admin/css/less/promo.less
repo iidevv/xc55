@@ -1,0 +1,140 @@
+/**
+ * Promo styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.promo-block {
+  padding: @rhythmic-unit * .5;
+  border-radius: 3px;
+  border: none;
+  background-color: @color-bg-light-blue;
+  display: inline-block;
+  position: relative;
+
+  .close {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -6px;
+
+    svg {
+      width: 9px;
+      height: 9px;
+      fill: #31a3da;
+    }
+  }
+
+  .promo-content {
+    a {
+      text-decoration: none;
+      color: @link-color;
+    }
+  }
+
+  &.free-shipping-promo {
+    position: absolute;
+    right: 10px;
+  }
+
+  .review & {
+    margin-bottom: @rhythmic-unit;
+    align-self: flex-start;
+
+    .promo-content {
+      max-width: unset;
+      font-size: @font-size;
+      line-height: @line-height-small;
+      padding-right: 0;
+    }
+
+    .close {
+      display: none;
+    }
+  }
+}
+
+.promo-content {
+  padding-right: 20px;
+}
+
+.promo-banner {
+  .flex-display();
+  .rounded(@border-radius-base);
+  background-color: @color-bg-light-blue;
+  border: @border-base solid @color-bg-light-blue;
+  padding: 0.5 * @rhythmic-unit - @border-base;
+  margin-bottom: @rhythmic-unit;
+
+  & + .promo-banner {
+    margin-top: (-@rhythmic-unit * .5);
+  }
+
+  .promo-banner-logo {
+    margin-right: (@rhythmic-unit * .5);
+    .flex-display();
+    .align-items(center);
+
+    img {
+      max-width: @rhythmic-unit * 7;
+    }
+  }
+
+  .promo-banner-content {
+    .flex-grow(1);
+
+    > div:not(:last-child) {
+      margin-bottom: (@rhythmic-unit * .5);
+    }
+
+    .actions {
+      .align-items(center);
+      .flex-display();
+
+      > * + * {
+        margin-left: @rhythmic-unit;
+      }
+    }
+  }
+
+  .promo-banner-close {
+    cursor: pointer;
+
+    i.fa-times {
+      &:before {
+        font-size: @font-size-very-small;
+      }
+    }
+
+    &:hover {
+      i.fa-times {
+        color: @color-link;
+      }
+    }
+  }
+
+  .tab-content & {
+    margin-bottom: @rhythmic-unit * 2;
+  }
+}
+
+.tips-columns {
+  display: table-row;
+
+  .left-column,
+  .right-column {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .left-column {
+    padding-right: @rhythmic-unit * 2;
+    min-width: 500px;
+    width: 100%;
+  }
+
+  .right-column {
+    min-width: 360px;
+  }
+}

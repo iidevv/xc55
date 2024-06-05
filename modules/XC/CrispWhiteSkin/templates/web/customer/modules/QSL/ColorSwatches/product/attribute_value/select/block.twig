@@ -1,0 +1,21 @@
+{##
+ # Attribute value (block) color swatches
+ #}
+
+<li {{ this.printTagAttributes(this.getSwatchAttributes(option))|raw }}>
+  <div class="swatch-container">
+    <a {{ this.printTagAttributes(this.getSwatchLinkAttributes(option))|raw }}>
+      {% if not this.isShowSelector() %}
+        <input {{ this.printTagAttributes(this.getSwatchInputAttributes(option))|raw }} />
+      {% endif %}
+      {% if this.getSwatchImage(option) %}
+        <img src="{{ this.getSwatchImageURL(option) }}"/>
+      {% endif %}
+      {{ this.getModifierTitleForSwatch(option)|raw }}
+    </a>
+  </div>
+
+  {% if this.getUnavailableTooltipTemplate() %}
+    {% include this.getUnavailableTooltipTemplate() with {'option': v, 'isAffectingAttribute': isAffectingAttribute} %}
+  {% endif %}
+</li>

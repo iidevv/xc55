@@ -1,0 +1,8 @@
+{% if this.entity.getAnswer() %}
+  <div>
+      <span class="question-answered">{{ t('Yes (question is answered)') }}</span>
+  </div>
+{% endif %}
+{% if not this.entity.getAnswer() %}
+  <a href="{{ xurl('product_question', '', {'id': this.entity.getId()}) }}" class="btn regular-button">{{ t('Reply (answer the question)') }}</a>
+{% endif %}

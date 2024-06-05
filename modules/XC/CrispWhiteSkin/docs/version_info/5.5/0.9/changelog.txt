@@ -1,0 +1,6 @@
+Version 5.5.0.9
+
+Fixes (2)
+2023-03-29 - [Bug] Recover password link was not working. Fixed. #XCB-2228 #XC-CrispWhiteSkin
+2023-03-28 - [Bug] Fatal error on the product variants page in a store with the add-ons "Color Swatches" and "Call for price" enabled. Fixed. #XCB-2208 #XC-CrispWhiteSkin
+

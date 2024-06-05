@@ -1,0 +1,67 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActGoogleProductRatingFeed google product rating feed", translations: [{ code: en, label: "Google product rating feed" }] }
+  - { name: "SkinActGoogleProductRatingFeed configuration", translations: [{ code: en, label: "Configuration" }] }
+  - { name: "SkinActGoogleProductRatingFeed generation", translations: [{ code: en, label: "Generation" }] }
+  - { name: "SkinActGoogleProductRatingFeed feeds", translations: [{ code: en, label: "Feeds" }] }
+  - { name: "SkinActGoogleProductRatingFeed generate google product rating feed", translations: [{ code: en, label: "Generate google product rating feed" }] }
+  - { name: "SkinActGoogleProductRatingFeed google product rating feed has not been generated yet", translations: [{ code: en, label: "Google product rating feed has not been generated yet" }] }
+  - { name: "SkinActGoogleProductRatingFeed google product rating feed URL: X", translations: [{ code: en, label: "Google product rating feed URL: <a href='{{url}}'>{{url}}</a>" }] }
+  - { name: "SkinActGoogleProductRatingFeed about X remaining", translations: [{ code: en, label: "About {{time}} remaining" }] }
+  - { name: "SkinActGoogleProductRatingFeed feed generation has been completed successfully", translations: [{ code: en, label: "Feed generation has been completed successfully." }] }
+  - { name: "SkinActGoogleProductRatingFeed feed generation has been stopped", translations: [{ code: en, label: "Feed generation has been stopped." }] }
+  - { name: "SkinActGoogleProductRatingFeed rating feed is available by the URL: X", translations: [{ code: en, label: "Rating feed is available by the URL: {{url}}" }] }
+
+XLite\Model\Config:
+  - name: google_rating_common
+    category: Qualiteam\SkinActGoogleProductRatingFeed
+    type: separator
+    orderby: 1000
+    translations:
+      - code: en
+        option_name: Common options
+
+  - name: google_rating_renewal_frequency
+    category: Qualiteam\SkinActGoogleProductRatingFeed
+    type: Qualiteam\SkinActGoogleProductRatingFeed\View\FormField\Select\RenewalFrequency
+    value: 86400
+    orderby: 1100
+    translations:
+      - code: en
+        option_name: Frequency of Product Feed renewal
+        option_comment: 'You should configure X-Cart to run <a href="https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks" target="_blank">scheduled cron tasks</a> to enable periodic feed updates.'
+
+  - name: google_rating_feed_key
+    category: Qualiteam\SkinActGoogleProductRatingFeed
+    type: text
+    orderby: 1200
+    value: ""
+    translations:
+      - code: en
+        option_name: Product feed key
+
+  - name: google_rating_column_mapping
+    category: Qualiteam\SkinActGoogleProductRatingFeed
+    type: separator
+    orderby: 2000
+    translations:
+      - code: en
+        option_name: Column mapping
+
+  - name: google_rating_gtin_field
+    category: Qualiteam\SkinActGoogleProductRatingFeed
+    type: Qualiteam\SkinActGoogleProductRatingFeed\View\FormField\Select\ProductField
+    orderby: 2100
+    value: ""
+    translations:
+      - code: en
+        option_name: GTIN column
+
+XLite\Model\Task:
+  - owner: Qualiteam\SkinActGoogleProductRatingFeed\Core\Task\FeedUpdater

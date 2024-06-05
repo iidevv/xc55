@@ -1,0 +1,19 @@
+{##
+ # Color selector
+ #}
+
+<div class="color-selector-box">
+ <div class="view"{% if this.getValue() %} style="background-color: #{{ this.getValue() }}"{% endif %}>&nbsp;</div>
+ <div class="color-selector">
+   <span class="arrow"></span>
+   <div class="colors">
+   <ul>
+     {% for color in this.getColors() %}
+     <li><div data-color="{{ color }}" class="fa color-box"{% if color %} style="background-color: #{{ color }}"{% endif %}></div></li>
+     {% endfor %}
+     <li><div class="fa fa-eraser color-box remove"></div></li>
+   </ul>
+   </div>
+ </div>
+ <input class="hidden" {{ this.getAttributesCode()|raw }} />
+</div>

@@ -1,0 +1,8 @@
+Version 5.5.0.1
+
+Improvements (1)
+2022-08-15 - [Story] Changes in the tabs' display. Extra tabs are hidden under the "More" tab. #ECOM-1757 #CDev-Core #CDev-FileAttachments #QSL-BackInStock #XC-GoogleFeed
+
+Fixes (1)
+2022-09-05 - [Bug] The Submit button was missing from a few tabs of a product page in the Admin area. Fixed.  #XCB-1686 #CDev-Core #CDev-FileAttachments
+

@@ -1,0 +1,45 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: 'settings_page_heading'
+    category: QSL\ColorSwatches
+    type: hidden
+    orderby: 50
+    translations:
+      - code: en
+        option_name: 'Color Swatches Settings'
+  - name: box_width
+    category: QSL\ColorSwatches
+    type: XLite\View\FormField\Input\Text\Integer
+    orderby: 1000
+    value: 40
+    translations:
+      - code: en
+        option_name: 'Box width'
+  - name: box_height
+    category: QSL\ColorSwatches
+    type: XLite\View\FormField\Input\Text\Integer
+    orderby: 1100
+    value: 40
+    translations:
+      - code: en
+        option_name: 'Box height'
+  - name: use_swatch_name
+    category: QSL\ColorSwatches
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 1200
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Use color swatch name as attribute option name'
+
+XLite\Model\LanguageLabel:
+  - { name: "Color swatches", translations: [{ code: en, label: 'Color swatches' }] }
+  - { name: "Use color swatches", translations: [{ code: en, label: 'Use color swatches' }] }
+  - { name: "Show selector", translations: [{ code: en, label: 'Show selector' }] }
+  - { name: "Show on list", translations: [{ code: en, label: 'Show on list' }] }

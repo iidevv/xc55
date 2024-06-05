@@ -1,0 +1,5 @@
+Version 5.5.1.8
+
+Fixes (1)
+2023-08-30 - [Bug] Shop by brand + GA4 + deleted product error. Fixed. #XCB-2667 #CDev-GoogleAnalytics
+

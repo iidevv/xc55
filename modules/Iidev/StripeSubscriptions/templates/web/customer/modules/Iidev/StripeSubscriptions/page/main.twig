@@ -1,0 +1,118 @@
+<style>
+	.product-details-main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 60px;
+		margin-bottom: 60px;
+	}
+
+	.image img {
+		width: 100%;
+	}
+
+	.product-details-info h1.title {
+		line-height: 1.2;
+		font-size: 4rem;
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+
+	.vimeo-wrapper {
+		position: relative;
+	}
+
+	.fr-video {
+		position: static;
+	}
+
+	.vimeo-wrapper iframe {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.product-details-tab-title {
+		font-size: 3rem;
+		color: #27394c;
+		border-bottom: #edf1f8 1px solid;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+	}
+
+	.product-details-description {
+		margin-bottom: 30px;
+	}
+
+	.product-details-price span {
+		font-size: 3rem;
+		color: #ff5e02;
+		font-weight: 600;
+	}
+
+	.product-details-price {
+		font-size: 2.5rem;
+		margin: 30px 0;
+		font-weight: 600;
+	}
+
+	.product-details-tabs p,
+	.product-details-tabs li {
+		line-height: 1.5;
+	}
+
+	.subscription-details {
+		margin-bottom: 15px;
+	}
+
+	@media(max-width: 580px) {
+		.product-details-info h1.title {
+			font-size: 3rem;
+		}
+		.product-details-tab-title {
+			font-size: 2rem;
+		}
+		.product-details-main {
+			grid-template-columns: 1fr;
+			margin-bottom: 30px;
+		}
+	}
+</style>
+<div class="product-details">
+	<div class="product-details-main">
+		<div class="image">
+			<img class="product-thumbnail" src="{{ this.getImageUrl() }}" alt="{{ this.getPageTitle() }} image">
+		</div>
+		<div class="product-details-info">
+			<h1 class="title">{{ this.getPageTitle() }}</h1>
+			<div class="product-details-price">
+				<span>${{ this.getPrice()}}</span>/year</div>
+			<div class="product-details-description">{{ this.getShortDescription()|raw }}</div>
+
+			{% if this.isLogged() and this.isSubscriptionExist() and this.getStatus() == 'Active' %}
+				<div class="subscription-details">
+					<p>Status:<b> {{ this.getStatus()}}</b></p>
+					<p>Renewal:<b> {{ this.getExpirationDate()}}</b </p>
+				</div>
+				<form action="/stripe-account" method="POST">
+					<input name="return_url" type="hidden" value="{{ this.getSubscriptionReturnUrl }}">
+					<button class="btn regular-button regular-main-button" type="submit">Manage Billing</button>
+				</form>
+			{% elseif this.isLogged() %}
+				<form action="/stripe-subscriptions" method="POST">
+					<input name="return_url" type="hidden" value="{{ this.getSubscriptionReturnUrl }}">
+					<input name="success_url" type="hidden" value="{{this.getSubscriptionSuccessUrl()}}">
+					<button class="btn regular-button regular-main-button" type="submit">Buy Now</button>
+				</form>
+			{% else %}
+				<button class="btn regular-button regular-main-button popup-button popup-login" data-without-close="1">
+					{{ this.displayScriptData() }}
+					Log in to manage your membership
+				</button>
+			{% endif %}
+		</div>
+	</div>
+	<div class="product-details-tabs">
+		<p class="product-details-tab-title">Description</p>
+		{{ this.getDescription()|raw }}
+	</div>
+</div>

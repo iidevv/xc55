@@ -1,0 +1,32 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+QSL\SpecialOffersBase\Model\OfferType:
+  - processorClass: '\QSL\SpecialOffersSpendXGetY\Logic\Order\SpecialOffer\SpendXGetNItemsDiscounted'
+    enabled:        1
+    viewModelClass: '\QSL\SpecialOffersSpendXGetY\View\Model\SpecialOffer'
+    specialOffers:
+      - name:             'Sample: Spend $100 and get 50% off the cheapest'
+        orderBy:          0
+        enabled:          false
+        sxgyT:            100.00
+        sxgyM:            1
+        sxgyDiscount:     50
+        sxgyDiscountType: '%'
+        translations:
+          - code: us
+            title: 'Spend $100 and get 50% off the cheapest'
+          - code: ru
+            title: 'Купи на $100 и получи 50% скидку на один товар с минимальной ценой'
+    translations:
+      - code: us
+        name: 'Spend X Get M of items discounted/free'
+      - code: ru
+        name: 'Купи на сумму X и получи M предметов со скидкой/бесплатно'
+
+XLite\Model\LanguageLabel:
+  - { name: 'Subtotal (amount to spend)', translations: [{ code: en, label: 'Subtotal (amount to spend)' }]}

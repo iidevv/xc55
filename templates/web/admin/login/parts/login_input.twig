@@ -1,0 +1,34 @@
+{##
+ # @ListChild (list="admin.input.login", weight="100")
+ #}
+
+<li class="login-box__input-wrapper input{% if this.fieldType == 'password' %} input-passwordvisible{% endif %}{% if this.error %} has-error{% endif %}">
+  <div class="login-box__label table-label input-label">
+    <label for="{{ this.fieldName }}">{{ this.label }}</label>
+  </div>
+  <div class="table-value">
+    <div class="input-internal-wrapper">
+      <span class="input-field-wrapper input">
+        <input type="{{ this.fieldType }}"
+               class="form-control{% if this.fieldType == 'password' %} password-visible{% endif %}"
+               id="{{ this.fieldName }}"
+               name="{{ this.fieldName }}"
+               value="{{ this.get(this.fieldValue) }}"
+               {% if this.fieldName == 'login' or this.fieldName == 'email'  %}
+                  data-error="{{ t('Login error note')|raw }}"
+               {% elseif this.fieldName == 'confirm_password' %}
+                  data-error="{{ t('Passwords do not match')|raw }}"
+               {% endif %}
+               size="32"
+               maxlength="128"
+               autocomplete="off" />
+      </span>
+      {% if this.fieldType == 'password' %}
+        <div class="eye password-eye">
+          <a href="#" class="open"><i class="fa fa-eye"></i></a>
+          <a href="#" class="close"><i class="fa fa-eye-slash"></i></a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</li>

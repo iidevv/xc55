@@ -1,0 +1,194 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - name: 'I consent to the collection and processing of my personal data'
+    translations:
+      - code: en
+        label: 'I consent to the collection and processing of <a href="{{url}}" target="_blank">my personal data</a>'
+      - code: ru
+        label: 'Я даю согласие на сбор и обработку <a href="{{url}}" target="_blank">моих персональных данных</a>'
+  - name: 'I consent to the collection and processing of my personal data (register vendor form)'
+    translations:
+      - code: en
+        label: 'I consent to the collection and processing of <a href="{{url}}" target="_blank">my personal data</a>'
+      - code: ru
+        label: 'Я даю согласие на сбор и обработку <a href="{{url}}" target="_blank">моих персональных данных</a>'
+  - name: 'I consent to the collection and processing of my personal data (profile form)'
+    translations:
+      - code: en
+        label: 'I consent to the collection and processing of <a href="{{url}}" target="_blank">my personal data</a>'
+      - code: ru
+        label: 'Я даю согласие на сбор и обработку <a href="{{url}}" target="_blank">моих персональных данных</a>'
+  - name: 'I consent to the collection and processing of my personal data (checkout)'
+    translations:
+      - code: en
+        label: 'I consent to the collection and processing of <a href="{{url}}" target="_blank">my personal data</a>'
+      - code: ru
+        label: 'Я даю согласие на сбор и обработку <a href="{{url}}" target="_blank">моих персональных данных</a>'
+  - name: 'I consent to the collection and processing of my personal data (contact us form)'
+    translations:
+      - code: en
+        label: 'I consent to the collection and processing of <a href="{{url}}" target="_blank">my personal data</a>'
+      - code: ru
+        label: 'Я даю согласие на сбор и обработку <a href="{{url}}" target="_blank">моих персональных данных</a>'
+  - name: 'Cookie consent text'
+    translations:
+      - code: en
+        label: '<p>By clicking “All Cookies” you agree to our Cookie Policy, it helps us better understand how the site is used and give you the best experience.</p><p>By clicking "Default Cookies" you agree to store cookies on your device that technically necessary for the operation of a website.</p><a href="{{url}}" target="_blank">Click to learn more</a>'
+  - name: 'cookie-consent-all'
+    translations:
+      - code: en
+        label: 'All Cookies'
+  - name: 'cookie-consent-default'
+    translations:
+      - code: en
+        label: 'Default Cookies'
+  - name: 'Privacy statement'
+    translations:
+      - code: en
+        label: 'Privacy statement'
+      - code: ru
+        label: 'Политика в отношении обработки персональных данных клиентов'
+  - name: 'GDPR Settings'
+    translations:
+      - code: en
+        label: 'GDPR Settings'
+      - code: ru
+        label: 'Настройки GDPR'
+  - name: 'Records of processing activities'
+    translations:
+      - code: en
+        label: 'Records of processing activities'
+      - code: ru
+        label: 'Сведения о доступе к данным'
+  - name: 'Initial access'
+    translations:
+      - code: en
+        label: 'Initial access'
+      - code: ru
+        label: 'Дата изначального доступа'
+  - name: 'Gdpr Admins'
+    translations:
+      - code: en
+        label: 'Admins'
+      - code: ru
+        label: 'Администраторы'
+  - name: 'Gdpr Payments'
+    translations:
+      - code: en
+        label: 'Payments'
+      - code: ru
+        label: 'Платёжные методы'
+  - name: 'Gdpr Shippings'
+    translations:
+      - code: en
+        label: 'Shipping methods'
+      - code: ru
+        label: 'Методы доставки'
+  - name: 'Gdpr Modules'
+    translations:
+      - code: en
+        label: 'Modules'
+      - code: ru
+        label: 'Модули'
+  - name: 'Delete my personal data and account'
+    translations:
+      - code: en
+        label: 'Delete my personal data and account'
+      - code: ru
+        label: 'Удалить сведения обо мне и мой аккаунт'
+  - name: 'Privacy policy page text'
+    translations:
+      - code: en
+        label: '<h3 dir="ltr">1. WHAT DO WE DO WITH YOUR INFORMATION?</h3><p dir="ltr">The <span style="background-color: rgb(247, 218, 100); color: rgb(0, 0, 0);">[company name]</span> will be what&rsquo;s known as the &ldquo;Controller&rdquo; of the personal data you provide to us.</p><p dir="ltr">When you purchase something from our store, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.</p><p dir="ltr">When you browse our store, we also automatically receive your computer&rsquo;s internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.</p><p dir="ltr">Email marketing (if applicable): With your permission, we may send you emails about our store, new products and other updates.</p><h3 dir="ltr">2. CONSENT</h3><p dir="ltr">When you provide us with personal information to create an account, place an order, arrange for a delivery or return a purchase, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.</p><p dir="ltr">If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, on your account page by using our contact us form or by contacting us at <span style="background-color: rgb(247, 218, 100); color: rgb(0, 0, 0);">[email]</span>.</p><h3 dir="ltr">3. DISCLOSURE</h3><p dir="ltr">We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.</p><h3 dir="ltr">4. PAYMENTS</h3><p dir="ltr">We use a third party payment processor(s) to process payments made to us. In connection with the processing of such payments, we do not retain any personally identifiable information or any financial information such as credit card numbers.&nbsp;</p><h3 dir="ltr">5. THIRD-PARTY SERVICES</h3><p dir="ltr">In general, the third-party providers used by us will only collect, use and disclose your information to the extent necessary to allow them to perform the services they provide to us.</p><p dir="ltr">However, certain third-party service providers, such as payment gateways and other payment transaction processors, have their own privacy policies in respect to the information we are required to provide to them for your purchase-related transactions.</p><p dir="ltr">For these providers, we recommend that you read their privacy policies so you can understand the manner in which your personal information will be handled by these providers.</p><p dir="ltr">In particular, remember that certain providers may be located in or have facilities that are located in a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.</p><p dir="ltr">As an example, if you are located in Canada and your transaction is processed by a payment gateway located in the United States, then your personal information used in completing that transaction may be subject to disclosure under United States legislation, including the Patriot Act.</p><p dir="ltr">Once you leave our store&rsquo;s website or are redirected to a third-party website or application, you are no longer governed by this Privacy Policy or our website&rsquo;s Terms of Service.</p><h4 dir="ltr">Links</h4><p dir="ltr">When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.</p><h3 dir="ltr">6. SECURITY</h3><p dir="ltr">To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.</p><p dir="ltr">All the personal data we process is processed by our staff in the <span style="background-color: rgb(247, 218, 100); color: rgb(0, 0, 0);">[country]</span> however for the purposes of IT hosting and maintenance this information is located on servers within the <span style="background-color: rgb(247, 218, 100); color: rgb(0, 0, 0);">[territory]</span> on a secure server behind a firewall. No 3rd parties have access to your personal data unless the law allows them to do so.</p><p dir="ltr">We have a Data Protection regime in place to oversee the effective and secure processing of your personal data.</p><h4 dir="ltr">Cookies</h4><p dir="ltr">Below is the list of cookies that are strictly necessary for the website to operate correctly. These can not be disabled.</p><p dir="ltr"><strong>xid</strong> - unique token, sessional.</p><p dir="ltr"><strong>recent_login</strong> - stores your username to auto-complete the sign-in form next time you visit the store. Persistent for 3 days by default (can be changed by store&rsquo;s admin).</p><p dir="ltr"><strong>viewedResources</strong> - holds a list of cached CSS files, this is used to make store&rsquo;s pages loading faster. Persistent for 1 hour.</p><p dir="ltr"><strong>rv</strong> - holds a list of products you recently viewed in the store. Does not expire.</p><p dir="ltr"><strong>xc_np_product_####</strong> - holds product identifiers, used to navigate within store&rsquo;s catalog. Persistent for 30 minutes</p><h3 dir="ltr">7. AGE OF CONSENT</h3><p dir="ltr">By using this site, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.</p><h3 dir="ltr">8. CHANGES TO THIS PRIVACY POLICY</h3><p dir="ltr">We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.</p><p dir="ltr">If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.</p><h3 dir="ltr">9. QUESTIONS AND CONTACT INFORMATION</h3><p dir="ltr">If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Data Protection Officer at <span style="background-color: rgb(247, 218, 100); color: rgb(0, 0, 0);">[email]</span>.</p>'
+      - code: ru
+        label: '<h3>1. Общие положения</h3><p dir="ltr">1.1. Настоящее Положение разработано в соответствии с требованиями Федерального закона &laquo;О персональных данных&raquo; № 152-ФЗ.&nbsp;</p><p dir="ltr">1.2. Настоящим Положением определяется порядок обращения с персональными данными покупателей-клиентов ООО <span style="background-color: rgb(247, 218, 100); color: rgb(0, 0, 0);">[Ваше Название]</span> (далее &ndash; &laquo;Общество&raquo;) на Сайте <span style="background-color: rgb(247, 218, 100); color: rgb(0, 0, 0);">[URL Вашего сайта]</span> (далее &ndash; &laquo;Сайт&raquo;).&nbsp;</p><p dir="ltr">1.3. Настоящее Положение имеет своей целью определение порядка обработки и защиты персональных данных всех клиентов Общества, данные которых подлежат обработке, на основании полномочий Общества; обеспечение защиты прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну, а также установление ответственности должностных лиц, имеющих доступ к персональным данным, за невыполнение требований норм, регулирующих обработку и защиту персональных данных.&nbsp;</p><p dir="ltr">1.4. Общество обязано опубликовать или иным образом обеспечить неограниченный доступ к настоящей Политике обработки персональных данных в соответствии с ч. 2 ст. 18.1. № 152-ФЗ.&nbsp;</p><h3 dir="ltr">2. Основные понятия. Состав персональных данных клиентов&nbsp;</h3><p dir="ltr">2.1. Для целей настоящего Положения используются следующие основные понятия:&nbsp;</p><p dir="ltr"><strong>персональные данные</strong> - любая информация, относящаяся прямо или косвенно к определенному или определяемому физическому лицу (субъекту персональных данных) (п. 1 ст. 3 Федерального закона от 27.07.2006 N 152-ФЗ);&nbsp;</p><p dir="ltr"><strong>обработка персональных данных клиента</strong> - любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных (п. 3 ст. 3 Федерального закона от 27.07.2006 N 152-ФЗ);&nbsp;</p><p dir="ltr"><strong>распространение персональных данных</strong> - действия, направленные на раскрытие персональных данных клиента неопределенному кругу лиц (п. 5 ст. 3 Федерального закона от 27.07.2006 N 152-ФЗ);&nbsp;</p><p dir="ltr"><strong>предоставление персональных данных</strong> - действия, направленные на раскрытие персональных данных клиента определенному лицу или определенному кругу лиц (п. 6 ст. 3 Федерального закона от 27.07.2006 N 152-ФЗ);&nbsp;</p><p dir="ltr"><strong>блокирование персональных данных</strong> - временное прекращение обработки персональных данных клиентов (за исключением случаев, если обработка необходима для уточнения персональных данных) (п. 7 ст. 3 Федерального закона от 27.07.2006 N 152-ФЗ);&nbsp;</p><p dir="ltr"><strong>уничтожение персональных данных</strong> - действия, в результате которых становится невозможным восстановить содержание персональных данных в информационной системе персональных данных клиента и (или) в результате которых уничтожаются материальные носители персональных данных клиентов (п. 8 ст. 3 Федерального закона от 27.07.2006 N 152-ФЗ);&nbsp;</p><p dir="ltr"><strong>обезличивание персональных данных</strong> - действия, в результате которых становится невозможным без использования дополнительной информации определить принадлежность персональных данных конкретному лицу (п. 9 ст. 3 Федерального закона от 27.07.2006 N 152- ФЗ);&nbsp;</p><p dir="ltr"><strong>информация</strong> - сведения (сообщения, данные) независимо от формы их представления;&nbsp;</p><p dir="ltr"><strong>документированная информация</strong> - зафиксированная на материальном носителе путем документирования информация с реквизитами, позволяющими определить такую информацию или ее материальный носитель.&nbsp;</p><h3 dir="ltr">3. Обработка персональных данных клиентов&nbsp;</h3><p dir="ltr">3.1. Источником информации обо всех персональных данных клиентов является непосредственно сами клиенты.&nbsp;</p><p dir="ltr">3.2. Обработка информации обо всех персональных данных клиентов осуществляется Обществом на основе следующих принципов:&nbsp;</p><p dir="ltr">&nbsp;- законности и справедливой основе;&nbsp;</p><p dir="ltr">&nbsp;- ограничения обработки персональных данных достижением конкретных, заранее определенных и законных целей;&nbsp;</p><p dir="ltr">&nbsp;- недопущения обработки персональных данных, несовместимой с целями сбора персональных данных;&nbsp;</p><p dir="ltr">&nbsp;- недопущения объединения баз данных, содержащих персональные данные, обработка которых осуществляется в целях, несовместимых между собой;&nbsp;</p><p dir="ltr">&nbsp;- обработки только тех персональных данных, которые отвечают целям их обработки;&nbsp;</p><p dir="ltr">&nbsp;- соответствия содержания и объема обрабатываемых персональных данных заявленным целям обработки;&nbsp;</p><p dir="ltr">&nbsp;- недопущения обработки персональных данных, избыточных по отношению к заявленным целям их обработки;&nbsp;</p><p dir="ltr">&nbsp;- обеспечения точности, достаточности и актуальности персональных данных по отношению к целям обработки персональных данных;&nbsp;</p><p dir="ltr">&nbsp;- уничтожения либо обезличивания персональных данных по достижении целей их обработки или в случае утраты необходимости в достижении этих целей, при невозможности устранения Обществом допущенных нарушений персональных данных, если иное не предусмотрено федеральным законом.&nbsp;</p><p dir="ltr">3.3. Общество производит обработку персональных данных клиентов при наличии хотя бы одного из следующих условий:&nbsp;</p><p dir="ltr">&nbsp;- обработка персональных данных осуществляется с согласия субъекта персональных данных на обработку его персональных данных;&nbsp;</p><p dir="ltr">&nbsp;- обработка персональных данных необходима для достижения целей, предусмотренных международным договором Российской Федерации или законом, для осуществления и выполнения возложенных законодательством Российской Федерации на оператора функций, полномочий и обязанностей;&nbsp;</p><p dir="ltr">&nbsp;- обработка персональных данных необходима для осуществления правосудия, исполнения судебного акта, акта другого органа или должностного лица, подлежащих исполнению в соответствии с законодательством Российской Федерации об исполнительном производстве;&nbsp;</p><p dir="ltr">&nbsp;- обработка персональных данных необходима для исполнения договора, стороной которого либо выгодоприобретателем или поручителем по которому является субъект персональных данных, а также для заключения договора по инициативе субъекта персональных данных или договора, по которому субъект персональных данных будет являться выгодоприобретателем или поручителем;&nbsp;</p><p dir="ltr">&nbsp;- обработка персональных данных необходима для защиты жизни, здоровья или иных жизненно важных интересов клиента, если получение его согласия невозможно;&nbsp;</p><p dir="ltr">&nbsp;- обработка персональных данных необходима для осуществления прав и законных интересов оператора или третьих лиц либо для достижения общественно значимых целей при условии, что при этом не нарушаются права и свободы субъекта персональных данных;&nbsp;</p><p dir="ltr">&nbsp;- осуществляется обработка персональных данных, доступ неограниченного круга лиц к которым предоставлен субъектом персональных данных либо по его просьбе;&nbsp;</p><p dir="ltr">&nbsp;- осуществляется обработка персональных данных, подлежащих опубликованию или обязательному раскрытию в соответствии с федеральным законом.&nbsp;</p><p dir="ltr">3.4. Общество производит обработку персональных данных клиентов в следующих целях:&nbsp;</p><p dir="ltr">&nbsp;- регистрация и авторизация клиентов на Сайте;&nbsp;</p><p dir="ltr">&nbsp;- обработка заказов клиентов и осуществление доставки товаров;&nbsp;</p><p dir="ltr">&nbsp;- исполнение Обществом и/или его партнерами своих обязательств перед клиентами,&nbsp;</p><p dir="ltr">&nbsp;- осуществление деятельности по продвижению товаров, представленных на Сайте;&nbsp;</p><p dir="ltr">&nbsp;- авторизация клиентов на Форуме, расположенном на Сайте;&nbsp;</p><p dir="ltr">&nbsp;- оценка и анализ работы Сайта;&nbsp;</p><p dir="ltr">&nbsp;- определение победителя в акциях, проводимых Обществом на Сайте;&nbsp;</p><p dir="ltr">&nbsp;- участие клиентов в бонусной программе;&nbsp;</p><p dir="ltr">&nbsp;- анализ покупательских особенностей клиентов и предоставление им персональных рекомендаций;&nbsp;</p><p dir="ltr">&nbsp;- осуществление рассылок об акциях, скидках и специальных предложениях посредством электронной почты и/или SMS-сообщений (только в том случае, если клиент даст на это разрешение в процессе регистрации на Сайте) и технических сообщений на адрес указанной клиентом электронной почты и/или номер мобильного телефона.&nbsp;</p><p dir="ltr">3.5. Клиенты принимают решение о предоставлении своих персональных данных и дают согласие на их обработку свободно, своей волей и в своем интересе. Согласие на обработку персональных данных может быть дано самим субъектом персональных данных или его представителем в любой позволяющей подтвердить факт его получения форме, если иное не установлено федеральным законом.&nbsp;</p><p dir="ltr">3.6. Общество вправе поручить обработку персональных данных клиентов третьим лицам, на основании заключаемого с этими лицами договора.&nbsp;</p><p dir="ltr">Лица, осуществляющие обработку персональных данных по поручению Общества (далее &ndash; Партнеры Общества), обязуются соблюдать принципы и правила обработки и защиты персональных данных, предусмотренные Федеральным законом &laquo;О персональных данных&raquo; и настоящим Положением.&nbsp;</p><p dir="ltr">Для каждого Партнера Общества определены перечень действий (операций) с персональными данными, которые будут совершаться Партнером, осуществляющим обработку персональных данных, цели обработки, установлена обязанность соблюдать конфиденциальность и обеспечивать безопасность персональных данных при их обработке, а также указаны требования к защите обрабатываемых персональных данных.&nbsp;</p><p dir="ltr">3.7. Общество уничтожает либо обезличивает персональные данные по достижении целей обработки или в случае утраты необходимости достижения цели обработки.&nbsp;</p><p dir="ltr">3.8. Клиенты представляют Обществу достоверные сведения о себе.&nbsp;</p><p dir="ltr">3.9. К обработке персональных данных клиентов могут иметь доступ только те сотрудники Общества, которые допущены к работе с персональными данными и которые подписали Соглашение о неразглашении персональных данных клиентов.&nbsp;</p><p dir="ltr">3.10. Обработка персональных данных клиентов Общества может осуществляться исключительно в целях, установленных настоящим Положением, и с соблюдением действующего законодательства в области персональных данных.&nbsp;</p><p dir="ltr">3.11. При определении объема и содержания, обрабатываемых персональных данных Общество руководствуется Конституцией Российской Федерации, законом о персональных данных, и иными федеральными законами.&nbsp;</p><h3 dir="ltr">4. Доступ к персональным данным клиентов, условия хранения персональных данных&nbsp;</h3><p dir="ltr">4.1. Право доступа к персональным данным клиентов имеют только работники Общества, непосредственно осуществляющие обработку таких данных, и ознакомленные Обществом с положениями законодательства Российской Федерации о персональных данных, в том числе требованиями к защите персональных данных, документами, определяющими политику Общества в отношении обработки персональных данных, локальными актами по вопросам обработки персональных данных.&nbsp;</p><p dir="ltr">4.2. Хранение персональных данных клиентов осуществляется на электронных, а так же, при необходимости, на бумажных носителях.&nbsp;</p><p dir="ltr">4.3. Помещения, в которых хранятся персональные данные клиентов, оборудуются запирающими устройствами. Доступ к ЭВМ, на которых осуществляется обработка персональных данных, находится под защитой паролей.&nbsp;</p><p dir="ltr">4.4. Общество принимает технические и организационно-правовые меры в целях обеспечения защиты персональных данных клиентов от неправомерного или случайного доступа к ним, уничтожения, изменения, блокирования, копирования, распространения, а также от иных неправомерных действий, в том числе, но не ограничиваясь:&nbsp;</p><p dir="ltr">&nbsp;- антивирусная защита;&nbsp;</p><p dir="ltr">&nbsp;- обнаружение и предотвращение вторжений;&nbsp;</p><p dir="ltr">&nbsp;- управления доступом;&nbsp;</p><p dir="ltr">&nbsp;- регистрация и учет;&nbsp;</p><p dir="ltr">&nbsp;- обеспечение целостности персональных данных.&nbsp;</p><p dir="ltr">4.5. Права клиентов при обработке персональных данных:&nbsp;</p><p dir="ltr">&nbsp;- получать доступ к своим персональным данным и ознакомление с ними, включая право на безвозмездное получение копии любой записи, содержащей его персональные данные;&nbsp;</p><p dir="ltr">&nbsp;- требовать от Общества уточнения, блокирования или уничтожения неполных, неверных, устаревших, недостоверных, незаконно полученных или не являющихся необходимыми для Общества персональных данных;&nbsp;</p><p dir="ltr">&nbsp;- обжаловать в уполномоченный орган по защите прав субъектов персональных данных или в судебном порядке неправомерные действия или бездействия Общества при обработке и защите его персональных данных;&nbsp;</p><p dir="ltr">&nbsp;- получать от Общества информацию, касающуюся обработки его персональных данных, в том числе содержащей:&nbsp;</p><p dir="ltr">&nbsp;- подтверждение факта обработки персональных данных Обществом;&nbsp;</p><p dir="ltr">&nbsp;- правовые основания и цели обработки персональных данных;&nbsp;</p><p dir="ltr">&nbsp;- цели и применимые Обществом способы обработки персональных данных;&nbsp;</p><p dir="ltr">&nbsp;- наименование и место нахождения Общества, сведения о лицах (за исключением работников Общества), которые имеют доступ к персональным данным или которым могут быть раскрыты данные на основании договора с Обществом или на основании федерального закона;&nbsp;</p><p dir="ltr">&nbsp;- обрабатываемые персональные данные, относящиеся к соответствующему субъекту персональных данных, источник их получения, если иной порядок представления таких данных не предусмотрен федеральным законом;&nbsp;</p><p dir="ltr">&nbsp;- сроки обработки персональных данных, в том числе сроки их хранения;&nbsp;</p><p dir="ltr">&nbsp;- порядок осуществления субъектом персональных данных прав, предусмотренных федеральным законом;&nbsp;</p><p dir="ltr">&nbsp;- наименование или фамилию, имя, отчество и адрес лица, осуществляющего обработку персональных данных по поручению Общества, если обработка поручена или будет поручена такому лицу;&nbsp;</p><p dir="ltr">&nbsp;- иные, предусмотренные законодательством сведения.&nbsp;</p><h3 dir="ltr">5. Ответственность за нарушение норм, регулирующих обработку персональных данных&nbsp;</h3><p dir="ltr">5.1. Работники Общества, виновные в нарушении порядка обращения с персональными данными, несут ответственность в соответствии с действующим законодательством Российской Федерации.&nbsp;</p><h3 dir="ltr">6. Заключительные положения&nbsp;</h3><p dir="ltr">6.1. Настоящее Положение является общедоступным документов, с содержанием которого вправе ознакомиться физические лица, вступающие в договорные отношения с Обществом.&nbsp;</p><p dir="ltr">6.2. Настоящее Положение вступает в силу с момента его подписания Руководителем Общества и действует бессрочно, до замены его новым Положением.&nbsp;</p>'
+  - name: 'Below is a list of accounts and 3d party services that have access to your customers personal data'
+    translations:
+      - code: en
+        label: "Below is a list of accounts and 3d party services that have access to your customers' personal data"
+      - code: ru
+        label: "Ниже приведен список аккаунтов и сторонних служб, имеющих доступ до персональных данных ваших покупателей"
+  - name: 'GDPR activities'
+    translations:
+      - code: en
+        label: "GDPR activities"
+      - code: ru
+        label: "Доступ до персональных данных"
+  - name: 'Until browser is closed'
+    translations:
+      - code: en
+        label: "Until browser is closed"
+      - code: ru
+        label: "До закрытия браузера"
+  - name: 'For several days after last visit'
+    translations:
+      - code: en
+        label: "For several days after last visit"
+      - code: ru
+        label: "В течение нескольких дней после последнего посещения"
+  - name: 'NOTE: THIS ADD-ON WILL NOT MAKE YOUR WEBSITE GDPR COMPLIANT IF YOUR WEBSITE HAS A THIRD-PARTY EXTENSION/SNIPPET/WIDGET WHICH UTILIZES COOKIES (e.g. Google Analytics).'
+    translations:
+      - code: en
+        label: "NOTE: THIS ADD-ON WILL NOT MAKE YOUR WEBSITE GDPR COMPLIANT IF YOUR WEBSITE HAS A THIRD-PARTY EXTENSION/SNIPPET/WIDGET WHICH UTILIZES COOKIES (e.g. Google Analytics). Our add-on will not collect user's consent for usage of third-party cookies until the add-on is manually configured to support such cookies. If you believe your website uses such third-party extension/snippet/widget please contact us at <a href=\"https://www.x-cart.com/contact-us.html\" target=\"_blank\">https://www.x-cart.com/contact-us.html</a> for assistance."
+  - name: 'Cookie profile consent text'
+    translations:
+      - code: en
+        label: 'We use cookies to ensure that we give you the best experience on our online store. Necessary cookies are essential to be able to access basic features of the website. The website cannot function properly without these cookies therefore they can not be disabled.<br/><br/>Tick the below checkbox to enable all cookies for your customer account. Untick it if you choose to disable all cookies except necessary.'
+  - name: 'I consent to the processing of all cookies'
+    translations:
+      - code: en
+        label: "I consent to the processing of all cookies"
+
+XLite\Model\Config:
+  - name: show_cookie_popup
+    category: 'XC\GDPR'
+    type: XLite\View\FormField\Input\Checkbox\YesNo
+    value: 1
+    orderby: 100
+    translations:
+      - code: en
+        option_name: 'Display cookie popup'
+      - code: ru
+        option_name: 'Включить всплывающее предупреждение о файлах "cookie"'
+  - name: cookie_consent_ttl_type
+    category: 'XC\GDPR'
+    type: XC\GDPR\View\FormField\Select\RadioButtonsList\TtlType
+    value: session
+    orderby: 150
+    translations:
+      - code: en
+        option_name: 'Keep cookie consent for anonymous'
+      - code: ru
+        option_name: 'Хранить согласие об использовании "cookie" для анонимного пользователя'
+  - name: cookie_consent_ttl
+    category: 'XC\GDPR'
+    type: XLite\View\FormField\Input\Text\Integer
+    value: 7
+    orderby: 160
+    translations:
+      - code: en
+        option_name: 'Days to keep cookie consent'
+      - code: ru
+        option_name: 'Срок хранения согласия'
+  - name: cookie_hash
+    category: 'XC\GDPR'
+    type: hidden
+    value: 1
+  - name: geoip_countries
+    category: 'XC\GDPR'
+    type: XC\GDPR\View\FormField\Select\Select2\Countries
+    value: 'AT,BE,BG,HR,CY,CZ,DK,EE,FI,FR,DE,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB'
+    orderby: 200
+    translations:
+      - code: en
+        option_name: 'Countries to display cookie popup and consent checkbox'
+        option_comment: 'Leave the list empty to show popup and checkbox to any customer'
+      - code: ru
+        option_name: 'Страны, для которых должно показываться предупреждение о файлах "cookie" и поле для отметки о согласии'
+        option_comment: 'Удалите все страны из списка, чтобы показывать предупреждение и поле для отметки каждому покупателю'

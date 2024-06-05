@@ -1,0 +1,31 @@
+Version 5.5.0.1
+
+Improvements (13)
+2022-08-11 - [Task] Nginx dev config sample added. #XCB-1431 #CDev-Core
+2022-08-08 - [Task] No verification preventing identical read and write API keys saving. Fixed. #XCB-1252 #CDev-Core
+2022-08-11 - [Task] CamelCase and PascalCase line conversion code refactoring. #XCB-402 #CDev-Core #CDev-SimpleCMS #CDev-Paypal #QSL-AbandonedCartReminder #QSL-ProductFeeds #QSL-Make #XC-ProductVariants #XC-FacebookMarketing #XC-BulkEditing #XC-OrdersImport #XC-SimplifyCommerce #XC-MultiVendor #XC-Onboarding #XC-CanadaPost #XC-Stripe #QSL-EBay
+2022-08-10 - [Sub-task] No -r parameter in install.sh for images resizing. Fixed. #ECOM-2219 #CDev-Core
+2022-08-09 - [Story] The All Done page updates in My Apps.  #ECOM-2155 #CDev-Core
+2022-08-10 - [Story] Second-level tabs display enhancements. #ECOM-2147 #CDev-Core
+2022-08-03 - [Story] Rest API updated to support Multi-Vendor. #ECOM-2105 #CDev-Core #XC-VendorPartners #XC-TrustedVendors #XC-MultiVendor
+2022-08-11 - [Story] No console task for images resizing in the installation tool. Fixed. #ECOM-2100 #CDev-Core
+2022-08-09 - [Task] No moduleID in the hook tags. Fixed. #ECOM-1893 #CDev-Core #CDev-USPS #CDev-SimpleCMS #CDev-FedEx #CDev-AustraliaPost #CDev-SalesTax #CDev-SocialLogin #CDev-VAT #CDev-Coupons #CDev-Paypal #CDev-GoogleAnalytics #CDev-Egoods #CDev-UserPermissions #QSL-LoyaltyProgram #QSL-Dwolla #QSL-AbandonedCartReminder #QSL-SpecialOffersBase #QSL-TaxExempt #QSL-ShopByBrand #QSL-ProductFeeds #QSL-AdvancedContactUs #QSL-Banner #XC-MultiCurrency #XC-UPS #XC-GoogleFeed #XC-ThemeTweaker #XC-Concierge #XC-ProductVariants #XC-Zapier #XC-ShopperApproved #XC-DelicatePinkSkin #XC-CrispWhiteSkin #XC-GDPR #XC-CustomProductTabs #XC-AuctionInc #XC-FreeShipping #XC-DHL #XC-TrustedVendors #XC-UpdateInventory #XC-MultiVendor #XC-CanadaPost #XC-SpaceVioletSkin #QSL-ProductQuestions #XC-ForestGreenSkin #QSL-HurryUp
+2022-07-22 - [Story] Brand and Category details pages updated to meet the XC styleguide requirements. #ECOM-1853 #CDev-Core
+2022-07-22 - [Story] Criss-cross icon instead of Trash for item deletion from the list. #ECOM-1846 #CDev-Core #CDev-FeaturedProducts #XC-Upselling
+2022-07-28 - [Story] Added support of the --localList and --packList parameters in the./bin/service xcst:upgrade command. #ECOM-1683 #CDev-Core
+2022-08-05 - [Story] The xcst:version-info task added to display the list of add-ons installed in the store. #ECOM-1202 #CDev-Core
+
+Fixes (12)
+2022-08-11 - [Bug] Runner console didn't display errors. Fixed. #XCB-1527 #CDev-Core
+2022-08-05 - [Bug] No link in the update notification. Fixed. #XCB-1493 #CDev-Core
+2022-08-08 - [Bug] Incorrect LiveChat block display on the Store Profile page. Fixed. #XCB-1474 #CDev-Core
+2022-08-05 - [Bug] Incorrect page opened when switching languages on Localization > Labels. Fixed. #XCB-1472 #CDev-Core
+2022-08-04 - [Bug] Problems with saving current add-on data after switching off other add-ons. Fixed.  #XCB-1471 #CDev-Core
+2022-08-05 - [Bug] Incorrect banner links in demo data. Fixed. #XCB-1467 #CDev-Core
+2022-08-08 - [Bug] Incorrect Greeting tooltip size on Email Notifications > Header, Greeting & Signature. Fixed. #XCB-1463 #CDev-Core
+2022-08-08 - [Bug] PDF invoice rep in email notifications, if it was sent via the "send to" tool in the Admin area. Fixed. #XCB-1444 #CDev-Core
+2022-08-10 - [Bug] Integrity check failed if no reply from my.x-cart.com. Fixed. #XCB-1436 #CDev-Core
+2022-08-08 - [Bug] Incorrect tooltip width in the Admin area. Fixed. #XCB-1324 #CDev-Core
+2022-08-10 - [Bug] Popup vertical displacement. Fixed. #XCB-1295 #CDev-Core
+2022-08-05 - [Bug] Incorrect language swticher display in the header of the Admin area. Fixed. #XCB-745 #CDev-Core
+

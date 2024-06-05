@@ -1,0 +1,40 @@
+{##
+# XPaymentsSubscriptions
+#
+# @author    Qualiteam software Ltd <info@x-cart.com>
+# @copyright Copyright (c) 2011-2016 Qualiteam software Ltd <info@x-cart.com>. All rights reserved
+# @license   http://www.x-cart.com/license-agreement.html X-Cart 5 License Agreement
+# @link      http://www.x-cart.com/
+#}
+
+{% if this.isLastTimeUnknown() %}
+
+  <div class="alert alert-warning">
+    <strong>{{ t('Warning!') }}</strong>
+    {{ t('X-Cart cannot detect the last time of the periodic tasks execution. Make sure the periodic tasks are configured correctly.') }}
+    {{ t('If you see this message the next day please contact the X-Cart support team.') }}
+    <br/>
+    <a href="{{ this.getManualLink() }}" target="_blank">{{ t('Configuring automated execution of periodic tasks for X-Payments subscriptions') }}</a>
+  </div>
+
+{% elseif this.isTimePassedSinceLastCronOk() %}
+
+  <div class="alert alert-success">
+    <strong>{{ t('Info.') }}</strong>
+    {{ t('Subscriptions periodic tasks are configured correctly.') }}
+    {{ t('Last time the task completed successfully:') }}
+    {{ this.getLastTime() }}
+  </div>
+
+{% else %}
+
+  <div class="alert alert-danger">
+    <strong>{{ t('Error.') }}</strong>
+    {{ t('Subscriptions periodic tasks are not configured correctly.') }}
+    {{ t('Last time the task completed successfully:') }}
+    {{ this.getLastTime() }}
+    <br/>
+    <a href="{{ this.getManualLink() }}" target="_blank">{{ t('Configuring automated execution of periodic tasks for X-Payments subscriptions') }}</a>
+  </div>
+
+{% endif %}

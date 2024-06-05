@@ -1,0 +1,15 @@
+{##
+ # Cell actions
+ #}
+
+{% apply spaceless %}
+  {% if this.entity.order.isTrackingInformationForm(this.entity.value) %}
+    <a href="{{ this.entity.order.getTrackingInformationURL(this.entity.value) }}?{% for name, value in this.entity.order.getTrackingInformationParams(this.entity.value) %}{{ name }}={{ value }}&amp;{% endfor %}" target="_blank">
+      <img src="{{ asset('images/truck.svg') }}" class="truck" title="{{ t('Track package') }}" alt="{{ t('Track package') }}" />
+    </a>
+  {% else %}
+    <a href="{{ this.entity.order.getTrackingInformationURL(this.entity.value) }}" target="_blank">
+      <img src="{{ asset('images/truck.svg') }}" class="truck" title="{{ t('Track package') }}" alt="{{ t('Track package') }}" />
+    </a>
+  {% endif %}
+{% endapply %}

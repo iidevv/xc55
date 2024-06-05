@@ -1,0 +1,16 @@
+{##
+# Template for banner vue component
+#}
+<div class="banner-body">
+    {{ widget('\\XC\\ThemeTweaker\\Module\\QSL\\Banner\\View\\FileUploader\\MultipleFileUploader', value=this.getBannerImages(), multiple=true, isViaUrlAllowed=true, helpMessage=t("Click here to upload"), fieldOnly=true, fieldName='banner_slide_image_' ~ this.getBanner().getId(), maxHeight="80", maxWidth="80") }}
+    <div class="add-html-banner" @click="goBannerAdminPage({{ this.getBanner().getId() }}, 'codes')">
+        <span class="icon"></span>
+        <span class="main-text">{{ t('Add HTML Banner') }}</span>
+        <span class="external-link"></span>
+    </div>
+    <div class="manage-banner-settings-global" @click="goBannerAdminPage({{ this.getBanner().getId() }})">
+        <span class="icon"></span>
+        <span class="main-text">{{ t('More banner settings') }}</span>
+        <span class="external-link"></span>
+    </div>
+</div>

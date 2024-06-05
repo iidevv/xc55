@@ -1,0 +1,12 @@
+{##
+ # Brands
+ #}
+
+{% if this.isBrandListEditable() %}
+  <div>
+      {% form 'QSL\\ShopByBrand\\View\\Form\\ItemsList\\Brand\\Table' %}
+          {{ widget('QSL\\ShopByBrand\\View\\ItemsList\\Model\\Brand') }}
+      {% endform %}
+  </div>
+{% endif %}
+{% include 'modules/QSL/ShopByBrand/brands/no_brand_attribute.twig' %}

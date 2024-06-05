@@ -1,0 +1,6 @@
+Version 5.5.0.11
+
+Fixes (2)
+2023-05-17 - [Bug] Layout issues related to displaying the CloudSearch header on mobile. Fixed. #XCB-2168 #XC-CrispWhiteSkin #XC-SpaceVioletSkin #XC-SoftBlueSkin #XC-ForestGreenSkin #XC-DarkSparkleSkin #QSL-Linen #QSL-UltimateSkin #TemplateMonster-SparePartsStore
+2023-05-16 - [Bug] The language selector was displayed incorrectly on the storefront. Fixed. #XCB-2113 #XC-CrispWhiteSkin
+

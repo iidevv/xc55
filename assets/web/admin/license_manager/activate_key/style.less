@@ -1,0 +1,58 @@
+/**
+ * Activate license key widget
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.popup-window-entry .activate-key-block {
+  width: 690px;
+}
+
+.activate-key-block {
+  max-width: 1130px;
+  min-width: 690px;
+  font-size: 14px;
+  line-height: 25px;
+
+  .open-license-key-form {
+    border-bottom: 1px dashed;
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .activate-key-form {
+    margin-top: 27px;
+    width: auto;
+
+    .addon-key {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 7px;
+    }
+
+    input[type="text"] {
+      width: 250px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+  }
+
+  &.module-activation .activate-key-form {
+    display:none;
+  }
+
+  .additional-link {
+    font-size: 12px;
+  }
+
+  .or {
+    display: inline-block;
+    margin: 0 7px;
+  }
+}

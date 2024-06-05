@@ -1,0 +1,29 @@
+Version 5.5.0.5
+
+Improvements (9)
+2022-11-16 - [Task] Added ext-curl dependency to composer.json. #XCB-1878 #CDev-Core
+2022-10-27 - [Task] Adjusted the positioning and order of checkboxes on the export page. #XCB-1818 #CDev-Core #QSL-BackInStock #QSL-Make #XC-CustomProductTabs #XC-NewsletterSubscriptions #XC-Reviews
+2022-11-16 - [Task] Old hooks code refactoring #XCB-1803 #CDev-Core
+2022-11-17 - [Story] New service page to check the software version #ECOM-2479 #CDev-Core
+2022-10-19 - [Task] Hooks refactoring #ECOM-2371 #CDev-Core #CDev-Sale #CDev-SimpleCMS #CDev-SalesTax #CDev-SocialLogin #CDev-VAT #CDev-Coupons #CDev-ContactUs #CDev-Paypal #CDev-Egoods #CDev-VolumeDiscounts #CDev-ProductAdvisor #CDev-XMLSitemap #QSL-BackInStock #QSL-FlyoutCategoriesMenu #QSL-MyWishlist #QSL-ProductStickers #QSL-VerifiedUsers #QSL-ColorSwatches #QSL-AbandonedCartReminder #QSL-TaxExempt #QSL-ShopByBrand #QSL-CustomerSatisfaction #QSL-ProductFeeds #QSL-AdvancedContactUs #QSL-Returns #QSL-Banner #XC-UPS #XC-GoogleFeed #XC-VendorPartners #XC-ThemeTweaker #XC-TaxJar #XC-ProductVariants #XC-ShopperApproved #XC-MailChimp #XC-CrispWhiteSkin #XC-News #XC-VendorMessages #XC-BlueSnap #XC-FreeShipping #XC-TrustedVendors #XC-Upselling #XC-UpdateInventory #XC-MultiVendor #XC-CanadaPost #XC-Reviews #QSL-ProductQuestions #QSL-HorizontalCategoriesMenu #QSL-reCAPTCHA
+2022-10-17 - [Story] Improvements of the sidebar and dropdown menus in the Admin area #ECOM-2220 #CDev-Core
+2022-11-10 - [Task] Fixed issues with the add-on On/Off switchers on the My Apps page #ECOM-2056 #CDev-Core
+2022-11-16 - [Story] New feature to display the my.x-cart.com marketing info in the Admin area #ECOM-1725 #CDev-Core #XC-MultiVendor
+2022-11-16 - [Story] New core resource overriding functionality for the Admin area #ECOM-1326 #CDev-Core #XC-ThemeTweaker
+
+Fixes (14)
+2022-11-17 - [Bug] Fatal error when installing an addon with a license key. Fixed. #XCB-1888 #CDev-Core
+2022-11-16 - [Bug] The service ViewListMutationApply was working incorrectly. Fixed. #XCB-1869 #CDev-Core
+2022-11-08 - [Bug] Added ext-pdo_mysql dependency to composer json. #XCB-1863 #CDev-Core
+2022-11-14 - [Bug] Layout issues related to the size of category elements and switcher alignment in the Attached Files table. Fixed.  #XCB-1854 #CDev-Core #CDev-FileAttachments
+2022-11-17 - [Bug] Fatal error when attempting to PUT, GET or DELETE a vendor's address. Fixed. #XCB-1850 #CDev-Core
+2022-11-15 - [Bug] API. Fixed the errors related to product images POST and PUT requests. #XCB-1846 #CDev-Core
+2022-11-01 - [Bug] "Undefined array key “runnerSteps”" error when installing an add-on from market.x-cart.com or shopdev.x-cart.com. Fixed. #XCB-1844 #CDev-Core
+2022-11-03 - [Bug] Incorrect styles were applied for displaying Clean URL Result. Fixed. #XCB-1840 #CDev-Core #QSL-Make #XC-MultiVendor
+2022-10-27 - [Bug] Fatal error when creating a new banner. Fixed. #XCB-1835 #CDev-Core
+2022-11-16 - [Bug] Fatal error when attempting to access an order page in the Admin area if a tracking URL had been specified for the the shipping method. Fixed. #XCB-1833 #CDev-Core
+2022-11-03 - [Bug] If creating a Color swatches attribute for a product after creating a Product-Specific attribute of the Plainfield or Blocks type, the previously created attribute also became Color swatches. Fixed. #XCB-1832 #CDev-Core #QSL-ColorSwatches
+2022-11-16 - [Bug] Corrected the nginx and apache config examples. #XCB-1828 #CDev-Core
+2022-10-25 - [Bug] Error related to CORS policy in CORS requests. Fixed. #XCB-1825 #CDev-Core
+2022-11-16 - [Bug] Issues with the Redis cache cleaning. Fixed. #XCB-1807 #CDev-Core
+

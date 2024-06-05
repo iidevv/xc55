@@ -1,0 +1,15 @@
+{##
+ # Add to Cart popup page template
+ #
+ # Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ # See https://www.x-cart.com/license-agreement.html for license details.
+ #}
+<div {{ this.printTagAttributes(this.getContainerTagAttributes())|raw }}>
+    {% form '\\QSL\\BackInStock\\View\\Form\\CustomerBox' with {product: this.getProduct(), variant: this.getProductVariant()} %}
+
+    <table class="form-data">
+        {{ widget_list('notifyme.rows') }}
+    </table>
+
+    {% endform %}
+</div>

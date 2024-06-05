@@ -1,0 +1,24 @@
+{# #
+ # Brand
+#}
+
+<div class="{{ this.getWrapperClass() }}">
+  <ul class="category-brands subcategory-view-icons subcategory-list grid-list">
+    {% for rowIndex, _row in this.getBrandRows() %}
+      {% for columnIndex, _brand in _row %}
+        {% if _brand %}
+          <li>
+            <a href="{{ xurl('brand', '', {'brand_id': _brand.0.brand_id}) }}">
+              <span class="subcategory-icon lazy-load">
+                <span class="subcategory-icon_wrapper{% if not _brand.0.image %} no-image{% endif %}">
+                {{ widget('\\XLite\\View\\Image', isBlurApplicable=true, image=_brand.0.image, maxWidth=120, maxHeight=80, alt=_brand.name) }}
+                </span>
+              </span>
+              <span class="subcategory-name">{{ _brand.name }}</span>
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</div>

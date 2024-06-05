@@ -1,0 +1,18 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.0
+type: payment
+authorName: Qualiteam
+moduleName: 'SkinAct Google product rating feed'
+description: 'Created a custom script that generates a full product review feed for the website according to Google documentation, SS-20907'
+minorRequiredCoreVersion: 0
+dependsOn:
+  - XC-Reviews
+incompatibleWith: {  }
+showSettingsForm: false
+canDisable: true

@@ -1,0 +1,14 @@
+<div class="recovered-orders">
+    {% if this.entity.orders %}
+      <ol>
+          {% for index, item in this.getColumnValue(this.column, this.entity) %}
+            <li>
+                <a href="{{ xurl('order', '', {'order_number': item.getOrderNumber()}) }}">{{ this.preprocessOrderNumber(item.getOrderNumber()) }}</a> <span>({{ this.formatPrice(item.getTotal()) }})</span>
+            </li>
+          {% endfor %}
+      </ol>
+    {% endif %}
+    {% if not this.entity.orders %}
+      <span>&ndash;</span>
+    {% endif %}
+</div>

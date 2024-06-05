@@ -1,0 +1,40 @@
+api_platform:
+    resource_class_directories:
+        - '%kernel.project_dir%/var/run/classes/CDev/FileAttachments/Model'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    # /product/{product_id}/attachments
+    CDev\FileAttachments\API\Endpoint\ProductAttachment\Transformer\OutputTransformerInterface: '@CDev\FileAttachments\API\Endpoint\ProductAttachment\Transformer\OutputTransformer'
+    CDev\FileAttachments\API\Endpoint\ProductAttachment\Transformer\OutputTransformer: ~
+    CDev\FileAttachments\API\Endpoint\ProductAttachment\Transformer\InputTransformerInterface: '@CDev\FileAttachments\API\Endpoint\ProductAttachment\Transformer\InputTransformer'
+    CDev\FileAttachments\API\Endpoint\ProductAttachment\Transformer\InputTransformer: ~
+
+    CDev\FileAttachments\API\Endpoint\ProductAttachment\SubIriConverter\SubIriConverter:
+        tags: [ !php/const XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\SubIriConverter\SubIriFromItemConverterInterface::SUB_IRI_FROM_ITEM_CONVERTER_TAG ]
+
+    CDev\FileAttachments\API\Endpoint\ProductAttachment\DataProvider\CollectionDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.collection_data_provider'
+            $repository: '@xcart.repository.product'
+
+    CDev\FileAttachments\API\Endpoint\ProductAttachment\DataProvider\ItemDataProvider:
+        arguments:
+            $inner: '@api_platform.doctrine.orm.default.item_data_provider'
+            $repository: '@xcart.repository.product'
+
+    xcart.api.cdev.file_attachments.product_attachment.controller:
+        class: CDev\FileAttachments\Controller\API\ProductAttachment\Post
+        arguments:
+            $repository: '@xcart.repository.product'
+
+    CDev\FileAttachments\API\OpenApiTagsRepositoryDecorator:
+        decorates: XLite\API\OpenApiTagsRepository
+
+    xcart.api.cdev.file_attachments.product_attachment.sub_extension:
+        class: CDev\FileAttachments\API\Endpoint\ProductAttachment\SubExtension\SubExtension
+        tags: [ !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG ]

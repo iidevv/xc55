@@ -1,0 +1,13 @@
+{##
+ # Layout editor panel
+ #
+ # @ListChild(list="themetweaker-panel--actions", weight="100")
+ #}
+
+<a class="reset-layout-button themetweaker-action themetweaker-button regular-main-button"
+   :class="resetLayoutBtnClasses"
+   @click="resetLayout"
+   v-show="isLayoutEditorMode"
+>
+  <span>{{ t('Reset Layout') }}</span>
+</a>

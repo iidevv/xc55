@@ -1,0 +1,10 @@
+{##
+ # Product details title main block
+ #
+ # @ListChild (list="product.details.quicklook.info", weight="10")
+ #}
+<h2 class="fn title">
+  <a href="{{ xurl('product', '', {'product_id': this.get('product').product_id, 'category_id': this.getCategoryId()}) }}">
+    {{ this.get('product').name }}
+  </a>
+</h2>

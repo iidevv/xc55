@@ -1,0 +1,8 @@
+Version 5.5.0.1
+
+Fixes (4)
+2022-08-29 - [Bug] Replaced the word "module" with "addon" in text labels. #XCB-1587 #CDev-ProductAdvisor #XC-Upselling
+2022-09-02 - [Bug] Product advisor. The "Recently viewed" block was not displayed with the maximum number of products to display in the block set to "0". Fixed. #XCB-1571 #CDev-ProductAdvisor
+2022-09-02 - [Bug] Product advisor. The "Expected" label was not displayed on a product page. Fixed. #XCB-1569 #CDev-ProductAdvisor
+2022-09-05 - [Bug] Product advisor. A created product was not displayed on the home page in the "New arrivals" block. Fixed. #XCB-1568 #CDev-ProductAdvisor
+

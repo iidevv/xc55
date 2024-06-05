@@ -1,0 +1,14 @@
+{##
+ # Predefined payment method icon
+ #
+ # @ListChild (list="payment.methods.list.line", weight=100)
+ # @ListChild (list="payment.predefined-methods.list.line.general-info", weight=100)
+ #}
+
+{% if not this.method.isOffline() %}
+  <div class="icon">
+    {% if this.method.getAdminIconURL() %}
+      <img src="{{ this.method.getAdminIconURL() }}" alt=""/>
+    {% endif %}
+  </div>
+{% endif %}

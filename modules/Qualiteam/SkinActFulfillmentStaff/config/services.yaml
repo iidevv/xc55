@@ -1,0 +1,13 @@
+services:
+#  Qualiteam\SkinActFulfillmentStaff\Core\EventListener:
+#    arguments:
+#      $moduleManagerDomain: '@XCart\Domain\ModuleManagerDomain'
+#    tags:
+#      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }
+  Qualiteam\SkinActFulfillmentStaff\Command\RemoveEmptyRoles:
+    tags:
+      - { name: 'console.command', command: 'SkinActFulfillmentStaff:RemoveEmptyRoles' }
+
+  Qualiteam\SkinActFulfillmentStaff\Command\RemoveRootAccessDuplicatePermissions:
+    tags:
+      - { name: 'console.command', command: 'SkinActFulfillmentStaff:RemoveRootAccessDuplicatePermissions' }

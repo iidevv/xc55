@@ -1,0 +1,30 @@
+{##
+ # Messages list : line
+#}
+
+<li {{ this.printTagAttributes(this.getLineTagAttributes(message))|raw }} data-message-id="{{ message.getId() }}">
+    <div class="author">{{ message.getAuthorName() }}</div>
+    <div class="body">{{ message.publicBody|raw }}</div>
+    <div class="date">{{ this.formatTime(message.date) }}</div>
+    {% if not message.isOwner() %}
+        <div class="mark-read-unread">
+            {% if message.isRead() %}
+                {{ widget('XLite\\View\\Button\\Regular', style='mark-button unread', jsCode='return false;', label=t('SkinActOrderMessaging Mark Unread')) }}
+            {% else %}
+                {{ widget('XLite\\View\\Button\\Regular', style='mark-button read', jsCode='return false;', label=t('SkinActOrderMessaging Mark Read')) }}
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if message.getImages().toArray()|length > 0 %}
+        <br><br>
+        {{ widget('\\Qualiteam\\SkinActOrderMessaging\\View\\FormField\\FileUploader\\ImageUploader',
+            value=message.getImages().toArray(),
+            isImage=true,
+            fieldName='message_image_non_editable',
+            isViaUrlAllowed=false,
+            multiple=true,
+            fieldOnly=true,
+            mode=1
+        ) }}
+    {% endif %}
+</li>

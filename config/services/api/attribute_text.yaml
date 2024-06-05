@@ -1,0 +1,56 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # /attributes_text
+    XLite\API\Endpoint\Attribute\Text\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\Attribute\Text\Transformer\OutputTransformer'
+    XLite\API\Endpoint\Attribute\Text\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\Attribute\Text\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\Attribute\Text\Transformer\InputTransformer'
+    XLite\API\Endpoint\Attribute\Text\Transformer\InputTransformer: ~
+
+    xcart.api.attribute.text.controller:
+        class: XLite\Controller\API\Attribute\Post
+        arguments:
+            $type: !php/const XLite\Model\Attribute::TYPE_TEXT
+        tags: ['controller.service_arguments']
+
+    xcart.api.attribute.text.global_sub_extension:
+        class: XLite\API\SubExtension\Attribute\GlobalAttributeSubExtension
+        arguments:
+            $attributeType: !php/const XLite\Model\Attribute::TYPE_TEXT
+            $operationNames: ['get_text', 'post_text', 'put_text', 'delete_text', 'get_texts']
+        tags: [!php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG]
+
+    # /product_classes/{class_id}/attributes_text
+    xcart.api.attribute.text.product_class_based_sub_extension:
+        class: XLite\API\SubExtension\Attribute\ProductClassBasedAttributeSubExtension
+        arguments:
+            $attributeType: !php/const XLite\Model\Attribute::TYPE_TEXT
+            $operationNames: ['product_class_based_get_text', 'product_class_based_post_text', 'product_class_based_put_text', 'product_class_based_delete_text', 'product_class_based_get_texts']
+        tags: [!php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG]
+
+    xcart.api.attribute.text.product_class_based_controller:
+        class: XLite\Controller\API\Attribute\ProductClassBasedPost
+        arguments:
+            $type: !php/const XLite\Model\Attribute::TYPE_TEXT
+        tags: ['controller.service_arguments']
+
+    # /products/{product_id}/attributes_text
+    XLite\API\Endpoint\ProductAttribute\Text\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\ProductAttribute\Text\Transformer\OutputTransformer'
+    XLite\API\Endpoint\ProductAttribute\Text\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\ProductAttribute\Text\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\ProductAttribute\Text\Transformer\InputTransformer'
+    XLite\API\Endpoint\ProductAttribute\Text\Transformer\InputTransformer: ~
+
+    xcart.api.attribute.text.product_based_sub_extension:
+        class: XLite\API\SubExtension\Attribute\ProductBasedAttributeSubExtension
+        arguments:
+            $attributeType: !php/const XLite\Model\Attribute::TYPE_TEXT
+            $operationNames: ['product_based_get_text', 'product_based_post_text', 'product_based_put_text', 'product_based_delete_text', 'product_based_get_texts']
+        tags: [!php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG]
+
+    xcart.api.attribute.text.product_based_controller:
+        class: XLite\Controller\API\Attribute\ProductBasedPost
+        arguments:
+            $type: !php/const XLite\Model\Attribute::TYPE_TEXT
+        tags: ['controller.service_arguments']

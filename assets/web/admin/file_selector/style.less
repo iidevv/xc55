@@ -1,0 +1,54 @@
+/**
+ * ____file_title____
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.file-selector {
+  width: 560px;
+}
+
+.selections-list li.input-field {
+  padding: @rhythmic-unit / 2 0 @rhythmic-unit;
+
+  &.local-server-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    .table-value {
+      margin-right: @rhythmic-unit;
+    }
+  }
+
+  &.url-copy-to-local {
+    height: @rhythmic-unit;
+    margin-top: 6px;
+    .flex-display();
+
+    label {
+      .flex-display();
+      .align-items(center);
+
+      .table-value .input-internal-wrapper {
+        .flex-display();
+
+        .checkbox {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.upload-file-message {
+  padding-top: 10px;
+  display: block;
+}
+
+.upload-file {
+  margin-top: @rhythmic-unit * 2;
+  padding: @form-row-vertical-padding 0;
+}
+

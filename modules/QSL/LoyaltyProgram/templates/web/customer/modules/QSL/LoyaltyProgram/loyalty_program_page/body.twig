@@ -1,0 +1,37 @@
+{% if this.isJoinSectionVisible() %}
+  <div class="loyalty-program-details-join sidebar">
+      {{ widget_list('loyalty-program-join') }}
+  </div>
+{% endif %}
+
+<div class="{{ this.getMainSectionClasses() }}">
+
+    {% if this.getLinkedPage() %}
+      <div class="page-body-content">{{ this.getLinkedPageBody()|raw }}</div>
+    {% endif %}
+
+    {% if not this.getLinkedPage() %}
+      <div>
+          <ul>
+              <li>
+                  <h2>{{ t('How do I join the Loyalty Program?') }}</h2>
+                  <div>{{ t('Customers with store accounts are automatically enrolled.') }}</div>
+              </li>
+              <li>
+                  <h2>{{ t('How do I earn reward points?') }}</h2>
+                  <div>{{ t('You earn 1 point for every X spent on purchases in the store.', {'rate': this.formatPrice(this.getPointsRate(), this.getCurrency())}) }}</div>
+              </li>
+              <li>
+                  <h2>{{ t('How do I use my rewards?') }}</h2>
+                  <div>
+                      {{ t('The store will automatically calculate the reward discount for you upon checkout.') }}
+                      {% if this.discountLimitEnabled() %}
+                        <span>{{ t('The maximum discount that you can receive for an order by redeeming your reward points is X.', {'discount': this.getMaxDiscount()}) }}</span>
+                      {% endif %}
+                  </div>
+              </li>
+          </ul>
+      </div>
+    {% endif %}
+
+</div>

@@ -1,0 +1,185 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: 'customerApiKey'
+    category: Qualiteam\SkinActGraphQLApi
+    type: text
+    orderby: 100
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Customer level API key'
+        option_comment: 'API key for customer access level. Leave blank to disable.'
+
+  - name: 'adminApiKey'
+    category: Qualiteam\SkinActGraphQLApi
+    type: text
+    orderby: 200
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Admin level API key'
+        option_comment: 'API key for admin access level. Leave blank to disable.'
+
+  - name: 'jwtPublicKey'
+    category: Qualiteam\SkinActGraphQLApi
+    type: hidden
+    orderby: 300
+    value: ''
+    translations:
+      - code: en
+        option_name: 'JWT public key'
+        option_comment: 'JWT public key'
+
+  - name: 'jwtPrivateKey'
+    category: Qualiteam\SkinActGraphQLApi
+    type: hidden
+    orderby: 400
+    value: ''
+    translations:
+      - code: en
+        option_name: 'JWT private key'
+        option_comment: 'JWT private key'
+
+  - name: 'jwtAlgorithm'
+    category: Qualiteam\SkinActGraphQLApi
+    type: hidden
+    orderby: 500
+    value: ''
+    translations:
+      - code: en
+        option_name: ''
+        option_comment: ''
+
+XLite\Model\LanguageLabel:
+  - { name: 'Mobile Admin', translations: [{ code: en, label: 'X-Cart Mobile Admin' }] }
+  - { name: 'Mobile Admin settings', translations: [{ code: en, label: 'X-Cart Mobile Admin settings' }] }
+  - { name: 'Overview', translations: [{ code: en, label: 'Overview' }] }
+  - { name: 'X-Cart Mobile Admin lets you easily manage your online store from your iPhone and Android smartphones.', translations: [{ code: en, label: 'X-Cart Mobile Admin lets you easily manage your online store from your iPhone and Android smartphones.' }] }
+  - { name: 'Subscriptions', translations: [{ code: en, label: 'Subscriptions' }] }
+  - { name: 'Paid subscription till:', translations: [{ code: en, label: 'Paid subscription till:' }] }
+  - { name: 'Subscription expired:', translations: [{ code: en, label: 'Subscription expired:' }] }
+  - { name: 'Free subscription.', translations: [{ code: en, label: 'Free subscription.' }] }
+  - { name: 'Get started', translations: [{ code: en, label: 'Get started' }] }
+  - { name: '1. Download and install X-Cart Mobile Admin application', translations: [{ code: en, label: '1. Download and install X-Cart Mobile Admin application' }] }
+  - { name: '2. Get Authorization key', translations: [{ code: en, label: '2. Get Authorization key' }] }
+  - { name: '3. Link your mobile application with your store.', translations: [{ code: en, label: '3. Link your mobile application with your store.' }] }
+  - { name: '4. Thats All!', translations: [{ code: en, label: "4. That's All!" }] }
+  - { name: 'Current API key is:', translations: [{ code: en, label: 'Current API key is:' }] }
+  - { name: 'At login page of X-Cart Mobile Admin click <b>Scan QR</b> button an scan this code:', translations: [{ code: en, label: 'At login page of X-Cart Mobile Admin click <b>Scan QR</b> button an scan this code:' }] }
+  - { name: 'OR', translations: [{ code: en, label: 'OR' }] }
+  - { name: 'Manual instruction string', translations: [{ code: en, label: 'Manually enter <b>{{registrationCode}}</b> into the text field at Login page of the app and press login.' }] }
+  - { name: 'The list of linked devices', translations: [{ code: en, label: 'The list of linked devices' }] }
+  - { name: 'Buy subscription', translations: [{ code: en, label: 'Buy subscription' }] }
+  - { name: 'Get trial', translations: [{ code: en, label: 'Get trial' }] }
+  - { name: 'Generate key', translations: [{ code: en, label: 'Generate key' }] }
+  - { name: 'Generate new key', translations: [{ code: en, label: 'Generate new key' }] }
+  - { name: 'Registration ID', translations: [{ code: en, label: 'Registration ID' }] }
+  - { name: 'Manufacturer', translations: [{ code: en, label: 'Manufacturer' }] }
+  - { name: 'Model', translations: [{ code: en, label: 'Model' }] }
+  - { name: 'OS Type', translations: [{ code: en, label: 'OS Type' }] }
+  - { name: 'OS Version', translations: [{ code: en, label: 'OS Version' }] }
+  - { name: 'Device Name', translations: [{ code: en, label: 'Device Name' }] }
+  - { name: 'Date', translations: [{ code: en, label: 'Date' }] }
+  - { name: 'Android', translations: [{ code: en, label: 'Android' }] }
+  - { name: 'iOS', translations: [{ code: en, label: 'iOS' }] }
+  - { name: 'lbl_mobad_not_available', translations: [{ code: en, label: 'N/A' }] }
+  - { name: 'lbl_mobad_android', translations: [{ code: en, label: 'Android' }] }
+  - { name: 'lbl_mobad_ios', translations: [{ code: en, label: 'iOS' }] }
+  - { name: 'msg_err_mobad_logic_error', translations: [{ code: en, label: 'Error.' }] }
+  - { name: 'msg_err_mobad_wrong_api_key', translations: [{ code: en, label: 'Wrong API key: {{key}}.' }] }
+  - { name: 'msg_err_mobad_action_not_found', translations: [{ code: en, label: "Action '{{action}}' not found." }] }
+  - { name: 'msg_err_mobad_field_data_invalid', translations: [{ code: en, label: 'Request data in one of the fields is absent or invalid: {{field}}.' }] }
+  - { name: 'msg_err_mobad_device_unregistered', translations: [{ code: en, label: 'Device was unregistered.' }] }
+  - { name: 'msg_err_mobad_device_registration_error', translations: [{ code: en, label: 'Device registration error.' }] }
+  - { name: 'msg_err_mobad_device_not_registered', translations: [{ code: en, label: 'This device is not registered.' }] }
+  - { name: 'msg_err_mobad_review_not_found', translations: [{ code: en, label: 'Review not found.' }] }
+  - { name: 'msg_err_mobad_reviews_by_date_na', translations: [{ code: en, label: 'N/A' }] }
+  - { name: 'msg_err_mobad_tracking_empty', translations: [{ code: en, label: 'Tracking number is empty.' }] }
+  - { name: 'msg_err_mobad_order_not_found', translations: [{ code: en, label: 'Order not found: #{{id}}' }] }
+  - { name: 'msg_err_mobad_order_status_invalid', translations: [{ code: en, label: 'Status {{status}} is invalid.' }] }
+  - { name: 'msg_err_mobad_status_empty', translations: [{ code: en, label: 'Status is empty.' }] }
+  - { name: 'msg_err_mobad_cant_change_user_status', translations: [{ code: en, label: 'Unable to change status for this user.' }] }
+  - { name: 'msg_err_mobad_customer_not_found', translations: [{ code: en, label: 'User not found.' }] }
+  - { name: 'msg_err_mobad_discount_coupons_add', translations: [{ code: en, label: 'New discount coupon is successfully added.' }] }
+  - { name: 'msg_err_mobad_discount_coupon_nomod', translations: [{ code: en, label: 'Discount Coupons module is disabled or not installed.' }] }
+  - { name: 'msg_err_mobad_discount_coupon_inv_code', translations: [{ code: en, label: 'Coupon code is invalid or empty. Allowed characters are alphanumeric characters (A-Z, a-z, 0-9), point (.), hyphen (-), and underscore (_).' }] }
+  - { name: 'msg_err_mobad_discount_coupon_code_exists', translations: [{ code: en, label: 'Coupon code already exists in the store.' }] }
+  - { name: 'msg_err_mobad_discount_coupon_discount_error', translations: [{ code: en, label: 'Coupon discount cannot be empty for "percent" or "absolute" coupon type or the coupon discount cannot be more than 100%' }] }
+  - { name: 'msg_err_mobad_product_not_found', translations: [{ code: en, label: 'Product not found.' }] }
+  - { name: 'msg_err_mobad_detailed_images_nomod', translations: [{ code: en, label: 'Detailed Product Images module is disabled or not installed.' }] }
+  - { name: 'msg_err_mobad_product_options_nomod', translations: [{ code: en, label: 'Product Options module is disabled or not installed.' }] }
+  - { name: 'msg_err_mobad_no_translation_for_config', translations: [{ code: en, label: 'Can not find translation for providet configuration value path: {{path}}' }] }
+  - { name: 'msg_err_mobad_config_value_not_found', translations: [{ code: en, label: 'Can not find configuration value value: {{path}}' }] }
+  - { name: 'msg_mobad_logic_success', translations: [{ code: en, label: 'Success.' }] }
+  - { name: 'msg_mobad_logic_test', translations: [{ code: en, label: 'Test.' }] }
+  - { name: 'msg_mobad_device_registered', translations: [{ code: en, label: 'New device registered.' }] }
+  - { name: 'msg_mobad_device_unregistered', translations: [{ code: en, label: 'Device unregistered.' }] }
+  - { name: 'msg_mobad_review_not_available', translations: [{ code: en, label: 'N/A' }] }
+  - { name: 'msg_mobad_review_not_found', translations: [{ code: en, label: 'Review not found.' }] }
+  - { name: 'msg_mobad_new_order_received', translations: [{ code: en, label: 'New order received' }] }
+  - { name: 'msg_mobad_low_stock_product', translations: [{ code: en, label: 'Low stock for one or more products' }] }
+  - { name: 'msg_mobad_discount_coupon_created', translations: [{ code: en, label: 'Discount coupon was successfully created.' }] }
+  - { name: 'msg_err_mobad_socket_error', translations: [{ code: en, label: 'Socket error: {{error}}' }] }
+  - { name: 'msg_err_mobad_no_https', translations: [{ code: en, label: '<b>We were unable to detect a valid SSL certificate</b> for your domain. This means that you do not have HTTPS set up on your server.<br /><br /> <b>Apple require</b> all connections to use secure protocol (HTTPS) in all of its applications. This means that the X-Cart Admin application <b>will not be able to connect</b> with your store on iOS devices.<br /><br /> Please set up a HTTPS on your server in order to be able to use this application with your <b>iPhone</b> and you should use the <b>Android</b> version <b>at your own risk.</b>' }] }
+  - { name: 'err_jsapi_0', translations: [{ code: en, label: 'Operation successful' }] }
+  - { name: 'err_jsapi_1000', translations: [{ code: en, label: 'Wrong api key' }] }
+  - { name: 'err_jsapi_1001', translations: [{ code: en, label: 'Route not found' }] }
+  - { name: 'err_jsapi_1002', translations: [{ code: en, label: 'Invalid request' }] }
+  - { name: 'err_jsapi_1003', translations: [{ code: en, label: 'Access denied' }] }
+  - { name: 'err_jsapi_3001', translations: [{ code: en, label: 'Payment method is not selected' }] }
+  - { name: 'err_jsapi_3002', translations: [{ code: en, label: 'Shipping method is not selected' }] }
+  - { name: 'err_jsapi_3003', translations: [{ code: en, label: 'No shipping method is available for your region' }] }
+  - { name: 'err_jsapi_3004', translations: [{ code: en, label: 'No shipping address is selected' }] }
+  - { name: 'err_jsapi_4000', translations: [{ code: en, label: 'Login error' }] }
+  - { name: 'err_jsapi_4001', translations: [{ code: en, label: 'There is no user for specified login' }] }
+  - { name: 'err_jsapi_9999', translations: [{ code: en, label: 'Error' }] }
+  - { name: 'err_jsapi_desc_1000', translations: [{ code: en, label: 'Wrong api key: "{{api_key}}"' }] }
+  - { name: 'err_jsapi_desc_1001', translations: [{ code: en, label: 'Route not found: "{{route}}"' }] }
+  - { name: 'err_jsapi_desc_1002', translations: [{ code: en, label: 'Invalid request data' }] }
+  - { name: 'err_jsapi_desc_4000', translations: [{ code: en, label: '{{error}}' }] }
+  - { name: 'err_jsapi_desc_4001', translations: [{ code: en, label: 'There is no user for specified login {{login}}' }] }
+  - { name: 'err_jsapi_desc_9999', translations: [{ code: en, label: '{{error}}' }] }
+  - { name: 'SkinActGraphQLApi showInMobileApp', translations: [{ code: en, label: 'Show In Mobile App' }] }
+
+#QSL\GraphQLApi\Model\Notification:
+#  - type: 'success'
+#    enabled: false
+#    translations:
+#      - code: en
+#        name: 'Send "Order created" push notification'
+#        description: 'This notification is sent to customer application when a new order is created.'
+#
+#  - type: 'process'
+#    enabled: true
+#    translations:
+#      - code: en
+#        name: 'Send "Order processed" push notification'
+#        description: 'This notification is sent to customer application when an order gets the status Paid.'
+#
+#  - type: 'ship'
+#    enabled: true
+#    translations:
+#      - code: en
+#        name: 'Send "Order shipped" push notification'
+#        description: 'This notification is sent to customer application when an order gets the status Shipped.'
+#
+#  - type: 'decline'
+#    enabled: true
+#    translations:
+#      - code: en
+#        name: 'Send "Order declined" push notification'
+#        description: 'This notification is sent to customer application when an order gets the status Declined.'
+#
+#  - type: 'cancel'
+#    enabled: true
+#    translations:
+#      - code: en
+#        name: 'Send "Order canceled" push notification'
+#        description: 'This notification is sent to customer application when an order gets the status Canceled.'
+#

@@ -1,0 +1,27 @@
+{##
+ # Color palette picker
+ #}
+
+<color-palette-picker inline-template>
+  <div>
+    <div class="color-palette" v-data="{{ this.getDataJson() }}">
+      <ul class="colors">
+        <li v-for="(color, index) in colors"
+            :style="{ 'background-color': '#' + color.value }"
+            class="color-block">
+        <span class="remove" @click="removeColor(index)">
+          <span class="remove-back">
+            <i class="fa fa-trash-o"></i>
+          </span>
+        </span>
+      </li>
+      <li class="new-color">
+        <input type="hidden" class="color-picker-value"/>
+        <i class="fa fa-plus"></i>
+      </li>
+    </ul>
+  </div>
+
+    <input class="hidden" v-model="colorPalette" {{ this.getAttributesCode()|raw }} />
+  </div>
+</color-palette-picker>

@@ -1,0 +1,19 @@
+{% apply spaceless %}
+  <html>
+  <head>
+    {% block head %}
+      <title></title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      {% for path, style in this.getCssStylesheets() %}
+        {% apply spaceless %}
+          <style type='text/css' data-path='{{ path }}'>{{ style|raw }}</style>
+        {% endapply %}
+      {% endfor %}
+    {% endblock %}
+  </head>
+  <body>
+  {% block body %}
+  {% endblock %}
+  </body>
+  </html>
+{% endapply %}

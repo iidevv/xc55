@@ -1,0 +1,20 @@
+{##
+ # Return items box
+ #}
+
+{% if this.entity.getItems() %}
+  <div class="return-items-wrapper">
+    <table class="return-items">
+      {% for k, item in this.entity.getItems() %}
+        <tr class="item">
+          <td class="name">
+            <a href="{{ item.displayOrderItem.getURL() }}">
+              {{ item.displayOrderItem.getName() }}
+            </a>
+          </td>
+          <td class="amount">{{ item.getAmount() }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endif %}

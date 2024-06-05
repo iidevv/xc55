@@ -1,0 +1,32 @@
+{# #
+ # Attribute value (Select) in selectbox mode
+#}
+{% if this.getLinkedProductImage() %}
+  <div class="attribute-with-linked-products__image{% if not this.getLinkedProduct() %} disabled{% endif %}">
+    {{ widget('\\XLite\\View\\Image', image=this.getLinkedProductImage(), maxWidth='56', maxHeight='65', centerImage='1') }}
+  </div>
+{% endif %}
+
+<label class="title">{{ this.attribute.name }}</label>
+<select
+  class="form-control"
+  name="{{ this.getName() }}"
+  data-attribute-id="{{ this.attribute.id }}"
+  {{ this.printTagAttributes(this.getSelectAttributes())|raw }}
+>
+  {% if this.showPlaceholderOption() %}
+    <option {{ this.printTagAttributes(this.getPlaceholderOptionAttributes())|raw }}disabled="disabled" hidden="hidden"
+            selected="selected" value="">{{ this.getPlaceholderOptionLabel() }}</option>
+  {% endif %}
+  {% for v in this.getAttributeValue() %}
+    {% include this.getOptionTemplate() with {'option': v} %}
+  {% endfor %}
+</select>
+
+{% if this.getLinkedProduct() %}
+  <div class="attribute-with-linked-products__qty" data-product-id="{{ this.getProduct().getProductId() }}" data-attribute-id="{{ this.attribute.id }}">
+    {{ widget('\\Qualiteam\\SkinActLinkProductsToAttributes\\View\\Product\\AttributeQuantityBox', fieldName='linked_product_amount['~ this.attribute.id ~']', fieldValue=this.getLinkedProductQty(), product=this.getLinkedProduct(), parent_product=this.getProduct() ) }}
+  </div>
+{% endif %}
+
+

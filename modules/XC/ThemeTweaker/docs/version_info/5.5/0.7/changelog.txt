@@ -1,0 +1,6 @@
+Version 5.5.0.7
+
+Fixes (2)
+2023-01-09 - [Bug] Dynamic Messages editing worked incorrectly in email notifications. Fixed. #XCB-2016 #XC-ThemeTweaker
+2023-01-05 - [Bug] Fatal error when previewing some email notifications with PHP 8.0. Fixed. #XCB-1965 #CDev-ContactUs #QSL-CallForPrice #QSL-Returns #XC-ThemeTweaker #XC-BlueSnap #XC-TrustedVendors #XC-MultiVendor #XC-Reviews
+

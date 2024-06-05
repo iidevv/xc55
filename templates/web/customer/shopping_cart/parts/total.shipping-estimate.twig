@@ -1,0 +1,14 @@
+{##
+ # Shopping cart subtotal
+ #
+ # @ListChild (list="cart.panel.totals", weight="20")
+ #}
+
+{% if (this.isProposeShippingEstimation()) %}
+  <li class="order-modifier SHIPPING-modifier shipping-code-modifier">
+    <strong>{{ t('Shipping cost') }}: </strong>
+    <span class="surcharge">
+      <a class="estimate" href="{{ xurl('shipping_estimate') }}">Estimate</a>
+    </span>
+  </li>
+{% endif %}

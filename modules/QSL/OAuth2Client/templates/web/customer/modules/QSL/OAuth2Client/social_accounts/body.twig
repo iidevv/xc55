@@ -1,0 +1,13 @@
+{##
+ # Social accounts list
+ #}
+
+<table class="social-accounts">
+    <tbody>
+        {% for provider in this.getPageData() %}
+            {% if provider.getEnabled() and provider.getWrapper().isVisible() %}
+                {{ widget(template='modules/QSL/OAuth2Client/social_accounts/line.twig', provider=provider, eprofile=provider.getExternalProfileByProfile(this.getProfile())) }}
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>

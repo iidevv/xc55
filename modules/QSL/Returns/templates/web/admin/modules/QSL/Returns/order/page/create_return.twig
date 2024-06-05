@@ -1,0 +1,9 @@
+{##
+ # Order return tab
+ #}
+
+<div class="create-order-return-wrapper">
+  {% form 'QSL\\Returns\\View\\Form\\Admin\\Order\\CreateReturn' %}
+    {{ widget('\\QSL\\Returns\\View\\Page\\Admin\\CreateReturn', order=this.getOrder()) }}
+  {% endform %}
+</div>

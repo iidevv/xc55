@@ -1,0 +1,7 @@
+Version 5.5.0.12
+
+Fixes (3)
+2023-09-28 - [Bug] PayPal Checkout was working incorrectly for One Page Checkout. Fixed. #XCB-2734 #CDev-Paypal #XC-CrispWhiteSkin
+2023-09-28 - [Bug] Improved callback reception blocking before receiving the return. #XCB-2726 #CDev-Paypal
+2023-09-27 - [Bug] In the event of receiving an IPN request from PayPal, a message is displayed for 10 days on the payment method configuration page, indicating the need to disable IPN requests. The request processing is not executed in this case. #XCB-2723 #CDev-Paypal
+

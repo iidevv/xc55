@@ -1,0 +1,43 @@
+{##
+ # Subcategories list
+#}
+
+{% set subCategories = this.getSubcategories() %}
+
+{% if subCategories %}
+  <ul class="subcategory__items">
+    {% for subcategory in subCategories %}
+      <li class="subcategory__item">
+        <div class="subcategory__icon">
+          <span class="subcategory__icon_wrapper">
+            {{ widget('XLite\\View\\Image', lazyLoad=true, image=subcategory.image, maxWidth=this.getIconWidth(), maxHeight=this.getIconHeight(), centerImage='1', alt=this.getAlt(subcategory.image)) }}
+          </span>
+        </div>
+
+        <div class="subcategory__info">
+          <span class="subcategory__name">{{ subcategory.name }}</span>
+          <a class="subcategory__link" href="{{ xurl('educational_videos', '', {'category_id': subcategory.category_id}) }}">
+            {{ t('SkinActVideoFeature view all') }}
+          </a>
+
+          {% if this.isSubcategoryHasChild(subcategory) %}
+
+            {% set subcategoryTree = subcategory.subcategories %}
+
+            <ul class="child__block">
+              {% for child in subcategoryTree %}
+                <li class="child__item">
+                  <a class="child__link" href="{{ xurl('educational_videos', '', {'category_id': child.category_id}) }}">
+                    {{ child.name }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+
+        {{ widget('\\Qualiteam\\SkinActVideoFeature\\View\\Videos', videos=subcategory.getCategoryEnabledVideos()) }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

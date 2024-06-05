@@ -1,0 +1,10 @@
+{##
+ # Payment methods list : line : row
+ #
+ # @ListChild (list="payment.predefined-methods.list.line", weight=200)
+ #}
+
+<div class="actions">
+  {{ widget_list(this.getPredefinedMethodsActionsListName(this.method), type='nested') }}
+  {{ widget_list('payment.predefined-methods.list.line.actions', method=this.method) }}
+</div>

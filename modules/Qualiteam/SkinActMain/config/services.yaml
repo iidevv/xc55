@@ -1,0 +1,10 @@
+services:
+  # common services
+  myxcart.logger: '@monolog.logger'
+
+
+  Qualiteam\SkinActMain\Core\EventListener:
+    arguments:
+      $moduleManagerDomain: '@XCart\Domain\ModuleManagerDomain'
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation, method: onCollectViewListMutations }

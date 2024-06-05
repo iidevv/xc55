@@ -1,0 +1,17 @@
+<div class="verified-customer">
+    {% if this.isVerified() %}
+
+        <i class="fa fa-check icon"></i>
+        <span class="vc-mark">{{ t('SkinActVerifiedCustomer Verified customer') }}</span>
+{#        <input class="verified-customer-value hidden" type="text" name="verifiedCustomer[{{ this.getOrderId() }}]" value="1">#}
+
+    {% else %}
+
+        <label data-vc-profile-id="{{ this.getProfileId() }}" class="vc-label {{ this.getVerifiedCheckboxVisible() }}">
+            <input data-vc-profile-id="{{ this.getProfileId() }}" class="verified-customer-checkbox" type="checkbox">
+            <input data-vc-profile-id="{{ this.getProfileId() }}" class="verified-customer-value hidden" type="text" name="verifiedCustomer[{{ this.getOrderId() }}]" value="0">
+            {{ t('SkinActVerifiedCustomer Verified') }}
+        </label>
+
+    {% endif %}
+</div>

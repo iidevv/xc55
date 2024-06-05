@@ -1,0 +1,14 @@
+{##
+ # Extra coupons and discounts link
+ #
+ # @ListChild (list="slidebar.navbar.account", weight="35")
+#}
+
+{% if this.isLogged() %}
+  <li>
+    <a class="icon-font" href="{{ xurl('extra_coupons_and_discounts', '') }}">
+      {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon="i-coupon", class='') }}
+      <span>{{ t('SkinActExtraCouponsAndDiscounts extra coupons and discounts') }}</span>
+    </a>
+  </li>
+{% endif %}

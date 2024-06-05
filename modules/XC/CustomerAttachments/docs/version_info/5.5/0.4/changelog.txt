@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2023-09-11 - [Bug] "Force customer to choose product options before adding a product to cart" was working incorrectly with Customer Attachments. Fixed. #XCB-2394 #XC-CustomerAttachments
+

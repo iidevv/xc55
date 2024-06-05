@@ -1,0 +1,64 @@
+/**
+ * Tooltips styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.tooltip-main {
+  cursor: default;
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+
+  .tooltip-title {
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+  }
+
+  .tooltip-caption {
+    font-size: @font-size-base;
+    color: @color-link;
+
+    &.warning-icon {
+      color: @brand-warning;
+    }
+  }
+
+  i {
+    color: @color-link;
+    display: block;
+    width: @rhythmic-unit;
+    height: @rhythmic-unit;
+    background: url("../../images/icons/info-outline.svg") no-repeat center center;
+    background-size: contain;
+    position: relative;
+    top: -2px;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &:hover i {
+    color: @color-link-2;
+  }
+}
+
+.icon-tooltip {
+  display: inline-block;
+  cursor: default;
+}
+
+.tooltip-arrow {
+  display: none;
+}
+
+.tooltip-inner {
+  padding: @tooltip-padding;
+  border: none;
+  box-shadow: @tooltip-shadow;
+
+  .word-break();
+}

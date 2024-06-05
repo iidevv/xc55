@@ -1,0 +1,11 @@
+{# #
+ # Review block
+ #
+ # @ListChild (list="reviews.review", weight="301")
+#}
+
+{% if this.isAdditionalFieldVisible('display_advantages_field') and this.get('review').getAdvantages() %}
+    <div class="text sa-cr-advantages">
+        <b>{{ t('SkinActCustomerReviews Review advantages') }}:</b> {{ this.get('review').getAdvantages()|nl2br }}
+    </div>
+{% endif %}

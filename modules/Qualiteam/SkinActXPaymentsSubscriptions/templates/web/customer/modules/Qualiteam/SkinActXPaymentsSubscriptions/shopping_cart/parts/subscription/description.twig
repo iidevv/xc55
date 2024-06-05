@@ -1,0 +1,10 @@
+{##
+ # Product market price
+ #
+ #
+ # @ListChild (list="cart.item.info.subscription", weight="300")
+ #}
+
+<div class="text">
+  <span>{{ this.subscription.getPlanDescription() }} ({{ this.formatDate(this.subscription.getNextDate()) }})</span>
+</div>

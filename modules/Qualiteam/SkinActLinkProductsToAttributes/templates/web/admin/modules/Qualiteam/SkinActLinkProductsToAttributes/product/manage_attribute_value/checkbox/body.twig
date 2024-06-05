@@ -1,0 +1,21 @@
+{##
+ # Attribute value (Text)
+ #}
+
+<div class="{{ this.getStyle() }}">
+  {% include 'product/manage_attribute_value/multiple_options.twig' %}
+  <div class="single-option">
+    {{ widget(this.getWidgetClass(), fieldName=this.getName(), fieldOnly='true', value=this.getSelectValue()) }}
+  </div>
+  <ul class="multiple-options">
+    {% for id, attributeValue in this.getAttrValues() %}
+      <li class="clearfix line value">
+        <div class="value">
+          {{ widget('\\XLite\\View\\FormField\\Input\\Text', fieldOnly='true', value=this.getLabel(id), attributes={'readonly': 'readonly'}, wrapperClass='attribute-value-checkbox') }}
+          {% include 'product/manage_attribute_value/modifiers.twig' %}
+          {{ widget_list('product.attribute.values.checkbox.after', attribute=this.getAttribute(), attributeValue=attributeValue, value_id=id ) }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

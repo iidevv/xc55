@@ -1,0 +1,46 @@
+/**
+ * Authentication page
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+@import (reference) "../css/initialize";
+
+.login-box-wrapper {
+  min-height: ~"calc(100vh - 130px - 87px)";
+  .vertical-middle-box();
+
+  .login-box {
+    padding-top: 0.5 * @rhythmic-unit;
+
+    .xcart-form-id-value {
+      display: none;
+    }
+
+    table {
+      margin: 0 auto @rhythmic-unit;
+    }
+
+    &.locked button.submit,
+    &.locked tbody.fields,
+    h2.timer-header,
+    #login_form li.timer,
+    &.locked h2 {
+      display: none;
+    }
+
+    &.locked h2.timer-header {
+      display: block;
+    }
+
+    &.locked #login_form li.timer {
+      display: block;
+    }
+  }
+
+  .additional-note {
+    display: inline-block;
+    margin-top: 0.5 * @rhythmic-unit;
+  }
+}

@@ -1,0 +1,25 @@
+Version 5.5.0.6
+
+Improvements (2)
+2022-11-28 - [Story] Refactoring of older console commands. #ECOM-2410 #CDev-Core #QSL-Banner
+2022-11-23 - [Story] Changed the design of the "Add Offline Payment Method" page. Added a new field. #ECOM-391 #CDev-Core
+
+Fixes (17)
+2022-11-30 - [Bug] Fixed some minor defects for the "Manage catalog" permission. #XCB-1922 #CDev-Core
+2022-12-01 - [Bug] Rebuild step 12 was taking too long to execute. Fixed. #XCB-1917 #CDev-Core
+2022-11-28 - [Bug] Mistypes in the text of the console command xcst:rebuild. Fixed. #XCB-1915 #CDev-Core
+2022-12-01 - [Bug]  Incorrect information on target=map. Fixed. #XCB-1913 #CDev-Core #CDev-SimpleCMS #XC-Sitemap
+2022-11-28 - [Bug] It was impossible to enable/disable incompatible add-ons at the same time. Fixed. #XCB-1911 #CDev-Core
+2022-12-01 - [Bug] An incorrect value was shown in the "Maximum value is" message in the cart if the product had been added to the cart in a number that was more than the currently available quantity in stock. Fixed.  #XCB-1903 #CDev-Core #QSL-Backorder #XC-ProductVariants
+2022-11-28 - [Bug] Custom CSS was not working without a cache rebuild. Fixed. #XCB-1900 #CDev-Core #XC-ThemeTweaker
+2022-11-21 - [Bug] It was not possible to install an add-on from market.x-cart.com. Fixed. #XCB-1896 #CDev-Core
+2022-11-29 - [Bug] "Uncaught TypeError: Cannot read properties of undefined (reading 'split')" error on the Primary Menu page. Fixed. #XCB-1893 #CDev-Core #CDev-SimpleCMS
+2022-11-28 - [Bug] A console.CRITICAL error in logs after installing from a distribution pack. Fixed. #XCB-1889 #CDev-Core
+2022-11-23 - [Bug] Removed the Product Requests menu item for the "Manage conversations" permission. Added a permissions check for the Messages tab in АОМ. #XCB-1885 #CDev-Core #CDev-USPS #CDev-PINCodes #CDev-Egoods #QSL-BackInStock #QSL-Returns #XC-VendorMessages #XC-CanadaPost
+2022-11-23 - [Bug] The "Manage Import" and "Manage Export" permissions were working incorrectly. Fixed. #XCB-1879 #CDev-Core #XC-UpdateInventory
+2022-11-28 - [Bug] The "Manage administrators" permission was working incorrectly. Fixed. #XCB-1876 #CDev-Core #CDev-UserPermissions #QSL-MyWishlist #XC-MultiVendor
+2022-11-24 - [Bug] Removed extra permissions for the "Manage users" permission. #XCB-1874 #CDev-Core #CDev-UserPermissions #XC-MultiVendor
+2022-11-24 - [Bug] The "Manage frontpage" permission was working incorrectly. Fixed. #XCB-1873 #CDev-Core #CDev-SimpleCMS #CDev-FeaturedProducts
+2022-11-28 - [Bug] The "Manage catalog" permission was working incorrectly. Fixed. #XCB-1872 #CDev-Core #CDev-FeaturedProducts #QSL-BackInStock #QSL-Backorder #XC-UpdateInventory
+2022-12-01 - [Bug] Table entries got duplicated in the service_data table. Fixed. #XCB-1837 #CDev-Core
+

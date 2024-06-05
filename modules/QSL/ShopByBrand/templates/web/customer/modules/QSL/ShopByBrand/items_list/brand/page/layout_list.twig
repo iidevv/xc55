@@ -1,0 +1,25 @@
+{##
+ # Brand
+ #}
+
+<div class="{{ this.getWrapperClass() }}">
+    <ul class="all-brands all-brands-columns-{{ this.getColumnsCount() }}">
+        {% for rowIndex, _row in this.getBrandRows() %}{% for columnIndex, _brand in _row %}<li class="{{ this.getRowCSSClass(rowIndex) }} {{ this.getColumnCSSClass(rowIndex, columnIndex) }}" style="{{ this.getItemInlineStyle() }}">
+                {% if _brand %}
+            <div class="all-brands-brand">
+                <a href="{{ xurl('brand', '', {'brand_id': _brand.0.brand_id}) }}" class="all-brands-brand-link" title="{{ t('Brand (products: N)', {'brand': _brand.0.getName(), 'count': _brand.productCount}) }}">
+              <span class="all-brands-brand-image">
+                {% if _brand.0.hasImage() %}
+                  {{ widget('\\XLite\\View\\Image', image=_brand.0.getImage(), maxWidth=this.getLogoWidth(), maxHeight=this.getLogoHeight(), centerImage='1', verticalAlign='middle', alt=_brand.0.getName()) }}
+                {% endif %}
+                {% if not _brand.0.hasImage() %}
+                  <img src="{{ asset('images/no_image.png') }}" width="{{ this.getLogoWidth() }}" height="{{ this.getLogoHeight() }}" alt="{{ _brand.0.getName() }}" />
+                {% endif %}
+              </span>
+                    <span class="all-brands-brand-name">{{ _brand.0.getName() }}{% if this.isProductCountVisible() %}<span class="product-count"> ({{ _brand.productCount }})</span>{% endif %}</span>
+                </a>
+            </div>
+                {% endif %}
+        </li>{% endfor %}{% endfor %}
+    </ul>
+</div>

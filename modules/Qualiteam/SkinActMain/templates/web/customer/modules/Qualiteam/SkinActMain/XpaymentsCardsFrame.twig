@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ this.currentLanguage.getCode() }}"{% for k, v in this.getHTMLAttributes() %} {{ k }}="{{ v }}"{% endfor %}>
+{{ widget('\\XLite\\View\\Header') }}
+<body>
+
+{% do this.displayCommentedData(this.getCommonJSData()) %}
+
+{% include 'modules/XPay/XPaymentsCloud/account/xpayments_cards.twig' %}
+
+
+{{ widget('\\XLite\\View\\JSContainer') }}
+</body>
+</html>

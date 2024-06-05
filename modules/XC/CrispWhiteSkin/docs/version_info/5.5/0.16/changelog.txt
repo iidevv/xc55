@@ -1,0 +1,5 @@
+Version 5.5.0.16
+
+Fixes (1)
+2023-10-28 - [Bug] The Price countdown add-on was displaying the counter incorrectly in the sidebar mode. Fixed. #XCB-2752 #QSL-PriceCountdown #XC-CrispWhiteSkin
+

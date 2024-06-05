@@ -1,0 +1,21 @@
+{##
+ # Reward points a customer will earn for the order.
+ #
+ # @ListChild (list="cart.panel.totals", weight="32")
+ #}
+{% if this.get('cart').getCalculatedRewardPoints() %}
+  <li class="reward-points order-modifier">
+    <div>
+      {% if this.get('cart').isUserInLoyaltyProgram() %}
+        <strong>{{ t('You will earn') }}: </strong>
+      {% endif %}
+      {% if not this.get('cart').isUserInLoyaltyProgram() %}
+        <strong>{{ t('You can earn') }}<sup>*</sup> </strong>
+      {% endif %}
+      <span class="cart-reward-points">{{ t('X points', {'points': this.get('cart').getCalculatedRewardPoints()}) }}</span>
+    </div>
+    {% if not this.get('cart').isUserInLoyaltyProgram() %}
+      <div class="reward-points-earn-note">{{ t('To earn reward points and cash them in for discounts on future orders please create an account during checkout.') }}</div>
+    {% endif %}
+  </li>
+{% endif %}

@@ -1,0 +1,36 @@
+{##
+ # Item name cell
+ #}
+
+<div class="item-image-container">
+  <div class="item-image">
+    {% if this.entity.displayOrderItem and this.entity.displayOrderItem.hasImage() %}
+      <img src="{{ this.entity.displayOrderItem.getImageURL() }}" alt="{{ this.getColumnValue(this.column, this.entity.displayOrderItem) }}">
+    {% endif %}
+  </div>
+</div>
+<div class="item-info">
+  <div class="item-name">
+    {% if this.entity.displayOrderItem %}
+      {% if this.entity.displayOrderItem.getURL() %}
+        <a href="{{ this.entity.displayOrderItem.getURL() }}" class="item-name" target="_blank">{{ this.getColumnValue(this.column, this.entity.getDisplayOrderItem()) }}</a>
+      {% endif %}
+      {% if not this.entity.displayOrderItem.getURL() %}
+        <span class="item-name">{{ this.getColumnValue(this.column, this.entity.getDisplayOrderItem()) }}</span>
+      {% endif %}
+    {% else %}
+      <span class="item-name">{{ t('n/a') }}</span>
+    {% endif %}
+  </div>
+
+  {% apply spaceless %}
+  <ul class="subitem additional simple-list">
+    <li>pre-SKU item</li>
+    {{ widget_list('invoice.item.name', item=this.entity.getDisplayOrderItem(), displayVariative='1') }}
+  </ul>
+  {% endapply %}
+
+  {% if not this.isStatic() %}
+    {{ widget('\\XLite\\View\\OrderItemAttributes', orderItem=this.entity.getDisplayOrderItem()) }}
+  {% endif %}
+</div>

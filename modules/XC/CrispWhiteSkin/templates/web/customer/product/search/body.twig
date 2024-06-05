@@ -1,0 +1,30 @@
+{##
+ # Product search form template
+ #}
+
+<div class="search-product-form">
+
+  {% form 'XLite\\View\\Form\\Product\\Search\\Customer\\Main' %}
+
+  <div class="search-form">
+
+    <table class="search-form-main-part">
+
+      <tr>
+        {{ widget_list('products.search.conditions.substring') }}
+      </tr>
+
+      <tr class="including-options-list">
+        {{ widget_list('products.search.conditions.options_list_box') }}
+      </tr>
+    </table>
+
+    {{ widget_list('products.search.conditions.tail') }}
+
+  </div>
+
+  {% endform %}
+
+</div>
+
+{{ widget('XLite\\View\\ItemsList\\Product\\Customer\\Search') }}

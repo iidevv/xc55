@@ -1,0 +1,8 @@
+{##
+ # Edit video link
+#}
+{% if this.getProductId() %}
+  {{ widget('Qualiteam\\SkinActVideoTour\\View\\Button\\Admin\\EditVideoTour', {id: this.entity.getId(), target_product_id: this.getProductId(), 'icon-style': 'fa fa-edit icon'}) }}
+{% else %}
+  {{ widget('Qualiteam\\SkinActVideoTour\\View\\Button\\Admin\\EditVideoTour', {id: this.entity.getId(), 'icon-style': 'fa fa-edit icon'}) }}
+{% endif %}

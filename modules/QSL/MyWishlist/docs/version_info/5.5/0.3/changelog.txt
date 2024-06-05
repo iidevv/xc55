@@ -1,0 +1,6 @@
+Version 5.5.0.3
+
+Fixes (2)
+2022-11-24 - [Bug] The "Manage vendor's shipping settings" permission was working incorrectly. Fixed. #XCB-1887 #QSL-MyWishlist #XC-MultiVendor
+2022-11-28 - [Bug] The "Manage administrators" permission was working incorrectly. Fixed. #XCB-1876 #CDev-Core #CDev-UserPermissions #QSL-MyWishlist #XC-MultiVendor
+

@@ -1,0 +1,9 @@
+{##
+ # Buy with wallet price update helper widget container
+ #
+ # @ListChild (list="product.details.page.info.form.buttons-added.cart-buttons", zone="customer", weight="124")
+ # @ListChild (list="product.details.quicklook.info.form.buttons-added.cart-buttons", zone="customer", weight="124")
+ # @ListChild (list="product.details.page.info.form.buttons.cart-buttons", zone="customer", weight="124")
+ # @ListChild (list="product.details.quicklook.info.form.buttons.cart-buttons", zone="customer", weight="124")
+ #}
+{{ widget('\\XPay\\XPaymentsCloud\\View\\Product\\BuyWithWalletPriceUpdate', product=this.product) }}

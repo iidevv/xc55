@@ -1,0 +1,159 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActPinterestFeed pinterest", translations: [{ code: en, label: "Pinterest" }] }
+
+QSL\ProductFeeds\Model\ProductFeed:
+  - name: Pinterest
+    type: 'csv'
+    generatorClass: Qualiteam\SkinActPinterestFeed\Logic\FeedGenerator\Pinterest
+    orderBy: 150
+    enabled: 1
+    filename: 'pinterest.csv'
+    path: ''
+    tempPath: ''
+
+XLite\Model\Config:
+  - name: pinterest_feed_contents
+    category: QSL\ProductFeeds\Pinterest
+    type: separator
+    orderby: 500
+    translations:
+      - code: en
+        option_name: Feed contents
+  - name: pinterest_skip_disabled
+    category: QSL\ProductFeeds\Pinterest
+    type: checkbox
+    orderby: 510
+    value: 1
+    translations:
+      - code: en
+        option_name: Skip disabled products
+        option_comment: Exclude disabled products from the product feed.
+  - name: pinterest_skip_out_of_stock
+    category: QSL\ProductFeeds\Pinterest
+    type: checkbox
+    orderby: 520
+    value: 0
+    translations:
+      - code: en
+        option_name: Skip out-of-stock products
+        option_comment: Exclude out-of-stock products from the product feed.
+  - name: pinterest_skip_no_category
+    category: QSL\ProductFeeds\Pinterest
+    type: checkbox
+    orderby: 530
+    value: 0
+    translations:
+      - code: en
+        option_name: Skip products without Pinterest category
+        option_comment: Exclude products without Pinterest categories from the product feed.
+  - name: pinterest_structure
+    category: QSL\ProductFeeds\Pinterest
+    type: separator
+    orderby: 1000
+    translations:
+      - code: en
+        option_name: Feed structure
+  - name: pinterest_feed_name
+    category: QSL\ProductFeeds\Pinterest
+    type: text
+    orderby: 1510
+    value: "pinterest.csv"
+    translations:
+      - code: en
+        option_name: Feed file name
+  - name: pinterest_refresh_rate
+    category: QSL\ProductFeeds\Pinterest
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 0 }
+    orderby: 1520
+    value: 0
+    translations:
+      - code: en
+        option_name: Automatic refresh rate (in hours)
+        option_comment: "Specify the minimum number of hours that the module must wait after updating a feed before updating it automatically once again. To disable the automatic update set this setting to zero. If you enable this option, make sure that your server is configured  to run scheduled X-Cart tasks as described at https://support.x-cart.com/en/articles/5214038-scheduled-x-cart-tasks."
+  - name: pinterest_column_mapping
+    category: QSL\ProductFeeds\Pinterest
+    type: separator
+    orderby: 2000
+    translations:
+      - code: en
+        option_name: Column mapping
+  - name: pinterest_brand_field
+    category: QSL\ProductFeeds\Pinterest
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 2030
+    value: ""
+    translations:
+      - code: en
+        option_name: Brand column
+  - name: pinterest_gtin_field
+    category: QSL\ProductFeeds\Pinterest
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 2040
+    value: ""
+    translations:
+      - code: en
+        option_name: GTIN column
+  - name: pinterest_mpn_field
+    category: QSL\ProductFeeds\Pinterest
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 2050
+    value: ""
+    translations:
+      - code: en
+        option_name: MPN column
+  - name: pinterest_gender_field
+    category: QSL\ProductFeeds\Pinterest
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 2060
+    value: ""
+    translations:
+      - code: en
+        option_name: Gender column
+  - name: pinterest_age_field
+    category: QSL\ProductFeeds\Pinterest
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 2070
+    value: ""
+    translations:
+      - code: en
+        option_name: Age Group column
+  - name: pinterest_color_field
+    category: QSL\ProductFeeds\Pinterest
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 2080
+    value: ""
+    translations:
+      - code: en
+        option_name: Color column
+  - name: pinterest_material_field
+    category: QSL\ProductFeeds\Pinterest
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 2090
+    value: ""
+    translations:
+      - code: en
+        option_name: Material column
+  - name: pinterest_size_field
+    category: QSL\ProductFeeds\Pinterest
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 2100
+    value: ""
+    translations:
+      - code: en
+        option_name: Size column
+  - name: pinterest_pattern_field
+    category: QSL\ProductFeeds\Pinterest
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 2110
+    value: ""
+    translations:
+      - code: en
+        option_name: Pattern column

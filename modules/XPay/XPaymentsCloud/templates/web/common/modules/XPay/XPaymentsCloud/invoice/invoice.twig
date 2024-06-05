@@ -1,0 +1,15 @@
+{##
+ # X-Payments cards on the invoice
+ #
+ # @ListChild (list="invoice.bottom.method.payment", weight="30")
+ #}
+{% if this.order.getXpaymentsCards() and this.isXpaymentsCardInfoVisible() %}
+    <div class="xpayments-card-box">
+      {% for card in this.order.getXpaymentsCards() %}
+          <div class="xpayments-card-item">{{ t('Used Card') }}: {{ widget('\\XPay\\XPaymentsCloud\\View\\Card', plainText=true, card=card, compact=true) }}</div>
+      {% endfor %}
+    </div>
+{% endif %}
+<div class="method-box">
+    <div class="sub-data"></div>
+</div>

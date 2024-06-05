@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ this.currentLanguage.getCode() }}"{% for k, v in this.getHTMLAttributes() %} {{ k }}="{{ v }}"{% endfor %}>
+{{ widget('\\XLite\\View\\Header') }}
+<body>
+
+{% do this.displayCommentedData(this.getCommonJSData()) %}
+
+{% include 'modules/Qualiteam/SkinActXPaymentsConnector/account/add_new_card.twig' %}
+
+
+
+{{ widget('\\XLite\\View\\JSContainer') }}
+
+<script>
+    $(function () {
+        initXpcIframe();
+    })
+</script>
+</body>
+</html>

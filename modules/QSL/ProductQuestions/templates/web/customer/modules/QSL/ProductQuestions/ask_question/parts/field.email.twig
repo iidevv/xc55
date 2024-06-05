@@ -1,0 +1,6 @@
+{##
+ # @ListChild (list="question.ask.fields", weight="300")
+ #}
+<li class="input input-text floating-label label-email">
+  {{ widget('XLite\\View\\FormField\\Input\\Text\\Email', fieldName='email', placeholder=t('Email address'), value=this.getQuestion().email, label=t('Your email'), help=t('A copy of the answer will be sent to this email address. You do not have to complete this field.')) }}
+</li>

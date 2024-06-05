@@ -1,0 +1,5 @@
+Version 5.5.0.11
+
+Fixes (1)
+2023-08-29 - [Bug] On the storefront, if an unavailable variant is selected, a switch to the next available variant in made.   #XCB-2686 #XC-ProductVariants
+

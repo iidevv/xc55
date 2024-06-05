@@ -1,0 +1,21 @@
+{##
+ # Attribute value (block) unavailable tooltip
+ #}
+ 
+{% if not option.isVariantAvailable() and isAffectingAttribute %}
+  <div class="unavailable-tooltip{% if option.isVariantOutOfStock() %} out-of-stock-tooltip{% endif %}">
+    <div class="text">
+      {% if option.isVariantOutOfStock() %}
+      {{ t('Out of stock') }}
+      {% else %}
+      {{ t('This combination is not available') }}
+      {% endif %}
+    </div>
+  </div>
+{% elseif option.isVariantStockWarning() %}
+  <div class="unavailable-tooltip">
+    <div class="text">
+      {{ t('Only X left in stock', {'X': option.getAvailableAmount()}) }}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,60 @@
+{#
+# Layout editor show hidden blocks button
+#
+# @ListChild (list="layout_editor.sidebar", weight="200")
+#}
+
+<xlite-layout-groups inline-template :preset="preset" groups-preset="{{ this.getGroupsLayoutPreset() }}">
+    <div class='layout-editor-layout-groups'>
+        <div class="options-layout-group"
+             :class="{ tail: (group.header === '') }"
+             v-for="(group, group_index) in layoutGroups">
+            <div class="options-layout-header sidebar-header" v-if="group.header !== ''">
+                <span class="group-icon" :class="getGroupIconClass(group)"></span>
+                <span v-text="group.header"></span>
+                <span class="hidden-items-link" @click="hiddenItemsLinkHandler($event)"></span>
+            </div>
+            <template v-for="mode in [1,2]">
+                <div class="group-items" :class="mode & 2 ? 'movable-group' : 'hidden-group hidden'"
+                     :data-list="group.list">
+                    <div class="group-item" :class="item.button_class ? item.button_class : ''"
+                         v-for="item in getGroupItems(group, mode)"
+                         @mouseenter="itemMouseenterHandler(item, $event)"
+                         @mouseleave="itemMouseleaveHandler(item, $event)"
+                         @click="itemClickHandler(item, 'layoutGroups', group_index, $event)"
+                         :data-id="item.id">
+                        <div class="group-item-header" data-toggle="collapse"
+                             :data-target="'#group-item-body' + item.id"
+                             :href="'#group-item-body' + item.id" :role="item.has_body ? 'button' : ''"
+                             aria-expanded="false">
+              <span v-if="item.is_movable"
+                    class="themetweaker-panel-move"></span>
+                            <span v-if="item.is_button"
+                                  class="themetweaker-panel-add"></span>
+                            <span class="main-text" v-text="item.name"></span>
+                            <div class="right-actions">
+                <span v-if="item.help"
+                      data-placement="top"
+                      :title="item.help"
+                      data-html="true"
+                      class="themetweaker-panel-tooltip"></span>
+                                <span v-if="item.settings_link"
+                                      @click="goAdminSettingsPage(item.settings_link, $event)"
+                                      class="themetweaker-panel-settings"></span>
+                                <span v-if="item.is_removable"
+                                      @click="removeSwitcherHandler(item, $event)"
+                                      class="themetweaker-panel-trash"></span>
+                                <span v-if="item.can_hide"
+                                      class="themetweaker-panel-hide-switcher"
+                                      @click="hideSwitcherHandler(item, $event)"
+                                      :class="item.is_hidden ? 'layout-item-hidden' : 'layout-item-visible'"></span>
+                            </div>
+                        </div>
+                        <component :is="'xlite-layout-banner' + item.bodyEntityId" v-if="item.has_body"
+                                   :id="'group-item-body' + item.id" class="bs-accordion-body collapse"></component>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</xlite-layout-groups>

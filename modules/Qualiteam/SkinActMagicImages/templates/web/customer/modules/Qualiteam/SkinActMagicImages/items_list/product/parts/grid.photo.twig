@@ -1,0 +1,11 @@
+{##
+ # Products list (list variant)
+ #}
+
+<div class="product-photo">
+  {% if this.product.hasMagicSwatchesSet() %}
+    {{ widget('\\Qualiteam\\SkinActMagicImages\\View\\Product\\Details\\Customer\\Magic360', product=this.product) }}
+  {% else %}
+    {{ widget_list('photo', type='nested', product=this.product) }}
+  {% endif %}
+</div>

@@ -1,0 +1,200 @@
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: 'Active modules', translations: [ { code: en, label: 'Active modules' }, { code: ru, label: 'Активные модули' } ] }
+  - { name: 'Add this IP to the list of Access Hosts', translations: [ { code: en, label: 'For that add this IP address to the list of Access Hosts using cPanel <a href="https://docs.cpanel.net/cpanel/databases/remote-mysql/" target="_blank">Remote MySQL®</a> feature.' }, { code: ru, label: 'Для этого добавьте этот IP адрес в список Access Hosts, используя функцию cPanel <a href="https://docs.cpanel.net/cpanel/databases/remote-mysql/" target="_blank">Remote MySQL®</a>' } ] }
+  - { name: 'Advanced options', translations: [ { code: en, label: 'Advanced options' }, { code: ru, label: 'Расширенные настройки' } ] }
+  - { name: 'Cannot find the following addons in the marketplace', translations: [ { code: en, label: 'Cannot find the following addons in the marketplace:<br />{{modules_list}}' }, { code: ru, label: 'Не получается найти следующие модули в маркетплейсе:<br />{{modules_list}}' } ] }
+  - { name: 'Categories migrated', translations: [ { code: en, label: 'Categories migrated' }, { code: ru, label: 'Категорий перенесено' } ] }
+  - { name: 'Customer membership levels', translations: [ { code: en, label: 'Customer membership levels' }, { code: ru, label: 'Группы пользователей' } ] }
+  - { name: 'Data migration', translations: [ { code: en, label: 'Data migration' }, { code: ru, label: 'Миграция данных' } ] }
+  - { name: 'Database name', translations: [ { code: en, label: 'Database name' }, { code: ru, label: 'Название базы данных' } ] }
+  - { name: 'Database password', translations: [ { code: en, label: 'Database password' }, { code: ru, label: 'Пароль' } ] }
+  - { name: 'Database username', translations: [ { code: en, label: 'Database username' }, { code: ru, label: 'Имя пользователя' } ] }
+  - { name: 'Demo migration help', translations: [ { code: en, label: 'In the Demo migration mode, just a few products/users/orders will be migrated.' }, { code: ru, label: 'В демо режиме будут перенесены только несколько продуктов/пользователей/заказов' } ] }
+  - { name: 'Demo migration', translations: [ { code: en, label: 'Demo migration' }, { code: ru, label: 'Демо миграция' } ] }
+  - { name: 'Destination zones', translations: [ { code: en, label: 'Destination zones' }, { code: ru, label: 'Зоны доставки' } ] }
+  - { name: 'Disable modules and continue', translations: [ { code: en, label: 'Disable modules and continue' }, { code: ru, label: 'Выключить модули и продолжить' } ] }
+  - { name: 'Egoods', translations: [ { code: en, label: 'E-goods' }, { code: ru, label: 'Скачиваемые товары' } ] }
+  - { name: 'Enable and continue', translations: [ { code: en, label: 'Enable and run Migration Wizard again' }, { code: ru, label: 'Включить и снова запустите мастер' } ] }
+  - { name: 'Encryption key', translations: [ { code: en, label: 'Blowfish key' }, { code: ru, label: 'Ключ шифрования' } ] }
+  - { name: 'Entity', translations: [ { code: en, label: 'Entity' }, { code: ru, label: 'Сущность' } ] }
+  - { name: 'Extra fields', translations: [ { code: en, label: 'Extra fields' }, { code: ru, label: 'Дополнительные поля' } ] }
+  - { name: 'Features', translations: [ { code: en, label: 'Features' }, { code: ru, label: 'Сравнительные характеристики' } ] }
+  - { name: 'Host name', translations: [ { code: en, label: 'X-Cart 4 Host name' }, { code: ru, label: 'X-Cart 4 Хост' } ] }
+  - { name: 'I confirm, migration to X-Cart', translations: [ { code: en, label: 'I understand, that all data will be rewritten during the migration process' }, { code: ru, label: 'Я понимаю, что все данные будут перезаписаны в процессе миграции.' } ] }
+  - { name: 'If you encounter any problems please report them via the Bugtracker.', translations: [ { code: en, label: 'If you encounter any problems please report them via <a href="https://bt.x-cart.com/" target="_blank">the Bugtracker</a>.' }, { code: ru, label: 'Если у вас возникли проблемы в процессе миграции, пожалуйста сообщите нам используя <a href="https://bt.x-cart.com/" target="_blank">Bugtracker</a>.' } ] }
+  - { name: 'Images removed', translations: [ { code: en, label: 'Images removed' }, { code: ru, label: 'Дубликаты удалены' } ] }
+  - { name: 'Install and continue', translations: [ { code: en, label: 'Install and run Migration Wizard again' }, { code: ru, label: 'Установите и снова запустите мастер' } ] }
+  - { name: 'It will guide you throuh the migration process and help transfer your existing data to X-Cart 5', translations: [ { code: en, label: 'It will guide you throuh the migration process and help transfer your existing data to X-Cart 5.' }, { code: ru, label: 'Он предназначен упрощения миграции данных уже существующего магазина в X-Cart 5.' } ] }
+  - { name: 'Local', translations: [ { code: en, label: 'local' }, { code: ru, label: 'локальный' } ] }
+  - { name: 'Manufacturers', translations: [ { code: en, label: 'Manufacturers' }, { code: ru, label: 'Производители' } ] }
+  - { name: 'Memberships migrated', translations: [ { code: en, label: 'Memberships migrated' }, { code: ru, label: 'Групп пользователей перенесено' } ] }
+  - { name: 'Migrate orders from date', translations: [ { code: en, label: 'Migrate orders from date' }, { code: ru, label: 'Переносить заказы начиная с даты' } ] }
+  - { name: 'Migrating data', translations: [ { code: en, label: 'Migrating data...' }, { code: ru, label: 'Миграция данных...' } ] }
+  - { name: 'Migration has been finished', translations: [ { code: en, label: 'Congratulations!' }, { code: ru, label: 'Поздравляем!' } ] }
+  - { name: 'Migration wizard', translations: [ { code: en, label: 'Migration wizard' }, { code: ru, label: 'Мастер миграции' } ] }
+  - { name: 'Missing modules', translations: [ { code: en, label: '{{Action}} missing modules' }, { code: ru, label: '{{Action}} недостающие модули' } ] }
+  - { name: 'No selected data', translations: [ { code: en, label: 'No data has been selected for transfer. Please select proper data to transfer.' }, { code: ru, label: 'Данные для переноса не указаны. Пожалуйста выберите необходимые данные для переноса.' } ] }
+  - { name: 'Only the data with a complete and whole structure is guaranteed to be migrated successfully.', translations: [ { code: en, label: 'Only the data with a complete and whole structure is guaranteed to be migrated successfully. The integrity of your data structure can be checked using the Check database integrity tool (Tools -> Maintenance) in the X-Cart store Admin area.' }, { code: ru, label: 'Успешный перенос гарантируется только для данных, обладающих полной и целостной структурой. Целостность структуры ваших данных может быть проверена с использованием инструмента Check database integrity (Tools -> Maintenance) в интерфейсе администратора магазина X-Cart.' } ] }
+  - { name: 'Payments migrated', translations: [ { code: en, label: 'Payments migrated' }, { code: ru, label: 'Способов оплаты перенесено' } ] }
+  - { name: 'Payments', translations: [ { code: en, label: 'Payments' }, { code: ru, label: 'Оплата' } ] }
+  - { name: 'Platform', translations: [ { code: en, label: 'Platform' }, { code: ru, label: 'Платформа' } ] }
+  - { name: 'Please disable all unallowed modules', translations: [ { code: en, label: 'Please disable the following modules: {{list}}' }, { code: ru, label: 'Пожалуйста отключите следующие модули: {{list}}' } ] }
+  - { name: 'Please do not close this page until the operation is complete', translations: [ { code: en, label: 'Please do not close this page until the process is fully completed. If you have closed the page, please re-open it to complete the process as it is in progress only when the page is open.' }, { code: ru, label: 'Пожалуйста, не закрывайте страницу, пока процесс не завершится полностью. Если вы закрыли страницу, откройте ее снова, чтобы процесс завершился, т.к. он выполняется только при открытой странице. Если процесс занимает долгое время, вы получите уведомление, когда он завершится.' } ] } # TODO: refactor / remove
+  - { name: 'Please enter database connection information', translations: [ { code: en, label: 'Enter X-Cart 4 database connection information' }, { code: ru, label: 'Укажите параметры доступа к базе данных магазина X-Cart 4' } ] }
+  - { name: '2. Please enter database connection information', translations: [ { code: en, label: '2. Enter X-Cart 4 database connection information' }, { code: ru, label: '2. Укажите параметры доступа к базе данных магазина X-Cart 4' } ] }
+  - { name: 'Please make sure you have "suppress_errors = On" in the [log_details] section in your config.php file.', translations: [ { code: en, label: 'Please make sure you have "suppress_errors = On" in the [log_details] section in your config.php file.' }, { code: ru, label: 'Пожалуйста убедитесь в том, что вы у вас имеется строчка "suppress_errors = On" в [log_details] секции в вашем config.php файле' } ] }
+  - { name: 'Please make sure you have backed up all your data before you start the migration process', translations: [ { code: en, label: 'Please make sure you have backed up all your data before you start the migration process.' }, { code: ru, label: 'Пожалуйста убедитесь в том, что вы создали архивную копию всех данных перед запуском процесса миграции.' } ] }
+  - { name: 'Please open the storefront and ensure that the data has been transferred correctly.', translations: [ { code: en, label: 'Please open the storefront and ensure that the data has been transferred correctly.' }, { code: ru, label: 'Пожалуйста откройте магазин и убедитесь что данные перенесены корректно.' } ] }
+  - { name: 'Please remove data before migration', translations: [ { code: en, label: 'Please remove all data before starting the migration process. To clean up the data you can use a <a href="?target=remove_data" class="warning" target="_blank">Remove data</a> tool.' }, { code: ru, label: 'Пожалуйста удалите все данные перед запуском процесса миграции. Для очистки данных вы можете воспользоваться инструментом <a href="?target=remove_data" class="warning" target="_blank">Удаление данных</a>.' } ] }
+  - { name: 'Port number', translations: [ { code: en, label: 'Port number' }, { code: ru, label: 'Порт' } ] }
+  - { name: 'Products migrated', translations: [ { code: en, label: 'Products migrated' }, { code: ru, label: 'Товаров перенесено' } ] }
+  - { name: 'Ready to start migration', translations: [ { code: en, label: 'Ready to start data migration' }, { code: ru, label: 'Все готово для переноса данных' } ] }
+  - { name: 'Recommendations before start:', translations: [ { code: en, label: 'Recommendations before start:' }, { code: ru, label: 'Рекомендации перед началом' } ] }
+  - { name: 'Records checked: X out of Y', translations: [ { code: en, label: 'Records checked: {{X}} out of {{Y}}' }, { code: ru, label: 'Записей проверено: {{X}} из {{Y}}' } ] }
+  - { name: 'Records processed: X out of Y', translations: [ { code: en, label: 'Records processed: {{X}} out of {{Y}}' }, { code: ru, label: 'Записей обработано: {{X}} из {{Y}}' } ] }
+  - { name: 'Remote', translations: [ { code: en, label: 'remote' }, { code: ru, label: 'удаленный' } ] }
+  - { name: 'Removed duplicate images: X out of Y with errors', translations: [ { code: en, label: 'Images processed: {{X}} out of {{Y}} (errors: {{errors}}, warnings: {{warns}})' }, { code: ru, label: 'Картинок обработано: {{X}} из {{Y}} (ошибок: {{errors}}, предупреждений: {{warns}})' } ] }
+  - { name: 'Removed duplicate images: X out of Y', translations: [ { code: en, label: 'Images processed: {{X}} out of {{Y}}' }, { code: ru, label: 'Картинок обработано: {{X}} из {{Y}}' } ] }
+  - { name: 'Removed duplicate images: {{count}}', translations: [ { code: en, label: 'Removed duplicate images: {{count}}' }, { code: ru, label: 'Удалено дубликатов картинок: {{count}}' } ] }
+  - { name: 'Removing duplicate images...', translations: [ { code: en, label: 'Removing duplicate images...' }, { code: ru, label: 'Удаление дубликатов картинок...' } ] }
+  - { name: 'Restart', translations: [ { code: en, label: 'Restart wizard' }, { code: ru, label: 'Перезапустить мастер' } ] }
+  - { name: 'Save and continue', translations: [ { code: en, label: 'Save and continue' }, { code: ru, label: 'Сохранить и продолжить' } ] }
+  - { name: 'Settings migrated', translations: [ { code: en, label: 'Settings migrated' }, { code: ru, label: 'Настроек перенесено' } ] }
+  - { name: 'Shippings migrated', translations: [ { code: en, label: 'Shippings migrated' }, { code: ru, label: 'Способов доставки перенесено' } ] }
+  - { name: 'Shippings', translations: [ { code: en, label: 'Shippings' }, { code: ru, label: 'Доставка' } ] }
+  - { name: 'Site URL', translations: [ { code: en, label: 'Site URL' }, { code: ru, label: 'URL адрес сайта' } ] }
+  - { name: 'Skip images', translations: [ { code: en, label: 'Skip images' }, { code: ru, label: 'Не переносить картинки' } ] }
+  - { name: 'Skip previously migrated data help', translations: [ { code: en, label: 'Migrate only new data. Any data submitted for migration during the previous migration session will not be migrated again.' }, { code: ru, label: 'Переносить только новые данные. Данные предоставленные в предыдущей миграции будут пропущенны.' } ] }
+  - { name: 'Skip previously migrated data', translations: [ { code: en, label: 'Skip previously migrated data (if any)' }, { code: ru, label: 'Пропустить ранее перенесенные данные' } ] }
+  - { name: 'Socket', translations: [ { code: en, label: 'Socket' }, { code: ru, label: 'Сокет' } ] }
+  - { name: 'Source database', translations: [ { code: en, label: 'Source database' }, { code: ru, label: 'Исходная база данных' } ] }
+  - { name: 'Start migration', translations: [ { code: en, label: 'Start migration' }, { code: ru, label: 'Начать процесс миграции' } ] }
+  - { name: 'Step-Check', translations: [ { code: en, label: 'Check' }, { code: ru, label: 'Проверка' } ] }
+  - { name: 'Step-Complete', translations: [ { code: en, label: 'Complete' }, { code: ru, label: 'Окончание' } ] }
+  - { name: 'Step-Connect', translations: [ { code: en, label: 'Connect' }, { code: ru, label: 'Подключение' } ] }
+  - { name: 'Step-Enable', translations: [ { code: en, label: 'Enable' }, { code: ru, label: 'Включение' } ] }
+  - { name: 'Step-Install', translations: [ { code: en, label: 'Install' }, { code: ru, label: 'Установка' } ] }
+  - { name: 'Step-Select', translations: [ { code: en, label: 'Select' }, { code: ru, label: 'Выбор' } ] }
+  - { name: 'Step-Start', translations: [ { code: en, label: 'Start' }, { code: ru, label: 'Начало' } ] }
+  - { name: 'Step-Transfer', translations: [ { code: en, label: 'Transfer' }, { code: ru, label: 'Миграция' } ] }
+  - { name: 'Table prefix', translations: [ { code: en, label: 'Table prefix' }, { code: ru, label: 'Префикс таблиц' } ] }
+  - { name: 'The Migration Wizard has collected the required information', translations: [ { code: en, label: 'The Migration Wizard has collected all the required information to start migration process.' }, { code: ru, label: 'Мастер миграции собрал все необходимые сведения для начала процесса переноса данных.' } ] }
+  - { name: 'The Site path setting on the previous step does not point to the actual X-Cart 4 store', translations: [ { code: en, label: 'The "Site path" setting on the previous step does not point to the actual X-Cart 4 store. Go back and either correct the "Site path" or leave it blank.<br />If you leave it blank, images and static pages will be transferred via the Internet, which is slow.' }, { code: ru, label: 'Настройка "Путь до магазина" с предыдущего шага не указывает на реальный магазин X-Cart. Вернитесь и скорректируйте настройку "Путь до магазина" или оставьте ее пустой.<br />Если вы оставите ее пустой, то картинки и статические страницы будут скачаны через интернет что может занять продолжительное время' } ] }
+  - { name: 'The URL of a source store', translations: [ { code: en, label: 'The URL of a store that is used as a source of migration data.' }, { code: ru, label: 'Адрес URL магазина источника данных для миграции.' } ] }
+  - { name: 'The database platform / version is not supported by migration wizard', translations: [ { code: en, label: 'The database platform / version is not supported by the migration wizard.' }, { code: ru, label: 'Платформа / версия базы данных не поддерживается мастером миграции.' } ] }
+  - { name: 'The existing X-Cart 5 store should be a clean X-Cart installation without any data', translations: [ { code: en, label: 'The existing X-Cart 5 store should be a clean X-Cart installation without any data.' }, { code: ru, label: 'Существующий магазин на платформе X-Cart 5 не должен содержать пользовательских данных.' } ] }
+  - { name: 'The following data will be migrated', translations: [ { code: en, label: 'The following data will be migrated to X-Cart 5' }, { code: ru, label: 'Следующие данные будут перенесены в X-Cart 5' } ] }
+  - { name: 'The migration process has been completed successfully', translations: [ { code: en, label: 'The migration has been completed successfully.' }, { code: ru, label: 'Процесс миграции успешно завершен.' } ] }
+  - { name: 'The migration process has been completed with errors', translations: [ { code: en, label: 'The migration has been completed. Some errors have occurred during the migration process. For further information check <a href="?target=logs" target="_blank">the system log files</a>.' }, { code: ru, label: 'Процесс миграции завершен. В процессе миграции произошли некоторые ошибки. Для более подробной информации проверьте <a href="?target=logs" target="_blank">системные логи</a>.' } ] }
+  - { name: 'The path on server (if the same as X-Cart 5) of a source store', translations: [{ code: en, label: 'Specify the path to X-Cart 4 on your server, if X-Cart 4 is on the same server as X-Cart 5. If they are on different servers, leave it blank and images, static pages will be transferred via HTTP.' }, { code: ru, label: 'Укажите путь до X-Cart 4 на вашем сервере, если X-Cart 4 расположен на этом же сервере что и X-Cart 5. Если они расположены на разных серверах, то оставьте поле пустым, тогда картинки и статические страницы будут скачаны по HTTP' } ]}
+  - { name: 'The process of migration may take much time', translations: [ { code: en, label: 'The migration process may take a while to complete.' }, { code: ru, label: 'Процесс миграции может занять продолжительное время.' } ] } # TODO: refactor / remove
+  - { name: 'The provided store URL is not accessible', translations: [ { code: en, label: 'The provided store URL is not accessible. The access error code: {{X}}.' }, { code: ru, label: 'Указанный URL адрес недоступен. Код ошибки: {{X}}.' } ] }
+  - { name: 'The secret key for encrypted data', translations: [ { code: en, label: 'The secret key to be used to decrypt data (e.g. passwords, etc).<br>More information can be found in <a href="https://help.x-cart.com/index.php?title=X-Cart:Blowfish#Blowfish_key_based_encryption_method" target="_blank">X-Cart Help</a>.' }, { code: ru, label: 'Ключ шифрования используемый для расшифровки зашифрованных данных (таких как: пароли, и т.п.).<br><br>Более детальная информация доступна в <a href="https://help.x-cart.com/index.php?title=X-Cart:Blowfish#Blowfish_key_based_encryption_method">Справке X-Cart</a>.' } ] }
+  - { name: 'To clean up the data you can use a Remove data tool', translations: [ { code: en, label: 'To clean up the data you can use a <a href="?target=remove_data" target="_blank">Remove data</a> tool.' }, { code: ru, label: 'Для очистки данных вы можете воспользоваться инструментом <a href="?target=remove_data" target="_blank">Удаление данных</a>.' } ] }
+  - { name: 'Transferable data', translations: [ { code: en, label: 'What to transfer' }, { code: ru, label: 'Данные для переноса' } ] }
+  - { name: 'Unable to connect to Database', translations: [ { code: en, label: 'Unable to connect to Database. Please make sure you provided the correct database access information.' }, { code: ru, label: 'Невозможно подключится к Базе данных. Пожалуйста проверте параметры доступа к базе данных.' } ] }
+  - { name: 'Use the Back link with Skip previously migrated data enabled to sync data', translations: [ { code: en, label: 'Use the "Back" link with the "Skip previously migrated data" checkbox enabled to sync data.' }, { code: ru, label: 'Используйте ссылку "Назад" с включенным флажком "Пропустить ранее перенесенные данные" для синхронизации данных.' } ] }
+  - { name: 'Use the Restart wizard link to start a new migration', translations: [ { code: en, label: 'Use the "Restart wizard" link to start a new migration. Please <a href="?target=remove_data" class="warning" target="_blank">Remove data</a> before starting the new migration.' }, { code: ru, label: 'Используйте ссылку "Перезапустить мастер" для начала новой миграции.Пожалуйста <a href="?target=remove_data" class="warning" target="_blank">удалите все данные</a> перед запуском процесса миграции.' } ] }
+  - { name: 'Users migrated', translations: [ { code: en, label: 'Users migrated' }, { code: ru, label: 'Пользователей перенесено' } ] }
+  - { name: 'Votes', translations: [ { code: en, label: 'Votes' }, { code: ru, label: 'Рейтинги' } ] }
+  - { name: 'Welcome to X-Cart 5 migration wizard', translations: [ { code: en, label: 'Welcome to X-Cart 5 migration wizard.' }, { code: ru, label: 'Добро пожаловать в мастер миграции X-Cart 5.' } ] }
+  - { name: 'What to do if images are not displayed', translations: [ { code: en, label: 'If preview images are not disaplayed, please correct the store URL on the previous step.' }, { code: ru, label: 'Если в предварительном просмотре картинки не отображаются, пожалуйста исправьте адрес URL магазина, на предыдущем шаге.' } ] }
+  - { name: 'X-Cart 4 server', translations: [ { code: en, label: 'X-Cart 4 server' }, { code: ru, label: 'X-Cart 4 сервер' } ] }
+  - { name: 'You may close the page, the operation will be in progress as background', translations: [ { code: en, label: 'You may close the page; the process will continue in the background. If the process takes long enough, we will send you a notification when it is completed.' }, { code: ru, label: 'Можно закрыть страницу, процесс будет протекать в фоновом режиме. Если процесс занимает долгое время, вы получите уведомление, когда он завершится.' } ] } # TODO: refactor / remove
+  - { name: 'You should confirm that this is a clean X-Cart installation', translations: [ { code: en, label: 'You should confirm that this is a clean X-Cart installation. To clean up the data you can use a <a href="?target=remove_data" target="_blank">Remove data</a> tool.' }, { code: ru, label: 'Вам необходимо подтвердить что это чистая установка X-Cart. Для очистки данных вы можете воспользоваться инструментом <a href="?target=remove_data" target="_blank">Удаление данных</a>.' } ] }
+  - { name: 'You will need the DB access information of your existing store to proceed', translations: [ { code: en, label: 'You will need the <a href="https://help.x-cart.com/index.php?title=X-Cart:Config.php#SQL_database_details" target="_blank">DB access information</a> of your existing store to proceed.' }, { code: ru, label: 'Для продолжения вам понадобится <a href="https://help.x-cart.com/index.php?title=X-Cart:Config.php#SQL_database_details">иформация для доступа к БД</a> вашего существующего магазина.' } ] }
+  - { name: 'Zones migrated', translations: [ { code: en, label: 'Zones migrated' }, { code: ru, label: 'Зон перенесено' } ] }
+  - { name: 'module_name commercial add-on is required', translations: [ { code: en, label: '<i class="fa fa-exclamation-triangle"></i> <a target="_blank" href="{{url}}">{{module_name}}</a> commercial add-on is required.' }, { code: ru, label: '<i class="fa fa-exclamation-triangle"></i> Требуется коммерческий модуль <a  target="_blank" href="{{url}}">{{module_name}}</a>.' } ] }
+
+  - { name: 'The demo migration has been completed successfully.', translations: [ { code: en, label: 'The demo migration has been completed successfully.' }, { code: ru, label: 'Демо-миграция успешно завершена.' } ] }
+  - { name: 'A few products from one category have been migrated for demo purposes.', translations: [ { code: en, label: 'A few products from one category have been migrated for demo purposes. You can view the migrated products <a href="{{url}}" target="_blank">here</a>.' }, { code: ru, label: 'Для демонстрации процесса миграции был осуществлен перенос данных нескольких товаров из одной категории. Перенесенные товары можно просмотреть <a href="{{url}}" target="_blank">здесь</a>.' } ] }
+  - { name: 'The orders will be migrated using the current store currency (X).', translations: [ { code: en, label: 'The orders will be migrated using the current store currency (<strong>{{currency}}</strong>). You can change the currency <a href="{{url}}" target="_blank">here</a>.' }, { code: ru, label: 'Миграция заказов будет произведена с использованием текущей валюты магазина (<strong>{{currency}}</strong>). Вы можете выбрать другую валюту <a href="{{url}}" target="_blank">здесь</a>.' } ] }
+
+  - { name: 'Migrating E-Goods', translations: [ { code: en, label: 'Migrating E-Goods' }, { code: ru, label: 'Миграция скачиваемых товаров' } ] }
+  - { name: 'Migrating categories', translations: [ { code: en, label: 'Migrating categories' }, { code: ru, label: 'Миграция категорий' } ] }
+  - { name: 'Migrating contact us page', translations: [ { code: en, label: 'Migrating contact us page' }, { code: ru, label: 'Миграция страницы обратной связи' } ] }
+  - { name: 'Migrating extra fields values', translations: [ { code: en, label: 'Migrating extra fields values' }, { code: ru, label: 'Миграция значений для доп. полей' } ] }
+  - { name: 'Migrating extra fields', translations: [ { code: en, label: 'Migrating extra fields' }, { code: ru, label: 'Миграция доп. полей' } ] }
+  - { name: 'Migrating featured products', translations: [ { code: en, label: 'Migrating featured products' }, { code: ru, label: 'Миграция рекомендуемых товаров' } ] }
+  - { name: 'Migrating manufacturers', translations: [ { code: en, label: 'Migrating manufacturers' }, { code: ru, label: 'Миграция производителей' } ] }
+  - { name: 'Migrating market prices', translations: [ { code: en, label: 'Migrating market prices' }, { code: ru, label: 'Миграция рыночных цен' } ] }
+  - { name: 'Migrating memberships', translations: [ { code: en, label: 'Migrating memberships' }, { code: ru, label: 'Миграция пользовательских групп' } ] }
+  - { name: 'Migrating menu items', translations: [ { code: en, label: 'Migrating menu items' }, { code: ru, label: 'Миграция элементов меню' } ] }
+  - { name: 'Migrating orders', translations: [ { code: en, label: 'Migrating orders' }, { code: ru, label: 'Миграция заказов' } ] }
+  - { name: 'Migrating payment settings', translations: [ { code: en, label: 'Migrating payment settings' }, { code: ru, label: 'Миграция настроек оплаты' } ] }
+  - { name: 'Migrating product options', translations: [ { code: en, label: 'Migrating product options' }, { code: ru, label: 'Миграция опций товаров' } ] }
+  - { name: 'Migrating product tax classes', translations: [ { code: en, label: 'Migrating product tax classes' }, { code: ru, label: 'Миграция продуктовых классов налогов' } ] }
+  - { name: 'Migrating product variants', translations: [ { code: en, label: 'Migrating product variants' }, { code: ru, label: 'Миграция вариантов товаров' } ] }
+  - { name: 'Migrating products', translations: [ { code: en, label: 'Migrating products' }, { code: ru, label: 'Миграция товаров' } ] }
+  - { name: 'Migrating related products', translations: [ { code: en, label: 'Migrating related products' }, { code: ru, label: 'Миграция связанных товаров' } ] }
+  - { name: 'Migrating reviews', translations: [ { code: en, label: 'Migrating reviews' }, { code: ru, label: 'Миграция отзывов' } ] }
+  - { name: 'Migrating settings', translations: [ { code: en, label: 'Migrating settings' }, { code: ru, label: 'Миграция настроек' } ] }
+  - { name: 'Migrating shipping settings', translations: [ { code: en, label: 'Migrating shipping settings' }, { code: ru, label: 'Миграция настроек доставки' } ] }
+  - { name: 'Migrating static pages', translations: [ { code: en, label: 'Migrating static pages' }, { code: ru, label: 'Миграция статичных страниц' } ] }
+  - { name: 'Migrating users', translations: [ { code: en, label: 'Migrating users' }, { code: ru, label: 'Миграция пользователей' } ] }
+  - { name: 'Migrating wholesale prices', translations: [ { code: en, label: 'Migrating wholesale prices' }, { code: ru, label: 'Миграция оптовых цен' } ] }
+  - { name: 'Migrating zones', translations: [ { code: en, label: 'Migrating zones' }, { code: ru, label: 'Миграция зон' } ] }
+  - { name: 'Migration category images', translations: [ { code: en, label: 'Migration category images' }, { code: ru, label: 'Миграция картинок категорий' } ] }
+  - { name: 'Migration product classes', translations: [ { code: en, label: 'Migration product classes' }, { code: ru, label: 'Миграция продуктовых классов' } ] }
+  - { name: 'Migration product images', translations: [ { code: en, label: 'Migration product images' }, { code: ru, label: 'Миграция картинок товаров' } ] }
+  - { name: 'Migration product variants images', translations: [ { code: en, label: 'Migration product variants images' }, { code: ru, label: 'Миграция картинок вариантов товаров' } ] }
+  - { name: 'Migration gift certificates', translations: [ { code: en, label: 'Migration gift certificates' }, { code: ru, label: 'Миграция подарочных сертификатов' } ] }
+  - { name: 'Migration wishlists', translations: [ { code: en, label: 'Migration wishlists' }, { code: ru, label: 'Миграция списков желаний' } ] }
+
+  - { name: 'Data removed', translations: [{ code: en, label: 'Data removed' }]}
+  - { name: 'Migration has been cancelled.', translations: [{ code: en, label: 'Migration has been cancelled.' }]}
+  - { name: 'Orders migrated', translations: [{ code: en, label: 'Orders migrated' }]}
+  - { name: 'Site path', translations: [{ code: en, label: 'Site path' }, { code: ru, label: 'Путь до магазина' } ]}
+  - { name: 'The provided secret key is not valid', translations: [{ code: en, label: 'The provided secret key is not valid' }]}
+
+  - { name: 'Users passwords could not be migrated', translations: [ { code: en, label: 'Note that if user passwords have not been migrated (which is normal behavior for migrations from X-Cart 4.5.x or later, or  - in the case of a migration from an earlier version - may be the result of an error), registered users will not be able to log in to the new store website using their existing passwords. To regain access to their profiles, such users will need to use the reset password feature. More information is available <a target="_blank" href="https://kb.x-cart.com/modules/xc4_to_xc5_migration_wizard/using_the_xc4_to_xc5_migration_wizard.html#add-label-to-signin-form">here</a>.' }, { code: ru, label: 'Обратите внимание, что, если перенос паролей зарегистрированных пользователей не был осуществлен (что является нормальным поведением для версий X-Cart v4.5.x и выше, либо - при миграции с более ранних версий  - может быть следствием ошибки), зарегистрированные пользователи не смогут войти на новый сайт со старым паролем. Для восстановления доступа таким пользователям необходимо использовать функцию восстановления пароля. Более подробную информацию можно найти <a target="_blank" href="https://kb.x-cart.com/modules/xc4_to_xc5_migration_wizard/using_the_xc4_to_xc5_migration_wizard.html#add-label-to-signin-form">здесь</a>.' } ]}
+
+XC\MigrationWizard\Model\MigrationCategory:
+  - { name: 'Catalog', categoryId: 1, enabled: true, pos: 10, translations: [ { code: en, name: 'Catalog' }, { code: ru, name: 'Каталог' } ] }
+  - { name: 'Modules', categoryId: 2, enabled: false, pos: 50, translations: [ { code: en, name: 'Modules' }, { code: ru, name: 'Модули' } ] }
+  - { name: 'Orders', categoryId: 3, enabled: true, pos: 40, translations: [ { code: en, name: 'Orders' }, { code: ru, name: 'Заказы' } ] }
+  - { name: 'Settings', categoryId: 4, enabled: true, pos: 30, translations: [ { code: en, name: 'Settings' }, { code: ru, name: 'Параметры магазина' } ] }
+  - { name: 'Users', categoryId: 5, enabled: true, pos: 20, translations: [ { code: en, name: 'Users' }, { code: ru, name: 'Пользователи' } ] }
+  - { name: 'Content', categoryId: 6, enabled: true, pos: 50, translations: [ { code: en, name: 'Content' }, { code: ru, name: 'Контент' } ] }
+
+XC\MigrationWizard\Model\MigrationRule:
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Categories', ruleId: 1, enabled: true, translations: [ { code: en, name: 'Categories' }, { code: ru, name: 'Категории' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Memberships', ruleId: 2, enabled: true, translations: [ { code: en, name: 'Memberships' }, { code: ru, name: 'Группы пользователей' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Modules', ruleId: 3, enabled: false, translations: [ { code: en, name: 'Modules' }, { code: ru, name: 'Модули' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Orders', ruleId: 4, enabled: true, translations: [ { code: en, name: 'Orders' }, { code: ru, name: 'Заказы' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Payment', ruleId: 5, enabled: true, translations: [ { code: en, name: 'Payment settings' }, { code: ru, name: 'Настройки оплаты' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Products', ruleId: 6, enabled: true, translations: [ { code: en, name: 'Products' }, { code: ru, name: 'Товары' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Requirements', ruleId: 7, isSystem: true, enabled: true }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Shipping', ruleId: 8, enabled: true, translations: [ { code: en, name: 'Shipping settings' }, { code: ru, name: 'Настройки доставки' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Users', ruleId: 9, enabled: true, translations: [ { code: en, name: 'Users' }, { code: ru, name: 'Пользователи' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Zones', ruleId: 10, enabled: true, translations: [ { code: en, name: 'Zones' }, { code: ru, name: 'Зоны' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Content', ruleId: 11, enabled: true, translations: [ { code: en, name: 'Content' }, { code: ru, name: 'Контент' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Settings', ruleId: 12, enabled: true, translations: [ { code: en, name: 'General settings' }, { code: ru, name: 'Основные настройки' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\CategoryImages', ruleId: 13, enabled: true, translations: [ { code: en, name: 'Category images' }, { code: ru, name: 'Картинки категорий' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\ProductImages', ruleId: 14, enabled: true, translations: [ { code: en, name: 'Product images' }, { code: ru, name: 'Картинки продуктов' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Module\GiftCertificates', ruleId: 15, enabled: true, translations: [ { code: en, name: 'Gift certificates' }, { code: ru, name: 'Подарочные сертификаты' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Module\ManufacturersValuesAdvancedFields', ruleId: 16, enabled: true, translations: [ { code: en, name: 'Manufacturer details' }, { code: ru, name: 'Детали брэндов' } ] }
+  - { logic: 'XC\MigrationWizard\Logic\Import\Processor\XCart\Module\Wishlists', ruleId: 17, enabled: true, translations: [ { code: en, name: 'Wishlists' }, { code: ru, name: 'Списки желаний' } ] }
+
+XC\MigrationWizard\Model\MigrationCategoryRule:
+  - { category: { categoryId: 1}, rule: { ruleId: 1}, pos: 10 }
+  - { category: { categoryId: 1}, rule: { ruleId: 6}, pos: 20 }
+  - { category: { categoryId: 1}, rule: { ruleId: 13}, pos: 15 }
+  - { category: { categoryId: 1}, rule: { ruleId: 14}, pos: 25 }
+  - { category: { categoryId: 1}, rule: { ruleId: 16}, pos: 22 }
+  - { category: { categoryId: 5}, rule: { ruleId: 17}, pos: 22 }
+  - { category: { categoryId: 3}, rule: { ruleId: 4}, pos: 10 }
+  - { category: { categoryId: 3}, rule: { ruleId: 15}, pos: 20 }
+  - { category: { categoryId: 4}, rule: { ruleId: 5}, pos: 10 }
+  - { category: { categoryId: 4}, rule: { ruleId: 8}, pos: 20 }
+  - { category: { categoryId: 4}, rule: { ruleId: 10}, pos: 30 }
+  - { category: { categoryId: 4}, rule: { ruleId: 12}, pos: 5 }
+  - { category: { categoryId: 5}, rule: { ruleId: 2}, pos: 10 }
+  - { category: { categoryId: 5}, rule: { ruleId: 9}, pos: 20 }
+  - { category: { categoryId: 6}, rule: { ruleId: 11}, pos: 10 }

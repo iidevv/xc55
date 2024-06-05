@@ -1,0 +1,12 @@
+{##
+ # Product market price
+ #
+ #
+ # @ListChild (list="product.plain_price.tail.xpayments_subscription_info.text", weight="100")
+ #}
+
+{% if not this.hasTrialPeriod() %}
+  <div class="text">
+    {{ t('Setup fee') }}: <span class="value">{{ this.formatPrice(this.getXpaymentsSetupFee(), null, 1) }}</span>
+  </div>
+{% endif %}

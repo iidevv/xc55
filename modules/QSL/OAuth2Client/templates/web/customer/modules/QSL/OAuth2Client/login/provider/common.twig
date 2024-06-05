@@ -1,0 +1,13 @@
+{##
+ # Common login widget
+ #}
+
+<li class="provider-{{ this.provider.service_name }} {{ this.getPlacement() }}-placement">
+    <a href="{{ this.getURL() }}"{% if this.provider.tooltip %} title="{{ this.provider.tooltip }}"{% else %}{% if this.provider.getPublicIcon() %} title="{{ this.provider.linkName }}"{% endif %}{% endif %}>
+        {% if this.provider.getPublicIcon() %}
+            <img src="{{ this.provider.getPublicIcon() }}" alt="{{ this.provider.linkName }}" />
+        {% else %}
+            <span class="provider-name">{{ this.provider.linkName }}</span>
+        {% endif %}
+    </a>
+</li>

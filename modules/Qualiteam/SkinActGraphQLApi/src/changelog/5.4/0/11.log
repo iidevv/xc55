@@ -1,0 +1,4 @@
+Version 5.4.0.11
+
+Fixes (1)
+- Add logging for changePaymentFields method

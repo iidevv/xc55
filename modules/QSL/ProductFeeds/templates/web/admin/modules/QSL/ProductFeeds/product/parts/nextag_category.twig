@@ -1,0 +1,7 @@
+{# @ListChild (list="product.feedCategories.parts", weight="305") #}
+<li class="input">
+  <div class="table-label">{{ t('NexTag') }}</div>
+  <div class="table-value">
+    {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\NextagCategory', fieldName=this.getNamePostedData('nextag_id'), fieldOnly='true', value=this.get('product').getNextagCategory()) }}
+  </div>
+</li>

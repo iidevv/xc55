@@ -1,0 +1,8 @@
+{##
+ # Sale price (internal list element)
+ #
+ # @ListChild (list="product.plain_price.before.sale_price.text", weight="100")
+#}
+{% if this.get('product').getDisplayMarketPrice() > 0 and this.get('product').getDisplayMarketPrice() > this.get('product').getPrice() %}
+  <span class="market-price-label">{{ t('Market price') }}:</span>
+{% endif %}

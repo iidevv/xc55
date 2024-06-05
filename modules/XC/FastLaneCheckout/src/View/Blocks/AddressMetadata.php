@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace XC\FastLaneCheckout\View\Blocks;
+
+use XCart\Extender\Mapping\ListChild;
+use XC\FastLaneCheckout;
+
+/**
+ * Checkout Address form
+ *
+ * @ListChild (list="checkout_fastlane", weight="99999", zone="customer")
+ */
+class AddressMetadata extends \XLite\View\ASingleView
+{
+    /**
+     * Check view visibility
+     *
+     * @return boolean
+     */
+    protected function isVisible()
+    {
+        return true;
+    }
+
+    /**
+     * @return void
+     */
+    protected function getDefaultTemplate()
+    {
+        return FastLaneCheckout\Main::getSkinDir() . 'blocks/address/metadata.twig';
+    }
+
+    public function buildCountryNamesObject()
+    {
+        $dto = \XLite\Core\Database::getRepo('XLite\Model\Country')->findAllEnabledDTO();
+
+        return json_encode($dto);
+    }
+
+    public function buildStatesListObject()
+    {
+        $dto = \XLite\Core\Database::getRepo('XLite\Model\Country')->findCountriesStatesGrouped();
+
+        return json_encode($dto);
+    }
+
+    public function buildStateNamesObject()
+    {
+        $dto = \XLite\Core\Database::getRepo('XLite\Model\State')->findAllStatesDTO();
+
+        return json_encode($dto);
+    }
+
+    public function buildAddressTypesObject()
+    {
+        $data = [
+            \XLite\View\FormField\Select\AddressType::TYPE_COMMERCIAL => static::t('Commercial'),
+            \XLite\View\FormField\Select\AddressType::TYPE_RESIDENTIAL => static::t('Residential'),
+        ];
+
+        return json_encode($data);
+    }
+}

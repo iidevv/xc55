@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Fixes (1)
+2023-05-31 - [Bug] XC-Migration Wizard was adding duplicates in Offline xlite payment_methods. Fixed. #XCB-2491 #XC-MigrationWizard
+

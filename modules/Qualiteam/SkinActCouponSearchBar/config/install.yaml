@@ -1,0 +1,11 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActCouponSearchBar Orders with the applied coupon", translations: [{ code: en, label: "Orders with the applied coupon <a href=\"{{coupon_link}}\">{{coupon_code}}</a>" }] }
+  - { name: "SkinActCouponSearchBar Orders button", translations: [{ code: en, label: "Orders" }] }
+  - { name: "SkinActCouponSearchBar tooltip", translations: [{ code: en, label: "Orders list with this coupon" }] }

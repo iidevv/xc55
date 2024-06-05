@@ -1,0 +1,29 @@
+services:
+    _defaults:
+        autowire: true
+
+    xcart.entities.sub_entity_transformer.output.id.membership:
+        class: XLite\API\SubEntityOutputTransformer\SubEntityIdOutputTransformer
+        arguments:
+            $idGetter: '@xcart.entities.id_getter.membership'
+
+    xcart.entities.sub_entity_transformer.output.id_collection.category:
+        class: XLite\API\SubEntityOutputTransformer\SubEntityIdCollectionOutputTransformer
+        arguments:
+            $idGetter: '@xcart.entities.id_getter.category'
+
+    xcart.entities.sub_entity_transformer.output.id_collection.clean_url:
+        class: XLite\API\SubEntityOutputTransformer\SubEntityIdCollectionOutputTransformer
+
+    xcart.entities.sub_entity_transformer.output.id_collection.product_class:
+        class: XLite\API\SubEntityOutputTransformer\SubEntityIdCollectionOutputTransformer
+
+    xcart.entities.sub_entity_transformer.output.id_collection.membership:
+        class: XLite\API\SubEntityOutputTransformer\SubEntityIdCollectionOutputTransformer
+        arguments:
+            $idGetter: '@xcart.entities.id_getter.membership'
+
+    xcart.entities.sub_entity_transformer.output.id_collection.zone:
+        class: XLite\API\SubEntityOutputTransformer\SubEntityIdCollectionOutputTransformer
+        arguments:
+            $idGetter: '@xcart.entities.id_getter.zone'

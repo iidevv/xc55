@@ -1,0 +1,18 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Module fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: 'SkinActFreeGifts Free Gifts', translations: [ { code: en, label: 'Gifts' } ] }
+  - { name: 'SkinActFreeGifts Gift tier', translations: [ { code: en, label: 'Gift tier' } ] }
+  - { name: 'SkinActFreeGifts Gift tier X', translations: [ { code: en, label: 'Gift tier: {{name}}' } ] }
+  - { name: 'SkinActFreeGifts Gift min price', translations: [ { code: en, label: 'Gift min price' } ] }
+  - { name: 'SkinActFreeGifts Gift max price', translations: [ { code: en, label: 'Gift max price' } ] }
+  - { name: 'SkinActFreeGifts empty item list', translations: [{ code: en, label: 'Add new gift with "Add new" button' }] }
+  - { name: "SkinActFreeGifts You can select a free gift from list", translations: [ { code: en, label: "You can select a gift from {{gift_tier}} list" } ] }
+  - { name: "SkinActFreeGifts added to cart", translations: [ { code: en, label: "Added to cart" } ] }
+  - { name: "SkinActFreeGifts Add to cart as a free gift", translations: [ { code: en, label: "Add to cart as a gift" } ] }
+  - { name: "SkinActFreeGifts label gift", translations: [ { code: en, label: "Gift" } ] }

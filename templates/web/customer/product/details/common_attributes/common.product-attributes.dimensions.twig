@@ -1,0 +1,11 @@
+{##
+ # Product details Weight main block
+ #
+ # @ListChild (list="product.details.common.product-attributes.elements", weight="300")
+ #}
+{% if this.getProduct().getBoxLength() or this.getProduct().getBoxWidth() or this.getProduct().getBoxHeight() %}
+  <li class="product-dimensions">
+    <div><strong>{{ t('Dimensions (L x W x H)') }}</strong></div>
+    <span>{{ this.getProduct().getBoxLength() }} x {{ this.getProduct().getBoxWidth() }} x {{ this.getProduct().getBoxHeight() }} {{ this.getDimSymbol() }}</span>
+  </li>
+{% endif %}

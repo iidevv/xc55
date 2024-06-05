@@ -1,0 +1,10 @@
+{##
+ # Orders search page
+ #}
+<div class="search-widget-container" {{ this.printTagAttributes(this.getAttributes())|raw }}>
+  {% if this.isSearchVisible() %}
+    {{ widget('XLite\\View\\SearchPanel\\Order\\Admin\\Main') }}
+  {% endif %}
+
+  {{ widget('XLite\\View\\ItemsList\\Model\\Order\\Admin\\Search') }}
+</div>

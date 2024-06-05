@@ -1,0 +1,9 @@
+{##
+ # Out of stock tooltip
+ #
+ # @ListChild (list="itemsList.product.table.customer.add2cart", weight="10")
+ #}
+
+<span class="out-of-stock-tooltip tooltip">
+    <span class="caption">{{ this.get('product').getAllStockInCartTooltipText() }}</span>
+</span>

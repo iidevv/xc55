@@ -1,0 +1,76 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+
+/**
+ * Price or percent styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.input-price-or-percent {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  > div {
+    flex: auto;
+    &:first-child {
+      z-index: 1;
+      &:hover, &:focus-within {
+        z-index: 3;
+      }
+    }
+    &:nth-child(2) {
+      z-index: 2;
+    }
+  }
+
+  div.table-label {
+    flex: inherit;
+  }
+
+  div.table-value {
+    position: relative;
+    float: left;
+
+    .select-absolute-or-percent {
+      padding: 0;
+
+      button {
+        width: 40px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: unset;
+
+        .main-label {
+          font-size: @font-size-base;
+        }
+
+        .caret {
+          background-position: center center;
+          margin: 0 0 0 4px;
+          width: 7px;
+        }
+      }
+    }
+
+    .input-text-floatinput {
+      input {
+        width: 100px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    .input-group-btn:first-child > .btn {
+      margin-right: -1px;
+    }
+  }
+}
+
+.items-list-table table.list .inline-price-or-percent {
+  .field .subfield {
+    display: flex;
+  }
+}

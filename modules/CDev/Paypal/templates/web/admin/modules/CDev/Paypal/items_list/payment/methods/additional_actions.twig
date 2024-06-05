@@ -1,0 +1,10 @@
+{##
+ # Additional payment method action in the payments list
+ #
+ # @ListChild (list="payment.predefined-methods.list.line.actions.PaypalCommercePlatform", weight=100)
+ #}
+{{ widget(
+  'CDev\\Paypal\\View\\Button\\PaypalCommercePlatformOnboarding',
+  label=t('Connect'),
+  style='regular-main-button'
+) }}

@@ -1,0 +1,20 @@
+{# #
+ # tips
+#}
+
+{% if this.isTipBlockVisible(this.tipId) %}
+  <div class="tip-block {{ this.tipId }}-tip {{ this.additionalClasses }}" data-tip-id="{{ this.tipId }}">
+    <div class="info">{{ this.displaySVGImage('images/icon-info-promo.svg') }}</div>
+    <div class="tip-head">{{ t('Tips') }}</div>
+    <div class="tip-content">
+      <ul class="tip-content-rows">
+        <li>
+          <a href="https://support.x-cart.com/en/articles/6385985-managing-site-meta-elements">{{ t('How to Add Meta Descriptions and Keywords') }}</a>
+        </li>
+        <li>
+          <a href="https://support.x-cart.com/en/articles/4889985-seo-friendly-urls-setup">{{ t('Setting up SEO-friendly URLs 301 redirects') }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endif %}

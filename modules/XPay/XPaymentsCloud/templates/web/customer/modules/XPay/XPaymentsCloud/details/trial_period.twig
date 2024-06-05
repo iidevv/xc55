@@ -1,0 +1,13 @@
+{##
+ # Trial period description
+ #
+ #
+ # @ListChild (list="product.plain_price", weight="100")
+ # @ListChild (list="product.plain_price_only", weight="100")
+#}
+
+{% if this.hasTrialPeriod() %}
+  <li class="product-price-base xpayments-trial-period-notice">
+    <span class="price product-price xpayments-trial-period-notice-text">({{ t('trial period') }}: {{ this.getXpaymentsTrialDescription() }})</span>
+  </li>
+{% endif %}

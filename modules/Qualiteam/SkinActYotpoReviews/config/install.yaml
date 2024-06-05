@@ -1,0 +1,127 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: yotpo_warning_label
+    category: 'Qualiteam\SkinActYotpoReviews'
+    type: 'Qualiteam\SkinActYotpoReviews\View\FormField\Label\SettingsWarning'
+    orderby: 50
+    value: true
+
+  - name: yotpo_app_key
+    category: 'Qualiteam\SkinActYotpoReviews'
+    type: text
+    orderby: 100
+    value: ''
+    translations:
+      - code: en
+        option_name: 'SkinActYotpoReviews app key'
+
+  - name: yotpo_secret_key
+    category: 'Qualiteam\SkinActYotpoReviews'
+    type: text
+    orderby: 200
+    value: ''
+    translations:
+      - code: en
+        option_name: 'SkinActYotpoReviews secret key'
+
+  - name: yotpo_dev_mode
+    category: 'Qualiteam\SkinActYotpoReviews'
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 300
+    value: 0
+    translations:
+      - code: en
+        option_name: 'SkinActYotpoReviews dev mode'
+
+  - name: yotpo_product_prefix
+    category: 'Qualiteam\SkinActYotpoReviews'
+    type: text
+    widgetParameters:
+      dependency: { show: { yotpo_dev_mode: [ '1' ] } }
+    orderby: 400
+    value: "[TEST-YOTPO]"
+    translations:
+      - code: en
+        option_name: 'SkinActYotpoReviews test products prefix'
+
+  - name: yotpo_show_review_widget
+    category: 'Qualiteam\SkinActYotpoReviews'
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    widgetParameters:
+      dependency: { show: { yotpo_dev_mode: [ '1' ] } }
+    orderby: 500
+    value: 1
+    translations:
+      - code: en
+        option_name: 'SkinActYotpoReviews show reviews widget on a product page'
+
+  - name: yotpo_review_widget_id
+    category: 'Qualiteam\SkinActYotpoReviews'
+    type: text
+    widgetParameters:
+      dependency: { show: { yotpo_dev_mode: [ '1' ] } }
+    orderby: 600
+    value: "598633"
+    translations:
+      - code: en
+        option_name: 'SkinActYotpoReviews reviews widget id'
+
+#  - name: yotpo_show_star_rating
+#    category: 'Qualiteam\SkinActYotpoReviews'
+#    type: XLite\View\FormField\Input\Checkbox\OnOff
+#    widgetParameters:
+#      dependency: { show: { yotpo_dev_mode: [ '1' ] } }
+#    orderby: 700
+#    value: 1
+#    translations:
+#      - code: en
+#        option_name: 'SkinActYotpoReviews show star rating widget on a product page'
+#
+#  - name: yotpo_star_widget_id
+#    category: 'Qualiteam\SkinActYotpoReviews'
+#    type: text
+#    widgetParameters:
+#      dependency: { show: { yotpo_dev_mode: [ '1' ] } }
+#    orderby: 800
+#    value: "623568"
+#    translations:
+#      - code: en
+#        option_name: 'SkinActYotpoReviews stars widget id'
+
+  - name: yotpo_conversion_tracking
+    category: 'Qualiteam\SkinActYotpoReviews'
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    widgetParameters:
+      dependency: { show: { yotpo_dev_mode: [ '0' ] } }
+    orderby: 900
+    value: 1
+    translations:
+      - code: en
+        option_name: 'SkinActYotpoReviews enable disable conversion tracking'
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActYotpoReviews app key", translations: [{ code: en, label: "App key" }] }
+  - { name: "SkinActYotpoReviews secret key", translations: [{ code: en, label: "Secret key" }] }
+  - { name: "SkinActYotpoReviews top message error prefix", translations: [{ code: en, label: "Error" }] }
+  - { name: "SkinActYotpoReviews something went wrong get more into a log file", translations: [{ code: en, label: "Something went wrong. Get more into a log file" }] }
+  - { name: "SkinActYotpoReviews show reviews widget on a product page", translations: [{ code: en, label: "Show reviews widget on a product page" }] }
+  - { name: "SkinActYotpoReviews show star rating widget on a product page", translations: [{ code: en, label: "Show star rating widget on a product page" }] }
+  - { name: "SkinActYotpoReviews enable disable conversion tracking", translations: [{ code: en, label: "Conversion tracking" }] }
+  - { name: "SkinActYotpoReviews dev mode", translations: [{ code: en, label: "Developer mode" }] }
+  - { name: "SkinActYotpoReviews reviews widget id", translations: [{ code: en, label: "Reviews widget id" }] }
+  - { name: "SkinActYotpoReviews stars widget id", translations: [{ code: en, label: "Stars widget id" }] }
+  - { name: "SkinActYotpoReviews test products prefix", translations: [{ code: en, label: "Test products prefix" }] }
+  - { name: "SkinActYotpoReviews warning message", translations: [{ code: en, label: "Please be aware that the update of the Reviews widgets skin using custom CSS on the side might cause skin issues on the X-Cart side for desktop and mobile versions of the store. If you update the skin styles on the side please check thoroughly the X-Cart store skin for possible inconsistencies." }] }
+  - { name: "SkinActYotpoReviews a module yotporeviews is not configured", translations: [{ code: en, label: "A module \"Reviews\" is not configured" }] }
+  - { name: "SkinActYotpoReviews itemslist.admin.review.blank", translations: [{ code: en, label: "No one has rated your products on yet. Once someone reviews your product, this is the place to track reviews." }] }
+  - { name: "SkinActYotpoReviews update yotpo reviews", translations: [{ code: en, label: "Update reviews" }] }
+
+XLite\Model\Task:
+  - owner: Qualiteam\SkinActYotpoReviews\Core\Task\UpdateYotpoReviews
+  - owner: Qualiteam\SkinActYotpoReviews\Core\Task\UpdateAverageRatingAndVotesCount

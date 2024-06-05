@@ -1,0 +1,8 @@
+Version 5.5.0.16
+
+Fixes (4)
+2023-05-11 - [Bug] The default shipping method was defined incorrectly. Fixed. #XCB-2422 #CDev-Core
+2023-04-28 - [Bug] The type "application/ld+json" was not known to HTML purifier. Fixed. #XCB-2295 #CDev-Core
+2023-05-03 - [Bug] yarn watch did not resume its work after an attempt to build invalid assets. Fixed. #XCB-2246 #CDev-Core
+2023-05-10 - [Bug] Admin language was used for PDF invoice sent to customer instead of customer language. Fixed. #XCB-2180 #CDev-Core
+

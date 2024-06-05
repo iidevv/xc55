@@ -1,0 +1,46 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActGoogleFeedAdvanced add to google product feed", translations: [ { code: en, label: "Include" } ] }
+  - { name: "SkinActGoogleFeedAdvanced google googleshop_brand_field", translations: [ { code: en, label: "Brand" } ] }
+  - { name: "SkinActGoogleFeedAdvanced google googleshop_gtin_field", translations: [ { code: en, label: "UPC" } ] }
+  - { name: "SkinActGoogleFeedAdvanced google googleshop_googlecategory_field", translations: [ { code: en, label: "Category" } ] }
+  - { name: "SkinActGoogleFeedAdvanced google googleshop_producttype_field", translations: [ { code: en, label: "Type" } ] }
+  - { name: "SkinActGoogleFeedAdvanced google googleshop_condition_field", translations: [ { code: en, label: "Condition" } ] }
+
+  - { name: "SkinActGoogleFeedAdvanced Condition column", translations: [ { code: en, label: "Condition column" } ] }
+  - { name: "SkinActGoogleFeedAdvanced Google category column", translations: [ { code: en, label: "Google category column" } ] }
+  - { name: "SkinActGoogleFeedAdvanced Product type column", translations: [ { code: en, label: "Product type column" } ] }
+
+XLite\Model\Config:
+  - name: googleshop_condition_field
+    category: QSL\ProductFeeds\GoogleShopping
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 4000
+    value: ""
+    translations:
+      - code: en
+        option_name: SkinActGoogleFeedAdvanced Condition column
+
+  - name: googleshop_googlecategory_field
+    category: QSL\ProductFeeds\GoogleShopping
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 4100
+    value: ""
+    translations:
+      - code: en
+        option_name: SkinActGoogleFeedAdvanced Google category column
+
+  - name: googleshop_producttype_field
+    category: QSL\ProductFeeds\GoogleShopping
+    type: QSL\ProductFeeds\View\FormField\Select\ProductField
+    orderby: 4200
+    value: ""
+    translations:
+      - code: en
+        option_name: SkinActGoogleFeedAdvanced Product type column

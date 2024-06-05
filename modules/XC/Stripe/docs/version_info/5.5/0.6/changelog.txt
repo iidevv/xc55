@@ -1,0 +1,4 @@
+Version 5.5.0.6
+
+Fixes (1)
+2023-01-23 - [Bug] Stripe + Fast Lane Checkout: A double click on the Place order button was causing a session issue. Fixed. #XCB-2035 #XC-Stripe

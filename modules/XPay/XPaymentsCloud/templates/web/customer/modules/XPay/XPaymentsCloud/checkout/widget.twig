@@ -1,0 +1,51 @@
+{##
+ # Connect widget
+ #
+ #}
+{% if this.isDelayedPaymentEnabled() %}
+  <div id="xpayments-delayed-payment-info-use-saved" style="display: none;">
+    <div class="alert alert-info" role="alert">
+      <strong class="important-label">{{ t('Important!') }}</strong>
+      {{ t('The exact amount of the order will be debited from your card later.') }}
+    </div>
+  </div>
+  <div id="xpayments-delayed-payment-info-save-new" style="display: none;">
+    {% set cardSetupAmount = this.getCardSetupAmount() %}
+    <div class="alert alert-info" role="alert">
+      <strong class="important-label">{{ t('Important!') }}</strong>
+      {% if cardSetupAmount %}
+        {{ t('xpayments-delayed-payment-info-save-new-with-amount', {'amount': this.formatPrice(cardSetupAmount)})|raw }}
+      {% else %}
+        {{ t('xpayments-delayed-payment-info-save-new') }}
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+<div id="xpayments-iframe-container"></div>
+<script type="application/javascript">
+  var xpaymentsWidgetConfig = {
+    account: '{{ this.getXpaymentsMethod().getSetting('account') }}',
+    widgetKey: '{{ this.getXpaymentsMethod().getSetting('widget_key') }}',
+    container: '#xpayments-iframe-container',
+    form: 'form.place',
+    showSaveCard: {% if this.isHideSaveCardCheckbox() %}false{% else %}true{% endif %},
+    customerId: '{{ this.getXpaymentsCustomerId() }}',
+    order: {
+      total: '{{ this.getXpaymentsCartTotal() }}',
+      currency: '{{ this.getCart().getCurrency().getCode() }}',
+      tokenizeCard: {% if this.isDelayedPaymentEnabled() %}true{% else %}false{% endif %}
+    },
+    company: {
+      name: '{{ this.get('config').Company.company_name }}',
+      countryCode: '{{ this.get('config').Company.location_country }}',
+    },
+    paypal: {{ this.getXpaymentsMethod().getPayPalConfig()|json_encode(constant('JSON_PRETTY_PRINT'))|raw }},
+    language: '{{ this.getCurrentLanguage().getCode() }}',
+  }
+  var xpaymentsWidgetWrapperConfig = {
+    walletId: '{{ this.getXpaymentsWalletId() }}',
+    delayedPayment: {% if this.isDelayedPaymentEnabled() %}true{% else %}false{% endif %},
+  }
+</script>
+

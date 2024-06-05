@@ -1,0 +1,11 @@
+{##
+ # Icon
+#}
+
+<div class="category-block" {% if this.getBlockBg() %} style="background-color: #{{ this.getBlockBg() }}" {% endif %}>
+  <div class="category-block__info">
+    {{ widget_list('category-block.info') }}
+    {{ widget_list('category-block.info.after') }}
+  </div>
+  {{ widget_list('category-block.image') }}
+</div>

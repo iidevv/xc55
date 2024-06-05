@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    XLite\API\Endpoint\Membership\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\Membership\Transformer\InputTransformer'
+    XLite\API\Endpoint\Membership\Transformer\InputTransformer: ~
+    XLite\API\Endpoint\Membership\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\Membership\Transformer\OutputTransformer'
+    XLite\API\Endpoint\Membership\Transformer\OutputTransformer: ~

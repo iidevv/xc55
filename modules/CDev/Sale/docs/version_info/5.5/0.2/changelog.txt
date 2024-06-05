@@ -1,0 +1,10 @@
+Version 5.5.0.2
+
+Improvements (1)
+2022-08-15 - [Story] Product Variants API. Added. #ECOM-2093 #CDev-Sale #CDev-Wholesale #QSL-CostPrice #XC-ProductVariants
+
+Fixes (3)
+2022-09-02 - [Bug] Sale. The setting "How to display links to sale offers in the category menu" was not working. Fixed. #XCB-1645 #CDev-Sale
+2022-09-02 - [Bug] Sale. Issues displaying Sale labels on certain products. Fixed. #XCB-1643 #CDev-Sale
+2022-09-02 - [Bug] Sale. When the maximum number of products to be displayed in the "Products on sale" block was set to "0", three products were displayed. Fixed. #XCB-1642 #CDev-Sale
+

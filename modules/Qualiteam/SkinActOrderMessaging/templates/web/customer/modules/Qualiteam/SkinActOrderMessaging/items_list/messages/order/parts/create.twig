@@ -1,0 +1,24 @@
+{##
+ # Messages list : create
+#}
+
+<div class="new-message">
+
+    <div class="form-group body">
+        <textarea name="body" class="form-control" id="newMessageBody" rows="8" placeholder="{{ t('Write your message', [], null, 'placeholder') }}"></textarea>
+    </div>
+
+    {{ widget('\\Qualiteam\\SkinActOrderMessaging\\View\\FormField\\FileUploader\\ImageUploader',
+        isImage=true,
+        fieldName='message_image',
+        isViaUrlAllowed=false,
+        multiple=true,
+        fieldOnly=true
+    ) }}
+
+
+    <div class="form-group">
+        {{ widget('XLite\\View\\Button\\Regular', style='regular-main-button', action='update', label=t('Submit')) }}
+    </div>
+
+</div>

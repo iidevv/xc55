@@ -1,0 +1,40 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+api_platform:
+  mapping:
+    paths:
+      - '%kernel.project_dir%/var/run/classes/CDev/FeaturedProducts/Model'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\Transformer\InputTransformerInterface: '@CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\Transformer\InputTransformer'
+  CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\Transformer\InputTransformer: ~
+  CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\Transformer\OutputTransformerInterface: '@CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\Transformer\OutputTransformer'
+  CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\Transformer\OutputTransformer: ~
+
+  CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\DataProvider\FeaturedDataProvider: ~
+
+  CDev\FeaturedProducts\Controller\API\FeaturedProduct\DeleteCategoryFeatured:
+    tags: [ 'controller.service_arguments' ]
+
+  CDev\FeaturedProducts\Controller\API\FeaturedProduct\DeleteFrontPageFeatured:
+    tags: [ 'controller.service_arguments' ]
+
+  CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\SubIdentifierExtractor\SubIdentifierExtractor:
+    tags: [ !php/const XCart\Framework\ApiPlatform\Core\Api\SubIdentifierExtractor\SubIdentifierExtractorInterface::SUB_IDENTIFIER_EXTRACTOR_TAG ]
+
+  CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\SubExtension\SubExtension:
+    tags: [ !php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG ]
+
+  CDev\FeaturedProducts\API\Endpoint\FeaturedProduct\SubIriConverter\SubIriConverter:
+    tags: [ !php/const XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\SubIriConverter\SubIriFromItemConverterInterface::SUB_IRI_FROM_ITEM_CONVERTER_TAG ]
+
+  CDev\FeaturedProducts\API\OpenApiTagsRepositoryDecorator:
+    decorates: XLite\API\OpenApiTagsRepository

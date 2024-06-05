@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2023-07-05 - [Bug] Updated the loyalty points form at checkout  #XCB-2234 #QSL-LoyaltyProgram
+

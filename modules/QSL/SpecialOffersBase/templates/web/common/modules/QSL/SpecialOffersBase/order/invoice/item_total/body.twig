@@ -1,0 +1,30 @@
+<td class="total">
+    {% if not this.hasSurcharges() %}
+        {{ this.formatInvoicePrice(this.item.getDisplayTotal(), this.getCurrency(), 1) }}
+    {% endif %}
+    {% if this.hasSurcharges() %}
+        <div class="total-with-surcharges">
+            <div>
+                <del>{{ this.formatInvoicePrice(this.item.getSubtotal(), this.getCurrency(), 1) }}</del>
+            </div>
+            <div>
+                {% if this.isFreeItem() %}
+                    <span class="modified-total">{{ t('Free') }}!</span>
+                {% endif %}
+                {% if not this.isFreeItem() %}
+                    <span class="modified-total">{{ this.formatInvoicePrice(this.item.getTotal(), this.getCurrency(), 1) }}</span>
+                {% endif %}
+                <div class="including-modifiers" style="display: none;">
+                    <ul class="including-modifiers">
+                        {% for surcharge in this.getSurcharges() %}
+                            <li>
+                                <span class="name">{{ surcharge.label }}:&nbsp;</span>
+                                <span class="value">{{ this.formatInvoicePrice(surcharge.value, this.getCurrency(), 1) }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</td>

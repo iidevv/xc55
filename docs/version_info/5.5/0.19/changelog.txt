@@ -1,0 +1,9 @@
+Version 5.5.0.19
+
+Improvements (1)
+2023-06-17 - [Story] Added a new option for the Plain field attribute: Specification. #ECOM-3625 #CDev-Core #QSL-ColorSwatches
+
+Fixes (2)
+2023-06-20 - [Bug] QSL-PaymentMemberships. A 5.4->5.5.0 upgrade was breaking the table name xc_qsl_payment_method_memberships so it became xc_payment_method_memberships. Fixed. #XCB-2404 #CDev-Core #QSL-ColorSwatches #QSL-PaymentMemberships
+2023-06-16 - [Bug] Implemented a better (more memory-efficient) check for the integrity of store files. #XCB-2332 #CDev-Core #XC-Service
+

@@ -1,0 +1,20 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.2
+type: common
+authorName: Qualiteam
+moduleName: 'Single Sign-On with OAuth 2'
+description: 'Let your visitors use their existing accounts from popular social networking services to log in and register in your store. Supports Facebook, Google, LinkedIn, Instagram, PayPal and any other identity provider working with the OAuth 2.0 protocol'
+minorRequiredCoreVersion: 0
+dependsOn: {  }
+incompatibleWith:
+    - CDev-SocialLogin
+showSettingsForm: true
+canDisable: true
+autoloader:
+    - vendor/autoload.php

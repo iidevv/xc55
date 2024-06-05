@@ -1,0 +1,10 @@
+{% if this.getAvailableAmount() == 0 %}
+    {{ t('Out of stock') }}
+{% elseif this.isAllStockInCart() %}
+    <p class="product-added-note">
+        <i class="icon-ok-mark"></i>
+        {{ this.getItemsInCartMessage() | raw}}
+    </p>
+{% else %}
+    {% include 'button/regular.twig' %}
+{% endif %}

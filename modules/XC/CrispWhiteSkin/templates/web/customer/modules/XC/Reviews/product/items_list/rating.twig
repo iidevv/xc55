@@ -1,0 +1,27 @@
+{# #
+ # Rating value in product info
+#}
+
+{% if this.isVisibleAverageRatingOnPage() %}
+  <div class="product-average-rating list-rating">
+    <div class="list-rating_average">{{ this.getAverageRating() }}</div>
+    {% if this.getReviewsCount() %}
+      <div class="list-rating_count">
+        <a href="{{ this.getRatedProductURL() }}" class="link-to-tab">
+          {{ t('X review(s)', {'count': this.getReviewsCount()}) }}
+        </a>
+      </div>
+    {% elseif this.isVisibleAddReviewLink(this.product) %}
+      <div class="list-rating_add">
+        <a href="{{ this.getRatedProductURL() }}" class="link-to-tab">
+          {{ widget('\\XC\\Reviews\\View\\Button\\Customer\\AddReviewLink', label=this.getReviewsLinkLabel(), product=this.product) }}
+        </a>
+      </div>
+    {% else %}
+      <a href="{{ this.getRatedProductURL() }}" class="link-to-tab">{{ this.getReviewsLinkLabel() }}</a>
+    {% endif %}
+    <div class="rating-tooltip">
+      {{ widget_list('reviews.tooltip.rating') }}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,56 @@
+{##
+ # Change card form
+ #
+ #}
+{% form 'XLite\\View\\Form' with {formTarget: 'xpayments_subscriptions', formAction: 'change_card'} %}
+  <input type="hidden" name="subscription_id" value="{{ this.xpaymentsSubscription.id }}" />
+
+  <span class="fee-label">{{ t('Card for payments') }}:</span>
+
+  <span class="current-card" id="current-card-{{ this.xpaymentsSubscription.id }}">
+
+    {% if this.xpaymentsSubscription.isFree() %}
+      {{ t('Not required') }}
+    {% else %}
+
+      <ul class="saved-cards">
+        <li>
+        {% set currentCardId=this.xpaymentsSubscription.getCardId() %}
+          {% if currentCardId %}
+            {{ widget('\\XPay\\XPaymentsCloud\\View\\Card', card=this.xpaymentsSubscription.getCardData(currentCardId), compact=true) }}
+          {% else %}
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ t('Not available') }}
+          {% endif %}
+        </li>
+      </ul>
+
+      {% if this.get('profile').getXpaymentsCards() %}
+        <button type="button" class="card-change-btn" data-subscription-id="{{ this.xpaymentsSubscription.id }}"></button>
+      {% endif %}
+    {% endif %}
+
+  </span>
+
+  <div class="saved-cards-container" id="saved-cards-container-{{ this.xpaymentsSubscription.id }}">
+
+    <ul class="saved-cards">
+
+      {% for card in this.get('profile').getXpaymentsCards() %}
+        <li>
+
+          <input type="radio" name="card_id" value="{{ card.cardId }}" {% if currentCardId and (card.cardId == currentCardId) %} checked="checked"{% endif %} id="saved-card-radio-{{ this.xpaymentsSubscription.id }}-{{ card.cardId }}" />
+
+          <label for="saved-card-radio-{{ this.xpaymentsSubscription.id }}-{{ card.cardId }}" id="saved-card-label-{{ this.xpaymentsSubscription.id }}-{{ card.cardId }}">
+            {{ widget('\\XPay\\XPaymentsCloud\\View\\Card', card=card, compact=true) }}
+          </label>
+
+        </li>
+      {% endfor %}
+
+    </ul>
+
+    <button type="submit" class="btn regular-button xpayments-subscription-cards">{{ t('Use selected card') }}</button>
+
+  </div>
+
+{% endform %}

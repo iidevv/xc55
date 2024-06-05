@@ -1,0 +1,67 @@
+{##
+ # Payment template
+ #}
+<div class="payment-form-container">
+	{% if this.getPublicKey() %}
+		{% if this.getSavedCards() and not this.isAddCardMode() %}
+			<div class="saved-card-info">
+				<span class="payment-form-label">{{ t('Saved Payment Methods') }}</span>
+				<select id="saved-card" name="saved_card_select" class="form-control" autocomplete="nope">
+					<option value="">{{ t('Select Payment Methods') }}</option>
+					{% for card in this.getSavedCards() %}
+						<option value="{{ card.transaction_id }}">
+							{{card.card_type}}
+							|
+							{{ card.card_number }}
+						</option>
+					{% endfor %}
+				</select>
+			</div>
+		{% endif %}
+		<div id="payment-form" data-key="{{ this.getPublicKey() }}">
+			<span class="payment-form-label">{{ t('Secure credit/debit card payment') }}</span>
+			<div class="form-row top-row">
+				<div id="card-number" class="field card-number"></div>
+				<div class="input-errors" id="card-number-errors" role="alert"></div>
+			</div>
+
+			<div class="form-group">
+				<div class="form-row">
+					<div id="card-date" class="field third-width"></div>
+					<div class="input-errors" id="card-date-errors" role="alert"></div>
+				</div>
+				<div class="form-row">
+					<div id="card-cvv" class="field third-width"></div>
+					<div class="input-errors" id="card-cvv-errors" role="alert"></div>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div id="card-postal-code" class="field third-width"></div>
+				<div class="input-errors" id="card-postal-code-errors" role="alert"></div>
+			</div>
+			{% if this.isAddCardMode() %}
+				<input type="hidden" id="save-card" name="save_card" value="true">
+			{% else %}
+				<div class="form-row">
+					<label class="save-card-option">
+						<input type="checkbox" id="save-card" name="save_card" checked>
+						<span>
+							I want to use this credit card for my future orders in this shop.
+							<a href="#" class="save-card-hint" tabindex="-1">&nbsp;Why is it safe?</a>
+						</span>
+					</label>
+				</div>
+			{% endif %}
+
+		{% else %}
+
+			<div class="key-unavailable">
+				<p>
+					{{ this.getUnavailableTokenFirstMessage() }}
+				</p>
+			</div>
+
+		{% endif %}
+	</div>
+</div>

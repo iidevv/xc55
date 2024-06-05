@@ -1,0 +1,5 @@
+Version 5.5.0.13
+
+Fixes (1)
+2023-08-11 - [Bug] Edited templates were moved as blank when upgrading from 5.4 to 5.5. Fixed. #XCB-1991 #CDev-Core #XC-ThemeTweaker
+

@@ -1,0 +1,60 @@
+{# #
+ # Orders list item
+#}
+<div class="order-body-item">
+    {{ this.displayCommentedData(this.getCommentedData()) }}
+
+    <div class="title">
+
+        <ul class="order-spec-wrapper-list">
+            <li class="order-spec-wrapper">{# order number, date, total, num items #}
+                <ul class="order-spec">
+                    {{ widget_list('orders.children.spec') }}
+                </ul>
+            </li>
+
+            <li class="order-part-wrapper new-title-li ntl-tracking-number">
+                <div class="order-spec-separator"></div>
+                <div class="ntl-div ntl-tracking-number__block">
+                    <div class="ntl-tracking-number__title">
+                    <p><b>{{ t('SkinActChangesToTrackingNumbers TrackingNumbers') }}</b></p>
+                    </div>
+                    {{ widget_list('orders.children.parcels.part.tracking.before') }}
+                    {% for trackingNumber in this.order.trackingNumbers %}
+                        <div class="ntl-tracking-number__number">
+                        {{ widget_list('orders.children.parcels.part.tracking.number.before', item=trackingNumber) }}
+                        <p>{{ trackingNumber.value }}</p>
+                        {{ widget_list('orders.children.parcels.part.tracking.number.after', item=trackingNumber) }}
+                        </div>
+                    {% endfor %}
+                    {{ widget_list('orders.children.parcels.part.tracking.after') }}
+                </div>
+            </li>
+
+            <li class="order-part-wrapper new-title-li ntl-shipping-method">
+                <div class="order-spec-separator"></div>
+                <div class="ntl-div">
+                    <p><b>{{ t('SkinActChangesToTrackingNumbers shippingMethod') }}</b></p>
+                    <p>{{ this.getShippingMethod() }}</p>
+                </div>
+            </li>
+
+            <li class="order-part-wrapper new-title-li ntl-instructions">
+                <div class="order-spec-separator"></div>
+                <div class="ntl-div">
+                    <p><b>{{ t('SkinActChangesToTrackingNumbers parcel instructions') }}</b></p>
+                    <p>{{ this.getInstructions()|nl2br }}</p>
+                </div>
+            </li>
+
+        </ul>
+
+    </div> {# End of title #}
+
+    <div id="order-{{ this.order.orderId }}" class="order-body-items-list collapse">
+        <div class="shipping-method-spec">
+            {{ widget_list('orders.children.shipping') }}
+        </div>
+        {{ widget('\\XLite\\View\\Order\\ListItem\\Items', full='true', order=this.order) }}
+    </div>
+</div>

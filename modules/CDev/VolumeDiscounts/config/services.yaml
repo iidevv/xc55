@@ -1,0 +1,49 @@
+parameters:
+    xcart.cdev.volume_discounts.discount_types: [ '%', '$' ]
+
+api_platform:
+    resource_class_directories:
+        - '%kernel.project_dir%/var/run/classes/CDev/VolumeDiscounts/Model'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # Validator
+    xcart.cdev.volume_discounts.validator.volume_discount_type:
+        class: CDev\VolumeDiscounts\Validator\Constraint\VolumeDiscountTypeValidator
+        arguments:
+            $types: '%xcart.cdev.volume_discounts.discount_types%'
+
+    # API
+
+    # /volume_discounts
+    CDev\VolumeDiscounts\API\Endpoint\VolumeDiscount\Transformer\OutputTransformerInterface: '@CDev\VolumeDiscounts\API\Endpoint\VolumeDiscount\Transformer\OutputTransformer'
+    CDev\VolumeDiscounts\API\Endpoint\VolumeDiscount\Transformer\OutputTransformer:
+        arguments:
+            $membershipIdTransformer: '@xcart.entities.sub_entity_transformer.output.id.membership'
+            $zonesIdCollectionOutputTransformer: '@xcart.entities.sub_entity_transformer.output.id_collection.zone'
+
+    CDev\VolumeDiscounts\API\Endpoint\VolumeDiscount\Transformer\InputTransformerInterface: '@CDev\VolumeDiscounts\API\Endpoint\VolumeDiscount\Transformer\InputTransformer'
+    CDev\VolumeDiscounts\API\Endpoint\VolumeDiscount\Transformer\InputTransformer:
+        arguments:
+            $membershipUpdater: '@xcart.entities.sub_entity_transformer.input.id.membership'
+            $zonesUpdater: '@xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.volume_discounts.zones'
+            $membershipIdOutputTransformer: '@xcart.entities.sub_entity_transformer.output.id.membership'
+            $zonesIdCollectionOutputTransformer: '@xcart.entities.sub_entity_transformer.output.id_collection.zone'
+
+    CDev\VolumeDiscounts\API\OpenApiTagsRepositoryDecorator:
+        decorates: XLite\API\OpenApiTagsRepository
+
+    xcart.entities.sub_entity_transformer.input.id_bidirectional_collection.cdev.volume_discounts.zones:
+        class: XLite\API\SubEntityInputTransformer\SubEntityIdBidirectionalCollectionInputTransformer
+        arguments:
+            $repository: '@xcart.repository.zone'
+            $name: 'zone'
+            $idGetter: '@xcart.entities.id_getter.zone'
+            $revertedGetterName: 'getVolumeDiscounts'
+
+    CDev\VolumeDiscounts\LifetimeHook\Hook:
+        tags:
+            - { name: xcart.lifetime-hook, moduleId: CDev-VolumeDiscounts, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }

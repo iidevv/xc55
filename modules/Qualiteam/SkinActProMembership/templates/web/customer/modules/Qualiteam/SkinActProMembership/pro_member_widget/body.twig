@@ -1,0 +1,16 @@
+{##
+ # Header ProMembership block
+ #}
+
+<div class="pro-member-widget">
+
+  <a href="{{ this.getProMembershipUrlLink() }}">
+
+    <div class="pro-member-widget__icon">
+      <span class="pro-member-widget__pro">{{ t('PRO') }}</span>
+      <span class="pro-member-widget__label">{{ t('Member') }}</span>
+    </div>
+
+  </a>
+  {{ include('modules/Qualiteam/SkinActProMembership/pro_member_widget/dropdown.twig') }}
+</div>

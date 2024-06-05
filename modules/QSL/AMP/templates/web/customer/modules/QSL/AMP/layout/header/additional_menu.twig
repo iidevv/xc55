@@ -1,0 +1,9 @@
+{##
+ # Header right box
+ #
+ # @ListChild (list="amp.header.menu", weight="1000")
+ #}
+<li><span><hr/></span></li>
+{% for w in this.getViewList('amp.sidebar.additional-menu') %}
+    <li>{{ w.display() }}</li>
+{% endfor %}

@@ -1,0 +1,14 @@
+{##
+ # Conversations list
+ #}
+{% set orderCount = this.getProfile().getOrdersCount() %}
+
+<div class="white-message-button">
+  {% if orderCount > 0 %}
+    {{ widget('Qualiteam\\SkinActOrderMessaging\\View\\Button\\WriteMessage') }}
+  {% else %}
+    {{ widget('\\XLite\\View\\Button\\Link', style='proceed',  location=xurl('general_conversation'), label=t('SkinActOrderMessaging Write a message')) }}
+  {% endif %}
+</div>
+
+{{ widget('XC\\VendorMessages\\View\\ItemsList\\Conversations') }}

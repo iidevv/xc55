@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2023-06-16 - [Bug] There was not a top message with notification as to whether the sending of a wishlist to the user's email had been successful. Fixed. #XCB-1150 #QSL-MyWishlist
+

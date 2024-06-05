@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-09-02 - [Bug] Product stickers. After enabling the "Corner ribbon" sticker display mode, the default stickers were functioning incorrectly. Fixed. #XCB-1592 #QSL-ProductStickers
+

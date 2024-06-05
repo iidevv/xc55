@@ -1,0 +1,16 @@
+{##
+ # Add action
+ #
+ # @ListChild (list="popup.shipping.methods.list.line.actions.right", weight=300)
+ #}
+
+{% if this.isShowAddButton(this.get('method')) %}
+  <div class="add action">
+    {{ widget(
+      '\\XLite\\View\\Button\\SimpleLink',
+      label='Add',
+      location=xurl('shipping_methods', 'add', {'id': this.get('method').getMethodId()}),
+      style='btn regular-button'
+    ) }}
+  </div>
+{% endif %}

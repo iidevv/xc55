@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace XLite\View\SearchPanel\Product\Admin;
+
+/**
+ * Main admin product search panel
+ */
+class Main extends \XLite\View\SearchPanel\SimpleSearchPanel
+{
+    // Left for backwards compatibility
+    // Some modules can decorate this class
+
+    /**
+     * Return true if search panel should use filters
+     *
+     * @return boolean
+     */
+    protected function isUseFilter()
+    {
+        return true;
+    }
+}

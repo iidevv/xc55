@@ -1,0 +1,20 @@
+{##
+# Extra coupons and discouponts coupon stamp info
+#
+# @ListChild (list="extraCoupons.itemsList.item.content", weight="100")
+#}
+
+{% if this.isShowCoupon() %}
+  <div class="extra-coupons__block-coupon-content-stamp-info">
+    <div class="extra-coupons__block-coupon-content-stamp-info-block">
+      <div class="extra-coupons__block-coupon-content-stamp-info-block-name">
+        <div class="extra-coupons__block-coupon-content-stamp-info-block-name-one">PRO</div>
+        <div class="extra-coupons__block-coupon-content-stamp-info-block-name-two">Member</div>
+      </div>
+      <div class="extra-coupons__block-coupon-content-stamp-info-block-stamp">
+        <div class="extra-coupons__block-coupon-content-stamp-info-block-stamp-one">{{ this.getStampText1() }}</div>
+        <div class="extra-coupons__block-coupon-content-stamp-info-block-stamp-two">{{ this.getStampText2() }}</div>
+      </div>
+    </div>
+  </div>
+{% endif %}

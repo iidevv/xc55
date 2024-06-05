@@ -1,0 +1,23 @@
+{##
+ # Header part
+ #
+ # @ListChild (list="head", weight="100")
+ #}
+{# TODO : Remove the whole static code into the comment model#}
+<script type="text/javascript">
+var xliteConfig = {
+  script:                        '',
+  target:                        '{{ this.getTarget()|raw }}',
+  language:                      '{{ this.currentLanguage.getCode() }}',
+  success_lng:                   '{{ t('Success') }}',
+  base_url:                      '{{ this.getBaseShopURL() }}',
+  form_id:                       '{{ this.get('xlite').formId }}',
+  form_id_name:                  '{{ constant('XLite::FORM_ID') }}',
+  zone:                          'admin',
+  role:                          '{{ this.getLoggedUserRole() }}',
+  developer_mode:                {{ this.isDeveloperMode() ? 'true' : 'false' }},
+  display_upgrade_notifications: {{ this.isUpgradeFunctionalityDisplayed() ? 'true' : 'false' }},
+  marketplace_api_url:           '{{ this.getMarketplaceApiUrl() }}',
+  public_dir:                    '{{ this.getPublicDir() }}'
+};
+</script>

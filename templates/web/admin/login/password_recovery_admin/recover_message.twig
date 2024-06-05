@@ -1,0 +1,7 @@
+{##
+ # Password recovery message
+ #}
+
+{{ t('An email has been sent', {'email': this.get('email')} )|raw }}
+<br />
+{{ t('Did not receive the email?', {'forgotPasswordURL': xurl('recover_password','',{'valid': 1, 'email': this.get('email')})})|raw }}

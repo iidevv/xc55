@@ -1,0 +1,18 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.0
+type: common
+authorName: Qualiteam
+moduleName: 'SkinAct. Contact Us page adjustments'
+description: 'Contact Us page adjustments, SS-22220'
+minorRequiredCoreVersion: 0
+dependsOn:
+  - CDev-ContactUs
+incompatibleWith: { }
+showSettingsForm: true
+canDisable: true

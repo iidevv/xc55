@@ -1,0 +1,27 @@
+{##
+ # Top menu
+ #}
+
+<li class="{{ this.getCSSClass() }}">
+  <a href="{{ this.getURL() }}" class="mobile-menu__categories-item-link">
+    <span class="mobile-menu__categories-item-title">{{ this.getTitle() }}</span>
+    {% if this.hasChildren() %}
+      {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon='i-arrow', class='mobile-menu__categories-item-further-icon') }}
+    {% endif %}
+  </a>
+  {% if this.hasChildren() %}
+    <ul class="mobile-menu__categories-item-submenu">
+      {% if this.getLevel() == 1 %}
+        <li class="mobile-menu__categories-item mobile-menu__categories-item--back">
+          <button class="mobile-menu__categories-item-back">
+            {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon='i-arrow', class='mobile-menu__categories-item-back-icon') }}
+            <span class="mobile-menu__categories-item-back-title">{{ this.getTitle() }}</span>
+          </button>
+        </li>
+      {% endif %}
+      {% for category in this.getChildren() %}
+        {{ widget('Qualiteam\\SkinActSkin\\View\\Menu\\MobileCategory', category=category, level=this.getLevel() + 1) }}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</li>

@@ -1,0 +1,5 @@
+Version 5.5.0.10
+
+Fixes (1)
+2023-08-03 - [Bug] An out-of-stock variant could not be selected with the "Back in stock" add-on enabled. Fixed. #XCB-2646 #XC-ProductVariants
+

@@ -1,0 +1,18 @@
+{##
+ # Paypal button (Paypal Commerce Platform)
+ #}
+
+<input type="hidden" name="pcp_on_approve_data" id="pcp_on_approve_data" value=""/>
+<input type="hidden" name="pcp_funding_data" id="pcp_funding_data" value=""/>
+
+<div class="{{ this.getButtonClass() }}">
+  {{ this.displayCommentedData(this.getButtonParams()) }}
+</div>
+
+<div class="pcp-hosted-fields-container">
+  <div class="pcp-hosted-fields" style="display: none">
+    {{ widget('CDev\\Paypal\\View\\Checkout\\HostedFields') }}
+    <div id="payments-sdk__contingency-lightbox"></div>
+    {{ widget('CDev\\Paypal\\View\\Button\\Checkout\\PlaceOrder', id='pcp-hosted-fields-submit') }}
+  </div>
+</div>

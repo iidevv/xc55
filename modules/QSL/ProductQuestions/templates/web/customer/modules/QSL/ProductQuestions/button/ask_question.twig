@@ -1,0 +1,11 @@
+{##
+ # @ListChild (list="qsl.productquestions.tab.actions", weight="20")
+ #}
+<div id="ask-question-button">
+    {% if this.isAllowedAskQuestion() %}
+      {{ widget('\\QSL\\ProductQuestions\\View\\Button\\Customer\\AskQuestion', label=t('Ask question'), product=this.product) }}
+    {% endif %}
+    {% if not this.isAllowedAskQuestion() %}
+      <span>{{ t('Please sign in to ask a question.', {'loginUrl': xurl('login'), 'registerUrl': xurl('profile', '', {'mode': 'register'})})|raw }}</span>
+    {% endif %}
+</div>

@@ -1,0 +1,40 @@
+{##
+ # Attribute value (Select)
+#}
+
+<span class="color-swatches-wrapper">
+  <div class="blocks-selector floating-label focused">
+  {% if this.isShowSelector() %}
+    {% if this.useBlocksMode() %}
+      {% include 'product/attribute_value/select/blocks.twig' %}
+    {% else %}
+      {% include 'product/attribute_value/select/selectbox.twig' %}
+    {% endif %}
+  {% else %}
+    <span class="title">{{ this.attribute.name }}: <span class="selected-value"></span></span>
+  {% endif %}
+    <div class="blocks">
+      <ul class="color-swatches{% if this.isShowSelector() %} select-shown{% endif %}">
+          {% for v in this.getAttrValue() %}
+            <li {{ this.printTagAttributes(this.getSwatchAttributes(v))|raw }}>
+              <div class="swatch-container">
+                <a {{ this.printTagAttributes(this.getSwatchLinkAttributes(v))|raw }}>
+                  {% if  not this.isShowSelector() %}
+                    <input {{ this.printTagAttributes(this.getSwatchInputAttributes(v))|raw }} />
+                  {% endif %}
+                  {% if this.getSwatchImage(v) %}
+                    <img src="{{ this.getSwatchImageURL(v) }}"/>
+                  {% endif %}
+                  {{ this.getModifierTitleForSwatch(v)|raw }}
+                </a>
+              </div>
+            </li>
+          {% endfor %}
+      </ul>
+    </div>
+    <div class="shipdate-wrapper">
+      <span class="shipdate-text hidden">{{ t('SkinActColorSwatchesFeature ship date') }}</span>
+      <span class="shipdate-info"></span>
+    </div>
+  </div>
+</span>

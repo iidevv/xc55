@@ -1,0 +1,11 @@
+
+{% block _form_settings_usereminderstab_row %}
+  <h2>{{ t('Attention') }}</h2>
+  <p>
+    {{ t('Please use PAGE in order to configure Cart Reminders.', {
+        url: this.getRemindersTabUrl(),
+        text: t('Cart reminders')
+      }
+    )|raw }}
+  </p>
+{% endblock %}

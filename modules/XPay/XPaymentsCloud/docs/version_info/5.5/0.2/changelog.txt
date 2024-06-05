@@ -1,0 +1,9 @@
+Version 5.5.0.2
+- Corrected product prices behaviour when the trial period was enabled
+- Corrected Subscription email notifications at checkout
+- Corrected Order invoices appearance for the products with trial period
+- Corrected shipping methods appearance for Apple Pay
+- Corrected Product setup fee and prices appearance
+- Corrected icons for payment methods allowed in X-Payments
+- Corrected partial Refunds functionality
+- Added onRemove hook

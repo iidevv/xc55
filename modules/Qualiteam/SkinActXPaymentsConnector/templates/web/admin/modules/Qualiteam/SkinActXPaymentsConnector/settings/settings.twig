@@ -1,0 +1,18 @@
+{##
+ # Just a template for settings. We need it since we do not implement decorator for modules now
+ #
+ #}
+
+{{ widget('\\Qualiteam\\SkinActXPaymentsConnector\\View\\Settings\\HTTPSWarning', useBodyTemplate='1') }}
+
+{{ widget('\\Qualiteam\\SkinActXPaymentsConnector\\View\\Settings\\Deploy', useBodyTemplate='1') }}
+
+{{ widget('\\Qualiteam\\SkinActXPaymentsConnector\\View\\Settings\\PaymentMethods', useBodyTemplate='1') }}
+
+{{ widget('\\Qualiteam\\SkinActXPaymentsConnector\\View\\Settings\\ZeroAuth', useBodyTemplate='1') }}
+
+{{ widget('\\Qualiteam\\SkinActXPaymentsConnector\\View\\Settings\\Welcome', useBodyTemplate='1') }}
+
+<div class="settings general-settings settings-xpc">
+  {{ widget('\\Qualiteam\\SkinActXPaymentsConnector\\View\\Model\\Settings', useBodyTemplate='1') }}
+</div>

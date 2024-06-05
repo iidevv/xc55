@@ -1,0 +1,19 @@
+{##
+ # Dashboard info block notification
+ #}
+
+<div {{ this.printTagAttributes(this.getTagAttributes())|raw }}>
+  <span class="notification-message">
+    <a class="popup-button default-popup-button" href="#">
+      {{ this.displayCommentedData(this.getURLParams()) }}
+      <span>
+        {{ this.getHeader() }}
+        <span class="counter"></span>
+      </span>
+    </a>
+  </span>
+
+  <div class="notification-close">
+    <i class="fa-times"></i>
+  </div>
+</div>

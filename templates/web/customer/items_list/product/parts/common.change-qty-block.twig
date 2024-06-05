@@ -1,0 +1,30 @@
+{##
+ # Change quantity template
+ #}
+
+{% set productId = this.getProductId() %}
+{% set cart = this.getCart() %}
+{% set productStockAvailabilityPolicy = this.getProductStockAvailabilityPolicy() %}
+{% set increaseQtyAttributes = {} %}
+
+{% if productStockAvailabilityPolicy.isAllStockInCart(cart) %}
+  {% set increaseQtyAttributes = {'disabled': 'disabled'} %}
+{% endif %}
+
+<div class="change-qty">
+  {{ widget('\\XLite\\View\\Button\\Simple',
+    label='',
+    style='regular-main-button decrease-qty icon-minus productid-' ~ productId) }}
+
+  <input class="qty-in-cart form-control" type="text" readonly="readonly" value="{{ productStockAvailabilityPolicy.getInCartAmount(cart) }}">
+
+  <span class="increase-qty-container">
+    {{ widget('\\XLite\\View\\Button\\Simple',
+      label='',
+      attributes=increaseQtyAttributes,
+      style='regular-main-button increase-qty icon-plus productid-' ~ productId) }}
+    <span class="out-of-stock-tooltip tooltip">
+      <span class="caption">{{ this.getAllStockInCartTooltipText() }}</span>
+    </span>
+  </span>
+</div>

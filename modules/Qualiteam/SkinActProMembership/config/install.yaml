@@ -1,0 +1,108 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActProMembership Product is a paid membership", translations: [{ code: en, label: "Product is a paid membership" }] }
+  - { name: "SkinActProMembership product field membership", translations: [{ code: en, label: "Membership" }] }
+  - { name: "SkinActProMembership product field duration", translations: [{ code: en, label: "Duration" }] }
+  - { name: "SkinActProMembership Buy pro membership", translations: [{ code: en, label: "Buy PRO membership" }] }
+  - { name: "SkinActProMembership select Yes", translations: [{ code: en, label: "Yes" }] }
+  - { name: "SkinActProMembership select No", translations: [{ code: en, label: "No" }] }
+  - { name: "SkinActProMembership OPCPaidMembershipSelect label", translations: [{ code: en, label: "Apply to become PRO member ($99/year)" }] }
+  - { name: "SkinActProMembership product to add", translations: [{ code: en, label: "Product to add" }] }
+  - { name: "SkinActProMembership there is no paid membership products", translations: [{ code: en, label: "There are no paid membership products" }] }
+  - { name: "SkinActProMembership paid membership not selected", translations: [{ code: en, label: "Paid membership product is not selected" }] }
+  - { name: "SkinActProMembership paid membership product is not found", translations: [{ code: en, label: "Paid membership product is not found" }] }
+  - { name: "SkinActProMembership Send expiration reminder", translations: [{ code: en, label: "Send expiration reminder in ... days" }] }
+  - { name: "SkinActProMembership Show free shipping stamp", translations: [{ code: en, label: "Show free shipping stamp" }] }
+  - { name: "SkinActProMembership free_shipping_for_memberships", translations: [{ code: en, label: "Free shipping for memberships:" }] }
+  - { name: "SkinActProMembership select pro membership product", translations: [{ code: en, label: "Select PRO membership product" }] }
+  - { name: "SkinActProMembership choose pro membership", translations: [{ code: en, label: "Choose pro membership" }] }
+  - { name: "SkinActProMembership mail send successfully", translations: [{ code: en, label: "Mail has been sent successfully" }] }
+  - { name: "SkinActProMembership mail not sent something went wrong", translations: [{ code: en, label: "Mail not sent. Something went wrong" }] }
+  - { name: "SkinActProMembership customer already has paid membership", translations: [{ code: en, label: "You already have Professional Membership level assigned to your account." }] }
+  - { name: "SkinActProMembership last email about buying pro membership was", translations: [{ code: en, label: "Last email about buying pro membership was: {{time}}" }] }
+  - { name: "SkinActProMembership Buy membership", translations: [{ code: en, label: "Buy Membership" }] }
+  - { name: "SkinActProMembership shipping method for paid membership", translations: [{ code: en, label: "Shipping method for paid membership" }] }
+  - { name: "SkinActProMembership shipping method for paid membership not selected", translations: [{ code: en, label: "Shipping method for paid membership not selected" }] }
+  - { name: "SkinActProMembership PRO", translations: [{ code: en, label: "PRO" }] }
+  - { name: "SkinActProMembership Member", translations: [{ code: en, label: "Member" }] }
+  - { name: "SkinActProMembership membership will be changed", translations: [{ code: en, label: "You already have {{currentName}} membership. After you place the order, your {{currentName}} membership will expire and you will get {{newName}} membership." }] }
+  - { name: "SkinActProMembership pro membership menu", translations: [{ code: en, label: "PRO Membership" }] }
+  - { name: "SkinActProMembership product banner text", translations: [{ code: en, label: "1 Year Free Shipping, Early Access, Special Promotions and No Minimum Order Restrictions" }] }
+  - { name: "SkinActProMembership PRO price", translations: [{ code: en, label: "$99.00 / Year" }] }
+
+
+XLite\Model\Config:
+  - name: product_to_add
+    category: Qualiteam\SkinActProMembership
+    type: \Qualiteam\SkinActProMembership\View\FormField\Select\ProductToAddSelect
+    orderby: 100
+    translations:
+      - code: en
+        option_name: 'SkinActProMembership product to add'
+
+  - name: days_before_expiration
+    category: Qualiteam\SkinActProMembership
+    type: \XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 1 }
+    value: 3
+    orderby: 200
+    translations:
+      - code: en
+        option_name: 'SkinActProMembership Send expiration reminder'
+
+  - name: pro_shipping_method
+    category: Qualiteam\SkinActProMembership
+    type: \Qualiteam\SkinActProMembership\View\FormField\Select\ProShippingMethodSelect
+    orderby: 200
+    translations:
+      - code: en
+        option_name: 'SkinActProMembership shipping method for paid membership'
+
+  - name: pro_membership_link_url
+    category: Qualiteam\SkinActProMembership
+    type: \XLite\View\FormField\Input\Text
+    orderby: 300
+    translations:
+      - code: en
+        option_name: 'URL for PRO Membership button link'
+
+
+XLite\Model\Notification:
+  - templatesDirectory : modules/Qualiteam/SkinActProMembership/pro_membership
+    availableForAdmin : true
+    availableForCustomer : false
+    enabledForAdmin : true
+    enabledForCustomer : false
+    editable : true
+    module: Qualiteam\SkinActProMembership
+    translations:
+      - code: en
+        name: Buy PRO membership
+        description: Buy PRO membership
+        adminSubject: Buy PRO membership
+        adminText: We offer you to proceed with PRO membership. Just click this <a href="%customer_product_url%" target="_blank">link</a> and purchase the membership for a year
+
+  - templatesDirectory : modules/Qualiteam/SkinActProMembership/pro_membership_expiration_reminder
+    availableForAdmin : true
+    availableForCustomer : true
+    enabledForAdmin : false
+    enabledForCustomer : true
+    editable : true
+    module: Qualiteam\SkinActProMembership
+    translations:
+      - code: en
+        name: Pro membership expiration reminder
+        description: This message will be sent to customer when a membership purchased by them expires in ... days
+        customerSubject: Pro membership expiration reminder
+        customerText: 'Please, note that your PRO membership expiration date: %exp_date%. In order to continue, please, click the following <a href="%customer_product_url%" target="_blank">link</a> and pay the prolongation.'
+        adminSubject: Pro membership expiration reminder
+        adminText: 'Please, note that your PRO membership expiration date: %exp_date%. In order to continue, please, click the following <a href="%customer_product_url%" target="_blank">link</a> and pay the prolongation.'
+
+XLite\Model\Task:
+  - { owner: 'Qualiteam\SkinActProMembership\Core\Task\ProMembershipExpirationReminder' }

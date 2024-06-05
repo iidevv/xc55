@@ -1,0 +1,5 @@
+{# vim: set ts=2 sw=2 sts=2 et: #}
+
+<div class="image{% if not this.product.hasImage() %} empty{% endif %} {{this.getMagicToolboxClass()}}" style="width: {{ this.getMaxImageWidth() }}px;">
+  {{ widget_list('product.details.page.image') }}
+</div>

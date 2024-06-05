@@ -1,0 +1,16 @@
+{# #
+ # Uses count
+#}
+
+{% if this.entity.getUses() > 0 %}
+
+
+    <a href="{{ xurl('order_list', '', {'couponId': this.entity.getId()}) }}">
+
+     {{ widget('\\XLite\\View\\Tooltip', caption=this.entity.getUses(), isImageTag=false, text=t('SkinActCouponSearchBar tooltip'), className='') }}
+
+    </a>
+
+{% else %}
+    {{ this.entity.getUses() }}
+{% endif %}

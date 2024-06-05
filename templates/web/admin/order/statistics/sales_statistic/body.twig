@@ -1,0 +1,77 @@
+{##
+ # Sales statistic (for dashboard)
+ #}
+
+<div class="daily-sales-statistic">
+  <xlite-daily-sales-statistic inline-template>
+    <div>
+      <h4>{{ t('Today’s statistics') }}</h4>
+      <div class="daily-sales-row">
+        <div class="statistic-label">{{ t('Orders') }}:</div>
+        <div class="statistic-value" v-text="dailyOrders"></div>
+      </div>
+      <div class="daily-sales-row">
+        <div class="statistic-label">{{ t('Revenue') }}:</div>
+        <div class="statistic-value" v-text="dailyFormattedRevenue"></div>
+      </div>
+      <div class="reloading-element"></div>
+    </div>
+  </xlite-daily-sales-statistic>
+</div>
+
+<div class="period-sales-statistic">
+  <xlite-period-sales-statistic inline-template>
+    <div>
+      <div class="period-sales-header">
+        <div>
+          <h4>{{ t('Sales') }}</h4>
+          <div class="period-sales-legend">
+            <p class="legend-revenue"><span></span>Revenue</p>
+            <p class="legend-orders"><span></span>Orders</p>
+          </div>
+        </div>
+        <div class="period-sales-selector">
+          {{ widget('XLite\\View\\FormField\\Select\\Order\\Statistic\\SalesStatisticPeriod', value=this.getDefaultPeriod(), name='sales_period', fieldOnly=true) }}
+        </div>
+      </div>
+      <div class="period-sales-chart">
+        <div class="sales-chart-gradients">
+          <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+            <linearGradient id="revenue_gradient" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" v-bind:stop-color="revenueColor" stop-opacity="1"/>
+              <stop offset="100%" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="orders_gradient" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" v-bind:stop-color="ordersColor"  stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="white"  stop-opacity="0"/>
+            </linearGradient>
+          </svg>
+        </div>
+        <div class="sales-chart-container"></div>
+      </div>
+      <div class="period-sales-stats">
+        <div class="period-sales-row">
+          <div class="statistic-label">{{ t('Orders') }}</div>
+          <div class="statistic-value" v-text="periodOrders"></div>
+        </div>
+        <div class="period-sales-row">
+          <div class="statistic-label">{{ t('Revenue') }}</div>
+          <div class="statistic-value" v-text="periodRevenue"></div>
+        </div>
+        <div class="period-sales-row" v-bind:class="yoyValueClass">
+          <div class="statistic-label">{{ t('Year over Year') }}</div>
+          <div class="statistic-value">
+            <span v-text="periodYoYFormatted"></span>
+            <span class="stats-caret">
+            <i class="fa fa-caret-up"></i>
+            <i class="fa fa-caret-down"></i>
+          </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reloading-element"></div>
+    </div>
+  </xlite-period-sales-statistic>
+</div>
+<div id="sales-statistics"></div>

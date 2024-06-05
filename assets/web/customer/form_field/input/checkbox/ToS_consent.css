@@ -1,0 +1,68 @@
+/**
+ * Style
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.ToS-consent-checkbox .ToS-checkbox {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+.ToS-consent-checkbox .ToS-checkbox div.table-label {
+  pointer-events: all;
+  position: relative !important;
+  margin-top: 0;
+  transform: none !important
+}
+
+.ToS-consent-checkbox .ToS-checkbox div.table-label label {
+  white-space: normal;
+  margin-bottom: 0;
+}
+
+.ToS-consent-checkbox .ToS-checkbox div.table-label label:after {
+  display: none
+}
+
+.ToS-consent-checkbox .ToS-checkbox .table-value {
+  height: 20px;
+}
+
+.ToS-consent-checkbox .ToS-checkbox .table-value .input input.form-control[type="checkbox"] {
+  min-width: 20px;
+  min-height: 20px;
+  width: 20px;
+  height: 20px;
+  padding: 0
+}
+
+.ToS-consent-checkbox .ToS-checkbox .table-value p.error {
+  display: none
+}
+
+.ToS-consent-checkbox {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.ToS-consent-checkbox .table-label {
+  margin-left: 10px;
+}
+
+.checkout_fastlane_container .ToS-consent-checkbox {
+  margin-bottom: 20px
+}
+
+@media (max-width: 500px) {
+  .checkout_fastlane_container .ToS-consent-checkbox {
+    margin-top: 10px
+  }
+}
+
+.checkout_fastlane_container .ToS-consent-checkbox .table-label {
+  text-align: left
+}

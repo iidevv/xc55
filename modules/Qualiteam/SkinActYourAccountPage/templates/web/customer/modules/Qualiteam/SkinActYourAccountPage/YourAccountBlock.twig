@@ -1,0 +1,21 @@
+{##
+# Block on your account links
+#}
+<div class="account-block">
+    <img src="{{ asset(this.getBlockImage()) }}" alt="{{ this.getBlockTitle() }}">
+    <div class="links">
+        <h3>{{ this.getBlockTitle() }}</h3>
+        <ul>
+            {% for block in this.getBlockLinks()|sort((a, b) => a.position <=> b.position) %}
+                <li>
+                    <a href="{{ block.url }}">{{ block.text }}</a>
+                    {% if block.is_count is same as(true) %}
+                        <span class="messages-counter">
+                            {{ block.count }}
+                        </span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

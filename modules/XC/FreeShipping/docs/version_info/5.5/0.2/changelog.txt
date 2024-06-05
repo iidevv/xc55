@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Improvements (1)
+2022-09-22 - [Task] Checked and fixed some file headers. #ECOM-718 #CDev-Sale #CDev-GoSocial #CDev-FeaturedProducts #CDev-Coupons #CDev-PINCodes #CDev-VolumeDiscounts #CDev-Wholesale #CDev-FileAttachments #QSL-ProductStickers #QSL-Backorder #QSL-AbandonedCartReminder #QSL-Make #XC-VendorPartners #XC-ProductVariants #XC-CustomProductTabs #XC-FreeShipping #XC-Upselling #XC-MultiVendor #XC-ProductTags #XC-Reviews #QSL-Roulette
+

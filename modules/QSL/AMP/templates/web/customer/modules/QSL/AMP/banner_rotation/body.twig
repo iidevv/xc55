@@ -1,0 +1,20 @@
+{##
+ # Banner rotation widget on a home page
+ #}
+
+<amp-carousel layout="responsive"
+              width="{{ this.getImages()[0].width }}"
+              height="{{ this.getImages()[0].height }}"
+              type="slides"
+              class="banner-rotation"
+              autoplay>
+    {% for image in this.getImages() %}
+
+        <a href="{{ image.bannerRotationSlide.frontLink }}">
+            <amp-img src="{{ image.frontURL }}"
+                     width="{{ image.width }}"
+                     height="{{ image.height }}"
+                     layout="responsive"></amp-img>
+        </a>
+    {% endfor %}
+</amp-carousel>

@@ -1,0 +1,229 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+parameters:
+
+  # API service
+  klarna.api.live: 'https://api-na.klarna.com'
+  klarna.api.test: 'https://api-na.playground.klarna.com'
+
+  klarna.api.sessions: 'payments/v1/sessions'
+  klarna.api.create.order: 'payments/v1/authorizations'
+  klarna.api.order.refund: 'ordermanagement/v1/orders'
+
+  # SDK urls
+  klarna.url.sdk: 'https://x.klarnacdn.net/kp/lib/v1/api.js'
+  klarna.url.promotion: 'https://js.klarna.com/web-sdk/v1/klarna.js'
+  klarna.url.express-button: 'https://x.klarnacdn.net/express-button/v1/lib.js'
+
+  # SDK settings
+  klarna.settings.promotion.clientId: '78bfecb4-f4fa-51a3-b5d2-442ccfb88e4e'
+  klarna.settings.express-button.clientId: 'N010164'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  # Main config
+  klarna.logger:
+    class: XLite\Logger
+    factory: [ 'Qualiteam\SkinActKlarna\Core\Factory\LoggerFactory', 'logger' ]
+
+  klarna.configuration:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\Configuration\Configuration
+    factory: [ 'Qualiteam\SkinActKlarna\Core\Factory\ConfigurationFactory', 'createConfiguration' ]
+
+  klarna.http.client:
+    class: GuzzleHttp\Client
+    arguments:
+      $configuration: '@klarna.configuration'
+    factory: [ 'Qualiteam\SkinActKlarna\Core\Factory\HttpClientFactory', 'createHttpClient' ]
+
+  klarna.service.api.guzzle:
+    class: Qualiteam\SkinActKlarna\Core\Api\GuzzleService
+    arguments:
+      $httpClient: '@klarna.http.client'
+
+  # Dynamic urls
+  klarna.service.api.dynamic.url:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\DynamicUrl
+
+  klarna.service.api.payments.authorization.create.dynamic.url:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Authorizations\Post\DynamicUrl
+    arguments:
+      $dynamicUrl: '@klarna.service.api.dynamic.url'
+
+  klarna.service.api.payments.sessions.update.dynamic.url:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Sessions\Post\DynamicUrl
+    arguments:
+      $dynamicUrl: '@klarna.service.api.dynamic.url'
+
+  klarna.service.api.ordermanagement.orders.refund.dynamic.url:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Ordermanagement\Orders\Post\DynamicUrl
+    arguments:
+      $dynamicUrl: '@klarna.service.api.dynamic.url'
+
+  # Params
+  Qualiteam\SkinActKlarna\Core\Endpoints\Params:
+    public: true
+
+  klarna.service.api.params.cart:
+    public: true
+    class: XLite\Model\Cart
+    factory: [ '@Qualiteam\SkinActKlarna\Core\Endpoints\Params', 'getCart' ]
+
+  klarna.service.api.params.profile:
+    public: true
+    class: XLite\Model\Profile
+    factory: [ '@Qualiteam\SkinActKlarna\Core\Endpoints\Params', 'getProfile' ]
+
+  # Helpers
+  klarna.helper.order:
+    class: Qualiteam\SkinActKlarna\Helpers\Order
+    arguments:
+      $converter: '@klarna.helper.converter'
+      $cart: '@klarna.service.api.params.cart'
+
+  klarna.helper.profile:
+    class: Qualiteam\SkinActKlarna\Helpers\Profile
+    arguments:
+      $validator: '@klarna.service.api.payments.sessions.validator'
+      $converter: '@klarna.helper.converter'
+      $profile: '@klarna.service.api.params.profile'
+
+  klarna.helper.converter:
+    class: Qualiteam\SkinActKlarna\Helpers\Converter
+
+  # Validators
+  klarna.service.api.payments.sessions.validator:
+    class: Qualiteam\SkinActKlarna\Core\Validators\Payments\Validator
+    arguments:
+      $profile: '@klarna.service.api.params.profile'
+
+  # Constructors
+  klarna.service.api.params.constructor:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Constructor
+
+  klarna.service.api.payments.sessions.constructor:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Sessions\Post\SessionConstructor
+    arguments:
+      $converter: '@klarna.helper.converter'
+      $profileHelper: '@klarna.helper.profile'
+      $constructor: '@klarna.service.api.params.constructor'
+      $orderHelper: '@klarna.helper.order'
+      $configuration: '@klarna.configuration'
+      $cart: '@klarna.service.api.params.cart'
+      $profile: '@klarna.service.api.params.profile'
+
+  klarna.service.api.payments.authorization.constructor:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Authorizations\AuthorizationConstructor
+    arguments:
+      $constructor: '@klarna.service.api.params.constructor'
+      $profileHelper: '@klarna.helper.profile'
+
+  klarna.service.api.payments.authorizations.order.constructor:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Authorizations\Post\OrderConstructor
+    arguments:
+      $converter: '@klarna.helper.converter'
+      $profileHelper: '@klarna.helper.profile'
+      $constructor: '@klarna.service.api.params.constructor'
+      $orderHelper: '@klarna.helper.order'
+      $configuration: '@klarna.configuration'
+      $cart: '@klarna.service.api.params.cart'
+      $profile: '@klarna.service.api.params.profile'
+
+  klarna.service.api.ordermanagement.orders.refund.constructor:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Ordermanagement\Orders\Post\RefundConstructor
+    arguments:
+      $converter: '@klarna.helper.converter'
+      $constructor: '@klarna.service.api.params.constructor'
+
+  # Assemblers
+  klarna.service.api.assembler:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Assembler
+    arguments:
+      $endpoint: '@klarna.service.api.endpoint'
+
+  klarna.service.api.payments.sessions.assembler:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Sessions\Post\SessionAssembler
+    arguments:
+      $constructorSession: '@klarna.service.api.payments.sessions.constructor'
+      $assembler: '@klarna.service.api.assembler'
+
+  klarna.service.api.payments.authorization.assembler:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Authorizations\AuthorizationAssembler
+    arguments:
+      $authorizationConstructor: '@klarna.service.api.payments.authorization.constructor'
+
+  klarna.service.api.payments.authorizations.order.assembler:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Authorizations\Post\OrderAssembler
+    arguments:
+      $constructorOrder: '@klarna.service.api.payments.authorizations.order.constructor'
+      $assembler: '@klarna.service.api.assembler'
+
+  klarna.service.api.ordermanagement.orders.refund.assembler:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Ordermanagement\Orders\Post\RefundAssembler
+    arguments:
+      $constructorRefund: '@klarna.service.api.ordermanagement.orders.refund.constructor'
+      $assembler: '@klarna.service.api.assembler'
+
+  # Endpoints
+  klarna.service.api.endpoint:
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Endpoint
+    arguments:
+      $apiService: '@klarna.service.api.guzzle'
+      $configuration: '@klarna.configuration'
+      $method: 'POST'
+
+  klarna.service.api.payments.sessions.create:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Sessions\Post\CreateSession
+    arguments:
+      $endpoint: '@klarna.service.api.endpoint'
+      $sessionAssembler: '@klarna.service.api.payments.sessions.assembler'
+
+  klarna.service.api.payments.sessions.update:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Sessions\Post\UpdateSession
+    arguments:
+      $endpoint: '@klarna.service.api.endpoint'
+      $sessionAssembler: '@klarna.service.api.payments.sessions.assembler'
+      $dynamicUrl: '@klarna.service.api.payments.sessions.update.dynamic.url'
+
+  klarna.service.api.payments.authorizations.order:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Payments\Authorizations\Post\Order
+    arguments:
+      $orderAssembler: '@klarna.service.api.payments.authorizations.order.assembler'
+      $endpoint: '@klarna.service.api.endpoint'
+
+  klarna.service.api.payments.authorization:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\KlarnaAuthorization
+    arguments:
+      $authorizationAssembler: '@klarna.service.api.payments.authorization.assembler'
+
+  klarna.service.api.ordermanagement.orders.refund:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\Endpoints\Ordermanagement\Orders\Post\Refund
+    arguments:
+      $refundAssembler: '@klarna.service.api.ordermanagement.orders.refund.assembler'
+      $endpoint: '@klarna.service.api.endpoint'
+
+  # Layers
+  klarna.service.api.payments.sessions:
+    public: true
+    class: Qualiteam\SkinActKlarna\Core\KlarnaCheckout
+    arguments:
+      $createSession: '@klarna.service.api.payments.sessions.create'
+      $updateSession: '@klarna.service.api.payments.sessions.update'

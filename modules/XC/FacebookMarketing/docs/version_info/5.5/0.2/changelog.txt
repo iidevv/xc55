@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-08-29 - [Bug] Fatal error during feed generation if the add-on "UPC/ISBN and Mnf#/Vendor# fields" is enabled. Fixed. #XCB-1660 #XC-FacebookMarketing
+

@@ -1,0 +1,6 @@
+%body%
+
+{% if this.unsubscribeLink %}
+  <br/><hr>
+  <p>{{ t('If you want to stop receiving emails like this one, please unsubscribe.', {'url': this.unsubscribeLink})|raw }}</p>
+{% endif %}

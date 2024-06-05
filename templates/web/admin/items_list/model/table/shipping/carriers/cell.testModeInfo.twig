@@ -1,0 +1,13 @@
+{##
+ # Test mode tooltip column
+ #}
+
+{% if this.isShowTestModeTooltip(this.entity) %}
+  <div data-html="true"
+       class="test-mode"
+       data-toggle="tooltip"
+       data-placement="bottom"
+       title="{{ t('Method is connected. Test mode.') }}">
+    !
+  </div>
+{% endif %}

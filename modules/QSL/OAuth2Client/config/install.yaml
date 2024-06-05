@@ -1,0 +1,274 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+QSL\OAuth2Client\Model\Provider:
+  - service_name: facebook
+    class_name: QSL\OAuth2Client\Core\Wrapper\Facebook
+    translations: [{ code: en, name: 'Facebook', linkName: 'Facebook' }]
+    documentationLink: "https://developers.facebook.com/docs/facebook-login/web"
+    applicationCreateLink: "https://developers.facebook.com/apps/"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Facebook.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: enableBetaTier
+        value: 0
+  - service_name: github
+    class_name: QSL\OAuth2Client\Core\Wrapper\Github
+    translations: [{ code: en, name: 'Github', linkName: 'Github' }]
+    documentationLink: "https://developer.github.com/v3/oauth/"
+    applicationCreateLink: "https://github.com/settings/applications/new"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Github.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: google
+    class_name: QSL\OAuth2Client\Core\Wrapper\Google
+    translations: [{ code: en, name: 'Google', linkName: 'Google' }]
+    documentationLink: "https://developers.google.com/identity/protocols/OAuth2"
+    applicationCreateLink: "https://console.developers.google.com/"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Google.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: linkedin
+    class_name: QSL\OAuth2Client\Core\Wrapper\Linkedin
+    translations: [{ code: en, name: 'LinkedIn', linkName: 'LinkedIn' }]
+    documentationLink: "https://developer.linkedin.com/docs/oauth2"
+    applicationCreateLink: "https://www.linkedin.com/secure/developer?newapp="
+    iconPath: 'modules/QSL/OAuth2Client/icons/LinkedIn.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: generic
+    class_name: QSL\OAuth2Client\Core\Wrapper\Generic
+    translations: [{ code: en, name: 'Generic', linkName: 'Generic' }]
+    iconPath: 'modules/QSL/OAuth2Client/icons/Generic.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: urlAuthorize
+      - name: urlAccessToken
+      - name: urlResourceOwnerDetails
+  - service_name: wow
+    class_name: QSL\OAuth2Client\Core\Wrapper\WoW
+    translations: [{ code: en, name: 'Battle.net : WoW', linkName: 'Battle.net : WoW' }]
+    documentationLink: "https://dev.battle.net/docs/read/oauth"
+    applicationCreateLink: "https://dev.battle.net/apps/myapps"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Battle.Net_WoW.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: region
+        value: us
+  - service_name: bitbucket
+    class_name: QSL\OAuth2Client\Core\Wrapper\Bitbucket
+    translations: [{ code: en, name: 'Bitbucket', linkName: 'Bitbucket' }]
+    documentationLink: "https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Bitbucket.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: drupal
+    class_name: QSL\OAuth2Client\Core\Wrapper\Drupal
+    translations: [{ code: en, name: 'Drupal', linkName: 'Drupal' }]
+    documentationLink: "https://www.drupal.org/project/oauth2_server"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Drupal.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: baseUrl
+  - service_name: foursquare
+    class_name: QSL\OAuth2Client\Core\Wrapper\Foursquare
+    translations: [{ code: en, name: 'Foursquare', linkName: 'Foursquare' }]
+    documentationLink: "https://developer.foursquare.com/overview/auth"
+    applicationCreateLink: "https://ru.foursquare.com/developers/apps"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Foursquare.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: gitlab
+    class_name: QSL\OAuth2Client\Core\Wrapper\Gitlab
+    translations: [{ code: en, name: 'Gitlab', linkName: 'Gitlab' }]
+    documentationLink: "https://docs.gitlab.com/ce/api/oauth2.html"
+    applicationCreateLink: "https://gitlab.com/profile/applications"
+    iconPath: 'modules/QSL/OAuth2Client/icons/GitLab.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: domain
+  - service_name: imgur
+    class_name: QSL\OAuth2Client\Core\Wrapper\Imgur
+    translations: [{ code: en, name: 'Imgur', linkName: 'Imgur' }]
+    documentationLink: "https://api.imgur.com/oauth2"
+    applicationCreateLink: "https://api.imgur.com/oauth2/addclient"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Imgur.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: odnoklassniki
+    class_name: QSL\OAuth2Client\Core\Wrapper\Odnoklassniki
+    translations: [{ code: en, name: 'Odnoklassniki', linkName: 'Odnoklassniki' }]
+    documentationLink: "https://apiok.ru/wiki/pages/viewpage.action?pageId=42476652"
+    applicationCreateLink: "https://ok.ru/dk?st.cmd=appsInfoMyDevList"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Odnoklassniki.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: clientPublic
+  - service_name: microsoft
+    class_name: QSL\OAuth2Client\Core\Wrapper\Microsoft
+    translations: [{ code: en, name: 'Microsoft', linkName: 'Microsoft' }]
+    documentationLink: "https://msdn.microsoft.com/en-us/library/bing-ads-user-authentication-oauth-guide.aspx"
+    applicationCreateLink: "https://apps.dev.microsoft.com/#/appList"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Microsoft.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: paypal
+    class_name: QSL\OAuth2Client\Core\Wrapper\Paypal
+    translations: [{ code: en, name: 'Paypal', linkName: 'Paypal' }]
+    documentationLink: "https://developer.paypal.com/docs/integration/direct/paypal-oauth2/"
+    applicationCreateLink: "https://developer.paypal.com/developer/applications/create"
+    iconPath: 'modules/QSL/OAuth2Client/icons/PayPal.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: isSandbox
+        value: 1
+  - service_name: salesforce
+    class_name: QSL\OAuth2Client\Core\Wrapper\Salesforce
+    translations: [{ code: en, name: 'Salesforce', linkName: 'Salesforce' }]
+    documentationLink: "https://developer.salesforce.com/page/Digging_Deeper_into_OAuth_2.0_on_Force.com"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Salesforce.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: domain
+  - service_name: slack
+    class_name: QSL\OAuth2Client\Core\Wrapper\Slack
+    translations: [{ code: en, name: 'Slack', linkName: 'Slack' }]
+    documentationLink: "https://api.slack.com/docs/oauth"
+    applicationCreateLink: "https://api.slack.com/apps"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Slack.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: team
+  - service_name: stripe
+    class_name: QSL\OAuth2Client\Core\Wrapper\Stripe
+    translations: [{ code: en, name: 'Stripe', linkName: 'Stripe' }]
+    documentationLink: "https://stripe.com/docs/connect/standalone-accounts"
+    applicationCreateLink: "https://dashboard.stripe.com/account/applications/settings"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Stripe.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: uber
+    class_name: QSL\OAuth2Client\Core\Wrapper\Uber
+    translations: [{ code: en, name: 'Uber', linkName: 'Uber' }]
+    documentationLink: "https://developer.uber.com/docs/ride-requests/guides/authentication/introduction#oauth-20"
+    applicationCreateLink: "https://developer.uber.com/dashboard/create"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Uber.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: vimeo
+    class_name: QSL\OAuth2Client\Core\Wrapper\Vimeo
+    translations: [{ code: en, name: 'Vimeo', linkName: 'Vimeo' }]
+    documentationLink: "https://developer.vimeo.com/api/authentication"
+    applicationCreateLink: "https://developer.vimeo.com/apps/new"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Vimeo.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: vkontakte
+    class_name: QSL\OAuth2Client\Core\Wrapper\Vkontakte
+    translations: [{ code: en, name: 'Vkontakte', linkName: 'Vkontakte' }]
+    documentationLink: "https://vk.com/dev/authentication"
+    applicationCreateLink: "https://vk.com/apps?act=manage"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Vkontakte.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: yahoo
+    class_name: QSL\OAuth2Client\Core\Wrapper\Yahoo
+    translations: [{ code: en, name: 'Yahoo', linkName: 'Yahoo' }]
+    documentationLink: "https://developer.yahoo.com/oauth2/guide/"
+    applicationCreateLink: "https://developer.yahoo.com/apps/create"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Yahoo.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: yandex
+    class_name: QSL\OAuth2Client\Core\Wrapper\Yandex
+    translations: [{ code: en, name: 'Yandex', linkName: 'Yandex' }]
+    documentationLink: "https://tech.yandex.ru/oauth/"
+    applicationCreateLink: "https://oauth.yandex.ru/client/new"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Yandex.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+  - service_name: zendesk
+    class_name: QSL\OAuth2Client\Core\Wrapper\Zendesk
+    translations: [{ code: en, name: 'Zendesk', linkName: 'Zendesk' }]
+    documentationLink: "https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application"
+    iconPath: 'modules/QSL/OAuth2Client/icons/Zendesk.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: subdomain
+  - service_name: xcart
+    class_name: QSL\OAuth2Client\Core\Wrapper\Xcart
+    translations: [{ code: en, name: 'X-Cart', linkName: 'X-Cart' }]
+    iconPath: 'modules/QSL/OAuth2Client/icons/Xcart.png'
+    settings:
+      - name: clientId
+      - name: clientSecret
+      - name: baseURL
+
+XLite\Model\Config:
+  - name: allow_create_user
+    category: QSL\OAuth2Client
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 100
+    value: 0
+    translations:
+      - code: en
+        option_name: Allow user creation
+  - name: allow_associate_user
+    category: QSL\OAuth2Client
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 200
+    value: 0
+    translations:
+      - code: en
+        option_name: Allow association of external profiles with existing user accounts based on email address
+  - name: allow_user_without_email
+    category: QSL\OAuth2Client
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 300
+    value: 0
+    translations:
+      - code: en
+        option_name: Allow creation of users without an email address
+
+XLite\Model\LanguageLabel:
+  - { name: 'The external profile is already connected with the account', translations: [{ code: en, label: 'The external profile is already connected with the account' }] }
+  - { name: 'The external profile has been connected to the account successfully', translations: [{ code: en, label: 'The external profile has been connected to the account successfully' }] }
+  - { name: 'The external profile has replaced another profile that used to be associated with the account', translations: [{ code: en, label: 'The external profile has replaced another profile that used to be associated with the account' }] }
+  - { name: 'The external profile is connected to an existing account, and the account has been used for sign-in', translations: [{ code: en, label: 'The external profile is connected to an existing account, and the account has been used for sign-in' }] }
+  - { name: 'An account has been created based on the external profile, and the account has been used for sign-in', translations: [{ code: en, label: 'An account has been created based on the external profile, and the account has been used for sign-in' }] }
+  - { name: 'No user with such an external profile has been found', translations: [{ code: en, label: 'No user with such an external profile has been found' }] }
+  - { name: 'Authentication error. Please contact the store administrator.', translations: [{ code: en, label: 'Authentication error. Please contact the store administrator.' }] }
+  - { name: 'The PHP version is less than 5.5', translations: [{ code: en, label: 'The PHP version is less than 5.5' }] }
+  - { name: 'Display in site header', translations: [{ code: en, label: 'Display in site header' }] }
+  - { name: 'Display on the checkout page', translations: [{ code: en, label: 'Display on checkout page' }] }
+  - { name: 'Link name', translations: [{ code: en, label: 'Link name' }] }
+  - { name: 'Tooltip', translations: [{ code: en, label: 'Tooltip' }] }
+  - { name: 'Sign in with X', translations: [{ code: en, label: 'Sign in with {{name}}' }] }
+  - { name: 'Setup and manage OAuth2 providers for your store on this page', translations: [{ code: en, label: 'Setup and manage OAuth2 providers for your store <a href="{{url}}">on this page</a>' }] }

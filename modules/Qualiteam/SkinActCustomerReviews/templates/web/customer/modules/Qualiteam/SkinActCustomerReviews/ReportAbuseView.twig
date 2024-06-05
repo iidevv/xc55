@@ -1,0 +1,6 @@
+{{ t('SkinActCustomerReviews Report abuse desc') }}
+<br>
+<br>
+{% form '\\Qualiteam\\SkinActCustomerReviews\\View\\Form\\AbuseForm' %}
+    {{ widget('\\XLite\\View\\Button\\Submit', style='action regular-main-button submit', label=t('SkinActCustomerReviews Report')) }}
+{% endform %}

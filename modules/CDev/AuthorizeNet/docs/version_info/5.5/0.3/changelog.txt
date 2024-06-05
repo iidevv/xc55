@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Improvements (1)
+2023-01-11 - [Task] Authorize.NET reseller signup link updated.  #XCB-2024 #CDev-AuthorizeNet #QSL-AuthorizenetAcceptjs
+

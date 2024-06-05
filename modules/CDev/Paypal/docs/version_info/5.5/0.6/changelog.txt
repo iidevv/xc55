@@ -1,0 +1,6 @@
+Version 5.5.0.6
+
+Fixes (2)
+2023-02-20 - [Bug] With PayPal Checkout enabled, the behavior of making the "Place order" button inaccessible was incorrect. (The button was hidden completely instead of being disabled). Fixed. #XCB-2074 #CDev-Paypal
+2023-02-03 - [Bug] Moved the "Refund status: In progress" template to the core. #XCB-944 #CDev-Core #CDev-Paypal
+

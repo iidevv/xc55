@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Fixes (1)
+2022-09-01 - [Bug] Wrong method signature. Fixed. #CLS-23
+

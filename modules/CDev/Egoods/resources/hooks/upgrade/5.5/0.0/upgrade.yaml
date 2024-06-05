@@ -1,0 +1,22 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: enable_signed_urls
+    category: CDev\Egoods
+    type: XLite\View\FormField\Input\Checkbox\YesNo
+    orderby: 1100
+    translations:
+      - code: en
+        option_name: 'Enable usage of Presigned URLs for Cloud storage links'
+        option_comment: 'Use Cloud storage to host your digital files on Amazon S3 or Digital Ocean space and control access to your e-goods by presigned URLs. Learn more at <a href="https://support.x-cart.com/en/articles/4883402-about-e-goods" target="_blank">E-goods module</a> article at X-Cart Knowledge Base.'
+      - code: ru
+        option_name: 'Включить ссылки, подписанные ключом, для файлов на хранилище'
+        option_comment: 'С помощью хранилища можно экономить серверное дисковое пространство и контролировать доступ к скачиваемым товарам. Подробнее о конфигурации можно узнать на странице <a href="https://support.x-cart.com/en/articles/4883402-about-e-goods" target="_blank">Цифровые товары</a> в базе знаний X-Cart.'
+
+XLite\Model\Notification:
+  - { templatesDirectory: modules/CDev/Egoods/egoods_links, module: CDev\Egoods }

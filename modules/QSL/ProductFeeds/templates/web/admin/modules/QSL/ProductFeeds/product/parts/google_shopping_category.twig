@@ -1,0 +1,7 @@
+{# @ListChild (list="product.feedCategories.parts", weight="309") #}
+<li class="input">
+  <div class="table-label">{{ t('Google Shopping') }}</div>
+  <div class="table-value">
+    {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\GoogleShoppingCategory', fieldName=this.getNamePostedData('google_id'), fieldOnly='true', value=this.get('product').getGoogleShoppingCategory()) }}
+  </div>
+</li>

@@ -1,0 +1,15 @@
+{##
+ # Profile name
+ #}
+
+{% if this.getEntity().getName() %}
+<div class="name-field-value">
+  <label for="selector_{{ this.getEntity().getProfileId() }}">{{ this.getEntity().getName() }}</label>
+</div>
+{% endif %}
+
+{% if this.getEntity().getLogin() %}
+<div class="login-field-value">
+  <label for="selector_{{ this.getEntity().getProfileId() }}">{{ this.getEntity().getLogin() }}</label>
+</div>
+{% endif %}

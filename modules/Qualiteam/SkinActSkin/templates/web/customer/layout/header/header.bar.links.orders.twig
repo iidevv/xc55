@@ -1,0 +1,15 @@
+{##
+ # Header bar account links
+ #
+ # @ListChild (list="layout.header.right", weight="85")
+ # @ListChild (list="layout.header.mobile.menu.orders", weight="10")
+ #}
+
+{% if this.isLogged() and not this.isCheckoutLayout() %}
+  <a href="{{ xurl('order_list') }}" class="header-icon-menu header-orders-menu">
+    <span class="header-icon-menu__icon-box">
+       {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon="i-order", class='header-icon-menu__icon') }}
+    </span>
+    <span class="header-icon-menu__label">{{ 'Orders' }}</span>
+  </a>
+{% endif %}

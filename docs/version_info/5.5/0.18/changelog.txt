@@ -1,0 +1,15 @@
+Version 5.5.0.18
+
+Improvements (3)
+2023-05-30 - [Task] Improved the way the canonical url is determined for the store's Home page. #XCB-2045 #CDev-Core
+2023-06-05 - [Task] Removed an unused code. #XCB-1804 #CDev-Core #QSL-Banner #XC-SystemFields
+2023-06-08 - [Story] Missing workers are removed from /var/workers automatically. #ECOM-3410 #CDev-Core
+
+Fixes (6)
+2023-06-05 - [Bug] QSL-PaymentMemberships vs CloudSearch. Error on the payment settings page. Fixed. #XCB-2489 #CDev-Core #QSL-PaymentMemberships
+2023-05-30 - [Bug] Multiple dependencies were shown incorrectly in My Apps. Fixed. #XCB-2459 #CDev-Core
+2023-06-07 - [Bug] Fatal error during an upgrade related to the file src/.eslintignore. Fixed. #XCB-2428 #CDev-Core
+2023-06-07 - [Bug] Improved session stability in the Admin area for when the internet connection is slow. #XCB-2201 #CDev-Core
+2023-06-07 - [Bug] Distribution building was aborted with an irrelevant error if there were no add-ons matching the version. Fixed. #XCB-1881 #CDev-Core
+2023-06-08 - [Bug] SEMA Data: Adjusted the appearance of the API response error in accordance with the style guide. Adjusted the error message text. #ECOM-3334 #CDev-Core #XC-SemaData
+

@@ -1,0 +1,40 @@
+{##
+ # Contact us
+ #}
+
+<br />
+<div class="customer-survey-description">{{ this.getTopText() }}</div>
+<br />
+{% if this.getFBUrl() %}
+<div class="customer-surve-description">{{ t('Like us') }}</div>
+
+<p align="center">
+  <div id="fb-root"></div>
+  <script>
+    //Facebook js code
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/{{ this.getLocale() }}/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <div class="fb-like-box" data-href="{{ this.getFBUrl() }}" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+  <br /><br />
+</p>
+<div class="customer-surve-description">{{ t('or share your thoughts about us') }}</div>
+{% else %}
+<div class="customer-surve-description">{{ t('Share your thoughts about us') }}</div>
+{% endif %}
+<br />
+<div class="fb-share-button" data-href="{{ this.getShopURL() }}" data-type="button_count"></div>
+<script>
+  <!--
+  // Twitter js code
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  -->
+</script>
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="{{ t('Enjoyed shopping with X', {'company': this.get('config').Company.company_name}) }}" data-url="{{ this.getShopURL() }}">Tweet</a>
+

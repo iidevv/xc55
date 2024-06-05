@@ -1,0 +1,7 @@
+{##
+ # Amp components script tags
+ #}
+
+{% for resource in this.getJSResources() %}
+    <script async custom-element="{{ resource['amp-component'] }}" src="{{ resource.url }}"></script>
+{% endfor %}

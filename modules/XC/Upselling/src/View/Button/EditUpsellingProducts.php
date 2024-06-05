@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace XC\Upselling\View\Button;
+
+/**
+ * Edit all dropdown button
+ */
+class EditUpsellingProducts extends \XLite\View\Button\Dropdown\ADropdown
+{
+    /**
+     * getDefaultLabel
+     *
+     * @return string
+     */
+    protected function getDefaultLabel()
+    {
+        return static::t('Edit all');
+    }
+
+    /**
+     * Define additional buttons
+     *
+     * @return array
+     */
+    protected function defineAdditionalButtons()
+    {
+        $result = [
+            'delete'         => [
+                'class'    => 'XC\Upselling\View\Button\UpsellingActions\Delete',
+                'params'   => [
+                    'label'      => static::t('Delete'),
+                    'style'      => 'more-action link list-action delete-relations',
+                    'icon-style' => 'fa fa-trash',
+                ],
+                'position' => 0,
+            ],
+            'enable'         => [
+                'class'    => 'XC\Upselling\View\Button\UpsellingActions\EnableMutual',
+                'params'   => [
+                    'style'      => 'more-action link list-action enable-mutual',
+                    'icon-style' => 'fa fa-power-off iconfont',
+                ],
+                'position' => 0,
+            ],
+            'disable'         => [
+                'class'    => 'XC\Upselling\View\Button\UpsellingActions\DisableMutual',
+                'params'   => [
+                    'style'      => 'more-action link list-action disable-mutual',
+                    'icon-style' => 'fa fa-power-off iconfont',
+                ],
+                'position' => 0,
+            ],
+        ];
+
+        return $result;
+    }
+}

@@ -1,0 +1,4 @@
+Version 5.4.0.2
+
+Fixes (1)
+- Enforced proper access checks on graphql api targets that lead to page rendering (cart, checkout, user account)

@@ -1,0 +1,7 @@
+{# @ListChild (list="product.feedCategories.parts", weight="308") #}
+<li class="input">
+  <div class="table-label">{{ t('eBay Commerce Network') }}</div>
+  <div class="table-value">
+    {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\EBayCommerceCategory', fieldName=this.getNamePostedData('ebay_id'), fieldOnly='true', value=this.get('product').getEBayCommerceCategory()) }}
+  </div>
+</li>

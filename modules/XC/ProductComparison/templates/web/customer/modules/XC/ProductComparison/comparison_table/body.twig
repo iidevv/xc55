@@ -1,0 +1,34 @@
+{##
+ # Body
+ #}
+{% if this.getProductsCount() > 0 %}
+  <a href="{{ xurl('compare', 'clear') }}" class="clear-comparison-list">
+    <span class="icon"></span>
+    <span>{{ t('Clear list') }}</span>
+  </a>
+{% endif %}
+<div id="compare">
+  {% if this.getProductsCount() > 0 %}
+    <table class="comparison-table">
+      <tbody class="header">
+      {{ widget_list('comparison_table.header') }}
+      </tbody>
+      <tbody class="header-hidden">
+      <tr>
+        <td style="{{ this.getStyle() }}">&nbsp;</td>
+        {% for product in this.getProducts() %}
+          <td style="{{ this.getStyle() }}">&nbsp;</td>
+        {% endfor %}
+      </tr>
+      </tbody>
+      <tbody class="header-fixed">
+      {{ widget_list('comparison_table.header_fixed') }}
+      </tbody>
+      <tbody class="data">
+      {{ widget_list('comparison_table.data') }}
+      </tbody>
+    </table>
+  {% else %}
+    <span class="empty-notice">{{ t('No products have been selected for comparison.') }}</span>
+  {% endif %}
+</div>

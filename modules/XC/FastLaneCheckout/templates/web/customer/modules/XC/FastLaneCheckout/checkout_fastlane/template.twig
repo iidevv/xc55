@@ -1,0 +1,9 @@
+{##
+ # Fastlane checkout wrapper
+ #}
+
+{% if this.isCheckoutAvailable() %}
+  {{ widget('XC\\FastLaneCheckout\\View\\CheckoutApp')}}
+{% else %}
+  {{ widget('\\XLite\\View\\Signin') }}
+{% endif %}

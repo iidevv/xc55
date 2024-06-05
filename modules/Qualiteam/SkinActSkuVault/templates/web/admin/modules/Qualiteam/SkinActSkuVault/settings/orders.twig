@@ -1,0 +1,20 @@
+{{ widget('Qualiteam\\SkinActSkuVault\\View\\Model\\Settings') }}
+
+<div class="skuvault-manual-sync">Manual Sync</div>
+{{ widget('XLite\\View\\Button\\Link', location=xurl('skuvault_commands', 'sync_orders_xc_to_skuvault'), label=t('Sync orders (X-Cart to SkuVault)')) }}
+
+{{ widget(
+  '\\XLite\\View\\Tooltip',
+  id='skuvault_sync_orders_xc_to_skuvault_tooltip',
+  text=t('[SkuVault] sync_orders_xc_to_skuvault_tooltip_text'),
+  className='help-small-icon skuvault-tooltip-orders'
+) }}
+
+{{ widget('XLite\\View\\Button\\Link', location=xurl('skuvault_commands', 'sync_orders_skuvault_to_xc'), label=t('Sync orders (SkuVault to X-Cart)')) }}
+
+{{ widget(
+  '\\XLite\\View\\Tooltip',
+  id='skuvault_sync_orders_skuvault_to_xc_tooltip',
+  text=t('[SkuVault] sync_orders_skuvault_to_xc_tooltip_text'),
+  className='help-small-icon skuvault-tooltip-orders'
+) }}

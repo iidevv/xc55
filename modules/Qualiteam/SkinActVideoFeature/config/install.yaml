@@ -1,0 +1,75 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActVideoFeature video categories", translations: [{ code: en, label: "Video categories" }] }
+  - { name: "SkinActVideoFeature categories", translations: [{ code: en, label: "Categories" }] }
+  - { name: "SkinActVideoFeature subcat", translations: [{ code: en, label: "Subcat" }] }
+  - { name: "SkinActVideoFeature videos", translations: [{ code: en, label: "Videos" }] }
+  - { name: "SkinActVideoFeature subcategories blank", translations: [{ code: en, label: " <p>There are no subcategories in the category.</p>" }] }
+  - { name: "SkinActVideoFeature categories blank", translations: [{ code: en, label: "<p>There are no video categories in the store. Group your videos by adding categories using the <b>\"New video category\"</b> button.</p>" }] }
+  - { name: "SkinActVideoFeature new video category button", translations: [{ code: en, label: "New video category" }] }
+  - { name: "SkinActVideoFeature educational videos", translations: [{ code: en, label: "Educational videos" }] }
+  - { name: "SkinActVideoFeature videos blank", translations: [{ code: en, label: "Videos catalog is empty." }] }
+  - { name: "SkinActVideoFeature new video", translations: [{ code: en, label: "New video" }] }
+  - { name: "SkinActVideoFeature description", translations: [{ code: en, label: "Description" }] }
+  - { name: "SkinActVideoFeature category", translations: [{ code: en, label: "Category" }] }
+  - { name: "SkinActVideoFeature update video", translations: [{ code: en, label: "Update video" }] }
+  - { name: "SkinActVideoFeature add video", translations: [{ code: en, label: "Add video" }] }
+  - { name: "SkinActVideoFeature category name", translations: [{ code: en, label: "Category name" }] }
+  - { name: "SkinActVideoFeature parent category", translations: [{ code: en, label: "Parent category" }] }
+  - { name: "SkinActVideoFeature category icon", translations: [{ code: en, label: "Category icon" }] }
+  - { name: "SkinActVideoFeature if the video category is disabled, the system will return 404", translations: [{ code: en, label: "If the video category is disabled, the system will return 404." }] }
+  - { name: "SkinActVideoFeature update form button", translations: [{ code: en, label: "Update" }] }
+  - { name: "SkinActVideoFeature create form button", translations: [{ code: en, label: "Create" }] }
+  - { name: "SkinActVideoFeature the video category has been updated", translations: [{ code: en, label: "The video category has been updated" }] }
+  - { name: "SkinActVideoFeature the video category has been added", translations: [{ code: en, label: "The video category has been added" }] }
+  - { name: "SkinActVideoFeature info", translations: [{ code: en, label: "Info" }] }
+  - { name: "SkinActVideoFeature subcategories", translations: [{ code: en, label: "Subcategories" }] }
+  - { name: "SkinActVideoFeature no category assigned", translations: [{ code: en, label: "No category assigned" }] }
+  - { name: "SkinActVideoFeature root category", translations: [{ code: en, label: "Root category" }] }
+  - { name: "SkinActVideoFeature any category", translations: [{ code: en, label: "Any category" }] }
+  - { name: "SkinActVideoFeature no category defined", translations: [{ code: en, label: "No category defined" }] }
+  - { name: "SkinActVideoFeature manage category (X)", translations: [{ code: en, label: "Manage category: {{category_name}}" }] }
+  - { name: "SkinActVideoFeature manage categories", translations: [{ code: en, label: "Manage categories" }] }
+  - { name: "SkinActVideoFeature video has been created", translations: [{ code: en, label: "Video has been created" }] }
+  - { name: "SkinActVideoFeature video has been updated", translations: [{ code: en, label: "Video has been updated" }] }
+  - { name: "SkinActVideoFeature category is not accessible", translations: [{ code: en, label: "Category is not accessible" }] }
+  - { name: "SkinActVideoFeature please enter 3 or more characters", translations: [{ code: en, label: "Please enter 3 or more characters" }] }
+  - { name: "SkinActVideoFeature loading more results", translations: [{ code: en, label: "Loading more results..." }] }
+  - { name: "SkinActVideoFeature the directory selected as a parent directory has already been specified as a child directory", translations: [{ code: en, label: "The directory selected as a parent directory has already been specified as a child directory" }] }
+  - { name: "SkinActVideoFeature n/a", translations: [{ code: en, label: "n/a" }] }
+  - { name: "SkinActVideoFeature all videos", translations: [{ code: en, label: "All videos" }] }
+  - { name: "SkinActVideoFeature searching", translations: [{ code: en, label: "Searching..." }] }
+  - { name: "SkinActVideoFeature no results found", translations: [{ code: en, label: "No results found." }] }
+  - { name: "SkinActVideoFeature enter a keyword to search", translations: [{ code: en, label: "Enter a keyword to search." }] }
+  - { name: "SkinActVideoFeature add existing videos from the catalog in the category, or create a new video", translations: [{ code: en, label: "Add existing videos from the catalog in the category, or create a new video." }] }
+  - { name: "SkinActVideoFeature video information has been successfully updated", translations: [{ code: en, label: "Video information has been successfully updated" }] }
+  - { name: "SkinActVideoFeature videos information has been successfully deleted", translations: [{ code: en, label: "Videos information has been successfully deleted" }] }
+  - { name: "SkinActVideoFeature please select the video first", translations: [{ code: en, label: "Please select the video first" }] }
+  - { name: "SkinActVideoFeature the selected categories have been deleted. There are videos with no assigned category", translations: [{ code: en, label: "The selected categories have been deleted. There are videos with no assigned category." }] }
+  - { name: "SkinActVideoFeature show videos with no assigned category", translations: [{ code: en, label: "Show videos with no assigned category" }] }
+  - { name: "SkinActVideoFeature view all", translations: [{ code: en, label: "View all" }] }
+  - { name: "SkinActVideoFeature x videos has been removed", translations: [{ code: en, label: "{{count}} entities removed" }] }
+  - { name: "SkinActVideoFeature x videos has been created", translations: [{ code: en, label: "{{count}} entities created" }] }
+  - { name: "SkinActVideoFeature back button", translations: [{ code: en, label: "Back" }] }
+  - { name: "SkinActVideoFeature search button", translations: [{ code: en, label: "Search" }] }
+  - { name: "SkinActVideoFeature search items", translations: [{ code: en, label: "Search..." }] }
+  - { name: "SkinActVideoFeature youtube video id", translations: [{ code: en, label: "Youtube video id" }] }
+  - { name: "SkinActVideoFeature youtube embed video code or share url", translations: [{ code: en, label: "Youtube video embed code or Share URL" }] }
+  - { name: "SkinActVideoFeature youtube embed video code or share url tooltip", translations: [{ code: en, label: "On a Youtube video page copy URL from the address bar or click \"Share\" and copy the share URL or click \"Share > Embed\" and copy the HTML code" }] }
+
+  - { name: "SkinActVideoFeature youtube video id none", translations: [{ code: en, label: "none" }] }
+Qualiteam\SkinActVideoFeature\Model\VideoCategory:
+  - id: 1
+    root_category_look: icons
+    show_title: false
+    translations:
+      - code: en
+        name: 'Catalog'
+        description: 'Main video category'
+

@@ -1,0 +1,6 @@
+Version 5.5.0.6
+
+Fixes (2)
+2023-04-24 - [Bug] Error when trying to access ?target=special_offer. Fixed. #XCB-2359 #QSL-SpecialOffersBase
+2023-04-24 - [Bug] Name of the "Special Offers" block was shown incorrectly in Layout editor ("Layout block" instead of "Special Offers"). Fixed.  #XCB-2204 #QSL-SpecialOffersBase
+

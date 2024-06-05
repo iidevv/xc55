@@ -1,0 +1,15 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+services:
+  _defaults:
+    autowire: true
+
+  XC\FreeShipping\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: XC-FreeShipping, type: disable, method: onDisable }
+      - { name: xcart.lifetime-hook, moduleId: XC-FreeShipping, type: rebuild, method: onRebuild }
+      - { name: xcart.lifetime-hook, moduleId: XC-FreeShipping, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }

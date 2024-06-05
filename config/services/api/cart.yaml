@@ -1,0 +1,9 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  XLite\API\Endpoint\Cart\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\Cart\Transformer\OutputTransformer'
+  XLite\API\Endpoint\Cart\Transformer\OutputTransformer: ~
+
+  XLite\API\Endpoint\Cart\DataProvider\ItemDataProvider: ~

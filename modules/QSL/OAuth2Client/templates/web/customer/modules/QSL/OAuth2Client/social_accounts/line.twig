@@ -1,0 +1,22 @@
+{##
+ # Social accounts list : line
+ #}
+
+<tr {{ this.printTagAttributes(this.getLineTagAttributes(this.provider, this.eprofile))|raw }}>
+    <td class="icon">{% if this.provider.getPublicIcon() %}<img src="{{ this.provider.getPublicIcon() }}" />{% endif %}</td>
+    <td class="name">{{ this.provider.name }}</td>
+    <td class="link">
+        {% if this.eprofile %}
+            <a href="{{ this.eprofile.getAccountLink() }}" class="ext-link" title="{{ this.eprofile.name }}">{{ t('Linked') }}</a>
+            <input type="checkbox" name="link[{{ this.provider.id }}]" value="1" checked data-url="{{ xurl('social_accounts', 'remove', {'id': this.eprofile.id}) }}" />
+        {% else %}
+            {%  if this.getAuthURL(this.provider) %}
+                <a href="{{ this.getAuthURL(this.provider) }}" class="link">{{ t('Unlinked') }}</a>
+                <input type="checkbox" name="link[{{ this.provider.id }}]" value="1" />
+            {% else %}
+                <span>{{ t('Unlinked') }}</span>
+                <input type="checkbox" name="link[{{ this.provider.id }}]" value="1" disabled />
+            {% endif %}
+        {% endif %}
+    </td>
+</tr>

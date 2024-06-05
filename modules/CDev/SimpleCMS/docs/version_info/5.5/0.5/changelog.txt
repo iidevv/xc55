@@ -1,0 +1,9 @@
+Version 5.5.0.5
+
+Fixes (5)
+2022-12-01 - [Bug]  Incorrect information on target=map. Fixed. #XCB-1913 #CDev-Core #CDev-SimpleCMS #XC-Sitemap
+2022-11-29 - [Bug] "Uncaught TypeError: Cannot read properties of undefined (reading 'split')" error on the Primary Menu page. Fixed. #XCB-1893 #CDev-Core #CDev-SimpleCMS
+2022-11-23 - [Bug] The "Manage news" permission was working incorrectly. Fixed. #XCB-1884 #CDev-SimpleCMS #XC-News
+2022-11-23 - [Bug] Separated the "Manage custom pages" permission from the "Manage menus" permission. #XCB-1883 #CDev-SimpleCMS
+2022-11-24 - [Bug] The "Manage frontpage" permission was working incorrectly. Fixed. #XCB-1873 #CDev-Core #CDev-SimpleCMS #CDev-FeaturedProducts
+

@@ -1,0 +1,178 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "pages.tooltip.404", translations: [{ code: en, label: '<a href="https://support.x-cart.com/en/articles/6266249-managing-content-and-service-pages-x-cart-5-5-x" target="_blank">404 page</a> is what a user sees when they try to reach a non-existent page on your site.' }] }
+  - { name: "Menu links help text", translations: [{ code: en, label: "If you want to add an external link, you should specify it with the <strong>http://</strong> prefix, e.g. <strong>http://www.example.com/</strong>.<br /><br />If you want to add a link to a page within your store (e.g. the checkout page), you can specify it as <strong>index.php?target=checkout</strong> (relative path) or as <strong>{{URL}}index.php?target=checkout</strong> (absolute path).<br /><br />Also the '{home}' shortcut value will lead to Home page" }] }
+
+XLite\Model\Config:
+  - name: page_priority
+    category: CDev\XMLSitemap
+    type: XLite\View\FormField\Input\Text\FloatInput
+    widgetParameters: { min: 0, max: 1, e: 1}
+    orderby: 410
+  - name: logo
+    category: 'CDev\SimpleCMS'
+    type: 'CDev\SimpleCMS\View\FormField\Input\Logo'
+    orderby: 100
+    translations:
+      - code: en
+        option_name: 'Company logo (desktop version)'
+  - name: mobileLogo
+    category: 'CDev\SimpleCMS'
+    type: 'CDev\SimpleCMS\View\FormField\Input\MobileLogo'
+    orderby: 150
+    translations:
+      - code: en
+        option_name: 'Company logo (mobile version)'
+  - name: favicon
+    category: 'CDev\SimpleCMS'
+    type: 'CDev\SimpleCMS\View\FormField\Input\Favicon'
+    orderby: 200
+    translations:
+      - code: en
+        option_name: 'Favicon'
+        option_comment: 'For the icon to be displayed properly in all web browsers, we recommend using the icon size of 32 x 32 pixels'
+  - name: appleIcon
+    category: 'CDev\SimpleCMS'
+    type: 'CDev\SimpleCMS\View\FormField\Input\AppleIcon'
+    orderby: 250
+    translations:
+      - code: en
+        option_name: 'Apple icon'
+        option_comment: 'Image must be a .png file with the resolution of 192 x 192 pixels'
+
+CDev\SimpleCMS\Model\Page:
+  - type: 'primary'
+    layoutGroup: 'home'
+    position: 10
+    adminUrl: '?target=front_page'
+    frontUrl: '/'
+    tooltipText: 'pages.tooltip.front-page'
+    translations:
+      - code: en
+        name: 'Front page'
+        teaser: ''
+        body: ''
+
+  - type: 'primary'
+    layoutGroup: 'default'
+    position: 20
+    adminUrl: '?target=categories'
+    frontUrl: '?target=category'
+    tooltipText: 'pages.tooltip.category-pages'
+    translations:
+      - code: en
+        name: 'pages.name.category-pages'
+        teaser: ''
+        body: ''
+
+  - type: 'primary'
+    layoutGroup: 'default'
+    position: 30
+    adminUrl: '?target=product_list'
+    frontUrl: '?target=product'
+    tooltipText: 'pages.tooltip.product-pages'
+    translations:
+      - code: en
+        name: 'pages.name.product-pages'
+        teaser: ''
+        body: ''
+
+  - type: 'primary'
+    layoutGroup: 'default'
+    position: 40
+    adminUrl: '?target=brands'
+    frontUrl: '?target=brand'
+    tooltipText: 'pages.tooltip.brand-pages'
+    module: 'QSL-ShopByBrand'
+    translations:
+      - code: en
+        name: 'pages.name.brand-pages'
+        teaser: ''
+        body: ''
+
+  - type: 'primary'
+    layoutGroup: 'default'
+    position: 50
+    adminUrl: '?target=module&moduleId=CDev-Sale'
+    frontUrl: '?target=sale_products'
+    tooltipText: 'pages.tooltip.sale'
+    module: 'CDev-Sale'
+    translations:
+      - code: en
+        name: 'pages.name.sale'
+        teaser: ''
+        body: ''
+
+  - type: 'primary'
+    layoutGroup: 'default'
+    position: 60
+    adminUrl: '?target=module&moduleId=CDev-Bestsellers'
+    frontUrl: '?target=bestsellers'
+    tooltipText: 'pages.tooltip.bestsellers'
+    module: 'CDev-Bestsellers'
+    translations:
+      - code: en
+        name: 'pages.name.bestsellers'
+        teaser: ''
+        body: ''
+
+  - type: 'primary'
+    layoutGroup: 'default'
+    position: 70
+    adminUrl: '?target=module&moduleId=CDev-ProductAdvisor#new-arrivals'
+    frontUrl: '?target=new_arrivals'
+    tooltipText: 'pages.tooltip.new-arrivals'
+    module: 'CDev-ProductAdvisor'
+    translations:
+      - code: en
+        name: 'pages.name.new-arrivals'
+        teaser: ''
+        body: ''
+
+  - type: 'primary'
+    layoutGroup: 'default'
+    position: 80
+    adminUrl: '?target=module&moduleId=CDev-ProductAdvisor#coming-soon'
+    frontUrl: '?target=coming_soon'
+    tooltipText: 'pages.tooltip.coming-soon'
+    module: 'CDev-ProductAdvisor'
+    translations:
+      - code: en
+        name: 'pages.name.coming-soon'
+        teaser: ''
+        body: ''
+
+  - type: 'primary'
+    layoutGroup: 'default'
+    position: 90
+    adminUrl: '?target=module&moduleId=CDev-ContactUs'
+    frontUrl: '?target=contact_us'
+    tooltipText: 'pages.tooltip.contact-us'
+    module: 'CDev-ContactUs'
+    translations:
+      - code: en
+        name: 'pages.name.contact-us'
+        teaser: ''
+        body: ''
+
+  - type: 'service'
+    layoutGroup: 'default'
+    position: 10
+    adminUrl: '?target=seo_page404_settings&page=CleanURL'
+    frontUrl: '?target=page_not_found'
+    tooltipText: 'pages.tooltip.404'
+    translations:
+      - code: en
+        name: 'pages.name.404'
+        teaser: ''
+        body: ''
+
+XLite\Model\Role\Permission:
+  - { code: manage custom pages, section: Content, module: CDev\SimpleCMS }
+  - { code: manage menus, section: Content, module: CDev\SimpleCMS }

@@ -1,0 +1,6 @@
+Version 5.5.0.10
+
+Improvements (2)
+2023-04-10 - [Story] UI/UX improvements for VIN Lookup. #ECOM-3143 #QSL-Make #XC-CrispWhiteSkin #XC-SpaceVioletSkin #XC-VINLookup
+2023-04-12 - [Story] Added the ability to collapse the subsections within the "Filters" block. #ECOM-2972 #XC-CrispWhiteSkin
+

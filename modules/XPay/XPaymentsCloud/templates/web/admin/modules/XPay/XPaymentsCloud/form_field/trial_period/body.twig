@@ -1,0 +1,9 @@
+{##
+ # X-Payments subscription plan trial period widget
+ #
+ #}
+
+<div id="trial">
+  {{ widget('\\XLite\\View\\FormField\\Input\\Text\\Integer', min=1, fieldName='trial_period[duration]', value=this.value.duration, fieldOnly='true') }}
+  {{ widget('\\XPay\\XPaymentsCloud\\View\\FormField\\Select\\Subscription\\TrialDurationUnit', fieldName='trial_period[duration_unit]', value=this.value.duration_unit, fieldOnly='true') }}
+</div>

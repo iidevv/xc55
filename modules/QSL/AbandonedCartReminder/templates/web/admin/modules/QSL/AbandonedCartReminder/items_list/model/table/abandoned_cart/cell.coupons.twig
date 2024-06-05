@@ -1,0 +1,19 @@
+{% if not this.hasCoupons(this.entity) %}
+  <div class="empty-cart" >&ndash;</div>
+{% endif %}
+{% if this.hasCoupons(this.entity) %}
+  <div class="cart-coupons">
+      <ol class="abandoned-cart-coupons">
+          {% for index, item in this.entity.getCreatedCoupons() %}
+            <li class="{{ this.getCouponClass(item) }}">
+                {% if this.getCouponURL(item) %}
+                  <span><a href="{{ this.getCouponURL(item) }}" title="{{ this.getCouponTitle(item) }}">{{ item.getCode() }}</a></span>
+                {% endif %}
+                {% if not this.getCouponURL(item) %}
+                  <span>{{ item.getCode() }}</span>
+                {% endif %}
+            </li>
+          {% endfor %}
+      </ol>
+  </div>
+{% endif %}

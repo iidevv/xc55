@@ -1,0 +1,9 @@
+{##
+ # @listChild (list="products.search.conditions.tail", weight="200")
+ #}
+
+<table id="advanced_search_options"
+       class="advanced-search-options"
+       style="display: {{ this.showAdvancedPanel() ? 'table' : 'none' }};">
+  {{ widget_list('products.search.conditions.advanced') }}
+</table>

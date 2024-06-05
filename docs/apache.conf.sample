@@ -1,0 +1,51 @@
+## X-Cart 5 apache 2.4 sample configuration
+#
+# Replace placeholders:
+# {{public-full-path}} - real full path of public dir
+#
+# Example
+#
+# Xcart installation path: /var/www/xcart
+# Expected URL: https://localhost/
+#
+# public-full-path: /var/www/xcart/public
+#
+
+LoadModule proxy_module lib/httpd/modules/mod_proxy.so
+LoadModule proxy_fcgi_module lib/httpd/modules/mod_proxy_fcgi.so
+LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
+
+ServerName xcart.test
+
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+
+    DocumentRoot {{public-full-path}}
+
+    <Directory {{public-full-path}}>
+        DirectoryIndex index.php
+
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+        FallbackResource /index.php
+
+        <IfModule mod_rewrite.c>
+            Options -MultiViews
+
+            RewriteEngine On
+
+            RewriteRule ^sitemap.xml(\?.+)?$ /?target=sitemap [NC,L,QSA]
+
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^ index.php [QSA,L]
+        </IfModule>
+
+    </Directory>
+
+    <FilesMatch ".php$">
+        SetHandler "proxy:fcgi://127.0.0.1:9000"
+    </FilesMatch>
+
+</VirtualHost>

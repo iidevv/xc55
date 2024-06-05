@@ -1,0 +1,10 @@
+monolog:
+    handlers:
+        xlite:
+            type: service
+            id: monolog.handler.xcfile
+            channels: ["!event", "!doctrine"]
+        cloudwatch:
+            type: service
+            id: XCart\Monolog\Handler\CloudWatch
+            channels: ["!event", "!doctrine"]

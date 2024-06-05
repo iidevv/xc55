@@ -1,0 +1,12 @@
+{##
+ # Tax class inline view
+ #}
+
+<div>
+  <span class="value">{{ this.getViewValue(this.singleField) }}</span>
+</div>
+{% if this.entity.getId() %}
+&nbsp;<span class="products">({{ this.entity.getProductsCount() }} {{ t('products') }})</span>
+{% else %}
+  {{ widget('\\XLite\\View\\Tooltip', text=t('Assigned to all products. It can’t be renamed or deleted.'), isImageTag=true, className='help-icon') }}
+{% endif %}

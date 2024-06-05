@@ -1,0 +1,28 @@
+{##
+ # Invoice bottom block
+ #
+ # @ListChild (list="packing_slip.addresses", weight="20")
+ #}
+
+<td class="merchant-data">
+  <div class="merchant-data-block merchant-address">
+    <h3>{{ this.get('config').Company.company_name }}</h3>
+    <p>
+      {% if this.get('config').Company.location_address %}{{ this.get('config').Company.location_address }}<br />{% endif %}
+      {% if this.get('config').Company.location_city %}{{ this.get('config').Company.location_city }}, {% endif %}{% if this.get('config').Company.locationState.state %}{{ this.get('config').Company.locationState.state }}, {% endif %}{% if this.get('config').Company.location_zipcode %}{{ this.get('config').Company.location_zipcode }}{% endif %}<br />
+      {% if this.get('config').Company.locationCountry %}{{ this.get('config').Company.locationCountry.getCountry() }}{% endif %}
+    </p>
+    {% if this.get('config').Company.company_phone or this.get('config').Company.company_fax %}
+      <p>
+        {% if this.get('config').Company.company_phone %}{{ t('Phone') }}: {{ this.get('config').Company.company_phone }}<br />{% endif %}
+        {% if this.get('config').Company.company_fax %}{{ t('Fax') }}: {{ this.get('config').Company.company_fax }}{% endif %}
+      </p>
+    {% endif %}
+    {% if this.get('config').Company.company_website %}
+      <p class="url">
+        <a href="{{ this.get('config').Company.company_website }}">{{ this.get('config').Company.company_website }}</a>
+      </p>
+    {% endif %}
+  </div>
+</td>
+

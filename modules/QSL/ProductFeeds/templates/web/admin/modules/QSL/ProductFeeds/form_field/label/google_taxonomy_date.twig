@@ -1,0 +1,11 @@
+<span{{ this.getAttributesCode()|raw }}>
+    {% if this.getLabelValue() %}
+      <span>{{ this.formatDate(this.getLabelValue()) }}</span>
+    {% endif %}
+    {% if not this.getLabelValue() %}
+      <span>{{ t('Never updated Google taxonomy') }}</span>
+    {% endif %}
+</span>
+<span class="check-google-taxonomy-updates"><a href="{{ xurl('update_google_feed_taxonomy', 'update') }}">{{ t('Check Google taxonomy updates') }}</a></span>
+
+{{ widget('QSL\\ProductFeeds\\View\\DeprecatedGoogleTaxonomyProducts') }}

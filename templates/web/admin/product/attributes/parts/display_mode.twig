@@ -1,0 +1,7 @@
+{##
+ # Selector type
+ #
+ # @ListChild (list="product.attributes.display_modes", zone="admin", weight="100")
+ #}
+
+{{ widget('XLite\\View\\Product\\Details\\Admin\\DisplayModes', attribute=this.get('attribute').entity) }}

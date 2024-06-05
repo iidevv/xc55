@@ -1,0 +1,15 @@
+{##
+# Extra coupons and discounts items list
+#}
+
+{% set coupons = this.getPageData() %}
+
+{% if coupons %}
+  <div class="extra-coupons__block">
+    {% for coupon in coupons %}
+      <div class="extra-coupons__block-coupon">
+        {{ widget_list('extraCoupons.itemsList.item', coupon=coupon) }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

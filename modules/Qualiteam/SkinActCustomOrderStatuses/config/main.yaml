@@ -1,0 +1,12 @@
+version: 5.5.0.0
+type: common
+authorName: Qualiteam
+moduleName: 'SkinAct Custom Order Statuses'
+description: 'Extended a module "Custom Order Statuses"'
+minorRequiredCoreVersion: 0
+dependsOn:
+  - XC-CustomOrderStatuses
+incompatibleWith: {  }
+skins: {  }
+showSettingsForm: false
+canDisable: true

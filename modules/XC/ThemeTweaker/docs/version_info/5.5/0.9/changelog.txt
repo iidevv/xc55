@@ -1,0 +1,5 @@
+Version 5.5.0.9
+
+Fixes (1)
+2023-04-04 - [Bug] Template Editor issue when adding a new template. Fixed. #XCB-2215 #XC-ThemeTweaker
+

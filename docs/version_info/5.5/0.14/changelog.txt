@@ -1,0 +1,10 @@
+Version 5.5.0.14
+
+Improvements (1)
+2023-04-04 - [Task] Moved the settings for marketplace connection timeout to config. #ECOM-3034 #CDev-Core
+
+Fixes (3)
+2023-04-12 - [Bug] Notifications were sent even after they had been disabled. Fixed. #XCB-2284 #CDev-Core
+2023-04-12 - [Bug] SMTPAuth was always true with the setting "Use SMTP server"enabled. Fixed. #XCB-2259 #CDev-Core
+2023-04-13 - [Bug] Add-on dependencies were processed incorrectly when installing the add-on from market.x-cart.com. Fixed. #XCB-2230 #CDev-Core
+

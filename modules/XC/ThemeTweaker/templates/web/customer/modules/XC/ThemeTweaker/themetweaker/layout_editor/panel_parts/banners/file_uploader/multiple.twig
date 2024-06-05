@@ -1,0 +1,64 @@
+{##
+ # Banner images upload template
+#}
+
+<xlite-multiple-file-uploader inline-template>
+    <div {{ this.getAttributesCode()|raw }} class="file-uploader-wrapper multiple-files" data-bannerid="{{ this.fieldName }}">
+        {% for object in this.getFiles() %}
+            {% if object and object.getEventCell() != 'C' %}
+                {% set slideObject = object %}
+                {% set prefixedSlideId = 'banner_slide_image_' ~ slideObject.getId() %}
+
+                <div class="banner-item" data-id="{{ prefixedSlideId }}">{# used as key for sortable plugin #}
+                    <span class="slide-settings-move" :class="'{{ slideObject.getEnabled() }}' ? 'opacity-show' : 'opacity-hide'"></span>
+                    <div class="border" :class="'{{ slideObject.getEnabled() }}' ? 'opacity-show' : 'opacity-hide'"></div>
+                    <div :class="'{{ slideObject.getEnabled() }}' ? 'opacity-show' : 'opacity-hide'">
+                    {{ widget(this.getFileUploaderWidget(), object=object.getImage(), maxWidth=this.getMaxWidth(), maxHeight=this.getMaxHeight(), isImage=this.isImage(), fieldName=prefixedSlideId,multiple='false', isViaUrlAllowed=this.isViaUrlAllowed(), hasAlt='true') }}
+                    </div>
+
+                    <div class="slide-names" :class="'{{ slideObject.getEnabled() }}' ? 'opacity-show' : 'opacity-hide'">
+                        <span class="slide-name">{{ t('Slide') }} {{ loop.index }}</span>
+                        {% if object.getImage() %}
+                            {% set fileImageName = object.getImage().getFileName() %}
+                        {% else %}
+                            {% set fileImageName = '' %}
+                        {% endif %}
+                        <span class="slide-file-name" title="{{ fileImageName }}">{{ fileImageName }}</span>
+                    </div>
+                    <div class="right-actions">
+                        <span :class="'{{ slideObject.getEnabled() }}' ? 'slide-settings-show' : 'slide-settings-hide'" data-toggle="modal" v-on:click="toggleSlide('{{ prefixedSlideId }}', $event)"></span>
+                        <span class="slide-settings-dots" data-template="ref-template-{{ slideObject.getId() }}-{{ loop.index }}" class="link"></span>
+                        <div role="menu" class="dropdown-menu" id="ref-template-{{ slideObject.getId() }}-{{ loop.index }}">
+                            <div><span class="actions-label">{{ t('Actions') }}</span></div>
+                            <div class="link-row">
+                                <span class="icon"></span>
+                                <span class="main-text">{{ t('Link to') }}</span>
+                                <div class="input-url"><input type="text" name="{{ prefixedSlideId }}[link]" class="form-control url" value="{{ slideObject.getLink() }}" size="100" v-on:input="updateBannerLink('{{ prefixedSlideId }}', $event)" /></div>
+                                <a href="{{ slideObject.getLink()|default('#') }}" target="_blank">
+                                    <span class="visit-label">{{ t('Visit') }}</span>
+                                    <span class="external-link"></span>
+                                </a>
+                            </div>
+
+                            <div class="manage-banner-settings">
+                                <span class="icon" @click="goBannerAdminPage('{{ slideObject.getBanner().getId() }}')"></span>
+                                <span class="main-text" @click="goBannerAdminPage('{{ slideObject.getBanner().getId() }}')">{{ t('More banner settings') }}</span>
+                                <span class="external-link" @click="goBannerAdminPage('{{ slideObject.getBanner().getId() }}')"></span>
+                            </div>
+
+                            <div class="delete-slide">
+                                <span class="icon" @click="deleteSlide('{{ prefixedSlideId }}')"></span>
+                                <span class="main-text" @click="deleteSlide('{{ prefixedSlideId }}')">{{ t('Delete Slide') }}</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="add-new-slide-component">
+            {{ widget(this.getFileUploaderWidget(), maxWidth=this.getMaxWidth(), maxHeight=this.getMaxHeight(), isImage=this.isImage(), fieldName=this.fieldName, isViaUrlAllowed=this.isViaUrlAllowed(), multiple='true') }}
+        </div>
+    </div>
+</xlite-multiple-file-uploader>

@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-09-05 - [Bug] E-Goods. The "E-Goods Download Links" notification was not sent to customer. Fixed. #XCB-1647 #CDev-Egoods
+

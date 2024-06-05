@@ -1,0 +1,7 @@
+<div id="full-width-images" class="product-details-full-width-images__block">
+  {% for image in this.getFullWidthImages() %}
+    <div class="product-details-full-width-images__item">
+      {{ widget('\\XLite\\View\\Image', image=image, alt=this.getImageAlt(image)) }}
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,8 @@
+<div class="deprecated-google-taxonomy-products">
+    <div class="notice">{{ t('These products have categories that are deprecated in the new Google taxonomy:') }}</div>
+    <ul>
+        {% for product in this.getProducts() %}
+          <li><a href="{{ xurl('product', '', {'product_id': product.product_id, 'page': 'feed_categories_tab'}) }}">{{ product.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

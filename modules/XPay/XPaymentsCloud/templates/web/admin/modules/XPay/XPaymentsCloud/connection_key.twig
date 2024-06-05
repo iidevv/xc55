@@ -1,0 +1,28 @@
+{##
+ # X-Payments Connection key widget
+ #
+ #}
+
+<div id="cookies-blocked">
+
+  {{ t('Your browser security settings do not allow to display the embedded X-Payments Cloud admin panel. Please allow usage of 3rd party cookies, or whitelist the') }}
+  <strong>{{ t('*.xpayments.com') }}</strong>
+  {{ t('domains in your ad blocking extension settings.') }}
+  <br><br>
+  {{ t('If that is not possible, click the button below to access X-Payments Cloud on a separate page:') }}
+  <br><br>
+  <a id="xpayments-admin-link" class="btn always-enabled regular-button" href="" target="_blank">{{ t('Open the X-Payments Cloud admin panel') }}</a>
+  <br><br>
+  {{ t('Copy') }} <strong>{{ t('X-Payments Connection Key') }}</strong> {{ t('from the') }}
+  <strong>{{ t('Settings &rarr; General &rarr; Connection Key') }}</strong>
+  {{ t('section and paste it into the field below. Then save the changes.') }}
+  <br><br> 
+
+  <ul class="table default-table">
+    <li class="input select-cardnumberdisplayformat first">
+      {{ widget('\\XPay\\XPaymentsCloud\\View\\FormField\\Input\\ConnectionKey') }}
+    </li>
+  </ul>
+
+  {{ widget('\\XLite\\View\\StickyPanel\\Payment\\Settings') }}
+</div>

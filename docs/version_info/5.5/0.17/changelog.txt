@@ -1,0 +1,15 @@
+Version 5.5.0.17
+
+Improvements (3)
+2023-05-23 - [Task] Removed the "Tip from X-Cart" block from admin notifications.   #XCB-2453 #CDev-Core
+2023-05-23 - [Story] Background jobs are now enabled by default for autoimport. #ECOM-3441 #CDev-Core
+2023-05-19 - [Story] Worker logs were written to a log file corresponding to the time when the worker was run. Fixed. #ECOM-3370 #CDev-Core
+
+Fixes (6)
+2023-05-23 - [Bug] The public/var/images folder was cleared on a rebuild. Fixed. #XCB-2458 #CDev-Core
+2023-05-23 - [Bug] Increased the marketplace.timeout and marketplace.connectTimeout values so that downloading add-on packs from the marketplace would be more stable. #XCB-2452 #CDev-Core
+2023-05-24 - [Bug] Implemented the console core upgrade. #XCB-2236 #CDev-Core
+2023-05-25 - [Bug] Issues logging in as a customer after logging out as an administrator. Fixed. #XCB-2177 #CDev-Core
+2023-05-18 - [Bug] The "All done" page was not shown after applying an update. Fixed. #XCB-1910 #CDev-Core
+2023-05-19 - [Bug] SEMA Data: The expand/collapse category feature was not working. Fixed. #ECOM-3435 #CDev-Core
+

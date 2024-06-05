@@ -1,0 +1,18 @@
+{##
+ # Payment methods list : line : header
+ #
+ # @ListChild (list="payment.predefined-methods.list.line", weight=100)
+ #}
+
+<div class="predefined-method-info">
+  <div class="general-info">
+    {{ widget_list('payment.predefined-methods.list.line.general-info', method=this.method) }}
+  </div>
+  <div class="image">
+    {% if this.method.getAltAdminIconURL() %}
+      <div class="alt-icon">
+        <img src="{{ this.method.getAltAdminIconURL() }}" alt="" />
+      </div>
+    {% endif %}
+  </div>
+</div>

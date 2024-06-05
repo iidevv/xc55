@@ -1,0 +1,8 @@
+Version 5.5.0.4
+
+Improvements (1)
+2022-10-19 - [Task] Hooks refactoring #ECOM-2371 #CDev-Core #CDev-Sale #CDev-SimpleCMS #CDev-SalesTax #CDev-SocialLogin #CDev-VAT #CDev-Coupons #CDev-ContactUs #CDev-Paypal #CDev-Egoods #CDev-VolumeDiscounts #CDev-ProductAdvisor #CDev-XMLSitemap #QSL-BackInStock #QSL-FlyoutCategoriesMenu #QSL-MyWishlist #QSL-ProductStickers #QSL-VerifiedUsers #QSL-ColorSwatches #QSL-AbandonedCartReminder #QSL-TaxExempt #QSL-ShopByBrand #QSL-CustomerSatisfaction #QSL-ProductFeeds #QSL-AdvancedContactUs #QSL-Returns #QSL-Banner #XC-UPS #XC-GoogleFeed #XC-VendorPartners #XC-ThemeTweaker #XC-TaxJar #XC-ProductVariants #XC-ShopperApproved #XC-MailChimp #XC-CrispWhiteSkin #XC-News #XC-VendorMessages #XC-BlueSnap #XC-FreeShipping #XC-TrustedVendors #XC-Upselling #XC-UpdateInventory #XC-MultiVendor #XC-CanadaPost #XC-Reviews #QSL-ProductQuestions #QSL-HorizontalCategoriesMenu #QSL-reCAPTCHA
+
+Fixes (1)
+2022-10-12 - [Bug] New block names in Layout Editor. #XCB-1809 #CDev-FeaturedProducts #QSL-ShopByBrand #QSL-Make #XC-ThemeTweaker
+

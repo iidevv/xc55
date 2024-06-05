@@ -1,0 +1,17 @@
+/**
+ * Chunks upload style
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.upload-popup .upload-by-chunks-popup .progress-bar-container {
+  margin: 20px;
+  min-width: 300px;
+}
+
+.upload-popup .upload-by-chunks-popup .title {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}

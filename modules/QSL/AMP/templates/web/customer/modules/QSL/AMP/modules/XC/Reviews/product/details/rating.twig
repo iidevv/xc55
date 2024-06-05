@@ -1,0 +1,13 @@
+{##
+ # Rating value in product info
+ #
+ # @ListChild (list="amp.reviews.product.rating.average", weight="100")
+ #}
+
+{% if this.isVisibleAverageRatingOnPage() %}
+  <div class="product-average-rating">
+
+    {{ widget_list('amp.reviews.product.rating', product=this.getRatedProduct()) }}
+
+  </div>
+{% endif %}

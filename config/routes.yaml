@@ -1,0 +1,20 @@
+api_login_check:
+    path: /api-login/check
+
+admin:
+    path: /admin/{wildcard}
+    controller: XCart\Controller\XCartController::admin
+    requirements:
+        wildcard: .*
+
+api_not_found:
+    path: /api/{wildcard}
+    controller: XCart\Controller\API\NotFoundController
+    requirements:
+        wildcard: .*
+
+index:
+    path: /{wildcard}
+    controller: XCart\Controller\XCartController::index
+    requirements:
+        wildcard: .*

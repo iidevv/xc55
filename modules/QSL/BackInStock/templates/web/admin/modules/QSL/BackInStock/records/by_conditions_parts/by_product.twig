@@ -1,0 +1,13 @@
+{##
+ # By product
+ #
+ # Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ # See https://www.x-cart.com/license-agreement.html for license details.
+ #
+ # @ListChild (list="back2stock.records.search.conditions.by-keywords", weight="200")
+ #}
+
+<li>
+  <input type="checkbox" name="including[product]" id="by-product" value="Y" {% if this.getIncludingCondition('by_product') %} checked="checked" {% endif %} />
+  <label for="by-product">{{ t('Product name') }}</label>
+</li>

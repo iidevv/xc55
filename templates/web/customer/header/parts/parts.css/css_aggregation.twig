@@ -1,0 +1,21 @@
+{##
+ # Header part
+ #
+ # @ListChild (list="head.css", weight="200")
+ #}
+{% if this.doCSSAggregation() %}
+{% for file in this.getAggregateCSSResources() %}
+  {% if this.doCSSOptimization() and this.isResourceSuitableForOptimization(file) %}
+    {{ this.getInternalCssByResource(file)|raw }}
+  {% else %}
+    {{ widget(template='header/parts/parts.css/css_resource.twig',
+      async=file.async,
+      media=file.media,
+      url=this.getResourceURL(file.url, file)
+    ) }}
+  {% endif %}
+{% endfor %}
+{% endif %}
+
+<link rel="preload" fetchpriority="high" as="image" href="/assets/web/customer/images/banners/main-banner.jpg" type="image/jpeg">
+<link rel="preload" fetchpriority="high" as="image" href="/assets/web/customer/images/banners/main-banner_product.png" type="image/png">

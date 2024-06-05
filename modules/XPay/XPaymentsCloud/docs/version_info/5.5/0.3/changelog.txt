@@ -1,0 +1,5 @@
+Version 5.5.0.3
+- Code-style improvements
+- Fixed fatal error in subscription translation
+- Implemented support of the new PayPal payment method with Apple Pay and other features
+- Corrected shipping address when using Buy with Apple Pay

@@ -1,0 +1,48 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: welcome_changefreq
+    category: CDev\XMLSitemap
+    type: 'CDev\XMLSitemap\View\FormField\Select\ChangeFrequency'
+    orderby: 100
+  - name: category_changefreq
+    category: CDev\XMLSitemap
+    type: 'CDev\XMLSitemap\View\FormField\Select\ChangeFrequency'
+    orderby: 200
+  - name: product_changefreq
+    category: CDev\XMLSitemap
+    type: 'CDev\XMLSitemap\View\FormField\Select\ChangeFrequency'
+    orderby: 300
+  - name: welcome_priority
+    category: CDev\XMLSitemap
+    type: XLite\View\FormField\Input\Text\FloatInput
+    widgetParameters: { min: 0, max: 1, e: 1}
+    orderby: 110
+    translations:
+      - code: en
+        option_name: Priority for Welcome page
+        option_comment: The value should range from 0 to 1.
+  - name: category_priority
+    category: CDev\XMLSitemap
+    type: XLite\View\FormField\Input\Text\FloatInput
+    widgetParameters: { min: 0, max: 1, e: 1}
+    orderby: 210
+    translations:
+      - code: en
+        option_name: Priority for Category page
+        option_comment: The value should range from 0 to 1.
+  - name: product_priority
+    category: CDev\XMLSitemap
+    type: XLite\View\FormField\Input\Text\FloatInput
+    widgetParameters: { min: 0, max: 1, e: 1}
+    orderby: 310
+    translations:
+      - code: en
+        option_name: Priority for Product page
+        option_comment: The value should range from 0 to 1.
+

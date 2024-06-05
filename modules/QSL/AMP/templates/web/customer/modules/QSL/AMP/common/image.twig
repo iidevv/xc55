@@ -1,0 +1,10 @@
+{##
+ # Image
+ #}
+<amp-img src="{{ this.getAbsoluteURL(this.getURL()) }}"
+    {% for name, value in this.getProperties() %} {{ name }}="{{ value }}"{% endfor %}
+    layout="responsive">
+    <noscript>
+        <img src="{{ this.getAbsoluteURL(this.getURL()) }}" alt="{{ this.getAlt() }}" {% for name, value in this.getProperties() %} {{ name }}="{{ value }}"{% endfor %} />
+    </noscript>
+</amp-img>

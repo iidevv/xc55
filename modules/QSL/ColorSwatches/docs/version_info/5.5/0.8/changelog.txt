@@ -1,0 +1,5 @@
+Version 5.5.0.8
+
+Improvements (1)
+2023-07-25 - [Task] Changed the behavior of selecting product variants with blocks and color swatches on the product details page on the storefront.     #XCB-2600 #CDev-Core #QSL-ColorSwatches #XC-ProductVariants
+

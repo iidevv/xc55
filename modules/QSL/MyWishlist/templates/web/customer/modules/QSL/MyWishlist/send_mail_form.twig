@@ -1,0 +1,14 @@
+{# #
+ #
+#}
+<form class="wishlist-send-mail-form">
+  {{ this.displayCommentedData( {'wishlist_id' : this.getWishlist().getId()} ) }}
+
+  <div class="floating-label">
+    <label for="email">{{ t('E-mail') }}</label>
+    <input type="email" name="wishlist_email" placeholder="{{ t('E-mail') }}"
+           class="email-element form-control validate[required,custom[email]]"/>
+  </div>
+  <button class="send regular-button btn-lg"><span>{{ t('Send wishlist') }}</span></button>
+  <button class="copy-link regular-button btn-lg"><span>{{ t('Copy link') }}</span></button>
+</form>

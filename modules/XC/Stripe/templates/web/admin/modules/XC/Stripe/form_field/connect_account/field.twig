@@ -1,0 +1,17 @@
+{##
+ # Vendor link field template
+ #}
+
+{% if this.getStripeAccountId() %}
+  <div class="alert alert-success">{{ t('Stripe Account ID: {{stripeAccountId}}', {'stripeAccountId': this.getStripeAccountId()}) }}</div>
+
+  {% if this.isVendorZone() %}
+    {{ widget('XLite\\View\\Button\\Link', location=this.getDisonnectionURL(), label=t('Disconnect stripe account')) }}
+  {% endif %}
+{% else %}
+  <div class="alert alert-warning">{{ t('Stripe not connected') }}</div>
+
+  {% if this.isVendorZone() %}
+    {{ widget('XC\\Stripe\\View\\Button\\Connect', location=this.getConnectionURL()) }}
+  {% endif %}
+{% endif %}

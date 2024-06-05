@@ -1,0 +1,9 @@
+{##
+ # Simple tip block
+ #}
+
+{{ widget(template='tip.twig',
+          tipId=this.getTipId(),
+          tipContent=this.getTipContent(),
+          additionalClasses=this.getAdditionalClasses()
+  ) }}

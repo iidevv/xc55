@@ -1,0 +1,11 @@
+{##
+ # Header logo
+ #
+ # #ListChild (list="layout.header", weight="100")
+ #}
+
+<div id="{{ this.getUniqueId('logo') }}" class="company-logo">
+  <a href="{{ xurl() }}" title="{{ this.getLogoAlt() }}" rel="home">
+    <img class="logo__image" src="{{ asset('images/logo.gif') }}" alt=""/>
+  </a>
+</div>

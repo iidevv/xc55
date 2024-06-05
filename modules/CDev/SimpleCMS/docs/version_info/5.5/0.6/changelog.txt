@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Fixes (1)
+2022-12-15 - [Bug] Updated the pages.tab.content.description text label. #XCB-1107 #CDev-SimpleCMS
+

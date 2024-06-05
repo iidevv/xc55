@@ -1,0 +1,61 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+x_cart:
+  modules:
+    XC-FroalaEditor:
+      htmlDoNotWrapTags: [
+        'script', 'style', 'img', 'ul', 'ol', 'li', 'span', 'strong', 'b', 'em', 'i', 'u', 's', 'strike',
+        'center', 'hr', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'address', 'cite', 'code', 'ins', 'del', 'kbd', 'option',
+        'source', 'q', 'sub', 'sup'
+      ]
+      htmlAllowedTags : [
+        'a', 'abbr', 'address', 'b', 'bdi', 'bdo', 'blockquote', 'br', 'caption', 'cite', 'code', 'col', 'colgroup',
+        'dd', 'del', 'details', 'dfn', 'div', 'dl', 'dt', 'em', 'figcaption', 'figure', 'footer', 'h1', 'h2', 'h3',
+        'h4', 'h5', 'h6', 'header', 'hgroup', 'hr', 'i', 'img', 'input', 'ins', 'kbd', 'label', 'legend', 'li', 'main',
+        'mark', 'ol', 'optgroup', 'option', 'output', 'p', 'pre', 'rp', 'rt', 'ruby', 's', 'samp', 'section', 'select',
+        'small', 'source', 'span', 'strike', 'strong', 'sub', 'summary', 'sup', 'table', 'tbody', 'td', 'textarea',
+        'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'u', 'ul'
+      ]
+      htmlAllowedTagsAdmin : [
+        'a', 'abbr', 'address', 'area', 'article', 'aside', 'audio', 'b', 'base', 'bdi', 'bdo', 'blockquote', 'br',
+        'button', 'canvas', 'caption', 'cite', 'code', 'col', 'colgroup', 'datalist', 'dd', 'del', 'details', 'dfn',
+        'dialog', 'div', 'dl', 'dt', 'em', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'h1', 'h2',
+        'h3', 'h4', 'h5', 'h6', 'header', 'hgroup', 'hr', 'i', 'iframe', 'img', 'input', 'ins', 'kbd', 'keygen',
+        'label', 'legend', 'li', 'link', 'main', 'map', 'mark', 'menu', 'menuitem', 'meter', 'nav', 'noscript',
+        'object', 'ol', 'optgroup', 'option', 'output', 'p', 'param', 'path', 'pre', 'progress', 'queue', 'rp', 'rt', 'ruby',
+        's', 'samp', 'script', 'style', 'section', 'select', 'small', 'source', 'span', 'strike', 'strong', 'sub',
+        'summary', 'sup', 'svg', 'table', 'tbody', 'td', 'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'track',
+        'u', 'ul', 'var', 'video', 'wbr'
+      ]
+      htmlAllowedAttrs : [
+        'align', 'allowfullscreen', 'allowtransparency', 'alt', 'aria-.*', 'autocomplete', 'background', 'bgcolor',
+        'border', 'charset', 'cellpadding', 'cellspacing', 'checked', 'cite', 'color', 'cols', 'colspan',
+        'controls', 'coords', 'data', 'data-.*', 'datetime', 'default', 'dir', 'dirname', 'download', 'enctype',
+        'for', 'frameborder', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'http-equiv', 'icon',
+        'ismap', 'itemprop', 'keytype', 'kind', 'label', 'lang', 'language', 'list', 'loop', 'low', 'max', 'maxlength',
+        'media', 'method', 'min', 'mozallowfullscreen', 'multiple', 'muted', 'name', 'novalidate', 'open', 'optimum',
+        'pattern', 'ping', 'placeholder', 'preload', 'pubdate', 'radiogroup', 'readonly', 'rel', 'required',
+        'reversed', 'rows', 'rowspan', 'sandbox', 'scope', 'scoped', 'scrolling', 'seamless', 'selected', 'shape',
+        'size', 'sizes', 'span', 'src', 'srcdoc', 'srclang', 'srcset', 'start', 'step', 'summary', 'spellcheck',
+        'tabindex', 'target', 'title', 'type', 'translate', 'usemap', 'value', 'valign', 'webkitallowfullscreen',
+        'width', 'wrap'
+      ]
+      htmlAllowedAttrsAdmin : [
+        'accept', 'accept-charset', 'accesskey', 'action', 'align', 'allowfullscreen', 'allowtransparency', 'alt',
+        'aria-.*', 'async', 'autocomplete', 'autofocus', 'autoplay', 'autosave', 'background', 'bgcolor', 'border',
+        'charset', 'cellpadding', 'cellspacing', 'checked', 'cite', 'class', 'color', 'cols', 'colspan', 'content',
+        'contenteditable', 'contextmenu', 'controls', 'coords', 'd', 'data', 'data-.*', 'datetime', 'default', 'defer',
+        'dir', 'dirname', 'disabled', 'download', 'draggable', 'dropzone', 'enctype', 'for', 'form', 'formaction',
+        'frameborder', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'http-equiv', 'icon', 'id', 'ismap',
+        'itemprop', 'keytype', 'kind', 'label', 'lang', 'language', 'list', 'loop', 'low', 'max', 'maxlength', 'media',
+        'method', 'min', 'mozallowfullscreen', 'multiple', 'muted', 'name', 'novalidate', 'onchange', 'onclick',
+        'onload', 'onscroll', 'open', 'optimum', 'pattern', 'ping', 'placeholder', 'playsinline', 'poster', 'preload',
+        'pubdate', 'radiogroup', 'readonly', 'rel', 'required', 'reversed', 'rows', 'rowspan', 'sandbox', 'scope',
+        'scoped', 'scrolling', 'seamless', 'selected', 'shape', 'size', 'sizes', 'span', 'src', 'srcdoc', 'srclang',
+        'srcset', 'start', 'step', 'summary', 'spellcheck', 'style', 'tabindex', 'target', 'title', 'type', 'translate',
+        'usemap', 'value', 'valign', 'webkitallowfullscreen', 'width', 'wrap'
+      ]

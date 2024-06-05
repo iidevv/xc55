@@ -1,0 +1,10 @@
+{##
+ # Recover password : form : email
+ #
+#}
+
+<tr>
+  <td class="email-field field">
+    {{ widget('XLite\\View\\FormField\\Input\\Text\\Email', value=this.get('email'), required='true', fieldName='email', label=t('Email'), fieldOnly='false') }}
+  </td>
+</tr>

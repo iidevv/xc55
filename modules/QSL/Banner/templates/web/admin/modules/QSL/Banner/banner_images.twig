@@ -1,0 +1,82 @@
+{##
+# Product images management template
+#
+# @author    Qualiteam software Ltd <info@x-cart.com>
+# @copyright Copyright (c) 2011-2014 Qualiteam software Ltd <info@x-cart.com>. All rights reserved
+# @license   http://www.x-cart.com/license-agreement.html X-Cart 5 License Agreement
+# @link      http://www.x-cart.com/
+#}
+
+
+{% if not this.banner.getImages() %}
+    <p class="error-message">{{ t('There are no images loaded for this banner') }}</p>
+{% endif %}
+
+{% if this.banner.getImages() %}
+    <form action="{{ xurl() }}" name="images_form" method="post">
+    {{ widget('\\XLite\\View\\FormField\\Input\\FormId') }}
+    {% for _name, _val in this.getAllParams() %}
+        <input type="hidden" name="{{ _name }}" value="{{ _val }}" />
+    {% endfor %}
+    <input type="hidden" name="action" value="update_images" />
+    <input type="hidden" name="image_id" value="" />
+    {% for id, image in this.banner.getImages() %}
+        <div class="model-properties">
+            <div class="section default-section">
+                <ul class="table default-table">
+                    <li class="image_field">
+                        <h1>{{ t('Image') }} #{{ this.inc(id) }}</h1>
+                        {{ widget('\\XLite\\View\\Image', image=image, alt=image.getAlt(), maxWidth='200', maxHeight='100', centerImage='0') }}
+
+
+                        {#{{ widget('\\XLite\\View\\FormField\\FileUploader\\Image', image=image, alt=image.getAlt(), maxWidth='200', maxHeight='100', centerImage='0') }}#}
+
+
+                        {% include 'form_field/file_uploader/single.twig' with {'this': image, 'this.getDataCode()': 'image-uploader', 'object': image, 'maxWidth': 100, 'maxHeight': 100, 'isImage': true, 'fieldName': images} %}
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="input input-text even">
+                        <div class="table-label">
+                            <label for="alt[{{ image.getId() }}]" title="{{ t('Alternative text') }}">{{ t('Alternative text') }}:</label>
+                        </div>
+                        <div class="star">&nbsp;</div>
+                        <div class="table-value position-value">
+    						<span class="input-field-wrapper input input-text">
+    						  <input id="alt[{{ image.getId() }}]" type="text" name="alt[{{ image.getId() }}]" value="{{ image.getAlt() }}" size="55" />
+    						</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="input input-text">
+                        <div class="table-label">
+                            <label for="link[{{ image.getId() }}]" title="{{ t('Link') }}">{{ t('Link') }}:</label>
+                        </div>
+                        <div class="star">&nbsp;</div>
+                        <div class="table-value link-value">
+                            <span class="input-field-wrapper input input-text">
+                              <input id="link[{{ image.getId() }}]" type="text" name="link[{{ image.getId() }}]" value="{{ image.getLink() }}" size="55" />
+                            </span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+    {% endfor %}
+        <div class="model-form-buttons">
+            <div class="button">
+                {{ widget('\\XLite\\View\\Button\\Submit', label='Update') }}
+            </div>
+            {#<div class="button">#}
+                {#{{ widget('\\XLite\\View\\Button\\Regular', label='Delete the image', jsCode='images_form.image_id.value=\'' ~ image.getId() ~ '\'; images_form.action.value=\'delete_image\'; images_form.submit()') }}#}
+            {#</div>#}
+        </div>
+    </form>
+{% endif %}
+
+<div class="clearfix"></div>
+
+{#{{ widget('\\XLite\\View\\Button\\FileSelector', style='main-button', label='Add image', object='banner_edit', objectId=this.banner.getId(), fileObject='image') }}#}

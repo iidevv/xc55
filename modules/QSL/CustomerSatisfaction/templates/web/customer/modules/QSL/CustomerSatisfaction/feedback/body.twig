@@ -1,0 +1,36 @@
+{##
+ # Survey page template
+ #}
+
+<div class="survey-answers">
+  <h3>{{ t('Survey details') }}</h3>
+  {% if this.survey.feedbackDate %}
+    <table>
+      <tr>
+        <td>{{ t('Last date when feedback was added:') }}</td>
+        <td>
+          <span class="date">{{ this.formatDate(this.survey.feedbackDate) }}.</span>
+          <span class="time">{{ this.formatDayTime(this.survey.feedbackDate) }}</span>
+        </td>
+      </tr>
+      {% for answer in this.getAnswers() %}
+        <tr>
+          <td>
+            <label for="message" class="for-message">
+              {{ answer.getOriginQuestion() }}
+            </label>
+          </td>
+          <td>
+            {{ widget('\\XLite\\View\\VoteBar', rate=answer.value, max='5') }}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+    <label for="message">{{ t('Customer comment:') }}</label>
+    <div>
+      {{ this.survey.customerMessage }}
+    </div>
+  {% else %}
+    <span class="feedback-not-processed">{{ t('The feedback is not added yet.') }}</span>
+  {% endif %}
+</div>

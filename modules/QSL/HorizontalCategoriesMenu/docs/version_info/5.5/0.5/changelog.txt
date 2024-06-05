@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2023-03-30 - [Bug] The "Category menu type = Catalog" setting was not working for Mobile View. Fixed. #XCB-2213 #QSL-HorizontalCategoriesMenu
+

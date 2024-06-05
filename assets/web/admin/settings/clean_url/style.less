@@ -1,0 +1,59 @@
+/**
+ * Clean url styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+@import (reference) "../../css/initialize";
+
+form .table.page_title_format-table {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 350px;
+  max-width: fit-content;
+}
+
+form .table.page_title_format-table .separator {
+  content: "";
+  flex-basis: 100%;
+  height: 0;
+  order: 1;
+}
+
+form .table.page_title_format-table .cleanurls-aboutpageformat {
+  max-width: 570px;
+}
+
+form .table.page_title_format-table .cleanurls-pageformatpreview {
+  width: 100px;
+  margin-left: -150px;
+  margin-top: 5.25 * @rhythmic-unit;
+}
+
+form .table.page_title_format-table .cleanurls-pageformatpreview .preview-data {
+  width: 480px;
+  margin: (0.25 * @rhythmic-unit) 0 0;
+  padding: 0.5 * @rhythmic-unit;
+  border-radius: 4px;
+  background-color: @color-bg-light-blue;
+}
+
+form .table.page_title_format-table .cleanurls-pageformatpreview .preview-data .title {
+  font-weight: bold;
+}
+
+.cleanurls-frontpage {
+  margin-bottom: -@rhythmic-unit;
+}
+
+.cleanurls-format-help {
+  position: absolute;
+  margin-top: 0 !important;
+  left: 400px;
+}
+
+.cleanurls-format-help + li.input {
+  margin-top: 0 !important;
+}

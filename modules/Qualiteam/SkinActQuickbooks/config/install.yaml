@@ -1,0 +1,191 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Config:
+  - name: qbc_user
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text
+    orderBy: 10
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Username'
+  - name: qbc_pass
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\PasswordWithValue
+    orderBy: 20
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Password'
+  - name: qbc_enable_sync
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderBy: 30
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Enable synchronization'
+  - name: qbc_products_sep
+    category: Qualiteam\SkinActQuickbooks
+    type: separator
+    orderBy: 40
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Products'
+  - name: qbc_products_add
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderBy: 50
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Allow to add products to QuickBooks (if they do not exist)'
+  - name: qbc_products_update_prices
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderBy: 60
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Update prices (X-Cart to QuickBooks)'
+  - name: qbc_products_unlink_empty_fname
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderBy: 70
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Unlink product when "QuickBooks Item Name/Number" is set empty'
+  - name: qbc_products_income_acc
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text
+    orderBy: 80
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Income Account'
+  - name: qbc_products_cogs_acc
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text
+    orderBy: 90
+    value: ''
+    translations:
+      - code: en
+        option_name: 'COGS Account'
+  - name: qbc_products_asset_acc
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text
+    orderBy: 100
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Asset Account'
+  - name: qbc_orders_sep
+    category: Qualiteam\SkinActQuickbooks
+    type: separator
+    orderBy: 110
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Orders'
+  - name: qbc_orders_start_id
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text\Integer
+    orderBy: 120
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Start import from order ID (0 - no restriction)'
+  - name: qbc_orders_class_ref
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text
+    orderBy: 130
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Class'
+  - name: qbc_orders_template_ref
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text
+    orderBy: 140
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Template'
+  - name: qbc_orders_discount_ref
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text
+    orderBy: 150
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Discount'
+  - name: qbc_orders_shipping_ref
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text
+    orderBy: 160
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Shipping'
+  - name: qbc_orders_import_errors_email
+    category: Qualiteam\SkinActQuickbooks
+    type: XLite\View\FormField\Input\Text\Email
+    orderBy: 190
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Send emails about orders import errors'
+  
+
+XLite\Model\Task:
+  - owner: Qualiteam\SkinActQuickbooks\Core\Task\SendEmailOrdersErrors
+
+
+XLite\Model\LanguageLabel:
+  - { name: 'Web Connector authentication', translations: [{ code: en, label: 'Web Connector authentication' }] }
+  - { name: 'Web Connector (.QWC) Files', translations: [{ code: en, label: 'Web Connector (.QWC) Files' }] }
+  - { name: 'Web Connector settings', translations: [{ code: en, label: 'Web Connector settings' }] }
+  - { name: 'Orders to be imported settings', translations: [{ code: en, label: 'Orders to be imported settings' }] }
+  - { name: 'QWC File for customers (X-Cart to QuickBooks)', translations: [{ code: en, label: 'QWC File for customers (X-Cart to QuickBooks)' }] }
+  - { name: 'QWC File for products (X-Cart to QuickBooks)', translations: [{ code: en, label: 'QWC File for products (X-Cart to QuickBooks)' }] }
+  - { name: 'QWC File for orders (X-Cart to QuickBooks)', translations: [{ code: en, label: 'QWC File for orders (X-Cart to QuickBooks)' }] }
+  - { name: 'Web Connector authentication tooltip', translations: [{ code: en, label: 'In this section the store admin will be able to set up username and password which will be used to authorize (via SDK) the requests from QuickBooks Desktop Application to X-Cart. Once authorized, X-Cart script will form the requested data and will send it as a response to QuickBooks Desktop application.' }] }
+  - { name: 'Web Connector (.QWC) Files tooltip', translations: [{ code: en, label: 'In this section the store admin will be able to download the .qwc files. The QWC files are generated by the Quickbooks PHP library and contain a task description for the quickbooks desktop application.' }] }
+  - { name: 'Web Connector settings tooltip', translations: [{ code: en, label: 'In this section the store admin will be able to set up Income Account, COGS Account, Asset Account, Class, Template, Discount, Shipping, Inside Delivery and Residential Address settings (refer to the API documentation) and set names of corresponding fields used in API requests.' }] }
+  - { name: 'Orders to be imported settings tooltip', translations: [{ code: en, label: 'In this section the store admin will be able to set up order statuses to be synced with QuickBooks. It will be possible to add several conditions (payment and fulfillment statuses variations). I.e. only orders that meet the conditions of this setting will be imported to QuickBooks.' }] }
+  - { name: 'Orders to be imported duplicate status error', translations: [{ code: en, label: 'The condition with specified "Payment status" and "Fulfillment status" values already exists!' }] }
+  - { name: 'QuickBooks Sync Data', translations: [{ code: en, label: 'QuickBooks Sync Data' }] }
+  - { name: 'Quickbooks Synced Customers', translations: [{ code: en, label: 'Customers' }] }
+  - { name: 'Quickbooks Synced Products', translations: [{ code: en, label: 'Products' }] }
+  - { name: 'Quickbooks Synced Orders', translations: [{ code: en, label: 'Orders' }] }
+  - { name: 'Quickbooks Sync Errors', translations: [{ code: en, label: 'Orders Import Errors' }] }
+  - { name: 'Quickbooks Orders Errors', translations: [{ code: en, label: 'Errors' }] }
+  - { name: 'Quickbooks reset selected errors', translations: [{ code: en, label: 'Reset errors for selected' }] }
+  - { name: 'Quickbooks reset all errors', translations: [{ code: en, label: 'Reset ALL errors' }] }
+  - { name: 'Do not import this order to QuickBooks', translations: [{ code: en, label: 'Do not import this order to QuickBooks' }] }
+  - { name: 'QuickBooks Item Name/Number', translations: [{ code: en, label: 'QuickBooks Item Name/Number' }] }
+  - { name: 'QuickBooks Tax Name', translations: [{ code: en, label: 'QuickBooks Tax Name' }] }
+  - { name: 'Qbc Orders Import Errors Subj', translations: [{ code: en, label: 'You have orders which are not imported to QuickBooks' }] }
+  - { name: 'Qbc Orders Import Errors Text', translations: [{ code: en, label: "The following orders haven't been imported:" }] }
+
+
+XLite\Model\Notification:
+  - templatesDirectory: modules/Qualiteam/SkinActQuickbooks/orders_errors
+    availableForAdmin: false
+    availableForCustomer: false
+    enabledForAdmin: true
+    enabledForCustomer: false
+    module: Qualiteam\SkinActQuickbooks
+    translations:
+      - code: en
+        name: "Send emails about orders import errors (QuickBooks Connector)"
+        description: "This notification is sent to admin"
+        adminSubject: 'You have orders which are not imported to QuickBooks'
+        adminText: ''

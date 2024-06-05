@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2022-11-24 - [Bug] The "Manage orders" permission was working incorrectly. Fixed. #XCB-1877 #QSL-Backorder #QSL-SpecialOffersBase #XC-MultiVendor
+

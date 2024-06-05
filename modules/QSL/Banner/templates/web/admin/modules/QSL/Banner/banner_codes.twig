@@ -1,0 +1,75 @@
+{##
+# Product images management template
+#
+# @author    Qualiteam software Ltd <info@x-cart.com>
+# @copyright Copyright (c) 2011-2014 Qualiteam software Ltd <info@x-cart.com>. All rights reserved
+# @license   http://www.x-cart.com/license-agreement.html X-Cart 5 License Agreement
+# @link      http://www.x-cart.com/
+#}
+
+
+
+<fieldset>
+    <div>
+        <form action="{{ xurl() }}" name="add_content_form" method="post">
+            {{ widget('\\XLite\\View\\FormField\\Input\\FormId') }}
+            {% for _name, _val in this.getAllParams() %}
+                <input type="hidden" name="{{ _name }}" value="{{ _val }}" />
+            {% endfor %}
+            <input type="hidden" name="label_id" value="" />
+            <input type="hidden" name="action" value="add_content" />
+
+          {{ widget('\\XLite\\View\\Button\\Regular', type='button', name='add_new_content', label='Add new HTML-banner', jsCode='var form=jQuery(".new-html-code-form"); form.toggleClass("hidden"); jQuery("fieldset + p").eq(0).css({ display: (form.hasClass("hidden") ? "" : "none") })') }}
+
+            <div class="model-properties new-html-code-form hidden">
+                <div class="section default-section">
+                    <ul class="table default-table">
+                        <li class="input input-text">
+                            <div class="table-label">
+                                <label for="position" title="{{ t('Position') }}">{{ t('Position') }}:</label>
+                            </div>
+                            <div class="star">&nbsp;</div>
+                            <div class="table-value position-value">
+                                <span class="input-field-wrapper input input-text">
+                                  <input id="position" type="text" name="{{ this.getNamePostedData('position') }}" size="5" value="0" class="form-control"/>
+                                </span>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="input textarea-advanced even">
+                            <div class="table-label">
+                                <label title="{{ t('Content') }}">{{ t('Content') }}:</label>
+                            </div>
+                            <div class="star">&nbsp;</div>
+
+                            {{ widget('\\XLite\\View\\FormField\\Textarea\\Advanced', fieldName=this.getNamePostedData('content'), cols='50', rows='10', value='', fieldOnly='true') }}
+
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="model-form-buttons">
+                    {{ widget('\\XLite\\View\\Button\\Submit', name='add_content', label='Save changes', style='regular-main-button') }}
+                </div>
+            </div>
+        </form>
+    </div>
+</fieldset>
+
+{% if this.getBannerContentsCount() > 0 %}
+    <fieldset>
+        <legend>
+            <h2>{{ t('Html content') }}</h2>
+        </legend>
+        {% for idx, c in this.getBannerContents() %}
+            <div>
+            {{ widget(template='modules/QSL/Banner/banner_code_item.twig', bannerContent=c) }}
+            </div>
+        {% endfor %}
+
+    </fieldset>
+{% else %}
+    <p>{{ t('No HTML codes found') }}</p>
+{% endif %}
+
+

@@ -1,0 +1,10 @@
+{##
+ # Form field
+ #}
+
+{% include 'form_field/input/checkbox/on_off.twig' %}
+
+<div class="paypal-badge" title="{{ t('Now Accepting') }} {{ t('PayPal') }}">
+  <span>{{ t('Now Accepting') }}</span>
+  <img src="{{ this.getIconUrl() }}" alt="{{ t('PayPal') }}" />
+</div>

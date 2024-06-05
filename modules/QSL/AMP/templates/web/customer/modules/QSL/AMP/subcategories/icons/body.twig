@@ -1,0 +1,24 @@
+{##
+ # Subcategories list (grid style)
+ #}
+
+{% if this.getSubcategories() %}
+  <ul class="subcat-v-icn row row-wrp">
+    {% for subcategory in this.getSubcategories() %}
+    {% if subcategory.hasAvailableMembership() %}
+      <li class="c c-33 m-c-25 l-c-20 i-c">
+        <a href="{{ this.getAbsoluteURL(url('category', '', {'category_id': subcategory.category_id})) }}">
+          <span class="subcat-icn">
+            {{ widget('\\XLite\\View\\Image', image=subcategory.image, maxWidth=this.getIconWidth(), maxHeight=this.getIconHeight(), centerImage='1', alt=this.getAlt(subcategory.image)) }}
+          </span>
+          <span class="subcat-name">{{ subcategory.name }}</span>
+        </a>
+      </li>
+    {% endif %}
+    {% endfor %}
+    {% for item in this.getNestedViewList('children') %}
+      <li>{{ item.display() }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{{ widget_list('subcategories.base') }}

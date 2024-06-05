@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Improvements (1)
+2022-12-20 - [Story] The following Stripe payment methods were added: Klarna, Afterpay / Clearpay, Pay now, Sepa, Bancontact, BLIK, EPS, Giropay, iDeal, Przelewy24, Sofort, PromptPay, Pix, WeChat Pay, Konbini, OXXO, Boleto. #ECOM-2411 #XC-Stripe
+

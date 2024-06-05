@@ -1,0 +1,16 @@
+
+<div class="input-field-wrapper xlite-view-treeselect {{ this.getWrapperClass() }} {% if not this.isActive() %} hidden {% endif %}"
+     data-plugins="{{ this.getPluginsListConfig()|json_encode }}"
+     data-themes="{{ this.getThemesConfig()|json_encode }}"
+     data-data="{{ this.getWidgetData()|json_encode }}"
+>
+  {% if this.shouldShowSelectAll() %}
+    <div class="treeselect-btn-line">
+      <a href="#" class="treeselect-select-all">{{ t('Select all') }}</a>
+      <span class="select-all-separator"></span>
+      <a href="#" class="treeselect-deselect-all">{{ t('Unselect all') }}</a>
+    </div>
+  {% endif %}
+  <div class="tree-select-view"></div>
+  <input id="{{ this.getFieldId() }}" name="{{ this.getName() }}"{{ this.getAttributesCode()|raw }}/>
+</div>

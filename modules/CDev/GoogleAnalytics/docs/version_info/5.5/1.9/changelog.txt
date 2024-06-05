@@ -1,0 +1,5 @@
+Version 5.5.1.9
+
+Fixes (1)
+2023-11-09 - [Bug] Variants Table View + GA4: add_to_cart event was not being submitted. Fixed #XCB-2816 #CDev-GoogleAnalytics #QSL-VariantsTableView
+

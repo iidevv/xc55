@@ -1,0 +1,48 @@
+{##
+# Product images management template
+#
+# @author    Qualiteam software Ltd <info@x-cart.com>
+# @copyright Copyright (c) 2011-2014 Qualiteam software Ltd <info@x-cart.com>. All rights reserved
+# @license   http://www.x-cart.com/license-agreement.html X-Cart 5 License Agreement
+# @link      http://www.x-cart.com/
+#}
+
+
+<form action="{{ xurl() }}" name="update_code_{{ this.bannerContent.getContentId() }}" method="post">
+    {{ widget('\\XLite\\View\\FormField\\Input\\FormId') }}
+    {% for _name, _val in this.getAllParams() %}
+    <input type="hidden" name="{{ _name }}" value="{{ _val }}" />
+    {% endfor %}
+    <input type="hidden" name="action" value="update_content" />
+    <input type="hidden" name="banner_content_id" value="{{ this.bannerContent.getContentId() }}" />
+    <div class="model-properties">
+        <div class="section default-section">
+            <ul class="table default-table">
+                <li class="input input-text">
+                    <div class="table-label">
+                        <label for="banner_content_data[{{ this.bannerContent.getContentId() }}][position]" title="{{ t('Position') }}">{{ t('Position') }}:</label>
+                    </div>
+                    <div class="star">&nbsp;</div>
+                    <div class="table-value position-value">
+						<span class="input-field-wrapper input input-text">
+						  <input id="banner_content_data[{{ this.bannerContent.getContentId() }}][position]" type="text" name="banner_content_data[{{ this.bannerContent.getContentId() }}][position]" size="5" value="{{ this.bannerContent.getPosition() }}" class="form-control"/>
+						</span>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li class="input textarea-advanced even">
+                    <div class="table-label">
+                        <label title="{{ t('Content') }}">{{ t('Content') }}:</label>
+                    </div>
+                    <div class="star">&nbsp;</div>
+
+                    {{ widget('\\XLite\\View\\FormField\\Textarea\\Advanced', fieldName='banner_content_data[' ~ this.bannerContent.getContentId() ~ '][content]', cols='50', rows='10', value=this.bannerContent.getTranslation().getContent(), fieldOnly='true') }}
+
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
+        {{ widget('QSL\\Banner\\View\\StickyPanel\\Buttons', bannerId=this.bannerContent.getContentId()) }}
+    </div>
+</form>
+

@@ -1,0 +1,7 @@
+{# @ListChild (list="product.feedCategories.parts", weight="306") #}
+<li class="input">
+  <div class="table-label">{{ t('Shopzilla') }}</div>
+  <div class="table-value">
+    {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\ShopzillaCategory', fieldName=this.getNamePostedData('shopzilla_id'), fieldOnly='true', value=this.get('product').getShopzillaCategory()) }}
+  </div>
+</li>

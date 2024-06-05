@@ -1,0 +1,16 @@
+{##
+ # Button template (mobile bottom panel)
+#}
+
+<div class="mobile-panel__item" role="listitem">
+  <button class="{{ this.getButtonCSSClasses() }}"{{ this.getButtonAttributesHTML()|raw }}>
+    {{ this.displayCommentedData(this.getCommentedData()) }}
+    <div class="mobile-panel__button-icon">
+      {{ widget('Qualiteam\\SkinActSkin\\View\\Badge', text=this.getBadge(), class='mobile-panel__button-badge') }}
+      {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon=this.getIcon(), class='mobile-panel__button-icon-svg') }}
+    </div>
+    {% if this.getTitle() %}
+      <span class="mobile-panel__button-title">{{ this.getTitle() }}</span>
+    {% endif %}
+  </button>
+</div>

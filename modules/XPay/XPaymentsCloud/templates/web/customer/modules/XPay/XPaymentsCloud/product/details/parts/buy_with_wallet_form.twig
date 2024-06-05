@@ -1,0 +1,8 @@
+{##
+ # Product details Buy With Apple Pay/Google Pay/etc form to run checkout
+ #
+ # @ListChild (list="product.details.page.info", weight="1000")
+ #}
+{% form '\\XPay\\XPaymentsCloud\\View\\Form\\Checkout\\Wallet' with {className: 'buy-with-wallet-form', buyWithWallet: 1} %}
+{% endform %}
+

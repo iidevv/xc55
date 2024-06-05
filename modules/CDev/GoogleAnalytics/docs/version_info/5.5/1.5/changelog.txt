@@ -1,0 +1,5 @@
+Version 5.5.1.5
+
+Fixes (1)
+2023-03-14 - [Bug] Clicking on a product with configured GA and enabled analytics collection blocker in the browser enabled was not working. Fixed. #XCB-2167 #CDev-GoogleAnalytics
+

@@ -1,0 +1,53 @@
+{##
+ # Vote bar
+ #}
+
+<div class="vote-bar">
+
+  <div class="rating-stars">
+    <div class="stars-row row">
+      {% for num in this.getStarsCount() %}
+        <div class="star-sngl">
+            <span class="star">
+                <svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="star" transform="translate(-102.000000, -342.000000)" fill="#E2E2E2">
+                            <g id="star-1">
+                                <g id="rating" transform="translate(54.000000, 340.000000)">
+                                    <polygon id="Star-1-Copy-3" points="55.3602356 13.6085145 50.8113598 16 51.6801178 10.9347524 48 7.34752416 53.0857977 6.60851449 55.3602356 2 57.6346734 6.60851449 62.7204711 7.34752416 59.0403534 10.9347524 59.9091113 16"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="stars-row full row full-{{ this.getPercent() }}">
+      {% for num in this.getStarsCount() %}
+        <div class="star-sngl">
+            <span class="star">
+                <svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="star-a" transform="translate(-86.000000, -342.000000)" fill="#25C5DF">
+                            <g id="star-a-1">
+                                <g id="rating" transform="translate(54.000000, 340.000000)">
+                                    <polygon id="Star-1-Copy-2" points="39.3602356 13.6085145 34.8113598 16 35.6801178 10.9347524 32 7.34752416 37.0857977 6.60851449 39.3602356 2 41.6346734 6.60851449 46.7204711 7.34752416 43.0403534 10.9347524 43.9091113 16"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
+  {% if this.getRatingLabel() %}
+    <span class="rating-label">{{ this.getRatingLabel() }}</span>
+  {% endif %}
+</div>

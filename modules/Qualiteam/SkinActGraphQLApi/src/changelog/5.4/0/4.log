@@ -1,0 +1,4 @@
+Version 5.4.0.4
+
+Fixes (1)
+- Fixed proper cart token checking in GraphQL Context controllers

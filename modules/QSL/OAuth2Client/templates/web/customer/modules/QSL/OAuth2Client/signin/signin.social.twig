@@ -1,0 +1,11 @@
+{##
+ # Login widget on Sign in block
+ #
+ # @ListChild (list="customer.signin.after")
+ #}
+
+{% if this.isCheckoutAuthBox() %}
+    {{ widget('\\QSL\\OAuth2Client\\View\\LoginBox\\Checkout') }}
+{% else %}
+    {{ widget('\\QSL\\OAuth2Client\\View\\LoginBox\\Login') }}
+{% endif %}

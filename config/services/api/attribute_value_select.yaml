@@ -1,0 +1,37 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # /products/{product_id}/attributes_select/{attribute_id}/values
+    XLite\API\Endpoint\AttributeValue\Select\Transformer\OutputTransformerInterface: '@XLite\API\Endpoint\AttributeValue\Select\Transformer\OutputTransformer'
+    XLite\API\Endpoint\AttributeValue\Select\Transformer\OutputTransformer: ~
+    XLite\API\Endpoint\AttributeValue\Select\Transformer\InputTransformerInterface: '@XLite\API\Endpoint\AttributeValue\Select\Transformer\InputTransformer'
+    XLite\API\Endpoint\AttributeValue\Select\Transformer\InputTransformer: ~
+
+    xcart.api.attribute_value.select.sub_extension:
+        class: XLite\API\SubExtension\AttributeValue\AttributeValueSubExtension
+        arguments:
+            $attributeType: !php/const XLite\Model\Attribute::TYPE_SELECT
+            $pathPrefix: attributes_select
+            $className: XLite\Model\AttributeValue\AttributeValueSelect
+        tags: [!php/const XLite\API\Extension\ItemSubExtension\ItemSubExtensionInterface::ITEM_SUB_EXTENSION_TAG, !php/const XLite\API\Extension\CollectionSubExtension\CollectionSubExtensionInterface::COLLECTION_SUB_EXTENSION_TAG]
+
+    XLite\Controller\API\AttributeValue\Select\Post:
+        tags: ['controller.service_arguments']
+
+    xcart.api.attribute_value.select.sub_iri_converter:
+        class: XLite\API\SubIriConverter\AttributeValue\AttributeValueSubIriConverter
+        arguments:
+            $routeItemName: 'api_plain field attribute values_get_item'
+            $className: XLite\Model\AttributeValue\AttributeValueSelect
+        tags: [!php/const XCart\Framework\ApiPlatform\Core\Bridge\Symfony\Routing\SubIriConverter\SubIriFromItemConverterInterface::SUB_IRI_FROM_ITEM_CONVERTER_TAG]
+
+    XLite\API\Endpoint\AttributeValue\Select\Mapper\InputPriceModifierTypeMapperInterface: '@XLite\API\Endpoint\AttributeValue\Select\Mapper\InputPriceModifierTypeMapper'
+    XLite\API\Endpoint\AttributeValue\Select\Mapper\InputPriceModifierTypeMapper: ~
+    XLite\API\Endpoint\AttributeValue\Select\Mapper\InputWeightModifierTypeMapperInterface: '@XLite\API\Endpoint\AttributeValue\Select\Mapper\InputWeightModifierTypeMapper'
+    XLite\API\Endpoint\AttributeValue\Select\Mapper\InputWeightModifierTypeMapper: ~
+    XLite\API\Endpoint\AttributeValue\Select\Mapper\OutputPriceModifierTypeMapperInterface: '@XLite\API\Endpoint\AttributeValue\Select\Mapper\OutputPriceModifierTypeMapper'
+    XLite\API\Endpoint\AttributeValue\Select\Mapper\OutputPriceModifierTypeMapper: ~
+    XLite\API\Endpoint\AttributeValue\Select\Mapper\OutputWeightModifierTypeMapperInterface: '@XLite\API\Endpoint\AttributeValue\Select\Mapper\OutputWeightModifierTypeMapper'
+    XLite\API\Endpoint\AttributeValue\Select\Mapper\OutputWeightModifierTypeMapper: ~

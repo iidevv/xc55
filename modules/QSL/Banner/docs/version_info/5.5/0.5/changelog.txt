@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Improvements (1)
+2022-11-28 - [Story] Refactoring of older console commands. #ECOM-2410 #CDev-Core #QSL-Banner
+

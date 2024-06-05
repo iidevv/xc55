@@ -1,0 +1,12 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActBrandCoupon if you want the coupon discount to be applied only to products from specific brands", translations: [{ code: en, label: "If you want the coupon discount to be applied only to products from specific brands, specify these brands here" }] }
+  - { name: "SkinActBrandCoupon brands", translations: [{ code: en, label: "Brands" }] }
+  - { name: "SkinActBrandCoupon all", translations: [{ code: en, label: "All" }] }
+  - { name: "SkinActBrandCoupon sorry the coupon you entered cannot be applied to the items in your cart", translations: [{ code: en, label: "Sorry, the coupon you entered cannot be applied to the items in your cart" }] }

@@ -1,0 +1,16 @@
+{##
+ # Date cell
+ #
+ #}
+
+<div class="subscription-statistics">
+  <ul>
+    <li>{{ t('Successful payments') }}: {{ this.entity.getSuccessTries() }}</li>
+    {% if this.entity.getFailedTries() %}
+      <li class="failed-tries">{{ t('Failed attempts for last payment') }}: {{ this.entity.getFailedTries() }}</li>
+    {% endif %}
+    {% if this.entity.getPeriods() %}
+      <li>{{ t('Number of remaining payments') }}: {{ this.entity.getRemainingPayments() }}</li>
+    {% endif %}
+  </ul>
+</div>

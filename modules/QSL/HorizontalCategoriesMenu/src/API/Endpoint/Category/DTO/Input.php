@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace QSL\HorizontalCategoriesMenu\API\Endpoint\Category\DTO;
+
+use ApiPlatform\Core\Annotation\ApiProperty;
+use Symfony\Component\Validator\Constraints as Assert;
+use XCart\Extender\Mapping\Extender;
+
+/**
+ * @Extender\Mixin
+ */
+class Input extends \XLite\API\Endpoint\Category\DTO\Input
+{
+    /**
+     * @Assert\PositiveOrZero()
+     * @ApiProperty(
+     *     attributes={
+     *         "openapi_context"={"example"="0"}
+     *     }
+     * )
+     * @var int
+     */
+    public int $flyout_columns = 0;
+}

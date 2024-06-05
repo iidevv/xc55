@@ -1,0 +1,12 @@
+<div class="admin-welcome recaptcha-welcome">
+  <div class="recaptcha-logo" align="center">
+    <a href="https://www.google.com/recaptcha/intro/index.html" target="_blank">
+      <img src="/assets/web/admin/{{ this.getDir() }}/images/logo.png" alt="{{ t('Google reCAPTCHA') }}" class="logo" />
+    </a>
+  </div>
+  <div class="recaptcha-options-header">
+    {{ t('To use this module you should sign up for a free Google reCAPTCHA account and specify your site key and secure key in the fields below.', {'registerUrl': 'https://www.google.com/recaptcha/intro/index.html', 'keysUrl': 'https://www.google.com/recaptcha/admin#list'})|raw }}
+
+    <p><br>{{ t('There are separate keys for API v2 and API v3')|raw }}</p>
+  </div>
+</div>

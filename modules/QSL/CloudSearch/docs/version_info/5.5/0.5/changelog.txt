@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Improvements (2)
+2023-04-12 - Added plus/minus to expand/collapse filters, improved show more/less. #ECOM-2972
+2023-04-12 - Integration with Storefront Builder (ability to move filters between columns, hide filters). #ECOM-2954

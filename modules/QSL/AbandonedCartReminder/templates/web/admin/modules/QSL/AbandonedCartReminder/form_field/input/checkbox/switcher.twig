@@ -1,0 +1,8 @@
+<span class="input-field-wrapper {{ this.getWrapperClass() }}" data-tooltip="{{ t('Send automatically: STATUS') }}">
+{{ this.displayCommentedData(this.getCommentedData()) }}
+<input type="hidden" name="{{ this.getName() }}" value="" />
+<input{{ this.getAttributesCode()|raw }} />
+<div class="widget">
+<i class="fa fa-clock-o"></i>
+</div>
+</span>

@@ -1,0 +1,16 @@
+#
+# Metadata
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+version: 5.5.0.0
+type: common
+authorName: 'X-Cart team'
+moduleName: 'Migration: Restore logins of X-Cart 4 users'
+description: 'The module enables customers from X-Cart 4 to log in using their passwords. If you have not migrated your store from X-Cart 4, this module has no value for you.'
+minorRequiredCoreVersion: 0
+dependsOn: {  }
+incompatibleWith: {  }
+showSettingsForm: true
+canDisable: true

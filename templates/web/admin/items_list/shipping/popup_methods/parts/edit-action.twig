@@ -1,0 +1,18 @@
+{##
+ # Edit action
+ #
+ # @ListChild (list="popup.shipping.methods.list.line.actions.right", weight=300)
+ #}
+
+{% if this.isOffline(this.get('method')) and this.get('method').isAdded() %}
+  <div class="edit action">
+    {{ widget(
+      'XLite\\View\\Button\\Shipping\\EditMethod',
+      {
+        method: this.get('method'),
+        label: 'Settings',
+        style: 'fa fa-cog-2'
+      }
+    ) }}
+  </div>
+{% endif %}

@@ -1,0 +1,46 @@
+{##
+ # Layout editor panel
+ #}
+
+<xlite-custom-css inline-template :initial="{{ this.isCustomCssEnabled() ? 'true' : 'false' }}">
+  <div id="custom-css-panel">
+    <div class="custom-css-sidebar themetweaker-sidebar">
+      <div class="custom-css-header sidebar-main-header">
+        <span class="go-to-layout-editor" @click="switchTab('layout_editor')">{{ this.displaySVGImage('modules/XC/ThemeTweaker/themetweaker_panel/icons/back.svg') }}</span>
+        <span>{{ t('Custom CSS') }}</span>
+      </div>
+      <div class="themetweaker-sidebar-content">
+        <p>
+          {{ this.t('This tool allows you to add your Custom CSS. Read more about using Custom CSS.')|raw }}
+        </p>
+        <div>
+          <div class="themetweaker-action themetweaker-action_switcher">
+            <label>{{ this.t('Use custom CSS') }}</label>
+            {{ widget('XLite\\View\\FormField\\Input\\Checkbox\\OnOff',
+              fieldOnly=true,
+              attributes={
+                ":checked": "initial",
+                '@change': 'onSwitchChange',
+                'data-panel-switcher': 'data-panel-switcher'}) }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="custom-css-section themetweaker-section">
+      <div class="themetweaker-section-panel">
+      </div>
+      {{ widget(
+        'XC\\ThemeTweaker\\View\\FormField\\Textarea\\CodeMirror',
+        attributes={
+          'v-pre': 'v-pre',
+          'data-css-editor': 'data-css-editor',
+        },
+        fieldOnly=true,
+        formControl=false,
+        codeMode='css',
+        value=this.getCustomCss()
+      ) }}
+      <script type="text/plain" data-css-content>{{ this.getCustomCss()|raw }}</script>
+    </div>
+  </div>
+</xlite-custom-css>

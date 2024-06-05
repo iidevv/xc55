@@ -1,0 +1,18 @@
+{##
+ # Shipping freight tooltip
+ #
+ # @ListChild (list="popup.shipping.methods.list.line.actions.right", weight=400)
+ #}
+
+{% if this.method.isFixedFee() %}
+  <div class="separator"></div>
+  <div class="info action">
+    {{ widget(
+      '\\XLite\\View\\Tooltip',
+      id='menu-links-help-text',
+      text=t('Shipping freight tooltip text'),
+      isImageTag='true',
+      className='help-small-icon'
+    ) }}
+  </div>
+{% endif %}

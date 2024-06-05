@@ -1,0 +1,45 @@
+/**
+ * Dashboard info block notifications styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.infoblock-notifications {
+  h3 {
+    margin-top: @rhythmic-unit;
+    margin-bottom: 0;
+  }
+
+  .infoblock-notification, .js-infoblock-notification {
+    .flex-display();
+    margin-top: @rhythmic-unit / 2;
+    background-color: @color-light-blue;
+    border-radius: @border-radius-base;
+    border: @border-base solid @brand-info;
+    min-height: @rhythmic-unit * 2;
+    padding: 0.5 * @rhythmic-unit - @border-base;
+    width: 245px;
+
+    .notification-message {
+      .flex-grow(1);
+    }
+
+    .notification-close {
+      cursor: pointer;
+
+      i.fa-times {
+        &:before {
+          font-size: @font-size-very-small;
+        }
+      }
+
+      &:hover {
+
+        i.fa-times {
+          color: @color-link;
+        }
+      }
+    }
+  }
+}

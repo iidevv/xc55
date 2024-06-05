@@ -1,0 +1,31 @@
+{##
+# Labels list
+#
+# @author    Qualiteam software Ltd <info@x-cart.com>
+# @copyright Copyright (c) 2011-2014 Qualiteam software Ltd <info@x-cart.com>. All rights reserved
+# @license   http://www.x-cart.com/license-agreement.html X-Cart 5 License Agreement
+# @link      http://www.x-cart.com/
+#
+# @ListChild (list="itemsList.product.grid.customer.info", weight="23")
+# @ListChild (list="itemsList.product.list.customer.info", weight="23")
+# @ListChild (list="itemsList.product.table.customer.columns", weight="23")
+# @ListChild (list="product.details.page.image.photo", weight="25")
+#}
+
+<div class="product-stickers">
+  <ul>
+    {% for productSticker in this.get('product').getPublicProductStickers() %}
+      {% if productSticker.enabled %}
+        <li class="ribbon">
+          <div class="text-ribbon" style="background: #{{ productSticker.bg_color }}; color: #{{ productSticker.text_color }};">
+            <span>{{ productSticker.name }}</span>
+          </div>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <div class="top-stickers"><ul></ul></div>
+  <div class="bottom-stickers"><ul></ul></div>
+</div>
+
+

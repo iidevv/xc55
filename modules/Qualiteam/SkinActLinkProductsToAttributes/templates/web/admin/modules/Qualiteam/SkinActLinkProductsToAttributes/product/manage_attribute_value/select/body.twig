@@ -1,0 +1,24 @@
+{##
+ # Attribute value (Select)
+#}
+<div class="{{ this.getStyle() }}">
+  {% include 'product/manage_attribute_value/multiple_options.twig' %}
+  <ul class="values">
+    {% for id, attributeValue in this.getAttrValues() %}
+      <li class="{{ this.getValueStyle(id) }}">
+        <div class="value">
+          {{ widget(this.getWidgetClass(), fieldName=this.getName('value', id), fieldOnly='true', value=this.getFieldValue(attributeValue), attribute=this.getAttribute(), attributes={'placeholder': t('Attribute option')}) }}
+          {{ widget('QSL\\ColorSwatches\\View\\FormField\\Select\\Swatch', attribute=this.getAttribute(), valueid=id) }}
+          {{ widget('Qualiteam\\SkinActColorSwatchesFeature\\View\\FormField\\Input\\ShipDate', attribute=this.getAttribute(), valueid=id) }}
+          {{ widget('Qualiteam\\SkinActMagicImages\\View\\Button\\MagicSetLink', attributeValue=attributeValue, valueid=id, product=this.getProduct(), isColorboxSwatches=this.getAttribute().isColorSwatchesAttribute()) }}
+          {% include 'product/manage_attribute_value/modifiers.twig' %}
+          {{ widget_list('product.attribute.values.select.after', attribute=this.getAttribute(), attributeValue=attributeValue, value_id=id ) }}
+        </div>
+
+        <div class="actions">
+          {{ widget('XLite\\View\\Button\\Remove', buttonName=this.getName('deleteValue', id)) }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

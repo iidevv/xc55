@@ -1,0 +1,18 @@
+{##
+ # Customer link for pages
+ #}
+
+{% if this.getEntity() %}
+  <div class="plain-value">
+      <span class="value">
+        {% if this.isOneItemLink() %}
+          {{ t('pages.example-of', {
+            link: this.getLink(),
+            url: this.getUrl()
+          }) | raw }}
+        {% else %}
+          <a href="{{ this.getUrl() }}" target="_blank">{{ this.getLink() }}</a>
+        {% endif %}
+      </span>
+  </div>
+{% endif %}

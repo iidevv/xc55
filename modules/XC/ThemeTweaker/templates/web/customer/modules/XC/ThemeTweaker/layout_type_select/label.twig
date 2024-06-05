@@ -1,0 +1,12 @@
+<div class="{{ this.getLabelContainerClass() }}">
+  {{ this.getImage('layout')|raw }}
+  <label for="{{ this.getFieldId() }}">
+    {{ this.getFormattedLabel() }}
+  </label>
+  {% if this.hasHelp() %}
+    <span data-placement="bottom"
+          title="{{ t(this.getParam('help')) }}"
+          data-html="true"
+          class="themetweaker-panel-tooltip"></span>
+  {% endif %}
+</div>

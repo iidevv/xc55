@@ -1,0 +1,21 @@
+Version 5.5.0.9
+
+Improvements (6)
+2023-02-02 - [Task] Added a rewrite rule for sitemap.xml to the example Apache config. #XCB-2072 #CDev-Core
+2023-02-01 - [Task] Protected the script 'service-tool/bin/install.sh' from being run directly. #XCB-2046 #CDev-Core
+2023-01-31 - [Task] With the add-ons "Volume Discounts" and "Coupons" disabled, the respective menu items no longer appear in the menu. #XCB-1924 #CDev-Core
+2023-02-02 - [Story] Added product dimensions and separate box to Product API. #ECOM-2781 #CDev-Core
+2023-02-01 - [Story] Added an endpoint "carts" for the admin API.   #ECOM-2718 #CDev-Core #CDev-USPS #CDev-Coupons #QSL-LoyaltyProgram #QSL-CostPrice #QSL-AbandonedCartReminder #QSL-TaxExempt #QSL-CustomerSatisfaction #XC-MultiCurrency #XC-MailChimp #XC-GiftWrapping #XC-MultiVendor #QSL-EBay #QSL-OrderReports #QSL-AdvancedSecurity #QSL-MarkMobileOrders
+2023-01-26 - [Story] Product dimensions are now available for entry at all times, and they no longer depend on the value of the Separate box checkbox setting. They are also shown on the product details page now. #ECOM-2699 #CDev-Core #XC-FreeShipping
+
+Fixes (9)
+2023-02-01 - [Bug] Fatal error "XCart\\Exception\\UpdateMigrationException(code: 0): Error in getUpdateMigration method.\nCall to undefined method". Fixed. #XCB-2080 #CDev-Core
+2023-02-02 - [Bug] It was impossible to save changes in AOM after clicking Recalculate totals. Fixed. #XCB-2077 #CDev-Core
+2023-02-02 - [Bug] Added runtime cache for the prepareAttributeValues function. #XCB-2060 #CDev-Core
+2023-02-02 - [Bug] Fonts were not loaded if the location of the store site had been specified in nginx server config as available in a subfolder (like example.com/shop, not just example.com). Fixed. #XCB-2055 #CDev-Core
+2023-02-02 - [Bug] The ViewListMutationApply service was working incorrectly. Fixed. #XCB-2047 #CDev-Core
+2023-01-30 - [Bug] Incorrect heading on the pages related to Shipping setup. The active menu item in the sidebar menu was not highlighted. Fixed. #XCB-2044 #CDev-Core
+2023-01-30 - [Bug] On opening the Orders page in the Admin area, the Advanced filters box is now collapsed. #XCB-2033 #CDev-Core
+2023-02-02 - [Bug] Bugs related to creating an NFO order with Zapier enabled. Fixed. #XCB-2005 #CDev-Core #XC-Zapier #XC-RoyalMail #XC-FreeShipping
+2023-02-02 - [Bug] Layout issues in AOM when adding a product. Fixed. #XCB-1908 #CDev-Core
+

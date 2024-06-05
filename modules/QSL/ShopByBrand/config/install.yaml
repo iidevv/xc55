@@ -1,0 +1,414 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\ImageSettings:
+  - { model: QSL\ShopByBrand\Model\Image\Brand\Image, code: Default, width: 160, height: 160 }
+
+XLite\Model\Config:
+  - name: shop_by_brand_field_id
+    category: QSL\ShopByBrand
+    type: QSL\ShopByBrand\View\FormField\Select\ProductField
+    orderby: 100
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Brand attribute'
+        option_comment: '​Select the global attribute that will be used for brands.'
+      - code: ru
+        option_name: 'Глобальный атрибут товара, определяющий его бренд'
+
+  - name: hide_brands_without_products
+    category: QSL\ShopByBrand
+    type: XLite\View\FormField\Input\Checkbox\YesNo
+    orderby: 175
+    value: true
+    translations:
+      - code: en
+        option_name: 'Hide brands without products'
+      - code: ru
+        option_name: 'Прятать бренды без продуктов'
+
+  - name: brandsPageSeparator
+    category: QSL\ShopByBrand
+    type: separator
+    orderby: 180
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Brands page'
+
+  - name: shop_by_brand_page_order
+    category: QSL\ShopByBrand
+    type: QSL\ShopByBrand\View\FormField\Select\BrandOrder
+    widgetParameters: { }
+    orderby: 185
+    value: 't.name'
+    translations:
+      - code: en
+        option_name: 'Sort brands by'
+      - code: ru
+        option_name: 'Упорядочивать список на странице брендов'
+
+  - name: shop_by_brand_pager
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 190
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Enable pagination'
+      - code: ru
+        option_name: 'Разбивать список брендов на страницы'
+
+  - name: shop_by_brand_per_page
+    category: QSL\ShopByBrand
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 1 }
+    orderby: 195
+    value: 9
+    translations:
+      - code: en
+        option_name: 'Max number of brands per page'
+
+  - name: show_filter_by_first_letter
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 200
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Enable "Filter brands by letter" feature'
+
+  - name: show_filter_by_substring
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 205
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Enable "Search brand by name" feature'
+
+  - name: brandsBlockSeparator
+    category: QSL\ShopByBrand
+    type: separator
+    orderby: 210
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Brands block (sidebar column)'
+      - code: ru
+        option_name: 'Список брендов (боковое меню)'
+
+  - name: shop_by_brand_block_home
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 215
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Show block on Front page'
+      - code: ru
+        option_name: 'Показывать блок на домашней странице'
+
+  - name: shop_by_brand_block
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 220
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Show block on Category pages'
+      - code: ru
+        option_name: 'Показывать блок на странице категорий'
+
+  - name: shop_by_brand_block_lfp
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 225
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Show block on Make/Model/Year pages'
+      - code: ru
+        option_name: 'Показывать блок на странице выбранного авто'
+
+  - name: shop_by_brand_block_order
+    category: QSL\ShopByBrand
+    type: QSL\ShopByBrand\View\FormField\Select\BrandOrder
+    widgetParameters: { }
+    orderby: 230
+    value: 'b.position'
+    translations:
+      - code: en
+        option_name: 'Sort brands by'
+      - code: ru
+        option_name: 'Упорядочивать список в блоке'
+
+  - name: shop_by_brand_block_limit
+    category: QSL\ShopByBrand
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 1 }
+    orderby: 235
+    value: '10'
+    translations:
+      - code: en
+        option_name: 'Max number of brands'
+      - code: ru
+        option_name: 'Длина списка в блоке'
+
+  - name: brandsDialogSeparator
+    category: QSL\ShopByBrand
+    type: separator
+    orderby: 300
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Brands block (central column)'
+      - code: ru
+        option_name: 'Список брендов (центральная часть страницы)'
+
+  - name: shop_by_brand_dialog_home
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 305
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Show block on Front page'
+      - code: ru
+        option_name: 'Показывать блок на домашней странице'
+
+  - name: shop_by_brand_dialog
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 310
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Show block on Category pages'
+      - code: ru
+        option_name: 'Показывать блок на странице категорий'
+
+  - name: shop_by_brand_dialog_lfp
+    category: QSL\ShopByBrand
+    type: checkbox
+    orderby: 315
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Show block on Make/Model/Year pages'
+      - code: ru
+        option_name: 'Показывать блок на странице выбранного авто'
+
+  - name: shop_by_brand_dialog_order
+    category: QSL\ShopByBrand
+    type: QSL\ShopByBrand\View\FormField\Select\BrandOrder
+    widgetParameters: { }
+    orderby: 320
+    value: 'b.position'
+    translations:
+      - code: en
+        option_name: 'Sort brands by'
+
+  - name: shop_by_brand_dialog_limit
+    category: QSL\ShopByBrand
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 1 }
+    orderby: 325
+    value: '5'
+    translations:
+      - code: en
+        option_name: 'Max number of brands'
+      - code: ru
+        option_name: 'Количество брендов в блоке на центральной части страницы'
+
+  - name: default_brand_products_order
+    category: General
+    type: 'QSL\ShopByBrand\View\FormField\Select\BrandProductsSortOrder'
+    orderby: 22505
+    value: 'nameAsc'
+    translations:
+      - code: en
+        option_name: 'Default order to sort products on brand pages'
+      - code: ru
+        option_name: 'Режим сортировки товаров брендов'
+
+#
+# Extra XML Sitemap settings
+#
+  - name: brandpage_changefreq
+    category: CDev\XMLSitemap
+    type: 'CDev\SimpleCMS\View\FormField\Select\ChangeFrequency'
+    orderby: 450
+    value: daily
+    translations:
+      - code: en
+        option_name: 'Frequency of content renewal for Brand page'
+      - code: ru
+        option_name: 'Частота обновления содержимого страниц брендов'
+
+  - name: brandpage_priority
+    category: CDev\XMLSitemap
+    type: XLite\View\FormField\Input\Text\FloatInput
+    widgetParameters: { min: 0, max: 1, e: 1}
+    orderby: 460
+    value: 0.5
+    translations:
+      - code: en
+        option_name: Priority for Brand page
+        option_comment: The value should range from 0 to 1.
+      - code: ru
+        option_name: Приоритет для страниц брендов
+        option_comment: 'Значение должно быть в пределах: от 0 до 1.'
+
+XLite\Model\LanguageLabel:
+  - name: 'To manage brands you should add a global product attribute that will store product brands and choose it in the Brands module settings.'
+    translations:
+      - code: en
+        label: 'To manage brands you should <a href="{{attributes}}">add a global product attribute</a> that will store product brands and choose it in the <a href="{{settings}}">Brands module settings</a>.'
+      - code: ru
+        label: 'Для начала работы Вам необходимо <a href="{{attributes}}">добавить глобальный атрибут</a>, который будет использоваться для хранения бренда товара, и выбрать его в <a href="{{settings}}">настройках модуля</a>.'
+  - name: All brands
+    translations:
+      - code: en
+        label: 'All brands'
+      - code: ru
+        label: 'Все бренды'
+  - name: Brand
+    translations:
+      - code: en
+        label: 'Brand'
+      - code: ru
+        label: 'Бренд'
+  - name: Brands
+    translations:
+      - code: en
+        label: 'Brands'
+      - code: ru
+        label: 'Бренды'
+  - name: Manage brands
+    translations:
+      - code: en
+        label: 'Manage brands'
+      - code: ru
+        label: 'Управление брендами товаров'
+  - name: Any brand
+    translations:
+      - code: en
+        label: 'Any'
+      - code: ru
+        label: 'Любой'
+  - name: by brand names
+    translations:
+      - code: en
+        label: 'Brand names'
+      - code: ru
+        label: 'по имени бренда'
+  - name: as configured by the store owner
+    translations:
+      - code: en
+        label: 'Admin-defined order'
+      - code: ru
+        label: 'как задано администратором магазина'
+  - name: by number of products
+    translations:
+      - code: en
+        label: 'Number of products'
+      - code: ru
+        label: 'по количеству товаров'
+  - name: No brand attribute
+    translations:
+      - code: en
+        label: '--- None ---'
+      - code: ru
+        label: '--- Отсутствует ---'
+  - name: New brand
+    translations:
+      - code: en
+        label: 'New brand'
+      - code: ru
+        label: 'Новый бренд'
+  - name: Add existing products from the catalog, or create a new product.
+    translations:
+      - code: en
+        label: 'Add existing products from the catalog, or create a new product.'
+      - code: ru
+        label: 'Добавьте существующие товары из каталога, или создайте новый товар.'
+  - name: The brand image has been updated
+    translations:
+      - code: en
+        label: 'The brand image has been updated'
+      - code: ru
+        label: 'Логотип бренда обновлён'
+  - name: Failed to update brand image
+    translations:
+      - code: en
+        label: 'Failed to update brand image'
+      - code: ru
+        label: 'Не удалось обновить логотип бренда'
+  - name: Category brands
+    translations:
+      - code: en
+        label: 'Category brands'
+      - code: ru
+        label: 'Бренды в категории'
+  - name: Brand name
+    translations:
+      - code: en
+        label: 'Brand name'
+      - code: ru
+        label: 'Бренд'
+  - name: Brand logo
+    translations:
+      - code: en
+        label: 'Brand logo'
+      - code: ru
+        label: 'Логотип'
+  - name: Brand description
+    translations:
+      - code: en
+        label: 'Brand description'
+      - code: ru
+        label: 'Описание бренда'
+  - name: 'imgsize-brand-Default'
+    translations:
+      - code: en
+        label: 'Brand image (grid)'
+      - code: ru
+        label: 'Логотип бренда для списка вида "Сетка"'
+  - name: 'Brand (products: N)'
+    translations:
+      - code: en
+        label: '{{brand}} (products: {{count}})'
+      - code: ru
+        label: '{{brand}} (товаров: {{count}})'
+  - name: 'No products available'
+    translations:
+      - code: en
+        label: 'No products available'
+      - code: ru
+        label: 'Продукты не найдены'
+  - name: 'Back to brands'
+    translations:
+      - code: en
+        label: 'Back to brands'
+      - code: ru
+        label: 'Вернуться к спику брендов'
+  - name: 'No brands found'
+    translations:
+      - code: en
+        label: 'No brands found'
+      - code: ru
+        label: 'Бренды не найдены'
+  - name: 'Search Brand by Name'
+    translations:
+      - code: en
+        label: 'Search Brand by Name'
+  - name: 'Brand page'
+    translations:
+      - code: en
+        label: 'Brand page'

@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace XLite\View\FormField\Inline\Input\Text;
+
+/**
+ * Product class
+ */
+class ProductClass extends \XLite\View\FormField\Inline\Base\Single
+{
+    /**
+     * Register JS files
+     *
+     * @return array
+     */
+    public function getJSFiles()
+    {
+        $list = parent::getJSFiles();
+
+        $list[] = 'form_field/inline/input/text/product-class.js';
+
+        return $list;
+    }
+
+    /**
+     * Define form field
+     *
+     * @return string
+     */
+    protected function defineFieldClass()
+    {
+        return 'XLite\View\FormField\Input\Text';
+    }
+
+    /**
+     * Get container class
+     *
+     * @return string
+     */
+    protected function getContainerClass()
+    {
+        return parent::getContainerClass() . ' inline-product-class';
+    }
+
+    /**
+     * Get view template
+     *
+     * @return string
+     */
+    protected function getViewTemplate()
+    {
+        return 'form_field/inline/input/text/product-class.twig';
+    }
+}

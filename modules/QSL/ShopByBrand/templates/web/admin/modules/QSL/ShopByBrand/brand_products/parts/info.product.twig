@@ -1,0 +1,10 @@
+{##
+ # Product link
+ #}
+
+<a
+  href="{{ xurl('product', '', {'product_id': this.entity.getId()}) }}"
+  title="{{ this.entity.getName() }}"
+  class="fproduct-name product-name">
+  {{ this.entity.getName() }}</a>
+<img src="{{ asset('images/spacer.gif') }}" class="right-fade" alt="" />

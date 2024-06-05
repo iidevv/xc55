@@ -1,0 +1,7 @@
+{##
+ # Common login widget (long)
+ #}
+
+<li class="provider-{{ this.provider.service_name }} {{ this.getPlacement() }}-placement">
+    <a href="{{ this.getURL() }}" class="btn regular-button">{{ t('Sign in with X', {'name': this.provider.linkName}) }}</a>
+</li>

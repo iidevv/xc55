@@ -1,0 +1,14 @@
+{##
+ # Order items
+ #
+ # @ListChild (list="return.base", weight="20")
+ #}
+
+<div class="section items">
+  <div class="title">{{ t('Order items') }}:</div>
+  {% if this.getReturnId() %}
+    {{ widget('\\QSL\\Returns\\View\\ItemsList\\Model\\ModifyReturnOrderItem', order=this.order) }}
+  {% else %}
+    {{ widget('\\QSL\\Returns\\View\\ItemsList\\Model\\CreateReturnOrderItem', order=this.order) }}
+  {% endif %}
+</div>

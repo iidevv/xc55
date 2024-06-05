@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+
+  CDev\Paypal\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: CDev-Paypal, type: init, method: onInit }
+      - { name: xcart.lifetime-hook, moduleId: CDev-Paypal, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }
+      - { name: xcart.lifetime-hook, moduleId: CDev-Paypal, type: upgrade, method: onUpgradeTo5501, version: '5.5.0.1' }
+      - { name: xcart.lifetime-hook, moduleId: CDev-Paypal, type: upgrade, method: onUpgradeTo5509, version: '5.5.0.9' }
+
+  CDev\Paypal\Transformer\XLite\Model\OrderItem\Logic\Entity\Storefront\CartDecorator:
+    class: CDev\Paypal\Domain\GmvTrackerDomainDecorator
+    decorates: XCart\Domain\GmvTrackerDomain

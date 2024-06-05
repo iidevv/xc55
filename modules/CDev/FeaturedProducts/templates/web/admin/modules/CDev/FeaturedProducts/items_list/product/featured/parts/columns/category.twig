@@ -1,0 +1,7 @@
+{##
+ # Item category
+ #
+ # @ListChild (list="itemsList.product.admin.featured.columns", weight="40")
+ #}
+
+<td><a class="category" href="{{ xurl('category', '', {'category_id': this.get('product').category.getCategoryId()}) }}">{{ this.get('product').category.getName() }}</a></td>

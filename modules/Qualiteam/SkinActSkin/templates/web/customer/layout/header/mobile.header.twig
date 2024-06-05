@@ -1,0 +1,26 @@
+{##
+ # Mobile header
+ #}
+
+<div class="mobile_header">
+  <ul class="nav nav-pills">
+    <li class="nav-pills__column nav-pills__column--position--left">
+      <ul class="nav-subpills">
+        {{ widget_list('layout.header.mobile.menu.left') }}
+      </ul>
+    </li>
+    <li class="nav-pills__column nav-pills__column--position--center">
+      <div class="mobile_header-logo">
+      {% include 'layout/header/mobile_header_parts/header.logo.twig' %}
+      </div>
+    </li>
+    <li class="nav-pills__column nav-pills__column--position--right">
+      <ul class="nav-subpills">
+        {{ widget_list('layout.header.mobile.menu') }}
+      </ul>
+    </li>
+    <li class="nav-pills__column nav-pills__column--position--menus">
+      {{ widget_list('layout.header.mobile.menu.right') }}
+    </li>
+  </ul>
+</div>

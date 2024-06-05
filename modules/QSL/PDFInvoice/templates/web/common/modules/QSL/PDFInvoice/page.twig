@@ -1,0 +1,8 @@
+{##
+ # Invoice page
+ #}
+{% for orderEntity in this.getOrders() %}
+<div class="order-invoice-wrapper page-break">
+{{ widget('\\XLite\\View\\Invoice', order=orderEntity) }}
+</div>
+{% endfor %}

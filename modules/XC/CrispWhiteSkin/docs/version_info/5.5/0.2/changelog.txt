@@ -1,0 +1,6 @@
+Version 5.5.0.2
+
+Fixes (2)
+2022-09-02 - [Bug] Product variants. After selecting a product variant on the storefront some page elements became displaced. Fixed. #XCB-1679 #CDev-Core #XC-CrispWhiteSkin
+2022-09-02 - [Bug] Amazon Pay. The Amazon Pay button was positioned incorrectly on the storefront. Fixed. #XCB-1612 #Amazon-PayWithAmazon #CDev-Paypal #XC-FastLaneCheckout #XC-CrispWhiteSkin
+

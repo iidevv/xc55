@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autowire: true
+  CDev\GoogleAnalytics\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: CDev-GoogleAnalytics, type: init, method: onInit }
+      - { name: xcart.lifetime-hook, moduleId: CDev-GoogleAnalytics, type: upgrade, method: onUpgradeTo5510, version: '5.5.1.0' }

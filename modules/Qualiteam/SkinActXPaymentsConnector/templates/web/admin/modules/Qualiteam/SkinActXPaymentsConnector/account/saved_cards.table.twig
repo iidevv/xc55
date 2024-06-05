@@ -1,0 +1,16 @@
+{##
+ # iframe 
+ #
+ #
+ # @ListChild (list="admin.account.saved_cards.table", weight="100")
+ #}
+
+<div>
+
+{% form '\\Qualiteam\\SkinActXPaymentsConnector\\View\\Form\\SavedCards' %}
+
+{{ widget('Qualiteam\\SkinActXPaymentsConnector\\View\\ItemsList\\Model\\SavedCards') }}
+
+{% endform %}
+
+</div>

@@ -1,0 +1,17 @@
+{##
+ # Slidebar
+ #}
+
+<nav id="slidebar">
+    <ul>
+        {% if this.isShowHomeLink() %}
+            <li>
+                <a href="{{ xurl() }}" title="{{ t('Home') }}"><span>{{ t('home_link') }}</span></a>
+            </li>
+        {% endif %}
+            
+        {{ widget_list('layout.header.categories') }}
+
+        {{ widget_list('header.menu', isSlidebar=true) }}
+    </ul>
+</nav>

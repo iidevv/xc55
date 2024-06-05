@@ -1,0 +1,14 @@
+{##
+ # Admin order page paypal transaction id
+ #
+ # @ListChild (list="order.payment.method", weight="200")
+ #}
+
+{% if this.order.getPayPalTransactionId() %}
+<div class="method">
+  <p class="transaction">
+    {{ t('PayPal Transaction ID') }}: <br>
+    {{ this.order.getPayPalTransactionId() }}
+  </p>
+</div>
+{% endif %}

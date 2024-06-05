@@ -1,0 +1,5 @@
+Version 5.5.0.2
+
+Fixes (1)
+2022-08-29 - [Bug] A help tip was positioned incorrectly on the "Catalog Pages" and "Content Pages" pages. Fixed. #XCB-1531 #CDev-Core #CDev-SimpleCMS
+

@@ -1,0 +1,25 @@
+{##
+ # Top categories tree: simple multicolumn layout
+ #
+ #}
+
+{% if this.isSubtree() %}<div class="multicol-block sublevel" style="width:{{ this.multicolFlyoutBlockWidth(this.get('parent_category').flyoutColumns, this.get('parent_category').subcategoriesCount) }}px;">{% endif %}
+{% if this.isSubtree() %}<ul class="multicol{% if not this.isSubtree() %} catalog-categories catalog-categories-tree {% endif %}" style="width:{{ this.getColumnWidth() }}px;">{% endif %}
+  {% for idx, _category in this.getCategories(this.rootId) %}
+    <li {{ this.displayItemClass(idx, loop.length, _category)|raw }}>
+      <a href="{{ _category.link }}" {{ this.displayLinkClass(idx, loop.length, _category)|raw }} title="{{ _category.name }}">
+          <span class="category-label">{{ _category.name }}{% if this.isShowProductNum() %} ({{ _category.productsNum }}){% endif %}</span>
+      </a>
+      {% if _category.flyoutColumns > 0 and _category.depth < 1 and _category.subcategoriesCount > 0 and not this.isRootOnly() %}
+        {{ widget(template=this.getBody(), parent_category=_category, rootId=_category.id, is_subtree='1', parentFlyoutColumns=_category.flyoutColumns) }}
+      {% endif %}
+    </li>
+
+    {% if this.isMulticolGap(loop.index0, this.get('parent_category').flyoutColumns, loop.length) and this.isSubtree() %}</ul><ul class="multicol" style="width:{{ this.getColumnWidth() }}px;">{% endif %}
+
+  {% endfor %}
+  {% for idx, w in this.getViewList('topCategories.children', {'rootId': this.getParam('rootId'), 'is_subtree': this.getParam('is_subtree')}) %}
+    <li {{ this.displayListItemClass(idx, loop.length, w)|raw }}>{{ w.display() }}</li>
+  {% endfor %}
+{% if this.isSubtree() %}</ul>{% endif %}
+{% if this.isSubtree() %}</div>{% endif %}

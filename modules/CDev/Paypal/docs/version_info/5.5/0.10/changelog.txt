@@ -1,0 +1,5 @@
+Version 5.5.0.10
+
+Improvements (1)
+2023-07-31 - [Story] GMV tracking implemented. #ECOM-3719 #CDev-Core #CDev-Paypal
+

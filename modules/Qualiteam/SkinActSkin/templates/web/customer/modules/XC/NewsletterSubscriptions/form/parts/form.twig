@@ -1,0 +1,24 @@
+{##
+ # Subscribe block
+ #
+ # #ListChild (list="NewsletterSubscriptions.footer.form-block", weight="100")
+#}
+
+{% form 'XC\\NewsletterSubscriptions\\View\\Form\\Subscription' with {formTarget: 'newsletter_subscriptions', formAction: 'subscribe'} %}
+  <div class="subscription-box">
+    <div class="subscription-box__text">
+      <div class="subscription-box__label subscription-form-label">
+        {{ this.getFormLabel() }}
+      </div>
+      <div class="subscription-box__description subscription-form-description">
+        {{ this.getFormDescription() }}
+      </div>
+    </div>
+    <div class="subscription-box__form subscription-form-fields">
+      <div>
+        {{ widget('XLite\\View\\FormField\\Input\\Text\\Email', fieldName='newlettersubscription_email', required='true', placeholder=t('Enter email address', [], null, 'placeholder'), maxlength='255', fieldOnly=this.isFieldOnly(), label=t('Email')) }}
+        {{ widget('\\XLite\\View\\Button\\Submit', label=t('Subscribe')) }}
+      </div>
+    </div>
+  </div>
+{% endform %}

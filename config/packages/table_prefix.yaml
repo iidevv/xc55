@@ -1,0 +1,4 @@
+parameters:
+  table_prefix:
+    - { class: '*', table: '*', prefix: '%env(resolve:DATABASE_DEFAULT_TABLE_PREFIX)%' }
+    - { class: '#XCart\\Service\\Storage\\.*#', table: '*', prefix: '' }

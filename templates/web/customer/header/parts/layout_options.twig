@@ -1,0 +1,12 @@
+{##
+ # Head list children
+ #
+ # @ListChild (list="head", weight="1310")
+ #}
+
+<script>
+  var xliteLayoutOptions = {
+    cloud_zoom: {{ this.get('layout').isCloudZoomAllowed() ? 'true' : 'false' }},
+    lazy_load: {{ this.get('layout').isLazyLoadEnabled() ? 'true' : 'false' }},
+  };
+</script>

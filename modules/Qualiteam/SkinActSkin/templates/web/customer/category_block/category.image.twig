@@ -1,0 +1,7 @@
+{##
+ # Category additional image
+ #}
+
+<div class="category-block__image-box">
+  {{ widget('\\XLite\\View\\Image', className='category-block__image', lazyLoad=true, image=this.get('category').image2, centerImage='1', alt=this.get('category').image2.alt ?: this.get('category').name) }}
+</div>

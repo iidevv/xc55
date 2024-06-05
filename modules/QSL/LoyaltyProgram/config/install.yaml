@@ -1,0 +1,605 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - name: 'X points'
+    translations:
+      - code: en
+        label: '{{points}} points'
+      - code: ru
+        label: '{{points}}'
+  - name: 'You have X reward points which you can redeem for the Y discount on future orders.'
+    translations:
+      - code: en
+        label: 'You have {{points}} reward points which you can redeem for the {{discount}} discount on future orders.'
+      - code: ru
+        label: 'Ваши бонусные баллы: {{points}}. Максимальная скидка, на которую Вы сможете их обменять: {{discount}}.'
+  - name: '1 point = Y'
+    translations:
+      - code: en
+        label: '1 point = {{rate}}'
+      - code: ru
+        label: '1 балл = {{rate}}'
+  - name: 'Buy this product and earn X reward points.'
+    translations:
+      - code: en
+        label: 'Buy this product and earn {{points}} reward points.'
+      - code: ru
+        label: 'Бонусные баллы за покупку этого товара: {{points}}'
+  - name: 'Buy this product and earn up to X reward points.'
+    translations:
+      - code: en
+        label: 'Buy this product and earn up to {{points}} reward points.'
+      - code: ru
+        label: 'Бонусные баллы за покупку этого товара: {{points}}'
+  - name: 'You will earn up to X reward points after purchasing this product.'
+    translations:
+      - code: en
+        label: 'You will earn up to {{points}} reward points after purchasing this product.'
+      - code: ru
+        label: 'Бонусные баллы за покупку этого товара: {{points}}'
+  - name: 'You will earn up to <X> reward points after purchasing this product.'
+    translations:
+      - code: en
+        label: '<span>You will earn up to </span><em title="You will earn up to {{points}} reward points after purchasing this product.">{{points}}</em><span> reward points after purchasing this product.</span>'
+      - code: ru
+        label: '<span>Бонусные баллы за покупку этого товара:</span> <em title="Бонусные баллы за покупку этого товара: {{points}}">{{points}}</em>'
+  - name: 'You will earn X reward points after purchasing this product.'
+    translations:
+      - code: en
+        label: 'You will earn {{points}} reward points after purchasing this product.'
+      - code: ru
+        label: 'Бонусные баллы за покупку этого товара: {{points}}'
+  - name: 'You will earn <X> reward points after purchasing this product.'
+    translations:
+      - code: en
+        label: '<span>You will earn </span><em title="You will earn {{points}} reward points after purchasing this product.">{{points}}</em><span> reward points after purchasing this product.</span>'
+      - code: ru
+        label: '<span>Бонусные баллы за покупку этого товара:</span> <em title="Бонусные баллы за покупку этого товара: {{points}}">{{points}}</em>'
+  - name: 'Congratulations! With this order you earn X reward points.'
+    translations:
+      - code: en
+        label: 'Congratulations! With this order you earn <em>{{points}}</em> reward points.'
+      - code: ru
+        label: 'Поздравляем! За этот заказ Вам будут начислены бонусные баллы: <em>{{points}}</em>'
+  - name: 'You earn 1 point for every X spent on purchases in the store.'
+    translations:
+      - code: en
+        label: 'You earn 1 point for every {{rate}} spent on purchases in the store.'
+      - code: ru
+        label: 'Бонусные баллы будут начисляться Вам автоматически из расчёта один балл за каждые {{rate}} заказа.'
+  - name: 'You can redeem up to X reward points to get a discount on this order.'
+    translations:
+      - code: en
+        label: 'You can redeem up to {{points}} reward points to get a discount on this order.'
+      - code: ru
+        label: 'Количество баллов, которое можно обменять на скидку для этого заказа: {{points}}'
+  - name: 'You can redeem up to <X> reward points to get a discount on this order.'
+    translations:
+      - code: en
+        label: 'You can redeem up to <em>{{points}}</em> reward points to get a discount on this order.'
+      - code: ru
+        label: 'Количество баллов, которое можно обменять на скидку для этого заказа: <em>{{points}}</em>'
+  - name: 'LOYALTY PROGRAM STATISTICS: redeemed X points, given Y discount.'
+    translations:
+      - code: en
+        label: 'The total number of reward points redeemed in the store by customers is {{points}}.<br/>The total discount given to them for the redeemed points is {{discount}}.'
+      - code: ru
+        label: 'Общее количество баллов, использованных покупателями: {{points}}.<br/>Общая сумма скидки полученная ими за эти баллы: {{discount}}.'
+  - name: 'LOYALTY PROGRAM STATISTICS: X customers have Y unused points.'
+    translations:
+      - code: en
+        label: 'The number of customers having unused reward points is {{customers}}.<br/>The total number of unused reward points is {{points}}.'
+      - code: ru
+        label: 'Всего покупателей с неизрасходованными бонусными баллами: {{customers}}.<br/>Общая сумма скидки, которую они могут получить за эти баллы: {{points}}.'
+  - name: 'Customers earn X reward point for every Y spent.'
+    translations:
+      - code: en
+        label: 'Customers earn {{points}} reward point for every {{spent}} spent.'
+      - code: ru
+        label: 'За каждые потраченные {{spent}} покупатели получают следующее количество баллов: {{points}}.'
+  - name: 'Customers get X discount for every redeemed reward point.'
+    translations:
+      - code: en
+        label: 'Customers get {{discount}} discount for every redeemed reward point.'
+      - code: ru
+        label: 'Сумма скидки, которую покупатели получают за каждый использованный балл: {{discount}}.'
+  - name: 'The maximum discount that a customer can get for an order by redeeming his reward points is X.'
+    translations:
+      - code: en
+        label: 'The maximum discount that a customer can get for an order by redeeming his reward points is {{discount}}.'
+      - code: ru
+        label: 'Максимальная сумма скидки, которую можно получить за один заказ при использовании бонусных баллов: {{discount}}.'
+  - name: 'The maximum discount that you can receive for an order by redeeming your reward points is X.'
+    translations:
+      - code: en
+        label: 'The maximum discount that you can receive for an order by redeeming your reward points is {{discount}}.'
+      - code: ru
+        label: 'Максимальная сумма скидки, которую Вы можете получить за один заказ при использовании бонусных баллов: {{discount}}.'
+  - name: 'Loyalty program'
+    translations:
+      - code: en
+        label: 'Loyalty program'
+      - code: ru
+        label: 'Бонусная программа'
+  - name: 'LOYALTY PROGRAM STATISTICS: overview'
+    translations:
+      - code: en
+        label: 'Overview'
+      - code: ru
+        label: 'Статистика'
+  - name: 'LOYALTY PROGRAM STATISTICS: settings'
+    translations:
+      - code: en
+        label: 'Settings'
+      - code: ru
+        label: 'Параметры'
+  - name: 'Change loyalty program settings'
+    translations:
+      - code: en
+        label: 'Change settings'
+      - code: ru
+        label: 'Изменить параметры'
+  - name: '--- Built-in loyalty program page template ---'
+    translations:
+      - code: en
+        label: '--- Built-in page template ---'
+      - code: ru
+        label: '--- страница модуля ---'
+  - name: 'Available reward points'
+    translations:
+      - code: en
+        label: 'Available reward points'
+      - code: ru
+        label: 'Бонусные баллы'
+  - name: 'Reward points'
+    translations:
+      - code: en
+        label: 'Reward points'
+      - code: ru
+        label: 'Бонусные баллы'
+  - name: 'Reward points balance'
+    translations:
+      - code: en
+        label: 'Balance'
+      - code: ru
+        label: 'Бонусный счёт'
+  - name: 'Reward points the user has:'
+    translations:
+      - code: en
+        label: 'Reward points the user has:'
+      - code: ru
+        label: 'Бонусные баллы покупателя:'
+  - name: 'Your comment for the adjustment:'
+    translations:
+      - code: en
+        label: 'Your comment for the adjustment:'
+      - code: ru
+        label: 'Примечание к изменению:'
+  - name: 'Adjust reward points'
+    translations:
+      - code: en
+        label: 'Adjust'
+      - code: ru
+        label: 'Изменить'
+  - name: 'Rewards transaction history'
+    translations:
+      - code: en
+        label: 'Transaction history'
+      - code: ru
+        label: 'История изменений бонусного счёта'
+  - name: 'User rewards transaction history'
+    translations:
+      - code: en
+        label: 'Transaction history'
+      - code: ru
+        label: 'История изменений бонусного счёта'
+  - name: 'Loyalty Program Details'
+    translations:
+      - code: en
+        label: 'Loyalty Program Details'
+      - code: ru
+        label: 'Бонусная программа'
+  - name: 'How do I join the Loyalty Program?'
+    translations:
+      - code: en
+        label: 'How do I join the Loyalty Program?'
+      - code: ru
+        label: 'Условия участия'
+  - name: 'Customers with store accounts are automatically enrolled.'
+    translations:
+      - code: en
+        label: 'Customers with store accounts are automatically enrolled. If you do not have a store account yet, join the Program today by creating your account.'
+      - code: ru
+        label: 'В бонусной программе принимают участие все покупатели, зарегистрировавшиеся на нашем сайте путём создания учетной записи пользователя.'
+  - name: 'How do I earn reward points?'
+    translations:
+      - code: en
+        label: 'How do I earn reward points?'
+      - code: ru
+        label: 'Начисление бонусных баллов'
+  - name: 'How do I use my rewards?'
+    translations:
+      - code: en
+        label: 'How do I use my rewards?'
+      - code: ru
+        label: 'Использование бонусных баллов'
+  - name: 'The store will automatically calculate the reward discount for you upon checkout.'
+    translations:
+      - code: en
+        label: 'First, you need to be signed in to your store account. If you accrued enough reward points for a discount, the store will automatically calculate the discount for you upon checkout. You can adjust the maximum number of reward points you wish to spend on the order on the cart page.'
+      - code: ru
+        label: 'Для использования бонусных баллов Вы должны войти на сайт с Вашей учётной записью. После этого магазин автоматически вычислит доступную для Вашего заказа сумму скидки и использует необходимое для этого количество бонусных баллов. При необходимости Вы можете уменьшить это количество в процессе оформления заказа.'
+  - name: 'Already a member?'
+    translations:
+      - code: en
+        label: 'Already a member?'
+      - code: ru
+        label: 'Уже участвуете в программе?'
+  - name: 'Click here to login'
+    translations:
+      - code: en
+        label: 'Click here to login'
+      - code: ru
+        label: 'Войдите на сайт'
+  - name: 'Join Loyalty Program Now!'
+    translations:
+      - code: en
+        label: 'Join Now!'
+      - code: ru
+        label: 'Получайте бонусы!'
+  - name: 'Sign up on loyalty program'
+    translations:
+      - code: en
+        label: 'Sign up'
+      - code: ru
+        label: 'Участвовать'
+  - name: 'You can earn'
+    translations:
+      - code: en
+        label: 'You can earn'
+      - code: ru
+        label: 'Ваш бонус'
+  - name: 'You will earn'
+    translations:
+      - code: en
+        label: 'You will earn'
+      - code: ru
+        label: 'Ваш бонус'
+  - name: 'To earn reward points and cash them in for discounts on future orders please create an account during checkout.'
+    translations:
+      - code: en
+        label: 'To earn reward points and cash them in for discounts on future orders please create an account during checkout.'
+      - code: ru
+        label: 'Не забудьте зарегистрироваться на нашем сайте для начисления Вам бонусных баллов и получения скидки за их использование.'
+  - name: 'To earn reward points and cash them in for discounts on future orders please enter your e-mail address in the Shipping Address section and choose to create an account.'
+    translations:
+      - code: en
+        label: 'To earn reward points and cash them in for discounts on future orders please enter your e-mail address in the Shipping Address section and choose to create an account.'
+      - code: ru
+        label: 'Для начисления бонусных баллов Вам необходимо зарегистрироваться на нашем сайте. Для этого укажите Ваш e-mail адрес и поставьте галочку в самом низу раздела Адрес получателя.'
+  - name: 'Reward points adjusted by the store administrator'
+    translations:
+      - code: en
+        label: 'Reward points adjusted by the store administrator'
+      - code: ru
+        label: 'Изменения внесены администратором магазина'
+  - name: 'Reward for purchasing products in order {{order}}'
+    translations:
+      - code: en
+        label: 'Reward for purchasing products in order {{order}}'
+      - code: ru
+        label: 'Начислено за заказ {{order}}'
+  - name: 'Cancel reward for not finished order {{order}}'
+    translations:
+      - code: en
+        label: 'Cancel reward for not finished order {{order}}'
+      - code: ru
+        label: 'Отмена заказа {{order}}'
+  - name: 'Use to checkout order {{order}}'
+    translations:
+      - code: en
+        label: 'Use to checkout order {{order}}'
+      - code: ru
+        label: 'Использовано для получения скидки на заказ {{order}}'
+  - name: 'Return reward points redeemed for not finished order {{order}}'
+    translations:
+      - code: en
+        label: 'Return reward points redeemed for not finished order {{order}}'
+      - code: ru
+        label: 'Отмена скидки за заказ {{order}}'
+  - name: 'Reward points adjusted by a store administration script'
+    translations:
+      - code: en
+        label: 'Reward points adjusted by a store administration script'
+      - code: ru
+        label: 'Изменения внесены автоматизированным скриптом магазина'
+  - name: 'Reward for creating a store account'
+    translations:
+      - code: en
+        label: 'Reward for creating a store account'
+      - code: ru
+        label: 'Начислено за регистрацию на сайте'
+  - name: 'Reward for reviewing a product'
+    translations:
+      - code: en
+        label: 'Reward for reviewing a product'
+      - code: ru
+        label: 'Начислено за отзыв о товаре'
+  - name: 'Reward for rating a product'
+    translations:
+      - code: en
+        label: 'Reward for rating a product'
+      - code: ru
+        label: 'Начислено за оценку товара'
+  - name: 'Canceled reward for reviewing a product'
+    translations:
+      - code: en
+        label: 'Canceled reward for reviewing a product'
+      - code: ru
+        label: 'Отзыв о товаре не опубликован'
+  - name: 'Canceled reward for rating a product'
+    translations:
+      - code: en
+        label: 'Canceled reward for rating a product'
+      - code: ru
+        label: 'Оценка товара не опубликована'
+  - name: 'You have no reward points which you could redeem on future orders.'
+    translations:
+      - code: en
+        label: 'You have no reward points which you could redeem on future orders.'
+      - code: ru
+        label: 'У Вас нет бонусных баллов, которые можно было бы обменять на скидку.'
+  - name: 'Your rewards'
+    translations:
+      - code: en
+        label: 'Your rewards'
+      - code: ru
+        label: 'Ваши бонусы'
+  - name: 'Discount ({{pts}} points)'
+    translations:
+      - code: en
+        label: 'Discount ({{pts}} points)'
+      - code: ru
+        label: 'Бонусная скидка'
+  - name: 'Redeem your reward points'
+    translations:
+      - code: en
+        label: 'Redeem your reward points'
+      - code: ru
+        label: 'Обменять бонусные баллы на скидку'
+  - name: 'Calculate reward points automatically from the paid sum'
+    translations:
+      - code: en
+        label: 'Calculate reward points automatically from the paid sum'
+      - code: ru
+        label: 'Вычислять на основе суммы, оплаченной покупателем за этот товар'
+  - name: 'Apply reward discount: Total'
+    translations:
+      - code: en
+        label: 'order total'
+      - code: ru
+        label: 'сумме заказа'
+  - name: 'Apply reward discount: Subtotal'
+    translations:
+      - code: en
+        label: 'order subtotal'
+      - code: ru
+        label: 'стоимости товаров в заказе'
+  - name: 'Automatic reward points'
+    translations:
+      - code: en
+        label: 'Automatic reward points'
+      - code: ru
+        label: 'Автоматические бонусные баллы'
+  - name: 'Configure whether reward points for this product should be calculated from the price automatically, or are defined manually.'
+    translations:
+      - code: en
+        label: 'Configure whether reward points for this product should be calculated from the price automatically, or are defined manually.'
+      - code: ru
+        label: 'Укажите, должны ли бонусные баллы вычисляться автоматически на основе цены, или задаются для этого товара вручную.'
+  - name: 'You will earn the reward points when your order is finished.'
+    translations:
+      - code: en
+        label: 'You will earn the reward points when your order is finished.'
+      - code: ru
+        label: 'Бонусные баллы будут начислены после завершения Вашего заказа.'
+  - name: 'Discount (reward points)'
+    translations:
+      - code: en
+        label: 'Discount (reward points)'
+      - code: ru
+        label: 'Бонусная скидка'
+  - name: 'You have changed the number of reward points applied on the order.'
+    translations:
+      - code: en
+        label: 'You have changed the number of reward points applied on the order.'
+
+XLite\Model\Config:
+  - name: reward_points_title_earn
+    category: QSL\LoyaltyProgram
+    type: separator
+    orderby: 90
+    translations:
+      - code: en
+        option_name: Earn
+      - code: ru
+        option_name: 'Начисление баллов'
+  - name: reward_points_earn_rate
+    category: QSL\LoyaltyProgram
+    type: XLite\View\FormField\Input\Text\FloatInput
+    widgetParameters: { min: 0, e: 4 }
+    orderby: 100
+    value: 1
+    translations:
+      - code: en
+        option_name: Rewards multiplier
+        option_comment: 'Number of points awarded to the shopper per dollar spent on your store. It can take either whole or decimal numbers.'
+      - code: ru
+        option_name: 'Награда за покупки'
+        option_comment: 'Коэффициент начисления бонусных баллов за каждую денежную единицу, потраченную покупателем для оплаты заказа. Может быть целым или дробным числом.'
+  - name: reward_points_for_shipping
+    category: QSL\LoyaltyProgram
+    type: checkbox
+    widgetParameters: { min: 0 }
+    orderby: 105
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Give points for the shipping cost'
+      - code: ru
+        option_name: 'Начислять баллы за стоимость доставки'
+  - name: reward_points_for_taxes
+    category: QSL\LoyaltyProgram
+    type: checkbox
+    widgetParameters: { min: 0 }
+    orderby: 107
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Give points for taxes'
+      - code: ru
+        option_name: 'Начислять баллы за сумму налогов'
+  - name: reward_points_with_coupon
+    category: QSL\LoyaltyProgram
+    type: checkbox
+    widgetParameters: { min: 0 }
+    orderby: 110
+    value: 1
+    translations:
+      - code: en
+        option_name: Reward for orders with coupons
+        option_comment: 'Whether customers should earn reward points for orders with discount coupons, or should not.'
+      - code: ru
+        option_name: 'Начислять баллы за заказы с купонами'
+        option_comment: 'Должны ли бонусные баллы начисляться за заказы, для которых покупатели применили купоны скидок.'
+  - name: reward_points_signup_bonus
+    category: QSL\LoyaltyProgram
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 0 }
+    orderby: 140
+    value: 0
+    translations:
+      - code: en
+        option_name: Sign-up reward
+        option_comment: 'Number of points awarded to the shopper for creating a shop account.'
+      - code: ru
+        option_name: 'Награда за регистрацию'
+        option_comment: 'Количество баллов, начисляемое покупателю за регистрацию в магазине.'
+  - name: reward_points_reviews_rate
+    category: QSL\LoyaltyProgram
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 0 }
+    orderby: 150
+    value: 0
+    translations:
+      - code: en
+        option_name: Reward for rating a product
+        option_comment: 'Number of points awarded to the shopper for rating a product.'
+      - code: ru
+        option_name: 'Награда за оценку товара'
+        option_comment: 'Количество баллов, начисляемое покупателю за оценку товара в магазине.'
+  - name: reward_points_reviews_review
+    category: QSL\LoyaltyProgram
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 0 }
+    orderby: 160
+    value: 0
+    translations:
+      - code: en
+        option_name: Reward for reviewing a product
+        option_comment: 'Number of points awarded to the shopper for reviewing a product.'
+      - code: ru
+        option_name: 'Награда за отзыв о товаре'
+        option_comment: 'Количество баллов, начисляемое покупателю за публикацию отзыва о товаре в магазине.'
+  - name: reward_points_reviews_min_rate
+    category: QSL\LoyaltyProgram
+    type: XLite\View\FormField\Input\Text\Integer
+    widgetParameters: { min: 0 }
+    orderby: 170
+    value: 0
+    translations:
+      - code: en
+        option_name: Minimum product rating eligible for the reward
+        option_comment: "Rewards for reviewing/rating a product won't be given for rates less than this number."
+      - code: ru
+        option_name: 'Минимальная оценка для награды'
+        option_comment: 'Минимальная оценка, которую должен выставить товару покупатель для того, чтобы получить награду за отзыв/оценку.'
+  - name: reward_points_title_redeem
+    category: QSL\LoyaltyProgram
+    type: separator
+    orderby: 1000
+    translations:
+      - code: en
+        option_name: Redeem
+      - code: ru
+        option_name: 'Использование баллов'
+  - name: reward_points_redeem_rate
+    category: QSL\LoyaltyProgram
+    type: XLite\View\FormField\Input\Text\FloatInput
+    widgetParameters: { min: 0, e: 4 }
+    orderby: 1010
+    value: 0.1
+    translations:
+      - code: en
+        option_name: Redeem rate
+        option_comment: What discount the shopper will get for a single reward point spent on checkout.
+      - code: ru
+        option_name: 'Скидка за бонусный балл'
+        option_comment: 'Какую скидку получит покупатель за каждый бонусный балл, использованный во время оформления заказа.'
+  - name: reward_points_redeem_cap
+    category: QSL\LoyaltyProgram
+    type: QSL\LoyaltyProgram\View\FormField\Input\Text\RewardDiscountCap
+    widgetParameters: { defaultValue: '100%'}
+    orderby: 1020
+    value: '100%'
+    translations:
+      - code: en
+        option_name: Max. reward discount
+        option_comment: 'The maximum discount that a shopper can get for an order by redeeming his reward points. Can be either a fixed sum, or a percent value.'
+      - code: ru
+        option_name: 'Максимальная скидка за баллы'
+        option_comment: 'Максимальная сумма скидки, которую покупатель может получить за использование баллов. Может быть или фиксированной скидкой, или процентом от суммы заказа.'
+  - name: reward_points_apply_to
+    category: QSL\LoyaltyProgram
+    type: QSL\LoyaltyProgram\View\FormField\Select\ApplyDiscountTo
+    widgetParameters: { min: 0 }
+    orderby: 1030
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Apply discount on the'
+        option_comment: 'Choose whether the discount should apply on the grand total, or the subtotal.'
+      - code: ru
+        option_name: 'Применять скидку к'
+        option_comment: 'Укажите, к какому значения должна быть применена скидка: к итоговой сумме заказа, или к стоимости товаров в заказе.'
+  - name: reward_points_title_info
+    category: QSL\LoyaltyProgram
+    type: separator
+    orderby: 1500
+    translations:
+      - code: en
+        option_name: Information
+      - code: ru
+        option_name: 'Информация о бонусной программе'
+  - name: reward_points_details_page
+    category: QSL\LoyaltyProgram
+    type: QSL\LoyaltyProgram\View\FormField\Select\LoyaltyProgramDetailsPage
+    widgetParameters: { }
+    orderby: 1510
+    value: ''
+    translations:
+      - code: en
+        option_name: Loyalty Program Details page
+        option_comment: What page to use as the Loyalty Program Details page.
+      - code: ru
+        option_name: 'Страница бонусной программы'
+        option_comment: 'Выберите страницу с описанием бонусной программы для покупателей.'
+
+XLite\Model\Order\Modifier:
+  - { class: '\QSL\LoyaltyProgram\Logic\Order\Modifier\RewardPointsSubtotal', weight: 90 }
+  - { class: '\QSL\LoyaltyProgram\Logic\Order\Modifier\RewardPointsTotal', weight: 100001 }

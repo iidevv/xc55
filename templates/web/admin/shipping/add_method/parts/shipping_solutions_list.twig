@@ -1,0 +1,16 @@
+{##
+ # Carrier accounts list
+ #}
+
+<div class="shipping-methods-popup">
+  {% include this.getShippingSolutionsHelpTemplate() %}
+  {{ widget('XLite\\View\\ItemsList\\Model\\Shipping\\Popup\\ShippingSolutions') }}
+
+  {{ widget(
+    'XLite\\View\\Button\\SimpleLink',
+    label='View more in Apps Store',
+    blank='true',
+    location=this.getShippingSolutionsLink(),
+    style='marketplace-link'
+  ) }}
+</div>

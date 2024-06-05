@@ -1,0 +1,11 @@
+{##
+ # Recover password : form : user
+ #
+ # @ListChild (list="recover.password.fields", weight="200")
+ #}
+
+{% if this.get('noSuchUser') %}
+  <tr>
+    <td class="error-message">{{ t('No such user') }}: {{ this.get('email') }}</td>
+  </tr>
+{% endif %}

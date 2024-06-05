@@ -1,0 +1,134 @@
+/**
+ * Simple blocks styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.promo-block-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.promo-block {
+  padding: 0.5 * @rhythmic-unit - @border-base;
+  border: @border-base solid #b0d4e5;
+  border-radius: 3px;
+  display: table;
+  background: @color-light-blue;
+  z-index: 1;
+
+  .close {
+    opacity: 1;
+    position: relative;
+    top: -7px;
+    right: 0px;
+
+    svg {
+      width: 9px;
+      height: 9px;
+      fill: @link-color;
+    }
+  }
+
+  form + & {
+    margin-top: @rhythmic-unit;
+  }
+
+  + .alert {
+    margin-right: 321px;
+  }
+
+  div {
+    display: table-cell;
+    font-size: 13px;
+  }
+
+  .promo-content {
+    max-width: 270px;
+    padding-right: @rhythmic-unit;
+
+    a {
+      text-decoration: none;
+      color: @link-color;
+    }
+  }
+
+  // Specific blocks styles
+  &.banner-system-1-promo {
+    position: absolute;
+    right: .5 * @rhythmic-unit;
+  }
+
+  &.multi-currency-1-promo {
+    position: absolute;
+    right: .5 * @rhythmic-unit;
+  }
+
+  &.seo-promo-1-promo {
+    position: absolute;
+    right: .5 * @rhythmic-unit;
+    top: 40px;
+  }
+
+  &.pdf-invoice-1-promo {
+    position: absolute;
+    right: .5 * @rhythmic-unit;
+  }
+
+  &.inventory-wholesale.wholesale-prices-1-promo {
+    position: absolute;
+    left: 50%;
+    .promo-content {
+      max-width: 240px;
+    }
+  }
+
+  &.g2a-egoods-1-promo {
+    position: absolute;
+    right: .5 * @rhythmic-unit;
+  }
+
+  &.advanced-contact-us-1-promo {
+    position: absolute;
+    right: .5 * @rhythmic-unit;
+  }
+
+  &.live-chat-1-promo {
+    position: absolute;
+
+    .promo-content {
+      max-width: 450px;
+
+      @media (min-width: @screen-laptop-retina-min) {
+        max-width: 500px;
+      }
+    }
+  }
+}
+
+.currency-model-form-dialog {
+  min-width: 1100px;
+}
+
+#form_prices_and_inventory {
+  position: relative;
+}
+
+.form-horizontal .form-prices-and-inventory-promo {
+
+  &.form-group {
+    position: absolute;
+    right: 60px;
+    top: -50px;
+    margin: 0;
+  }
+
+  .input-widget {
+    width: auto;
+  }
+
+  .control-label {
+    display: none;
+  }
+}

@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Fixes (1)
+2022-07-20 - [Bug] Incorrect discount calculation at checkout in the Special Offers add-on. Fixed. #XCB-1333 #QSL-SpecialOffersSpendXGetY #QSL-SpecialOffersBase
+

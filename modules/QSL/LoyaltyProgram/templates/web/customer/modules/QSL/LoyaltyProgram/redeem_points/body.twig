@@ -1,0 +1,15 @@
+<div class="redeem-points clearfix">
+
+    <div class="new add"><a href="{{ xurl('checkout') }}"><span>{{ t('Redeem your reward points') }}</span></a></div>
+
+    <div class="redeem-points-form clearfix">
+
+        <p>{{ t('You can redeem up to <X> reward points to get a discount on this order.', {'points': this.getApplicablePoints()})|raw }}</p>
+
+        {% form 'QSL\\LoyaltyProgram\\View\\Form\\RedeemPoints' %}
+        {{ widget('XLite\\View\\FormField\\Input\\Text\\Integer', fieldName='redeemPoints', required='true', placeholder=t('Number of points'), maxlength='16', fieldOnly='true', label=t('Number of points'), value=this.getRedeemedPoints(), min='0', max=this.getApplicablePoints()) }}
+        {{ widget('QSL\\LoyaltyProgram\\View\\Button\\RedeemPoints') }}
+        {% endform %}
+    </div>
+
+</div>

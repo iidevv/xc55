@@ -1,0 +1,16 @@
+{##
+ # Settings column
+ #}
+
+{% set settingsURL = this.getSettingsURL(this.entity) %}
+
+  {% if settingsURL %}
+    <div class="configure action">
+      {{ widget(
+        '\\XLite\\View\\Button\\SimpleLink',
+        label='Settings',
+        location=settingsURL,
+        style='fa fa-cog-2'
+      ) }}
+    </div>
+  {% endif %}

@@ -1,0 +1,8 @@
+Version 5.5.0.22
+
+Fixes (4)
+2023-08-11 - [Bug] Various issues related to updating from 5.4.1.x to 5.5.0.x. Fixed. #XCB-2661 #CDev-Core
+2023-08-04 - [Bug] The setting "Display option above the price" was working only for new products. Fixed. #XCB-2643 #CDev-Core
+2023-08-03 - [Bug] A cache of resized images was not formed for webp images. Fixed. #XCB-2623 #CDev-Core
+2023-08-11 - [Bug] Edited templates were moved as blank when upgrading from 5.4 to 5.5. Fixed. #XCB-1991 #CDev-Core #XC-ThemeTweaker
+

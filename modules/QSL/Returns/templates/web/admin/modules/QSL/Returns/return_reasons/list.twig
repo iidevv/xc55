@@ -1,0 +1,20 @@
+{##
+ # Return reasons list table template
+ #}
+
+{% form 'QSL\\Returns\\View\\Form\\Admin\\ItemsList\\ReturnReasons' %}
+
+  <div class="on-off-block">
+    <div>
+      {{ widget(
+        'XLite\\View\\FormField\\Input\\Checkbox\\OnOff',
+        value=this.getHideOtherReasonOption().getValue(),
+        fieldName=this.getHideOtherReasonOption().getName(),
+        label=this.getHideOtherReasonOption().getOptionName()
+      ) }}
+    </div>
+  </div>
+
+  {{ widget('QSL\\Returns\\View\\ItemsList\\Model\\ReturnReason') }}
+
+{% endform %}

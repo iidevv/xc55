@@ -1,0 +1,1 @@
+<img src="{{ this.getURL() }}" alt="{{ this.getAlt() }}" {% for name, value in this.getProperties() %} {{ name }}="{{ value }}"{% endfor %} style="width:{{ this.getProperties().width }}px;height:{{ this.getProperties().height }}px;"/>

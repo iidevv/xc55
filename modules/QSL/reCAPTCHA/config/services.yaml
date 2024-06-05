@@ -1,0 +1,17 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+services:
+  _defaults:
+    autowire: true
+
+  QSL\reCAPTCHA\Core\EventListener:
+    tags:
+      - { name: kernel.event_listener, event: xcart.service.view-list.collect-mutation.after, method: onCollectViewListMutationsAfter }
+
+  QSL\reCAPTCHA\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: QSL-reCAPTCHA, type: upgrade, method: onUpgradeTo5501, version: '5.5.0.1' }

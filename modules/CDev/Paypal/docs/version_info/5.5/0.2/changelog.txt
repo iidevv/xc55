@@ -1,0 +1,9 @@
+Version 5.5.0.2
+
+Improvements (1)
+2022-08-12 - [Story] Added default logging for add-ons. #ECOM-1053 #CDev-AmazonS3Images #CDev-Paypal #QSL-Giropay #XC-TaxJar #QSL-EBay
+
+Fixes (2)
+2022-09-02 - [Bug] Amazon Pay. The Amazon Pay button was positioned incorrectly on the storefront. Fixed. #XCB-1612 #Amazon-PayWithAmazon #CDev-Paypal #XC-FastLaneCheckout #XC-CrispWhiteSkin
+2022-08-17 - [Bug] After an order created using PayPal Express Checkout (legacy) method had been refunded by the buyer in PayPal, the order status was updated incorrectly. Fixed. #XCB-1374 #CDev-Paypal
+

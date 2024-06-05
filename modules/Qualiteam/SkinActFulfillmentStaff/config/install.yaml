@@ -1,0 +1,14 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Role\Permission:
+  - { code: "fulfillment staff", section: Staff, module: Qualiteam\SkinActFulfillmentStaff, translations: [{ code: en, name: "Fulfillment staff" }] }
+  - { code: "fulfillment staff products", section: Staff, module: Qualiteam\SkinActFulfillmentStaff, translations: [{ code: en, name: "manage products (fulfilment)" }] }
+
+XLite\Model\Role:
+  - { translations: [{ code: en, name: Fulfillment staff }], permissions: [{ code: "fulfillment staff" }, { code: "manage orders"}, { code: "manage coupons" }, { code: "manage banners" }, { code: "manage front page" }] }
+  - { translations: [{ code: en, name: manage products (fulfilment) }], permissions: [{ code: "fulfillment staff products" }, { code: "fulfillment staff" }, { code: "manage catalog" }] }

@@ -1,0 +1,55 @@
+{##
+ # Payment methods list : right action
+ #
+ # @ListChild (list="payment.methods.list.line", weight=300)
+ # @ListChild (list="payment.predefined-methods.list.line.actions", weight=300)
+ #}
+
+{% if this.hasRightActions(this.method) %}
+  <div class="right-actions">
+    {% if this.isConfigured(this.method) %}
+      {% if this.method.isTestMode() %}
+        <div data-html="true"
+             class="test-mode"
+             data-toggle="tooltip"
+             data-placement="bottom"
+             title="{{ t('Method is connected. Test mode.') }}">
+          !
+        </div>
+      {% endif %}
+
+      <div class="switcher action">
+        {{ widget(
+          'XLite\\View\\FormField\\Input\\Checkbox\\PaymentMethod',
+          fieldOnly=true,
+          value=this.method.isEnabled(),
+          fieldName='payment_id_' ~ this.method.getMethodId(),
+          methodId=this.method.getMethodId()
+        ) }}
+      </div>
+    {% endif %}
+
+    {% if this.method.isConfigurable() %}
+      <div class="configure action">
+        {{ widget(
+          '\\XLite\\View\\Button\\SimpleLink',
+          label='Settings',
+          location=this.method.getConfigurationURL(),
+          style='fa fa-cog-2'
+        ) }}
+      </div>
+    {% endif %}
+
+    <div class="separator"></div>
+    <div class="remove action">
+      {% if this.canRemoveMethod(this.method) %}
+        {{ widget(
+          '\\XLite\\View\\Button\\SimpleLink',
+          label='',
+          location=xurl('payment_settings', 'remove', {'id': this.method.getMethodId()}),
+          style='fa fa-trash-o'
+        ) }}
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

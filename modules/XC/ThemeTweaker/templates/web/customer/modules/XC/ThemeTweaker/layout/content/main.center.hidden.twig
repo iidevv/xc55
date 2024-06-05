@@ -1,0 +1,11 @@
+{# #
+ # Center box
+ #
+ # @ListChild (list="layout.main.center", weight="0")
+#}
+
+{% apply spaceless %}
+  <div id="hidden-sidebar-content" class="column">
+    {{ widget('XC\\ThemeTweaker\\View\\Layout\\Customer\\SidebarHidden', group='center') }}
+  </div>
+{% endapply %}

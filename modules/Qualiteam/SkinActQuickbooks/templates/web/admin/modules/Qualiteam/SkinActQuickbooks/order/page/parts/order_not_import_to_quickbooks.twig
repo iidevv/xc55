@@ -1,0 +1,12 @@
+{##
+ # "Do not import this order to QuickBooks" checkbox
+ #
+ # @ListChild (list="order.operations", weight="250")
+ #}
+<div class="qbc-ignore-section">
+    <h4>QuickBooks</h4>
+    <label>
+        <input id="qbc_ignore" type="checkbox" name="qbc_ignore" value="Y"{% if this.order.getQbcIgnore() == 'Y' %} checked="checked"{% endif %} class="not-affect-recalculate" />
+        {{ t('Do not import this order to QuickBooks') }}
+    </label>
+</div>

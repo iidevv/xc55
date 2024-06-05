@@ -1,0 +1,5 @@
+Version 5.5.0.9
+
+Fixes (1)
+2023-06-15 - [Bug] "Please, use another card or payment method" error when attempting to pay by a card using PayPal Checkout with 3D secure. Fixed. #XCB-2346 #CDev-Paypal
+

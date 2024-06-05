@@ -1,0 +1,7 @@
+{# @ListChild (list="product.feedCategories.parts", weight="307") #}
+<li class="input">
+  <div class="table-label">{{ t('Pricegrabber') }}</div>
+  <div class="table-value">
+    {{ widget('\\QSL\\ProductFeeds\\View\\FormField\\Select\\PricegrabberCategory', fieldName=this.getNamePostedData('pricegrabber_id'), fieldOnly='true', value=this.get('product').getPricegrabberCategory()) }}
+  </div>
+</li>

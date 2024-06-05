@@ -1,0 +1,21 @@
+{##
+ # Name item cell
+ #
+ # @ListChild (list="order_return.item", weight="20")
+ #}
+
+<td class="item">
+  {% set orderItem = this.item.getDisplayOrderItem() %}
+  {% if orderItem.getURL() %}
+    <a href="{{ orderItem.getURL() }}" class="item-name">{{ orderItem.getName() }}</a>
+  {% endif %}
+  {% if not orderItem.getURL() %}
+    <span class="item-name">{{ orderItem.getName() }}</span>
+  {% endif %}
+
+  {% if this.isViewListVisible('order_return.item.name', {'item': orderItem}) %}
+    <ul class="subitem additional simple-list">
+      {{ widget_list('order_return.item.name', item=orderItem) }}
+    </ul>
+  {% endif %}
+</td>

@@ -1,0 +1,5 @@
+Version 5.5.0.4
+
+Fixes (1)
+2023-03-16 - [Bug] Horizontal Flyout Categories Menu. The setting "Category menu type - Catalog" was not working. Fixed. #XCB-2139 #XC-CrispWhiteSkin #QSL-HorizontalCategoriesMenu
+

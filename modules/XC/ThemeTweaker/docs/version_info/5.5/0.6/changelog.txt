@@ -1,0 +1,5 @@
+Version 5.5.0.6
+
+Fixes (1)
+2022-11-28 - [Bug] Custom CSS was not working without a cache rebuild. Fixed. #XCB-1900 #CDev-Core #XC-ThemeTweaker
+

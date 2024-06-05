@@ -1,0 +1,328 @@
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+@import './common';
+
+$reveal-transition: left .2s ease-in-out, top .2s ease-in-out .2s, width .2s ease-in-out, height .2s ease-in-out;
+$tile-padding-top-bottom: .5;
+$tile-padding-left-right: .5;
+
+.module.tile {
+  min-height: $line-height-base * 13.5;
+
+  > div {
+    height: 100%;
+  }
+
+  .module-wrapper {
+    @include module-item;
+
+    padding: ($tile-padding-top-bottom * $rhythmic-unit) ($tile-padding-left-right * $rhythmic-unit);
+
+    &:hover {
+      box-shadow: 0 0 0 1px $border, 0 6px 10px 1px transparentize($input-border-color, .5);
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        opacity: 1;
+      }
+
+      &.link {
+        cursor: pointer;
+      }
+
+      .reveal-wrapper {
+        box-shadow: 0 0 0 1px $border, 0 6px 10px 1px transparentize($input-border-color, .5);
+        opacity: 1;
+        border-radius: $border-radius;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      width: 100%;
+      border-top: 7px solid $link;
+      z-index: 3;
+      transition: $basic-transition;
+      opacity: 0;
+    }
+
+    .skin-preview {
+      @include vr(
+        $margin-top: -$tile-padding-top-bottom,
+        $margin-right: -$tile-padding-left-right,
+        $margin-left: -$tile-padding-left-right
+      );
+      @include vr($height: 7.5);
+      align-self: stretch;
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+
+      & > img {
+        width: 100%;
+      }
+    }
+
+    .main {
+      .name {
+        @include vr($margin-top: .5);
+      }
+
+      .tag {
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        color: $tips;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      &__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .params {
+        .rating {
+          color: $button;
+        }
+
+        .rating + .downloads {
+          margin-left: 1rem;
+        }
+
+        .availability,
+        .expiration,
+        .state {
+          margin-left: auto;
+        }
+      }
+    }
+
+    .state {
+      font-weight: $font-weight-bold;
+      color: $boring-green;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+
+      &.disabled {
+        color: $tips;
+      }
+    }
+
+    .availability {
+      font-weight: $font-weight-bold;
+
+      &.free {
+        color: $boring-green;
+      }
+    }
+
+    .reveal-wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+
+      opacity: 0;
+
+      border-radius: $border-radius;
+      height: 100%;
+      transition: $basic-slower-transition;
+      background: $body-bg;
+    }
+
+    .reveal-collapsed {
+      @include vr(
+        $padding-top: $tile-padding-top-bottom,
+        $padding-right: $tile-padding-left-right,
+        $padding-bottom: $tile-padding-top-bottom,
+        $padding-left: $tile-padding-left-right
+      );
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+
+      .skin-preview {
+        z-index: 0;
+        overflow: visible;
+      }
+
+      .name {
+        color: $link;
+        font-weight: $font-weight-bold;
+      }
+
+      .description {
+        @include vr($margin-top: .5);
+        overflow: hidden;
+        transition: $basic-slower-transition;
+      }
+    }
+
+    .actions-wrapper {
+      @include vr($height: 3);
+
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      position: relative;
+      width: calc(100% + #{($tile-padding-left-right * $rhythmic-unit) * 2});
+      background: $white-color;
+      padding-right: $tile-padding-left-right * $rhythmic-unit;
+      padding-bottom: $tile-padding-top-bottom * $rhythmic-unit;
+      padding-left: $tile-padding-left-right * $rhythmic-unit;
+      margin-right: -($tile-padding-left-right * $rhythmic-unit);
+      margin-bottom: -($tile-padding-top-bottom * $rhythmic-unit);
+      margin-left: -($tile-padding-left-right * $rhythmic-unit);
+    }
+  }
+
+  &.warning .module-wrapper {
+    &:after {
+      @include vr($width: 1.5, $height: 1.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      content: '!';
+      font-weight: $font-bold;
+      border-bottom-right-radius: $border-radius;
+      background-color: $warning_fill;
+      z-index: 1;
+    }
+
+    .module-alert {
+      @include vr(
+        $margin-top: -$tile-padding-top-bottom,
+        $margin-bottom: .5,
+        $margin-left: -$tile-padding-left-right,
+        $padding: $tile-padding-top-bottom $tile-padding-left-right .25 $tile-padding-left-right
+      );
+      @include vr($height: 2.25);
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      border-radius: 0;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:before {
+        @include vr($margin-right: .5);
+        flex-shrink: 0;
+        content: '!';
+        font-weight: $font-bold;
+      }
+
+      &:hover {
+        height: auto;
+        white-space: normal;
+      }
+    }
+
+    .reveal-collapsed .name {
+      @include vr($margin-top: 1);
+    }
+  }
+
+  &.state-enabled .module-wrapper {
+    box-shadow: 0 0 0 1.5px $boring-green;
+
+    &:hover {
+      box-shadow: 0 0 0 1px $border, 0 6px 10px 1px transparentize($input-border-color, .5);
+    }
+
+    &:before {
+      border-top: 7px solid $boring-green;
+    }
+  }
+
+  &.state-disabled .module-wrapper {
+    &:before {
+      border-top: 7px solid $border;
+    }
+  }
+
+  &.warning .reveal-wrapper {
+    &:before {
+      border-top: 7px solid #e7d6b3 !important; // @todo: add to palette
+    }
+  }
+
+  &.on-sale .module-wrapper {
+    box-shadow: 0 0 0 1.5px $sale-border-color;
+
+    &:hover {
+      box-shadow: 0 0 0 1px $border, 0 6px 10px 1px transparentize($input-border-color, .5);
+    }
+
+    &:before {
+      border-top: 7px solid $sale-border-color;
+    }
+
+    .info .params .availability.paid {
+      .price {
+        color: $sale-price-color;
+      }
+
+      .orig-price .price {
+        text-decoration: line-through;
+        color: $border;
+        margin-bottom: -5px;
+      }
+    }
+  }
+
+  &.upgrade {
+    min-height: $line-height-base * 10.8;
+
+    .module-wrapper {
+      .info {
+        .params {
+          width: 100%;
+        }
+      }
+
+      .image {
+        @include module-image(5, 5);
+
+        img.list-icon {
+          min-width: 6rem;
+        }
+      }
+    }
+
+    @media (min-width: 1150px) {
+      .upgrade-details-page .module-section .modules-list & {
+        max-width: 25%;
+      }
+    }
+  }
+
+  &.state-remove .module-wrapper {
+    box-shadow: 0 0 0 1.5px $remove-border-color;
+    background-color: $remove-background-color;
+
+    .reveal-wrapper,
+    .actions-wrapper,
+    .actions-wrapper .actions {
+      background: $remove-background-color;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+Version 5.5.0.25
+
+Fixes (2)
+2023-10-18 - [Bug] JS error in Cloud zoom after selecting product image. Fixed. #XCB-2796 #CDev-Core
+2023-10-23 - [Bug] Backorder quantity modifier was working incorrectly in product list. Fixed. #XCB-2569 #CDev-Core #QSL-Backorder #XC-AutoMobileSkin
+

@@ -1,0 +1,17 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Data
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - name: "See our Knowledge Base for more information about customizing reminders."
+    translations:
+      - code: en
+        label: 'See our <a href="https://support.x-cart.com/en/articles/4610838-creating-abandoned-cart-reminders#creating-reminders" target="_blank">Knowledge Base</a> for more information about customizing reminders.'
+      - code: ru
+        label: 'См. <a href="https://support.x-cart.com/en/articles/4610838-creating-abandoned-cart-reminders#creating-reminders" target="_blank">базу знаний</a> для получения дополнительной информации по настройке напоминаний.'
+
+XLite\Model\Notification:
+  - { templatesDirectory: modules/QSL/AbandonedCartReminder/abandonment_email, module: QSL\AbandonedCartReminder }

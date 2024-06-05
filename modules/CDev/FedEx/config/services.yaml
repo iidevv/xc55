@@ -1,0 +1,4 @@
+services:
+  CDev\FedEx\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: CDev-FedEx, type: init, method: onInit }

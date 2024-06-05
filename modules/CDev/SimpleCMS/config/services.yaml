@@ -1,0 +1,27 @@
+#
+# Module services
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+x_cart:
+  clean_urls:
+    formats:
+      # Static page Clean URL’s format
+      # possible values:
+      #  domain/goalpage
+      #  domain/goalpage.html
+      #
+      # Changing this setting will not affect existing url's
+      # and requires to re-deploy your store
+      static_page: 'domain/goalpage'
+
+services:
+  _defaults:
+    autowire: true
+
+  CDev\SimpleCMS\LifetimeHook\Hook:
+    tags:
+      - { name: xcart.lifetime-hook, moduleId: CDev-SimpleCMS, type: disable, method: onDisable }
+      - { name: xcart.lifetime-hook, moduleId: CDev-SimpleCMS, type: upgrade, method: onUpgradeTo5500, version: '5.5.0.0' }
+      - { name: xcart.lifetime-hook, moduleId: CDev-SimpleCMS, type: upgrade, method: onUpgradeTo5506, version: '5.5.0.6' }

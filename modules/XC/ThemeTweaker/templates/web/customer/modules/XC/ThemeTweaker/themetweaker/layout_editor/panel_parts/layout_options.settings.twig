@@ -1,0 +1,43 @@
+{##
+ # Layout editor show hidden blocks button
+ #
+ # @ListChild (list="layout_editor.sidebar", weight="400")
+ #}
+
+<div class="layout-editor-layout-options">
+  <div class="options-layout-group">
+    <div class="options-layout-footer sidebar-header">
+      <span class="group-icon settings-group-icon"></span>
+      <span>{{ t('Advanced settings') }}</span>
+    </div>
+    <div class="group-items">
+      <div class="group-item"
+           v-for="item in settingsGroupItems">
+        <div class="group-item-header">
+          <span class="main-text" v-text="item.name"></span>
+          <div class="right-actions">
+            <span v-if="item.switcherHandler" class="themetweaker-panel-switcher">
+              {{ widget('XLite\\View\\FormField\\Input\\Checkbox\\OnOff',
+                fieldOnly=true,
+                attributes={
+                  ':checked': 'item.switcherState',
+                  '@change': 'item.switcherHandler',
+                  'data-panel-switcher': 'data-panel-switcher'}) }}
+            </span>
+            <span v-if="item.help"
+                  data-placement="top"
+                  :title="item.help"
+                  data-html="true"
+                  class="themetweaker-panel-tooltip"></span>
+            <span v-if="item.settings_link"
+                  @click="goAdminSettingsPage(item.settings_link)"
+                  class="themetweaker-panel-settings"></span>
+            <span v-if="item.goToTab"
+                  @click="switchTab(item.goToTab)"
+                  class="themetweaker-panel-go-to-tab"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

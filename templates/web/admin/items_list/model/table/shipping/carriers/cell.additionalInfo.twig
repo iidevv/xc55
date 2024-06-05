@@ -1,0 +1,21 @@
+{##
+ # Additional info column
+ #}
+
+{% apply spaceless %}
+  <div class="additional-info">
+    {% if this.entity.getDeliveryTime() and this.isOffline(this.entity) %}
+      <div class="delivery-time">{{ t('Delivery') }}: {{ this.entity.getDeliveryTime() }}</div>
+    {% endif %}
+
+    <div>
+      {% if this.isShowHandlingFee(this.entity) %}
+        <span class="handling-fee">{{ t('Handling fee') }}: {{ this.getHandlingFee(this.entity) }}</span>
+      {% endif %}
+      {% if this.isShowTaxClass(this.entity) %}
+        <span class="slash-separator">/</span>
+        <span class="tax-class">{{ t('Tax class') }}: {{ this.getTaxClassName(this.entity) }}</span>
+      {% endif %}
+    </div>
+  </div>
+{% endapply %}

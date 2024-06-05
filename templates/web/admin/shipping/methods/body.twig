@@ -1,0 +1,34 @@
+{##
+ # Shipping methods page
+ #}
+
+<div class="shipping-methods-page">
+  {% form 'XLite\\View\\Form\\ItemsList\\Carriers\\Table' %}
+    <div class="box carrier-accounts-and-shipping-solutions">
+      <div class="list-header">
+        <h2>{{ t('Calculated Shipping Rates') }}</h2>
+        <div class="list-description">{{ t('Connect your partner accounts') }}</div>
+        {{ widget('XLite\\View\\Button\\Shipping\\AddMethod', label='Add new') }}
+      </div>
+      <div class="content">
+        {{ widget('XLite\\View\\ItemsList\\Model\\Shipping\\CarrierAccounts') }}
+        {{ widget('XLite\\View\\ItemsList\\Model\\Shipping\\ShippingSolutions') }}
+      </div>
+    </div>
+
+    <div class="box shipping-rates">
+      <div class="list-header">
+        <h2>{{ t('Flat Shipping Rates') }}</h2>
+        <div class="list-description">
+          {{ t('Update your shipping profile with a custom ship-from address', {'zonesLink': xurl('zones')})|raw }}
+        </div>
+        {{ widget('XLite\\View\\Button\\Shipping\\AddMethod', shippingType='offline', label='Add new') }}
+      </div>
+      <div class="content">
+        {{ widget('XLite\\View\\ItemsList\\Model\\Shipping\\Offline') }}
+      </div>
+    </div>
+
+    {{ widget('XLite\\View\\StickyPanel\\ItemsList\\Carriers') }}
+  {% endform %}
+</div>

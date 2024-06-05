@@ -1,0 +1,33 @@
+/**
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.upgrade-box {
+  position: relative;
+  color: @color-white;
+  height: 100%;
+
+  &__button {
+    margin-left: 1.5 * @rhythmic-unit;
+    margin-right: -@rhythmic-unit;
+    width: 1.5 * @rhythmic-unit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+
+    i {
+      line-height: 1;
+    }
+
+    .minor & {
+      background: @color-purple;
+    }
+
+    .major & {
+      background: @color-orange;
+    }
+  }
+}

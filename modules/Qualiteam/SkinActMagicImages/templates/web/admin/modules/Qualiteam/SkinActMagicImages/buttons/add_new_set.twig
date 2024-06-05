@@ -1,0 +1,8 @@
+{##
+ # Add set button template
+ #
+ # @listChild (list="itemsList.qualiteam.skinactmagicimages.magicswatchesset.header")
+ # @listChild (list="itemsList.qualiteam.skinactmagicimages.productmagicswatchesset.header")
+#}
+
+{{ widget('\\XLite\\View\\Button\\Link', label=t('SkinActMagicImages add new set'), location=xurl('magic_swatches_set', '', {'product_id': this.get('product').getProductId()})) }}

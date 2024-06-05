@@ -1,0 +1,10 @@
+{##
+ # Express checkout
+ #
+ # @ListChild (list="itemsList.product.list.customer.info", zone="customer", weight="1300")
+ #}
+{% if this.isDisplayAdd2CartButton() %}
+  {% if not this.get('product').isAllStockInCart() %}
+    {{ widget('\\CDev\\Paypal\\View\\Button\\ProductList\\ExpressCheckout', productId=this.get('product').product_id) }}
+  {% endif %}
+{% endif %}

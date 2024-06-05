@@ -1,0 +1,8 @@
+{##
+ # Menu item
+ #}
+<a href="{{ xurl(this.item.target) }}" class="icon"><img src="{{ this.get('layout').getResourceWebPath(this.item.icon) }}" alt="{{ t(this.item.title) }}" /></a>
+<a href="{{ xurl(this.item.target) }}" class="title">{{ t(this.item.title) }}</a>
+{% if this.item.description %}
+  <span>{{ t(this.item.description) }}</span>
+{% endif %}

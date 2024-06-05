@@ -1,0 +1,17 @@
+{##
+ # Acount menu link in the mobile menu
+#}
+
+<li class="{{ this.getCSSClass() }}">
+  <a href="{{ this.getURL() }}" class="{{ this.getLinkCSSClass() }}">
+    <span class="account-links__list-item-content">
+      {% if this.getIcon() %}
+        {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon=this.getIcon()) }}
+      {% endif %}
+      {{ this.getTitle() }}
+    </span>
+    {% if this.getBadge() != '' %}
+      <span class="{{ this.getBadgeCSSClass() }}">{{ this.getBadge() }}</span>
+    {% endif %}
+  </a>
+</li>

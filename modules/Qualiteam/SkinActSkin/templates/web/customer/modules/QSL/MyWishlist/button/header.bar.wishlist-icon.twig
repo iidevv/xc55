@@ -1,0 +1,13 @@
+{##
+ # Icon Menu
+#}
+
+<a {{ this.printTagAttributes(this.getAttributes()) | raw }} >
+  <span class="header-icon-menu__icon-box">
+    {{ widget('Qualiteam\\SkinActSkin\\View\\Icon', icon="i-heart", class='header-icon-menu__icon') }}
+    <span class="header-icon-menu__counter wishlist-product-count">
+      {{ this.getWishlistProductsCount() }}
+    </span>
+  </span>
+  <span class="header-icon-menu__label">{{ this.getDefaultLabel() }}</span>
+</a>

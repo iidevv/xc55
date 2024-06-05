@@ -1,0 +1,13 @@
+Version 5.4.3.6
+
+ - Added ability to hide first six digits and expiration date from card numbers, that are displayed in the user interface.
+ - Added ability to connect store in manual mode, in case it's not possible to connect it automatically. Now the store could be connected via the Connection Key.
+ - Refactored usage of SDK JS scripts.
+ - Refactored Totals update uring Checkout with Apple Pay.
+ - Now it's possible to buy a subscription product for an anonymous user.
+ - Added restriction to restart stopped legacy subscriptions.
+ - Added setting that displays subscription plan tab on a product page.
+ - Added info indicating that the card used in subscriptions.
+ - Fixed PHP fatal error when Not Finished order status is changed.
+ - Fixed usage of undefined class constant from SDK.
+ - Fixed PHP fatal error "Access level to doActionSaveSubscriptionPlan must be public".

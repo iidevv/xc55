@@ -1,0 +1,42 @@
+{##
+ # Migration Wizard - Complete action
+ #}
+
+{% if this.hasUsersRule() %}
+    <div class="alert alert-warning">
+        <p>{{ t('Users passwords could not be migrated')|raw }}</p>
+    </div>
+{% endif %}
+
+<div class="panel">
+    <div class="panel-body">
+        {% if this.hasTransferDataErrors() %}
+            <p>{{ t('The migration process has been completed with errors')|raw }}</p>
+        {% elseif this.isDemoMode() %}
+            <p>{{ t('The demo migration has been completed successfully.')|raw }}</p>
+        {% else %}
+            <p>{{ t('The migration process has been completed successfully')|raw }}</p>
+        {% endif %}
+        {% if this.isDemoMode() and this.getDemoCategoryUrl() %}
+            <p>{{ t('A few products from one category have been migrated for demo purposes.', { 'url' : this.getDemoCategoryUrl() })|raw }}</p>
+        {% else %}
+            <p>{{ t('Please open the storefront and ensure that the data has been transferred correctly.')|raw }}</p>
+        {% endif %}
+        <p>{{ t('Use the Restart wizard link to start a new migration')|raw }}</p>
+        <p>{{ t('Use the Back link with Skip previously migrated data enabled to sync data')|raw }}</p>
+    </div>
+</div>
+
+{% form '\\XC\\MigrationWizard\\View\\Form\\Migration\\ViewStorefront' %}
+
+{{ widget('\\XLite\\View\\Button\\Link', { 'label' : t('View storefront'), 'href' : this.getShopURL(), 'style' : 'center regular-main-button', 'blank' : true }) }}
+
+{% endform %}
+
+{% form '\\XC\\MigrationWizard\\View\\Form\\Migration\\Restart' %}
+
+{{ widget('\\XLite\\View\\Button\\Submit', { 'label' : t('Restart'), 'style' : 'btn-link', 'button-type' : 'btn-restart' }) }}
+
+{% endform %}
+
+{% include this.getDir() ~ '/step_back.twig' %}

@@ -1,0 +1,13 @@
+{##
+ # Wishlist link
+ #}
+
+<a {{ this.printTagAttributes(this.getAttributes()) | raw }} title="{{ t('Wishlist') }}">
+    <i class="fa {% if this.getWishlistProductsCount() == '0' %} fa-heart-o {% else %} fa-heart {% endif %}"></i>
+    {% if this.hasLabel() %}
+       <span class="wishlist-label">{{ this.getDefaultLabel() }}</span>
+    {% endif %}
+    <span class="wishlist-product-count">
+        {{ this.getWishlistProductsCount() }}
+    </span>
+</a>

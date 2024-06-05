@@ -1,0 +1,13 @@
+{##
+ # OAuth 2 client login widget
+ #}
+
+<li class="social-login">
+    <div class="{{ this.getStyleClass() }}">
+        <ul>
+            {% for w in this.getProviderWidgets() %}
+                {{ w.display() }}
+            {% endfor %}
+        </ul>
+    </div>
+</li>

@@ -1,0 +1,16 @@
+{##
+ # Banner preview
+ #}
+
+<div class="banner-preview">
+  {{ this.displayCommentedData(this.getCommentedData()) }}
+
+  {% if this.isDisplayTitle() %}
+    <div class="title">{{ t('Banner preview') }}</div>
+  {% endif %}
+
+  <div class="preview-container"></div>
+</div>
+
+{# Pseudo element to apply field dependency #}
+<input name="pseudo" type="text" class="hidden">

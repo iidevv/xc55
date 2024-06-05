@@ -1,0 +1,10 @@
+{##
+ # Buy with wallet utility widget to monitor product price changes after option is selected
+ #}
+<div class="{{ this.fingerprint }}">
+  <script>
+    if ('undefined' !== typeof core) {
+      xcart.trigger('xpaymentsBuyWithWalletPriceUpdate', { price: {{ this.product.getDisplayPrice() }} });
+    }
+  </script>
+</div>

@@ -1,0 +1,7 @@
+{##
+ # @ListChild (list="itemsList.qsl.abandonedcartreminder.recoveredorder.footer", weight="1000")
+ #}
+<div class="overall-recovered">
+    <p>{{ t('Total revenue recovered for the period') }}: <strong>{{ this.formatPrice(this.getPeriodTotal()) }}</strong></p>
+    <p>{{ t('Number of orders') }}: <strong>{{ this.getPeriodNum() }}</strong></p>
+</div>

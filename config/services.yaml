@@ -1,0 +1,285 @@
+
+parameters:
+    xcart.public_dir: '%env(bool:XCART_PUBLIC_DIR)%'
+    xcart.workers_pool_path: '%kernel.project_dir%/var/workers/'
+    doctrine.dbal.connection_factory.class: XCart\Doctrine\DBAL\ConnectionFactory
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: true        # Temporary option to ise container as a service locator
+        bind:
+            $xcartPublicDir: '%xcart.public_dir%'
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    XCart\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+            - '../src/Doctrine/DBAL/Schema/'
+            - '../src/Doctrine/Migration/'
+            - '../src/Domain/StaticConfigDomain.php'
+            - '../src/Symfony/Component/DependencyInjection/Dumper/PhpDumper.php'
+            - '../src/Symfony/Component/Lock/Stores/'
+            - '../src/Framework/Symfony/'
+            - '../src/Framework/Doctrine/'
+            - '../src/Framework/ApiPlatform/Core/Api'
+            - '../src/Framework/ApiPlatform/Core/Bridge/Symfony/Routing'
+
+    XCart\ServiceLocator: ~
+
+    # common services
+    xcart.logger: '@monolog.logger'
+
+    monolog.handler.xcfile:
+        class: XCart\Monolog\Handler\XCFileHandler
+        calls:
+            - [ setFormatter, [ '@XCart\Monolog\Formatter\XCartFormatter' ] ]
+        arguments:
+            $path: '%kernel.logs_dir%'
+            $file: '%env(string:LOGGER_FILE_STREAM_NAME)%'
+            $level: '%env(int:LOGGER_LEVEL)%'
+
+    XCart\Monolog\Processor\Backtrace:
+        arguments:
+            $sourceAliases: []
+            $level: '%env(int:LOGGER_LEVEL)%'
+        tags:
+            - { name: monolog.processor }
+
+    XCart\Monolog\Processor\RouteProcessor:
+        tags:
+            - { name: monolog.processor }
+
+    XCart\Monolog\Processor\ExecutionContextProcessor:
+        tags:
+            - { name: monolog.processor }
+
+    Monolog\Processor\ProcessIdProcessor:
+        tags:
+            - { name: monolog.processor }
+
+    Symfony\Bridge\Monolog\Processor\WebProcessor:
+        tags:
+            - { name: monolog.processor }
+
+    Symfony\Bridge\Monolog\Processor\ConsoleCommandProcessor:
+        arguments:
+            $includeArguments: true
+            $includeOptions: true
+        tags:
+            - { name: monolog.processor }
+
+    Aws\CloudWatchLogs\CloudWatchLogsClient:
+        arguments:
+            - region: '%env(string:LOGGER_CLOUD_WATCH_REGION)%'
+              version: '%env(string:LOGGER_CLOUD_WATCH_VERSION)%'
+              credentials:
+                  key: '%env(string:LOGGER_CLOUD_WATCH_KEY)%'
+                  secret: '%env(string:LOGGER_CLOUD_WATCH_SECRET)%'
+                  token: '%env(string:LOGGER_CLOUD_WATCH_TOKEN)%'
+
+    XCart\Monolog\Handler\CloudWatch:
+        arguments:
+            - '@Aws\CloudWatchLogs\CloudWatchLogsClient'
+            - '%env(string:LOGGER_CLOUD_WATCH_GROUP_NAME)%'
+            - '%env(string:LOGGER_CLOUD_WATCH_STREAM_NAME)%'
+            - '%env(int:LOGGER_CLOUD_WATCH_RETENTION_DAYS)%'
+            - 10000
+            - []
+            - '%env(string:LOGGER_LEVEL)%'
+
+
+    # framework-level overrides & decorators
+    XCart\Messenger\Transport\Sender\SendersLocator:
+        decorates: messenger.senders_locator
+        arguments:
+            - '@XCart\Messenger\Transport\Sender\SendersLocator.inner'
+            - '%env(bool:BACKGROUND_JOBS_ENABLED)%'
+
+    assets._default_package.decorator.public_dir:
+        class: XCart\Framework\Symfony\Component\Asset\PackagePublicDirDecorator
+        decorates: assets._default_package
+        decoration_priority: 10
+        arguments:
+            - "@assets._default_package.decorator.public_dir.inner"
+
+    # services
+
+    xcart.listener.table_prefix:
+        class: XCart\EventListener\TablePrefixEventListener
+        calls:
+            - [ setConfig, [ '%table_prefix%' ] ]
+        tags:
+            - { name: doctrine.event_listener, event: loadClassMetadata, method: loadClassMetadata }
+
+    kernel.doctrine.orm.entity_manager:
+        class: XLite\Core\Doctrine\ORM\EntityManager
+        decorates: doctrine.orm.entity_manager
+        arguments: [ "@kernel.doctrine.orm.entity_manager.inner" ]
+
+    XCart\Doctrine\ORM\Mapping\NamingStrategy:
+        arguments:
+            $default: '@doctrine.orm.naming_strategy.default'
+            $underscoreNumberAware: '@doctrine.orm.naming_strategy.underscore_number_aware'
+
+    XCart\EventListener\RunPostRequestActionsListener :
+        tags:
+            - { name: kernel.event_listener, event: kernel.terminate }
+
+    XCart\EventListener\CleanUrlListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request }
+
+    XCart\EventListener\ExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
+
+    XCart\EventListener\ModulesInitEventDispatcher:
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: dispatchModulesInitEvent }
+            - { name: kernel.event_listener, event: console.command, method: dispatchModulesInitEvent }
+
+    XCart\EventListener\CorsResponseListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.response}
+
+    XLite\Core\Task\EventListener:
+        tags:
+            - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+    XLite\Core\Task\DataCacheGarbageCleaner:
+        tags:
+            - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+    XLite\Core\Task\OrdersGarbageCleaner:
+        tags:
+            - { name: kernel.event_listener, event: xcart.cronjob, method: handleTask }
+
+    XLite\Core\Model\EntityVersion\EntityVersionUpdater:
+        tags:
+            - { name: doctrine.event_subscriber }
+
+    XLite\Core\Model\CategoriesTreeUpdater:
+        tags:
+            - { name: doctrine.event_subscriber }
+
+    XLite\Core\Model\ImageResizeScheduler:
+        tags:
+            - { name: doctrine.event_subscriber }
+
+    XCart\EventListener\FixturesLoadedListener:
+        tags:
+            - { name: kernel.event_listener, event: xcart.service.post-fixtures-load, method: handlePostLoad }
+
+    Doctrine\ORM\Tools\SchemaTool: ~
+
+    Doctrine\Common\Annotations\DocParser: ~
+    XCart\Extender\Action\ImportedAnnotationsParser: ~
+    XCart\Extender\Action\AnnotationsParserInterface: '@XCart\Extender\Action\ImportedAnnotationsParser'
+    XCart\Extender\Action\Parser: ~
+
+#    Symfony\Component\Yaml\Parser: ~
+
+    XCart\Operation\Service\ViewList\ViewListRead:
+        arguments:
+            $sourcePath: '%kernel.project_dir%'
+            $skinModel: '%xcart.skin_model%'
+
+    XCart\Doctrine\Migration: ~
+    XCart\Doctrine\Migration\MigrationInterface: '@XCart\Doctrine\Migration'
+
+    XCart\Doctrine\FixtureLoader:
+        arguments:
+            $tablePrefix: '%env(resolve:DATABASE_DEFAULT_TABLE_PREFIX)%'
+
+    XCart\Domain\ModuleManagerDomain:
+        arguments:
+            $modules: '%xcart.modules%'
+
+    XCart\EventListener\SessionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.response }
+
+    XCart\EventListener\ConfigListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, priority: 256 }
+
+    XCart\EventListener\XCartBootListener:
+        tags:
+            - { name: kernel.event_listener, event: xcart.boot, method: onBoot }
+
+    XCart\EventListener\LanguageListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, priority: 32 }
+
+    XCart\Command\Service\GetProtectedStructuresCommand:
+        arguments:
+            $sourcePath: '%kernel.project_dir%'
+
+    xcart.api_resources.reader:
+        class: XCart\Framework\Doctrine\Common\Annotations\Reader
+        arguments:
+            $inner: '@annotation_reader'
+            $classNames: ['ApiPlatform\Core\Annotation\ApiResource']
+
+    XCart\LifetimeHook\Hook:
+        tags:
+            - { name: xcart.lifetime-hook, moduleId: CDev-Core, type: install, method: onInstall }
+
+    XCart\LifetimeHook\Upgrade\UpgradeTo5500:
+        tags:
+            - { name: xcart.lifetime-hook, moduleId: CDev-Core, type: upgrade, method: onUpgrade, version: '5.5.0.0' }
+
+    XCart\LifetimeHook\Upgrade\UpgradeTo5508:
+        tags:
+            - { name: xcart.lifetime-hook, moduleId: CDev-Core, type: upgrade, method: onUpgrade, version: '5.5.0.8' }
+
+    XCart\LifetimeHook\Upgrade\UpgradeTo55010:
+        tags:
+            - { name: xcart.lifetime-hook, moduleId: CDev-Core, type: upgrade, method: onUpgrade, version: '5.5.0.10' }
+
+    XLite\Logger:
+        factory: ['XLite\Logger', 'getInstance']
+
+    XLite\Core\Templating\Twig\Functions: ~
+
+    XLite\Core\Templating\Twig\Extension\XCartExtension:
+        autowire: true
+        tags: ['twig.extension']
+
+    XLite\Core\Layout:
+        factory: ['XLite\Core\Layout', 'getInstance']
+
+    XCart\Twig\Loader\FilesystemLoader:
+        decorates: twig.loader.native_filesystem
+        arguments:
+            - '@XCart\Twig\Loader\FilesystemLoader.inner'
+            - '@XLite\Core\Layout'
+
+    XLite\Core\Templating\TwigEngine:
+        autowire: true
+
+    XLite\Core\WidgetCache: ~
+    XLite\Core\WidgetCacheManager: ~
+    XLite\Core\Cache\CacheKeyPartsGenerator: ~
+    XLite\Core\View\WidgetParamsSerializer: ~
+
+    XLite\Core\View\DynamicWidgetRenderer:
+        autowire: true
+
+    XCart\DependencyInjection\TrailingSlashRemovingEnvVarProcessor:
+        tags: ['container.env_var_processor']
+
+    XCart\Doctrine\DBAL\ConnectionFactory:
+        autowire: false
+
+    XCart\Messenger\EventListener\WorkersRegistryEventListener:
+      arguments:
+        $workersPoolPath: '%xcart.workers_pool_path%'

@@ -1,0 +1,13 @@
+{##
+ # Add video button template
+ #
+ # @listChild (list="itemsList.qualiteam.skinactvideotour.videotour.header")
+ # @listChild (list="itemsList.qualiteam.skinactvideotour.productvideotour.header")
+#}
+
+{% if this.getProductId() %}
+  {{ widget('Qualiteam\\SkinActVideoTour\\View\\Button\\Admin\\AddVideoTour', style='add-video-tour', target_product_id=this.getProductId()) }}
+{% endif %}
+{% if not this.getProductId() %}
+  {{ widget('Qualiteam\\SkinActVideoTour\\View\\Button\\Admin\\AddVideoTour', style='add-video-tour') }}
+{% endif %}

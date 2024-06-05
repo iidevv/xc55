@@ -1,0 +1,11 @@
+{% if this.feedHasError(this.entity) %}
+  {{ widget('\\XLite\\View\\Tooltip', caption=this.getColumnValue(this.column, this.entity), text=this.renderFeedErrors(this.entity), isImageTag='false', className='help') }}
+{% endif %}
+{% if not this.feedHasError(this.entity) %}
+  {% if this.entity.date %}
+    <span class="date">{{ this.formatDate(this.entity.date) }}</span>
+    <span class="time">{{ this.formatDayTime(this.entity.date) }}</span>
+  {% else %}
+    <span>&mdash;</span>
+  {% endif %}
+{% endif %}

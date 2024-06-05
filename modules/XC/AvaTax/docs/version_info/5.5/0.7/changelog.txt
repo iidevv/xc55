@@ -1,0 +1,5 @@
+Version 5.5.0.7
+
+Improvements (1)
+2023-07-24 - [Task] Added the setting "Collect Colorado Retail Delivery Fee" for AvaTax add-on. #XCB-2596 #XC-AvaTax
+

@@ -1,0 +1,46 @@
+/**
+ * Page layout styles
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+html, body {
+  min-width: min-content;
+}
+
+#sub-section {
+  float: right
+}
+
+#page-wrapper {
+  .flex-display();
+  .flex-direction(column);
+  position: relative;
+  height: auto !important;
+  min-height: 100%;
+  width: 100%;
+}
+
+#page-container {
+  .flex-display();
+  .flex-grow(2);
+  .align-items(stretch);
+
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+#main {
+  .flex(1 1 auto);
+  transition: height ease-in-out 0s;
+  position: relative;
+  padding: @rhythmic-unit @center-padding-right (4.5 * @rhythmic-unit) @center-padding-left;
+  background-color: @color-background;
+  z-index: 1;
+
+  .dialog-content .alert {
+    display: inline-block;
+  }
+}

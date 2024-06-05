@@ -1,0 +1,174 @@
+{
+    "name": "xcart/xcart",
+    "description": "Shopping cart",
+    "version": "5.5.0",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.4",
+        "ext-ctype": "*",
+        "ext-curl": "*",
+        "ext-iconv": "*",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-sodium": "*",
+        "composer-plugin-api": "^2.1",
+        "adoy/oauth2": "1.3.0",
+        "api-platform/core": "^2.6",
+        "aws/aws-sdk-php": "^3.185",
+        "beberlei/doctrineextensions": "^1.3",
+        "composer/package-versions-deprecated": "1.11.99.4",
+        "doctrine/annotations": "^1.0",
+        "doctrine/doctrine-bundle": "^2.4",
+        "doctrine/doctrine-migrations-bundle": "^3.1",
+        "doctrine/orm": "^2.10",
+        "dompdf/dompdf": "dev-0.8.6-xcart",
+        "ezyang/htmlpurifier": "^4.12",
+        "firebase/php-jwt": "^5.0",
+        "guzzlehttp/guzzle": "^7.3",
+        "hayageek/oauth2-yahoo": "^2.0",
+        "jbroadway/urlify": "^1.1",
+        "league/oauth2-google": "^4.0",
+        "lexik/jwt-authentication-bundle": "^2.14",
+        "lsolesen/pel": "^0.9.8",
+        "maxbanton/cwh": "^2.0",
+        "mobiledetect/mobiledetectlib": "^2.8",
+        "nelmio/cors-bundle": "^2.1",
+        "php-amqplib/php-amqplib": "^3.0.0",
+        "phpdocumentor/reflection-docblock": "^5.2",
+        "phpmailer/phpmailer": "^6.0",
+        "phpseclib/phpseclib": "^2.0",
+        "predis/predis": "^1.1",
+        "stevenmaguire/oauth2-microsoft": "^2.2",
+        "symfony/amqp-messenger": "5.4.*",
+        "symfony/asset": "5.4.*",
+        "symfony/cache": "5.4.*",
+        "symfony/config": "5.4.*",
+        "symfony/console": "5.4.*",
+        "symfony/css-selector": "5.4.*",
+        "symfony/debug-bundle": "5.4.*",
+        "symfony/dependency-injection": "5.4.*",
+        "symfony/doctrine-bridge": "5.4.*",
+        "symfony/doctrine-messenger": "5.4.*",
+        "symfony/dotenv": "5.4.*",
+        "symfony/error-handler": "5.4.*",
+        "symfony/event-dispatcher": "5.4.*",
+        "symfony/expression-language": "5.4.*",
+        "symfony/filesystem": "5.4.*",
+        "symfony/finder": "5.4.*",
+        "symfony/flex": "1.18.*",
+        "symfony/form": "5.4.*",
+        "symfony/framework-bundle": "5.4.*",
+        "symfony/http-foundation": "5.4.*",
+        "symfony/http-kernel": "5.4.*",
+        "symfony/lock": "5.4.*",
+        "symfony/messenger": "5.4.*",
+        "symfony/monolog-bridge": "5.4.*",
+        "symfony/monolog-bundle": "^3.7",
+        "symfony/options-resolver": "5.4.*",
+        "symfony/password-hasher": "5.4.*",
+        "symfony/process": "5.4.*",
+        "symfony/property-access": "5.4.*",
+        "symfony/property-info": "5.4.*",
+        "symfony/proxy-manager-bridge": "5.4.*",
+        "symfony/redis-messenger": "5.4.*",
+        "symfony/routing": "5.4.*",
+        "symfony/runtime": "5.4.*",
+        "symfony/security-bundle": "5.4.*",
+        "symfony/security-core": "5.4.*",
+        "symfony/security-csrf": "5.4.*",
+        "symfony/security-guard": "5.4.*",
+        "symfony/security-http": "5.4.*",
+        "symfony/serializer": "5.4.*",
+        "symfony/stopwatch": "5.4.*",
+        "symfony/string": "5.4.*",
+        "symfony/translation": "5.4.*",
+        "symfony/twig-bridge": "5.4.*",
+        "symfony/twig-bundle": "5.4.*",
+        "symfony/uid": "5.4.*",
+        "symfony/validator": "5.4.*",
+        "symfony/var-dumper": "5.4.*",
+        "symfony/var-exporter": "5.4.*",
+        "symfony/web-link": "5.4.*",
+        "symfony/web-profiler-bundle": "5.4.*",
+        "symfony/workflow": "5.4.*",
+        "symfony/yaml": "5.4.*",
+        "tijsverkoyen/css-to-inline-styles": "dev-core-5.5",
+        "tubalmartin/cssmin": "^4.1",
+        "twig/extra-bundle": "^2.12|^3.0",
+        "twig/twig": "^2.12|^3.0",
+        "wikimedia/less.php": "^3.1",
+        "xcart/marketplace-connector": "dev-master",
+        "xcart/meta-decorator": "5.5.0.x-dev",
+        "xcart/xcart-coding-standard": "^1.0"
+    },
+    "require-dev": {
+        "api-platform/schema-generator": "^3.0",
+        "justinrainbow/json-schema": "^5.2",
+        "phpunit/phpunit": "^9.5",
+        "roave/security-advisories": "dev-latest",
+        "symfony/browser-kit": "5.4.*",
+        "symfony/http-client": "5.4.*",
+        "symfony/phpunit-bridge": "^6.0"
+    },
+    "repositories": [],
+    "config": {
+        "process-timeout": 0,
+        "autoloader-suffix": "Xcart",
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "XCart\\": "src/",
+            "Includes\\": "Includes/"
+        },
+        "files": [
+            "Includes/functions.php",
+            "lib/PEAR2/Autoload.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "XCart\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install": "symfony-cmd",
+            "xcart:assets:install": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "5.4.*"
+        }
+    }
+}

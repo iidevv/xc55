@@ -1,0 +1,5 @@
+Version 5.5.0.5
+
+Fixes (1)
+2022-12-09 - [Bug] Marketplace. Export. Incorrect format of product-attributes.csv. Fixed. #XCB-1937 #QSL-ColorSwatches
+

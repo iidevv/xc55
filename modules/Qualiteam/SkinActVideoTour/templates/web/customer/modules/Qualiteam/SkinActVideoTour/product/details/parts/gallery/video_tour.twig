@@ -1,0 +1,14 @@
+{##
+ # Video tours widget
+ # @ListChild (list="product.details.page.image.gallery.after")
+#}
+
+{% set videoTour = this.get('product').getVideoTours().get(0) %}
+
+{% if videoTour is not null %}
+<li>
+  <a class="youtube" href="{{ videoTour.getYoutubeEmbedUrl() }}">
+    {{ widget('\\XLite\\View\\Image', youtubeId=videoTour.youtubeId, imageSizeType='MSThumbnail') }}
+  </a>
+</li>
+{% endif %}

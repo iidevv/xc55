@@ -1,0 +1,62 @@
+{##
+ # Change card form
+ #
+ #}
+{% form 'XLite\\View\\Form' with {formTarget: 'x_payments_subscription', formAction: 'change_card'} %}
+  <input type="hidden" name="subscription_id" value="{{ this.subscription.id }}" />
+
+  <span class="fee-label">{{ t('Card for payments') }}:</span>
+
+  <span class="current-card" id="current-card-{{ this.subscription.id }}">
+
+    {% if this.subscription.isFree() %}
+      {{ t('Not required') }}
+    {% else %}
+
+      <ul class="saved-cards">
+        <li>
+        {% set currentCard=this.subscription.getCard() %}
+        {% if currentCard %}
+          <span class="card-icon-container">
+            <span class="card {{ currentCard.card_type_css }}"></span>
+          </span>
+          <span class="number">{{ currentCard.card_number }} {% if currentCard.expire %}({{ currentCard.expire }}){% endif %}</span>
+        {% else %}
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ t('Not available') }}
+        {% endif %}
+        </li>
+      </ul>
+
+      {% if this.getProfile().getSavedCards() %}
+        <a class="card-change-btn" href="javascript: void(0);" data-subscription-id="{{ this.subscription.id }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+      {% endif %}
+    {% endif %}
+
+  </span>
+
+  <div class="saved-cards-container" id="saved-cards-container-{{ this.subscription.id }}">
+
+    <ul class="saved-cards">
+
+      {% for cc in this.getProfile().getSavedCards() %}
+        <li>
+
+          <input type="radio" name="card_id" value="{{ cc.card_id }}" {% if currentCard and (cc.card_id == currentCard.card_id) %} checked="checked"{% endif %} id="saved-card-radio-{{ this.subscription.id }}-{{ cc.card_id }}" />
+
+          <label for="saved-card-radio-{{ this.subscription.id }}-{{ cc.card_id }}" id="saved-card-label-{{ this.subscription.id }}-{{ cc.card_id }}">
+            <span class="card-icon-container">
+              <span class="card {{ cc.card_type_css }}"></span>
+            </span>
+            <span class="number">{{ cc.card_number }} {% if cc.expire %}({{ cc.expire }}){% endif %}</span>
+          </label>
+
+        </li>
+      {% endfor %}
+
+    </ul>
+
+    <button type="submit" class="btn regular-button">{{ t('Use selected card') }}</button>
+
+  </div>
+
+{% endform %}

@@ -1,0 +1,20 @@
+{##
+ # Configure action
+ #
+ # @ListChild (list="popup.shipping.methods.list.line.actions.right", weight=300)
+ #}
+
+{% if not this.isOffline(this.get('method')) and this.get('method').isAdded() %}
+  {% set settingsURL = this.getSettingsURL(this.get('method')) %}
+
+  {% if settingsURL %}
+    <div class="configure action">
+      {{ widget(
+        '\\XLite\\View\\Button\\SimpleLink',
+        label='Settings',
+        location=settingsURL,
+        style='fa fa-cog-2'
+      ) }}
+    </div>
+  {% endif %}
+{% endif %}

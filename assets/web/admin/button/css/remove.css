@@ -1,0 +1,14 @@
+/**
+ * ____file_title____
+ *
+ * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ * See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+.remove-wrapper.cross-icon,
+button.remove.cross-icon {
+  font-size: 0;
+}
+button.remove.cross-icon .fa-times:before {
+  font-size: 14px;
+}

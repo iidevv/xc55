@@ -1,0 +1,16 @@
+{##
+ # Messages list : line
+ #}
+
+<li {{ this.printTagAttributes(this.getLineTagAttributes(message))|raw }}>
+  <div class="message-text">
+    <div class="author">
+      <span class="icon">{{ this.displaySVGImage('modules/XC/VendorMessages/images/user.svg') }}</span>
+      {{ message.getAuthorName() }}
+    </div>
+    <div class="body">{{ message.publicBody|raw }}</div>
+  </div>
+  <div class="date">
+    <span>{{ this.formatTime(message.date) }}</span>
+  </div>
+</li>

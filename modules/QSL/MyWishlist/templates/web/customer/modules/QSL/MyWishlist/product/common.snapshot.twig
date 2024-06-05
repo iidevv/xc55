@@ -1,0 +1,9 @@
+{##
+ #
+ # @ListChild (list="product.details.page.info", weight="0")
+ # @ListChild (list="product.details.quicklook.info", weight="0")
+ #}
+
+{% if this.getProduct().isSnapshotProduct() %}
+<div class="snapshot-product-title">{{ t('The product is unavailable in the catalog') }}</div>
+{% endif %}

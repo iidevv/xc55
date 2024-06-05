@@ -1,0 +1,37 @@
+{##
+ # Migration Wizard - Progress state
+ #}
+<div class="import-box import-progress">
+
+  {{ widget('XC\\MigrationWizard\\View\\Import\\Titles') }}
+
+  <div class="content">
+    {% form 'XC\\MigrationWizard\\View\\Form\\Migration' with {formAction: 'cancel'} %}
+      {% if this.isNewEventTaskProgressWidget() %}
+        <div class="subcontent clearfix">
+          {{ widget('XLite\\View\\EventTaskProgress', event=this.getEventName(), message=this.getProgressMessage() ) }}
+        </div>
+      {% else %}
+        {# TODO: refactor / remove #}
+        <div class="subcontent">
+          {{ widget('XLite\\View\\EventTaskProgress', event=this.getEventName()) }}
+          {{ widget('XLite\\View\\Button\\Submit', label=t('Cancel')) }}
+          <div class="rows-processed">{{ t('Initializing...') }}</div>
+        </div>
+        <div class="help">
+          <i class="fa fa-exclamation-triangle"></i>
+          <p>
+            {% if this.isBlocking() %}
+              {{ t('The process of migration may take much time') }}
+              {{ t('You may close the page, the operation will be in progress as background') }}
+            {% else %}
+              {{ t('The process of migration may take much time') }}
+              {{ t('Please do not close this page until the operation is complete') }}
+            {% endif %}
+          </p>
+        </div>
+      {% endif %}
+    {% endform %}
+  </div>
+
+</div>

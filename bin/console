@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+use XCart\Kernel;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+
+if (!is_file(dirname(__DIR__).'/vendor/autoload_runtime.php')) {
+    throw new LogicException('Symfony Runtime is missing. Try running "composer require symfony/runtime".');
+}
+
+require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
+
+return function (array $context) {
+    // We can use only a production autoloader in the boot stage, so it is required to register an autoloader
+    // inside this function in case if we need to switch to a development autoloader after the boot stage.
+    // Autoloaders registered outside this function are hidden in runtime and can't be unregistered (but still used)
+    require_once dirname(__DIR__).'/vendor/autoload_xcart.php';
+
+    require_once dirname(__DIR__).'/bootstrap.php';
+
+    $kernel = new Kernel($context['APP_ENV'], (bool) $context['APP_DEBUG']);
+
+    return new Application($kernel);
+};

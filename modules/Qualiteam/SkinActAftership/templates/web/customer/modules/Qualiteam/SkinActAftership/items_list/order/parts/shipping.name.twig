@@ -1,0 +1,31 @@
+{# #
+ # Orders list item : spec : break line
+ #
+ # @ListChild (list="orders.children.shipping", weight="100")
+#}
+
+<ul class="shipping-method-name shipping-method-spec-element">
+  <li class="shipping-method-wrapper">
+    <span class="shipping-method-label">{{ t('Shipping method') }}:</span><span
+        class="shipping-method-name">{{ this.order.getShippingMethodName()|raw }}</span>
+  </li>
+  {% if not this.order.trackingNumbers.isEmpty() %}
+    <li class="tracking-number-wrapper">
+      <span class="tracking-number-label">{{ t('Tracking numbers') }}:</span>
+
+      <div class="tracking-number-box">
+        {% for number in this.order.trackingNumbers %}
+
+          <span class="tracking-item">
+          {{ number.value }}
+            {{ widget_list('orders.children.shipping.tracking.before') }}
+            {{ widget_list('orders.children.shipping.tracking', item=number) }}
+            {{ widget_list('orders.children.shipping.tracking.after') }}
+          </span><br/>
+
+        {% endfor %}
+      </div>
+    </li>
+  {% endif %}
+
+</ul>

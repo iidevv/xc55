@@ -1,0 +1,5 @@
+Version 5.5.1.2
+
+Fixes (1)
+2022-12-14 - [Bug] Fatal error after adding a product without a category assigned to the shopping cart while GA was enabled. Fixed. #XCB-1949 #CDev-GoogleAnalytics
+

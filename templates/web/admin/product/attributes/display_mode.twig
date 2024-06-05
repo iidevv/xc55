@@ -1,0 +1,18 @@
+{##
+ # Selector type
+ #}
+
+<div class="display-mode type-s">
+  <div class="title">
+    {{ t('Display the option values in ') }}
+    <div>
+      <a href="#" class="display-mode-link">{{ this.getCurrentDisplayModeText() }}</a>
+      <div class="value">
+        {% for widget in this.getDisplayModesWidgets() %}
+          <div class="display-mode-variant">{{ widget.display() }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+

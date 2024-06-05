@@ -1,0 +1,17 @@
+{##
+ # Popup shipping method general info
+ #
+ # @ListChild (list="popup.shipping.methods.list.line", weight=200)
+ #}
+
+<div class="general-info">
+  <div class="title">{{ this.get('method').getName() }}</div>
+
+  <div class="description">
+    {% if this.isOffline(this.get('method')) %}
+      {{ this.getZonesList(this.get('method')) }}
+    {% else %}
+      {{ this.get('method').getAdminDescription() }}
+    {% endif %}
+  </div>
+</div>

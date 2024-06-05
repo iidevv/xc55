@@ -1,0 +1,57 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Payment\Method:
+  - service_name: Klarna
+    class: Qualiteam\SkinActKlarna\Model\Payment\Processor\Klarna
+    type: C
+    countries: [ US ]
+    orderby: -900000
+    adminOrderby: -900000
+    settings: [ { name: username }, { name: password }, { name: mode, value: test }, { name: prefix, value: xcart_klarna }, { name: currency, value: USD } ]
+    translations:
+      - code: en
+        name: Klarna
+
+XLite\Model\Config:
+  - name: klarna_settings
+    type: separator
+    category: General
+    orderby: 50000
+    translations:
+      - code: en
+        option_name: SkinActKlarna Klarna
+
+  - name: klarna_product_page_snippet
+    category: General
+    type: checkbox
+    value: Y
+    orderby: 51000
+    translations:
+      - code: en
+        option_name: SkinActKlarna product page snippet
+
+  - name: klarna_cart_page_snippet
+    category: General
+    type: checkbox
+    value: Y
+    orderby: 52000
+    translations:
+      - code: en
+        option_name: SkinActKlarna cart page snippet
+
+XLite\Model\LanguageLabel:
+  - { name: "SkinActKlarna username", translations: [{ code: en, label: "Username" }] }
+  - { name: "SkinActKlarna password", translations: [{ code: en, label: "Password" }] }
+  - { name: "SkinActKlarna product page snippet", translations: [{ code: en, label: "Product page placement snippet" }] }
+  - { name: "SkinActKlarna cart page snippet", translations: [{ code: en, label: "Cart page placement snippet" }] }
+  - { name: "SkinActKlarna Klarna", translations: [{ code: en, label: "Klarna" }] }
+  - { name: "SkinActKlarna the feature requires https to be properly set up for your store", translations: [{ code: en, label: 'The "Klarna" feature requires https to be <a href="{{url}}">properly set up</a> for your store' }] }
+  - { name: "SkinActKlarna the feature is not configured and cannot be used", translations: [{ code: en, label: 'The "Klarna" feature is not configured and cannot be used' }] }
+  - { name: "SkinActKlarna test/Live mode", translations: [{ code: en, label: 'Test/Live mode' }]}
+  - { name: "SkinActKlarna currency", translations: [{ code: en, label: 'Currency' }]}
+  - { name: "SkinActKlarna refund successful", translations: [{ code: en, label: 'Refund successful' }]}

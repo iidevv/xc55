@@ -1,0 +1,6 @@
+<order-notes inline-template class="floating-label secondary" data-default-value="{{ this.getNotes() }}">
+  <div>
+    <label for="order_note">{{ t('Order note') }}</label>
+    <textarea class="form-control secondary" rows="3" name="notes" v-on:change="updateNotes" v-bind:value="notes" id="{{ this.getUniqueId('order_note') }}" placeholder="{{ t('Any special needs?', [], null, 'placeholder') }}"></textarea>
+  </div>
+</order-notes>

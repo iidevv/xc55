@@ -1,0 +1,41 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+QSL\SpecialOffersBase\Model\OfferType:
+  - processorClass: '\QSL\SpecialOffersBuyXGetY\Logic\Order\SpecialOffer\GetMOfNItemsDiscounted'
+    enabled:        1
+    viewModelClass: '\QSL\SpecialOffersBuyXGetY\View\Model\SpecialOffer'
+    specialOffers:
+      - name:             'Sample: Get 1 of every 3 items with 50% discount'
+        orderBy:          0
+        enabled:          false
+        bxgyN:            3
+        bxgyM:            1
+        bxgyDiscount:     50
+        bxgyDiscountType: '%'
+        translations:
+          - code: us
+            title: 'Get 1 of every 3 items with 50% discount'
+          - code: ru
+            title: 'Каждый третий товар со скидкой 50%'
+      - name:             'Sample: Get every second item for free'
+        orderBy:          10
+        enabled:          false
+        bxgyN:            2
+        bxgyM:            1
+        bxgyDiscount:     100
+        bxgyDiscountType: '%'
+        translations:
+          - code: us
+            title: 'Every second item is free!'
+          - code: ru
+            title: 'Каждый второй товар - бесплатно!'
+    translations:
+      - code: us
+        name: 'Buy N items Get M of them discounted/free'
+      - code: ru
+        name: 'Купи N предметов и получи M из них со скидкой/бесплатно'

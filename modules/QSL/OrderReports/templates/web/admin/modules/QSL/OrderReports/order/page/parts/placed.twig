@@ -1,0 +1,21 @@
+{##
+ # Order : placed box
+ #}
+
+<div class="title">
+  <div class="placed-date head-h4">{{ t('Placed on DATE', {'date': this.getOrderDate()})|raw }}{% if this.getMobileOrder() %}&nbsp;&nbsp;
+      <i class="fa fa-mobile-phone" style="font-size: 24px;vertical-align: bottom;"></i>{% endif %}</div>
+  <div class="placed-customer">
+    {% if this.hasProfilePage() %}
+      {{ t('Placed by _NAME_', {'name': this.getProfileName(), 'url': this.getProfileURL()})|raw }}
+    {% else %}
+      {{ t('Placed by NAME', {'name': this.getProfileName()})|raw }}
+    {% endif %}
+
+    <div class="profile-login">{{ this.get('orderForm').displayComplexField('login') }}</div>
+
+    {% if this.getMembership() %}
+      <span class="membership">({{ this.membership.getName() }})</span>
+    {% endif %}
+  </div>
+</div>

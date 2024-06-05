@@ -1,0 +1,15 @@
+{##
+ # Order items
+ #
+ # @ListChild (list="order_return.base", weight="10")
+ #}
+
+<table cellspacing="0" class="items" style="min-width: 60%; width: auto; border-color: #c4c4c4; border-width:1px; border-collapse: collapse; border-spacing: 0; max-width: 700px; margin-top: 24px;">
+  <tr style="border: 0 none;">{{ widget_list('order_return.items.head') }}</tr>
+  {% for index, item in this.order.getOrderReturnItems() %}
+    <tr>{{ widget_list('order_return.item', item=item) }}</tr>
+  {% endfor %}
+  {% for w in this.getViewList('order_return.items') %}
+    <tr>{{ w.display() }}</tr>
+  {% endfor %}
+</table>

@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Fixes (1)
+2022-10-04 - [Bug] Renamed a few layout blocks in the theme tweaker; adjusted the news list subscriptions page according to the style guide. #XCB-1716 #CDev-Sale #CDev-SimpleCMS #CDev-ContactUs #CDev-Bestsellers #CDev-ProductAdvisor #QSL-MyWishlist #QSL-ShopByBrand #QSL-Make #XC-ThemeTweaker #XC-Sitemap #XC-MailChimp #XC-CrispWhiteSkin #XC-ProductComparison #XC-Upselling #XC-MultiVendor
+

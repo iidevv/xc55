@@ -1,0 +1,8 @@
+Version 5.5.0.9
+
+Improvements (1)
+2023-07-25 - [Task] Changed the behavior of selecting product variants with blocks and color swatches on the product details page on the storefront.     #XCB-2600 #CDev-Core #QSL-ColorSwatches #XC-ProductVariants
+
+Fixes (1)
+2023-07-13 - [Bug] Layout issue related to displaying attribute variants on the product page on the storefront. Fixed. #XCB-2592 #XC-ProductVariants #XC-CrispWhiteSkin
+

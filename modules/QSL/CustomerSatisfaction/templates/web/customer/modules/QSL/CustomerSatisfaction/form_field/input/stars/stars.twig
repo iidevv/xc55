@@ -1,0 +1,21 @@
+{##
+ # Rating bar for product
+ #}
+
+<div id="{{ this.getBarName() }}" class="vote-bar">
+  <ul>
+    {% for level, star in this.getStarsCount() %}
+      <li class="star-{{ level }}">
+        <span class="{{ this.getClass() }}">
+          <span{% if star.full %} class="full"{% endif %}>
+            {% if star.percent %}
+              <img src="{{ asset('images/spacer.gif') }}" alt="" style="width: {{ star.percent }}%;" />
+            {% endif %}
+          </span>
+        </span>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <input type="hidden" name="{{ this.getBarName() }}" value="" />
+</div>

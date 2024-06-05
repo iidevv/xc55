@@ -1,0 +1,25 @@
+{##
+ # Subscribe block
+ #
+ # @ListChild (list="amp.NewsletterSubscriptions.footer.form-block", weight="100")
+ #}
+
+{% form 'XLite\\View\\Form' with {formTarget: 'NewsletterSubscriptions', formAction: 'subscribe'} %}
+    <div class="subscr-form-label">
+        {{ this.getFormLabel() }}
+    </div>
+
+    <div submit-success>
+        {{ widget_list('amp.NewsletterSubscriptions.footer.success-block') }}
+    </div>
+
+    <div submit-error>
+        {{ widget_list('amp.NewsletterSubscriptions.footer.error-block') }}
+    </div>
+
+    <div class="subscr-form-fields">
+        {{ widget('XLite\\View\\FormField\\Input\\Text\\Email', fieldName='newlettersubscription_email', required='true', placeholder=t('Enter email address', [], null, 'placeholder'), maxlength='255', fieldOnly=true, label=t('Email')) }}
+
+        {{ widget('XLite\\View\\Button\\Submit', label=t('Subscribe')) }}
+    </div>
+{% endform %}

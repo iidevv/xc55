@@ -1,0 +1,5 @@
+Version 5.5.1.3
+
+Fixes (1)
+2023-01-31 - [Bug] Fatal error in AOM when adding a new product. Fixed. #XCB-2073 #CDev-GoogleAnalytics
+

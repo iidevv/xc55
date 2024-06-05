@@ -1,0 +1,24 @@
+{##
+ # Category questions
+#}
+
+<div class="category-bottom-questions">
+    <h4 class="category-bottom-questions__title">
+        {{ t('SkinActCategoryDescriptionAndFaq FAQ') }}
+    </h4>
+    {% for i, question_and_answer in this.getQuestionsAndAnswers() %}
+        <div class="category-question">
+            <h4 class="category-question__item"  data-toggle="collapse"
+                data-target="#collapse{{ i }}"
+                aria-expanded="false" aria-controls="collapse{{ i }}" style="cursor: pointer;">
+                {{ question_and_answer.question | raw }}
+            </h4>
+            <div id="collapse{{ i }}" class="collapse category-answer__item">
+                <span>
+                    {{ question_and_answer.answer | raw }}
+                </span>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+

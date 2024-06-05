@@ -1,0 +1,14 @@
+{##
+ # Order messages list
+ #}
+
+{% if this.isSearchVisible() %}
+  {{ widget('\\XC\\VendorMessages\\View\\SearchPanel\\Message\\Admin\\Main') }}
+{% endif %}
+
+{% form '\\XC\\VendorMessages\\View\\Form\\ItemsList\\Conversations' %}
+  {{ widget('\\XC\\VendorMessages\\View\\ItemsList\\Admin\\Conversations') }}
+  {% if this.hasResults() %}
+    {{ widget('\\XC\\VendorMessages\\View\\StickyPanel\\Conversations') }}
+  {% endif %}
+{% endform %}

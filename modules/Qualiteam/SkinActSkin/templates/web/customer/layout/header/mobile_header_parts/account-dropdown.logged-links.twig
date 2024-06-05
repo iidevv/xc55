@@ -1,0 +1,20 @@
+{##
+ # Account menu (mobile view)
+ #
+ # @ListChild (list="layout.header.bar.links.account.logged", weight="100")
+ #}
+
+<div class="account-logged-links">
+  <div class="account-logged-links__column">
+    <h5 class="account-logged-links__column-title">{{ t('[SkinActSkin] Your Lists') }}</h5>
+    <ul class="account-logged-links__list">
+      {{ widget_list('layout.header.bar.links.list') }}
+    </ul>
+  </div>
+  <div class="account-logged-links__column">
+    <h5 class="account-logged-links__column-title">{{ t('[SkinActSkin] Your Account') }}</h5>
+    <ul class="account-logged-links__list">
+      {{ widget_list('layout.header.bar.links.logged') }}
+    </ul>
+  </div>
+</div>

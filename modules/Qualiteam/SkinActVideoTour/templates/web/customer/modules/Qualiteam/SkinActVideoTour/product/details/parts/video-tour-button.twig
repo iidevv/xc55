@@ -1,0 +1,7 @@
+{% if this.hasVideoTour() %}
+  <div class="image-buttons">
+    <div class="video-tour">
+      {{ widget('Qualiteam\\SkinActVideoTour\\View\\Button\\VideoTourButton', label=t('SkinActVideoTour video tour'), style='action always-enabled') }}
+    </div>
+  </div>
+{% endif %}

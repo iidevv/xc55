@@ -1,0 +1,5 @@
+Version 5.5.0.3
+
+Improvements (1)
+2022-12-06 - [Story] Added a Migration Wizard for version 5.5. #ECOM-2307 #CDev-Core #XC-CustomOrderStatuses #XC-XC4Login #XC-OrdersImport #XC-MigrationWizard #XC-MultiVendor
+

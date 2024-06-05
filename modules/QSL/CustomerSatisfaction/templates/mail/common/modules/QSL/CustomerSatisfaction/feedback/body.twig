@@ -1,0 +1,26 @@
+{##
+ # Body
+ #}
+{##
+<html>
+<body>
+{{ t('Customer has left feedback order X', {'orderId': this.orderNumber}) }}
+#}
+<p />
+<table>
+    {% for item in this.answers %}
+      <tr>
+          <td>{{ item.originQuestion }}</td>
+          <td>{{ item.value }}</td>
+      </tr>
+    {% endfor %}
+</table>
+<p />
+{{ t('Customer comment:') }}
+<br /><br />
+{{ this.customerComment }}
+
+{##
+</body>
+</html>
+#}

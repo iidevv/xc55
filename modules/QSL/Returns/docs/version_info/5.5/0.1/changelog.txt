@@ -1,0 +1,5 @@
+Version 5.5.0.1
+
+Fixes (1)
+2022-08-11 - [Bug] Incorrect buttons display on the sticky panel if there are no entities on the listing page. Fixed. #XCB-1279 #CDev-Sale #CDev-Coupons #QSL-BackInStock #QSL-ProductStickers #QSL-ColorSwatches #QSL-AbandonedCartReminder #QSL-SpecialOffersBase #QSL-ShopByBrand #QSL-ProductFeeds #QSL-Returns #XC-ProductTags #XC-Reviews
+

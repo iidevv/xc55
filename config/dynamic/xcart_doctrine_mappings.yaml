@@ -1,0 +1,729 @@
+doctrine:
+    orm:
+        mappings:
+            XC\NewsletterSubscriptions:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/NewsletterSubscriptions/Model'
+                prefix: XC\NewsletterSubscriptions\Model
+                alias: XC\NewsletterSubscriptions
+            CDev\USPS:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/USPS/Model'
+                prefix: CDev\USPS\Model
+                alias: CDev\USPS
+            QSL\Banner:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/Banner/Model'
+                prefix: QSL\Banner\Model
+                alias: QSL\Banner
+            QSL\ProductFeeds:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/ProductFeeds/Model'
+                prefix: QSL\ProductFeeds\Model
+                alias: QSL\ProductFeeds
+            XC\ProductVariants:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/ProductVariants/Model'
+                prefix: XC\ProductVariants\Model
+                alias: XC\ProductVariants
+            Qualiteam\SkinActPinterestFeed:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActPinterestFeed/Model'
+                prefix: Qualiteam\SkinActPinterestFeed\Model
+                alias: Qualiteam\SkinActPinterestFeed
+            QSL\BackInStock:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/BackInStock/Model'
+                prefix: QSL\BackInStock\Model
+                alias: QSL\BackInStock
+            XC\Geolocation:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/Geolocation/Model'
+                prefix: XC\Geolocation\Model
+                alias: XC\Geolocation
+            XC\ProductTags:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/ProductTags/Model'
+                prefix: XC\ProductTags\Model
+                alias: XC\ProductTags
+            QSL\OAuth2Client:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/OAuth2Client/Model'
+                prefix: QSL\OAuth2Client\Model
+                alias: QSL\OAuth2Client
+            XC\VendorMessages:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/VendorMessages/Model'
+                prefix: XC\VendorMessages\Model
+                alias: XC\VendorMessages
+            XC\CustomOrderStatuses:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/CustomOrderStatuses/Model'
+                prefix: XC\CustomOrderStatuses\Model
+                alias: XC\CustomOrderStatuses
+            XPay\XPaymentsCloud:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XPay/XPaymentsCloud/Model'
+                prefix: XPay\XPaymentsCloud\Model
+                alias: XPay\XPaymentsCloud
+            CDev\SimpleCMS:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/SimpleCMS/Model'
+                prefix: CDev\SimpleCMS\Model
+                alias: CDev\SimpleCMS
+            Qualiteam\SkinActMain:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActMain/Model'
+                prefix: Qualiteam\SkinActMain\Model
+                alias: Qualiteam\SkinActMain
+            Qualiteam\SkinActOrderMessaging:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActOrderMessaging/Model'
+                prefix: Qualiteam\SkinActOrderMessaging\Model
+                alias: Qualiteam\SkinActOrderMessaging
+            Qualiteam\SkinActFullWidthImages:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActFullWidthImages/Model'
+                prefix: Qualiteam\SkinActFullWidthImages\Model
+                alias: Qualiteam\SkinActFullWidthImages
+            XC\FacebookMarketing:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/FacebookMarketing/Model'
+                prefix: XC\FacebookMarketing\Model
+                alias: XC\FacebookMarketing
+            QSL\SpecialOffersBase:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/SpecialOffersBase/Model'
+                prefix: QSL\SpecialOffersBase\Model
+                alias: QSL\SpecialOffersBase
+            QSL\SpecialOffersBuyXGetY:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/SpecialOffersBuyXGetY/Model'
+                prefix: QSL\SpecialOffersBuyXGetY\Model
+                alias: QSL\SpecialOffersBuyXGetY
+            XC\OrdersImport:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/OrdersImport/Model'
+                prefix: XC\OrdersImport\Model
+                alias: XC\OrdersImport
+            Qualiteam\SkinActSkin:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActSkin/Model'
+                prefix: Qualiteam\SkinActSkin\Model
+                alias: Qualiteam\SkinActSkin
+            XC\Reviews:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/Reviews/Model'
+                prefix: XC\Reviews\Model
+                alias: XC\Reviews
+            CDev\FileAttachments:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/FileAttachments/Model'
+                prefix: CDev\FileAttachments\Model
+                alias: CDev\FileAttachments
+            XC\GDPR:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/GDPR/Model'
+                prefix: XC\GDPR\Model
+                alias: XC\GDPR
+            XC\SagePay:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/SagePay/Model'
+                prefix: XC\SagePay\Model
+                alias: XC\SagePay
+            Qualiteam\SkinActGraphQLApi:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActGraphQLApi/Model'
+                prefix: Qualiteam\SkinActGraphQLApi\Model
+                alias: Qualiteam\SkinActGraphQLApi
+            Qualiteam\SkinActMobileAppBanners:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActMobileAppBanners/Model'
+                prefix: Qualiteam\SkinActMobileAppBanners\Model
+                alias: Qualiteam\SkinActMobileAppBanners
+            CDev\ContactUs:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/ContactUs/Model'
+                prefix: CDev\ContactUs\Model
+                alias: CDev\ContactUs
+            CDev\Quantum:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/Quantum/Model'
+                prefix: CDev\Quantum\Model
+                alias: CDev\Quantum
+            CDev\XMLSitemap:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/XMLSitemap/Model'
+                prefix: CDev\XMLSitemap\Model
+                alias: CDev\XMLSitemap
+            Qualiteam\SkinActCustomerReviews:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActCustomerReviews/Model'
+                prefix: Qualiteam\SkinActCustomerReviews\Model
+                alias: Qualiteam\SkinActCustomerReviews
+            Qualiteam\SkinActRemovePreselection:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActRemovePreselection/Model'
+                prefix: Qualiteam\SkinActRemovePreselection\Model
+                alias: Qualiteam\SkinActRemovePreselection
+            QSL\reCAPTCHA:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/reCAPTCHA/Model'
+                prefix: QSL\reCAPTCHA\Model
+                alias: QSL\reCAPTCHA
+            QSL\CustomerSatisfaction:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/CustomerSatisfaction/Model'
+                prefix: QSL\CustomerSatisfaction\Model
+                alias: QSL\CustomerSatisfaction
+            Qualiteam\SkinActBannerAdvanced:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActBannerAdvanced/Model'
+                prefix: Qualiteam\SkinActBannerAdvanced\Model
+                alias: Qualiteam\SkinActBannerAdvanced
+            QSL\MembershipProducts:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/MembershipProducts/Model'
+                prefix: QSL\MembershipProducts\Model
+                alias: QSL\MembershipProducts
+            CDev\Wholesale:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/Wholesale/Model'
+                prefix: CDev\Wholesale\Model
+                alias: CDev\Wholesale
+            Qualiteam\SkinActProMembership:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActProMembership/Model'
+                prefix: Qualiteam\SkinActProMembership\Model
+                alias: Qualiteam\SkinActProMembership
+            Qualiteam\SkinActCareers:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActCareers/Model'
+                prefix: Qualiteam\SkinActCareers\Model
+                alias: Qualiteam\SkinActCareers
+            XC\News:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/News/Model'
+                prefix: XC\News\Model
+                alias: XC\News
+            CDev\MarketPrice:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/MarketPrice/Model'
+                prefix: CDev\MarketPrice\Model
+                alias: CDev\MarketPrice
+            XC\CustomerAttachments:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/CustomerAttachments/Model'
+                prefix: XC\CustomerAttachments\Model
+                alias: XC\CustomerAttachments
+            XC\ProductComparison:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/ProductComparison/Model'
+                prefix: XC\ProductComparison\Model
+                alias: XC\ProductComparison
+            Qualiteam\SkinActCreateOrder:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActCreateOrder/Model'
+                prefix: Qualiteam\SkinActCreateOrder\Model
+                alias: Qualiteam\SkinActCreateOrder
+            Qualiteam\SkinActChangesToTrackingNumbers:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActChangesToTrackingNumbers/Model'
+                prefix: Qualiteam\SkinActChangesToTrackingNumbers\Model
+                alias: Qualiteam\SkinActChangesToTrackingNumbers
+            CDev\Egoods:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/Egoods/Model'
+                prefix: CDev\Egoods\Model
+                alias: CDev\Egoods
+            CDev\VolumeDiscounts:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/VolumeDiscounts/Model'
+                prefix: CDev\VolumeDiscounts\Model
+                alias: CDev\VolumeDiscounts
+            CDev\FeaturedProducts:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/FeaturedProducts/Model'
+                prefix: CDev\FeaturedProducts\Model
+                alias: CDev\FeaturedProducts
+            CDev\Bestsellers:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/Bestsellers/Model'
+                prefix: CDev\Bestsellers\Model
+                alias: CDev\Bestsellers
+            Qualiteam\SkinActQuickbooks:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActQuickbooks/Model'
+                prefix: Qualiteam\SkinActQuickbooks\Model
+                alias: Qualiteam\SkinActQuickbooks
+            CDev\ProductAdvisor:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/ProductAdvisor/Model'
+                prefix: CDev\ProductAdvisor\Model
+                alias: CDev\ProductAdvisor
+            Qualiteam\SkinActGoogleFeedAdvanced:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActGoogleFeedAdvanced/Model'
+                prefix: Qualiteam\SkinActGoogleFeedAdvanced\Model
+                alias: Qualiteam\SkinActGoogleFeedAdvanced
+            XC\Concierge:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/Concierge/Model'
+                prefix: XC\Concierge\Model
+                alias: XC\Concierge
+            XC\GoogleFeed:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/GoogleFeed/Model'
+                prefix: XC\GoogleFeed\Model
+                alias: XC\GoogleFeed
+            Qualiteam\SkinActFreeGifts:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActFreeGifts/Model'
+                prefix: Qualiteam\SkinActFreeGifts\Model
+                alias: Qualiteam\SkinActFreeGifts
+            QSL\ProductStickers:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/ProductStickers/Model'
+                prefix: QSL\ProductStickers\Model
+                alias: QSL\ProductStickers
+            QSL\Returns:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/Returns/Model'
+                prefix: QSL\Returns\Model
+                alias: QSL\Returns
+            Iidev\StripeSubscriptions:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Iidev/StripeSubscriptions/Model'
+                prefix: Iidev\StripeSubscriptions\Model
+                alias: Iidev\StripeSubscriptions
+            CDev\Paypal:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/Paypal/Model'
+                prefix: CDev\Paypal\Model
+                alias: CDev\Paypal
+            Qualiteam\SkinActVerifiedCustomer:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActVerifiedCustomer/Model'
+                prefix: Qualiteam\SkinActVerifiedCustomer\Model
+                alias: Qualiteam\SkinActVerifiedCustomer
+            XC\BulkEditing:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/BulkEditing/Model'
+                prefix: XC\BulkEditing\Model
+                alias: XC\BulkEditing
+            QSL\MyWishlist:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/MyWishlist/Model'
+                prefix: QSL\MyWishlist\Model
+                alias: QSL\MyWishlist
+            Qualiteam\SkinActSkuVaultReadonlyQty:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActSkuVaultReadonlyQty/Model'
+                prefix: Qualiteam\SkinActSkuVaultReadonlyQty\Model
+                alias: Qualiteam\SkinActSkuVaultReadonlyQty
+            XC\Upselling:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/Upselling/Model'
+                prefix: XC\Upselling\Model
+                alias: XC\Upselling
+            XC\OrderStatusColors:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/OrderStatusColors/Model'
+                prefix: XC\OrderStatusColors\Model
+                alias: XC\OrderStatusColors
+            QSL\OneClickUpsellAfterCheckout:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/OneClickUpsellAfterCheckout/Model'
+                prefix: QSL\OneClickUpsellAfterCheckout\Model
+                alias: QSL\OneClickUpsellAfterCheckout
+            CDev\Coupons:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/Coupons/Model'
+                prefix: CDev\Coupons\Model
+                alias: CDev\Coupons
+            QSL\ShopByBrand:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/ShopByBrand/Model'
+                prefix: QSL\ShopByBrand\Model
+                alias: QSL\ShopByBrand
+            Qualiteam\SkinActBrandCoupon:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActBrandCoupon/Model'
+                prefix: Qualiteam\SkinActBrandCoupon\Model
+                alias: Qualiteam\SkinActBrandCoupon
+            Qualiteam\SkinActFrequentlyBoughtTogether:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActFrequentlyBoughtTogether/Model'
+                prefix: Qualiteam\SkinActFrequentlyBoughtTogether\Model
+                alias: Qualiteam\SkinActFrequentlyBoughtTogether
+            XC\FastLaneCheckout:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/FastLaneCheckout/Model'
+                prefix: XC\FastLaneCheckout\Model
+                alias: XC\FastLaneCheckout
+            Qualiteam\SkinActVideoTour:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActVideoTour/Model'
+                prefix: Qualiteam\SkinActVideoTour\Model
+                alias: Qualiteam\SkinActVideoTour
+            Qualiteam\SkinActSkuVault:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActSkuVault/Model'
+                prefix: Qualiteam\SkinActSkuVault\Model
+                alias: Qualiteam\SkinActSkuVault
+            QSL\ColorSwatches:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/ColorSwatches/Model'
+                prefix: QSL\ColorSwatches\Model
+                alias: QSL\ColorSwatches
+            Qualiteam\SkinActColorSwatchesFeature:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActColorSwatchesFeature/Model'
+                prefix: Qualiteam\SkinActColorSwatchesFeature\Model
+                alias: Qualiteam\SkinActColorSwatchesFeature
+            Qualiteam\SkinActMagicImages:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActMagicImages/Model'
+                prefix: Qualiteam\SkinActMagicImages\Model
+                alias: Qualiteam\SkinActMagicImages
+            Qualiteam\SkinActLinkProductsToAttributes:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActLinkProductsToAttributes/Model'
+                prefix: Qualiteam\SkinActLinkProductsToAttributes\Model
+                alias: Qualiteam\SkinActLinkProductsToAttributes
+            Qualiteam\SkinActWishlistUserExport:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActWishlistUserExport/Model'
+                prefix: Qualiteam\SkinActWishlistUserExport\Model
+                alias: Qualiteam\SkinActWishlistUserExport
+            CDev\SalesTax:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/SalesTax/Model'
+                prefix: CDev\SalesTax\Model
+                alias: CDev\SalesTax
+            CDev\FedEx:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/FedEx/Model'
+                prefix: CDev\FedEx\Model
+                alias: CDev\FedEx
+            Qualiteam\SkinActExtraCouponsAndDiscounts:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActExtraCouponsAndDiscounts/Model'
+                prefix: Qualiteam\SkinActExtraCouponsAndDiscounts\Model
+                alias: Qualiteam\SkinActExtraCouponsAndDiscounts
+            CDev\GoSocial:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/GoSocial/Model'
+                prefix: CDev\GoSocial\Model
+                alias: CDev\GoSocial
+            CDev\AuthorizeNet:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/AuthorizeNet/Model'
+                prefix: CDev\AuthorizeNet\Model
+                alias: CDev\AuthorizeNet
+            QSL\LoyaltyProgram:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/LoyaltyProgram/Model'
+                prefix: QSL\LoyaltyProgram\Model
+                alias: QSL\LoyaltyProgram
+            CDev\UserPermissions:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/UserPermissions/Model'
+                prefix: CDev\UserPermissions\Model
+                alias: CDev\UserPermissions
+            XC\UPS:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/UPS/Model'
+                prefix: XC\UPS\Model
+                alias: XC\UPS
+            XC\CustomProductTabs:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/CustomProductTabs/Model'
+                prefix: XC\CustomProductTabs\Model
+                alias: XC\CustomProductTabs
+            XC\FreeShipping:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/FreeShipping/Model'
+                prefix: XC\FreeShipping\Model
+                alias: XC\FreeShipping
+            ShipStation\Api:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/ShipStation/Api/Model'
+                prefix: ShipStation\Api\Model
+                alias: ShipStation\Api
+            Qualiteam\SkinActProductReOrdering:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActProductReOrdering/Model'
+                prefix: Qualiteam\SkinActProductReOrdering\Model
+                alias: Qualiteam\SkinActProductReOrdering
+            CDev\TwoCheckout:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/TwoCheckout/Model'
+                prefix: CDev\TwoCheckout\Model
+                alias: CDev\TwoCheckout
+            CDev\GoogleAnalytics:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/GoogleAnalytics/Model'
+                prefix: CDev\GoogleAnalytics\Model
+                alias: CDev\GoogleAnalytics
+            Qualiteam\SkinActVideoFeature:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActVideoFeature/Model'
+                prefix: Qualiteam\SkinActVideoFeature\Model
+                alias: Qualiteam\SkinActVideoFeature
+            Qualiteam\SkinActVideoFeatureWidget:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActVideoFeatureWidget/Model'
+                prefix: Qualiteam\SkinActVideoFeatureWidget\Model
+                alias: Qualiteam\SkinActVideoFeatureWidget
+            Qualiteam\SkinActYotpoReviews:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActYotpoReviews/Model'
+                prefix: Qualiteam\SkinActYotpoReviews\Model
+                alias: Qualiteam\SkinActYotpoReviews
+            Qualiteam\SkinActShipStationAdvanced:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActShipStationAdvanced/Model'
+                prefix: Qualiteam\SkinActShipStationAdvanced\Model
+                alias: Qualiteam\SkinActShipStationAdvanced
+            XC\Stripe:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/Stripe/Model'
+                prefix: XC\Stripe\Model
+                alias: XC\Stripe
+            QSL\BraintreeVZ:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/BraintreeVZ/Model'
+                prefix: QSL\BraintreeVZ\Model
+                alias: QSL\BraintreeVZ
+            XC\ESelectHPP:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/ESelectHPP/Model'
+                prefix: XC\ESelectHPP\Model
+                alias: XC\ESelectHPP
+            QSL\CloudSearch:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/CloudSearch/Model'
+                prefix: QSL\CloudSearch\Model
+                alias: QSL\CloudSearch
+            Qualiteam\SkinActContactUsPage:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActContactUsPage/Model'
+                prefix: Qualiteam\SkinActContactUsPage\Model
+                alias: Qualiteam\SkinActContactUsPage
+            QSL\AbandonedCartReminder:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/AbandonedCartReminder/Model'
+                prefix: QSL\AbandonedCartReminder\Model
+                alias: QSL\AbandonedCartReminder
+            Qualiteam\SkinActCategoryDescriptionAndFaq:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActCategoryDescriptionAndFaq/Model'
+                prefix: Qualiteam\SkinActCategoryDescriptionAndFaq\Model
+                alias: Qualiteam\SkinActCategoryDescriptionAndFaq
+            CDev\Sale:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/CDev/Sale/Model'
+                prefix: CDev\Sale\Model
+                alias: CDev\Sale
+            QSL\SpecialOffersSpendXGetY:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/SpecialOffersSpendXGetY/Model'
+                prefix: QSL\SpecialOffersSpendXGetY\Model
+                alias: QSL\SpecialOffersSpendXGetY
+            XC\CanadaPost:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/CanadaPost/Model'
+                prefix: XC\CanadaPost\Model
+                alias: XC\CanadaPost
+            Qualiteam\SkinActCouponSearchBar:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActCouponSearchBar/Model'
+                prefix: Qualiteam\SkinActCouponSearchBar\Model
+                alias: Qualiteam\SkinActCouponSearchBar
+            Iidev\CloverPayments:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Iidev/CloverPayments/Model'
+                prefix: Iidev\CloverPayments\Model
+                alias: Iidev\CloverPayments
+            QSL\PDFInvoice:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/PDFInvoice/Model'
+                prefix: QSL\PDFInvoice\Model
+                alias: QSL\PDFInvoice
+            Qualiteam\SkinActAftership:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActAftership/Model'
+                prefix: Qualiteam\SkinActAftership\Model
+                alias: Qualiteam\SkinActAftership
+            Qualiteam\SkinActImagesForColors:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActImagesForColors/Model'
+                prefix: Qualiteam\SkinActImagesForColors\Model
+                alias: Qualiteam\SkinActImagesForColors
+            QSL\HorizontalCategoriesMenu:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/HorizontalCategoriesMenu/Model'
+                prefix: QSL\HorizontalCategoriesMenu\Model
+                alias: QSL\HorizontalCategoriesMenu
+            XC\NotFinishedOrders:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/NotFinishedOrders/Model'
+                prefix: XC\NotFinishedOrders\Model
+                alias: XC\NotFinishedOrders
+            XC\ThemeTweaker:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/ThemeTweaker/Model'
+                prefix: XC\ThemeTweaker\Model
+                alias: XC\ThemeTweaker
+            XC\AvaTax:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/XC/AvaTax/Model'
+                prefix: XC\AvaTax\Model
+                alias: XC\AvaTax
+            QSL\FlyoutCategoriesMenu:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/FlyoutCategoriesMenu/Model'
+                prefix: QSL\FlyoutCategoriesMenu\Model
+                alias: QSL\FlyoutCategoriesMenu
+            QSL\ProductQuestions:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/QSL/ProductQuestions/Model'
+                prefix: QSL\ProductQuestions\Model
+                alias: QSL\ProductQuestions
+            Qualiteam\SkinActCustomOrderStatuses:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActCustomOrderStatuses/Model'
+                prefix: Qualiteam\SkinActCustomOrderStatuses\Model
+                alias: Qualiteam\SkinActCustomOrderStatuses
+            Qualiteam\SkinActAmountForFreeShipping:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActAmountForFreeShipping/Model'
+                prefix: Qualiteam\SkinActAmountForFreeShipping\Model
+                alias: Qualiteam\SkinActAmountForFreeShipping
+            Qualiteam\SkinActKlarna:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/var/run/classes/Qualiteam/SkinActKlarna/Model'
+                prefix: Qualiteam\SkinActKlarna\Model
+                alias: Qualiteam\SkinActKlarna

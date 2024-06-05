@@ -1,0 +1,48 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\LanguageLabel:
+  - { name: "Wishlist", translations: [{ code: en, label: "Wishlist" }, { code: ru, label: "Список желаний" }] }
+  - { name: "wishlist - X item", translations: [{ code: en, label: "{{name}}wishlist - {{count}} item" }] }
+  - { name: "wishlist - X items", translations: [{ code: en, label: "{{name}}wishlist - {{count}} items" }] }
+  - { name: "Private wishlist title", translations: [{ code: en, label: "Private" }] }
+  - { name: "Link to wishlist is copied to your clipboard", translations: [{ code: en, label: "Link to wishlist is copied to your clipboard" }] }
+  - { name: "Already in wishlist", translations: [{ code: en, label: "Already in wishlist" }, { code: ru, label: "Уже в списке желаний" }] }
+  - { name: "Your wishlist", translations: [{ code: en, label: "Your wishlist" }, { code: ru, label: "Список желаний" }] }
+  - { name: "You have added the product to your wishlist", translations: [{ code: en, label: "You have added the product to your <a href='{{wishlist}}'>wishlist</a>" }, { code: ru, label: "Товар добавлен в <a href='{{wishlist}}'>список желаний</a>" }] }
+  - { name: "The product was not added to your wishlist. Try again", translations: [{ code: en, label: "The product was not added to your wishlist. Try again" }, { code: ru, label: "Товар не добавлен в список желаний. Повторите попытку еще раз" }] }
+  - { name: "The product is already added. We have moved it to the top of the wishlist", translations: [{ code: en, label: "The product is already added. We have moved it to the top of the <a href='{{wishlist}}'>wishlist</a>" }, { code: ru, label: "Товар уже в <a href='{{wishlist}}'>списке желаний</a>. Мы переместили его в начало списка." }] }
+  - { name: "You should login first before adding to the wishlist", translations: [{ code: en, label: "You should login first before adding to the wishlist" }, { code: ru, label: "Список желаний доступен только для зарегистрированных пользователей" }] }
+  - { name: "Remove product from this wishlist", translations: [{ code: en, label: "Remove product from this wishlist" }, { code: ru, label: "Исключить товар из списка желаний" }] }
+  - { name: "The product is unavailable in the catalog", translations: [{ code: en, label: "The product is unavailable in the catalog" }, { code: ru, label: "Товар не доступен в каталоге" }] }
+  - { name: "Feel free to add any product you like to your wishlist", translations: [{ code: en, label: "Feel free to add any product you like to your wishlist" }, { code: ru, label: "Вы можете добавить любой товар из каталога в список желаний." }] }
+  - { name: "Send wishlist", translations: [{ code: en, label: "Send wishlist" }, { code: ru, label: "Передайте друзьям" }] }
+  - { name: "Add to wishlist", translations: [{ code: en, label: "Add to wishlist" }, { code: ru, label: "Добавить в список желаний" }] }
+  - { name: "Customer sends to you a wishlist", translations: [{ code: en, label: "{{customer}} sends to you a wishlist" }, { code: ru, label: "{{customer}} передал вам список желаний" }] }
+  - { name: "Products from wishlist", translations: [{ code: en, label: "Products from wishlist" }, { code: ru, label: "Список желаний" }] }
+  - { name: "Order product from wishlist", translations: [{ code: en, label: "Order" }, { code: ru, label: "Заказать" }] }
+  - { name: "Copy link", translations: [{ code: en, label: "Copy link" }, { code: ru, label: "Копировать ссылку" }] }
+
+XLite\Model\Notification:
+  - templatesDirectory: modules/QSL/MyWishlist/send_wishlist
+    availableForAdmin: false
+    availableForCustomer: false
+    enabledForAdmin: false
+    enabledForCustomer: true
+    module: QSL\MyWishlist
+    translations:
+      - code: en
+        name: Wishlist products notification
+        description: 'This notification contains the wishlist products and is sent by the customer to his/her friends'
+        customerSubject: Sends wishlist to you
+        customerText: "Someone sends a wishlist to you. Feel free to add any of these products using the appropirate links."
+      - code: ru
+        name: Перечень товар из списка пожеланий
+        description: "Данное сообщение содержит в себе список пожеланий покупателя, который он/она пересылает своим друзьям"
+        customerSubject: выслал свой список пожеланий для покупки вам
+        customerText: "Вам передали список пожеланий для покупки. Вы можете заказать перечисленные товары в нашем магазине по ссылкам приведенным в перечне."
+

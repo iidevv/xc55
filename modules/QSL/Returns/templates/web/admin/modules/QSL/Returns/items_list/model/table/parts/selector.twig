@@ -1,0 +1,7 @@
+{##
+ # Selector
+ #}
+
+<div class="selector{% if this.isOrderItemSelected() %} checked{% endif %}">
+  <input type="checkbox" name="{{ this.getSelectorDataPrefix() }}[{{ this.entity.getUniqueIdentifier() }}]" value="1" class="selector not-significant" {% if this.isOrderItemSelected() %} checked{% endif %} />
+</div>

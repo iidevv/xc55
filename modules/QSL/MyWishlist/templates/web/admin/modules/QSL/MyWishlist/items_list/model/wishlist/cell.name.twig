@@ -1,0 +1,12 @@
+{##
+ #
+ #}
+
+{% if this.entity.isSnapshotProduct() %}
+<div class="removed-product">{{ this.entity.getName() }} <span class="removed-title">({{ t('removed') }})</span></div>
+{% else %}
+<div class="product">
+  <a href="{{ xurl('product', '', {'product_id': this.entity.getProductId()} ) }}">{{ this.entity.getName() }}</a>
+  {% if not this.entity.getEnabled() %}<span class="unavailable-product">({{ t('disabled') }})</span>{% endif %}
+</div>
+{% endif %}

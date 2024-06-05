@@ -1,0 +1,22 @@
+{##
+ # Product info on product reviews page
+ #}
+
+{% set product = this.get('product') %}
+
+{% if product %}
+  <div class="product-details product-reviews-details clearfix">
+    <div class="image{% if not this.get('product').hasImage() %} empty{% endif %}">
+      {{ widget('\\XLite\\View\\Product\\Details\\Customer\\Image', product=product) }}
+    </div>
+    <div class="product-details-info">
+      <a href="{{ xurl('product', '', {'product_id': this.getProductId(), 'category_id': this.getCategoryId()}) }}" class="back-to-product">{{ t('Back to product details') }}</a>
+      <h1 class="fn title">{{ this.getTitle() }}</h1>
+
+      <div>
+        {{ widget('XC\\Reviews\\View\\Customer\\ReviewsPage\\AverageRating', product=product) }}
+      </div>
+    </div>
+
+  </div>
+{% endif %}

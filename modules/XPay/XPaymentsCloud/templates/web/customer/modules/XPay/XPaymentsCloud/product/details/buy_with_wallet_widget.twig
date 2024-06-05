@@ -1,0 +1,6 @@
+{##
+ # Include Buy with wallet button
+ #}
+{% if not this.isAllStockInCart() and this.isProductAvailableForSale() %}
+    {{ widget(this.getWalletButtonClass(), fingerprint=this.getFingerprint(), product=this.product) }}
+{% endif %}

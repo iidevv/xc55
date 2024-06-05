@@ -1,0 +1,164 @@
+# vim: set ts=2 sw=2 sts=2 et:
+#
+# Fixtures
+#
+# Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+# See https://www.x-cart.com/license-agreement.html for license details.
+
+XLite\Model\Task:
+  - owner: QSL\BackInStock\Core\Task\SendNotifications
+
+XLite\Model\Config:
+  - name: 'updateInterval'
+    category: QSL\BackInStock
+    type: QSL\BackInStock\View\FormField\Select\UpdateInterval
+    orderby: 100
+    value: '86400'
+    translations:
+      - code: en
+        option_name: 'Send Back in stock notifications every'
+  - name: 'allowStockNotification'
+    category: QSL\BackInStock
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 200
+    value: 1
+    translations:
+      - code: en
+        option_name: 'Allow customers to subscribe to back in stock notifications'
+  - name: 'allowSpecifyQuantity'
+    category: QSL\BackInStock
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 300
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Allow customer to specify the product quantity they want to buy'
+  - name: 'allowPriceNotification'
+    category: QSL\BackInStock
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 400
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Allow customers to subscribe to price drop notifications'
+  - name: 'allowSpecifyPrice'
+    category: QSL\BackInStock
+    type: XLite\View\FormField\Input\Checkbox\OnOffWithoutOffLabel
+    orderby: 500
+    value: 0
+    translations:
+      - code: en
+        option_name: 'Allow customer to specify the price they want to pay'
+
+XLite\Model\LanguageLabel:
+  - { name: 'Notify me', translations: [{ code: en, label: 'Notify me' }] }
+  - { name: 'You have already signed up to get notified when this product is back in stock.', translations: [{ code: en, label: 'You have already signed up to get notified when this product is back in stock.' }] }
+  - { name: 'You are signed up to get notified when the product X is back in stock.', translations: [{ code: en, label: 'You are signed up to get notified when the product "{{product}}" is back in stock.' }] }
+  - { name: 'You have been unsubscribed from notifications for the product X.', translations: [{ code: en, label: 'You have been unsubscribed from notifications for the product "{{product}}".' }] }
+  - { name: 'You have not been subscribed to notifications for this product.', translations: [{ code: en, label: 'You have not been subscribed to back notifications for this product.' }] }
+  - { name: '1 minute', translations: [{ code: en, label: '1 minute' }] }
+  - { name: '10 minutes', translations: [{ code: en, label: '10 minutes' }] }
+  - { name: '15 minutes', translations: [{ code: en, label: '15 minutes' }] }
+  - { name: '30 minutes', translations: [{ code: en, label: '30 minutes' }] }
+  - { name: '1 hour', translations: [{ code: en, label: '1 hour' }] }
+  - { name: '2 hours', translations: [{ code: en, label: '2 hours' }] }
+  - { name: '4 hours', translations: [{ code: en, label: '4 hours' }] }
+  - { name: '6 hours', translations: [{ code: en, label: '6 hours' }] }
+  - { name: '12 hours', translations: [{ code: en, label: '12 hours' }] }
+  - { name: '1 day', translations: [{ code: en, label: '1 day' }] }
+  - { name: 'N subscriptions have been added to the waiting list for "Back in stock" message send-out.', translations: [{ code: en, label: '{{count}} subscriptions have been added to the waiting list for "Back in stock" message send-out.' }] }
+  - { name: 'N "Back in stock" messages have been sent', translations: [{ code: en, label: '{{count}} "Back in stock" messages have been sent' }] }
+  - { name: 'There have been N attempts to send out "Back in stock" messages, but the messages could not be sent.', translations: [{ code: en, label: 'There have been {{count}} attempts to send out "Back in stock" messages, but the messages could not be sent.' }] }
+  - { name: 'Check records', translations: [{ code: en, label: 'Check records' }] }
+  - { name: 'Waiting records count', translations: [{ code: en, label: 'Waiting records count' }] }
+  - { name: 'Sent records count', translations: [{ code: en, label: 'Sent records count' }] }
+  - { name: 'Record state', translations: [{ code: en, label: 'State' }] }
+  - { name: 'Stand-by', translations: [{ code: en, label: 'Stand-by' }] }
+  - { name: 'Bounced', translations: [{ code: en, label: 'Bounced' }] }
+  - { name: 'Ready for send', translations: [{ code: en, label: 'Ready for send' }] }
+  - { name: 'Sent', translations: [{ code: en, label: 'Sent' }] }
+  - { name: 'Back date', translations: [{ code: en, label: 'Back date' }] }
+  - { name: 'Sent date', translations: [{ code: en, label: 'Sent date' }] }
+  - { name: 'The records check has been completed successfully', translations: [{ code: en, label: 'The records check has been completed successfully' }] }
+  - { name: 'Edit back in stock notification', translations: [{ code: en, label: 'Edit back in stock notification' }] }
+  - { name: 'Price drop date', translations: [{ code: en, label: 'Price drop date' }] }
+  - { name: 'Notify me when the stock quantity changes to', translations: [{ code: en, label: 'Notify me when the stock quantity reaches at least' }] }
+  - { name: 'Let me know when the price drops to  or below', translations: [{ code: en, label: 'Let me know when the price drops to  or below' }] }
+  - { name: 'Let me know when the price drops to  or below (no less then X%)', translations: [{ code: en, label: 'Let me know when the price drops to  or below (no less then {{percent}}%)' }] }
+  - { name: '1 other person are subscribed to back-in-stock and price-drop alert for this product', translations: [{ code: en, label: '1 other person are subscribed to the product information changes.' }] }
+  - { name: 'N other people are subscribed to back-in-stock and price-drop alert for this product', translations: [{ code: en, label: '{{count}} other people are subscribed to the product information changes.' }] }
+  - { name: 'You are subscribed to back-in-stock and price-drop alert for this product', translations: [{ code: en, label: 'You are subscribed to the product information changes.' }] }
+  - { name: 'You and 1 other person are subscribed to back-in-stock and price-drop alert for this product', translations: [{ code: en, label: 'You and 1 other person are subscribed to the product information changes.' }] }
+  - { name: 'You and N other people are subscribed to back-in-stock and price-drop alert for this product', translations: [{ code: en, label: 'You and {{count}} other people are subscribed to the product information changes.' }] }
+  - { name: 'Notify me when the stock quantity changes', translations: [{ code: en, label: 'Notify me when the stock quantity changes' }] }
+  - { name: 'Let me know when the price drops', translations: [{ code: en, label: 'Let me know when the price drops' }] }
+  - { name: 'Product notification subscriptions', translations: [{ code: en, label: 'Product notification subscriptions' }] }
+  - { name: 'Back in stock subscriptions', translations: [{ code: en, label: 'Back in stock subscriptions' }] }
+  - { name: 'Price drop subscriptions', translations: [{ code: en, label: 'Price drop subscriptions' }] }
+  - { name: 'Watched products', translations: [{ code: en, label: 'Watched products' }] }
+  - { name: 'Back in stock', translations: [{ code: en, label: 'Back in stock' }] }
+  - { name: 'Price drop', translations: [{ code: en, label: 'Price drop' }] }
+  - { name: 'Check products', translations: [{ code: en, label: 'Check products' }] }
+  - { name: 'Send notifications', translations: [{ code: en, label: 'Send notifications' }] }
+  - { name: 'N subscriptions have been added to the waiting list for "Price drop" message send-out.', translations: [{ code: en, label: '{{count}} subscriptions have been added to the waiting list for "Price drop" message send-out.' }] }
+  - { name: 'N "Price drop" messages have been sent', translations: [{ code: en, label: '{{count}} "Price drop" messages have been sent' }] }
+  - { name: 'There have been N attempts to send out "Price drop" messages, but the messages could not be sent.', translations: [{ code: en, label: 'There have been {{count}} attempts to send out "Price drop" messages, but the messages could not be sent.' }] }
+  - { name: 'You have already signed up to get notified when this product price is drop.', translations: [{ code: en, label: 'You have already signed up to get notified when this product price is drop.' }] }
+  - { name: 'You are signed up to get notified when the product X price is drop.', translations: [{ code: en, label: 'You are signed up to get notified when the product "{{product}}" price is drop.' }] }
+  - { name: 'Notify me (title)', translations: [{ code: en, label: 'Notify me' }] }
+  - { name: 'Back-in-stock records', translations: [{ code: en, label: 'Back-in-stock records' }] }
+  - { name: 'Price-drop records', translations: [{ code: en, label: 'Price-drop records' }] }
+  - { name: 'Desired quantity', translations: [{ code: en, label: 'Desired quantity' }] }
+  - { name: 'Desired price', translations: [{ code: en, label: 'Desired price' }] }
+  - { name: 'Product dropped price', translations: [{ code: en, label: 'Product dropped price' }] }
+  - { name: 'Product notifications', translations: [{ code: en, label: 'Product notifications' }] }
+  - { name: 'Product requests', translations: [{ code: en, label: 'Product requests' }] }
+
+XLite\Model\Notification:
+  - templatesDirectory: modules/QSL/BackInStock/notification
+    availableForAdmin: false
+    availableForCustomer: false
+    enabledForAdmin: false
+    enabledForCustomer: true
+    editable: true
+    module: QSL\BackInStock
+    translations:
+      - code: en
+        name: Back in stock notification (Back in stock module)
+        description: This message will be emailed to the user when the product they chose to be notified about is back in stock
+        customerSubject: Back in stock notification
+        customerText: |
+          %company_link%
+          <p>
+          Remember this awesome item?<br />
+          You found it on our store a few days ago.
+          </p>
+          <p>
+          Good news! The <a href="%product_url%">%product_name%</a> is back in stock and available for order.<br />
+          Hurry up to %company_link% and grab it!
+          </p>
+          <p><a href="%product_url%">Buy now</a></p>
+          <p>This email does not guarantee that you'll get one, so you should act quickly :)</p>
+  - templatesDirectory: modules/QSL/BackInStock/price_drop_notification
+    availableForAdmin: false
+    availableForCustomer: false
+    enabledForAdmin: false
+    enabledForCustomer: true
+    editable: true
+    module: QSL\BackInStock
+    translations:
+      - code: en
+        name: Price drop notification (Back in stock module)
+        description: This message is sent to the customer when the price is lowered for a product for which they have signed up to get price drop notifications
+        customerSubject: Price drop notification
+        customerText: |
+          %company_link%
+          <p>
+          Remember this awesome item?<br />
+          You found it on our store a few days ago.
+          </p>
+          <p>
+          Good news! The price for <a href="%product_url%">%product_name%</a> has decreased to %product_dropped_price%!<br />
+          Hurry up to %company_link% and grab it!
+          </p>
+          <p><a href="%product_url%">Buy now</a></p>
