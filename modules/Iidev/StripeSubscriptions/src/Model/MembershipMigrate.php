@@ -39,7 +39,7 @@ class MembershipMigrate extends \XLite\Model\AEntity
      *
      * @ORM\Column(type="integer")
      */
-    private $paid_membershipid;
+    private $membershipid;
 
     /**
      * Paid membership expiry
@@ -71,9 +71,9 @@ class MembershipMigrate extends \XLite\Model\AEntity
         return $this->login;
     }
 
-    public function getPaidMembershipId()
+    public function getMembershipId()
     {
-        return $this->paid_membershipid;
+        return $this->membershipid;
     }
 
     public function getPaidMembershipExpire()

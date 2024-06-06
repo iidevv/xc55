@@ -29,7 +29,7 @@ class Profile extends \XLite\Model\Profile
             'login' => $login
         ]);
 
-        if ($preProfile && $preProfile->getPaidMembershipId() === 9 && $preProfile->getStatus() === '') {
+        if ($preProfile && $preProfile->getMembershipId() === 9 && $preProfile->getStatus() === '') {
             $isMembershipMigrationProfile = true;
         }
 
