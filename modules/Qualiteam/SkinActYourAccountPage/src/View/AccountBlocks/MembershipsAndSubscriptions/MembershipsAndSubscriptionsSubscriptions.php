@@ -26,7 +26,7 @@ class MembershipsAndSubscriptionsSubscriptions extends MembershipsAndSubscriptio
             parent::getBlockLinks(),
             [
                 [
-                    'url' => $this->buildURL('xpayments_subscriptions'),
+                    'url' => $this->buildURL('subscription_page'),
                     'text' => static::t('SkinActYourAccountPage subscriptions'),
                     'is_count' => false,
                     'position' => 1

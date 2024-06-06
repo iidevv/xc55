@@ -26,7 +26,7 @@ class MembershipsAndSubscriptionsSavedCreditCards extends MembershipsAndSubscrip
             parent::getBlockLinks(),
             [
                 [
-                    'url' => $this->buildURL('xpayments_cards'),
+                    'url' => $this->buildURL('payment_cards'),
                     'text' => static::t('SkinActYourAccountPage saved credit cards'),
                     'is_count' => false,
                     'position' => 2
