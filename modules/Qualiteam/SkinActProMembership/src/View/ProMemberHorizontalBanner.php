@@ -76,22 +76,7 @@ class ProMemberHorizontalBanner extends \XLite\View\AView
 
     protected function getOnClick()
     {
-        static $result = null;
-
-        if ($result === null) {
-            $pid = (int)\XLite\Core\Config::getInstance()->Qualiteam->SkinActProMembership->product_to_add;
-
-            if ($pid > 0) {
-                $link = $this->buildURL('subscription_page');
-                $result = 'onclick="window.location.href=\'' . $link . '\';"';
-                return $result;
-            }
-
-            $result = '';
-            return $result;
-        }
-
-        return $result;
+        return \XLite\Core\Config::getInstance()->Qualiteam->SkinActProMembership->pro_membership_link_url;
     }
 
 }

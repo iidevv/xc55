@@ -58,7 +58,7 @@ class ProMembershipIconOnProductThumbnail extends \XLite\View\AView
 
     protected function getOnClick()
     {
-        return '';
+        return \XLite\Core\Config::getInstance()->Qualiteam->SkinActProMembership->pro_membership_link_url;
     }
 
 }
