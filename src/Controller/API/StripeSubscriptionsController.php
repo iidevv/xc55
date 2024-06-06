@@ -95,6 +95,14 @@ final class StripeSubscriptionsController extends AbstractController
 
         if (!empty($profile) && !empty($returnUrl)) {
             $session = (new Session($profile, $returnUrl))->createAccountSession();
+
+            if (!$session) {
+                \XLite\Core\TopMessage::addError('Profile not found. Please contact support.');
+                header("HTTP/1.1 303 See Other");
+                header("Location: " . $returnUrl);
+                exit();
+            }
+
             header("HTTP/1.1 303 See Other");
             header("Location: " . $session->url);
             exit();

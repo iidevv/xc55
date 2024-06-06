@@ -74,7 +74,7 @@ class Session
                 'trial_end' => $this->profile->getMembershipMigrationProfileExpirationDate() + 5256000
             ];
         }
-        
+
         $stripeCustomer = ($subscription && $subscription->getStripeCustomerId()) ? $this->retrieveCustomer($subscription->getStripeCustomerId()) : null;
 
         if ($subscription && $subscription->getStripeCustomerId() && $stripeCustomer && !$stripeCustomer['deleted']) {
@@ -93,14 +93,19 @@ class Session
 
         $profileId = $this->profile->getProfileId();
 
-        /** @var \Iidev\StripeSubscriptions\Model\StripeSubscriptions $subscription */
         $subscription = Database::getRepo('Iidev\StripeSubscriptions\Model\StripeSubscriptions')->findOneBy([
             'customerId' => $profileId
         ]);
 
-        return StripeAccountSession::create([
-            'customer' => $subscription->getStripeCustomerId(),
-            'return_url' => $returnUrl,
-        ]);
+        $stripeCustomer = ($subscription && $subscription->getStripeCustomerId()) ? $this->retrieveCustomer($subscription->getStripeCustomerId()) : null;
+
+        if ($subscription && $subscription->getStripeCustomerId() && $stripeCustomer && !$stripeCustomer['deleted']) {
+            return StripeAccountSession::create([
+                'customer' => $subscription->getStripeCustomerId(),
+                'return_url' => $returnUrl,
+            ]);
+        } else {
+            return null;
+        }
     }
 }
