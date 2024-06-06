@@ -82,7 +82,7 @@ class ProMemberHorizontalBanner extends \XLite\View\AView
             $pid = (int)\XLite\Core\Config::getInstance()->Qualiteam->SkinActProMembership->product_to_add;
 
             if ($pid > 0) {
-                $link = $this->buildURL('product', '', ['product_id' => $pid]);
+                $link = $this->buildURL('subscription_page');
                 $result = 'onclick="window.location.href=\'' . $link . '\';"';
                 return $result;
             }
