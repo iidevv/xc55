@@ -6,6 +6,7 @@ use XLite\InjectLoggerTrait;
 use Iidev\StripeSubscriptions\Model\StripeSubscriptions;
 use XLite\Core\Database;
 use XLite\Model\Profile;
+use \XLite\Core\Config;
 
 class HookManager
 {
@@ -112,7 +113,7 @@ class HookManager
         if ($status === 'Active') {
             /** @var \XLite\Model\Membership $membership */
             $membership = Database::getRepo(\XLite\Model\Membership::class)
-                ->find(9);
+                ->find(Config::getInstance()->Iidev->StripeSubscriptions->membership_id);
 
             if (!$membership) {
                 $this->getLogger("StripeSubscriptions")->error('Membership not found.');

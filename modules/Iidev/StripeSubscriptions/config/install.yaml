@@ -27,6 +27,13 @@ XLite\Model\Config:
     translations:
       - code: en
         option_name: "Webhook secret"
+  - name: membership_id
+    category: Iidev\StripeSubscriptions
+    type: text
+    orderby: 1350
+    translations:
+      - code: en
+        option_name: "Membership ID"
   - name: stripe_sep_2
     category: Iidev\StripeSubscriptions
     type: separator
