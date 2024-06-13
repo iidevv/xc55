@@ -10,3 +10,5 @@ dependsOn:
 incompatibleWith: {}
 showSettingsForm: true
 canDisable: true
+autoloader:
+    - vendor/autoload.php
