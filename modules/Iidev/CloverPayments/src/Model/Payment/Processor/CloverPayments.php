@@ -243,17 +243,29 @@ class CloverPayments extends \XLite\Model\Payment\Base\CreditCard
                 Database::getEM()->persist($transaction);
                 Database::getEM()->flush();
 
-                sleep(5);
-                $isRefunded = $api->refund(
-                    $alignedData['transaction-id'],
-                    null
-                );
+                $maxRetries = 3;
+                $retryCount = 0;
+                $delay = 7000000;
 
-                if ($isRefunded) {
-                    $order->setPaymentStatus(Payment::STATUS_REFUNDED);
-                    $order->update();
+                while ($retryCount < $maxRetries) {
+                    usleep($delay);
+                    $isRefunded = $api->refund($alignedData['transaction-id'], null);
+
+                    if ($isRefunded) {
+                        $order->setPaymentStatus(Payment::STATUS_REFUNDED);
+                        $order->update();
+                        $setupStatus = 1;
+                        break;
+                    }
+
+                    $retryCount++;
                 }
-                $setupStatus = 1;
+
+                if ($retryCount === $maxRetries) {
+                    $order->setPaymentStatus(Payment::STATUS_AUTHORIZED);
+                    $order->update();
+                    $setupStatus = 0;
+                }
             } else {
                 $order->setPaymentStatus(Payment::STATUS_DECLINED);
                 $order->update();
