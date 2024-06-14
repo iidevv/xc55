@@ -608,7 +608,7 @@ class CloverPayments extends \XLite\Model\Payment\Base\CreditCard
                     }
                 } catch (APIException $e) {
                     TopMessage::getInstance()
-                        ->addError('Transaction failure. CloverPayments response: ' . $e->getMessage() . ' Please contact CloverPayments support (ilya.i@skinact.com) for further assistance');
+                        ->addError('Transaction failure. ' . $e->getMessage() . '. Please contact ilya.i@skinact.com for further assistance');
                 }
             });
         } catch (\Exception $e) {
@@ -774,7 +774,7 @@ class CloverPayments extends \XLite\Model\Payment\Base\CreditCard
                         $counts = array_count_values($this->getRefundedAmounts($transaction));
                         $unregisteredRefunds = array_values(
                             array_filter($CloverPaymentsRefunds, static function ($item) use (&$counts) {
-                                return empty ($counts[$item]) || !$counts[$item]--;
+                                return empty($counts[$item]) || !$counts[$item]--;
                             })
                         );
 
@@ -791,7 +791,7 @@ class CloverPayments extends \XLite\Model\Payment\Base\CreditCard
                                     && $tmpTransaction->getStatus() !== BackendTransaction::STATUS_SUCCESS
                                 ) {
                                     $tmpTransaction->setStatus(BackendTransaction::STATUS_SUCCESS);
-                                    unset ($unregisteredRefunds[$k]);
+                                    unset($unregisteredRefunds[$k]);
 
                                     $tmpTransaction->registerTransactionInOrderHistory('callback, IPN');
                                 }
@@ -814,7 +814,7 @@ class CloverPayments extends \XLite\Model\Payment\Base\CreditCard
                             $backendTransaction->registerTransactionInOrderHistory('callback, IPN');
                         }
 
-                        if (!empty ($unregisteredRefunds) && $isChargeback) {
+                        if (!empty($unregisteredRefunds) && $isChargeback) {
                             \XLite\Core\Mailer::sendCloverPaymentsChargeback(
                                 $transaction->getOrder(),
                                 \XLite\Core\Request::getInstance()->referenceNumber
