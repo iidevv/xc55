@@ -11,8 +11,6 @@ use XLite\Core\Database;
 use XCart\Extender\Mapping\Extender;
 
 /**
- * XPayments payment processor
- *
  * @Extender\Mixin
  */
 class Profile extends \XLite\Model\Profile
